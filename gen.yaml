@@ -1,5 +1,9 @@
+management:
+    openapi-checksum: e5a0a41f38f047f4f80691166ac20b34
+    openapi-version: 1.0.0
+    speakeasy-version: 0.22.0
 python:
-    version: 1.0.0
+    version: 1.1.0
     packagename: epilotapi
     author: epilotapi
 sdkclassname: EpilotAPI
