@@ -1,0 +1,16 @@
+import dataclasses
+from typing import Optional
+from dataclasses_json import dataclass_json
+from epilotapi import utils
+
+
+@dataclass_json
+@dataclasses.dataclass
+class SummaryField:
+    r"""SummaryField
+    Summary Fields are displayed inside list view as a resume of the relation entity.
+    """
+    
+    display_as: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('display_as') }})
+    field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('field') }})
+    
