@@ -1,0 +1,5 @@
+python:
+    version: 1.0.0
+    packagename: epilotapi
+    author: epilotapi
+sdkclassname: EpilotAPI
