@@ -8,64 +8,6 @@ Epilot is the digital foundation for sales, service, network and implementation 
 ```bash
 pip install epilotapi
 ```
-
-## Authentication
-
-To call epilot APIs, requests must be authorized using a valid Access Token.
-
-### Using Access Token Authorization
-The access token should be passed in the Authorization request header.
-
-```bash
-Authorization: Bearer <your-access-token>
-```
-
-### Creating Access Tokens
-Users logged into the epilot 360 portal can manage their Access Tokens from Settings > Access Tokens.
-
-Creating access tokens requires the `token:create` permission.
-
-Access Token API
-Authenticated users can generate long-term access tokens for 3rd party applications using the epilot Access Token API createAccessToken operation.
-
-```bash
-POST /v1/access-tokens
-{
-  "name": "Token for my application"
-}
-```
-Optionally, you can pass a list of Role IDs, to define the roles the access token will have access to. By default, the access token inherits the caller's roles.
-
-```bash
-POST /v1/access-tokens
-{
-  "name": "Postman Access Token",
-  "assume_roles": ["123:owner"]
-}
-```
-Each Access Token generated via the API gets a generated a unique ID.
-
-```bash
-// 201 - success
-{
-  "id": "api_5ZugdRXasLfWBypHi93Fk",
-  "created_at": "2019-08-24T14:15:22Z",
-  "name": "Postman Access Token",
-  "assignments": ["123:owner"]
-}
-```
-Access tokens may also be revoked using the revokeAccessToken operation
-```bash
-DELETE /v1/access-tokens/api_5ZugdRXasLfWBypHi93Fk
-// 200 - success
-{
-  "id": "api_5ZugdRXasLfWBypHi93Fk",
-  "created_at": "2019-08-24T14:15:22Z",
-  "name": "Postman Access Token",
-  "assignments": ["123:owner"]
-}
-```
-
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
