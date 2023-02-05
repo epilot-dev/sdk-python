@@ -1,10 +1,7 @@
 import dataclasses
-from datetime import date, datetime
-from marshmallow import fields
-import dateutil.parser
-from typing import Optional
 from ..shared import savedview as shared_savedview
 from ..shared import savedviewitem as shared_savedviewitem
+from typing import Optional
 
 
 @dataclasses.dataclass

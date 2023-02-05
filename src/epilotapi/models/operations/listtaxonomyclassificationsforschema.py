@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Optional
+from ..shared import taxonomyclassification as shared_taxonomyclassification
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import taxonomyclassification as shared_taxonomyclassification
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -17,16 +17,16 @@ class ListTaxonomyClassificationsForSchemaQueryParams:
     size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     
 
-@dataclass_json
-@dataclasses.dataclass
-class ListTaxonomyClassificationsForSchema200ApplicationJSON:
-    results: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results') }})
-    
-
 @dataclasses.dataclass
 class ListTaxonomyClassificationsForSchemaRequest:
     path_params: ListTaxonomyClassificationsForSchemaPathParams = dataclasses.field()
     query_params: ListTaxonomyClassificationsForSchemaQueryParams = dataclasses.field()
+    
+
+@dataclass_json
+@dataclasses.dataclass
+class ListTaxonomyClassificationsForSchema200ApplicationJSON:
+    results: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results') }})
     
 
 @dataclasses.dataclass

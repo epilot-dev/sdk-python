@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Optional
+from ..shared import entityschemaitem as shared_entityschemaitem
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import entityschemaitem as shared_entityschemaitem
+from typing import Optional
 
 
 @dataclass_json

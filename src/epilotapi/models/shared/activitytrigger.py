@@ -1,11 +1,8 @@
 import dataclasses
-from datetime import date, datetime
-from marshmallow import fields
-import dateutil.parser
-from typing import Optional
-from enum import Enum
 from dataclasses_json import dataclass_json
+from enum import Enum
 from epilotapi import utils
+from typing import Optional
 
 class ActivityTriggerConfigurationTypesEnum(str, Enum):
     CREATE_METER_READING = "CreateMeterReading"

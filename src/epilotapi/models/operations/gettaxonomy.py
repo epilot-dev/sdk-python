@@ -1,6 +1,6 @@
 import dataclasses
-from typing import Optional
 from ..shared import taxonomy as shared_taxonomy
+from typing import Optional
 
 
 @dataclasses.dataclass

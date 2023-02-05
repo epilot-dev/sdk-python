@@ -1,7 +1,7 @@
 import dataclasses
+from ..shared import automationflow as shared_automationflow
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import automationflow as shared_automationflow
 
 
 @dataclass_json

@@ -1,46 +1,9 @@
 import dataclasses
-from datetime import date, datetime
-from marshmallow import fields
-import dateutil.parser
-from typing import Any,Optional
-from dataclasses_json import dataclass_json
-from epilotapi import utils
-from ..shared import summaryattribute as shared_summaryattribute
-from ..shared import entitydefaultcreate as shared_entitydefaultcreate
-from ..shared import entitydefaultedit as shared_entitydefaultedit
-from ..shared import entitydefaulttable as shared_entitydefaulttable
-from ..shared import redirectentityview as shared_redirectentityview
-from ..shared import entityparcelview as shared_entityparcelview
-from ..shared import entityviewdisabled as shared_entityviewdisabled
-from ..shared import textattribute as shared_textattribute
-from ..shared import linkattribute as shared_linkattribute
-from ..shared import dateattribute as shared_dateattribute
-from ..shared import countryattribute as shared_countryattribute
-from ..shared import booleanattribute as shared_booleanattribute
-from ..shared import selectattribute as shared_selectattribute
-from ..shared import multiselectattribute as shared_multiselectattribute
-from ..shared import statusattribute as shared_statusattribute
-from ..shared import sequenceattribute as shared_sequenceattribute
-from ..shared import relationattribute as shared_relationattribute
-from ..shared import userrelationattribute as shared_userrelationattribute
-from ..shared import addressrelationattribute as shared_addressrelationattribute
-from ..shared import paymentmethodrelationattribute as shared_paymentmethodrelationattribute
-from ..shared import currencyattribute as shared_currencyattribute
-from ..shared import repeatableattribute as shared_repeatableattribute
-from ..shared import tagsattribute as shared_tagsattribute
-from ..shared import numberattribute as shared_numberattribute
-from ..shared import consentattribute as shared_consentattribute
-from ..shared import internalattribute as shared_internalattribute
-from ..shared import orderedlistattribute as shared_orderedlistattribute
-from ..shared import fileattribute as shared_fileattribute
-from ..shared import computedattribute as shared_computedattribute
-from ..shared import partnerstatusattribute as shared_partnerstatusattribute
-from ..shared import invitationemailattribute as shared_invitationemailattribute
-from ..shared import automationattribute as shared_automationattribute
-from ..shared import internaluserattribute as shared_internaluserattribute
-from ..shared import purposeattribute as shared_purposeattribute
 from ..shared import entitycapability as shared_entitycapability
 from ..shared import searchmappings as shared_searchmappings
+from dataclasses_json import dataclass_json
+from epilotapi import utils
+from typing import Any, Optional
 
 
 @dataclass_json

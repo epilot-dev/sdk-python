@@ -1,7 +1,7 @@
 import dataclasses
-from typing import Any,Optional
 from dataclasses_json import dataclass_json
 from epilotapi import utils
+from typing import Any, Optional
 
 
 @dataclasses.dataclass
@@ -15,17 +15,17 @@ class GetEntityQueryParams:
     hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
     
 
+@dataclasses.dataclass
+class GetEntityRequest:
+    path_params: GetEntityPathParams = dataclasses.field()
+    query_params: GetEntityQueryParams = dataclasses.field()
+    
+
 @dataclass_json
 @dataclasses.dataclass
 class GetEntity200ApplicationJSON:
     entity: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('entity') }})
     relations: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('relations') }})
-    
-
-@dataclasses.dataclass
-class GetEntityRequest:
-    path_params: GetEntityPathParams = dataclasses.field()
-    query_params: GetEntityQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

@@ -1,7 +1,7 @@
 import dataclasses
-from typing import Optional
 from ..shared import activity as shared_activity
 from ..shared import activityitem as shared_activityitem
+from typing import Optional
 
 
 @dataclasses.dataclass

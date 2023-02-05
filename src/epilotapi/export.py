@@ -1,6 +1,6 @@
 import requests
-from epilotapi.models import operations
 from . import utils
+from epilotapi.models import operations
 
 class Export:
     _client: requests.Session

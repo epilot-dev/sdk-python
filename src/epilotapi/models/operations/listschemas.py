@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Optional
+from ..shared import entityschemaitem as shared_entityschemaitem
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import entityschemaitem as shared_entityschemaitem
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -10,15 +10,15 @@ class ListSchemasQueryParams:
     unpublished: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'unpublished', 'style': 'form', 'explode': True }})
     
 
+@dataclasses.dataclass
+class ListSchemasRequest:
+    query_params: ListSchemasQueryParams = dataclasses.field()
+    
+
 @dataclass_json
 @dataclasses.dataclass
 class ListSchemas200ApplicationJSON:
     results: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results') }})
-    
-
-@dataclasses.dataclass
-class ListSchemasRequest:
-    query_params: ListSchemasQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

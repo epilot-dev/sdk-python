@@ -1,6 +1,6 @@
 import dataclasses
-from typing import Optional
 from ..shared import retryreq as shared_retryreq
+from typing import Optional
 
 
 @dataclasses.dataclass

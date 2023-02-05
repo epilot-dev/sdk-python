@@ -1,11 +1,11 @@
 import dataclasses
-from datetime import date, datetime
-from marshmallow import fields
 import dateutil.parser
-from typing import Optional
-from dataclasses_json import dataclass_json
-from epilotapi import utils
 from ..shared import activityitem as shared_activityitem
+from dataclasses_json import dataclass_json
+from datetime import datetime
+from epilotapi import utils
+from marshmallow import fields
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -23,17 +23,17 @@ class GetEntityActivityFeedQueryParams:
     type: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
     
 
+@dataclasses.dataclass
+class GetEntityActivityFeedRequest:
+    path_params: GetEntityActivityFeedPathParams = dataclasses.field()
+    query_params: GetEntityActivityFeedQueryParams = dataclasses.field()
+    
+
 @dataclass_json
 @dataclasses.dataclass
 class GetEntityActivityFeed200ApplicationJSON:
     results: Optional[list[shared_activityitem.ActivityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results') }})
     total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('total') }})
-    
-
-@dataclasses.dataclass
-class GetEntityActivityFeedRequest:
-    path_params: GetEntityActivityFeedPathParams = dataclasses.field()
-    query_params: GetEntityActivityFeedQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

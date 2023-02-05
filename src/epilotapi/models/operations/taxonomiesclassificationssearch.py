@@ -1,7 +1,7 @@
 import dataclasses
-from typing import Any,Optional
 from dataclasses_json import dataclass_json
 from epilotapi import utils
+from typing import Any, Optional
 
 
 @dataclasses.dataclass
@@ -15,16 +15,16 @@ class TaxonomiesClassificationsSearchRequestBody:
     classification_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('classificationIds') }})
     
 
-@dataclass_json
-@dataclasses.dataclass
-class TaxonomiesClassificationsSearch200ApplicationJSON:
-    results: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results') }})
-    
-
 @dataclasses.dataclass
 class TaxonomiesClassificationsSearchRequest:
     query_params: TaxonomiesClassificationsSearchQueryParams = dataclasses.field()
     request: Optional[TaxonomiesClassificationsSearchRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    
+
+@dataclass_json
+@dataclasses.dataclass
+class TaxonomiesClassificationsSearch200ApplicationJSON:
+    results: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results') }})
     
 
 @dataclasses.dataclass

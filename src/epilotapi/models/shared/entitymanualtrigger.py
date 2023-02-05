@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Optional
-from enum import Enum
 from dataclasses_json import dataclass_json
+from enum import Enum
 from epilotapi import utils
+from typing import Optional
 
 
 @dataclass_json

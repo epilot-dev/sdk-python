@@ -1,7 +1,7 @@
 import dataclasses
-from typing import Optional
 from ..shared import entitysearchparams as shared_entitysearchparams
 from ..shared import entitysearchresults as shared_entitysearchresults
+from typing import Optional
 
 
 @dataclasses.dataclass

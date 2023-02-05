@@ -1,12 +1,11 @@
 import dataclasses
-from datetime import date, datetime
-from marshmallow import fields
 import dateutil.parser
-from typing import Any,Optional
-from dataclasses_json import dataclass_json
-from epilotapi import utils
 from ..shared import entityoperation as shared_entityoperation
-from ..operations import entityoperation as operations_entityoperation
+from dataclasses_json import dataclass_json
+from datetime import datetime
+from epilotapi import utils
+from marshmallow import fields
+from typing import Any, Optional
 
 
 @dataclass_json

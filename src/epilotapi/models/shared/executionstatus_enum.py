@@ -7,4 +7,3 @@ class ExecutionStatusEnum(str, Enum):
     SUCCESS = "success"
     FAILED = "failed"
     CANCELLED = "cancelled"
-

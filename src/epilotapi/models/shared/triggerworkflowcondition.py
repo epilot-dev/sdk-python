@@ -1,9 +1,8 @@
 import dataclasses
-from typing import Any,Optional
-from enum import Enum
+from ..shared import comparison_enum as shared_comparison_enum
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import comparison_enum as shared_comparison_enum
+from typing import Any, Optional
 
 
 @dataclass_json

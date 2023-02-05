@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Any,Optional
-from enum import Enum
 from dataclasses_json import dataclass_json
+from enum import Enum
 from epilotapi import utils
+from typing import Any, Optional
 
 class PaymentMethodRelationAttributeTypeEnum(str, Enum):
     RELATION_PAYMENT_METHOD = "relation_payment_method"

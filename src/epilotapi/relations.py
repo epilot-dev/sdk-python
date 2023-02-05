@@ -1,7 +1,7 @@
 import requests
-from typing import Any,Optional
-from epilotapi.models import shared, operations
 from . import utils
+from epilotapi.models import operations, shared
+from typing import Optional
 
 class Relations:
     _client: requests.Session

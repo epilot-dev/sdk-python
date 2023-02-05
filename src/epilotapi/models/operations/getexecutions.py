@@ -1,6 +1,6 @@
 import dataclasses
-from typing import Optional
 from ..shared import getexecutionsresp as shared_getexecutionsresp
+from typing import Optional
 
 
 @dataclasses.dataclass

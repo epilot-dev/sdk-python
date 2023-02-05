@@ -1,6 +1,6 @@
 import dataclasses
-from enum import Enum
 from dataclasses_json import dataclass_json
+from enum import Enum
 from epilotapi import utils
 
 

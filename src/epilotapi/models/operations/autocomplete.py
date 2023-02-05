@@ -1,7 +1,7 @@
 import dataclasses
-from typing import Any,Optional
 from dataclasses_json import dataclass_json
 from epilotapi import utils
+from typing import Any, Optional
 
 
 @dataclasses.dataclass
@@ -12,16 +12,16 @@ class AutocompleteQueryParams:
     slug: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'slug', 'style': 'form', 'explode': True }})
     
 
+@dataclasses.dataclass
+class AutocompleteRequest:
+    query_params: AutocompleteQueryParams = dataclasses.field()
+    
+
 @dataclass_json
 @dataclasses.dataclass
 class Autocomplete200ApplicationJSON:
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('hits') }})
     results: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results') }})
-    
-
-@dataclasses.dataclass
-class AutocompleteRequest:
-    query_params: AutocompleteQueryParams = dataclasses.field()
     
 
 @dataclasses.dataclass

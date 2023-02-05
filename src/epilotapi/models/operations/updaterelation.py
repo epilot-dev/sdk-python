@@ -1,11 +1,8 @@
 import dataclasses
-from datetime import date, datetime
-from marshmallow import fields
-import dateutil.parser
-from typing import Optional
+from ..shared import relationitem as shared_relationitem
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import relationitem as shared_relationitem
+from typing import Optional
 
 
 @dataclasses.dataclass

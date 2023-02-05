@@ -1,8 +1,7 @@
 import dataclasses
-from enum import Enum
+from ..shared import errorcode_enum as shared_errorcode_enum
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import errorcode_enum as shared_errorcode_enum
 
 
 @dataclass_json
