@@ -1,7 +1,7 @@
 import requests
 from . import utils
 from epilotapi.models import operations, shared
-from typing import Optional
+from typing import Any, Optional
 
 class Journeys:
     _client: requests.Session
