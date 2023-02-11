@@ -23,3 +23,11 @@ Based on:
 - Speakeasy CLI 1.2.0 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [PyPI v2.2.0] https://pypi.org/project/epilotapi/2.2.0 - .
+
+## Version 2.3.0
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 ./openapi.yaml
+- Speakeasy CLI 1.3.1 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v2.3.0] https://pypi.org/project/epilotapi/2.3.0 - .
