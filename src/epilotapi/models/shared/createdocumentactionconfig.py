@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Any,Optional
+from ..shared import createdocumentconfig as shared_createdocumentconfig
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import createdocumentconfig as shared_createdocumentconfig
+from typing import Any, Optional
 
 
 @dataclass_json

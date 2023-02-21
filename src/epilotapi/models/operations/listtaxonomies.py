@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Optional
+from ..shared import taxonomy as shared_taxonomy
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import taxonomy as shared_taxonomy
+from typing import Optional
 
 
 @dataclass_json

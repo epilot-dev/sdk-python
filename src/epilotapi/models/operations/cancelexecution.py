@@ -1,6 +1,6 @@
 import dataclasses
-from typing import Optional
 from ..shared import automationexecution as shared_automationexecution
+from typing import Optional
 
 
 @dataclasses.dataclass

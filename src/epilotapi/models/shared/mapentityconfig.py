@@ -1,13 +1,9 @@
 import dataclasses
-from typing import Any,Optional
-from dataclasses_json import dataclass_json
-from epilotapi import utils
-from ..shared import mappingattributev2 as shared_mappingattributev2
-from ..shared import setvaluemapper as shared_setvaluemapper
-from ..shared import copyvaluemapper as shared_copyvaluemapper
-from ..shared import appendvaluemapper as shared_appendvaluemapper
 from ..shared import mappingconfigref as shared_mappingconfigref
 from ..shared import relationattribute1 as shared_relationattribute1
+from dataclasses_json import dataclass_json
+from epilotapi import utils
+from typing import Any, Optional
 
 
 @dataclass_json

@@ -1,6 +1,6 @@
 import dataclasses
-from typing import Optional
 from ..shared import searchautomationsresp as shared_searchautomationsresp
+from typing import Optional
 
 
 @dataclasses.dataclass

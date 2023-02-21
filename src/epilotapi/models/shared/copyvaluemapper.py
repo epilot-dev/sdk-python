@@ -1,8 +1,7 @@
 import dataclasses
-from enum import Enum
+from ..shared import mappingattributemode_enum as shared_mappingattributemode_enum
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import mappingattributemode_enum as shared_mappingattributemode_enum
 
 
 @dataclass_json

@@ -1,9 +1,9 @@
 import dataclasses
-from typing import Optional
-from dataclasses_json import dataclass_json
-from epilotapi import utils
 from ..shared import assignuserstostep as shared_assignuserstostep
 from ..shared import triggerworkflowcondition as shared_triggerworkflowcondition
+from dataclasses_json import dataclass_json
+from epilotapi import utils
+from typing import Optional
 
 
 @dataclass_json

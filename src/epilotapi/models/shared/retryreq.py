@@ -1,9 +1,8 @@
 import dataclasses
-from typing import Optional
-from enum import Enum
+from ..shared import retrystrategy_enum as shared_retrystrategy_enum
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import retrystrategy_enum as shared_retrystrategy_enum
+from typing import Optional
 
 
 @dataclass_json

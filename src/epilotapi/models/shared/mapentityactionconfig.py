@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Any,Optional
+from ..shared import mapentityconfig as shared_mapentityconfig
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import mapentityconfig as shared_mapentityconfig
+from typing import Any, Optional
 
 
 @dataclass_json

@@ -11,14 +11,16 @@ s.config_security(
         ),
     )
 )
-    
+   
 req = operations.AttachActivityRequest(
     path_params=operations.AttachActivityPathParams(
-        id="sit",
+        id="unde",
     ),
     query_params=operations.AttachActivityQueryParams(
         entities=[
-            "culpa",
+            "porro",
+            "nulla",
+            "id",
         ],
     ),
 )

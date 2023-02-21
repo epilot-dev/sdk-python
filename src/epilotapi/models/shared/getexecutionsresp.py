@@ -1,7 +1,7 @@
 import dataclasses
+from ..shared import automationexecution as shared_automationexecution
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import automationexecution as shared_automationexecution
 
 
 @dataclass_json

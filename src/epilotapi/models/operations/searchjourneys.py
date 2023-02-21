@@ -1,7 +1,7 @@
 import dataclasses
-from typing import Optional
 from ..shared import searchjourneysqueryrequest as shared_searchjourneysqueryrequest
 from ..shared import searchjourneysresponse as shared_searchjourneysresponse
+from typing import Optional
 
 
 @dataclasses.dataclass

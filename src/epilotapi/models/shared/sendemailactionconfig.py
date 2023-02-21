@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Any,Optional
+from ..shared import sendemailconfig as shared_sendemailconfig
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import sendemailconfig as shared_sendemailconfig
+from typing import Any, Optional
 
 
 @dataclass_json

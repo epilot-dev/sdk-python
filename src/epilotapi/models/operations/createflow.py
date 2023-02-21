@@ -1,6 +1,6 @@
 import dataclasses
-from typing import Optional
 from ..shared import automationflow as shared_automationflow
+from typing import Optional
 
 
 @dataclasses.dataclass

@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Any,Optional
+from ..shared import triggerworkflowconfig as shared_triggerworkflowconfig
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import triggerworkflowconfig as shared_triggerworkflowconfig
+from typing import Any, Optional
 
 
 @dataclass_json

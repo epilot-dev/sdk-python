@@ -1,17 +1,20 @@
 import dataclasses
-from datetime import date, datetime
-from marshmallow import fields
-import dateutil.parser
-from typing import Any,Optional
+from ..shared import classificationsupdate as shared_classificationsupdate
+from ..shared import taxonomyclassification as shared_taxonomyclassification
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import taxonomyclassification as shared_taxonomyclassification
-from ..shared import classificationsupdate as shared_classificationsupdate
+from typing import Any, Optional
 
 
 @dataclasses.dataclass
 class UpdateClassificationsForTaxonomyPathParams:
     taxonomy_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taxonomySlug', 'style': 'simple', 'explode': False }})
+    
+
+@dataclasses.dataclass
+class UpdateClassificationsForTaxonomyRequest:
+    path_params: UpdateClassificationsForTaxonomyPathParams = dataclasses.field()
+    request: Optional[shared_classificationsupdate.ClassificationsUpdate] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclass_json
@@ -20,12 +23,6 @@ class UpdateClassificationsForTaxonomy200ApplicationJSON:
     created: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('created') }})
     deleted: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('deleted') }})
     updated: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('updated') }})
-    
-
-@dataclasses.dataclass
-class UpdateClassificationsForTaxonomyRequest:
-    path_params: UpdateClassificationsForTaxonomyPathParams = dataclasses.field()
-    request: Optional[shared_classificationsupdate.ClassificationsUpdate] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 @dataclasses.dataclass

@@ -1,8 +1,8 @@
 import dataclasses
-from typing import Any,Optional
+from ..shared import triggerwebhookconfig as shared_triggerwebhookconfig
 from dataclasses_json import dataclass_json
 from epilotapi import utils
-from ..shared import triggerwebhookconfig as shared_triggerwebhookconfig
+from typing import Any, Optional
 
 
 @dataclass_json

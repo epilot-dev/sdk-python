@@ -1,7 +1,7 @@
 import dataclasses
-from typing import Optional
-from ..shared import startexecutionrequest as shared_startexecutionrequest
 from ..shared import automationexecution as shared_automationexecution
+from ..shared import startexecutionrequest as shared_startexecutionrequest
+from typing import Optional
 
 
 @dataclasses.dataclass

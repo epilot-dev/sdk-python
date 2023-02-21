@@ -1,9 +1,49 @@
 
 
-## Version 1.1.0
+## Version 2.1.0
 ### Changes
 Based on:
 - OpenAPI Doc 1.0.0 ./openapi.yaml
-- Speakeasy CLI 0.22.0 https://github.com/speakeasy-api/speakeasy
+- Speakeasy CLI 1.1.1 https://github.com/speakeasy-api/speakeasy
 ### Releases
-- [PyPI v1.1.0] https://pypi.org/project/epilotapi/1.1.0 - .
+- [PyPI v2.1.0] https://pypi.org/project/epilotapi/2.1.0 - .
+
+## Version 2.1.1
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 ./openapi.yaml
+- Speakeasy CLI 1.1.2 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v2.1.1] https://pypi.org/project/epilotapi/2.1.1 - .
+
+## Version 2.2.0
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 ./openapi.yaml
+- Speakeasy CLI 1.2.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v2.2.0] https://pypi.org/project/epilotapi/2.2.0 - .
+
+## Version 2.3.0
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 ./openapi.yaml
+- Speakeasy CLI 1.3.1 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v2.3.0] https://pypi.org/project/epilotapi/2.3.0 - .
+
+## Version 2.3.1
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 ./openapi.yaml
+- Speakeasy CLI 1.3.2 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v2.3.1] https://pypi.org/project/epilotapi/2.3.1 - .
+
+## Version 2.3.2
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 ./openapi.yaml
+- Speakeasy CLI 1.3.3 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [PyPI v2.3.2] https://pypi.org/project/epilotapi/2.3.2 - .

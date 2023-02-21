@@ -1,20 +1,17 @@
 
-
 import requests
-from epilotapi.models import shared
 from . import utils
-
 from .activity import Activity
 from .entities import Entities
+from .executions import Executions
 from .export import Export
+from .flows import Flows
 from .journeys import Journeys
 from .relations import Relations
 from .saved_views import SavedViews
 from .schemas import Schemas
 from .taxonomy import Taxonomy
-from .executions import Executions
-from .flows import Flows
-
+from epilotapi.models import shared
 
 SERVERS = [
 	"https://journey-config.sls.epilot.io",
@@ -39,8 +36,8 @@ class EpilotAPI:
     _security: shared.Security
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.1.0"
-    _gen_version: str = "0.22.0"
+    _sdk_version: str = "2.3.2"
+    _gen_version: str = "1.3.3"
 
     def __init__(self) -> None:
         self._client = requests.Session()
