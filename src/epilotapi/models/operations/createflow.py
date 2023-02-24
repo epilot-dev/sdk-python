@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import automationflow as shared_automationflow
 from typing import Optional

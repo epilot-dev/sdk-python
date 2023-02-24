@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import relationitem as shared_relationitem
 from typing import Optional

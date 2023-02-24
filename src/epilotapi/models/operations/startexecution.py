@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import automationexecution as shared_automationexecution
 from ..shared import startexecutionrequest as shared_startexecutionrequest

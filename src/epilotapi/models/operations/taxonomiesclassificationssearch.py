@@ -1,5 +1,6 @@
+from __future__ import annotations
 import dataclasses
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from epilotapi import utils
 from typing import Any, Optional
 
@@ -9,10 +10,10 @@ class TaxonomiesClassificationsSearchQueryParams:
     taxonomy_slug: str = dataclasses.field(metadata={'query_param': { 'field_name': 'taxonomySlug', 'style': 'form', 'explode': True }})
     
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class TaxonomiesClassificationsSearchRequestBody:
-    classification_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('classificationIds') }})
+    classification_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('classificationIds'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass
@@ -21,10 +22,10 @@ class TaxonomiesClassificationsSearchRequest:
     request: Optional[TaxonomiesClassificationsSearchRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class TaxonomiesClassificationsSearch200ApplicationJSON:
-    results: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results') }})
+    results: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('results'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass

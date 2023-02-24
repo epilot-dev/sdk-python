@@ -1,6 +1,7 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import relationitem as shared_relationitem
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from epilotapi import utils
 from typing import Optional
 
@@ -18,10 +19,10 @@ class UpdateRelationQueryParams:
     async_: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
     
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class UpdateRelationRequestBody:
-    tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('_tags') }})
+    tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('_tags'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass

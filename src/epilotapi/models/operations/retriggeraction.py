@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import retryreq as shared_retryreq
 from typing import Optional

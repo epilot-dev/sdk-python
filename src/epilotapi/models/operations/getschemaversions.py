@@ -1,6 +1,7 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import entityschemaitem as shared_entityschemaitem
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from epilotapi import utils
 from typing import Optional
 
@@ -15,11 +16,11 @@ class GetSchemaVersionsRequest:
     path_params: GetSchemaVersionsPathParams = dataclasses.field()
     
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetSchemaVersions200ApplicationJSON:
-    drafts: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('drafts') }})
-    versions: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('versions') }})
+    drafts: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('drafts'), 'exclude': lambda f: f is None }})
+    versions: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('versions'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass

@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import savedview as shared_savedview
 from ..shared import savedviewitem as shared_savedviewitem

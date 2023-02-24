@@ -1,5 +1,6 @@
+from __future__ import annotations
 import dataclasses
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilotapi import utils
 from typing import Optional
@@ -11,17 +12,17 @@ class ActivityTriggerConfigurationTypesEnum(str, Enum):
     SYNC_ACTIVITY = "SyncActivity"
 
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ActivityTriggerConfiguration:
-    schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('schema') }})
-    types: Optional[list[ActivityTriggerConfigurationTypesEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('types') }})
+    schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('schema'), 'exclude': lambda f: f is None }})
+    types: Optional[list[ActivityTriggerConfigurationTypesEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('types'), 'exclude': lambda f: f is None }})
     
 class ActivityTriggerTypeEnum(str, Enum):
     ACTIVITY = "activity"
 
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ActivityTrigger:
     configuration: ActivityTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('configuration') }})
