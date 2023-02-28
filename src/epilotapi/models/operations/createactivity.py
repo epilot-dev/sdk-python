@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import activity as shared_activity
 from ..shared import activityitem as shared_activityitem

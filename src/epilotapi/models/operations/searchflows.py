@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import searchautomationsresp as shared_searchautomationsresp
 from typing import Optional

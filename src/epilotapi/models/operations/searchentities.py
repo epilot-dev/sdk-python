@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import entitysearchparams as shared_entitysearchparams
 from ..shared import entitysearchresults as shared_entitysearchresults

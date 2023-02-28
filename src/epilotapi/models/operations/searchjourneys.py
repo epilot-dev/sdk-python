@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import searchjourneysqueryrequest as shared_searchjourneysqueryrequest
 from ..shared import searchjourneysresponse as shared_searchjourneysresponse

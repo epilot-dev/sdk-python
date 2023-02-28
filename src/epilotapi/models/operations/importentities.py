@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import entityimportparams as shared_entityimportparams
 from typing import Optional

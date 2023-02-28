@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import taxonomy as shared_taxonomy
 from typing import Optional

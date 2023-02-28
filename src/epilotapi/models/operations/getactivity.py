@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import activityitem as shared_activityitem
 from typing import Optional

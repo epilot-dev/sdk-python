@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import entityschemaitem as shared_entityschemaitem
 from typing import Optional

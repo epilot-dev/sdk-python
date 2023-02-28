@@ -1,19 +1,20 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import mappingconfigref as shared_mappingconfigref
 from ..shared import relationattribute1 as shared_relationattribute1
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from epilotapi import utils
 from typing import Any, Optional
 
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CartCheckoutConfig:
-    linkback_relation_attribute: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('linkback_relation_attribute') }})
-    linkback_relation_tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('linkback_relation_tags') }})
-    mapping_attributes: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('mapping_attributes') }})
-    mapping_config: Optional[shared_mappingconfigref.MappingConfigRef] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('mapping_config') }})
-    relation_attributes: Optional[list[shared_relationattribute1.RelationAttribute1]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('relation_attributes') }})
-    target_unique: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('target_unique') }})
-    version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('version') }})
+    linkback_relation_attribute: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('linkback_relation_attribute'), 'exclude': lambda f: f is None }})
+    linkback_relation_tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('linkback_relation_tags'), 'exclude': lambda f: f is None }})
+    mapping_attributes: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('mapping_attributes'), 'exclude': lambda f: f is None }})
+    mapping_config: Optional[shared_mappingconfigref.MappingConfigRef] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('mapping_config'), 'exclude': lambda f: f is None }})
+    relation_attributes: Optional[list[shared_relationattribute1.RelationAttribute1]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('relation_attributes'), 'exclude': lambda f: f is None }})
+    target_unique: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('target_unique'), 'exclude': lambda f: f is None }})
+    version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('version'), 'exclude': lambda f: f is None }})
     
