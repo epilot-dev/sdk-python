@@ -2,7 +2,7 @@
 
 import requests as requests_http
 from . import utils
-from sdk.models import operations
+from epilot.models import operations
 from typing import Optional
 
 class Public:

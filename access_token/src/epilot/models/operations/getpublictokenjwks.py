@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
-from sdk import utils
+from epilot import utils
 from typing import Optional
 
 

@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from sdk import utils
+from epilot import utils
 from typing import Optional
 
 class AccessTokenParametersTokenTypeEnum(str, Enum):
