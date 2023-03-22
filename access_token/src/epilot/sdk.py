@@ -4,14 +4,14 @@ import requests as requests_http
 from . import utils
 from .access_tokens import AccessTokens
 from .public import Public
-from sdk.models import shared
+from epilot.models import shared
 
 SERVERS = [
     "https://access-token.sls.epilot.io",
 ]
 """Contains the list of servers available to the SDK"""
 
-class SDK:
+class Epilot:
     r"""Generate Access Tokens for 3rd party applications that need access to epilot APIs.
     
     """

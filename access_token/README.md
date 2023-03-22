@@ -4,17 +4,17 @@
 ## SDK Installation
 
 ```bash
-pip install openapi
+pip install epilot-access-token
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```python
-import sdk
-from sdk.models import operations, shared
+import epilot
+from epilot.models import operations, shared
 
-s = sdk.SDK(
+s = epilot.Epilot(
     security=shared.Security(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
