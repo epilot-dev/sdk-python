@@ -1,0 +1,15 @@
+src/epilot/submissions.py
+src/epilot/sdk.py
+pylintrc
+setup.py
+src/epilot/__init__.py
+src/epilot/models/__init__.py
+src/epilot/utils/__init__.py
+src/epilot/utils/retries.py
+src/epilot/utils/utils.py
+src/epilot/models/operations/createsubmission.py
+src/epilot/models/operations/__init__.py
+src/epilot/models/shared/submissionpayload.py
+src/epilot/models/shared/optin.py
+src/epilot/models/shared/__init__.py
+USAGE.md
