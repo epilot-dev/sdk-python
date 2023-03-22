@@ -1,0 +1,10 @@
+configVersion: 1.0.0
+generation:
+  telemetryEnabled: false
+  sdkClassName: epilot
+  sdkFlattening: true
+python:
+  version: 0.5.1
+  author: epilot
+  description: Python Client SDK for Epilot
+  packageName: epilot-organization
