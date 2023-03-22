@@ -1,8 +1,15 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 02397f0d4663d4ade6c146f4c087489b
+  docVersion: 0.2.0
+  speakeasyVersion: 1.13.0
 generation:
   telemetryEnabled: false
   sdkClassName: epilot
   sdkFlattening: true
+go:
+  version: 0.1.0
+  packageName: openapi
 python:
   version: 0.5.1
   author: epilot
