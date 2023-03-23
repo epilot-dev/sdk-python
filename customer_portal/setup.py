@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="epilot-customer-portal",
-    version="1.0.0",
+    version="1.0.1",
     author="epilot",
     description="Python Client SDK for Epilot",
     long_description=long_description,
