@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-message
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=message
 ```
 <!-- End SDK Installation -->
 
