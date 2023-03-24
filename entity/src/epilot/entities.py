@@ -253,6 +253,8 @@ class Entities:
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        if data is None and form is None:
+            raise Exception('request body is required')
         query_params = utils.get_query_params(operations.PatchEntityRequest, request)
         
         client = self._security_client
