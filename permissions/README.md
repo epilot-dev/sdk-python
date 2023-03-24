@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-permissions
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=permissions
 ```
 <!-- End SDK Installation -->
 
