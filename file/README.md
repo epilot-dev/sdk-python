@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-file
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=file
 ```
 <!-- End SDK Installation -->
 
