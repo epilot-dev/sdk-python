@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-journey-config
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=journey_config
 ```
 <!-- End SDK Installation -->
 
