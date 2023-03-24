@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-webhooks
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=webhooks
 ```
 <!-- End SDK Installation -->
 
