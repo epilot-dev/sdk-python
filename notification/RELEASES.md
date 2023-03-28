@@ -23,3 +23,9 @@ Based on:
 Based on:
 - OpenAPI Doc 1.0.0 https://docs.api.epilot.io/svc-notification-api.yaml
 - Speakeasy CLI 1.18.7 (2.16.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-03-28 01:19:32
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/svc-notification-api.yaml
+- Speakeasy CLI 1.18.9 (2.16.4) https://github.com/speakeasy-api/speakeasy
