@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-template-variables
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
 ```
 <!-- End SDK Installation -->
 
