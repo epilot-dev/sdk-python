@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-access-token
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=access_token
 ```
 <!-- End SDK Installation -->
 
