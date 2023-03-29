@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-internal-auth
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=internal_auth
 ```
 <!-- End SDK Installation -->
 
