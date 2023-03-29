@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-notification
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=notification
 ```
 <!-- End SDK Installation -->
 
