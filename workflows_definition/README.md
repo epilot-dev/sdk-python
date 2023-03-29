@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install openapi
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 ```
 <!-- End SDK Installation -->
 
