@@ -4,7 +4,7 @@
 ## SDK Installation
 
 ```bash
-pip install epilot-customer-portal
+pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
 ```
 <!-- End SDK Installation -->
 
