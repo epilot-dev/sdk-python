@@ -54,6 +54,34 @@ class RelationAttributeDrawerSizeEnum(str, Enum):
 class RelationAttributeEditModeEnum(str, Enum):
     LIST_VIEW = "list-view"
 
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class RelationAttributeInfoHelpers:
+    r"""A set of configurations meant to document and assist the user in filling the attribute."""
+    
+    hint_custom_component: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_custom_component'), 'exclude': lambda f: f is None }})
+    r"""The name of the custom component to be used as the hint helper.
+    The component should be registered in the `@epilot360/entity-ui` on the index of the components directory.
+    When specified it overrides the `hint_text` or `hint_text_key` configuration.
+    
+    """  
+    hint_text: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_text'), 'exclude': lambda f: f is None }})
+    r"""The text to be displayed in the attribute hint helper.
+    When specified it overrides the `hint_text_key` configuration.
+    
+    """  
+    hint_text_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_text_key'), 'exclude': lambda f: f is None }})
+    r"""The key of the hint text to be displayed in the attribute hint helper.
+    The key should be a valid i18n key.
+    
+    """  
+    hint_tooltip_placement: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_tooltip_placement'), 'exclude': lambda f: f is None }})
+    r"""The placement of the hint tooltip.
+    The value should be a valid `@mui/core` tooltip placement.
+    
+    """  
+    
 class RelationAttributeRelationAffinityModeEnum(str, Enum):
     r"""Weak relation attributes are kept when duplicating an entity. Strong relation attributes are discarded when duplicating an entity."""
     WEAK = "weak"
@@ -106,6 +134,8 @@ class RelationAttribute:
     hide_label: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hide_label'), 'exclude': lambda f: f is None }})
     r"""When set to true, will hide the label of the field."""  
     icon: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon'), 'exclude': lambda f: f is None }})  
+    info_helpers: Optional[RelationAttributeInfoHelpers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('info_helpers'), 'exclude': lambda f: f is None }})
+    r"""A set of configurations meant to document and assist the user in filling the attribute."""  
     layout: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('layout'), 'exclude': lambda f: f is None }})  
     order: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})
     r"""Attribute sort order (ascending) in group"""  
