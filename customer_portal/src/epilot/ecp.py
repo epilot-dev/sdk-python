@@ -183,8 +183,8 @@ class Ecp:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
-                res.entity_item = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetContact200ApplicationJSON])
+                res.get_contact_200_application_json_object = out
         elif http_res.status_code == 500:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])

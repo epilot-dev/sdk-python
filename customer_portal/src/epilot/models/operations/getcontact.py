@@ -4,6 +4,8 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
+from dataclasses_json import Undefined, dataclass_json
+from epilot import utils
 from typing import Any, Optional
 
 
@@ -13,14 +15,24 @@ class GetContactSecurity:
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
     
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class GetContact200ApplicationJSON:
+    r"""The returned contact"""
+    
+    entity: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})  
+    files: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})  
+    relations: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})  
+    
+
 @dataclasses.dataclass
 class GetContactResponse:
     
     content_type: str = dataclasses.field()  
     status_code: int = dataclasses.field()  
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The returned contact"""  
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Other errors"""  
+    get_contact_200_application_json_object: Optional[GetContact200ApplicationJSON] = dataclasses.field(default=None)
+    r"""The returned contact"""  
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
     
