@@ -12,7 +12,7 @@ from marshmallow import fields
 from typing import Optional
 
 class ShareRoleTypeEnum(str, Enum):
-    SHARE_ROLE = "share_role"
+    SHARE_ROLE = 'share_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

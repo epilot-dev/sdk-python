@@ -13,7 +13,7 @@ from marshmallow import fields
 from typing import Any, Optional
 
 class PutRoleRequestBody4TypeEnum(str, Enum):
-    PARTNER_ROLE = "partner_role"
+    PARTNER_ROLE = 'partner_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -37,7 +37,7 @@ class PutRoleRequestBody4:
     partner_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_org_id'), 'exclude': lambda f: f is None }})  
     
 class PutRoleRequestBody3TypeEnum(str, Enum):
-    SHARE_ROLE = "share_role"
+    SHARE_ROLE = 'share_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -60,7 +60,7 @@ class PutRoleRequestBody3:
     r"""date and time then the role will expire"""  
     
 class PutRoleRequestBody2TypeEnum(str, Enum):
-    ORG_ROLE = "org_role"
+    ORG_ROLE = 'org_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -83,7 +83,7 @@ class PutRoleRequestBody2:
     r"""date and time then the role will expire"""  
     
 class PutRoleRequestBody1TypeEnum(str, Enum):
-    USER_ROLE = "user_role"
+    USER_ROLE = 'user_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

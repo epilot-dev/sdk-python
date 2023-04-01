@@ -12,7 +12,7 @@ from marshmallow import fields
 from typing import Optional
 
 class UserRoleTypeEnum(str, Enum):
-    USER_ROLE = "user_role"
+    USER_ROLE = 'user_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

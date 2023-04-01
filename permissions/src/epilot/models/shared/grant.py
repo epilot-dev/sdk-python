@@ -8,8 +8,8 @@ from epilot import utils
 from typing import Any, Optional
 
 class GrantEffectEnum(str, Enum):
-    ALLOW = "allow"
-    DENY = "deny"
+    ALLOW = 'allow'
+    DENY = 'deny'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

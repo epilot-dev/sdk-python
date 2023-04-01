@@ -8,7 +8,7 @@ from epilot import utils
 from typing import Any
 
 class EqualsConditionOperationEnum(str, Enum):
-    EQUALS = "equals"
+    EQUALS = 'equals'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

@@ -12,7 +12,7 @@ from marshmallow import fields
 from typing import Optional
 
 class OrgRoleTypeEnum(str, Enum):
-    ORG_ROLE = "org_role"
+    ORG_ROLE = 'org_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

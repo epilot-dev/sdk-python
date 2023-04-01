@@ -27,7 +27,6 @@ class Assignments:
         Assign a user to a role.
         
         Use the `x-epilot-org-id` header to assign share roles to users in other orgs
-        
         """
         base_url = self._server_url
         
