@@ -42,8 +42,6 @@ class Notification:
 
         res = operations.CreateNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 202:
-            pass
 
         return res
 
@@ -132,8 +130,6 @@ class Notification:
 
         res = operations.MarkAllAsReadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 204:
-            pass
 
         return res
 
@@ -153,8 +149,6 @@ class Notification:
 
         res = operations.MarkAsReadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 204:
-            pass
 
         return res
 

@@ -22,9 +22,9 @@ s = epilot.Epilot(
 
 
 req = {
-    "deserunt": "porro",
-    "nulla": "id",
-    "vero": "perspiciatis",
+    "provident": "distinctio",
+    "quibusdam": "unde",
+    "nulla": "corrupti",
 }
     
 res = s.notification.create_notification(req)
@@ -35,7 +35,7 @@ if res.status_code == 200:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
 ### notification
