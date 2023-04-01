@@ -7,9 +7,9 @@ from enum import Enum
 from sdk import utils
 
 class UpdateEntityAttributesSourceEnum(str, Enum):
-    WORKFLOW_STATUS = "workflow_status"
-    CURRENT_SECTION = "current_section"
-    CURRENT_STEP = "current_step"
+    WORKFLOW_STATUS = 'workflow_status'
+    CURRENT_SECTION = 'current_section'
+    CURRENT_STEP = 'current_step'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

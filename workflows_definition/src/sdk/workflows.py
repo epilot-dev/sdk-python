@@ -3,7 +3,7 @@
 import requests as requests_http
 from . import utils
 from sdk.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class Workflows:
     _client: requests_http.Session
@@ -105,7 +105,7 @@ class Workflows:
                 res.error_resp = out
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.DefinitionNotFoundResp])
                 res.definition_not_found_resp = out
 
         return res
@@ -209,8 +209,6 @@ class Workflows:
 
         res = operations.SetWorkflowClosingReasonsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 201:
-            pass
 
         return res
 

@@ -25,7 +25,7 @@ req = operations.ChangeReasonStatusRequest(
     change_reason_status_req=shared.ChangeReasonStatusReq(
         status="INACTIVE",
     ),
-    reason_id="deserunt",
+    reason_id="provident",
 )
     
 res = s.closing_reason.change_reason_status(req)
@@ -36,7 +36,7 @@ if res.status_code == 200:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
 ### closing_reason

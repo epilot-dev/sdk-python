@@ -4,5 +4,5 @@ from __future__ import annotations
 from enum import Enum
 
 class ItemTypeEnum(str, Enum):
-    STEP = "STEP"
-    SECTION = "SECTION"
+    STEP = 'STEP'
+    SECTION = 'SECTION'

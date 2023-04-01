@@ -35,6 +35,7 @@ src/sdk/models/shared/steptype_enum.py
 src/sdk/models/shared/ecpdetails.py
 src/sdk/models/shared/dynamicduedate.py
 src/sdk/models/shared/closingreasonid.py
+src/sdk/models/shared/definitionnotfoundresp.py
 src/sdk/models/shared/maxallowedlimit.py
 src/sdk/models/shared/closingreasonsids.py
 src/sdk/models/shared/security.py

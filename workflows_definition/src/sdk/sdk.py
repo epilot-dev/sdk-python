@@ -12,9 +12,7 @@ SERVERS = [
 """Contains the list of servers available to the SDK"""
 
 class SDK:
-    r"""Service for Workflow Definitions for different processes inside of an Organization
-    
-    """
+    r"""Service for Workflow Definitions for different processes inside of an Organization"""
     closing_reason: ClosingReason
     workflows: Workflows
 
@@ -22,8 +20,8 @@ class SDK:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.2.2"
-    _gen_version: str = "2.16.5"
+    _sdk_version: str = "1.2.3"
+    _gen_version: str = "2.16.7"
 
     def __init__(self,
                  security: shared.Security = None,

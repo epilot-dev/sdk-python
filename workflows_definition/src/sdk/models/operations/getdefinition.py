@@ -3,9 +3,10 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import definitionnotfoundresp as shared_definitionnotfoundresp
 from ..shared import errorresp as shared_errorresp
 from ..shared import workflowdefinition as shared_workflowdefinition
-from typing import Any, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -20,7 +21,7 @@ class GetDefinitionResponse:
     
     content_type: str = dataclasses.field()  
     status_code: int = dataclasses.field()  
-    definition_not_found_resp: Optional[Any] = dataclasses.field(default=None)
+    definition_not_found_resp: Optional[shared_definitionnotfoundresp.DefinitionNotFoundResp] = dataclasses.field(default=None)
     r"""Definition Not found"""  
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Validation Errors"""  

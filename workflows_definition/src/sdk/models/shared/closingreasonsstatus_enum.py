@@ -4,5 +4,5 @@ from __future__ import annotations
 from enum import Enum
 
 class ClosingReasonsStatusEnum(str, Enum):
-    ACTIVE = "ACTIVE"
-    INACTIVE = "INACTIVE"
+    ACTIVE = 'ACTIVE'
+    INACTIVE = 'INACTIVE'
