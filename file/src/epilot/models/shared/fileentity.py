@@ -9,23 +9,23 @@ from epilot import utils
 from typing import Optional
 
 class FileEntityAccessControlEnum(str, Enum):
-    PRIVATE = "private"
-    PUBLIC_READ = "public-read"
+    PRIVATE = 'private'
+    PUBLIC_READ = 'public-read'
 
 class FileEntityTypeEnum(str, Enum):
     r"""Human readable type for file"""
-    DOCUMENT = "document"
-    DOCUMENT_TEMPLATE = "document_template"
-    TEXT = "text"
-    IMAGE = "image"
-    VIDEO = "video"
-    AUDIO = "audio"
-    SPREADSHEET = "spreadsheet"
-    PRESENTATION = "presentation"
-    FONT = "font"
-    ARCHIVE = "archive"
-    APPLICATION = "application"
-    UNKNOWN = "unknown"
+    DOCUMENT = 'document'
+    DOCUMENT_TEMPLATE = 'document_template'
+    TEXT = 'text'
+    IMAGE = 'image'
+    VIDEO = 'video'
+    AUDIO = 'audio'
+    SPREADSHEET = 'spreadsheet'
+    PRESENTATION = 'presentation'
+    FONT = 'font'
+    ARCHIVE = 'archive'
+    APPLICATION = 'application'
+    UNKNOWN = 'unknown'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

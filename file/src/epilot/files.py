@@ -42,8 +42,6 @@ class Files:
 
         res = operations.DeleteFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
-            pass
 
         return res
 
@@ -112,8 +110,6 @@ class Files:
 
         res = operations.PreviewFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
-            pass
 
         return res
 
@@ -138,8 +134,6 @@ class Files:
 
         res = operations.PreviewS3FileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
-            pass
 
         return res
 
@@ -150,7 +144,6 @@ class Files:
         Makes file object permanent
         
         Saves metadata to file entity
-        
         """
         base_url = self._server_url
         
@@ -180,7 +173,6 @@ class Files:
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).
         
         Use the createFile operation to store file file permanently.
-        
         """
         base_url = self._server_url
         
@@ -211,7 +203,6 @@ class Files:
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).
         
         Use the createFile operation to store file file permanently.
-        
         """
         base_url = self._server_url
         
