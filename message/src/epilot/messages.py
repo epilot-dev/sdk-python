@@ -2,8 +2,8 @@
 
 import requests as requests_http
 from . import utils
-from epilot.models import operations
-from typing import Any, Optional
+from epilot.models import operations, shared
+from typing import Optional
 
 class Messages:
     _client: requests_http.Session
@@ -37,8 +37,6 @@ class Messages:
 
         res = operations.DeleteMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -83,8 +81,6 @@ class Messages:
 
         res = operations.MarkReadMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -104,12 +100,10 @@ class Messages:
 
         res = operations.MarkUnreadMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
-    def send_message(self, request: Any) -> operations.SendMessageResponse:
+    def send_message(self, request: shared.MessageRequestParams) -> operations.SendMessageResponse:
         r"""sendMessage
         Send an email message
         """
@@ -154,8 +148,6 @@ class Messages:
 
         res = operations.TrashMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -175,8 +167,6 @@ class Messages:
 
         res = operations.UntrashMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 

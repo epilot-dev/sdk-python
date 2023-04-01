@@ -43,8 +43,6 @@ class Threads:
 
         res = operations.AssignThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -64,8 +62,6 @@ class Threads:
 
         res = operations.DeleteThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -85,8 +81,6 @@ class Threads:
 
         res = operations.MarkReadThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -106,8 +100,6 @@ class Threads:
 
         res = operations.MarkUnreadThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -118,7 +110,6 @@ class Threads:
         Messages with no replies yet are treated as threads with single message.
         
         Lucene syntax supported.
-        
         """
         base_url = self._server_url
         
@@ -161,8 +152,6 @@ class Threads:
 
         res = operations.TrashThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -182,8 +171,6 @@ class Threads:
 
         res = operations.UntrashThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 

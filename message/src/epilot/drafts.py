@@ -2,8 +2,8 @@
 
 import requests as requests_http
 from . import utils
-from epilot.models import operations
-from typing import Any, Optional
+from epilot.models import operations, shared
+from typing import Optional
 
 class Drafts:
     _client: requests_http.Session
@@ -21,7 +21,7 @@ class Drafts:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
-    def create_draft(self, request: Any) -> operations.CreateDraftResponse:
+    def create_draft(self, request: shared.MessageRequestParams) -> operations.CreateDraftResponse:
         r"""createDraft
         Create a new draft
         """

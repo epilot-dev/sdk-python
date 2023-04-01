@@ -31,6 +31,7 @@ src/epilot/models/operations/__init__.py
 src/epilot/models/shared/address.py
 src/epilot/models/shared/attachmentsrelation.py
 src/epilot/models/shared/file.py
+src/epilot/models/shared/messagerequestparams.py
 src/epilot/models/shared/message.py
 src/epilot/models/shared/searchparams.py
 src/epilot/models/shared/security.py
