@@ -22,9 +22,9 @@ s = epilot.Epilot(
 
 
 req = {
-    "deserunt": "porro",
-    "nulla": "id",
-    "vero": "perspiciatis",
+    "provident": "distinctio",
+    "quibusdam": "unde",
+    "nulla": "corrupti",
 }
     
 res = s.journeys.create_journey(req)
@@ -35,7 +35,7 @@ if res.journey_response is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
 ### journeys

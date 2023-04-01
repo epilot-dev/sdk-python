@@ -20,8 +20,8 @@ class SearchJourneysResponseResultsCreatedBy:
     
 class SearchJourneysResponseResultsJourneyVersionEnum(str, Enum):
     r"""Journey Version"""
-    FLEX = "Flex"
-    WIDGET = "Widget"
+    FLEX = 'Flex'
+    WIDGET = 'Widget'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -58,11 +58,7 @@ class SearchJourneysResponse:
     r"""Success"""
     
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
-    r"""The total number of hits.
-    
-    """  
+    r"""The total number of hits."""  
     results: Optional[list[SearchJourneysResponseResults]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
-    r"""The results.
-    
-    """  
+    r"""The results."""  
     
