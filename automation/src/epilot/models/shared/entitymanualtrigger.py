@@ -16,7 +16,7 @@ class EntityManualTriggerConfiguration:
     r"""Which entity type can this automation be triggered from"""  
     
 class EntityManualTriggerTypeEnum(str, Enum):
-    ENTITY_MANUAL = "entity_manual"
+    ENTITY_MANUAL = 'entity_manual'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

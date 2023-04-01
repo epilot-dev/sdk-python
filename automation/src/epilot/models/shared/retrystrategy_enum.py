@@ -5,5 +5,5 @@ from enum import Enum
 
 class RetryStrategyEnum(str, Enum):
     r"""different behaviors for retrying failed execution actions."""
-    RETRY_AND_RESUME = "RETRY_AND_RESUME"
-    RETRY_AND_STOP = "RETRY_AND_STOP"
+    RETRY_AND_RESUME = 'RETRY_AND_RESUME'
+    RETRY_AND_STOP = 'RETRY_AND_STOP'

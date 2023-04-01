@@ -9,7 +9,7 @@ from epilot import utils
 from typing import Optional
 
 class TriggerWorkflowActionConfigTypeEnum(str, Enum):
-    TRIGGER_WORKFLOW = "trigger-workflow"
+    TRIGGER_WORKFLOW = 'trigger-workflow'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

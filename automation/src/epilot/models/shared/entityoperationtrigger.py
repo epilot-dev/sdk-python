@@ -19,7 +19,7 @@ class EntityOperationTriggerConfiguration:
     include_activities: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_activities'), 'exclude': lambda f: f is None }})  
     
 class EntityOperationTriggerTypeEnum(str, Enum):
-    ENTITY_OPERATION = "entity_operation"
+    ENTITY_OPERATION = 'entity_operation'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

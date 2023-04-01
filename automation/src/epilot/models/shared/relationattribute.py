@@ -8,9 +8,9 @@ from epilot import utils
 from typing import Any, Optional
 
 class RelationAttributeModeEnum(str, Enum):
-    APPEND = "append"
-    PREPEND = "prepend"
-    SET = "set"
+    APPEND = 'append'
+    PREPEND = 'prepend'
+    SET = 'set'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

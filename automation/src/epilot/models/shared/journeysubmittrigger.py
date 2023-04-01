@@ -14,7 +14,7 @@ class JourneySubmitTriggerConfiguration:
     source_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id') }})  
     
 class JourneySubmitTriggerTypeEnum(str, Enum):
-    JOURNEY_SUBMISSION = "journey_submission"
+    JOURNEY_SUBMISSION = 'journey_submission'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

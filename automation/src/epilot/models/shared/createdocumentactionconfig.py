@@ -9,7 +9,7 @@ from epilot import utils
 from typing import Optional
 
 class CreateDocumentActionConfigTypeEnum(str, Enum):
-    CREATE_DOCUMENT = "create-document"
+    CREATE_DOCUMENT = 'create-document'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

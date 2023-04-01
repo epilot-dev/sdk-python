@@ -9,17 +9,17 @@ from typing import Optional
 
 class SendEmailConfigAttachmentsSourceFilterDocumentTypeEnum(str, Enum):
     r"""Filter by a specific document type (e.g. document)"""
-    DOCUMENT = "document"
-    TEXT = "text"
-    IMAGE = "image"
-    VIDEO = "video"
-    AUDIO = "audio"
-    SPREADSHEET = "spreadsheet"
-    PRESENTATION = "presentation"
-    FONT = "font"
-    ARCHIVE = "archive"
-    APPLICATION = "application"
-    UNKNOWN = "unknown"
+    DOCUMENT = 'document'
+    TEXT = 'text'
+    IMAGE = 'image'
+    VIDEO = 'video'
+    AUDIO = 'audio'
+    SPREADSHEET = 'spreadsheet'
+    PRESENTATION = 'presentation'
+    FONT = 'font'
+    ARCHIVE = 'archive'
+    APPLICATION = 'application'
+    UNKNOWN = 'unknown'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -51,8 +51,8 @@ class SendEmailConfigAttachments:
     r"""Specify filters to match file entities related to main entity"""  
     
 class SendEmailConfigLanguageCodeEnum(str, Enum):
-    DE = "de"
-    EN = "en"
+    DE = 'de'
+    EN = 'en'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -63,7 +63,6 @@ class SendEmailConfig:
     r"""Include extra file attachments in sent email.
     
     Attachments in email template will be sent regardless of this configuration.
-    
     """  
     email_template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_template_id'), 'exclude': lambda f: f is None }})  
     language_code: Optional[SendEmailConfigLanguageCodeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language_code'), 'exclude': lambda f: f is None }})  

@@ -8,7 +8,7 @@ from epilot import utils
 from typing import Optional
 
 class ReceivedEmailTriggerConfigurationMessageTypeEnum(str, Enum):
-    RECEIVED = "RECEIVED"
+    RECEIVED = 'RECEIVED'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -18,7 +18,7 @@ class ReceivedEmailTriggerConfiguration:
     message_type: Optional[ReceivedEmailTriggerConfigurationMessageTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message_type'), 'exclude': lambda f: f is None }})  
     
 class ReceivedEmailTriggerTypeEnum(str, Enum):
-    RECEIVED_EMAIL = "received_email"
+    RECEIVED_EMAIL = 'received_email'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

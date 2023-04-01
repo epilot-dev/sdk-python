@@ -8,7 +8,7 @@ from epilot import utils
 from typing import Any, Optional
 
 class TriggerEventManualTypeEnum(str, Enum):
-    MANUAL = "manual"
+    MANUAL = 'manual'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

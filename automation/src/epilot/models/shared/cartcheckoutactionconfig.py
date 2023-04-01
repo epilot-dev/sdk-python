@@ -9,7 +9,7 @@ from epilot import utils
 from typing import Optional
 
 class CartCheckoutActionConfigTypeEnum(str, Enum):
-    CART_CHECKOUT = "cart-checkout"
+    CART_CHECKOUT = 'cart-checkout'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

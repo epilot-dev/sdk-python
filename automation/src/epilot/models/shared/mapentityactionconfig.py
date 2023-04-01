@@ -9,7 +9,7 @@ from epilot import utils
 from typing import Optional
 
 class MapEntityActionConfigTypeEnum(str, Enum):
-    MAP_ENTITY = "map-entity"
+    MAP_ENTITY = 'map-entity'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

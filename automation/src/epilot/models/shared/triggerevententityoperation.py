@@ -9,7 +9,7 @@ from epilot import utils
 from typing import Optional
 
 class TriggerEventEntityOperationTypeEnum(str, Enum):
-    ENTITY_OPERATION = "entity_operation"
+    ENTITY_OPERATION = 'entity_operation'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

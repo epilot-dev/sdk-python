@@ -9,7 +9,7 @@ from epilot import utils
 from typing import Optional
 
 class SendEmailActionConfigTypeEnum(str, Enum):
-    SEND_EMAIL = "send-email"
+    SEND_EMAIL = 'send-email'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

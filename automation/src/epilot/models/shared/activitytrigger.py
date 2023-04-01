@@ -8,10 +8,10 @@ from epilot import utils
 from typing import Optional
 
 class ActivityTriggerConfigurationTypesEnum(str, Enum):
-    CREATE_METER_READING = "CreateMeterReading"
-    UPDATE_METER_READING = "UpdateMeterReading"
-    MESSAGE_ACTIVITY = "MessageActivity"
-    SYNC_ACTIVITY = "SyncActivity"
+    CREATE_METER_READING = 'CreateMeterReading'
+    UPDATE_METER_READING = 'UpdateMeterReading'
+    MESSAGE_ACTIVITY = 'MessageActivity'
+    SYNC_ACTIVITY = 'SyncActivity'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -22,7 +22,7 @@ class ActivityTriggerConfiguration:
     types: Optional[list[ActivityTriggerConfigurationTypesEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('types'), 'exclude': lambda f: f is None }})  
     
 class ActivityTriggerTypeEnum(str, Enum):
-    ACTIVITY = "activity"
+    ACTIVITY = 'activity'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

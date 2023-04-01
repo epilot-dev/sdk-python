@@ -9,7 +9,7 @@ from epilot import utils
 from typing import Optional
 
 class TriggerWebhookActionConfigTypeEnum(str, Enum):
-    TRIGGER_WEBHOOK = "trigger-webhook"
+    TRIGGER_WEBHOOK = 'trigger-webhook'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
