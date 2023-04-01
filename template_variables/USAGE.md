@@ -12,18 +12,18 @@ s = epilot.Epilot(
 
 req = shared.CustomVariable(
     config={
-        "deserunt": "porro",
-        "nulla": "id",
-        "vero": "perspiciatis",
+        "provident": "distinctio",
+        "quibusdam": "unde",
+        "nulla": "corrupti",
     },
     created_at="2022-04-19T12:41:43.662Z",
     created_by="100042",
     helper_logic="return param1 * param2;",
     helper_params=[
-        "nihil",
-        "fuga",
-        "facilis",
-        "eum",
+        "vel",
+        "error",
+        "deserunt",
+        "suscipit",
     ],
     id="rbse777b-3cf8-4bff-bb0c-253fd1123250",
     key="my_custom_table",

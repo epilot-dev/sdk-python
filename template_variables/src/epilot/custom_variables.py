@@ -41,8 +41,6 @@ class CustomVariables:
 
         res = operations.CreateCustomVariableResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [201, 403]:
-            pass
 
         return res
 
@@ -62,8 +60,6 @@ class CustomVariables:
 
         res = operations.DeleteCustomVariableResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [204, 403]:
-            pass
 
         return res
 
@@ -162,8 +158,6 @@ class CustomVariables:
 
         res = operations.UpdateCustomVariableResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [200, 403]:
-            pass
 
         return res
 

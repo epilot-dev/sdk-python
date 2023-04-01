@@ -8,8 +8,8 @@ from epilot import utils
 from typing import Optional
 
 class VariableResultTypeEnum(str, Enum):
-    SIMPLE = "simple"
-    PARTIAL = "partial"
+    SIMPLE = 'simple'
+    PARTIAL = 'partial'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

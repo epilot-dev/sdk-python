@@ -10,8 +10,8 @@ from epilot import utils
 from typing import Any, Optional
 
 class VariableParametersLanguageEnum(str, Enum):
-    EN = "en"
-    DE = "de"
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

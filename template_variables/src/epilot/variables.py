@@ -39,8 +39,6 @@ class Variables:
 
         res = operations.GenerateQRcodeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
-            pass
 
         return res
 
@@ -73,7 +71,6 @@ class Variables:
         Get full variable context
         
         Calls Entity API, User API, Brand API and others to construct full context object used for template variable replace
-        
         """
         base_url = self._server_url
         
@@ -103,7 +100,6 @@ class Variables:
         Replace variables in handlebars templates
         
         Takes in an array of input templates and outputs the output text with replaced variables
-        
         """
         base_url = self._server_url
         

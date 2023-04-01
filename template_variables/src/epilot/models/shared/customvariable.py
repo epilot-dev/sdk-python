@@ -9,8 +9,8 @@ from typing import Any, Optional
 
 class CustomVariableTypeEnum(str, Enum):
     r"""Custom variable type"""
-    ORDER_TABLE = "order_table"
-    CUSTOM = "custom"
+    ORDER_TABLE = 'order_table'
+    CUSTOM = 'custom'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

@@ -9,8 +9,8 @@ from typing import Optional
 
 class GetCategoriesLangEnum(str, Enum):
     r"""Language"""
-    EN = "en"
-    DE = "de"
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclasses.dataclass

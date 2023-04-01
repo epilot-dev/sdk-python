@@ -11,8 +11,8 @@ from epilot import utils
 from typing import Optional
 
 class SearchVariablesRequestBodyLangEnum(str, Enum):
-    EN = "en"
-    DE = "de"
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
