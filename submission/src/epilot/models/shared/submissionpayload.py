@@ -14,9 +14,7 @@ class SubmissionPayload:
     r"""Holds content and meta information"""
     
     entities: list[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entities') }})
-    r"""Entities to create from submission
-    
-    """  
+    r"""Entities to create from submission"""  
     organization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id') }})
     r"""organization id"""  
     source_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id') }})
@@ -28,7 +26,5 @@ class SubmissionPayload:
     journey_submit_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_submit_id'), 'exclude': lambda f: f is None }})
     r"""journey submit uid"""  
     opt_ins: Optional[list[shared_optin.OptIn]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('opt_ins'), 'exclude': lambda f: f is None }})
-    r"""Opt-ins to create from submission
-    
-    """  
+    r"""Opt-ins to create from submission"""  
     

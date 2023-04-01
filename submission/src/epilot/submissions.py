@@ -24,7 +24,6 @@ class Submissions:
     def create_submission(self, request: shared.SubmissionPayload) -> operations.CreateSubmissionResponse:
         r"""createSubmission
         Creates a submission from a public facing Journey
-        
         """
         base_url = self._server_url
         
@@ -42,8 +41,6 @@ class Submissions:
 
         res = operations.CreateSubmissionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 201:
-            pass
 
         return res
 

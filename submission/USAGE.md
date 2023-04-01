@@ -8,26 +8,26 @@ s = epilot.Epilot()
 
 req = shared.SubmissionPayload(
     ivy_opportunity_ids=[
-        "deserunt",
-        "porro",
-        "nulla",
+        "provident",
+        "distinctio",
+        "quibusdam",
     ],
     entities=[
         {
-            "perspiciatis": "nulla",
-            "nihil": "fuga",
-            "facilis": "eum",
-            "iusto": "ullam",
+            "corrupti": "illum",
+            "vel": "error",
+            "deserunt": "suscipit",
+            "iure": "magnam",
         },
         {
-            "inventore": "sapiente",
-            "enim": "eum",
-            "voluptatum": "autem",
-            "vel": "non",
+            "ipsa": "delectus",
+            "tempora": "suscipit",
+            "molestiae": "minus",
+            "placeat": "voluptatum",
         },
         {
-            "similique": "reprehenderit",
-            "molestiae": "quo",
+            "excepturi": "nisi",
+            "recusandae": "temporibus",
         },
     ],
     journey_submit_id="123",
@@ -35,8 +35,8 @@ req = shared.SubmissionPayload(
         shared.OptIn(
             identifier="example@email.com",
             meta={
-                "dicta": "est",
-                "voluptatem": "consequatur",
+                "veritatis": "deserunt",
+                "perferendis": "ipsam",
             },
             topic="EMAIL_MARKETING",
         ),
