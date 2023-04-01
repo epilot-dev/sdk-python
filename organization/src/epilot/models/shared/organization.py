@@ -19,8 +19,8 @@ class OrganizationAddress:
     street_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_number'), 'exclude': lambda f: f is None }})  
     
 class OrganizationTypeEnum(str, Enum):
-    VENDOR = "Vendor"
-    PARTNER = "Partner"
+    VENDOR = 'Vendor'
+    PARTNER = 'Partner'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
