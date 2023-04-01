@@ -14,15 +14,14 @@ class Epilot:
     r"""Auth API to provide JWT tokens for internal API access that work with the epilot custom authorizer.
     
     Converts AWS credentials into a JWT token with caller's ARN `callerIdentity` and list of `policies` granting access to API Gateway as claims.
-    
     """
 
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.2.2"
-    _gen_version: str = "2.16.5"
+    _sdk_version: str = "1.2.3"
+    _gen_version: str = "2.16.7"
 
     def __init__(self,
                  server_url: str = None,
@@ -85,7 +84,6 @@ class Epilot:
         
         Note: This API is not a fully compliant OAuth2.0 / OIDC identity provider, but this endpoint is useful to
         automate the process of verifying JWT tokens.
-        
         """
         base_url = self._server_url
         
@@ -106,7 +104,7 @@ class Epilot:
 
         return res
 
-    def get_token(self, security: operations.GetTokenSecurity) -> operations.GetTokenResponse:
+    def get_token(self) -> operations.GetTokenResponse:
         r"""getToken
         Generates token for internal API access
         
@@ -132,14 +130,13 @@ class Epilot:
           \"exp\": 1614281997
         }
         ```
-        
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/auth'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._client
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -181,7 +178,6 @@ class Epilot:
           \"exp\": 1614281997
         }
         ```
-        
         """
         base_url = self._server_url
         

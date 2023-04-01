@@ -8,12 +8,6 @@ from epilot import utils
 from typing import Optional
 
 
-@dataclasses.dataclass
-class GetTokenSecurity:
-    
-    sigv4: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'Authorization' }})  
-    
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetToken200ApplicationJSON:

@@ -5,4 +5,4 @@ from .getopenidconfiguration import *
 from .gettoken import *
 from .gettokenv2 import *
 
-__all__ = ["GetJwks200ApplicationJSON","GetJwks200ApplicationJSONKeys","GetJwksResponse","GetOpenIDConfiguration200ApplicationJSON","GetOpenIDConfigurationResponse","GetToken200ApplicationJSON","GetTokenResponse","GetTokenSecurity","GetTokenV2200ApplicationJSON","GetTokenV2Response","GetTokenV2Security"]
+__all__ = ["GetJwks200ApplicationJSON","GetJwks200ApplicationJSONKeys","GetJwksResponse","GetOpenIDConfiguration200ApplicationJSON","GetOpenIDConfigurationResponse","GetToken200ApplicationJSON","GetTokenResponse","GetTokenV2200ApplicationJSON","GetTokenV2Response","GetTokenV2Security"]

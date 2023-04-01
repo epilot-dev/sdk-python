@@ -25,7 +25,7 @@ if res.get_jwks_200_application_json_object is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 ### Epilot SDK
 
