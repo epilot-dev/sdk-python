@@ -16,7 +16,7 @@ class AssignableOrganizationImageURI:
     thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})  
     
 class AssignableOrganizationTypeEnum(str, Enum):
-    PARTNER_ORGANIZATION = "partner_organization"
+    PARTNER_ORGANIZATION = 'partner_organization'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

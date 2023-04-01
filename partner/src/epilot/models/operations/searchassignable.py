@@ -9,9 +9,9 @@ from epilot import utils
 from typing import Any, Optional
 
 class SearchAssignableRequestBodyTypesEnum(str, Enum):
-    USER = "user"
-    PARTNER_USER = "partner_user"
-    PARTNER_ORGANIZATION = "partner_organization"
+    USER = 'user'
+    PARTNER_USER = 'partner_user'
+    PARTNER_ORGANIZATION = 'partner_organization'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

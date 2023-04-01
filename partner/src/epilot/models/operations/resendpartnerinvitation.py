@@ -11,8 +11,8 @@ from typing import Optional
 
 class ResendPartnerInvitationRequestBodyLanguageEnum(str, Enum):
     r"""Language for partner invitation email"""
-    EN = "en"
-    DE = "de"
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

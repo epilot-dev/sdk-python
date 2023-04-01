@@ -13,10 +13,10 @@ s = epilot.Epilot(
 req = operations.ActivatePartnerRequest(
     activate_partner_payload=shared.ActivatePartnerPayload(
         company_name="Company name",
-        organization_id="unde",
-        signed_up_email="Michale_Sporer@yahoo.com",
+        organization_id="corrupti",
+        signed_up_email="Micheal_Sporer@yahoo.com",
     ),
-    token="perspiciatis",
+    token="corrupti",
 )
     
 res = s.partners.activate_partner(req)

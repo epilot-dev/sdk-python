@@ -8,11 +8,11 @@ from epilot import utils
 from typing import Optional
 
 class PartnerStatusEnum(str, Enum):
-    PENDING = "Pending"
-    REQUEST = "Request"
-    DELETED = "Deleted"
-    INVITED = "Invited"
-    REJECTED = "Rejected"
+    PENDING = 'Pending'
+    REQUEST = 'Request'
+    DELETED = 'Deleted'
+    INVITED = 'Invited'
+    REJECTED = 'Rejected'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

@@ -16,7 +16,7 @@ class AssignableUserImageURI:
     thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})  
     
 class AssignableUserTypeEnum(str, Enum):
-    USER = "user"
+    USER = 'user'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

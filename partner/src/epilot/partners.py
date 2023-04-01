@@ -43,8 +43,6 @@ class Partners:
 
         res = operations.ActivatePartnerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [200, 404]:
-            pass
 
         return res
 
@@ -76,7 +74,6 @@ class Partners:
     def batch_get_assignable(self, request: list[operations.BatchGetAssignableRequestBody]) -> operations.BatchGetAssignableResponse:
         r"""batchGet
         Search for assignable users from this organization by its ids
-        
         """
         base_url = self._server_url
         
@@ -218,7 +215,6 @@ class Partners:
          - Users in your organization
          - Users in partner organizations
          - Partner organizations
-        
         """
         base_url = self._server_url
         
