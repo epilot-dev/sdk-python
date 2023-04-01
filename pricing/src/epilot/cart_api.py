@@ -3,14 +3,13 @@
 import requests as requests_http
 from . import utils
 from epilot.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class CartAPI:
     r"""Used to interact with a cart during a customer's checkout session, providing:
      - An unified data model to model a Shopping Cart
      - Product and pricing data validation
      - Checkout a cart into an order or quote
-    
     """
     _client: requests_http.Session
     _security_client: requests_http.Session
@@ -40,14 +39,13 @@ class CartAPI:
         When a fast checkout is performed the cart is considered transient and there is no cart persistance.
         
         If the checkout `mode` is omitted, the `mode` will default to `create_order`.
-        
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/public/cart:checkout'
         
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "checkout_cart", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "checkout_cart_input", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -66,7 +64,7 @@ class CartAPI:
                 res.checkout_cart_result = out
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Error])
                 res.error = out
 
         return res

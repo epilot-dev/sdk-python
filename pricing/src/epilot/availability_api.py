@@ -3,12 +3,10 @@
 import requests as requests_http
 from . import utils
 from epilot.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class AvailabilityAPI:
-    r"""Provides endpoints for querying products availability by a set of predefined dimensions.
-    
-    """
+    r"""Provides endpoints for querying products availability by a set of predefined dimensions."""
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -52,7 +50,7 @@ class AvailabilityAPI:
                 res.availability_result = out
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Error])
                 res.error = out
 
         return res

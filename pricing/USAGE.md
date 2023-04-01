@@ -15,20 +15,20 @@ req = operations.DollarAvailabilityCheckRequest(
         filters=shared.AvailabilityFilters(
             available_date="2017-07-21",
             location=shared.AvailabilityLocation(
-                city="Larrychester",
+                city="Laruecester",
                 country="Suriname",
                 postal_code="85846-6342",
-                street="092 Schiller Junction",
-                street_number="vel",
+                street="092 Jasper Skyway",
+                street_number="placeat",
             ),
         ),
         products=[
-            "deleniti",
-            "similique",
-            "reprehenderit",
+            "iusto",
+            "excepturi",
+            "nisi",
         ],
     ),
-    x_ivy_org_id="molestiae",
+    x_ivy_org_id="recusandae",
 )
     
 res = s.availability_api.dollar_availability_check(req)

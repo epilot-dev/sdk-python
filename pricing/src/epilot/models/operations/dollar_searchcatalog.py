@@ -5,7 +5,8 @@ import dataclasses
 import requests as requests_http
 from ..shared import catalogsearch as shared_catalogsearch
 from ..shared import catalogsearchresult as shared_catalogsearchresult
-from typing import Any, Optional
+from ..shared import error as shared_error
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -23,7 +24,7 @@ class DollarSearchCatalogResponse:
     status_code: int = dataclasses.field()  
     catalog_search_result: Optional[shared_catalogsearchresult.CatalogSearchResult] = dataclasses.field(default=None)
     r"""The search result"""  
-    error: Optional[Any] = dataclasses.field(default=None)
+    error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""Invalid payload"""  
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
     

@@ -2,14 +2,13 @@
 
 import requests as requests_http
 from . import utils
-from epilot.models import operations
+from epilot.models import operations, shared
 from typing import Any, Optional
 
 class OrderAPI:
     r"""This api enables the management of orders in epilot 360, providing features such as:
      - Automatic calculation of totals and price breakdowns for taxes on the Order entity
      - Product and pricing data validation
-    
     """
     _client: requests_http.Session
     _security_client: requests_http.Session
@@ -54,7 +53,7 @@ class OrderAPI:
                 res.order = out
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Error])
                 res.error = out
 
         return res
@@ -87,7 +86,7 @@ class OrderAPI:
                 res.order = out
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Error])
                 res.error = out
 
         return res

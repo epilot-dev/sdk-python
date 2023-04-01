@@ -34,37 +34,30 @@ class Epilot:
     
     ### Availability API
     Provides endpoints for querying products availability by a set of predefined dimensions.
-    
     """
     availability_api: AvailabilityAPI
-    r"""Provides endpoints for querying products availability by a set of predefined dimensions.
-    
-    """
+    r"""Provides endpoints for querying products availability by a set of predefined dimensions."""
     cart_api: CartAPI
     r"""Used to interact with a cart during a customer's checkout session, providing:
      - An unified data model to model a Shopping Cart
      - Product and pricing data validation
      - Checkout a cart into an order or quote
-    
     """
     catalog_api: CatalogAPI
-    r"""Provides a way to query the entire catalog of products and prices.
-    
-    """
+    r"""Provides a way to query the entire catalog of products and prices."""
     deprecated: Deprecated
     order_api: OrderAPI
     r"""This api enables the management of orders in epilot 360, providing features such as:
      - Automatic calculation of totals and price breakdowns for taxes on the Order entity
      - Product and pricing data validation
-    
     """
 
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.1.2"
-    _gen_version: str = "2.16.5"
+    _sdk_version: str = "1.1.3"
+    _gen_version: str = "2.16.7"
 
     def __init__(self,
                  security: shared.Security = None,

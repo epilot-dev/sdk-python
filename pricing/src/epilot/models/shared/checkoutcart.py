@@ -10,7 +10,7 @@ from typing import Any, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CheckoutCart:
+class CheckoutCartInput:
     r"""The cart checkout request payload"""
     
     cart: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cart'), 'exclude': lambda f: f is None }})  

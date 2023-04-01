@@ -18,6 +18,7 @@ src/epilot/models/operations/dollar_createopportunity.py
 src/epilot/models/operations/createorder.py
 src/epilot/models/operations/putorder.py
 src/epilot/models/operations/__init__.py
+src/epilot/models/shared/error.py
 src/epilot/models/shared/availabilityresult.py
 src/epilot/models/shared/availabilitycheckparams.py
 src/epilot/models/shared/availabilityfilters.py
@@ -25,6 +26,13 @@ src/epilot/models/shared/availabilitylocation.py
 src/epilot/models/shared/checkoutcartresult.py
 src/epilot/models/shared/checkoutcart.py
 src/epilot/models/shared/checkoutmode_enum.py
+src/epilot/models/shared/cartdto.py
+src/epilot/models/shared/orderstatus_enum.py
+src/epilot/models/shared/ordersource.py
+src/epilot/models/shared/paymentmethod.py
+src/epilot/models/shared/metadata.py
+src/epilot/models/shared/priceitemsdto.py
+src/epilot/models/shared/customer.py
 src/epilot/models/shared/catalogsearchresult.py
 src/epilot/models/shared/catalogsearch.py
 src/epilot/models/shared/security.py

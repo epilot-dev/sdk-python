@@ -5,7 +5,8 @@ import dataclasses
 import requests as requests_http
 from ..shared import availabilitycheckparams as shared_availabilitycheckparams
 from ..shared import availabilityresult as shared_availabilityresult
-from typing import Any, Optional
+from ..shared import error as shared_error
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -23,7 +24,7 @@ class DollarAvailabilityCheckResponse:
     status_code: int = dataclasses.field()  
     availability_result: Optional[shared_availabilityresult.AvailabilityResult] = dataclasses.field(default=None)
     r"""The availability check result"""  
-    error: Optional[Any] = dataclasses.field(default=None)
+    error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""Invalid payload"""  
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
     

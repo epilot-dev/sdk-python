@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import error as shared_error
 from typing import Any, Optional
 
 
@@ -19,7 +20,7 @@ class DollarCreateOpportunityResponse:
     
     content_type: str = dataclasses.field()  
     status_code: int = dataclasses.field()  
-    error: Optional[Any] = dataclasses.field(default=None)
+    error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""Invalid payload"""  
     opportunity: Optional[dict[str, Any]] = dataclasses.field(default=None)
     r"""The new Opportunity."""  

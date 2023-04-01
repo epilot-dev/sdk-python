@@ -2,7 +2,7 @@
 
 import requests as requests_http
 from . import utils
-from epilot.models import operations
+from epilot.models import operations, shared
 from typing import Any, Optional
 
 class Deprecated:
@@ -27,7 +27,6 @@ class Deprecated:
         
         Enables the creation of a new opportunity. During the creation of an opportunity, an unique customer-readable `opportunity_number` will be generated.
         The `opportunity_number` can be used to universally identify an opportunity within epilot platform.
-        
         """
         base_url = self._server_url
         
@@ -53,7 +52,7 @@ class Deprecated:
                 res.opportunity = out
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Error])
                 res.error = out
 
         return res
