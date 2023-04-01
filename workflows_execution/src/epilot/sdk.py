@@ -11,9 +11,7 @@ SERVERS = [
 """Contains the list of servers available to the SDK"""
 
 class Epilot:
-    r"""Service for Workflow Executions which covers executions of processes defined in an Organization
-    
-    """
+    r"""Service for Workflow Executions which covers executions of processes defined in an Organization"""
     workflows: Workflows
     r"""Interact with workflow executions - start / close / retrieve one or all / search / delete"""
 
@@ -21,8 +19,8 @@ class Epilot:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.2.2"
-    _gen_version: str = "2.16.5"
+    _sdk_version: str = "1.2.3"
+    _gen_version: str = "2.16.7"
 
     def __init__(self,
                  security: shared.Security = None,

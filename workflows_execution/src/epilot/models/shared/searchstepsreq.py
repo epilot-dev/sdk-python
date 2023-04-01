@@ -10,9 +10,9 @@ from epilot import utils
 from typing import Optional
 
 class SearchStepsReqStatusEnum(str, Enum):
-    OPEN = "OPEN"
-    COMPLETE = "COMPLETE"
-    NEXT_OPEN_ITEM_IN_WORKFLOW = "NEXT_OPEN_ITEM_IN_WORKFLOW"
+    OPEN = 'OPEN'
+    COMPLETE = 'COMPLETE'
+    NEXT_OPEN_ITEM_IN_WORKFLOW = 'NEXT_OPEN_ITEM_IN_WORKFLOW'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

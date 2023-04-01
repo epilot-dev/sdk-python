@@ -8,13 +8,13 @@ from epilot import utils
 from typing import Optional
 
 class DynamicDueDateActionTypeConditionEnum(str, Enum):
-    WORKFLOW_STARTED = "WORKFLOW_STARTED"
-    STEP_CLOSED = "STEP_CLOSED"
+    WORKFLOW_STARTED = 'WORKFLOW_STARTED'
+    STEP_CLOSED = 'STEP_CLOSED'
 
 class DynamicDueDateTimePeriodEnum(str, Enum):
-    DAYS = "days"
-    WEEKS = "weeks"
-    MONTHS = "months"
+    DAYS = 'days'
+    WEEKS = 'weeks'
+    MONTHS = 'months'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

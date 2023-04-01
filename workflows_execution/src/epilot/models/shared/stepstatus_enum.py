@@ -4,8 +4,8 @@ from __future__ import annotations
 from enum import Enum
 
 class StepStatusEnum(str, Enum):
-    UNASSIGNED = "UNASSIGNED"
-    ASSIGNED = "ASSIGNED"
-    COMPLETED = "COMPLETED"
-    SKIPPED = "SKIPPED"
-    IN_PROGRESS = "IN_PROGRESS"
+    UNASSIGNED = 'UNASSIGNED'
+    ASSIGNED = 'ASSIGNED'
+    COMPLETED = 'COMPLETED'
+    SKIPPED = 'SKIPPED'
+    IN_PROGRESS = 'IN_PROGRESS'

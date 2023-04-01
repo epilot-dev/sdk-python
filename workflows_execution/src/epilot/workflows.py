@@ -143,7 +143,6 @@ class Workflows:
         Shows all Closing Reasons defined at the moment of starting the Workflow Execution.
         The Closing Reasons shown in the execution are just snapshots
         from the state of the Definition when the instance was created.
-        
         """
         base_url = self._server_url
         

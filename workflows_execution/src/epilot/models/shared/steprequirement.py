@@ -8,7 +8,7 @@ from enum import Enum
 from epilot import utils
 
 class StepRequirementConditionEnum(str, Enum):
-    CLOSED = "CLOSED"
+    CLOSED = 'CLOSED'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
