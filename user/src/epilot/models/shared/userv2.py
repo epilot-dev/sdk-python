@@ -16,10 +16,10 @@ class UserV2Properties:
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})  
     
 class UserV2StatusEnum(str, Enum):
-    ACTIVE = "Active"
-    PENDING = "Pending"
-    DEACTIVATED = "Deactivated"
-    DELETED = "Deleted"
+    ACTIVE = 'Active'
+    PENDING = 'Pending'
+    DEACTIVATED = 'Deactivated'
+    DELETED = 'Deleted'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

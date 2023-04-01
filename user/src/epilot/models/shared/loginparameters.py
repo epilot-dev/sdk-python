@@ -8,8 +8,8 @@ from epilot import utils
 from typing import Optional
 
 class LoginParametersOauthResponseTypeEnum(str, Enum):
-    CODE = "code"
-    TOKEN = "token"
+    CODE = 'code'
+    TOKEN = 'token'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

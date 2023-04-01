@@ -10,8 +10,8 @@ from typing import Any, Optional
 
 class SignupUserPayloadLanguageEnum(str, Enum):
     r"""Language for user invitation email"""
-    EN = "en"
-    DE = "de"
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
