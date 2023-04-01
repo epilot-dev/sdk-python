@@ -176,7 +176,6 @@ class Epilot:
       Additional to this path parameters, the payload to update the webhook configuration is the same we use for creating new webhooks. You can also refer to [Which events are available](#section/Create-Webhook) for more details.
     
       To deactivate or reactivate a webhook configuration, you can make use of this endpoint, providing the organization id and webhook id as path parameter, and your payload should contain same configuration saved except the field `enabled` should either `false` if you want to deactivate the webhook otherwise `true` if the webhook should be active.
-    
     """
     webhooks: Webhooks
 
@@ -184,8 +183,8 @@ class Epilot:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.2.2"
-    _gen_version: str = "2.16.5"
+    _sdk_version: str = "1.2.3"
+    _gen_version: str = "2.16.7"
 
     def __init__(self,
                  security: shared.Security = None,
