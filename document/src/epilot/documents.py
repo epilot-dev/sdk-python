@@ -33,7 +33,6 @@ class Documents:
         - .pdf
         
         Uses [Template Variables API](https://docs.epilot.io/api/template-variables) to replace variables in the document.
-        
         """
         base_url = self._server_url
         
