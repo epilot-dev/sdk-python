@@ -36,7 +36,6 @@ class AccessTokens:
         
         Generates a Public Access Token related to a journey.
         The journey id should be specfied.
-        
         """
         base_url = self._server_url
         

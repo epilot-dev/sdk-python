@@ -24,7 +24,7 @@ class CreateAccessToken201ApplicationJSON:
     assignments: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
     r"""List of role ids attached to an user"""  
     journey_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_id'), 'exclude': lambda f: f is None }})
-    r"""Journey ID for access token type \"journey\""""  
+    r"""Journey ID for access token type \\"journey\\" """  
     token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})
     r"""A JWT Access Token"""  
     token_type: Optional[shared_accesstokentype_enum.AccessTokenTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})

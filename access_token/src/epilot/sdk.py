@@ -12,9 +12,7 @@ SERVERS = [
 """Contains the list of servers available to the SDK"""
 
 class Epilot:
-    r"""Generate Access Tokens for 3rd party applications that need access to epilot APIs.
-    
-    """
+    r"""Generate Access Tokens for 3rd party applications that need access to epilot APIs."""
     access_tokens: AccessTokens
     r"""Create Access Tokens for epilot APIs"""
     public: Public
@@ -24,8 +22,8 @@ class Epilot:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.2.2"
-    _gen_version: str = "2.16.5"
+    _sdk_version: str = "1.2.3"
+    _gen_version: str = "2.16.7"
 
     def __init__(self,
                  security: shared.Security = None,

@@ -51,7 +51,6 @@ class Public:
         
         Note: This API is not a fully compliant OAuth2.0 / OIDC identity provider, but this endpoint is useful to
         automate the process of verifying JWT tokens.
-        
         """
         base_url = self._server_url
         
@@ -101,7 +100,6 @@ class Public:
         
         Note: This API is not a fully compliant OAuth2.0 / OIDC identity provider, but this endpoint is useful to
         automate the process of verifying JWT tokens.
-        
         """
         base_url = self._server_url
         

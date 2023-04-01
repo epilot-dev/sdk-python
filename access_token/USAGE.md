@@ -11,7 +11,7 @@ s = epilot.Epilot(
 
 
 req = shared.JourneyTokenParameters(
-    journey_id="deserunt",
+    journey_id="provident",
     name="Postman Access Token",
     token_type="journey",
 )

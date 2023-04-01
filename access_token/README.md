@@ -22,7 +22,7 @@ s = epilot.Epilot(
 
 
 req = shared.JourneyTokenParameters(
-    journey_id="deserunt",
+    journey_id="provident",
     name="Postman Access Token",
     token_type="journey",
 )
@@ -35,7 +35,7 @@ if res.create_access_token_201_application_json_object is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
 ### access_tokens

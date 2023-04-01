@@ -5,5 +5,5 @@ from enum import Enum
 
 class AccessTokenTypeEnum(str, Enum):
     r"""Access token type"""
-    API = "api"
-    JOURNEY = "journey"
+    API = 'api'
+    JOURNEY = 'journey'

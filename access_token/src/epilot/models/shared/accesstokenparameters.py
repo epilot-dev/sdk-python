@@ -8,7 +8,7 @@ from epilot import utils
 from typing import Optional
 
 class AccessTokenParametersTokenTypeEnum(str, Enum):
-    API = "api"
+    API = 'api'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
