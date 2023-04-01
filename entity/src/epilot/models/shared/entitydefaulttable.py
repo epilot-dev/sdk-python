@@ -8,7 +8,7 @@ from epilot import utils
 from typing import Any, Optional
 
 class EntityDefaultTableDropdownItems2TypeEnum(str, Enum):
-    LINK = "link"
+    LINK = 'link'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -24,7 +24,7 @@ class EntityDefaultTableDropdownItems2:
     uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uri'), 'exclude': lambda f: f is None }})  
     
 class EntityDefaultTableDropdownItems1TypeEnum(str, Enum):
-    ENTITY = "entity"
+    ENTITY = 'entity'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -56,7 +56,7 @@ class EntityDefaultTableNavbarActions:
     options: Optional[list[EntityDefaultTableNavbarActionsOptions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options'), 'exclude': lambda f: f is None }})  
     
 class EntityDefaultTableViewTypeEnum(str, Enum):
-    DEFAULT = "default"
+    DEFAULT = 'default'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

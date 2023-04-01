@@ -22,7 +22,6 @@ class Epilot:
     Use this API configure and access your business objects like Contacts, Opportunities and Products.
     
     [Feature Documentation](https://docs.epilot.io/docs/entities/flexible-entities)
-    
     """
     activity: Activity
     r"""Entity Events"""
@@ -43,8 +42,8 @@ class Epilot:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.2.3"
-    _gen_version: str = "2.16.5"
+    _sdk_version: str = "1.2.4"
+    _gen_version: str = "2.16.7"
 
     def __init__(self,
                  security: shared.Security = None,

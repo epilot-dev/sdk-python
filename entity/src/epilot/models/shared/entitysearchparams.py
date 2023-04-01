@@ -15,7 +15,7 @@ class EntitySearchParams:
     r"""Lucene queries supported with ElasticSearch"""  
     aggs: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aggs'), 'exclude': lambda f: f is None }})
     r"""Aggregation supported by ElasticSearch allows summarizing data as metrics, statistics, or other analytics."""  
-    fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
+    fields_: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
     r"""List of entity fields to include in search results"""  
     from_: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})  
     hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hydrate'), 'exclude': lambda f: f is None }})

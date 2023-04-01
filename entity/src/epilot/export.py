@@ -42,8 +42,6 @@ class Export:
 
         res = operations.ExportEntitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 201:
-            pass
 
         return res
 
@@ -68,8 +66,6 @@ class Export:
 
         res = operations.ImportEntitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 201:
-            pass
 
         return res
 

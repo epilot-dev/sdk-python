@@ -65,7 +65,7 @@ class EntitySchemaUIConfig:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntitySchema:
-    r"""The \"type\" of an Entity. Describes the shape. Includes Entity Attributes, Relations and Capabilities."""
+    r"""The \\"type\\" of an Entity. Describes the shape. Includes Entity Attributes, Relations and Capabilities."""
     
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""User-friendly identifier for the entity schema"""  
@@ -82,9 +82,7 @@ class EntitySchema:
     enable_setting: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_setting'), 'exclude': lambda f: f is None }})
     r"""This schema should only be active when one of the organization settings is enabled"""  
     explicit_search_mappings: Optional[dict[str, shared_searchmappings.SearchMappings]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('explicit_search_mappings'), 'exclude': lambda f: f is None }})
-    r"""Advanced: explicit Elasticsearch index mapping definitions for entity data
-    
-    """  
+    r"""Advanced: explicit Elasticsearch index mapping definitions for entity data"""  
     feature_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_flag'), 'exclude': lambda f: f is None }})
     r"""This schema should only be active when the feature flag is enabled"""  
     group_settings: Optional[list[EntitySchemaGroupSettings]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group_settings'), 'exclude': lambda f: f is None }})
@@ -94,7 +92,6 @@ class EntitySchema:
     r"""Custom grid definitions for the layout. These settings are composed by managed and un-managed properties:
     - Managed Properties: are interpreted and transformed into layout styles
     - Un-managed Properties: are appended as styles into the attribute mounting node
-    
     """  
     published: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('published'), 'exclude': lambda f: f is None }})  
     title_template: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title_template'), 'exclude': lambda f: f is None }})

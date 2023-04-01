@@ -17,9 +17,9 @@ class EntityOperationDiff:
     updated: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})  
     
 class EntityOperationOperationEnum(str, Enum):
-    CREATE_ENTITY = "createEntity"
-    UPDATE_ENTITY = "updateEntity"
-    DELETE_ENTITY = "deleteEntity"
+    CREATE_ENTITY = 'createEntity'
+    UPDATE_ENTITY = 'updateEntity'
+    DELETE_ENTITY = 'deleteEntity'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

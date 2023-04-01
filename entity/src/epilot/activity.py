@@ -52,7 +52,6 @@ class Activity:
         
         - All activites are published as events on the event bus
         - Entity mutations are always part of an activity
-        
         """
         base_url = self._server_url
         
@@ -105,7 +104,6 @@ class Activity:
     def get_entity_activity_feed(self, request: operations.GetEntityActivityFeedRequest) -> operations.GetEntityActivityFeedResponse:
         r"""getEntityActivityFeed
         Get activity feed for an entity
-        
         """
         base_url = self._server_url
         

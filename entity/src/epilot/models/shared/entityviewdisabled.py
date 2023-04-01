@@ -8,7 +8,7 @@ from epilot import utils
 from typing import Optional
 
 class EntityViewDisabledViewTypeEnum(str, Enum):
-    DISABLED = "disabled"
+    DISABLED = 'disabled'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

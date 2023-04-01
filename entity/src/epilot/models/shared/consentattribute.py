@@ -17,26 +17,22 @@ class ConsentAttributeInfoHelpers:
     r"""The name of the custom component to be used as the hint helper.
     The component should be registered in the `@epilot360/entity-ui` on the index of the components directory.
     When specified it overrides the `hint_text` or `hint_text_key` configuration.
-    
     """  
     hint_text: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_text'), 'exclude': lambda f: f is None }})
     r"""The text to be displayed in the attribute hint helper.
     When specified it overrides the `hint_text_key` configuration.
-    
     """  
     hint_text_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_text_key'), 'exclude': lambda f: f is None }})
     r"""The key of the hint text to be displayed in the attribute hint helper.
     The key should be a valid i18n key.
-    
     """  
     hint_tooltip_placement: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_tooltip_placement'), 'exclude': lambda f: f is None }})
     r"""The placement of the hint tooltip.
     The value should be a valid `@mui/core` tooltip placement.
-    
     """  
     
 class ConsentAttributeTypeEnum(str, Enum):
-    CONSENT = "consent"
+    CONSENT = 'consent'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -52,7 +48,6 @@ class ConsentAttribute:
     constraints: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
-    
     """  
     default_value: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_value'), 'exclude': lambda f: f is None }})  
     deprecated: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deprecated'), 'exclude': lambda f: f is None }})  
@@ -69,7 +64,6 @@ class ConsentAttribute:
     icon: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon'), 'exclude': lambda f: f is None }})
     r"""Code name of the icon to used to represent this attribute.
     The value must be a valid @epilot/base-elements Icon name
-    
     """  
     identifiers: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifiers'), 'exclude': lambda f: f is None }})  
     info_helpers: Optional[ConsentAttributeInfoHelpers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('info_helpers'), 'exclude': lambda f: f is None }})
@@ -86,7 +80,6 @@ class ConsentAttribute:
     r"""Defines the conditional rendering expression for showing this field.
     When a valid expression is parsed, their evaluation defines the visibility of this attribute.
     Note: Empty or invalid expression have no effect on the field visibility.
-    
     """  
     required: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('required'), 'exclude': lambda f: f is None }})  
     setting_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('setting_flag'), 'exclude': lambda f: f is None }})

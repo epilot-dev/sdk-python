@@ -8,7 +8,7 @@ from epilot import utils
 from typing import Optional
 
 class RedirectEntityViewViewTypeEnum(str, Enum):
-    REDIRECT = "redirect"
+    REDIRECT = 'redirect'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

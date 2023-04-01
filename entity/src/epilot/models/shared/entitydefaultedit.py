@@ -16,7 +16,7 @@ class EntityDefaultEditTableMenuOptions:
     label: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label'), 'exclude': lambda f: f is None }})  
     
 class EntityDefaultEditViewTypeEnum(str, Enum):
-    DEFAULT = "default"
+    DEFAULT = 'default'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

@@ -21,7 +21,6 @@ class SummaryAttribute:
     }
     ```
     The value field supports handlebar expressions from which you can pick any field from the entity state.
-    
     """
     
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
@@ -34,7 +33,6 @@ class SummaryAttribute:
     r"""Defines the conditional rendering expression for showing this field.
     When a valid expression is parsed, their evaluation defines the visibility of this attribute.
     Note: Empty or invalid expression have no effect on the field visibility.
-    
     """  
     setting_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('setting_flag'), 'exclude': lambda f: f is None }})
     r"""Binds summary field visibility to the setting flag state."""  

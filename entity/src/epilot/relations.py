@@ -67,8 +67,6 @@ class Relations:
 
         res = operations.DeleteRelationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 204:
-            pass
 
         return res
 
@@ -79,7 +77,6 @@ class Relations:
         You can control whether to return the full entity or just the relation item with the `?hydrate` query param.
         
         Reverse relations i.e. entities referring to this entity are included with the `?include_reverse` query param.
-        
         """
         base_url = self._server_url
         
@@ -108,7 +105,6 @@ class Relations:
         You can control whether to return the full entity or just the relation item with the `?hydrate` query param.
         
         Reverse relations i.e. entities referring to this entity are included with the `?include_reverse` query param.
-        
         """
         base_url = self._server_url
         

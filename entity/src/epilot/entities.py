@@ -25,7 +25,6 @@ class Entities:
     def autocomplete(self, request: operations.AutocompleteRequest) -> operations.AutocompleteResponse:
         r"""autocomplete
         Autocomplete entity attributes
-        
         """
         base_url = self._server_url
         
@@ -74,7 +73,6 @@ class Entities:
         The items in `$relation` support two properties:
         - `entity_id` - The ID of the entity to link
         - `_tags` - Tags or labels for the relation (optional)
-        
         """
         base_url = self._server_url
         
@@ -107,7 +105,6 @@ class Entities:
         ## Activity
         
         If no `activity_id` query parameter is provided, implicitly creates Activity of type `EntityDeleted`
-        
         """
         base_url = self._server_url
         
@@ -122,8 +119,6 @@ class Entities:
 
         res = operations.DeleteEntityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
-            pass
 
         return res
 
@@ -192,7 +187,6 @@ class Entities:
           ]
         }
         ```
-        
         """
         base_url = self._server_url
         
@@ -243,7 +237,6 @@ class Entities:
         The items in `$relation` support two properties:
         - `entity_id` - The ID of the entity to link
         - `_tags` - Tags or labels for the relation (optional)
-        
         """
         base_url = self._server_url
         
@@ -340,7 +333,6 @@ class Entities:
           ]
         }
         ```
-        
         """
         base_url = self._server_url
         
@@ -394,7 +386,6 @@ class Entities:
         The items in `$relation` support two properties:
         - `entity_id` - The ID of the entity to link
         - `_tags` - Tags or labels for the relation (optional)
-        
         """
         base_url = self._server_url
         
@@ -431,7 +422,6 @@ class Entities:
         ## Activity
         
         If no `activity_id` query parameter is provided, implicitly creates Activity of type `EntityCreated` or `EntityUpdated`
-        
         """
         base_url = self._server_url
         

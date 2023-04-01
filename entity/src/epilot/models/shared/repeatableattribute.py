@@ -17,38 +17,34 @@ class RepeatableAttributeInfoHelpers:
     r"""The name of the custom component to be used as the hint helper.
     The component should be registered in the `@epilot360/entity-ui` on the index of the components directory.
     When specified it overrides the `hint_text` or `hint_text_key` configuration.
-    
     """  
     hint_text: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_text'), 'exclude': lambda f: f is None }})
     r"""The text to be displayed in the attribute hint helper.
     When specified it overrides the `hint_text_key` configuration.
-    
     """  
     hint_text_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_text_key'), 'exclude': lambda f: f is None }})
     r"""The key of the hint text to be displayed in the attribute hint helper.
     The key should be a valid i18n key.
-    
     """  
     hint_tooltip_placement: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_tooltip_placement'), 'exclude': lambda f: f is None }})
     r"""The placement of the hint tooltip.
     The value should be a valid `@mui/core` tooltip placement.
-    
     """  
     
 class RepeatableAttributeRelationAffinityModeEnum(str, Enum):
     r"""Weak repeatable attributes are kept when duplicating an entity. Strong repeatable attributes are discarded when duplicating an entity."""
-    WEAK = "weak"
-    STRONG = "strong"
+    WEAK = 'weak'
+    STRONG = 'strong'
 
 class RepeatableAttributeTypeEnum(str, Enum):
-    STRING = "string"
-    PHONE = "phone"
-    EMAIL = "email"
-    ADDRESS = "address"
-    RELATION = "relation"
-    PAYMENT = "payment"
-    PRICE_COMPONENT = "price_component"
-    DATE = "date"
+    STRING = 'string'
+    PHONE = 'phone'
+    EMAIL = 'email'
+    ADDRESS = 'address'
+    RELATION = 'relation'
+    PAYMENT = 'payment'
+    PRICE_COMPONENT = 'price_component'
+    DATE = 'date'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -62,7 +58,6 @@ class RepeatableAttribute:
     constraints: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
-    
     """  
     default_value: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_value'), 'exclude': lambda f: f is None }})  
     deprecated: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deprecated'), 'exclude': lambda f: f is None }})  
@@ -82,7 +77,6 @@ class RepeatableAttribute:
     icon: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon'), 'exclude': lambda f: f is None }})
     r"""Code name of the icon to used to represent this attribute.
     The value must be a valid @epilot/base-elements Icon name
-    
     """  
     info_helpers: Optional[RepeatableAttributeInfoHelpers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('info_helpers'), 'exclude': lambda f: f is None }})
     r"""A set of configurations meant to document and assist the user in filling the attribute."""  
@@ -100,7 +94,6 @@ class RepeatableAttribute:
     r"""Defines the conditional rendering expression for showing this field.
     When a valid expression is parsed, their evaluation defines the visibility of this attribute.
     Note: Empty or invalid expression have no effect on the field visibility.
-    
     """  
     repeatable: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('repeatable'), 'exclude': lambda f: f is None }})  
     required: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('required'), 'exclude': lambda f: f is None }})  
