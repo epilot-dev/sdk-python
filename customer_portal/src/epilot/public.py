@@ -43,8 +43,6 @@ class Public:
 
         res = operations.ActivateUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code in [200, 404]:
-            pass
 
         return res
 

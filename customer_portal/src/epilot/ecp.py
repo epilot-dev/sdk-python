@@ -74,7 +74,7 @@ class Ecp:
 
         return res
 
-    def delete_portal_user(self, security: operations.DeletePortalUserSecurity) -> operations.DeletePortalUserResponse:
+    def delete_portal_user(self) -> operations.DeletePortalUserResponse:
         r"""deletePortalUser
         TODO
         """
@@ -83,7 +83,7 @@ class Ecp:
         url = base_url.removesuffix('/') + '/v2/portal/user'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._security_client
         
         http_res = client.request('DELETE', url)
         content_type = http_res.headers.get('Content-Type')
@@ -96,7 +96,7 @@ class Ecp:
 
         return res
 
-    def get_all_contracts(self, security: operations.GetAllContractsSecurity) -> operations.GetAllContractsResponse:
+    def get_all_contracts(self) -> operations.GetAllContractsResponse:
         r"""getAllContracts
         TODO
         """
@@ -105,7 +105,7 @@ class Ecp:
         url = base_url.removesuffix('/') + '/v2/portal/contract'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._security_client
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -119,7 +119,7 @@ class Ecp:
 
         return res
 
-    def get_all_opportunities(self, security: operations.GetAllOpportunitiesSecurity) -> operations.GetAllOpportunitiesResponse:
+    def get_all_opportunities(self) -> operations.GetAllOpportunitiesResponse:
         r"""getAllOpportunities
         TODO
         """
@@ -128,7 +128,7 @@ class Ecp:
         url = base_url.removesuffix('/') + '/v2/portal/opportunity'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._security_client
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -142,7 +142,7 @@ class Ecp:
 
         return res
 
-    def get_all_orders(self, security: operations.GetAllOrdersSecurity) -> operations.GetAllOrdersResponse:
+    def get_all_orders(self) -> operations.GetAllOrdersResponse:
         r"""getAllOrders
         TODO
         """
@@ -151,7 +151,7 @@ class Ecp:
         url = base_url.removesuffix('/') + '/v2/portal/order'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._security_client
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -165,7 +165,7 @@ class Ecp:
 
         return res
 
-    def get_contact(self, security: operations.GetContactSecurity) -> operations.GetContactResponse:
+    def get_contact(self) -> operations.GetContactResponse:
         r"""getContact
         Get the Contact by id
         """
@@ -174,7 +174,7 @@ class Ecp:
         url = base_url.removesuffix('/') + '/v2/portal/contact'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._security_client
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -290,7 +290,7 @@ class Ecp:
 
         return res
 
-    def get_organization_settings(self, security: operations.GetOrganizationSettingsSecurity) -> operations.GetOrganizationSettingsResponse:
+    def get_organization_settings(self) -> operations.GetOrganizationSettingsResponse:
         r"""getOrganizationSettings
         get organization settings
         """
@@ -299,7 +299,7 @@ class Ecp:
         url = base_url.removesuffix('/') + '/v2/portal/org/settings'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._security_client
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -361,7 +361,7 @@ class Ecp:
 
         return res
 
-    def get_portal_user(self, security: operations.GetPortalUserSecurity) -> operations.GetPortalUserResponse:
+    def get_portal_user(self) -> operations.GetPortalUserResponse:
         r"""getPortalUser
         TODO
         """
@@ -370,7 +370,7 @@ class Ecp:
         url = base_url.removesuffix('/') + '/v2/portal/user'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._security_client
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -384,7 +384,7 @@ class Ecp:
 
         return res
 
-    def get_schemas(self, security: operations.GetSchemasSecurity) -> operations.GetSchemasResponse:
+    def get_schemas(self) -> operations.GetSchemasResponse:
         r"""getSchemas
         TODO
         """
@@ -393,7 +393,7 @@ class Ecp:
         url = base_url.removesuffix('/') + '/v2/portal/schemas'
         
         
-        client = utils.configure_security_client(self._client, security)
+        client = self._security_client
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -452,8 +452,6 @@ class Ecp:
 
         res = operations.TestAuthResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
-            pass
 
         return res
 

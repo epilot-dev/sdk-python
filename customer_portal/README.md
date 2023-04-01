@@ -18,7 +18,7 @@ s = epilot.Epilot()
 
 
 req = operations.AddEndCustomerRelationToEntityRequest(
-    id="unde",
+    id="corrupti",
     slug="contact",
 )
     
@@ -32,7 +32,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
 ### ecp

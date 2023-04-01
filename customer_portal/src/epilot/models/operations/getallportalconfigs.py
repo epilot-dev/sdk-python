@@ -9,12 +9,6 @@ from epilot import utils
 from typing import Optional
 
 
-@dataclasses.dataclass
-class GetAllPortalConfigsSecurity:
-    
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetAllPortalConfigs200ApplicationJSON:

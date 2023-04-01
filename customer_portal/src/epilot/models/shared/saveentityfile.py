@@ -8,8 +8,8 @@ from epilot import utils
 from typing import Optional
 
 class SaveEntityFileFilesAccessControlEnum(str, Enum):
-    PRIVATE = "private"
-    PUBLIC_READ = "public-read"
+    PRIVATE = 'private'
+    PUBLIC_READ = 'public-read'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
