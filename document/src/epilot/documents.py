@@ -57,4 +57,41 @@ class Documents:
 
         return res
 
+    def generate_document_v2(self, request: operations.GenerateDocumentV2Request) -> operations.GenerateDocumentV2Response:
+        r"""generateDocumentV2
+        Builds document generated from input document with variables.
+        
+        Supported input document types:
+        - .docx
+        
+        Supported output document types:
+        - .pdf
+        - .docx but limited to only text based variables
+        
+        Uses [Template Variables API](https://docs.epilot.io/api/template-variables) to replace variables in the document.
+        """
+        base_url = self._server_url
+        
+        url = base_url.removesuffix('/') + '/v2/documents:generate'
+        
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        query_params = utils.get_query_params(operations.GenerateDocumentV2Request, request)
+        
+        client = self._security_client
+        
+        http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GenerateDocumentV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GenerateDocumentV2200ApplicationJSON])
+                res.generate_document_v2_200_application_json_object = out
+
+        return res
+
     

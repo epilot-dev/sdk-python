@@ -8,6 +8,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/operations/generatedocument.py
+src/epilot/models/operations/generatedocumentv2.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/s3reference.py
 src/epilot/models/shared/security.py
