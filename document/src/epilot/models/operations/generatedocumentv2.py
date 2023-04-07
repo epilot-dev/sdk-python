@@ -91,7 +91,7 @@ class GenerateDocumentV2200ApplicationJSONJobStatusEnum(str, Enum):
     r"""Status of the job"""
     STARTED = 'STARTED'
     PROCESSING = 'PROCESSING'
-    COMPLETED = 'COMPLETED'
+    SUCCESS = 'SUCCESS'
     FAILED = 'FAILED'
 
 
