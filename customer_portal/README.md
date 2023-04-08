@@ -83,6 +83,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 
 * `activate_user` - activateUser
 * `confirm_user` - confirmUser
+* `create_sso_user` - creates a sso user
 * `create_user` - creates a user
 * `get_count_by_email` - getCountByEmail
 * `user_exists` - userExists

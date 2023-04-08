@@ -48,6 +48,7 @@ src/epilot/models/operations/upsertemailtemplates.py
 src/epilot/models/operations/upsertportal.py
 src/epilot/models/operations/activateuser.py
 src/epilot/models/operations/confirmuser.py
+src/epilot/models/operations/createssouser.py
 src/epilot/models/operations/createuser.py
 src/epilot/models/operations/getcountbyemail.py
 src/epilot/models/operations/userexists.py
