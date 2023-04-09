@@ -67,16 +67,16 @@ class EntitySchemaUIConfig:
 class EntitySchema:
     r"""The \\"type\\" of an Entity. Describes the shape. Includes Entity Attributes, Relations and Capabilities."""
     
+    attributes: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
+    r"""An ordered list of attributes the entity contains"""  
+    capabilities: list[shared_entitycapability.EntityCapability] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capabilities') }})  
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""User-friendly identifier for the entity schema"""  
     plural: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('plural') }})  
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly identifier for the entity schema"""  
-    attributes: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
-    r"""An ordered list of attributes the entity contains"""  
     blueprint: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('blueprint'), 'exclude': lambda f: f is None }})
     r"""Reference to blueprint"""  
-    capabilities: Optional[list[shared_entitycapability.EntityCapability]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capabilities'), 'exclude': lambda f: f is None }})  
     dialog_config: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dialog_config'), 'exclude': lambda f: f is None }})  
     draft: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('draft'), 'exclude': lambda f: f is None }})  
     enable_setting: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_setting'), 'exclude': lambda f: f is None }})
