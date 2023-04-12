@@ -59,3 +59,9 @@ Based on:
 Based on:
 - OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
 - Speakeasy CLI 1.19.6 (2.17.8) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-12 00:32:10
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.19.7 (2.17.9) https://github.com/speakeasy-api/speakeasy
