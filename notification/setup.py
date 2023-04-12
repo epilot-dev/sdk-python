@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="epilot-notification",
-    version="1.3.0",
+    version="1.3.1",
     author="epilot",
     description="Python Client SDK for Epilot",
     long_description=long_description,
