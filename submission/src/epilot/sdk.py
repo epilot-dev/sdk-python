@@ -18,8 +18,8 @@ class Epilot:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.3.0"
-    _gen_version: str = "2.17.8"
+    _sdk_version: str = "1.3.1"
+    _gen_version: str = "2.17.9"
 
     def __init__(self,
                  server_url: str = None,
