@@ -41,8 +41,8 @@ req = shared.WebhookConfig(
         ],
     ),
     http_method="PATCH",
-    id="minus",
-    url="placeat",
+    id="cc8796ed-151a-405d-bc2d-df7cc78ca1ba",
+    url="occaecati",
 )
     
 res = s.webhooks.create_config(req)
