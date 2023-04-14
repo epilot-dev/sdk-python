@@ -2,15 +2,15 @@ configVersion: 1.0.0
 management:
   docChecksum: 1f3c7839d6737ba543966ccb621fa732
   docVersion: 0.0.1
-  speakeasyVersion: 1.19.7
-  generationVersion: 2.17.9
+  speakeasyVersion: 1.20.0
+  generationVersion: 2.18.0
 generation:
   telemetryEnabled: false
   sdkClassName: epilot
   sdkFlattening: false
   singleTagPerOp: false
 python:
-  version: 1.3.1
+  version: 1.4.0
   author: epilot
   description: Python Client SDK for Epilot
   packageName: epilot-internal-auth
