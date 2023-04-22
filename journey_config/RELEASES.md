@@ -77,3 +77,9 @@ Based on:
 Based on:
 - OpenAPI Doc 1.0.0 https://docs.api.epilot.io/journey-config.yaml
 - Speakeasy CLI 1.21.4 (2.19.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-22 00:25:41
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/journey-config.yaml
+- Speakeasy CLI 1.22.1 (2.20.1) https://github.com/speakeasy-api/speakeasy
