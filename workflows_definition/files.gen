@@ -40,4 +40,7 @@ src/sdk/models/shared/maxallowedlimit.py
 src/sdk/models/shared/closingreasonsids.py
 src/sdk/models/shared/security.py
 src/sdk/models/shared/__init__.py
+docs/sdk/README.md
+docs/closingreason/README.md
+docs/workflows/README.md
 USAGE.md

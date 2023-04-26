@@ -16,7 +16,7 @@ req = operations.ChangeReasonStatusRequest(
     ),
     reason_id="provident",
 )
-    
+
 res = s.closing_reason.change_reason_status(req)
 
 if res.status_code == 200:
