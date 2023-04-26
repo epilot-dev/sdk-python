@@ -24,4 +24,6 @@ src/epilot/models/shared/assignableorganization.py
 src/epilot/models/shared/partnerinvitationpayload.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/partners/README.md
 USAGE.md

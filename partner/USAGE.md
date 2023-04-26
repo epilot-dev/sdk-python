@@ -18,7 +18,7 @@ req = operations.ActivatePartnerRequest(
     ),
     token="corrupti",
 )
-    
+
 res = s.partners.activate_partner(req)
 
 if res.status_code == 200:
