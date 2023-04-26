@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -15,7 +15,7 @@ req = {
     "quibusdam": "unde",
     "nulla": "corrupti",
 }
-    
+
 res = s.journeys.create_journey(req)
 
 if res.journey_response is not None:

@@ -19,4 +19,6 @@ src/epilot/models/shared/searchjourneysresponse.py
 src/epilot/models/shared/searchjourneysqueryrequest.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/journeys/README.md
 USAGE.md
