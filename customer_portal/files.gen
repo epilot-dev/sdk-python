@@ -68,4 +68,8 @@ src/epilot/models/shared/upsertportalconfig.py
 src/epilot/models/shared/useractivationpayload.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/ecp/README.md
+docs/ecpadmin/README.md
+docs/public/README.md
 USAGE.md

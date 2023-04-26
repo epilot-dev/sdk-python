@@ -12,7 +12,7 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=custom
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -21,7 +21,7 @@ req = operations.AddEndCustomerRelationToEntityRequest(
     id="89bd9d8d-69a6-474e-8f46-7cc8796ed151",
     slug="contact",
 )
-    
+
 res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
     portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
 ))
@@ -35,58 +35,58 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 ## Available Resources and Operations
 
 
-### ecp
+### [ecp](docs/ecp/README.md)
 
-* `add_end_customer_relation_to_entity` - addEndCustomerRelationToEntity
-* `delete_entity_file` - Delete files from an entity
-* `delete_portal_user` - deletePortalUser
-* `get_all_contracts` - getAllContracts
-* `get_all_opportunities` - getAllOpportunities
-* `get_all_orders` - getAllOrders
-* `get_contact` - getContact
-* `get_contract` - get contract based on id
-* `get_entities_by_identifiers` - getEntitiesByIdentifiers
-* `get_opportunity` - getOpportunity
-* `get_order` - getOrder
-* `get_organization_settings` - getOrganizationSettings
-* `get_portal_config` - getPortalConfig
-* `get_portal_config_by_domain` - getPortalConfigByDomain
-* `get_portal_user` - getPortalUser
-* `get_schemas` - getSchemas
-* `save_entity_file` - Add files to an entity
-* `test_auth` - testAuth
-* `update_contact` - updateContact
-* `update_contract` - Update contract based on id
-* `update_opportunity` - Update an opportunity based on id
-* `update_order` - updateOrder
-* `update_portal_user` - updatePortalUser
+* [add_end_customer_relation_to_entity](docs/ecp/README.md#add_end_customer_relation_to_entity) - addEndCustomerRelationToEntity
+* [delete_entity_file](docs/ecp/README.md#delete_entity_file) - Delete files from an entity
+* [delete_portal_user](docs/ecp/README.md#delete_portal_user) - deletePortalUser
+* [get_all_contracts](docs/ecp/README.md#get_all_contracts) - getAllContracts
+* [get_all_opportunities](docs/ecp/README.md#get_all_opportunities) - getAllOpportunities
+* [get_all_orders](docs/ecp/README.md#get_all_orders) - getAllOrders
+* [get_contact](docs/ecp/README.md#get_contact) - getContact
+* [get_contract](docs/ecp/README.md#get_contract) - get contract based on id
+* [get_entities_by_identifiers](docs/ecp/README.md#get_entities_by_identifiers) - getEntitiesByIdentifiers
+* [get_opportunity](docs/ecp/README.md#get_opportunity) - getOpportunity
+* [get_order](docs/ecp/README.md#get_order) - getOrder
+* [get_organization_settings](docs/ecp/README.md#get_organization_settings) - getOrganizationSettings
+* [get_portal_config](docs/ecp/README.md#get_portal_config) - getPortalConfig
+* [get_portal_config_by_domain](docs/ecp/README.md#get_portal_config_by_domain) - getPortalConfigByDomain
+* [get_portal_user](docs/ecp/README.md#get_portal_user) - getPortalUser
+* [get_schemas](docs/ecp/README.md#get_schemas) - getSchemas
+* [save_entity_file](docs/ecp/README.md#save_entity_file) - Add files to an entity
+* [test_auth](docs/ecp/README.md#test_auth) - testAuth
+* [update_contact](docs/ecp/README.md#update_contact) - updateContact
+* [update_contract](docs/ecp/README.md#update_contract) - Update contract based on id
+* [update_opportunity](docs/ecp/README.md#update_opportunity) - Update an opportunity based on id
+* [update_order](docs/ecp/README.md#update_order) - updateOrder
+* [update_portal_user](docs/ecp/README.md#update_portal_user) - updatePortalUser
 
-### ecp_admin
+### [ecp_admin](docs/ecpadmin/README.md)
 
-* `configure_distribution` - configureDistribution
-* `delete_portal` - deletePortal
-* `extra_permission_attributes` - extraPermissionAttributes
-* `get_all_portal_configs` - getAllPortalConfigs
-* `get_ecp_contact` - getECPContact
-* `get_email_templates` - getEmailTemplates
-* `get_entity_identifiers` - getEntityIdentifiers
-* `get_org_portal_config` - getOrgPortalConfig
-* `get_portal_config` - getPortalConfig
-* `get_public_portal_config` - getPublicPortalConfig
-* `get_valid_secondary_attributes` - getValidSecondaryAttributes
-* `replace_ecp_template_variables` - replaceECPTemplateVariables
-* `save_portal_files` - Add files to portal
-* `upsert_email_templates` - upsertEmailTemplates
-* `upsert_portal` - upserts a portal
+* [configure_distribution](docs/ecpadmin/README.md#configure_distribution) - configureDistribution
+* [delete_portal](docs/ecpadmin/README.md#delete_portal) - deletePortal
+* [extra_permission_attributes](docs/ecpadmin/README.md#extra_permission_attributes) - extraPermissionAttributes
+* [get_all_portal_configs](docs/ecpadmin/README.md#get_all_portal_configs) - getAllPortalConfigs
+* [get_ecp_contact](docs/ecpadmin/README.md#get_ecp_contact) - getECPContact
+* [get_email_templates](docs/ecpadmin/README.md#get_email_templates) - getEmailTemplates
+* [get_entity_identifiers](docs/ecpadmin/README.md#get_entity_identifiers) - getEntityIdentifiers
+* [get_org_portal_config](docs/ecpadmin/README.md#get_org_portal_config) - getOrgPortalConfig
+* [get_portal_config](docs/ecpadmin/README.md#get_portal_config) - getPortalConfig
+* [get_public_portal_config](docs/ecpadmin/README.md#get_public_portal_config) - getPublicPortalConfig
+* [get_valid_secondary_attributes](docs/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
+* [replace_ecp_template_variables](docs/ecpadmin/README.md#replace_ecp_template_variables) - replaceECPTemplateVariables
+* [save_portal_files](docs/ecpadmin/README.md#save_portal_files) - Add files to portal
+* [upsert_email_templates](docs/ecpadmin/README.md#upsert_email_templates) - upsertEmailTemplates
+* [upsert_portal](docs/ecpadmin/README.md#upsert_portal) - upserts a portal
 
-### public
+### [public](docs/public/README.md)
 
-* `activate_user` - activateUser
-* `confirm_user` - confirmUser
-* `create_sso_user` - creates a sso user
-* `create_user` - creates a user
-* `get_count_by_email` - getCountByEmail
-* `user_exists` - userExists
+* [activate_user](docs/public/README.md#activate_user) - activateUser
+* [confirm_user](docs/public/README.md#confirm_user) - confirmUser
+* [create_sso_user](docs/public/README.md#create_sso_user) - creates a sso user
+* [create_user](docs/public/README.md#create_user) - creates a user
+* [get_count_by_email](docs/public/README.md#get_count_by_email) - getCountByEmail
+* [user_exists](docs/public/README.md#user_exists) - userExists
 <!-- End SDK Available Operations -->
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
