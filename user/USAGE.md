@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -9,7 +9,7 @@ s = epilot.Epilot(
     ),
 )
 
-    
+
 res = s.user_v1.get_me()
 
 if res.user is not None:

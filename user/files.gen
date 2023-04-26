@@ -35,4 +35,7 @@ src/epilot/models/shared/userdetail.py
 src/epilot/models/shared/userverificationpayload.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/userv1/README.md
+docs/userv2/README.md
 USAGE.md
