@@ -10,14 +10,14 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="epilot-automation",
-    version="1.6.0",
+    version="1.7.0",
     author="Epilot",
     description="Python Client SDK for Epilot API",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(where="src"),
     install_requires=[
-        "certifi==2022.12.07",
+        "certifi==2022.12.7",
         "charset-normalizer==2.1.1",
         "dataclasses-json-speakeasy==0.5.8",
         "idna==3.3",

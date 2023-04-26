@@ -73,4 +73,7 @@ src/epilot/models/shared/automationactionconfig.py
 src/epilot/models/shared/searchautomationsresp.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/executions/README.md
+docs/flows/README.md
 USAGE.md
