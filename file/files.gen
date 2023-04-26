@@ -22,4 +22,6 @@ src/epilot/models/shared/fileentity.py
 src/epilot/models/shared/uploadfilepayload.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/files/README.md
 USAGE.md

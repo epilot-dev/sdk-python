@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -16,7 +16,7 @@ req = shared.DeleteFilePayload(
         key="123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
     ),
 )
-    
+
 res = s.files.delete_file(req)
 
 if res.status_code == 200:
