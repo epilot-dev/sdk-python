@@ -1,4 +1,16 @@
-<!-- Start SDK Example Usage -->
+# drafts
+
+### Available Operations
+
+* [create_draft](#create_draft) - createDraft
+* [send_draft](#send_draft) - sendDraft
+
+## create_draft
+
+Create a new draft
+
+### Example Usage
+
 ```python
 import epilot
 from epilot.models import shared
@@ -16,30 +28,12 @@ req = shared.MessageRequestParams(
             address="messaging@epilot.cloud",
             name="epilot",
             send_error={
-                "distinctio": "quibusdam",
-                "unde": "nulla",
-                "corrupti": "illum",
+                "cum": "esse",
+                "ipsum": "excepturi",
+                "aspernatur": "perferendis",
+                "ad": "natus",
             },
-            send_status="REJECT",
-        ),
-        shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
-            send_error={
-                "deserunt": "suscipit",
-                "iure": "magnam",
-                "debitis": "ipsa",
-            },
-            send_status="ERROR",
-        ),
-        shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
-            send_error={
-                "suscipit": "molestiae",
-                "minus": "placeat",
-            },
-            send_status="COMPLAINT",
+            send_status="SEND",
         ),
     ],
     cc=[
@@ -47,31 +41,35 @@ req = shared.MessageRequestParams(
             address="messaging@epilot.cloud",
             name="epilot",
             send_error={
-                "nisi": "recusandae",
-                "temporibus": "ab",
-                "quis": "veritatis",
+                "natus": "laboriosam",
             },
-            send_status="COMPLAINT",
+            send_status="ERROR",
         ),
         shared.Address(
             address="messaging@epilot.cloud",
             name="epilot",
             send_error={
-                "ipsam": "repellendus",
+                "fuga": "in",
+                "corporis": "iste",
+                "iure": "saepe",
+                "quidem": "architecto",
             },
-            send_status="ERROR",
+            send_status="SEND",
+        ),
+        shared.Address(
+            address="messaging@epilot.cloud",
+            name="epilot",
+            send_error={
+                "est": "mollitia",
+                "laborum": "dolores",
+                "dolorem": "corporis",
+                "explicabo": "nobis",
+            },
+            send_status="DELIVERY",
         ),
     ],
     file=shared.AttachmentsRelation(
         dollar_relation=[
-            shared.File(
-                cid="fb222496-a1a5-4639-94f2-07b5e35e4068",
-                entity_id="f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
-                filename="Produktinformationen_epilot360_Double_Opt_in.pdf",
-                inline=False,
-                is_message_attachment=False,
-                send_as_link=False,
-            ),
             shared.File(
                 cid="fb222496-a1a5-4639-94f2-07b5e35e4068",
                 entity_id="f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
@@ -102,9 +100,10 @@ req = shared.MessageRequestParams(
         address="messaging@epilot.cloud",
         name="epilot",
         send_error={
-            "at": "at",
+            "minima": "excepturi",
+            "accusantium": "iure",
         },
-        send_status="ERROR",
+        send_status="COMPLAINT",
     ),
     html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
     parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
@@ -112,31 +111,32 @@ req = shared.MessageRequestParams(
         address="messaging@epilot.cloud",
         name="epilot",
         send_error={
-            "quod": "quod",
-            "esse": "totam",
+            "sapiente": "architecto",
+            "mollitia": "dolorem",
+            "culpa": "consequuntur",
+            "repellat": "mollitia",
         },
-        send_status="BOUNCE",
+        send_status="COMPLAINT",
     ),
     subject="Request for solar panel price",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread=shared.MessageRequestParamsThread(
         assigned_to=[
-            "dicta",
-            "nam",
-            "officia",
+            "commodi",
+            "quam",
         ],
-        topic="occaecati",
+        topic="molestiae",
     ),
     to=[
         shared.Address(
             address="messaging@epilot.cloud",
             name="epilot",
             send_error={
-                "hic": "optio",
-                "totam": "beatae",
-                "commodi": "molestiae",
+                "quia": "quis",
+                "vitae": "laborum",
+                "animi": "enim",
             },
-            send_status="DELIVERY",
+            send_status="SEND",
         ),
     ],
 )
@@ -146,4 +146,26 @@ res = s.drafts.create_draft(req)
 if res.create_draft_201_application_json_object is not None:
     # handle response
 ```
-<!-- End SDK Example Usage -->
+
+## send_draft
+
+Send the existing draft to the recipients
+
+### Example Usage
+
+```python
+import epilot
+
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    ),
+)
+
+
+res = s.drafts.send_draft()
+
+if res.send_draft_201_application_json_object is not None:
+    # handle response
+```

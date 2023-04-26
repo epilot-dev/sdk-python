@@ -36,4 +36,8 @@ src/epilot/models/shared/message.py
 src/epilot/models/shared/searchparams.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/drafts/README.md
+docs/messages/README.md
+docs/threads/README.md
 USAGE.md
