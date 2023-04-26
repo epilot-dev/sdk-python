@@ -31,4 +31,7 @@ src/epilot/models/shared/partnerrole.py
 src/epilot/models/shared/rolesearchinput.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/assignments/README.md
+docs/roles/README.md
 USAGE.md
