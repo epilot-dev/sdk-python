@@ -22,4 +22,7 @@ src/epilot/models/shared/journeytokenparameters.py
 src/epilot/models/shared/accesstokenitem.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/accesstokens/README.md
+docs/public/README.md
 USAGE.md
