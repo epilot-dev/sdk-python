@@ -104,4 +104,12 @@ src/epilot/models/shared/taxonomy.py
 src/epilot/models/shared/classificationsupdate.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/activity/README.md
+docs/entities/README.md
+docs/export/README.md
+docs/relations/README.md
+docs/savedviews/README.md
+docs/schemas/README.md
+docs/taxonomy/README.md
 USAGE.md
