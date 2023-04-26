@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -139,7 +139,7 @@ req = shared.CustomVariable(
     updated_at="2022-04-20T12:41:43.662Z",
     updated_by="100042",
 )
-    
+
 res = s.custom_variables.create_custom_variable(req)
 
 if res.status_code == 200:
