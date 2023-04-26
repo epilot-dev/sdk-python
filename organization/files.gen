@@ -17,4 +17,7 @@ src/epilot/models/operations/__init__.py
 src/epilot/models/shared/organization.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/organization/README.md
+docs/organizationsettings/README.md
 USAGE.md

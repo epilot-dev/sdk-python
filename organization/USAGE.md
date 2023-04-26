@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -13,7 +13,7 @@ s = epilot.Epilot(
 req = operations.GetOrganizationRequest(
     org_id="739224",
 )
-    
+
 res = s.organization.get_organization(req)
 
 if res.organization is not None:
