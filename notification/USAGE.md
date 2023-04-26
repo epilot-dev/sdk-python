@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -15,7 +15,7 @@ req = {
     "quibusdam": "unde",
     "nulla": "corrupti",
 }
-    
+
 res = s.notification.create_notification(req)
 
 if res.status_code == 200:
