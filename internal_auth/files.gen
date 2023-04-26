@@ -11,4 +11,5 @@ src/epilot/models/operations/getopenidconfiguration.py
 src/epilot/models/operations/gettoken.py
 src/epilot/models/operations/gettokenv2.py
 src/epilot/models/operations/__init__.py
+docs/epilot/README.md
 USAGE.md
