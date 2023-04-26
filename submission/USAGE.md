@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot()
 
@@ -45,7 +45,7 @@ req = shared.SubmissionPayload(
     source_id="ce99875f-fba9-4fe2-a8f9-afaf52059051",
     source_type="journey",
 )
-    
+
 res = s.submissions.create_submission(req)
 
 if res.status_code == 200:
