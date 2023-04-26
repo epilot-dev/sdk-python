@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -36,7 +36,7 @@ req = shared.WorkflowExecutionCreateReq(
     trigger="AUTOMATIC",
     workflow_id="sapiente",
 )
-    
+
 res = s.workflows.create_execution(req)
 
 if res.workflow_execution is not None:

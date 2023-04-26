@@ -56,4 +56,6 @@ src/epilot/models/shared/updatestepreq.py
 src/epilot/models/shared/steppositionat.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/workflows/README.md
 USAGE.md
