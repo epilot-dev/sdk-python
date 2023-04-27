@@ -7,6 +7,7 @@ ECP Admin
 ### Available Operations
 
 * [configure_distribution](#configure_distribution) - configureDistribution
+* [create_sso_user](#create_sso_user) - creates a sso user
 * [delete_portal](#delete_portal) - deletePortal
 * [extra_permission_attributes](#extra_permission_attributes) - extraPermissionAttributes
 * [get_all_portal_configs](#get_all_portal_configs) - getAllPortalConfigs
@@ -47,6 +48,36 @@ if res.configure_distribution_200_application_json_object is not None:
     # handle response
 ```
 
+## create_sso_user
+
+Creates a sso user as portal user
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot()
+
+
+req = operations.CreateSSOUserRequest(
+    request_body=operations.CreateSSOUserRequestBody(
+        email="testemail921@yopmail.com",
+        first_name="John",
+        last_name="Doe",
+    ),
+    origin="INSTALLER_PORTAL",
+)
+
+res = s.ecp_admin.create_sso_user(req, operations.CreateSSOUserSecurity(
+    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
+
+if res.create_sso_user_201_application_json_object is not None:
+    # handle response
+```
+
 ## delete_portal
 
 TODO
@@ -61,7 +92,7 @@ s = epilot.Epilot()
 
 
 req = operations.DeletePortalRequest(
-    origin="INSTALLER_PORTAL",
+    origin="END_CUSTOMER_PORTAL",
 )
 
 res = s.ecp_admin.delete_portal(req, operations.DeletePortalSecurity(
@@ -232,7 +263,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetPortalConfigRequest(
-    origin="END_CUSTOMER_PORTAL",
+    origin="INSTALLER_PORTAL",
 )
 
 res = s.ecp_admin.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -262,7 +293,7 @@ s = epilot.Epilot(
 
 req = operations.GetPublicPortalConfigRequest(
     org_id="12324",
-    origin="INSTALLER_PORTAL",
+    origin="END_CUSTOMER_PORTAL",
 )
 
 res = s.ecp_admin.get_public_portal_config(req)
@@ -311,7 +342,7 @@ req = operations.ReplaceECPTemplateVariablesRequest(
     request_body=operations.ReplaceECPTemplateVariablesRequestBody(
         contact_id="7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51",
     ),
-    origin="END_CUSTOMER_PORTAL",
+    origin="INSTALLER_PORTAL",
 )
 
 res = s.ecp_admin.replace_ecp_template_variables(req, operations.ReplaceECPTemplateVariablesSecurity(
@@ -337,18 +368,6 @@ s = epilot.Epilot()
 
 req = shared.SavePortalFile(
     files=[
-        shared.SavePortalFileFiles(
-            tags=[
-                "12345",
-                "12345",
-            ],
-            file_type="orderRightTeaser",
-            filename="12345",
-            s3ref=shared.SavePortalFileFilesS3ref(
-                bucket="12345",
-                key="12345",
-            ),
-        ),
         shared.SavePortalFileFiles(
             tags=[
                 "12345",

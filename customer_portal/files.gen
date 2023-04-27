@@ -33,6 +33,7 @@ src/epilot/models/operations/updateopportunity.py
 src/epilot/models/operations/updateorder.py
 src/epilot/models/operations/updateportaluser.py
 src/epilot/models/operations/configuredistribution.py
+src/epilot/models/operations/createssouser.py
 src/epilot/models/operations/deleteportal.py
 src/epilot/models/operations/extrapermissionattributes.py
 src/epilot/models/operations/getallportalconfigs.py
@@ -48,7 +49,6 @@ src/epilot/models/operations/upsertemailtemplates.py
 src/epilot/models/operations/upsertportal.py
 src/epilot/models/operations/activateuser.py
 src/epilot/models/operations/confirmuser.py
-src/epilot/models/operations/createssouser.py
 src/epilot/models/operations/createuser.py
 src/epilot/models/operations/getcountbyemail.py
 src/epilot/models/operations/userexists.py

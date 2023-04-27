@@ -46,6 +46,40 @@ class ECPAdmin:
 
         return res
 
+    def create_sso_user(self, request: operations.CreateSSOUserRequest, security: operations.CreateSSOUserSecurity) -> operations.CreateSSOUserResponse:
+        r"""creates a sso user
+        Creates a sso user as portal user
+        """
+        base_url = self._server_url
+        
+        url = base_url.removesuffix('/') + '/v2/portal/sso/user'
+        
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        if data is None and form is None:
+            raise Exception('request body is required')
+        query_params = utils.get_query_params(operations.CreateSSOUserRequest, request)
+        
+        client = utils.configure_security_client(self._client, security)
+        
+        http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.CreateSSOUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 201:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateSSOUser201ApplicationJSON])
+                res.create_sso_user_201_application_json_object = out
+        elif http_res.status_code in [400, 401, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
+
+        return res
+
     def delete_portal(self, request: operations.DeletePortalRequest, security: operations.DeletePortalSecurity) -> operations.DeletePortalResponse:
         r"""deletePortal
         TODO

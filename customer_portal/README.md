@@ -64,6 +64,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 ### [ecp_admin](docs/ecpadmin/README.md)
 
 * [configure_distribution](docs/ecpadmin/README.md#configure_distribution) - configureDistribution
+* [create_sso_user](docs/ecpadmin/README.md#create_sso_user) - creates a sso user
 * [delete_portal](docs/ecpadmin/README.md#delete_portal) - deletePortal
 * [extra_permission_attributes](docs/ecpadmin/README.md#extra_permission_attributes) - extraPermissionAttributes
 * [get_all_portal_configs](docs/ecpadmin/README.md#get_all_portal_configs) - getAllPortalConfigs
@@ -83,7 +84,6 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 
 * [activate_user](docs/public/README.md#activate_user) - activateUser
 * [confirm_user](docs/public/README.md#confirm_user) - confirmUser
-* [create_sso_user](docs/public/README.md#create_sso_user) - creates a sso user
 * [create_user](docs/public/README.md#create_user) - creates a user
 * [get_count_by_email](docs/public/README.md#get_count_by_email) - getCountByEmail
 * [user_exists](docs/public/README.md#user_exists) - userExists

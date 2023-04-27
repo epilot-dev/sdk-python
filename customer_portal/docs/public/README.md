@@ -8,7 +8,6 @@ Public
 
 * [activate_user](#activate_user) - activateUser
 * [confirm_user](#confirm_user) - confirmUser
-* [create_sso_user](#create_sso_user) - creates a sso user
 * [create_user](#create_user) - creates a user
 * [get_count_by_email](#get_count_by_email) - getCountByEmail
 * [user_exists](#user_exists) - userExists
@@ -70,39 +69,6 @@ req = operations.ConfirmUserRequest(
 res = s.public.confirm_user(req)
 
 if res.entity_item is not None:
-    # handle response
-```
-
-## create_sso_user
-
-Creates a sso user as portal user
-
-### Example Usage
-
-```python
-import epilot
-from epilot.models import operations, shared
-
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-req = operations.CreateSSOUserRequest(
-    request_body=operations.CreateSSOUserRequestBody(
-        email="testemail921@yopmail.com",
-        first_name="John",
-        last_name="Doe",
-        org_id="728",
-    ),
-    origin="INSTALLER_PORTAL",
-)
-
-res = s.public.create_sso_user(req)
-
-if res.create_sso_user_201_application_json_object is not None:
     # handle response
 ```
 
