@@ -12,19 +12,26 @@ from typing import Optional
 class GetExecutionsRequest:
     
     context: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'context', 'style': 'form', 'explode': True }})
-    r"""Id of an Entity"""  
+
+    r"""Id of an Entity"""
     schema: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'schema', 'style': 'form', 'explode': True }})
-    r"""Schema of an Entity"""  
+
+    r"""Schema of an Entity"""
     
 
 @dataclasses.dataclass
 class GetExecutionsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Other errors"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     workflow_execution_slims: Optional[list[shared_workflowexecutionslim.WorkflowExecutionSlim]] = dataclasses.field(default=None)
-    r"""Success - executions loaded with success. Empty array if org has no executions."""  
+
+    r"""Success - executions loaded with success. Empty array if org has no executions."""
     

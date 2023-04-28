@@ -22,8 +22,12 @@ class DynamicDueDateTimePeriodEnum(str, Enum):
 class DynamicDueDate:
     r"""set a Duedate for a step then a specific"""
     
-    number_of_units: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfUnits') }})  
-    time_period: DynamicDueDateTimePeriodEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timePeriod') }})  
-    action_type_condition: Optional[DynamicDueDateActionTypeConditionEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actionTypeCondition'), 'exclude': lambda f: f is None }})  
-    step_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepId'), 'exclude': lambda f: f is None }})  
+    number_of_units: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfUnits') }})
+
+    time_period: DynamicDueDateTimePeriodEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timePeriod') }})
+
+    action_type_condition: Optional[DynamicDueDateActionTypeConditionEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actionTypeCondition'), 'exclude': lambda f: f is None }})
+
+    step_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepId'), 'exclude': lambda f: f is None }})
+
     

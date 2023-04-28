@@ -15,10 +15,16 @@ from typing import Optional
 class SearchExecutionsReq:
     r"""Search steps request"""
     
-    assigned_to: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})  
-    include_done_workflows: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDoneWorkflows'), 'exclude': lambda f: f is None }})  
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})  
-    pagination: Optional[shared_executionpaginationdynamo.ExecutionPaginationDynamo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})  
-    sorting: Optional[shared_searchsorting_enum.SearchSortingEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sorting'), 'exclude': lambda f: f is None }})  
-    status: Optional[shared_workflowstatus_enum.WorkflowStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})  
+    assigned_to: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
+
+    include_done_workflows: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDoneWorkflows'), 'exclude': lambda f: f is None }})
+
+    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
+
+    pagination: Optional[shared_executionpaginationdynamo.ExecutionPaginationDynamo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
+
+    sorting: Optional[shared_searchsorting_enum.SearchSortingEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sorting'), 'exclude': lambda f: f is None }})
+
+    status: Optional[shared_workflowstatus_enum.WorkflowStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+
     

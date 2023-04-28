@@ -11,11 +11,16 @@ from typing import Optional
 @dataclasses.dataclass
 class SearchStepsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Validation Errors"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     search_steps_resp: Optional[shared_searchstepsresp.SearchStepsResp] = dataclasses.field(default=None)
-    r"""Success - filtered steps are returned"""  
+
+    r"""Success - filtered steps are returned"""
     

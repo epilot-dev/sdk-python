@@ -12,17 +12,23 @@ from typing import Optional
 class UpdateExecutionRequest:
     
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
-    r"""Id of the execution"""  
+
+    r"""Id of the execution"""
     workflow_execution_update_req: shared_workflowexecutionupdatereq.WorkflowExecutionUpdateReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Patch Updates for Workflow Execution payload."""  
+
+    r"""Patch Updates for Workflow Execution payload."""
     
 
 @dataclasses.dataclass
 class UpdateExecutionResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Other errors"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     
