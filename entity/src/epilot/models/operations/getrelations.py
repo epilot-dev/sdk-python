@@ -10,21 +10,29 @@ from typing import Any, Optional
 class GetRelationsRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Entity id"""  
+
+    r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Type"""  
+
+    r"""Entity Type"""
     hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
-    r"""When true, expand relation items with full blown entities."""  
+
+    r"""When true, expand relation items with full blown entities."""
     include_reverse: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
-    r"""When true, includes reverse relations in response (other entities pointing to this entity)"""  
+
+    r"""When true, includes reverse relations in response (other entities pointing to this entity)"""
     
 
 @dataclasses.dataclass
 class GetRelationsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     get_relations_resp: Optional[list[Any]] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Success"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

@@ -11,15 +11,20 @@ from typing import Optional
 class GetTaxonomyRequest:
     
     taxonomy_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taxonomySlug', 'style': 'simple', 'explode': False }})
-    r"""Taxonomy slug to return taxonomy for"""  
+
+    r"""Taxonomy slug to return taxonomy for"""
     
 
 @dataclasses.dataclass
 class GetTaxonomyResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     taxonomy: Optional[shared_taxonomy.Taxonomy] = dataclasses.field(default=None)
-    r"""Taxonomy"""  
+
+    r"""Taxonomy"""
     

@@ -10,15 +10,20 @@ from typing import Optional
 @dataclasses.dataclass
 class ImportEntitiesRequest:
     
-    entity_import_params: Optional[shared_entityimportparams.EntityImportParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    entity_import_params: Optional[shared_entityimportparams.EntityImportParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'job_id', 'style': 'form', 'explode': True }})
-    r"""Import Job Id to get the result"""  
+
+    r"""Import Job Id to get the result"""
     
 
 @dataclasses.dataclass
 class ImportEntitiesResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     
