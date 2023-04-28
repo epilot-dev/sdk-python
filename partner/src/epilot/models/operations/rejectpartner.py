@@ -11,15 +11,20 @@ from typing import Optional
 class RejectPartnerRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The Id of partner"""  
+
+    r"""The Id of partner"""
     
 
 @dataclasses.dataclass
 class RejectPartnerResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     partner: Optional[shared_partner.Partner] = dataclasses.field(default=None)
-    r"""Invited successfully"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Invited successfully"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

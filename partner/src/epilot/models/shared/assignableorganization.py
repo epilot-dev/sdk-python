@@ -12,8 +12,10 @@ from typing import Optional
 @dataclasses.dataclass
 class AssignableOrganizationImageURI:
     
-    original: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original') }})  
-    thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})  
+    original: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original') }})
+
+    thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})
+
     
 class AssignableOrganizationTypeEnum(str, Enum):
     PARTNER_ORGANIZATION = 'partner_organization'
@@ -23,9 +25,14 @@ class AssignableOrganizationTypeEnum(str, Enum):
 @dataclasses.dataclass
 class AssignableOrganization:
     
-    display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})  
-    org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})  
-    type: AssignableOrganizationTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})  
-    image_uri: Optional[AssignableOrganizationImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri'), 'exclude': lambda f: f is None }})  
-    partner_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_id'), 'exclude': lambda f: f is None }})  
+    display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
+
+    org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
+
+    type: AssignableOrganizationTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+
+    image_uri: Optional[AssignableOrganizationImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri'), 'exclude': lambda f: f is None }})
+
+    partner_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_id'), 'exclude': lambda f: f is None }})
+
     
