@@ -11,15 +11,20 @@ from typing import Optional
 class GetWorkflowClosingReasonsRequest:
     
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
-    r"""ID of a workflow definition"""  
+
+    r"""ID of a workflow definition"""
     
 
 @dataclasses.dataclass
 class GetWorkflowClosingReasonsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     closing_reasons_ids: Optional[shared_closingreasonsids.ClosingReasonsIds] = dataclasses.field(default=None)
-    r"""Returns the entire catalog of closing reasons for a specific workflow"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Returns the entire catalog of closing reasons for a specific workflow"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

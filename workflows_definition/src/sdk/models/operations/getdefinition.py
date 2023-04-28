@@ -13,19 +13,26 @@ from typing import Optional
 class GetDefinitionRequest:
     
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
-    r"""Short uuid (length 8) to identify the Workflow Definition."""  
+
+    r"""Short uuid (length 8) to identify the Workflow Definition."""
     
 
 @dataclasses.dataclass
 class GetDefinitionResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     definition_not_found_resp: Optional[shared_definitionnotfoundresp.DefinitionNotFoundResp] = dataclasses.field(default=None)
-    r"""Definition Not found"""  
+
+    r"""Definition Not found"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Validation Errors"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     workflow_definition: Optional[shared_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
-    r"""Returns the Workflow definition"""  
+
+    r"""Returns the Workflow definition"""
     

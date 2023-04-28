@@ -16,7 +16,10 @@ class StepRequirementConditionEnum(str, Enum):
 class StepRequirement:
     r"""describe the requirement for step enablement"""
     
-    condition: StepRequirementConditionEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})  
-    definition_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId') }})  
-    type: shared_itemtype_enum.ItemTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})  
+    condition: StepRequirementConditionEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})
+
+    definition_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId') }})
+
+    type: shared_itemtype_enum.ItemTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+
     

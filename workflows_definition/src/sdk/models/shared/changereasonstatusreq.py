@@ -12,5 +12,6 @@ from sdk import utils
 class ChangeReasonStatusReq:
     r"""change the status of a closing reason"""
     
-    status: shared_closingreasonsstatus_enum.ClosingReasonsStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})  
+    status: shared_closingreasonsstatus_enum.ClosingReasonsStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
+
     

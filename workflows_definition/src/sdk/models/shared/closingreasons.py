@@ -12,5 +12,6 @@ from sdk import utils
 class ClosingReasons:
     r"""Returns the entire catalog of closing reasons per organization"""
     
-    reasons: list[shared_closingreason.ClosingReason] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reasons') }})  
+    reasons: list[shared_closingreason.ClosingReason] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reasons') }})
+
     

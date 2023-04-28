@@ -10,9 +10,13 @@ from typing import Optional
 @dataclasses.dataclass
 class CreateClosingReasonResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     closing_reason: Optional[shared_closingreason.ClosingReason] = dataclasses.field(default=None)
-    r"""closing reason is stored successfully in the repository"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""closing reason is stored successfully in the repository"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

@@ -10,5 +10,6 @@ from sdk import utils
 @dataclasses.dataclass
 class ClosingReasonID:
     
-    id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})  
+    id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
+
     
