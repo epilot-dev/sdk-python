@@ -20,17 +20,23 @@ class ResendUserInvitationRequestBodyLanguageEnum(str, Enum):
 class ResendUserInvitationRequestBody:
     
     email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
-    r"""Email address of the address"""  
+
+    r"""Email address of the address"""
     language: Optional[ResendUserInvitationRequestBodyLanguageEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
-    r"""Language for user invitation email"""  
+
+    r"""Language for user invitation email"""
     
 
 @dataclasses.dataclass
 class ResendUserInvitationResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     user_v2: Optional[shared_userv2.UserV2] = dataclasses.field(default=None)
-    r"""User Invitation sent successfully."""  
+
+    r"""User Invitation sent successfully."""
     
