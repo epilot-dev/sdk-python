@@ -11,5 +11,6 @@ from epilot import utils
 @dataclasses.dataclass
 class DeleteFilePayload:
     
-    s3ref: shared_s3reference.S3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})  
+    s3ref: shared_s3reference.S3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
+
     

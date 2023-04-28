@@ -11,7 +11,9 @@ from typing import Optional
 @dataclasses.dataclass
 class UploadFilePayload:
     
-    filename: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename') }})  
+    filename: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename') }})
+
     mime_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mime_type'), 'exclude': lambda f: f is None }})
-    r"""MIME type of file"""  
+
+    r"""MIME type of file"""
     
