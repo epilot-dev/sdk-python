@@ -14,15 +14,20 @@ from typing import Optional
 @dataclasses.dataclass
 class GetVariableContextRequestBody:
     
-    parameters: Optional[shared_variableparameters.VariableParameters] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})  
+    parameters: Optional[shared_variableparameters.VariableParameters] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})
+
     
 
 @dataclasses.dataclass
 class GetVariableContextResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     variable_context: Optional[shared_variablecontext.VariableContext] = dataclasses.field(default=None)
-    r"""ok"""  
+
+    r"""ok"""
     
