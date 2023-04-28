@@ -12,13 +12,18 @@ from typing import Optional
 class AvailabilityLocation:
     
     city: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('city'), 'exclude': lambda f: f is None }})
-    r"""The name of the city, district, village, or town."""  
+
+    r"""The name of the city, district, village, or town."""
     country: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('country'), 'exclude': lambda f: f is None }})
-    r"""The name of the country."""  
+
+    r"""The name of the country."""
     postal_code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('postal_code'), 'exclude': lambda f: f is None }})
-    r"""The postal code for the address."""  
+
+    r"""The postal code for the address."""
     street: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street'), 'exclude': lambda f: f is None }})
-    r"""The first line of the address. Typically the street address or PO Box number."""  
+
+    r"""The first line of the address. Typically the street address or PO Box number."""
     street_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_number'), 'exclude': lambda f: f is None }})
-    r"""The second line of the address. Typically the number of the apartment, suite, or unit."""  
+
+    r"""The second line of the address. Typically the number of the apartment, suite, or unit."""
     

@@ -13,7 +13,9 @@ class AvailabilityCheckParams:
     r"""Availability check request payload"""
     
     filters: shared_availabilityfilters.AvailabilityFilters = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filters') }})
-    r"""Availability filters dimensions"""  
+
+    r"""Availability filters dimensions"""
     products: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products') }})
-    r"""Products to check availability"""  
+
+    r"""Products to check availability"""
     

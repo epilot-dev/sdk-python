@@ -13,9 +13,12 @@ class Error:
     r"""Invalid payload"""
     
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    r"""Error message"""  
+
+    r"""Error message"""
     cause: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cause'), 'exclude': lambda f: f is None }})
-    r"""The cause of the error (visible for bad requests - http 400)"""  
+
+    r"""The cause of the error (visible for bad requests - http 400)"""
     status: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    r"""The HTTP status code"""  
+
+    r"""The HTTP status code"""
     

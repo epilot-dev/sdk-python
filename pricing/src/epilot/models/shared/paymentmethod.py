@@ -13,7 +13,9 @@ class PaymentMethod:
     r"""A PaymentMethod represent your customer's payment instruments."""
     
     details: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('details'), 'exclude': lambda f: f is None }})
-    r"""Contains relevant data associated with the payment method type."""  
+
+    r"""Contains relevant data associated with the payment method type."""
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
-    r"""The type of the PaymentMethod."""  
+
+    r"""The type of the PaymentMethod."""
     
