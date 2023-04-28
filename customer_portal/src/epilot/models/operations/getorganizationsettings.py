@@ -10,9 +10,13 @@ from typing import Optional
 @dataclasses.dataclass
 class GetOrganizationSettingsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     organization_settings: Optional[shared_organizationsettings.OrganizationSettings] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""ok"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

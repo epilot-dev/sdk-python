@@ -11,14 +11,19 @@ from typing import Optional
 class ActivateUserRequest:
     
     token: str = dataclasses.field(metadata={'query_param': { 'field_name': 'token', 'style': 'form', 'explode': True }})
-    r"""Invite Token"""  
-    user_activation_payload: Optional[shared_useractivationpayload.UserActivationPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+
+    r"""Invite Token"""
+    user_activation_payload: Optional[shared_useractivationpayload.UserActivationPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+
     
 
 @dataclasses.dataclass
 class ActivateUserResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

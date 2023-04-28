@@ -12,9 +12,14 @@ from typing import Optional
 class EmailTemplates:
     r"""ok"""
     
-    confirm_account: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confirmAccount'), 'exclude': lambda f: f is None }})  
-    forgot_password: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('forgotPassword'), 'exclude': lambda f: f is None }})  
-    invitation: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitation'), 'exclude': lambda f: f is None }})  
-    on_map_a_pending_user: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onMapAPendingUser'), 'exclude': lambda f: f is None }})  
-    on_new_quote: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onNewQuote'), 'exclude': lambda f: f is None }})  
+    confirm_account: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confirmAccount'), 'exclude': lambda f: f is None }})
+
+    forgot_password: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('forgotPassword'), 'exclude': lambda f: f is None }})
+
+    invitation: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitation'), 'exclude': lambda f: f is None }})
+
+    on_map_a_pending_user: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onMapAPendingUser'), 'exclude': lambda f: f is None }})
+
+    on_new_quote: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onNewQuote'), 'exclude': lambda f: f is None }})
+
     

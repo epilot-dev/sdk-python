@@ -11,8 +11,10 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class UserExistsRequest:
     
-    email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})  
-    org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})  
+    email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
+
+    org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
+
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -20,7 +22,8 @@ class UserExistsRequest:
 class UserExists404ApplicationJSON:
     r"""User does not exist in the portal"""
     
-    exists: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists'), 'exclude': lambda f: f is None }})  
+    exists: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists'), 'exclude': lambda f: f is None }})
+
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -28,18 +31,25 @@ class UserExists404ApplicationJSON:
 class UserExists200ApplicationJSON:
     r"""User exists in the portal"""
     
-    exists: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists'), 'exclude': lambda f: f is None }})  
-    user: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})  
+    exists: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists'), 'exclude': lambda f: f is None }})
+
+    user: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
+
     
 
 @dataclasses.dataclass
 class UserExistsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     user_exists_200_application_json_object: Optional[UserExists200ApplicationJSON] = dataclasses.field(default=None)
-    r"""User exists in the portal"""  
+
+    r"""User exists in the portal"""
     user_exists_404_application_json_object: Optional[UserExists404ApplicationJSON] = dataclasses.field(default=None)
-    r"""User does not exist in the portal"""  
+
+    r"""User does not exist in the portal"""
     

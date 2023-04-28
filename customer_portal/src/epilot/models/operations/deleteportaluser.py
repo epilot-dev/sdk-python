@@ -9,9 +9,13 @@ from typing import Optional
 @dataclasses.dataclass
 class DeletePortalUserResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     delete_portal_user_200_application_json_string: Optional[str] = dataclasses.field(default=None)
-    r"""The returned portal user id"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""The returned portal user id"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

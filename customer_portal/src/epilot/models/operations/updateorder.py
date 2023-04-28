@@ -9,23 +9,30 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class UpdateOrderSecurity:
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+
     
 
 @dataclasses.dataclass
 class UpdateOrderRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The Id of order"""  
-    request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+
+    r"""The Id of order"""
+    request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+
     
 
 @dataclasses.dataclass
 class UpdateOrderResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The returned order"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""The returned order"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

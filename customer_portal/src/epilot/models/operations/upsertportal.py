@@ -13,26 +13,34 @@ from typing import Optional
 @dataclasses.dataclass
 class UpsertPortalSecurity:
     
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+
     
 
 @dataclasses.dataclass
 class UpsertPortalRequest:
     
     upsert_portal_config: shared_upsertportalconfig.UpsertPortalConfig = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Portal payload"""  
+
+    r"""Portal payload"""
     origin: Optional[shared_origin_enum.OriginEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""  
+
+    r"""Origin of the portal"""
     
 
 @dataclasses.dataclass
 class UpsertPortalResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     add_portal_resp: Optional[shared_addportalresp.AddPortalResp] = dataclasses.field(default=None)
-    r"""Success - portal created with success."""  
+
+    r"""Success - portal created with success."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""Validation Errors"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

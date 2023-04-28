@@ -9,15 +9,20 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class UpdatePortalUserSecurity:
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+
     
 
 @dataclasses.dataclass
 class UpdatePortalUserResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The returned portal user"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""The returned portal user"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

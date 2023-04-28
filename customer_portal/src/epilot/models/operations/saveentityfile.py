@@ -11,7 +11,8 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class SaveEntityFileSecurity:
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -19,15 +20,20 @@ class SaveEntityFileSecurity:
 class SaveEntityFile200ApplicationJSON:
     r"""The returned File Entities"""
     
-    created_files: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdFiles'), 'exclude': lambda f: f is None }})  
+    created_files: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdFiles'), 'exclude': lambda f: f is None }})
+
     
 
 @dataclasses.dataclass
 class SaveEntityFileResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     save_entity_file_200_application_json_object: Optional[SaveEntityFile200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned File Entities"""  
+
+    r"""The returned File Entities"""
     
