@@ -12,15 +12,20 @@ from typing import Optional
 class ListAccessTokensRequest:
     
     token_type: Optional[list[shared_accesstokentype_enum.AccessTokenTypeEnum]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'token_type', 'style': 'form', 'explode': True }})
-    r"""Filter by token types"""  
+
+    r"""Filter by token types"""
     
 
 @dataclasses.dataclass
 class ListAccessTokensResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     access_token_items: Optional[list[shared_accesstokenitem.AccessTokenItem]] = dataclasses.field(default=None)
-    r"""List of Access Tokens"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""List of Access Tokens"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     
