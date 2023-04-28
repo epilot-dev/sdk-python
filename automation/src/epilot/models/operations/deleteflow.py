@@ -11,15 +11,20 @@ from typing import Optional
 class DeleteFlowRequest:
     
     flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flow_id', 'style': 'simple', 'explode': False }})
-    r"""Automation Workflow ID"""  
+
+    r"""Automation Workflow ID"""
     
 
 @dataclasses.dataclass
 class DeleteFlowResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     automation_flow: Optional[shared_automationflow.AutomationFlow] = dataclasses.field(default=None)
-    r"""The deleted automation flow"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""The deleted automation flow"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     

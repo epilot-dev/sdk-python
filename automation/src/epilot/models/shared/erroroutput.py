@@ -11,6 +11,8 @@ from epilot import utils
 @dataclasses.dataclass
 class ErrorOutput:
     
-    error_code: shared_errorcode_enum.ErrorCodeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_code') }})  
-    error_reason: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_reason') }})  
+    error_code: shared_errorcode_enum.ErrorCodeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_code') }})
+
+    error_reason: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_reason') }})
+
     

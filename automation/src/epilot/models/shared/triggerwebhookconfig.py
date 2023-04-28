@@ -11,6 +11,8 @@ from typing import Optional
 @dataclasses.dataclass
 class TriggerWebhookConfig:
     
-    entity_sources: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_sources'), 'exclude': lambda f: f is None }})  
-    target_webhook_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_webhook_id'), 'exclude': lambda f: f is None }})  
+    entity_sources: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_sources'), 'exclude': lambda f: f is None }})
+
+    target_webhook_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_webhook_id'), 'exclude': lambda f: f is None }})
+
     

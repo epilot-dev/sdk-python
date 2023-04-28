@@ -11,7 +11,10 @@ from typing import Optional
 @dataclasses.dataclass
 class AssignUsersToStep:
     
-    step_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('step_id'), 'exclude': lambda f: f is None }})  
-    step_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('step_name'), 'exclude': lambda f: f is None }})  
-    user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_ids'), 'exclude': lambda f: f is None }})  
+    step_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('step_id'), 'exclude': lambda f: f is None }})
+
+    step_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('step_name'), 'exclude': lambda f: f is None }})
+
+    user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_ids'), 'exclude': lambda f: f is None }})
+
     

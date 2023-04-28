@@ -28,19 +28,26 @@ class SendEmailConfigAttachmentsSourceFilter:
     r"""Specify filters to match file entities related to main entity"""
     
     attribute: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribute'), 'exclude': lambda f: f is None }})
-    r"""Filter by a specific relation attribute on the main entity"""  
+
+    r"""Filter by a specific relation attribute on the main entity"""
     document_type: Optional[SendEmailConfigAttachmentsSourceFilterDocumentTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type'), 'exclude': lambda f: f is None }})
-    r"""Filter by a specific document type (e.g. document)"""  
+
+    r"""Filter by a specific document type (e.g. document)"""
     filename_regex: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename_regex'), 'exclude': lambda f: f is None }})
-    r"""Match by filename. Regex syntax supported"""  
+
+    r"""Match by filename. Regex syntax supported"""
     limit: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})
-    r"""Limit files to maximum number (default, all matched file relations)"""  
+
+    r"""Limit files to maximum number (default, all matched file relations)"""
     relation_tag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_tag'), 'exclude': lambda f: f is None }})
-    r"""Filter by relation tag (label) on the main entity"""  
+
+    r"""Filter by relation tag (label) on the main entity"""
     self_: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is None }})
-    r"""Picks main entity as file (only works if source entity is a file)"""  
+
+    r"""Picks main entity as file (only works if source entity is a file)"""
     tag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag'), 'exclude': lambda f: f is None }})
-    r"""Filter by a specific tag on the related file entity"""  
+
+    r"""Filter by a specific tag on the related file entity"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -48,7 +55,8 @@ class SendEmailConfigAttachmentsSourceFilter:
 class SendEmailConfigAttachments:
     
     source_filter: Optional[SendEmailConfigAttachmentsSourceFilter] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_filter'), 'exclude': lambda f: f is None }})
-    r"""Specify filters to match file entities related to main entity"""  
+
+    r"""Specify filters to match file entities related to main entity"""
     
 class SendEmailConfigLanguageCodeEnum(str, Enum):
     DE = 'de'
@@ -60,10 +68,13 @@ class SendEmailConfigLanguageCodeEnum(str, Enum):
 class SendEmailConfig:
     
     attachments: Optional[list[SendEmailConfigAttachments]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attachments'), 'exclude': lambda f: f is None }})
+
     r"""Include extra file attachments in sent email.
     
     Attachments in email template will be sent regardless of this configuration.
-    """  
-    email_template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_template_id'), 'exclude': lambda f: f is None }})  
-    language_code: Optional[SendEmailConfigLanguageCodeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language_code'), 'exclude': lambda f: f is None }})  
+    """
+    email_template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_template_id'), 'exclude': lambda f: f is None }})
+
+    language_code: Optional[SendEmailConfigLanguageCodeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language_code'), 'exclude': lambda f: f is None }})
+
     

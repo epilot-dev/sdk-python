@@ -15,9 +15,14 @@ class TriggerEventEntityActivityTypeEnum(str, Enum):
 @dataclasses.dataclass
 class TriggerEventEntityActivity:
     
-    activity_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_id') }})  
-    activity_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_type') }})  
-    org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})  
-    entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is None }})  
-    type: Optional[TriggerEventEntityActivityTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})  
+    activity_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_id') }})
+
+    activity_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_type') }})
+
+    org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
+
+    entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is None }})
+
+    type: Optional[TriggerEventEntityActivityTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+
     

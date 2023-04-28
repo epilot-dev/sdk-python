@@ -12,6 +12,8 @@ from epilot import utils
 class GetExecutionsResp:
     r"""List of automation executions"""
     
-    results: list[shared_automationexecution.AutomationExecution] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})  
-    total: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total') }})  
+    results: list[shared_automationexecution.AutomationExecution] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+
+    total: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total') }})
+
     

@@ -13,9 +13,12 @@ from typing import Any
 class SetValueMapper:
     
     mode: shared_mappingattributemode_enum.MappingAttributeModeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
-    r"""- copy_if_exists - it replaces the target attribute with the source value - append_if_exists - it currently replaces target attribute with array like values. Useful when you have multiple values to be added into one attribute. - set_value - it sets a value to a predefined value. Must be used together with value property."""  
+
+    r"""- copy_if_exists - it replaces the target attribute with the source value - append_if_exists - it currently replaces target attribute with array like values. Useful when you have multiple values to be added into one attribute. - set_value - it sets a value to a predefined value. Must be used together with value property."""
     target: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
-    r"""JSON like target path for the attribute. Eg. last_name"""  
+
+    r"""JSON like target path for the attribute. Eg. last_name"""
     value: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
-    r"""Any value to be set: string, number, string[], number[], JSON object, etc. It will override existing values, if any."""  
+
+    r"""Any value to be set: string, number, string[], number[], JSON object, etc. It will override existing values, if any."""
     

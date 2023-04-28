@@ -12,7 +12,9 @@ from typing import Any, Optional
 class MappingAttributeV2:
     
     operation: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
-    r"""Mapping operation nodes are either primitive values or operation node objects"""  
+
+    r"""Mapping operation nodes are either primitive values or operation node objects"""
     target: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target'), 'exclude': lambda f: f is None }})
-    r"""Target JSON path for the attribute to set"""  
+
+    r"""Target JSON path for the attribute to set"""
     

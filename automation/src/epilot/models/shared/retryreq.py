@@ -14,5 +14,6 @@ class RetryReq:
     r"""Retry request details."""
     
     retry_strategy: Optional[shared_retrystrategy_enum.RetryStrategyEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('retry_strategy'), 'exclude': lambda f: f is None }})
-    r"""different behaviors for retrying failed execution actions."""  
+
+    r"""different behaviors for retrying failed execution actions."""
     

@@ -11,21 +11,29 @@ from typing import Optional
 class SearchFlowsRequest:
     
     from_: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
-    r"""Pagination: starting for results"""  
+
+    r"""Pagination: starting for results"""
     schema: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'schema', 'style': 'form', 'explode': True }})
-    r"""Entity Schema"""  
+
+    r"""Entity Schema"""
     size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
-    r"""Pagination: max number of results to return"""  
+
+    r"""Pagination: max number of results to return"""
     trigger_source_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'trigger_source_id', 'style': 'form', 'explode': True }})
-    r"""Trigger source identifier"""  
+
+    r"""Trigger source identifier"""
     
 
 @dataclasses.dataclass
 class SearchFlowsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     search_automations_resp: Optional[shared_searchautomationsresp.SearchAutomationsResp] = dataclasses.field(default=None)
-    r"""List of automation flows, including total count"""  
+
+    r"""List of automation flows, including total count"""
     

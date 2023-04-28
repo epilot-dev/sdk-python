@@ -10,9 +10,13 @@ from typing import Optional
 @dataclasses.dataclass
 class StartExecutionResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     automation_execution: Optional[shared_automationexecution.AutomationExecution] = dataclasses.field(default=None)
-    r"""The created execution"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""The created execution"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     
