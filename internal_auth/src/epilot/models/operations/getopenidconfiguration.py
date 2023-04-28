@@ -13,16 +13,22 @@ from typing import Optional
 class GetOpenIDConfiguration200ApplicationJSON:
     r"""OpenID Configuration"""
     
-    issuer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issuer'), 'exclude': lambda f: f is None }})  
-    jwks_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jwks_uri'), 'exclude': lambda f: f is None }})  
+    issuer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issuer'), 'exclude': lambda f: f is None }})
+
+    jwks_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jwks_uri'), 'exclude': lambda f: f is None }})
+
     
 
 @dataclasses.dataclass
 class GetOpenIDConfigurationResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     get_open_id_configuration_200_application_json_object: Optional[GetOpenIDConfiguration200ApplicationJSON] = dataclasses.field(default=None)
-    r"""OpenID Configuration"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""OpenID Configuration"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     
