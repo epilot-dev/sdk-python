@@ -21,16 +21,23 @@ class UserRole:
     r"""A standard user role. Must be explicitly assigned to users."""
     
     grants: list[shared_grant.Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
-    r"""List of grants (permissions) applied to the role"""  
+
+    r"""List of grants (permissions) applied to the role"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    r"""Format: <organization_id>:<slug>"""  
+
+    r"""Format: <organization_id>:<slug>"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    r"""Human-friendly name for the role"""  
+
+    r"""Human-friendly name for the role"""
     organization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id') }})
-    r"""Id of an organization"""  
+
+    r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
-    r"""URL-friendly name for the role"""  
-    type: UserRoleTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})  
+
+    r"""URL-friendly name for the role"""
+    type: UserRoleTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
-    r"""date and time then the role will expire"""  
+
+    r"""date and time then the role will expire"""
     

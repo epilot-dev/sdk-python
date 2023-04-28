@@ -14,15 +14,20 @@ from typing import Optional
 class ListAllAssignments200ApplicationJSON:
     r"""ok"""
     
-    assignments: Optional[list[shared_assignment.Assignment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})  
+    assignments: Optional[list[shared_assignment.Assignment]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
+
     
 
 @dataclasses.dataclass
 class ListAllAssignmentsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+
+    status_code: int = dataclasses.field()
+
     list_all_assignments_200_application_json_object: Optional[ListAllAssignments200ApplicationJSON] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+
+    r"""ok"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+
     
