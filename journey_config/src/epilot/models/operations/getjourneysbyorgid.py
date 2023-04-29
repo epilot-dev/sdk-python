@@ -10,7 +10,6 @@ from typing import Any, Optional
 class GetJourneysByOrgIDRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""Organization ID"""
     
 
@@ -18,12 +17,8 @@ class GetJourneysByOrgIDRequest:
 class GetJourneysByOrgIDResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     get_journeys_response: Optional[dict[str, Any]] = dataclasses.field(default=None)
-
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
