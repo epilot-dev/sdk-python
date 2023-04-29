@@ -11,21 +11,15 @@ from typing import Optional
 class AddAssignmentRequest:
     
     role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})
-
     user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})
-
     
 
 @dataclasses.dataclass
 class AddAssignmentResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     assignment: Optional[shared_assignment.Assignment] = dataclasses.field(default=None)
-
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

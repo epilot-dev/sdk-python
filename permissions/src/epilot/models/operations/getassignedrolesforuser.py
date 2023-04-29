@@ -10,19 +10,14 @@ from typing import Optional
 class GetAssignedRolesForUserRequest:
     
     user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})
-
     
 
 @dataclasses.dataclass
 class GetAssignedRolesForUserResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     assignments: Optional[list[str]] = dataclasses.field(default=None)
-
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

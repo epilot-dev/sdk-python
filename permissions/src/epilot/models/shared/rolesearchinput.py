@@ -12,21 +12,15 @@ from typing import Optional
 class RoleSearchInput:
     
     limit: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})
-
     r"""The Number of roles to return"""
     offset: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset'), 'exclude': lambda f: f is None }})
-
     r"""The number of roles to skip before starting to collect the result set"""
     org_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_ids'), 'exclude': lambda f: f is None }})
-
     r"""List of organization ids to filter by"""
     query: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query'), 'exclude': lambda f: f is None }})
-
     r"""Input to search across fields"""
     role_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role_ids'), 'exclude': lambda f: f is None }})
-
     r"""List of role ids to filter by"""
     slugs: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slugs'), 'exclude': lambda f: f is None }})
-
     r"""List of role slugs to filter by"""
     
