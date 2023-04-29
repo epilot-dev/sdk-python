@@ -11,7 +11,6 @@ from typing import Optional
 class GetUserV2Request:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""The Id of user"""
     
 
@@ -19,12 +18,8 @@ class GetUserV2Request:
 class GetUserV2Response:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     user_v2: Optional[shared_userv2.UserV2] = dataclasses.field(default=None)
-
     r"""The returned user"""
     

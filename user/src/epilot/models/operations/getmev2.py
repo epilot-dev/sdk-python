@@ -11,12 +11,8 @@ from typing import Optional
 class GetMeV2Response:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     user_v2: Optional[shared_userv2.UserV2] = dataclasses.field(default=None)
-
     r"""currently logged in user"""
     

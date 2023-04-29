@@ -13,7 +13,6 @@ from typing import Optional
 class GetUserLoginParametersRequest:
     
     username: str = dataclasses.field(metadata={'path_param': { 'field_name': 'username', 'style': 'simple', 'explode': False }})
-
     r"""Username"""
     
 
@@ -23,19 +22,14 @@ class GetUserLoginParameters200ApplicationJSON:
     r"""User"""
     
     login_parameters: Optional[list[shared_loginparameters.LoginParameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login_parameters'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclasses.dataclass
 class GetUserLoginParametersResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     get_user_login_parameters_200_application_json_object: Optional[GetUserLoginParameters200ApplicationJSON] = dataclasses.field(default=None)
-
     r"""User"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
