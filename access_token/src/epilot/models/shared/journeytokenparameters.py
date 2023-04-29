@@ -16,11 +16,8 @@ class JourneyTokenParametersTokenTypeEnum(str, Enum):
 class JourneyTokenParameters:
     
     journey_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_id') }})
-
     r"""Journey ID for access token type \\"journey\\" """
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-
     r"""Human readable name for access token"""
     token_type: Optional[JourneyTokenParametersTokenTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
-
     

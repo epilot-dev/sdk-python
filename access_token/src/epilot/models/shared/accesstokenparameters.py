@@ -16,11 +16,8 @@ class AccessTokenParametersTokenTypeEnum(str, Enum):
 class AccessTokenParameters:
     
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-
     r"""Human readable name for access token"""
     assignments: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
-
     r"""List of role ids attached to an user"""
     token_type: Optional[AccessTokenParametersTokenTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
-
     
