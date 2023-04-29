@@ -12,15 +12,10 @@ from typing import Optional
 class CreateExecutionResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-
     r"""Validation Errors"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     workflow_execution: Optional[shared_workflowexecution.WorkflowExecution] = dataclasses.field(default=None)
-
     r"""Success - if the execution is created successfully"""
     

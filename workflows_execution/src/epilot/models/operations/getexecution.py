@@ -12,7 +12,6 @@ from typing import Optional
 class GetExecutionRequest:
     
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
-
     r"""Id of the execution"""
     
 
@@ -20,15 +19,10 @@ class GetExecutionRequest:
 class GetExecutionResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-
     r"""Other errors"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     workflow_execution: Optional[shared_workflowexecution.WorkflowExecution] = dataclasses.field(default=None)
-
     r"""Success - execution loaded with success. Empty response execution was not found."""
     

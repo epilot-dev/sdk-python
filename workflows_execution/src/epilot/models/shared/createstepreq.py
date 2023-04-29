@@ -16,16 +16,10 @@ class CreateStepReq:
     r"""Workflow Execution Step payload"""
     
     insertion_index: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insertionIndex') }})
-
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-
     automation_config: Optional[shared_automationconfig.AutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})
-
     r"""Configuration for automation execution to run"""
     execution_type: Optional[shared_steptype_enum.StepTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
-
     section_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sectionId'), 'exclude': lambda f: f is None }})
-
     status: Optional[shared_stepstatus_enum.StepStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-
     

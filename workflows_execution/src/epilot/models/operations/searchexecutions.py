@@ -12,15 +12,10 @@ from typing import Optional
 class SearchExecutionsResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-
     r"""Validation Errors"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     search_executions_resp: Optional[shared_searchexecutionsresp.SearchExecutionsResp] = dataclasses.field(default=None)
-
     r"""Success - filtered steps are returned"""
     
