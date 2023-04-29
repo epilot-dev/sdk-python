@@ -18,10 +18,8 @@ class MessageRequestParamsThread:
     """
     
     topic: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('topic') }})
-
     r"""Message topic (e.g. which service sends the message or message category)"""
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assigned_to'), 'exclude': lambda f: f is None }})
-
     r"""Ivy User ID of who the message is assigned to. Default is the user who sends message."""
     
 
@@ -30,39 +28,28 @@ class MessageRequestParamsThread:
 class MessageRequestParams:
     
     from_: shared_address.Address = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from') }})
-
     subject: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subject') }})
-
     r"""Subject"""
     bcc: Optional[list[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bcc'), 'exclude': lambda f: f is None }})
-
     r"""Bcc email addresses"""
     cc: Optional[list[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cc'), 'exclude': lambda f: f is None }})
-
     r"""Cc email addresses"""
     file: Optional[shared_attachmentsrelation.AttachmentsRelation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file'), 'exclude': lambda f: f is None }})
-
     r"""Message attachments"""
     html: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('html'), 'exclude': lambda f: f is None }})
-
     r"""HTML body"""
     parent_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parent_id'), 'exclude': lambda f: f is None }})
-
     r"""Entity ID of parent message which this message replies to or forwards from.\ 
     If both `parent_id` and `thread` are provided, `thread` is discarded.
     """
     reply_to: Optional[shared_address.Address] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reply_to'), 'exclude': lambda f: f is None }})
-
     text: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('text'), 'exclude': lambda f: f is None }})
-
     r"""Text body. If not provided, text body is converted from HTML body using [html-to-text](https://www.npmjs.com/package/html-to-text)"""
     thread: Optional[MessageRequestParamsThread] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thread'), 'exclude': lambda f: f is None }})
-
     r"""Open new thread when sending the very first message in conversation. Thread should contains context related to all messages in it (eg. topic, brand_id, opportunity_id, assigned_to,...).\ 
     Thread properties depend on API caller as it's not pre-defined. We do recommend having at least `topic` property for categorizing.\
     `thread` or `parent_id` must be provided either.
     """
     to: Optional[list[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('to'), 'exclude': lambda f: f is None }})
-
     r"""To email addresses"""
     

@@ -14,6 +14,5 @@ class AttachmentsRelation:
     r"""Message attachments"""
     
     dollar_relation: Optional[list[shared_file.File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
-
     r"""It's normal entity relation with some additional properties for sending message attachment."""
     
