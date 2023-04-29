@@ -12,22 +12,16 @@ from typing import Optional
 class InvitePartnerRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""The Id of partner"""
     partner_invitation_payload: Optional[shared_partnerinvitationpayload.PartnerInvitationPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     
 
 @dataclasses.dataclass
 class InvitePartnerResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     partner: Optional[shared_partner.Partner] = dataclasses.field(default=None)
-
     r"""Invited successfully"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

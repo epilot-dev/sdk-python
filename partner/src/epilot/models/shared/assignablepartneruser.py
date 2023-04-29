@@ -13,9 +13,7 @@ from typing import Optional
 class AssignablePartnerUserImageURI:
     
     original: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original') }})
-
     thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})
-
     
 class AssignablePartnerUserTypeEnum(str, Enum):
     PARTNER_USER = 'partner_user'
@@ -26,15 +24,9 @@ class AssignablePartnerUserTypeEnum(str, Enum):
 class AssignablePartnerUser:
     
     display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
-
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
-
     type: AssignablePartnerUserTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-
     image_uri: Optional[AssignablePartnerUserImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri'), 'exclude': lambda f: f is None }})
-
     partner_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_id'), 'exclude': lambda f: f is None }})
-
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
-
     
