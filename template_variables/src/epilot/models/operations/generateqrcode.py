@@ -10,7 +10,6 @@ from typing import Optional
 class GenerateQRcodeRequest:
     
     qrdata: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'qrdata', 'style': 'form', 'explode': True }})
-
     r"""Payload of the QR code"""
     
 
@@ -18,9 +17,6 @@ class GenerateQRcodeRequest:
 class GenerateQRcodeResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

@@ -17,17 +17,12 @@ class VariableResultTypeEnum(str, Enum):
 class VariableResult:
     
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-
     r"""Variable description"""
     group: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group'), 'exclude': lambda f: f is None }})
-
     r"""Variable group"""
     insert: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insert'), 'exclude': lambda f: f is None }})
-
     r"""The value which is used to insert to template"""
     qrdata: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('qrdata'), 'exclude': lambda f: f is None }})
-
     r"""Payload for the QR data"""
     type: Optional[VariableResultTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
-
     

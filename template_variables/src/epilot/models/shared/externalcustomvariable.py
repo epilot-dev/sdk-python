@@ -12,7 +12,5 @@ from typing import Optional
 class ExternalCustomVariable:
     
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
-
     variable: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('variable'), 'exclude': lambda f: f is None }})
-
     

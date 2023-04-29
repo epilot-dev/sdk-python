@@ -17,7 +17,6 @@ class GetCategoriesLangEnum(str, Enum):
 class GetCategoriesRequest:
     
     lang: Optional[GetCategoriesLangEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
-
     r"""Language"""
     
 
@@ -25,12 +24,8 @@ class GetCategoriesRequest:
 class GetCategoriesResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     category_results: Optional[list[shared_categoryresult.CategoryResult]] = dataclasses.field(default=None)
-
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

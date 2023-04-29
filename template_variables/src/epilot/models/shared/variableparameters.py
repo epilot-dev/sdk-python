@@ -19,28 +19,19 @@ class VariableParametersLanguageEnum(str, Enum):
 class VariableParameters:
     
     template_type: shared_templatetype_enum.TemplateTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})
-
     brand_id: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('brand_id'), 'exclude': lambda f: f is None }})
-
     r"""Brand ID"""
     context_data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_data'), 'exclude': lambda f: f is None }})
-
     r"""If context data is avaialble, this data will be used for variable replace."""
     custom_variables: Optional[list[shared_externalcustomvariable.ExternalCustomVariable]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_variables'), 'exclude': lambda f: f is None }})
-
     r"""Custom variables with specified values form other services."""
     language: Optional[VariableParametersLanguageEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
-
     main_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('main_entity_id'), 'exclude': lambda f: f is None }})
-
     r"""The main entity ID. Use main entity in order to use the variable without schema slug prefix - or just pass directly to other object ID."""
     template_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_name'), 'exclude': lambda f: f is None }})
-
     r"""The name of email template"""
     template_tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_tags'), 'exclude': lambda f: f is None }})
-
     r"""The tags of email template"""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
-
     r"""User ID"""
     
