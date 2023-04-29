@@ -10,12 +10,8 @@ from typing import Any, Optional
 class GetPortalUserResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-
     r"""The returned portal user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

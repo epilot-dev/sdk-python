@@ -12,14 +12,12 @@ from typing import Optional
 class GetEmailTemplatesSecurity:
     
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-
     
 
 @dataclasses.dataclass
 class GetEmailTemplatesRequest:
     
     origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-
     r"""Origin of the portal"""
     
 
@@ -27,12 +25,8 @@ class GetEmailTemplatesRequest:
 class GetEmailTemplatesResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     email_templates: Optional[shared_emailtemplates.EmailTemplates] = dataclasses.field(default=None)
-
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

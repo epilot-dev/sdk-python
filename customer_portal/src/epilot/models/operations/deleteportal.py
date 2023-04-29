@@ -11,14 +11,12 @@ from typing import Optional
 class DeletePortalSecurity:
     
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-
     
 
 @dataclasses.dataclass
 class DeletePortalRequest:
     
     origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-
     r"""Origin of the portal"""
     
 
@@ -26,9 +24,6 @@ class DeletePortalRequest:
 class DeletePortalResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

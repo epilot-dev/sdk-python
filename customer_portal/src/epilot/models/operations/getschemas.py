@@ -14,19 +14,14 @@ class GetSchemas200ApplicationJSON:
     r"""Success"""
     
     schemas: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schemas'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclasses.dataclass
 class GetSchemasResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     get_schemas_200_application_json_object: Optional[GetSchemas200ApplicationJSON] = dataclasses.field(default=None)
-
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

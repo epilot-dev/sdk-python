@@ -11,29 +11,22 @@ from typing import Any, Optional
 class GetECPContactSecurity:
     
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-
     
 
 @dataclasses.dataclass
 class GetECPContactRequest:
     
     id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'id', 'style': 'form', 'explode': True }})
-
     
 
 @dataclasses.dataclass
 class GetECPContactResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-
     r"""The returned contact"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-
     r"""Other errors"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

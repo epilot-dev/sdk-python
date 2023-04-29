@@ -2,14 +2,14 @@ configVersion: 1.0.0
 management:
   docChecksum: a522cb739e2a8eaa5f99c3dde94f467f
   docVersion: 1.0.0
-  speakeasyVersion: 1.26.2
-  generationVersion: 2.23.2
+  speakeasyVersion: 1.26.4
+  generationVersion: 2.23.4
 generation:
   telemetryEnabled: false
   sdkClassName: epilot
   singleTagPerOp: false
 python:
-  version: 1.9.0
+  version: 1.9.1
   author: epilot
   description: Python Client SDK for Epilot
   packageName: epilot-customer-portal

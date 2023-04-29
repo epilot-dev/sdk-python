@@ -12,17 +12,14 @@ from typing import Any, Optional
 class UpdateOpportunitySecurity:
     
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-
     
 
 @dataclasses.dataclass
 class UpdateOpportunityRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""The Id of opportunities"""
     request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-
     r"""Updated opportunity body"""
     
 
@@ -32,19 +29,14 @@ class UpdateOpportunity200ApplicationJSON:
     r"""The returned opportunity"""
     
     data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclasses.dataclass
 class UpdateOpportunityResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     update_opportunity_200_application_json_object: Optional[UpdateOpportunity200ApplicationJSON] = dataclasses.field(default=None)
-
     r"""The returned opportunity"""
     

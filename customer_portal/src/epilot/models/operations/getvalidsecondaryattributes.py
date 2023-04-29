@@ -13,9 +13,7 @@ from typing import Optional
 class GetValidSecondaryAttributes200ApplicationJSONData:
     
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -24,19 +22,14 @@ class GetValidSecondaryAttributes200ApplicationJSON:
     r"""The returned count of contact"""
     
     data: Optional[list[GetValidSecondaryAttributes200ApplicationJSONData]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclasses.dataclass
 class GetValidSecondaryAttributesResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     get_valid_secondary_attributes_200_application_json_object: Optional[GetValidSecondaryAttributes200ApplicationJSON] = dataclasses.field(default=None)
-
     r"""The returned count of contact"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

@@ -11,12 +11,9 @@ from typing import Any, Optional
 class ConfirmUserRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""The Id of portal user id"""
     org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
-
     origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-
     r"""Origin of the portal"""
     
 
@@ -24,12 +21,8 @@ class ConfirmUserRequest:
 class ConfirmUserResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-
     r"""The returned portal user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

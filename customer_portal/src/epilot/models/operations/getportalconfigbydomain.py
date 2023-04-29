@@ -11,19 +11,14 @@ from typing import Optional
 class GetPortalConfigByDomainRequest:
     
     domain: str = dataclasses.field(metadata={'query_param': { 'field_name': 'domain', 'style': 'form', 'explode': True }})
-
     
 
 @dataclasses.dataclass
 class GetPortalConfigByDomainResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     portal_config: Optional[shared_portalconfig.PortalConfig] = dataclasses.field(default=None)
-
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

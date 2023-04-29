@@ -12,14 +12,12 @@ from typing import Optional
 class GetEntityIdentifiersSecurity:
     
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-
     
 
 @dataclasses.dataclass
 class GetEntityIdentifiersRequest:
     
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-
     r"""The slug of an entity"""
     
 
@@ -28,9 +26,7 @@ class GetEntityIdentifiersRequest:
 class GetEntityIdentifiers200ApplicationJSONData:
     
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -39,19 +35,14 @@ class GetEntityIdentifiers200ApplicationJSON:
     r"""The returned identifiers of an entity"""
     
     data: Optional[list[GetEntityIdentifiers200ApplicationJSONData]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclasses.dataclass
 class GetEntityIdentifiersResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     get_entity_identifiers_200_application_json_object: Optional[GetEntityIdentifiers200ApplicationJSON] = dataclasses.field(default=None)
-
     r"""The returned identifiers of an entity"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
