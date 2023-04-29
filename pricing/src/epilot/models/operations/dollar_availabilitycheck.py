@@ -13,9 +13,7 @@ from typing import Optional
 class DollarAvailabilityCheckRequest:
     
     availability_check_params: shared_availabilitycheckparams.AvailabilityCheckParams = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
-
     r"""The target Organization Id represented by the caller"""
     
 
@@ -23,15 +21,10 @@ class DollarAvailabilityCheckRequest:
 class DollarAvailabilityCheckResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     availability_result: Optional[shared_availabilityresult.AvailabilityResult] = dataclasses.field(default=None)
-
     r"""The availability check result"""
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
-
     r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

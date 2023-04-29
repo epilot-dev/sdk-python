@@ -13,6 +13,5 @@ class CheckoutCartResult:
     r"""The cart checkout result"""
     
     order: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})
-
     r"""The order entity"""
     

@@ -11,15 +11,10 @@ from typing import Any, Optional
 class CreateOrderResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
-
     r"""Invalid payload"""
     order: Optional[dict[str, Any]] = dataclasses.field(default=None)
-
     r"""Order result"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
