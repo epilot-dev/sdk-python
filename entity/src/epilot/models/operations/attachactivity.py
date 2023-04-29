@@ -11,10 +11,8 @@ from typing import Optional
 class AttachActivityRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""Activity Id"""
     entities: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entities', 'style': 'form', 'explode': False }})
-
     r"""Comma-separated list of entities which the activity primarily concerns"""
     
 
@@ -22,12 +20,8 @@ class AttachActivityRequest:
 class AttachActivityResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     activity_item: Optional[shared_activityitem.ActivityItem] = dataclasses.field(default=None)
-
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

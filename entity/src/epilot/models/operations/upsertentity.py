@@ -13,40 +13,29 @@ from typing import Any, Optional
 class UpsertEntityRequestBody:
     
     entity: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity') }})
-
     unique_key: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unique_key') }})
-
     
 
 @dataclasses.dataclass
 class UpsertEntityRequest:
     
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-
     r"""Entity Schema"""
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
-
     r"""Activity to include in event feed"""
     async_: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
-
     r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
     dry_run: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'dry_run', 'style': 'form', 'explode': True }})
-
     r"""Dry Run mode = return matched entities but don't update them."""
     request_body: Optional[UpsertEntityRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     
 
 @dataclasses.dataclass
 class UpsertEntityResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-
     r"""Entity was updated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

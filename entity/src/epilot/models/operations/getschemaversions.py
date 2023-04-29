@@ -13,7 +13,6 @@ from typing import Optional
 class GetSchemaVersionsRequest:
     
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -22,21 +21,15 @@ class GetSchemaVersions200ApplicationJSON:
     r"""Success"""
     
     drafts: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drafts'), 'exclude': lambda f: f is None }})
-
     versions: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclasses.dataclass
 class GetSchemaVersionsResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     get_schema_versions_200_application_json_object: Optional[GetSchemaVersions200ApplicationJSON] = dataclasses.field(default=None)
-
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

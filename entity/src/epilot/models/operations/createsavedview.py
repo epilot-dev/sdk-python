@@ -11,12 +11,8 @@ from typing import Optional
 class CreateSavedViewResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     saved_view_item: Optional[shared_savedviewitem.SavedViewItem] = dataclasses.field(default=None)
-
     r"""Success"""
     

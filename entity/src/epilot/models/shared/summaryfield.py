@@ -13,9 +13,7 @@ class SummaryField:
     r"""Summary Fields are displayed inside list view as a resume of the relation entity."""
     
     display_as: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_as'), 'exclude': lambda f: f is None }})
-
     r"""An hint on how to display the summary field"""
     field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('field'), 'exclude': lambda f: f is None }})
-
     r"""The field from the entity attributes to display"""
     

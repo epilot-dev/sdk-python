@@ -12,23 +12,16 @@ from typing import Optional
 class PutSchemaRequest:
     
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-
     draft: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'draft', 'style': 'form', 'explode': True }})
-
     entity_schema: Optional[shared_entityschema.EntitySchema] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     
 
 @dataclasses.dataclass
 class PutSchemaResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     entity_schema_item: Optional[shared_entityschemaitem.EntitySchemaItem] = dataclasses.field(default=None)
-
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

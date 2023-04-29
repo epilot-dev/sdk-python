@@ -11,15 +11,11 @@ from typing import Optional
 class ExportEntitiesRequest:
     
     entity_search_params: Optional[shared_entitysearchparams.EntitySearchParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     is_template: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'is_template', 'style': 'form', 'explode': True }})
-
     r"""Pass 'true' to generate import template"""
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'job_id', 'style': 'form', 'explode': True }})
-
     r"""Export Job Id to get the result"""
     language: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'language', 'style': 'form', 'explode': True }})
-
     r"""Export headers translation language"""
     
 
@@ -27,9 +23,6 @@ class ExportEntitiesRequest:
 class ExportEntitiesResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
