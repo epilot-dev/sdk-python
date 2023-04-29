@@ -13,7 +13,5 @@ class MaxAllowedLimit:
     r"""A combo of current number of workflows, and the max allowed number of workflows."""
     
     current_no_of_workflows: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currentNoOfWorkflows'), 'exclude': lambda f: f is None }})
-
     max_allowed: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxAllowed'), 'exclude': lambda f: f is None }})
-
     

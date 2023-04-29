@@ -12,15 +12,10 @@ from typing import Optional
 class GetDefinitionsResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-
     r"""Other errors"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     workflow_definitions: Optional[list[shared_workflowdefinition.WorkflowDefinition]] = dataclasses.field(default=None)
-
     r"""Success - definitions loaded with success. Empty array if org has no definitions."""
     

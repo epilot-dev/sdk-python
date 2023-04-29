@@ -11,10 +11,8 @@ from typing import Optional
 class SetWorkflowClosingReasonsRequest:
     
     closing_reasons_ids: shared_closingreasonsids.ClosingReasonsIds = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-
     r"""set all closing reasons for a specific definition"""
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
-
     r"""ID of a workflow definition"""
     
 
@@ -22,9 +20,6 @@ class SetWorkflowClosingReasonsRequest:
 class SetWorkflowClosingReasonsResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
