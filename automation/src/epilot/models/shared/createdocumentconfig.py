@@ -12,7 +12,5 @@ from typing import Optional
 class CreateDocumentConfig:
     
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
-
     template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_id'), 'exclude': lambda f: f is None }})
-
     

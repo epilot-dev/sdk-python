@@ -16,7 +16,6 @@ class ReceivedEmailTriggerConfigurationMessageTypeEnum(str, Enum):
 class ReceivedEmailTriggerConfiguration:
     
     message_type: Optional[ReceivedEmailTriggerConfigurationMessageTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message_type'), 'exclude': lambda f: f is None }})
-
     
 class ReceivedEmailTriggerTypeEnum(str, Enum):
     RECEIVED_EMAIL = 'received_email'
@@ -27,7 +26,5 @@ class ReceivedEmailTriggerTypeEnum(str, Enum):
 class ReceivedEmailTrigger:
     
     configuration: ReceivedEmailTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-
     type: ReceivedEmailTriggerTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-
     

@@ -12,12 +12,9 @@ from typing import Optional
 class MappingConfigRef:
     
     config_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config_id') }})
-
     r"""Id of Entity Mapping Configuration to run for mapping."""
     target_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_id') }})
-
     r"""Id of TargetConfig to run for mapping."""
     version: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version'), 'exclude': lambda f: f is None }})
-
     r"""Version of Entity Mapping Configuration to run for mapping."""
     

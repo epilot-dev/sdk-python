@@ -14,11 +14,7 @@ from typing import Optional
 class TriggerWorkflowConfig:
     
     assign_steps: Optional[list[shared_assignuserstostep.AssignUsersToStep]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assign_steps'), 'exclude': lambda f: f is None }})
-
     assignees: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignees'), 'exclude': lambda f: f is None }})
-
     conditions: Optional[list[shared_triggerworkflowcondition.TriggerWorkflowCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conditions'), 'exclude': lambda f: f is None }})
-
     target_workflow: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_workflow'), 'exclude': lambda f: f is None }})
-
     

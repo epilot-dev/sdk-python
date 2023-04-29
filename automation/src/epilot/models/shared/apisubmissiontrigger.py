@@ -13,7 +13,6 @@ from typing import Optional
 class APISubmissionTriggerConfiguration:
     
     source_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id'), 'exclude': lambda f: f is None }})
-
     
 class APISubmissionTriggerTypeEnum(str, Enum):
     API_SUBMISSION = 'api_submission'
@@ -24,7 +23,5 @@ class APISubmissionTriggerTypeEnum(str, Enum):
 class APISubmissionTrigger:
     
     configuration: APISubmissionTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-
     type: APISubmissionTriggerTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-
     

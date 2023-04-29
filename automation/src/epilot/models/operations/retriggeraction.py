@@ -11,13 +11,10 @@ from typing import Optional
 class RetriggerActionRequest:
     
     action_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'action_id', 'style': 'simple', 'explode': False }})
-
     r"""Id of Action to retry."""
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'execution_id', 'style': 'simple', 'explode': False }})
-
     r"""Execution Id"""
     retry_req: Optional[shared_retryreq.RetryReq] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     r"""Retry request details."""
     
 
@@ -25,9 +22,6 @@ class RetriggerActionRequest:
 class RetriggerActionResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

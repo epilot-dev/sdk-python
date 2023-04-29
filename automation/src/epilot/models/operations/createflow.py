@@ -11,12 +11,8 @@ from typing import Optional
 class CreateFlowResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     automation_flow: Optional[shared_automationflow.AutomationFlow] = dataclasses.field(default=None)
-
     r"""The created automation flow"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
