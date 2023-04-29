@@ -10,7 +10,6 @@ from typing import Optional
 class MarkAsReadRequest:
     
     id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""Numeric ID of the notification to mark as read"""
     
 
@@ -18,9 +17,6 @@ class MarkAsReadRequest:
 class MarkAsReadResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

@@ -10,7 +10,6 @@ from typing import Any, Optional
 class GetNotificationRequest:
     
     id: float = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-
     r"""Notification Id"""
     
 
@@ -18,12 +17,8 @@ class GetNotificationRequest:
 class GetNotificationResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     notification_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
