@@ -11,12 +11,9 @@ from typing import Optional
 class PreviewS3FileRequest:
     
     h: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'h', 'style': 'form', 'explode': True }})
-
     r"""height"""
     s3_reference: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-
     w: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'w', 'style': 'form', 'explode': True }})
-
     r"""width"""
     
 
@@ -24,9 +21,6 @@ class PreviewS3FileRequest:
 class PreviewS3FileResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     

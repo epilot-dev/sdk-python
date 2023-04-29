@@ -13,9 +13,7 @@ from typing import Optional
 class UploadFilePublic201ApplicationJSONS3ref:
     
     bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})
-
     key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
-
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -24,21 +22,15 @@ class UploadFilePublic201ApplicationJSON:
     r"""Pre-signed URL for POST / PUT upload"""
     
     s3ref: Optional[UploadFilePublic201ApplicationJSONS3ref] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
-
     upload_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upload_url'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclasses.dataclass
 class UploadFilePublicResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     upload_file_public_201_application_json_object: Optional[UploadFilePublic201ApplicationJSON] = dataclasses.field(default=None)
-
     r"""Pre-signed URL for POST / PUT upload"""
     
