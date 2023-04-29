@@ -15,10 +15,8 @@ class GenerateDocumentRequestBodyTemplateDocument:
     r"""Input template document"""
     
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
-
     r"""Document original filename"""
     s3ref: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -26,16 +24,12 @@ class GenerateDocumentRequestBodyTemplateDocument:
 class GenerateDocumentRequestBody:
     
     template_document: GenerateDocumentRequestBodyTemplateDocument = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_document') }})
-
     r"""Input template document"""
     context_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_entity_id'), 'exclude': lambda f: f is None }})
-
     r"""Entity to use for variable context"""
     language: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
-
     r"""Language to use"""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
-
     r"""User Id for variable context"""
     
 
@@ -44,10 +38,8 @@ class GenerateDocumentRequestBody:
 class GenerateDocument200ApplicationJSONOutputDocument:
     
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
-
     r"""Generated document filename"""
     s3ref: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
-
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -56,9 +48,7 @@ class GenerateDocument200ApplicationJSON:
     r"""Generated document output"""
     
     output_document: Optional[GenerateDocument200ApplicationJSONOutputDocument] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('output_document'), 'exclude': lambda f: f is None }})
-
     preview_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview_url'), 'exclude': lambda f: f is None }})
-
     r"""Pre-signed S3 GET URL for preview"""
     
 
@@ -66,12 +56,8 @@ class GenerateDocument200ApplicationJSON:
 class GenerateDocumentResponse:
     
     content_type: str = dataclasses.field()
-
     status_code: int = dataclasses.field()
-
     generate_document_200_application_json_object: Optional[GenerateDocument200ApplicationJSON] = dataclasses.field(default=None)
-
     r"""Generated document output"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-
     
