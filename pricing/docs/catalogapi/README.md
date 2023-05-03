@@ -32,20 +32,20 @@ req = operations.DollarSearchCatalogRequest(
         availability=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city="New Tyrelfort",
-                country="Macedonia",
-                postal_code="44217",
-                street="425 Aiden Glen",
-                street_number="natus",
+                city='New Tyrelfort',
+                country='Macedonia',
+                postal_code='44217',
+                street='425 Aiden Glen',
+                street_number='natus',
             ),
         ),
         from_=1496.75,
         hydrate=False,
-        q="iste",
+        q='iste',
         size=2223.21,
-        sort="natus",
+        sort='natus',
     ),
-    x_ivy_org_id="laboriosam",
+    x_ivy_org_id='laboriosam',
 )
 
 res = s.catalog_api.dollar_search_catalog(req)

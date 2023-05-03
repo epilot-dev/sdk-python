@@ -32,19 +32,19 @@ req = operations.DollarAvailabilityCheckRequest(
         filters=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city="Belleville",
-                country="Greenland",
-                postal_code="60389",
-                street="188 Krajcik Spring",
-                street_number="quod",
+                city='Belleville',
+                country='Greenland',
+                postal_code='60389',
+                street='188 Krajcik Spring',
+                street_number='quod',
             ),
         ),
         products=[
-            "totam",
-            "porro",
+            'totam',
+            'porro',
         ],
     ),
-    x_ivy_org_id="dolorum",
+    x_ivy_org_id='dolorum',
 )
 
 res = s.availability_api.dollar_availability_check(req)

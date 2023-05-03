@@ -16,20 +16,20 @@ req = operations.DollarAvailabilityCheckRequest(
         filters=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city="Laruecester",
-                country="Suriname",
-                postal_code="85846-6342",
-                street="092 Jasper Skyway",
-                street_number="placeat",
+                city='Laruecester',
+                country='Suriname',
+                postal_code='85846-6342',
+                street='092 Jasper Skyway',
+                street_number='placeat',
             ),
         ),
         products=[
-            "iusto",
-            "excepturi",
-            "nisi",
+            'iusto',
+            'excepturi',
+            'nisi',
         ],
     ),
-    x_ivy_org_id="recusandae",
+    x_ivy_org_id='recusandae',
 )
 
 res = s.availability_api.dollar_availability_check(req)

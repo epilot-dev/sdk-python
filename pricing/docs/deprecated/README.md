@@ -27,12 +27,12 @@ s = epilot.Epilot(
 
 req = operations.DollarCreateOpportunityRequest(
     request_body={
-        "saepe": "fuga",
-        "in": "corporis",
-        "iste": "iure",
-        "saepe": "quidem",
+        "saepe": 'fuga',
+        "in": 'corporis',
+        "iste": 'iure',
+        "saepe": 'quidem',
     },
-    x_ivy_org_id="architecto",
+    x_ivy_org_id='architecto',
 )
 
 res = s.deprecated.dollar_create_opportunity(req)
