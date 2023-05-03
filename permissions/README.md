@@ -22,8 +22,8 @@ s = epilot.Epilot(
 
 
 req = operations.AddAssignmentRequest(
-    role_id="123:owner",
-    user_id="1",
+    role_id='123:owner',
+    user_id='1',
 )
 
 res = s.assignments.add_assignment(req)

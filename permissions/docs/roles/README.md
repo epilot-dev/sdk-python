@@ -32,7 +32,7 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteRoleRequest(
-    role_id="123:owner",
+    role_id='123:owner',
 )
 
 res = s.roles.delete_role(req)
@@ -59,7 +59,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetRoleRequest(
-    role_id="123:owner",
+    role_id='123:owner',
 )
 
 res = s.roles.get_role(req)
@@ -137,127 +137,127 @@ req = operations.PutRoleRequest(
         expires_at=dateutil.parser.isoparse('2028-07-21T17:32:28Z'),
         grants=[
             shared.Grant(
-                action="entity-read",
+                action='entity-read',
                 conditions=[
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "nulla",
-                            "corrupti",
-                            "illum",
+                            'nulla',
+                            'corrupti',
+                            'illum',
                         ],
                     ),
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "error",
-                            "deserunt",
+                            'error',
+                            'deserunt',
                         ],
                     ),
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "iure",
-                            "magnam",
+                            'iure',
+                            'magnam',
                         ],
                     ),
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "ipsa",
-                            "delectus",
-                            "tempora",
-                            "suscipit",
+                            'ipsa',
+                            'delectus',
+                            'tempora',
+                            'suscipit',
                         ],
                     ),
                 ],
-                effect="allow",
-                resource="entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                effect=shared.GrantEffectEnum.ALLOW,
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
             shared.Grant(
-                action="entity-read",
+                action='entity-read',
                 conditions=[
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "voluptatum",
-                            "iusto",
-                            "excepturi",
-                            "nisi",
+                            'voluptatum',
+                            'iusto',
+                            'excepturi',
+                            'nisi',
                         ],
                     ),
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "temporibus",
-                            "ab",
-                            "quis",
-                            "veritatis",
+                            'temporibus',
+                            'ab',
+                            'quis',
+                            'veritatis',
                         ],
                     ),
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "perferendis",
-                            "ipsam",
-                            "repellendus",
+                            'perferendis',
+                            'ipsam',
+                            'repellendus',
                         ],
                     ),
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "quo",
-                            "odit",
-                            "at",
-                            "at",
+                            'quo',
+                            'odit',
+                            'at',
+                            'at',
                         ],
                     ),
                 ],
-                effect="deny",
-                resource="entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                effect=shared.GrantEffectEnum.DENY,
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
             shared.Grant(
-                action="entity-read",
+                action='entity-read',
                 conditions=[
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "quod",
-                            "esse",
-                            "totam",
-                            "porro",
+                            'quod',
+                            'esse',
+                            'totam',
+                            'porro',
                         ],
                     ),
                     shared.EqualsCondition(
-                        attribute="workflows.primary.task_name",
-                        operation="equals",
+                        attribute='workflows.primary.task_name',
+                        operation=shared.EqualsConditionOperationEnum.EQUALS,
                         values=[
-                            "dicta",
-                            "nam",
-                            "officia",
+                            'dicta',
+                            'nam',
+                            'officia',
                         ],
                     ),
                 ],
-                effect="deny",
-                resource="entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                effect=shared.GrantEffectEnum.DENY,
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
         ],
-        id="123:owner",
-        name="Owner",
-        organization_id="123",
-        slug="owner",
-        type="share_role",
+        id='123:owner',
+        name='Owner',
+        organization_id='123',
+        slug='owner',
+        type='fugit',
     ),
-    role_id="123:owner",
+    role_id='123:owner',
 )
 
 res = s.roles.put_role(req)
@@ -310,19 +310,22 @@ req = shared.RoleSearchInput(
     limit=1,
     offset=1,
     org_ids=[
-        "123",
+        '123',
+        '123',
+        '123',
     ],
-    query="Administrator",
+    query='Administrator',
     role_ids=[
-        "123:owner",
-        "123:owner",
-        "123:owner",
+        '123:owner',
+        '123:owner',
+        '123:owner',
+        '123:owner',
     ],
     slugs=[
-        "owner",
-        "owner",
-        "owner",
-        "owner",
+        'owner',
+        'owner',
+        'owner',
+        'owner',
     ],
 )
 

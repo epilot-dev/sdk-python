@@ -33,8 +33,8 @@ s = epilot.Epilot(
 
 
 req = operations.AddAssignmentRequest(
-    role_id="123:owner",
-    user_id="1",
+    role_id='123:owner',
+    user_id='1',
 )
 
 res = s.assignments.add_assignment(req)
@@ -62,11 +62,11 @@ s = epilot.Epilot(
 
 req = operations.AssignRolesRequest(
     request_body=[
-        "123:owner",
-        "123:owner",
-        "123:owner",
+        '123:owner',
+        '123:owner',
+        '123:owner',
     ],
-    user_id="1",
+    user_id='1',
 )
 
 res = s.assignments.assign_roles(req)
@@ -93,7 +93,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetAssignedRolesForUserRequest(
-    user_id="1",
+    user_id='1',
 )
 
 res = s.assignments.get_assigned_roles_for_user(req)
@@ -143,8 +143,8 @@ s = epilot.Epilot(
 
 
 req = operations.RemoveAssignmentRequest(
-    role_id="123:owner",
-    user_id="1",
+    role_id='123:owner',
+    user_id='1',
 )
 
 res = s.assignments.remove_assignment(req)
