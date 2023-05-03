@@ -28,8 +28,8 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteSettingsValueRequest(
-    key="veritatis",
-    org_id="739224",
+    key='veritatis',
+    org_id='739224',
 )
 
 res = s.organization_settings.delete_settings_value(req)
@@ -56,7 +56,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetSettingsRequest(
-    org_id="739224",
+    org_id='739224',
 )
 
 res = s.organization_settings.get_settings(req)
@@ -85,12 +85,12 @@ s = epilot.Epilot(
 req = operations.PutSettingsValueRequest(
     request_body=[
         {
-            "repellendus": "sapiente",
-            "quo": "odit",
+            "repellendus": 'sapiente',
+            "quo": 'odit',
         },
     ],
-    key="at",
-    org_id="739224",
+    key='at',
+    org_id='739224',
 )
 
 res = s.organization_settings.put_settings_value(req)
