@@ -31,10 +31,10 @@ s = epilot.Epilot(
 
 
 req = {
-    "vel": "error",
-    "deserunt": "suscipit",
-    "iure": "magnam",
-    "debitis": "ipsa",
+    "vel": 'error',
+    "deserunt": 'suscipit',
+    "iure": 'magnam',
+    "debitis": 'ipsa',
 }
 
 res = s.notification.create_notification(req)
