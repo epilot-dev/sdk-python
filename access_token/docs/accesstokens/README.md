@@ -40,9 +40,9 @@ s = epilot.Epilot(
 
 
 req = shared.JourneyTokenParameters(
-    journey_id="quibusdam",
-    name="Postman Access Token",
-    token_type="journey",
+    journey_id='quibusdam',
+    name='Postman Access Token',
+    token_type=shared.JourneyTokenParametersTokenTypeEnum.JOURNEY,
 )
 
 res = s.access_tokens.create_access_token(req)
@@ -70,9 +70,9 @@ s = epilot.Epilot(
 
 req = operations.ListAccessTokensRequest(
     token_type=[
-        "api",
-        "api",
-        "api",
+        shared.AccessTokenTypeEnum.API,
+        shared.AccessTokenTypeEnum.API,
+        shared.AccessTokenTypeEnum.API,
     ],
 )
 
@@ -100,7 +100,7 @@ s = epilot.Epilot(
 
 
 req = operations.RevokeAccessTokenRequest(
-    id="api_5ZugdRXasLfWBypHi93Fk",
+    id='api_5ZugdRXasLfWBypHi93Fk',
 )
 
 res = s.access_tokens.revoke_access_token(req)
