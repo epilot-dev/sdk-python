@@ -37,7 +37,7 @@ s = epilot.Epilot()
 
 
 req = operations.ConfigureDistributionRequest(
-    origin="INSTALLER_PORTAL",
+    origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.configure_distribution(req, operations.ConfigureDistributionSecurity(
@@ -63,11 +63,11 @@ s = epilot.Epilot()
 
 req = operations.CreateSSOUserRequest(
     request_body=operations.CreateSSOUserRequestBody(
-        email="testemail921@yopmail.com",
-        first_name="John",
-        last_name="Doe",
+        email='testemail921@yopmail.com',
+        first_name='John',
+        last_name='Doe',
     ),
-    origin="INSTALLER_PORTAL",
+    origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.create_sso_user(req, operations.CreateSSOUserSecurity(
@@ -92,7 +92,7 @@ s = epilot.Epilot()
 
 
 req = operations.DeletePortalRequest(
-    origin="END_CUSTOMER_PORTAL",
+    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.delete_portal(req, operations.DeletePortalSecurity(
@@ -163,7 +163,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetECPContactRequest(
-    id="1234",
+    id='1234',
 )
 
 res = s.ecp_admin.get_ecp_contact(req, operations.GetECPContactSecurity(
@@ -188,7 +188,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetEmailTemplatesRequest(
-    origin="END_CUSTOMER_PORTAL",
+    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_email_templates(req, operations.GetEmailTemplatesSecurity(
@@ -213,7 +213,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetEntityIdentifiersRequest(
-    slug="contact",
+    slug='contact',
 )
 
 res = s.ecp_admin.get_entity_identifiers(req, operations.GetEntityIdentifiersSecurity(
@@ -238,7 +238,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetOrgPortalConfigRequest(
-    origin="END_CUSTOMER_PORTAL",
+    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_org_portal_config(req, operations.GetOrgPortalConfigSecurity(
@@ -263,7 +263,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetPortalConfigRequest(
-    origin="INSTALLER_PORTAL",
+    origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -292,8 +292,8 @@ s = epilot.Epilot(
 
 
 req = operations.GetPublicPortalConfigRequest(
-    org_id="12324",
-    origin="END_CUSTOMER_PORTAL",
+    org_id='12324',
+    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_public_portal_config(req)
@@ -340,9 +340,9 @@ s = epilot.Epilot()
 
 req = operations.ReplaceECPTemplateVariablesRequest(
     request_body=operations.ReplaceECPTemplateVariablesRequestBody(
-        contact_id="7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51",
+        contact_id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
     ),
-    origin="INSTALLER_PORTAL",
+    origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.replace_ecp_template_variables(req, operations.ReplaceECPTemplateVariablesSecurity(
@@ -370,34 +370,34 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
-                "12345",
-                "12345",
-                "12345",
-                "12345",
+                '12345',
+                '12345',
+                '12345',
+                '12345',
             ],
-            file_type="orderRightTeaser",
-            filename="12345",
+            file_type='orderRightTeaser',
+            filename='12345',
             s3ref=shared.SavePortalFileFilesS3ref(
-                bucket="12345",
-                key="12345",
+                bucket='12345',
+                key='12345',
             ),
         ),
         shared.SavePortalFileFiles(
             tags=[
-                "12345",
-                "12345",
-                "12345",
-                "12345",
+                '12345',
+                '12345',
+                '12345',
+                '12345',
             ],
-            file_type="orderRightTeaser",
-            filename="12345",
+            file_type='orderRightTeaser',
+            filename='12345',
             s3ref=shared.SavePortalFileFilesS3ref(
-                bucket="12345",
-                key="12345",
+                bucket='12345',
+                key='12345',
             ),
         ),
     ],
-    origin="END_CUSTOMER_PORTAL",
+    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.save_portal_files(req, operations.SavePortalFilesSecurity(
@@ -423,13 +423,13 @@ s = epilot.Epilot()
 
 req = operations.UpsertEmailTemplatesRequest(
     email_templates=shared.EmailTemplates(
-        confirm_account="saepe",
-        forgot_password="pariatur",
-        invitation="accusantium",
-        on_map_a_pending_user="consequuntur",
-        on_new_quote="praesentium",
+        confirm_account='saepe',
+        forgot_password='pariatur',
+        invitation='accusantium',
+        on_map_a_pending_user='consequuntur',
+        on_new_quote='praesentium',
     ),
-    origin="INSTALLER_PORTAL",
+    origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_email_templates(req, operations.UpsertEmailTemplatesSecurity(
@@ -456,102 +456,102 @@ s = epilot.Epilot()
 req = operations.UpsertPortalRequest(
     upsert_portal_config=shared.UpsertPortalConfig(
         cognito_details=shared.UpsertPortalConfigCognitoDetails(
-            cognito_user_pool_arn="arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341",
-            cognito_user_pool_client_id="6bsd0jkgoie74k2i8mrhc1vest",
-            cognito_user_pool_id="eu-central-1_CUEQRNbUb",
+            cognito_user_pool_arn='arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341',
+            cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
+            cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config="magni",
-        contact_secondary_identifier="full_name",
+        config='magni',
+        contact_secondary_identifier='full_name',
         default_user_to_notify={
-            "quo": "illum",
+            "quo": 'illum',
         },
-        design_id="3134",
+        design_id='3134',
         email_templates=shared.UpsertPortalConfigEmailTemplates(
-            confirm_account="701f089d-6953-48b5-ac35-442de7c59cd3",
-            forgot_password="6538fddb-f0e9-4f0f-af51-6e57891ff20a",
-            invitation="14ae65fb-0dc1-4863-8743-6bc01da469f6",
+            confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
+            forgot_password='6538fddb-f0e9-4f0f-af51-6e57891ff20a',
+            invitation='14ae65fb-0dc1-4863-8743-6bc01da469f6',
         ),
         enabled=True,
         entity_actions=[
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de="maxime",
-                    en="ea",
+                    de='maxime',
+                    en='ea',
                 ),
-                journey_id="excepturi",
-                slug="contact",
+                journey_id='excepturi',
+                slug='contact',
             ),
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de="odit",
-                    en="ea",
+                    de='odit',
+                    en='ea',
                 ),
-                journey_id="accusantium",
-                slug="contact",
+                journey_id='accusantium',
+                slug='contact',
             ),
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de="ab",
-                    en="maiores",
+                    de='ab',
+                    en='maiores',
                 ),
-                journey_id="quidem",
-                slug="contact",
+                journey_id='quidem',
+                slug='contact',
             ),
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de="ipsam",
-                    en="voluptate",
+                    de='ipsam',
+                    en='voluptate',
                 ),
-                journey_id="autem",
-                slug="contact",
+                journey_id='autem',
+                slug='contact',
             ),
         ],
         entity_identifiers={
             "eaque": shared.UpsertPortalConfigEntityIdentifiers(
                 attributes=[
-                    "contract_number",
-                    "contract_number",
-                    "contract_number",
-                    "contract_number",
+                    'contract_number',
+                    'contract_number',
+                    'contract_number',
+                    'contract_number',
                 ],
                 is_enabled=False,
             ),
             "nemo": shared.UpsertPortalConfigEntityIdentifiers(
                 attributes=[
-                    "contract_number",
-                    "contract_number",
-                    "contract_number",
-                    "contract_number",
+                    'contract_number',
+                    'contract_number',
+                    'contract_number',
+                    'contract_number',
                 ],
                 is_enabled=False,
             ),
             "perferendis": shared.UpsertPortalConfigEntityIdentifiers(
                 attributes=[
-                    "contract_number",
-                    "contract_number",
-                    "contract_number",
-                    "contract_number",
+                    'contract_number',
+                    'contract_number',
+                    'contract_number',
+                    'contract_number',
                 ],
                 is_enabled=False,
             ),
         },
         grants=[
             shared.Grant(
-                action="entity-read",
-                effect="allow",
-                resource="entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                action='entity-read',
+                effect=shared.GrantEffectEnum.ALLOW,
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
         ],
         images=shared.UpsertPortalConfigImages(
-            order_left_teaser="https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg",
-            order_right_teaser="https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg",
-            welcome_banner="https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg",
+            order_left_teaser='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg',
+            order_right_teaser='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg',
+            welcome_banner='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg',
         ),
         is_epilot_domain=True,
-        name="My Portal",
+        name='My Portal',
         self_registration=False,
     ),
-    origin="INSTALLER_PORTAL",
+    origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal(req, operations.UpsertPortalSecurity(

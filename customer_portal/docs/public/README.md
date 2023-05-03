@@ -31,10 +31,10 @@ s = epilot.Epilot(
 
 req = operations.ActivateUserRequest(
     user_activation_payload=shared.UserActivationPayload(
-        display_name="Example User",
-        password="AKjhdakjsdh@!34",
+        display_name='Example User',
+        password='AKjhdakjsdh@!34',
     ),
-    token="corporis",
+    token='corporis',
 )
 
 res = s.public.activate_user(req)
@@ -61,9 +61,9 @@ s = epilot.Epilot(
 
 
 req = operations.ConfirmUserRequest(
-    id="fbb25870-5320-42c7-bd5f-e9b90c28909b",
-    org_id="123",
-    origin="END_CUSTOMER_PORTAL",
+    id='fbb25870-5320-42c7-bd5f-e9b90c28909b',
+    org_id='123',
+    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.confirm_user(req)
@@ -91,13 +91,13 @@ s = epilot.Epilot(
 
 req = operations.CreateUserRequest(
     request_body=operations.CreateUserRequestBody(
-        contact_id="123456",
-        email="testemail921@yopmail.com",
-        org_id="728",
-        password="Pass1234!",
-        secondary_identifier="123456",
+        contact_id='123456',
+        email='testemail921@yopmail.com',
+        org_id='728',
+        password='Pass1234!',
+        secondary_identifier='123456',
     ),
-    origin="INSTALLER_PORTAL",
+    origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
 
 res = s.public.create_user(req)
@@ -124,8 +124,8 @@ s = epilot.Epilot(
 
 
 req = operations.GetCountByEmailRequest(
-    email="test@test.com",
-    org_id="123",
+    email='test@test.com',
+    org_id='123',
 )
 
 res = s.public.get_count_by_email(req)
@@ -152,8 +152,8 @@ s = epilot.Epilot(
 
 
 req = operations.UserExistsRequest(
-    email="user@example.com",
-    org_id="123",
+    email='user@example.com',
+    org_id='123',
 )
 
 res = s.public.user_exists(req)

@@ -44,8 +44,8 @@ s = epilot.Epilot()
 
 
 req = operations.AddEndCustomerRelationToEntityRequest(
-    id="a05dfc2d-df7c-4c78-8a1b-a928fc816742",
-    slug="contact",
+    id='a05dfc2d-df7c-4c78-8a1b-a928fc816742',
+    slug='contact',
 )
 
 res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
@@ -70,13 +70,13 @@ s = epilot.Epilot()
 
 
 req = shared.DeleteEntityFile(
-    entity_id="123456",
-    entity_type="order",
+    entity_id='123456',
+    entity_type='order',
     file_entity_ids=[
-        "12345",
-        "12345",
-        "12345",
-        "12345",
+        '12345',
+        '12345',
+        '12345',
+        '12345',
     ],
 )
 
@@ -217,7 +217,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetContractRequest(
-    id="b7392059-2939-46fe-a759-6eb10faaa235",
+    id='b7392059-2939-46fe-a759-6eb10faaa235',
 )
 
 res = s.ecp.get_contract(req, operations.GetContractSecurity(
@@ -243,9 +243,9 @@ s = epilot.Epilot()
 
 req = operations.GetEntitiesByIdentifiersRequest(
     request_body={
-        "nobis": "enim",
+        "nobis": 'enim',
     },
-    slug="contact",
+    slug='contact',
 )
 
 res = s.ecp.get_entities_by_identifiers(req, operations.GetEntitiesByIdentifiersSecurity(
@@ -270,7 +270,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetOpportunityRequest(
-    id="955907af-f1a3-4a2f-a946-7739251aa52c",
+    id='955907af-f1a3-4a2f-a946-7739251aa52c',
 )
 
 res = s.ecp.get_opportunity(req, operations.GetOpportunitySecurity(
@@ -295,7 +295,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetOrderRequest(
-    id="3f5ad019-da1f-4fe7-8f09-7b0074f15471",
+    id='3f5ad019-da1f-4fe7-8f09-7b0074f15471',
 )
 
 res = s.ecp.get_order(req, operations.GetOrderSecurity(
@@ -343,7 +343,7 @@ s = epilot.Epilot()
 
 
 req = operations.GetPortalConfigRequest(
-    origin="INSTALLER_PORTAL",
+    origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
 
 res = s.ecp.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -372,7 +372,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetPortalConfigByDomainRequest(
-    domain="example.com",
+    domain='example.com',
 )
 
 res = s.ecp.get_portal_config_by_domain(req)
@@ -441,39 +441,39 @@ s = epilot.Epilot()
 
 
 req = shared.SaveEntityFile(
-    entity_id="123456",
-    entity_type="order",
+    entity_id='123456',
+    entity_type='order',
     files=[
         shared.SaveEntityFileFiles(
             tags=[
-                "12345",
-                "12345",
-                "12345",
-                "12345",
+                '12345',
+                '12345',
+                '12345',
+                '12345',
             ],
-            access_control="private",
-            document_type="12345",
-            file_entity_id="12345",
-            filename="12345",
+            access_control=shared.SaveEntityFileFilesAccessControlEnum.PRIVATE,
+            document_type='12345',
+            file_entity_id='12345',
+            filename='12345',
             s3ref=shared.SaveEntityFileFilesS3ref(
-                bucket="12345",
-                key="12345",
+                bucket='12345',
+                key='12345',
             ),
         ),
         shared.SaveEntityFileFiles(
             tags=[
-                "12345",
-                "12345",
-                "12345",
-                "12345",
+                '12345',
+                '12345',
+                '12345',
+                '12345',
             ],
-            access_control="private",
-            document_type="12345",
-            file_entity_id="12345",
-            filename="12345",
+            access_control=shared.SaveEntityFileFilesAccessControlEnum.PRIVATE,
+            document_type='12345',
+            file_entity_id='12345',
+            filename='12345',
             s3ref=shared.SaveEntityFileFilesS3ref(
-                bucket="12345",
-                key="12345",
+                bucket='12345',
+                key='12345',
             ),
         ),
     ],
@@ -524,7 +524,7 @@ s = epilot.Epilot()
 
 
 req = {
-    "quidem": "molestias",
+    "quidem": 'molestias',
 }
 
 res = s.ecp.update_contact(req, operations.UpdateContactSecurity(
@@ -550,11 +550,11 @@ s = epilot.Epilot()
 
 req = operations.UpdateContractRequest(
     request_body={
-        "pariatur": "modi",
-        "praesentium": "rem",
-        "voluptates": "quasi",
+        "pariatur": 'modi',
+        "praesentium": 'rem',
+        "voluptates": 'quasi',
     },
-    id="e91e450a-d2ab-4d44-a698-02d502a94bb4",
+    id='e91e450a-d2ab-4d44-a698-02d502a94bb4',
 )
 
 res = s.ecp.update_contract(req, operations.UpdateContractSecurity(
@@ -580,12 +580,12 @@ s = epilot.Epilot()
 
 req = operations.UpdateOpportunityRequest(
     request_body={
-        "eum": "non",
-        "eligendi": "sint",
-        "aliquid": "provident",
-        "necessitatibus": "sint",
+        "eum": 'non',
+        "eligendi": 'sint',
+        "aliquid": 'provident',
+        "necessitatibus": 'sint',
     },
-    id="a3efa77d-fb14-4cd6-aae3-95efb9ba88f3",
+    id='a3efa77d-fb14-4cd6-aae3-95efb9ba88f3',
 )
 
 res = s.ecp.update_opportunity(req, operations.UpdateOpportunitySecurity(
@@ -611,11 +611,11 @@ s = epilot.Epilot()
 
 req = operations.UpdateOrderRequest(
     request_body={
-        "nisi": "vel",
-        "natus": "omnis",
-        "molestiae": "perferendis",
+        "nisi": 'vel',
+        "natus": 'omnis',
+        "molestiae": 'perferendis',
     },
-    id="74ba4469-b6e2-4141-9598-90afa563e251",
+    id='74ba4469-b6e2-4141-9598-90afa563e251',
 )
 
 res = s.ecp.update_order(req, operations.UpdateOrderSecurity(
@@ -640,8 +640,8 @@ s = epilot.Epilot()
 
 
 req = {
-    "doloribus": "debitis",
-    "eius": "maxime",
+    "doloribus": 'debitis',
+    "eius": 'maxime',
 }
 
 res = s.ecp.update_portal_user(req, operations.UpdatePortalUserSecurity(
