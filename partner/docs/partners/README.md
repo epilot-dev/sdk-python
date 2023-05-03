@@ -34,11 +34,11 @@ s = epilot.Epilot(
 
 req = operations.ActivatePartnerRequest(
     activate_partner_payload=shared.ActivatePartnerPayload(
-        company_name="Company name",
-        organization_id="illum",
-        signed_up_email="Linda.Oberbrunner@yahoo.com",
+        company_name='Company name',
+        organization_id='illum',
+        signed_up_email='Linda.Oberbrunner@yahoo.com',
     ),
-    token="magnam",
+    token='magnam',
 )
 
 res = s.partners.activate_partner(req)
@@ -65,7 +65,7 @@ s = epilot.Epilot(
 
 
 req = operations.ApprovePartnerRequest(
-    id="e45a6dc2-3795-43a3-ae0f-6b6760f310fc",
+    id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
 
 res = s.partners.approve_partner(req)
@@ -94,20 +94,20 @@ s = epilot.Epilot(
 
 req = [
     operations.BatchGetAssignableRequestBody(
-        org_id="ipsa",
-        user_id="delectus",
+        org_id='ipsa',
+        user_id='delectus',
     ),
     operations.BatchGetAssignableRequestBody(
-        org_id="tempora",
-        user_id="suscipit",
+        org_id='tempora',
+        user_id='suscipit',
     ),
     operations.BatchGetAssignableRequestBody(
-        org_id="molestiae",
-        user_id="minus",
+        org_id='molestiae',
+        user_id='minus',
     ),
     operations.BatchGetAssignableRequestBody(
-        org_id="placeat",
-        user_id="voluptatum",
+        org_id='placeat',
+        user_id='voluptatum',
     ),
 ]
 
@@ -135,7 +135,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetPartnerByTokenRequest(
-    token="iusto",
+    token='iusto',
 )
 
 res = s.partners.get_partner_by_token(req)
@@ -163,9 +163,9 @@ s = epilot.Epilot(
 
 req = operations.InvitePartnerRequest(
     partner_invitation_payload=shared.PartnerInvitationPayload(
-        language="de",
+        language=shared.PartnerInvitationPayloadLanguageEnum.DE,
     ),
-    id="e45a6dc2-3795-43a3-ae0f-6b6760f310fc",
+    id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
 
 res = s.partners.invite_partner(req)
@@ -192,7 +192,7 @@ s = epilot.Epilot(
 
 
 req = operations.RejectPartnerRequest(
-    id="e45a6dc2-3795-43a3-ae0f-6b6760f310fc",
+    id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
 
 res = s.partners.reject_partner(req)
@@ -220,9 +220,9 @@ s = epilot.Epilot(
 
 req = operations.ResendPartnerInvitationRequest(
     request_body=operations.ResendPartnerInvitationRequestBody(
-        language="en",
+        language=operations.ResendPartnerInvitationRequestBodyLanguageEnum.EN,
     ),
-    id="e45a6dc2-3795-43a3-ae0f-6b6760f310fc",
+    id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
 
 res = s.partners.resend_partner_invitation(req)
@@ -257,15 +257,15 @@ s = epilot.Epilot(
 req = operations.SearchAssignableRequestBody(
     from_=925597,
     org_ids=[
-        "123",
-        "123",
-        "123",
-        "123",
+        '123',
+        '123',
+        '123',
+        '123',
     ],
-    q="ab",
+    q='ab',
     size=337396,
     types=[
-        "partner_user",
+        operations.SearchAssignableRequestBodyTypesEnum.PARTNER_USER,
     ],
 )
 
