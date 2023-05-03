@@ -31,27 +31,27 @@ s = epilot.Epilot(
 req = operations.AssignThreadRequest(
     request_body=[
         operations.AssignThreadRequestBody(
-            entity_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
+            entity_id='3f34ce73-089c-4d45-a5ee-c161234e41c3',
             is_main_entity=True,
-            slug="contact",
+            slug='contact',
         ),
         operations.AssignThreadRequestBody(
-            entity_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
+            entity_id='3f34ce73-089c-4d45-a5ee-c161234e41c3',
             is_main_entity=True,
-            slug="contact",
+            slug='contact',
         ),
         operations.AssignThreadRequestBody(
-            entity_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
+            entity_id='3f34ce73-089c-4d45-a5ee-c161234e41c3',
             is_main_entity=True,
-            slug="contact",
+            slug='contact',
         ),
         operations.AssignThreadRequestBody(
-            entity_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
+            entity_id='3f34ce73-089c-4d45-a5ee-c161234e41c3',
             is_main_entity=True,
-            slug="contact",
+            slug='contact',
         ),
     ],
-    id="9cbf4863-3323-4f9b-b7f3-a4100674ebf6",
+    id='9cbf4863-3323-4f9b-b7f3-a4100674ebf6',
 )
 
 res = s.threads.assign_thread(req)
@@ -78,7 +78,7 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteThreadRequest(
-    id="9280d1ba-77a8-49eb-b737-ae4203ce5e6a",
+    id='9280d1ba-77a8-49eb-b737-ae4203ce5e6a',
 )
 
 res = s.threads.delete_thread(req)
@@ -105,7 +105,7 @@ s = epilot.Epilot(
 
 
 req = operations.MarkReadThreadRequest(
-    id="95d8a0d4-46ce-42af-ba73-cf3be453f870",
+    id='95d8a0d4-46ce-42af-ba73-cf3be453f870',
 )
 
 res = s.threads.mark_read_thread(req)
@@ -132,7 +132,7 @@ s = epilot.Epilot(
 
 
 req = operations.MarkUnreadThreadRequest(
-    id="b326b5a7-3429-4cdb-9a84-22bb679d2322",
+    id='b326b5a7-3429-4cdb-9a84-22bb679d2322',
 )
 
 res = s.threads.mark_unread_thread(req)
@@ -165,7 +165,7 @@ s = epilot.Epilot(
 
 req = shared.SearchParams(
     from_=488056,
-    q="subject:"Request for solar panel price" AND _tags:INBOX",
+    q='subject:"Request for solar panel price" AND _tags:INBOX',
     size=124833,
 )
 
@@ -193,7 +193,7 @@ s = epilot.Epilot(
 
 
 req = operations.TrashThreadRequest(
-    id="5bf0cbb1-e31b-48b9-8f34-43a1108e0adc",
+    id='5bf0cbb1-e31b-48b9-8f34-43a1108e0adc',
 )
 
 res = s.threads.trash_thread(req)
@@ -220,7 +220,7 @@ s = epilot.Epilot(
 
 
 req = operations.UntrashThreadRequest(
-    id="f4b92187-9fce-4953-b73e-f7fbc7abd74d",
+    id='f4b92187-9fce-4953-b73e-f7fbc7abd74d',
 )
 
 res = s.threads.untrash_thread(req)

@@ -29,7 +29,7 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteMessageRequest(
-    id="c3f5ad01-9da1-4ffe-b8f0-97b0074f1547",
+    id='c3f5ad01-9da1-4ffe-b8f0-97b0074f1547',
 )
 
 res = s.messages.delete_message(req)
@@ -56,7 +56,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetMessageRequest(
-    id="1b5e6e13-b99d-4488-a1e9-1e450ad2abd4",
+    id='1b5e6e13-b99d-4488-a1e9-1e450ad2abd4',
 )
 
 res = s.messages.get_message(req)
@@ -83,7 +83,7 @@ s = epilot.Epilot(
 
 
 req = operations.MarkReadMessageRequest(
-    id="4269802d-502a-494b-b4f6-3c969e9a3efa",
+    id='4269802d-502a-494b-b4f6-3c969e9a3efa',
 )
 
 res = s.messages.mark_read_message(req)
@@ -110,7 +110,7 @@ s = epilot.Epilot(
 
 
 req = operations.MarkUnreadMessageRequest(
-    id="77dfb14c-d66a-4e39-9efb-9ba88f3a6699",
+    id='77dfb14c-d66a-4e39-9efb-9ba88f3a6699',
 )
 
 res = s.messages.mark_unread_message(req)
@@ -139,48 +139,48 @@ s = epilot.Epilot(
 req = shared.MessageRequestParams(
     bcc=[
         shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
+            address='messaging@epilot.cloud',
+            name='epilot',
             send_error={
-                "nihil": "magnam",
+                "nihil": 'magnam',
             },
-            send_status="BOUNCE",
+            send_status=shared.AddressSendStatusEnum.BOUNCE,
         ),
         shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
+            address='messaging@epilot.cloud',
+            name='epilot',
             send_error={
-                "labore": "labore",
-                "suscipit": "natus",
-                "nobis": "eum",
+                "labore": 'labore',
+                "suscipit": 'natus',
+                "nobis": 'eum',
             },
-            send_status="ERROR",
+            send_status=shared.AddressSendStatusEnum.ERROR,
         ),
     ],
     cc=[
         shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
+            address='messaging@epilot.cloud',
+            name='epilot',
             send_error={
-                "magnam": "et",
+                "magnam": 'et',
             },
-            send_status="COMPLAINT",
+            send_status=shared.AddressSendStatusEnum.COMPLAINT,
         ),
     ],
     file=shared.AttachmentsRelation(
         dollar_relation=[
             shared.File(
-                cid="fb222496-a1a5-4639-94f2-07b5e35e4068",
-                entity_id="f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
-                filename="Produktinformationen_epilot360_Double_Opt_in.pdf",
+                cid='fb222496-a1a5-4639-94f2-07b5e35e4068',
+                entity_id='f820ce3b-07b0-45ae-bcc6-babb2f53f79f',
+                filename='Produktinformationen_epilot360_Double_Opt_in.pdf',
                 inline=False,
                 is_message_attachment=False,
                 send_as_link=False,
             ),
             shared.File(
-                cid="fb222496-a1a5-4639-94f2-07b5e35e4068",
-                entity_id="f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
-                filename="Produktinformationen_epilot360_Double_Opt_in.pdf",
+                cid='fb222496-a1a5-4639-94f2-07b5e35e4068',
+                entity_id='f820ce3b-07b0-45ae-bcc6-babb2f53f79f',
+                filename='Produktinformationen_epilot360_Double_Opt_in.pdf',
                 inline=False,
                 is_message_attachment=False,
                 send_as_link=False,
@@ -188,70 +188,70 @@ req = shared.MessageRequestParams(
         ],
     ),
     from_=shared.Address(
-        address="messaging@epilot.cloud",
-        name="epilot",
+        address='messaging@epilot.cloud',
+        name='epilot',
         send_error={
-            "quos": "sint",
-            "accusantium": "mollitia",
-            "reiciendis": "mollitia",
+            "quos": 'sint',
+            "accusantium": 'mollitia',
+            "reiciendis": 'mollitia',
         },
-        send_status="DELIVERY",
+        send_status=shared.AddressSendStatusEnum.DELIVERY,
     ),
-    html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
-    parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
+    html='<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>',
+    parent_id='44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2',
     reply_to=shared.Address(
-        address="messaging@epilot.cloud",
-        name="epilot",
+        address='messaging@epilot.cloud',
+        name='epilot',
         send_error={
-            "dolor": "necessitatibus",
-            "odit": "nemo",
+            "dolor": 'necessitatibus',
+            "odit": 'nemo',
         },
-        send_status="SEND",
+        send_status=shared.AddressSendStatusEnum.SEND,
     ),
-    subject="Request for solar panel price",
-    text="We at ABC GmbH would like to request a price quote for the solar panel.",
+    subject='Request for solar panel price',
+    text='We at ABC GmbH would like to request a price quote for the solar panel.',
     thread=shared.MessageRequestParamsThread(
         assigned_to=[
-            "doloribus",
-            "debitis",
+            'doloribus',
+            'debitis',
         ],
-        topic="eius",
+        topic='eius',
     ),
     to=[
         shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
+            address='messaging@epilot.cloud',
+            name='epilot',
             send_error={
-                "facilis": "in",
-                "architecto": "architecto",
-                "repudiandae": "ullam",
+                "facilis": 'in',
+                "architecto": 'architecto',
+                "repudiandae": 'ullam',
             },
-            send_status="BOUNCE",
+            send_status=shared.AddressSendStatusEnum.BOUNCE,
         ),
         shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
+            address='messaging@epilot.cloud',
+            name='epilot',
             send_error={
-                "repellat": "quibusdam",
-                "sed": "saepe",
+                "repellat": 'quibusdam',
+                "sed": 'saepe',
             },
-            send_status="ERROR",
+            send_status=shared.AddressSendStatusEnum.ERROR,
         ),
         shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
+            address='messaging@epilot.cloud',
+            name='epilot',
             send_error={
-                "consequuntur": "praesentium",
+                "consequuntur": 'praesentium',
             },
-            send_status="COMPLAINT",
+            send_status=shared.AddressSendStatusEnum.COMPLAINT,
         ),
         shared.Address(
-            address="messaging@epilot.cloud",
-            name="epilot",
+            address='messaging@epilot.cloud',
+            name='epilot',
             send_error={
-                "sunt": "quo",
+                "sunt": 'quo',
             },
-            send_status="ERROR",
+            send_status=shared.AddressSendStatusEnum.ERROR,
         ),
     ],
 )
@@ -280,7 +280,7 @@ s = epilot.Epilot(
 
 
 req = operations.TrashMessageRequest(
-    id="dc692601-fb57-46b0-95f0-d30c5fbb2587",
+    id='dc692601-fb57-46b0-95f0-d30c5fbb2587',
 )
 
 res = s.messages.trash_message(req)
@@ -307,7 +307,7 @@ s = epilot.Epilot(
 
 
 req = operations.UntrashMessageRequest(
-    id="053202c7-3d5f-4e9b-90c2-8909b3fe49a8",
+    id='053202c7-3d5f-4e9b-90c2-8909b3fe49a8',
 )
 
 res = s.messages.untrash_message(req)
