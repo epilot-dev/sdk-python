@@ -37,10 +37,10 @@ s = epilot.Epilot(
 
 req = operations.ActivateUserRequest(
     user_activation_payload=shared.UserActivationPayload(
-        display_name="Example User",
-        password="AKjhdakjsdh@!34",
+        display_name='Example User',
+        password='AKjhdakjsdh@!34',
     ),
-    token="maiores",
+    token='maiores',
 )
 
 res = s.user_v2.activate_user(req)
@@ -67,7 +67,7 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteUserV2Request(
-    id="7cc78ca1-ba92-48fc-8167-42cb73920592",
+    id='7cc78ca1-ba92-48fc-8167-42cb73920592',
 )
 
 res = s.user_v2.delete_user_v2(req)
@@ -117,7 +117,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetUserLoginParametersV2Request(
-    username="Leora.Fadel",
+    username='Leora.Fadel',
 )
 
 res = s.user_v2.get_user_login_parameters_v2(req)
@@ -144,7 +144,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetUserV2Request(
-    id="fea7596e-b10f-4aaa-a352-c5955907aff1",
+    id='fea7596e-b10f-4aaa-a352-c5955907aff1',
 )
 
 res = s.user_v2.get_user_v2(req)
@@ -171,10 +171,10 @@ s = epilot.Epilot(
 
 
 req = shared.UserInvitationPayload(
-    email="test@example.com",
-    language="de",
+    email='test@example.com',
+    language=shared.UserInvitationPayloadLanguageEnum.DE,
     roles=[
-        "123:owner",
+        '123:owner',
     ],
 )
 
@@ -204,7 +204,7 @@ s = epilot.Epilot(
 req = operations.ListUsersV2Request(
     limit=6350.59,
     offset=1613.09,
-    query="repellat",
+    query='repellat',
 )
 
 res = s.user_v2.list_users_v2(req)
@@ -231,8 +231,8 @@ s = epilot.Epilot(
 
 
 req = operations.ResendUserInvitationRequestBody(
-    email="test@example.com",
-    language="de",
+    email='test@example.com',
+    language=operations.ResendUserInvitationRequestBodyLanguageEnum.DE,
 )
 
 res = s.user_v2.resend_user_invitation(req)
@@ -260,18 +260,18 @@ s = epilot.Epilot(
 
 req = operations.SignUpUserRequest(
     signup_user_payload=shared.SignupUserPayload(
-        language="de",
+        language=shared.SignupUserPayloadLanguageEnum.DE,
         organization_detail={
-            "commodi": "quam",
-            "molestiae": "velit",
+            "commodi": 'quam',
+            "molestiae": 'velit',
         },
         user_detail=shared.UserDetail(
-            email="Carmelo67@yahoo.com",
-            full_name="Example user",
-            password="AKjhdakjsdh@!34",
+            email='Carmelo67@yahoo.com',
+            full_name='Example user',
+            password='AKjhdakjsdh@!34',
         ),
     ),
-    token="animi",
+    token='animi',
 )
 
 res = s.user_v2.sign_up_user(req)
@@ -299,34 +299,34 @@ s = epilot.Epilot(
 
 req = operations.UpdateUserV2Request(
     user_v2=shared.UserV2(
-        created_at="2022-02-08T04:44:32.246Z",
-        department="Sales",
-        display_name="Example User",
-        draft_email="Britney94@gmail.com",
-        email="Makayla9@yahoo.com",
-        id="9da1ffe7-8f09-47b0-874f-15471b5e6e13",
+        created_at='2022-02-08T04:44:32.246Z',
+        department='Sales',
+        display_name='Example User',
+        draft_email='Britney94@gmail.com',
+        email='Makayla9@yahoo.com',
+        id='9da1ffe7-8f09-47b0-874f-15471b5e6e13',
         image_uri={
-            "molestias": "excepturi",
-            "pariatur": "modi",
-            "praesentium": "rem",
+            "molestias": 'excepturi',
+            "pariatur": 'modi',
+            "praesentium": 'rem',
         },
         is_signature_enabled=True,
         mfa_enabled=False,
-        organization_id="voluptates",
-        phone="1234567890",
+        organization_id='voluptates',
+        phone='1234567890',
         phone_verified=True,
-        preferred_language="de",
+        preferred_language='de',
         properties=[
             shared.UserV2Properties(
-                name="profileImageName",
-                value="avatar.png",
+                name='profileImageName',
+                value='avatar.png',
             ),
         ],
-        signature="<p>Thanks</p>",
-        status="Deleted",
-        token="65dc527f-cb2d-4158-8f2e-8978dbceb599",
+        signature='<p>Thanks</p>',
+        status=shared.UserV2StatusEnum.DELETED,
+        token='65dc527f-cb2d-4158-8f2e-8978dbceb599',
     ),
-    id="91e450ad-2abd-4442-a980-2d502a94bb4f",
+    id='91e450ad-2abd-4442-a980-2d502a94bb4f',
 )
 
 res = s.user_v2.update_user_v2(req)
@@ -354,9 +354,9 @@ s = epilot.Epilot(
 
 req = operations.VerifyEmailWithTokenRequest(
     user_verification_payload=shared.UserVerificationPayload(
-        password="AKjhdakjsdh@!34",
+        password='AKjhdakjsdh@!34',
     ),
-    token="eum",
+    token='eum',
 )
 
 res = s.user_v2.verify_email_with_token(req)

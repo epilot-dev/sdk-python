@@ -52,7 +52,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetUserRequest(
-    id="89bd9d8d-69a6-474e-8f46-7cc8796ed151",
+    id='89bd9d8d-69a6-474e-8f46-7cc8796ed151',
 )
 
 res = s.user_v1.get_user(req)
@@ -79,7 +79,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetUserLoginParametersRequest(
-    username="Lydia_Aufderhar",
+    username='Lydia_Aufderhar',
 )
 
 res = s.user_v1.get_user_login_parameters(req)
@@ -109,9 +109,9 @@ req = operations.ListUsersRequest(
     limit=9571.56,
     offset=7781.57,
     org_ids=[
-        "at",
+        'at',
     ],
-    query="at",
+    query='at',
 )
 
 res = s.user_v1.list_users(req)
