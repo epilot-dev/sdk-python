@@ -29,22 +29,22 @@ s = epilot.Epilot(
 req = operations.ExportEntitiesRequest(
     entity_search_params=shared.EntitySearchParams(
         aggs={
-            "tempore": "accusamus",
+            "tempore": 'accusamus',
         },
         fields_=[
-            "enim",
-            "dolorem",
+            'enim',
+            'dolorem',
         ],
         from_=957451,
         hydrate=False,
         include_scores=False,
-        q="_schema:contact AND status:active",
+        q='_schema:contact AND status:active',
         size=518201,
-        sort="_created_at:desc",
+        sort='_created_at:desc',
     ),
     is_template=False,
-    job_id="nihil",
-    language="sit",
+    job_id='nihil',
+    language='sit',
 )
 
 res = s.export.export_entities(req)
@@ -73,12 +73,12 @@ s = epilot.Epilot(
 req = operations.ImportEntitiesRequest(
     entity_import_params=shared.EntityImportParams(
         s3_reference=shared.EntityImportParamsS3Reference(
-            bucket="epilot-files-prod",
-            key="123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+            bucket='epilot-files-prod',
+            key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
         ),
-        schema="contact",
+        schema='contact',
     ),
-    job_id="expedita",
+    job_id='expedita',
 )
 
 res = s.export.import_entities(req)

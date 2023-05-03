@@ -31,17 +31,17 @@ s = epilot.Epilot(
 
 req = shared.SavedView(
     created_by=shared.SavedViewCreatedBy1(
-        user_id="10598",
+        user_id='10598',
     ),
-    name="View listing German",
-    org="66",
+    name='View listing German',
+    org='66',
     shared=True,
     slug=[
-        "contact",
-        "contact",
+        'contact',
+        'contact',
     ],
     ui_config={
-        "cupiditate": "consequatur",
+        "cupiditate": 'consequatur',
     },
 )
 
@@ -69,7 +69,7 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteSavedViewRequest(
-    id="4e523c7e-0bc7-4178-a479-6f2a70c68828",
+    id='4e523c7e-0bc7-4178-a479-6f2a70c68828',
 )
 
 res = s.saved_views.delete_saved_view(req)
@@ -96,7 +96,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetSavedViewRequest(
-    id="2aa48256-2f22-42e9-817e-e17cbe61e6b7",
+    id='2aa48256-2f22-42e9-817e-e17cbe61e6b7',
 )
 
 res = s.saved_views.get_saved_view(req)
@@ -148,24 +148,24 @@ s = epilot.Epilot(
 req = operations.UpdateSavedViewRequest(
     saved_view=shared.SavedView(
         created_by={
-            "minima": "distinctio",
-            "eligendi": "sit",
-            "culpa": "tempore",
+            "minima": 'distinctio',
+            "eligendi": 'sit',
+            "culpa": 'tempore',
         },
-        name="View listing German",
-        org="66",
+        name='View listing German',
+        org='66',
         shared=True,
         slug=[
-            "contact",
+            'contact',
         ],
         ui_config={
-            "consequuntur": "consequatur",
-            "minus": "quaerat",
-            "sapiente": "consectetur",
-            "esse": "blanditiis",
+            "consequuntur": 'consequatur',
+            "minus": 'quaerat',
+            "sapiente": 'consectetur',
+            "esse": 'blanditiis',
         },
     ),
-    id="9fd871f9-9dd2-4efd-921a-a6f1e674bdb0",
+    id='9fd871f9-9dd2-4efd-921a-a6f1e674bdb0',
 )
 
 res = s.saved_views.update_saved_view(req)

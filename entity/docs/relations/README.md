@@ -33,16 +33,16 @@ req = operations.AddRelationsRequest(
     request_body=[
         shared.RelationItem(
             tags=[
-                "vel",
+                'vel',
             ],
-            attribute="libero",
-            entity_id="5a73429c-db1a-4842-abb6-79d2322715bf",
+            attribute='libero',
+            entity_id='5a73429c-db1a-4842-abb6-79d2322715bf',
             reverse=False,
         ),
     ],
     async_=False,
-    id="0cbb1e31-b8b9-40f3-843a-1108e0adcf4b",
-    slug="contact",
+    id='0cbb1e31-b8b9-40f3-843a-1108e0adcf4b',
+    slug='contact',
 )
 
 res = s.relations.add_relations(req)
@@ -70,10 +70,10 @@ s = epilot.Epilot(
 
 req = operations.DeleteRelationRequest(
     async_=False,
-    attribute="cupiditate",
-    entity_id="qui",
-    id="1879fce9-53f7-43ef-bfbc-7abd74dd39c0",
-    slug="contact",
+    attribute='cupiditate',
+    entity_id='qui',
+    id='1879fce9-53f7-43ef-bfbc-7abd74dd39c0',
+    slug='contact',
 )
 
 res = s.relations.delete_relation(req)
@@ -106,9 +106,9 @@ s = epilot.Epilot(
 
 req = operations.GetRelationsRequest(
     hydrate=False,
-    id="f5d2cff7-c70a-4456-a6d4-36813f16d9f5",
+    id='f5d2cff7-c70a-4456-a6d4-36813f16d9f5',
     include_reverse=False,
-    slug="contact",
+    slug='contact',
 )
 
 res = s.relations.get_relations(req)
@@ -141,18 +141,18 @@ s = epilot.Epilot(
 
 req = operations.GetRelationsV2Request(
     fields_=[
-        "quisquam",
-        "saepe",
-        "ea",
-        "impedit",
+        'quisquam',
+        'saepe',
+        'ea',
+        'impedit',
     ],
     from_=359271,
     hydrate=False,
-    id="56146c3e-250f-4b00-8c42-e141aac366c8",
+    id='56146c3e-250f-4b00-8c42-e141aac366c8',
     include_reverse=False,
-    query="assumenda",
+    query='assumenda',
     size=860552,
-    slug="contact",
+    slug='contact',
 )
 
 res = s.relations.get_relations_v2(req)
@@ -181,15 +181,15 @@ s = epilot.Epilot(
 req = operations.UpdateRelationRequest(
     request_body=operations.UpdateRelationRequestBody(
         tags=[
-            "libero",
-            "quasi",
+            'libero',
+            'quasi',
         ],
     ),
     async_=False,
-    attribute="tempora",
-    entity_id="numquam",
-    id="29074747-78a7-4bd4-a6d2-8c10ab3cdca4",
-    slug="contact",
+    attribute='tempora',
+    entity_id='numquam',
+    id='29074747-78a7-4bd4-a6d2-8c10ab3cdca4',
+    slug='contact',
 )
 
 res = s.relations.update_relation(req)

@@ -30,9 +30,9 @@ s = epilot.Epilot(
 
 req = operations.AttachActivityRequest(
     entities=[
-        "c5955907-aff1-4a3a-afa9-467739251aa5",
+        'c5955907-aff1-4a3a-afa9-467739251aa5',
     ],
-    id="01F130Q52Q6MWSNS8N2AVXV4JN",
+    id='01F130Q52Q6MWSNS8N2AVXV4JN',
 )
 
 res = s.activity.attach_activity(req)
@@ -64,18 +64,18 @@ s = epilot.Epilot(
 
 req = operations.CreateActivityRequest(
     activity=shared.Activity(
-        message="{{caller}} did something with {{entity payload.entity.id}}.",
+        message='{{caller}} did something with {{entity payload.entity.id}}.',
         payload={
-            "quo": "sequi",
+            "quo": 'sequi',
         },
-        title="My custom activity",
-        type="MyCustomActivity",
+        title='My custom activity',
+        type='MyCustomActivity',
     ),
     entities=[
-        "5ad019da-1ffe-478f-897b-0074f15471b5",
-        "e6e13b99-d488-4e1e-91e4-50ad2abd4426",
-        "9802d502-a94b-4b4f-a3c9-69e9a3efa77d",
-        "fb14cd66-ae39-45ef-b9ba-88f3a6699707",
+        '5ad019da-1ffe-478f-897b-0074f15471b5',
+        'e6e13b99-d488-4e1e-91e4-50ad2abd4426',
+        '9802d502-a94b-4b4f-a3c9-69e9a3efa77d',
+        'fb14cd66-ae39-45ef-b9ba-88f3a6699707',
     ],
 )
 
@@ -103,7 +103,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetActivityRequest(
-    id="01F130Q52Q6MWSNS8N2AVXV4JN",
+    id='01F130Q52Q6MWSNS8N2AVXV4JN',
     operations_from=301575,
     operations_size=716075,
 )
@@ -137,10 +137,10 @@ req = operations.GetEntityActivityFeedRequest(
     after=dateutil.parser.isoparse('2022-06-04T18:23:50.695Z'),
     before=dateutil.parser.isoparse('2022-08-14T00:52:14.624Z'),
     from_=618016,
-    id="b6e21419-5989-40af-a563-e2516fe4c8b7",
+    id='b6e21419-5989-40af-a563-e2516fe4c8b7',
     size=100226,
-    slug="contact",
-    type="SyncActivity",
+    slug='contact',
+    type='SyncActivity',
 )
 
 res = s.activity.get_entity_activity_feed(req)

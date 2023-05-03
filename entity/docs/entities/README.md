@@ -34,10 +34,10 @@ s = epilot.Epilot(
 
 
 req = operations.AutocompleteRequest(
-    attribute="_tags",
-    input="architecto",
+    attribute='_tags',
+    input='architecto',
     size=919483,
-    slug="contact",
+    slug='contact',
 )
 
 res = s.entities.autocomplete(req)
@@ -90,12 +90,12 @@ s = epilot.Epilot(
 
 req = operations.CreateEntityRequest(
     request_body={
-        "expedita": "nihil",
-        "repellat": "quibusdam",
+        "expedita": 'nihil',
+        "repellat": 'quibusdam',
     },
-    activity_id="01F130Q52Q6MWSNS8N2AVXV4JN",
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     async_=False,
-    slug="contact",
+    slug='contact',
 )
 
 res = s.entities.create_entity(req)
@@ -127,9 +127,9 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteEntityRequest(
-    activity_id="01F130Q52Q6MWSNS8N2AVXV4JN",
-    id="2ed02892-1cdd-4c69-a601-fb576b0d5f0d",
-    slug="contact",
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
+    id='2ed02892-1cdd-4c69-a601-fb576b0d5f0d',
+    slug='contact',
 )
 
 res = s.entities.delete_entity(req)
@@ -220,8 +220,8 @@ s = epilot.Epilot(
 
 req = operations.GetEntityRequest(
     hydrate=False,
-    id="30c5fbb2-5870-4532-82c7-3d5fe9b90c28",
-    slug="contact",
+    id='30c5fbb2-5870-4532-82c7-3d5fe9b90c28',
+    slug='contact',
 )
 
 res = s.entities.get_entity(req)
@@ -276,15 +276,15 @@ s = epilot.Epilot(
 
 req = operations.PatchEntityRequest(
     request_body={
-        "eaque": "occaecati",
-        "rerum": "adipisci",
-        "asperiores": "earum",
+        "eaque": 'occaecati',
+        "rerum": 'adipisci',
+        "asperiores": 'earum',
     },
-    activity_id="01F130Q52Q6MWSNS8N2AVXV4JN",
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     async_=False,
     dry_run=False,
-    id="49a8d9cb-f486-4333-a3f9-b77f3a410067",
-    slug="contact",
+    id='49a8d9cb-f486-4333-a3f9-b77f3a410067',
+    slug='contact',
 )
 
 res = s.entities.patch_entity(req)
@@ -377,20 +377,20 @@ s = epilot.Epilot(
 
 req = shared.EntitySearchParams(
     aggs={
-        "accusamus": "quidem",
-        "voluptatibus": "voluptas",
+        "accusamus": 'quidem',
+        "voluptatibus": 'voluptas',
     },
     fields_=[
-        "eos",
-        "atque",
-        "sit",
+        'eos',
+        'atque',
+        'sit',
     ],
     from_=854614,
     hydrate=False,
     include_scores=False,
-    q="_schema:contact AND status:active",
+    q='_schema:contact AND status:active',
     size=67249,
-    sort="_created_at:desc",
+    sort='_created_at:desc',
 )
 
 res = s.entities.search_entities(req)
@@ -443,14 +443,14 @@ s = epilot.Epilot(
 
 req = operations.UpdateEntityRequest(
     request_body={
-        "dolorum": "iusto",
-        "voluptate": "dolorum",
-        "deleniti": "omnis",
+        "dolorum": 'iusto',
+        "voluptate": 'dolorum',
+        "deleniti": 'omnis',
     },
-    activity_id="01F130Q52Q6MWSNS8N2AVXV4JN",
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     async_=False,
-    id="ebf737ae-4203-4ce5-a6a9-5d8a0d446ce2",
-    slug="contact",
+    id='ebf737ae-4203-4ce5-a6a9-5d8a0d446ce2',
+    slug='contact',
 )
 
 res = s.entities.update_entity(req)
@@ -488,21 +488,21 @@ s = epilot.Epilot(
 req = operations.UpsertEntityRequest(
     request_body=operations.UpsertEntityRequestBody(
         entity={
-            "a": "esse",
-            "harum": "iusto",
-            "ipsum": "quisquam",
+            "a": 'esse',
+            "harum": 'iusto',
+            "ipsum": 'quisquam',
         },
         unique_key=[
-            "email.0.email",
-            "email.0.email",
-            "email.0.email",
-            "email.0.email",
+            'email.0.email',
+            'email.0.email',
+            'email.0.email',
+            'email.0.email',
         ],
     ),
-    activity_id="01F130Q52Q6MWSNS8N2AVXV4JN",
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     async_=False,
     dry_run=False,
-    slug="contact",
+    slug='contact',
 )
 
 res = s.entities.upsert_entity(req)
