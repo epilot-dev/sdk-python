@@ -22,16 +22,16 @@ s = epilot.Epilot(
 
 
 req = operations.GenerateDocumentRequestBody(
-    context_entity_id="bcd0aab9-b544-42b0-8bfb-6d449d02eacc",
-    language="de",
+    context_entity_id='bcd0aab9-b544-42b0-8bfb-6d449d02eacc',
+    language='de',
     template_document=operations.GenerateDocumentRequestBodyTemplateDocument(
-        filename="my-template-{{order.order_number}}.docx",
+        filename='my-template-{{order.order_number}}.docx',
         s3ref=shared.S3Reference(
-            bucket="document-api-prod",
-            key="uploads/my-template.pdf",
+            bucket='document-api-prod',
+            key='uploads/my-template.pdf',
         ),
     ),
-    user_id="100321",
+    user_id='100321',
 )
 
 res = s.documents.generate_document(req)
