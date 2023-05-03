@@ -28,10 +28,10 @@ s = epilot.Epilot(
 
 
 req = {
-    "vel": "error",
-    "deserunt": "suscipit",
-    "iure": "magnam",
-    "debitis": "ipsa",
+    "vel": 'error',
+    "deserunt": 'suscipit',
+    "iure": 'magnam',
+    "debitis": 'ipsa',
 }
 
 res = s.journeys.create_journey(req)
@@ -58,9 +58,9 @@ s = epilot.Epilot(
 
 
 req = operations.GetJourneyRequest(
-    id="509cdffe-424f-457a-95c2-9708c304ce77",
-    org_id="delectus",
-    source="tempora",
+    id='509cdffe-424f-457a-95c2-9708c304ce77',
+    org_id='delectus',
+    source='tempora',
 )
 
 res = s.journeys.get_journey(req)
@@ -87,7 +87,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetJourneysByOrgIDRequest(
-    id="123",
+    id='123',
 )
 
 res = s.journeys.get_journeys_by_org_id(req)
@@ -114,8 +114,8 @@ s = epilot.Epilot(
 
 
 req = {
-    "molestiae": "minus",
-    "placeat": "voluptatum",
+    "molestiae": 'minus',
+    "placeat": 'voluptatum',
 }
 
 res = s.journeys.patch_update_journey(req)
@@ -142,7 +142,7 @@ s = epilot.Epilot(
 
 
 req = operations.RemoveJourneyRequest(
-    id="509cdffe-424f-457a-95c2-9708c304ce77",
+    id='509cdffe-424f-457a-95c2-9708c304ce77',
 )
 
 res = s.journeys.remove_journey(req)
@@ -170,9 +170,9 @@ s = epilot.Epilot(
 
 req = shared.SearchJourneysQueryRequest(
     from_=479977,
-    q="_tags:*Flex*",
+    q='_tags:*Flex*',
     size=25,
-    sort="_created_at:desc",
+    sort='_created_at:desc',
 )
 
 res = s.journeys.search_journeys(req)
@@ -199,9 +199,9 @@ s = epilot.Epilot(
 
 
 req = {
-    "nisi": "recusandae",
-    "temporibus": "ab",
-    "quis": "veritatis",
+    "nisi": 'recusandae',
+    "temporibus": 'ab',
+    "quis": 'veritatis',
 }
 
 res = s.journeys.update_journey(req)

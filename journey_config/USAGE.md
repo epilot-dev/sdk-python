@@ -11,9 +11,9 @@ s = epilot.Epilot(
 
 
 req = {
-    "provident": "distinctio",
-    "quibusdam": "unde",
-    "nulla": "corrupti",
+    "provident": 'distinctio',
+    "quibusdam": 'unde',
+    "nulla": 'corrupti',
 }
 
 res = s.journeys.create_journey(req)
