@@ -31,50 +31,50 @@ s = epilot.Epilot(
 
 req = shared.AutomationFlowInput(
     enabled=False,
-    entity_schema="submission",
-    flow_name="Handle contact form",
+    entity_schema='submission',
+    flow_name='Handle contact form',
     runs=7,
     trigger_conditions=[
         shared.TriggerCondition(
-            comparison="not_empty",
-            source="nulla",
+            comparison=shared.ComparisonEnum.NOT_EMPTY,
+            source='nulla',
             value=[
-                "vel",
-                "error",
-                "deserunt",
-                "suscipit",
+                'vel',
+                'error',
+                'deserunt',
+                'suscipit',
             ],
         ),
         shared.TriggerCondition(
-            comparison="any_of",
-            source="magnam",
+            comparison=shared.ComparisonEnum.ANY_OF,
+            source='magnam',
             value=[
                 9636.63,
             ],
         ),
         shared.TriggerCondition(
-            comparison="any_of",
-            source="suscipit",
+            comparison=shared.ComparisonEnum.ANY_OF,
+            source='suscipit',
             value=7917.25,
         ),
         shared.TriggerCondition(
-            comparison="is_empty",
-            source="voluptatum",
+            comparison=shared.ComparisonEnum.IS_EMPTY,
+            source='voluptatum',
             value=5680.45,
         ),
     ],
     triggers=[
         shared.ReceivedEmailTrigger(
             configuration=shared.ReceivedEmailTriggerConfiguration(
-                message_type="RECEIVED",
+                message_type=shared.ReceivedEmailTriggerConfigurationMessageTypeEnum.RECEIVED,
             ),
-            type="received_email",
+            type=shared.ReceivedEmailTriggerTypeEnum.RECEIVED_EMAIL,
         ),
         shared.EntityManualTrigger(
             configuration=shared.EntityManualTriggerConfiguration(
-                schema="submission",
+                schema='submission',
             ),
-            type="entity_manual",
+            type=shared.EntityManualTriggerTypeEnum.ENTITY_MANUAL,
         ),
     ],
 )
@@ -103,7 +103,7 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteFlowRequest(
-    flow_id="7791b04a-16d2-44a2-9af9-2d59c25c512f",
+    flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f',
 )
 
 res = s.flows.delete_flow(req)
@@ -130,7 +130,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetFlowRequest(
-    flow_id="7791b04a-16d2-44a2-9af9-2d59c25c512f",
+    flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f',
 )
 
 res = s.flows.get_flow(req)
@@ -159,46 +159,46 @@ s = epilot.Epilot(
 req = operations.PutFlowRequest(
     automation_flow_input=shared.AutomationFlowInput(
         enabled=False,
-        entity_schema="submission",
-        flow_name="Handle contact form",
+        entity_schema='submission',
+        flow_name='Handle contact form',
         runs=7,
         trigger_conditions=[
             shared.TriggerCondition(
-                comparison="any_of",
-                source="veritatis",
+                comparison=shared.ComparisonEnum.ANY_OF,
+                source='veritatis',
                 value=[
-                    "ipsam",
+                    'ipsam',
                 ],
             ),
         ],
         triggers=[
             shared.ReceivedEmailTrigger(
                 configuration=shared.ReceivedEmailTriggerConfiguration(
-                    message_type="RECEIVED",
+                    message_type=shared.ReceivedEmailTriggerConfigurationMessageTypeEnum.RECEIVED,
                 ),
-                type="received_email",
+                type=shared.ReceivedEmailTriggerTypeEnum.RECEIVED_EMAIL,
             ),
             shared.EntityManualTrigger(
                 configuration=shared.EntityManualTriggerConfiguration(
-                    schema="submission",
+                    schema='submission',
                 ),
-                type="entity_manual",
+                type=shared.EntityManualTriggerTypeEnum.ENTITY_MANUAL,
             ),
             shared.FrontendSubmitTrigger(
                 configuration=shared.FrontendSubmitTriggerConfiguration(
-                    source_id="99",
+                    source_id='99',
                 ),
-                type="frontend_submission",
+                type=shared.FrontendSubmitTriggerTypeEnum.FRONTEND_SUBMISSION,
             ),
             shared.ReceivedEmailTrigger(
                 configuration=shared.ReceivedEmailTriggerConfiguration(
-                    message_type="RECEIVED",
+                    message_type=shared.ReceivedEmailTriggerConfigurationMessageTypeEnum.RECEIVED,
                 ),
-                type="received_email",
+                type=shared.ReceivedEmailTriggerTypeEnum.RECEIVED_EMAIL,
             ),
         ],
     ),
-    flow_id="7791b04a-16d2-44a2-9af9-2d59c25c512f",
+    flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f',
 )
 
 res = s.flows.put_flow(req)
@@ -226,9 +226,9 @@ s = epilot.Epilot(
 
 req = operations.SearchFlowsRequest(
     from_=870088,
-    schema="submission",
+    schema='submission',
     size=978619,
-    trigger_source_id="600945fe-212e-4b97-acf7-391d64648384",
+    trigger_source_id='600945fe-212e-4b97-acf7-391d64648384',
 )
 
 res = s.flows.search_flows(req)

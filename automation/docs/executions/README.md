@@ -30,7 +30,7 @@ s = epilot.Epilot(
 
 
 req = operations.CancelExecutionRequest(
-    execution_id="9baf184f-bc81-4128-bca3-d974c90a12c4",
+    execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4',
 )
 
 res = s.executions.cancel_execution(req)
@@ -57,7 +57,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetExecutionRequest(
-    execution_id="9baf184f-bc81-4128-bca3-d974c90a12c4",
+    execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4',
 )
 
 res = s.executions.get_execution(req)
@@ -84,7 +84,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetExecutionsRequest(
-    entity_id="e3d3ebac-baab-4395-abf4-50b5bf1f8b74",
+    entity_id='e3d3ebac-baab-4395-abf4-50b5bf1f8b74',
     from_=548814,
     size=592845,
 )
@@ -114,10 +114,10 @@ s = epilot.Epilot(
 
 req = operations.RetriggerActionRequest(
     retry_req=shared.RetryReq(
-        retry_strategy="RETRY_AND_STOP",
+        retry_strategy=shared.RetryStrategyEnum.RETRY_AND_STOP,
     ),
-    action_id="9ec3711b-db63-449c-b894-54d5bb622a8f",
-    execution_id="9baf184f-bc81-4128-bca3-d974c90a12c4",
+    action_id='9ec3711b-db63-449c-b894-54d5bb622a8f',
+    execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4',
 )
 
 res = s.executions.retrigger_action(req)
@@ -144,7 +144,7 @@ s = epilot.Epilot(
 
 
 req = shared.StartExecutionRequestInput(
-    entity_id="e3d3ebac-baab-4395-abf4-50b5bf1f8b74",
+    entity_id='e3d3ebac-baab-4395-abf4-50b5bf1f8b74',
 )
 
 res = s.executions.start_execution(req)
