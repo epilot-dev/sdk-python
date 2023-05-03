@@ -34,8 +34,8 @@ s = epilot.Epilot(
 
 req = shared.DeleteFilePayload(
     s3ref=shared.S3Reference(
-        bucket="epilot-files-prod",
-        key="123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
 )
 
@@ -64,7 +64,7 @@ s = epilot.Epilot(
 
 req = operations.DownloadFileRequest(
     attachment=False,
-    id="ef7d985c-2385-44f4-9c71-ae06a52264f8",
+    id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
     version=548814,
 )
 
@@ -93,8 +93,8 @@ s = epilot.Epilot(
 
 req = operations.DownloadS3FileRequest(
     attachment=False,
-    s3_bucket="provident",
-    s3_key="distinctio",
+    s3_bucket='provident',
+    s3_key='distinctio',
 )
 
 res = s.files.download_s3_file(req)
@@ -122,7 +122,7 @@ s = epilot.Epilot(
 
 req = operations.PreviewFileRequest(
     h=844266,
-    id="ef7d985c-2385-44f4-9c71-ae06a52264f8",
+    id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
     version=602763,
     w=857946,
 )
@@ -152,8 +152,8 @@ s = epilot.Epilot(
 
 req = operations.PreviewS3FileRequest(
     s3_reference=shared.S3Reference(
-        bucket="epilot-files-prod",
-        key="123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
     h=544883,
     w=847252,
@@ -188,8 +188,8 @@ s = epilot.Epilot(
 
 
 req = {
-    "error": "deserunt",
-    "suscipit": "iure",
+    "error": 'deserunt',
+    "suscipit": 'iure',
 }
 
 res = s.files.save_file(req)
@@ -220,10 +220,10 @@ s = epilot.Epilot(
 
 req = operations.UploadFileRequest(
     upload_file_payload=shared.UploadFilePayload(
-        filename="document.pdf",
-        mime_type="application/pdf",
+        filename='document.pdf',
+        mime_type='application/pdf',
     ),
-    file_entity_id="ef7d985c-2385-44f4-9c71-ae06a52264f8",
+    file_entity_id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
 )
 
 res = s.files.upload_file(req)
@@ -253,8 +253,8 @@ s = epilot.Epilot(
 
 
 req = shared.UploadFilePayload(
-    filename="document.pdf",
-    mime_type="application/pdf",
+    filename='document.pdf',
+    mime_type='application/pdf',
 )
 
 res = s.files.upload_file_public(req)

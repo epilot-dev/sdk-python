@@ -23,8 +23,8 @@ s = epilot.Epilot(
 
 req = shared.DeleteFilePayload(
     s3ref=shared.S3Reference(
-        bucket="epilot-files-prod",
-        key="123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
 )
 
