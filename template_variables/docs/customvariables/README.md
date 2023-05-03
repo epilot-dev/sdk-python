@@ -28,20 +28,20 @@ s = epilot.Epilot(
 
 req = shared.CustomVariable(
     config={
-        "debitis": "ipsa",
-        "delectus": "tempora",
+        "debitis": 'ipsa',
+        "delectus": 'tempora',
     },
-    created_at="2022-04-19T12:41:43.662Z",
-    created_by="100042",
-    helper_logic="return param1 * param2;",
+    created_at='2022-04-19T12:41:43.662Z',
+    created_by='100042',
+    helper_logic='return param1 * param2;',
     helper_params=[
-        "molestiae",
-        "minus",
+        'molestiae',
+        'minus',
     ],
-    id="rbse777b-3cf8-4bff-bb0c-253fd1123250",
-    key="my_custom_table",
-    name="My Custom table",
-    template="<table style="table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;">
+    id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
+    key='my_custom_table',
+    name='My Custom table',
+    template='<table style="table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;">
   <thead>
     <tr style="height: 48px;border-bottom: 1px solid #D5E1ED;">
       {{#each table_config.header.columns as |column|}}
@@ -147,10 +147,10 @@ req = shared.CustomVariable(
     <tr style="height:16px !important;"></tr>
   </tbody>
 </table>
-",
-    type="custom",
-    updated_at="2022-04-20T12:41:43.662Z",
-    updated_by="100042",
+',
+    type=shared.CustomVariableTypeEnum.CUSTOM,
+    updated_at='2022-04-20T12:41:43.662Z',
+    updated_by='100042',
 )
 
 res = s.custom_variables.create_custom_variable(req)
@@ -177,7 +177,7 @@ s = epilot.Epilot(
 
 
 req = operations.DeleteCustomVariableRequest(
-    id="8796ed15-1a05-4dfc-addf-7cc78ca1ba92",
+    id='8796ed15-1a05-4dfc-addf-7cc78ca1ba92',
 )
 
 res = s.custom_variables.delete_custom_variable(req)
@@ -227,7 +227,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetCustomVariableRequest(
-    id="8fc81674-2cb7-4392-8592-9396fea7596e",
+    id='8fc81674-2cb7-4392-8592-9396fea7596e',
 )
 
 res = s.custom_variables.get_custom_variable(req)
@@ -279,20 +279,20 @@ s = epilot.Epilot(
 req = operations.UpdateCustomVariableRequest(
     custom_variable=shared.CustomVariable(
         config={
-            "architecto": "ipsa",
-            "reiciendis": "est",
-            "mollitia": "laborum",
+            "architecto": 'ipsa',
+            "reiciendis": 'est',
+            "mollitia": 'laborum',
         },
-        created_at="2022-04-19T12:41:43.662Z",
-        created_by="100042",
-        helper_logic="return param1 * param2;",
+        created_at='2022-04-19T12:41:43.662Z',
+        created_by='100042',
+        helper_logic='return param1 * param2;',
         helper_params=[
-            "dolorem",
+            'dolorem',
         ],
-        id="rbse777b-3cf8-4bff-bb0c-253fd1123250",
-        key="my_custom_table",
-        name="My Custom table",
-        template="<table style="table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;">
+        id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
+        key='my_custom_table',
+        name='My Custom table',
+        template='<table style="table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;">
       <thead>
         <tr style="height: 48px;border-bottom: 1px solid #D5E1ED;">
           {{#each table_config.header.columns as |column|}}
@@ -398,12 +398,12 @@ req = operations.UpdateCustomVariableRequest(
         <tr style="height:16px !important;"></tr>
       </tbody>
     </table>
-    ",
-        type="order_table",
-        updated_at="2022-04-20T12:41:43.662Z",
-        updated_by="100042",
+    ',
+        type=shared.CustomVariableTypeEnum.ORDER_TABLE,
+        updated_at='2022-04-20T12:41:43.662Z',
+        updated_by='100042',
     ),
-    id="2c595590-7aff-41a3-a2fa-9467739251aa",
+    id='2c595590-7aff-41a3-a2fa-9467739251aa',
 )
 
 res = s.custom_variables.update_custom_variable(req)

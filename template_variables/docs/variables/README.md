@@ -30,7 +30,7 @@ s = epilot.Epilot(
 
 
 req = operations.GenerateQRcodeRequest(
-    qrdata="enim",
+    qrdata='enim',
 )
 
 res = s.variables.generate_q_rcode(req)
@@ -57,7 +57,7 @@ s = epilot.Epilot(
 
 
 req = operations.GetCategoriesRequest(
-    lang="de",
+    lang=operations.GetCategoriesLangEnum.DE,
 )
 
 res = s.variables.get_categories(req)
@@ -90,37 +90,37 @@ req = operations.GetVariableContextRequestBody(
     parameters=shared.VariableParameters(
         brand_id=123451,
         context_data={
-            "quo": "sequi",
+            "quo": 'sequi',
         },
         custom_variables=[
             shared.ExternalCustomVariable(
-                value="https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                variable="{{craftsmen.invitation_link}}",
+                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
+                variable='{{craftsmen.invitation_link}}',
             ),
             shared.ExternalCustomVariable(
-                value="https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                variable="{{craftsmen.invitation_link}}",
+                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
+                variable='{{craftsmen.invitation_link}}',
             ),
             shared.ExternalCustomVariable(
-                value="https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                variable="{{craftsmen.invitation_link}}",
+                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
+                variable='{{craftsmen.invitation_link}}',
             ),
             shared.ExternalCustomVariable(
-                value="https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                variable="{{craftsmen.invitation_link}}",
+                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
+                variable='{{craftsmen.invitation_link}}',
             ),
         ],
-        language="en",
-        main_entity_id="63753437-c9e2-4e83-82bb-b1c666514561",
-        template_name="id",
+        language=shared.VariableParametersLanguageEnum.EN,
+        main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
+        template_name='id',
         template_tags=[
-            "aut",
-            "quasi",
-            "error",
-            "temporibus",
+            'aut',
+            'quasi',
+            'error',
+            'temporibus',
         ],
-        template_type="document",
-        user_id="50001",
+        template_type=shared.TemplateTypeEnum.DOCUMENT,
+        user_id='50001',
     ),
 )
 
@@ -152,42 +152,42 @@ s = epilot.Epilot(
 
 req = operations.ReplaceTemplatesRequestBody(
     inputs=[
-        "Hello, {{contact.first_name}}!
+        'Hello, {{contact.first_name}}!
         
         {{{brand.signature}}}
-        ",
+        ',
     ],
     parameters=shared.VariableParameters(
         brand_id=123451,
         context_data={
-            "voluptatibus": "vero",
-            "nihil": "praesentium",
-            "voluptatibus": "ipsa",
-            "omnis": "voluptate",
+            "voluptatibus": 'vero',
+            "nihil": 'praesentium',
+            "voluptatibus": 'ipsa',
+            "omnis": 'voluptate',
         },
         custom_variables=[
             shared.ExternalCustomVariable(
-                value="https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                variable="{{craftsmen.invitation_link}}",
+                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
+                variable='{{craftsmen.invitation_link}}',
             ),
             shared.ExternalCustomVariable(
-                value="https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                variable="{{craftsmen.invitation_link}}",
+                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
+                variable='{{craftsmen.invitation_link}}',
             ),
             shared.ExternalCustomVariable(
-                value="https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                variable="{{craftsmen.invitation_link}}",
+                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
+                variable='{{craftsmen.invitation_link}}',
             ),
         ],
-        language="en",
-        main_entity_id="63753437-c9e2-4e83-82bb-b1c666514561",
-        template_name="doloremque",
+        language=shared.VariableParametersLanguageEnum.EN,
+        main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
+        template_name='doloremque',
         template_tags=[
-            "ut",
-            "maiores",
+            'ut',
+            'maiores',
         ],
-        template_type="email",
-        user_id="50001",
+        template_type=shared.TemplateTypeEnum.EMAIL,
+        user_id='50001',
     ),
 )
 
@@ -216,14 +216,14 @@ s = epilot.Epilot(
 
 req = operations.SearchVariablesRequestBody(
     entity_schemas=[
-        "contact",
-        "contact",
+        'contact',
+        'contact',
     ],
     from_=296140,
-    lang="en",
-    query="logo",
+    lang=operations.SearchVariablesRequestBodyLangEnum.EN,
+    query='logo',
     size=118727,
-    template_type="document",
+    template_type=shared.TemplateTypeEnum.DOCUMENT,
 )
 
 res = s.variables.search_variables(req)
