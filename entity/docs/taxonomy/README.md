@@ -82,12 +82,11 @@ s = epilot.Epilot(
 req = operations.TaxonomiesClassificationsSearchRequest(
     request_body=operations.TaxonomiesClassificationsSearchRequestBody(
         classification_ids=[
-            '0960a668-151a-4472-af92-3c5949f83f35',
-            '0cf876ff-b901-4c6e-8bb4-e243cf789ffa',
-            'feda53e5-ae6e-40ac-984c-2b9c247c8837',
+            '3b9da3f2-ceda-47e2-bf22-57411faf4b75',
+            '44e472e8-0285-47a5-b404-63a7d575f140',
         ],
     ),
-    taxonomy_slug='amet',
+    taxonomy_slug='aut',
 )
 
 res = s.taxonomy.taxonomies_classifications_search(req)
@@ -114,9 +113,9 @@ s = epilot.Epilot(
 
 
 req = operations.TaxonomyAutocompleteRequest(
-    query='laborum',
-    size=2669.46,
-    taxonomy_slug='perferendis',
+    query='eveniet',
+    size=4837.53,
+    taxonomy_slug='commodi',
 )
 
 res = s.taxonomy.taxonomy_autocomplete(req)
@@ -147,64 +146,44 @@ req = operations.UpdateClassificationsForTaxonomyRequest(
     classifications_update=shared.ClassificationsUpdate(
         create=[
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2022-06-08T21:51:55.851Z'),
-                id='42f32e55-0557-456f-9d56-d0bd0af2dfe1',
+                created_at=dateutil.parser.isoparse('2021-05-09T16:27:58.630Z'),
+                id='7334ec1b-781b-436a-8808-8d100efada20',
                 name='Wallbox PV',
                 parents=[
-                    'db4f62cb-a3f8-4941-aebc-0b80a6924d3b',
+                    'ef0422eb-2164-4cf9-ab83-66c723ffda9e',
                 ],
-                updated_at=dateutil.parser.isoparse('2022-02-12T16:14:24.791Z'),
+                updated_at=dateutil.parser.isoparse('2022-08-10T13:36:39.170Z'),
             ),
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2020-02-07T14:24:22.214Z'),
-                id='cc8f8950-10f5-4dd3-96fa-1804e54c82f1',
+                created_at=dateutil.parser.isoparse('2021-02-24T20:48:23.002Z'),
+                id='e4825c1f-c0e1-415c-80bf-f918544ec42d',
                 name='Wallbox PV',
                 parents=[
-                    '8a363c88-73e4-4843-80b1-f6b8ca275a60',
-                    'a04c495c-c699-4171-b51c-1bdb1cf4b888',
+                    'fcce8f19-7777-43e6-b562-a7b408f05e3d',
+                    '48fdaf31-3a1f-45fd-9425-9c0b36f25ea9',
+                    '44f3b756-c11f-46c3-ba51-26243835bbc0',
+                    '5a23a45c-efc5-4fde-90a0-ce2169e51001',
                 ],
-                updated_at=dateutil.parser.isoparse('2020-10-13T02:27:28.104Z'),
-            ),
-            shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2020-02-18T05:26:29.481Z'),
-                id='c4ccca99-bc7f-4c0b-adce-10873e42b006',
-                name='Wallbox PV',
-                parents=[
-                    '678878ba-8581-4a58-a08c-54fefa9c95f2',
-                    'eac5565d-307c-4fee-8120-6e2813fa4a41',
-                    'c480d3f2-132a-4f03-902d-514f4cc6f18b',
-                    'f9621a6a-4f77-4a87-ae3e-4be752c65b34',
-                ],
-                updated_at=dateutil.parser.isoparse('2022-11-24T01:03:51.181Z'),
-            ),
-            shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2021-03-09T05:37:08.074Z'),
-                id='3bb91c8d-975e-40e8-819d-8f84f144f3e0',
-                name='Wallbox PV',
-                parents=[
-                    'edcc4aa5-f3ca-4bd9-85a9-72e056728227',
-                    'b2d30947-0bf7-4a4f-a87c-f535a6fae54e',
-                ],
-                updated_at=dateutil.parser.isoparse('2021-01-13T05:01:27.465Z'),
+                updated_at=dateutil.parser.isoparse('2021-06-20T22:36:53.570Z'),
             ),
         ],
         delete=[
-            '0c321f02-3b75-4d23-a7fe-1a0cc8df79f0',
-            'a396d90c-364b-47c1-9dfb-ace188b1c4ee',
+            'dc5e3476-2799-4bfb-be69-49fb2bb4ecae',
+            '6c3d5db3-adeb-4d5d-aea4-c506a8aa94c0',
         ],
         update=[
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2021-04-29T16:18:41.909Z'),
-                id='c6ce611f-eeb1-4c7c-bdb6-eec74378ba25',
+                created_at=dateutil.parser.isoparse('2022-09-13T00:32:01.100Z'),
+                id='4cf5e9d9-a457-48ad-81ac-600dec001ac8',
                 name='Wallbox PV',
                 parents=[
-                    '17747dc9-15ad-42ca-b5dd-6723dc0f5ae2',
+                    '2e2ec09f-f8f0-4f81-aff3-477c13e902c1',
                 ],
-                updated_at=dateutil.parser.isoparse('2022-05-22T05:03:27.540Z'),
+                updated_at=dateutil.parser.isoparse('2022-11-19T10:56:46.631Z'),
             ),
         ],
     ),
-    taxonomy_slug='officia',
+    taxonomy_slug='odit',
 )
 
 res = s.taxonomy.update_classifications_for_taxonomy(req)

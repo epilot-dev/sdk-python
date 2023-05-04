@@ -13,6 +13,10 @@ from typing import Optional
 class GetSchemaVersionsRequest:
     
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    drafts_from: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'drafts_from', 'style': 'form', 'explode': True }})
+    drafts_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'drafts_size', 'style': 'form', 'explode': True }})
+    versions_from: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'versions_from', 'style': 'form', 'explode': True }})
+    versions_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'versions_size', 'style': 'form', 'explode': True }})
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
