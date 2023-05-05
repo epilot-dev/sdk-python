@@ -30,7 +30,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteRoleRequest(
     role_id='123:owner',
 )
@@ -56,7 +55,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetRoleRequest(
     role_id='123:owner',
@@ -130,7 +128,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.PutRoleRequest(
     request_body=operations.PutRoleRequestBody3(
@@ -304,7 +301,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.RoleSearchInput(
     limit=1,

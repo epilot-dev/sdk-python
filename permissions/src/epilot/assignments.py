@@ -22,6 +22,7 @@ class Assignments:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def add_assignment(self, request: operations.AddAssignmentRequest) -> operations.AddAssignmentResponse:
         r"""addAssignment
         Assign a user to a role.
@@ -47,6 +48,7 @@ class Assignments:
 
         return res
 
+    
     def assign_roles(self, request: operations.AssignRolesRequest) -> operations.AssignRolesResponse:
         r"""assignRoles
         Assign / unassign roles to users.
@@ -74,6 +76,7 @@ class Assignments:
 
         return res
 
+    
     def get_assigned_roles_for_user(self, request: operations.GetAssignedRolesForUserRequest) -> operations.GetAssignedRolesForUserResponse:
         r"""getAssignedRolesForUser
         Get list of assigned roles by user id
@@ -97,6 +100,7 @@ class Assignments:
 
         return res
 
+    
     def list_all_assignments(self) -> operations.ListAllAssignmentsResponse:
         r"""listAllAssignments
         Returns list of all assignments in organization
@@ -120,6 +124,7 @@ class Assignments:
 
         return res
 
+    
     def remove_assignment(self, request: operations.RemoveAssignmentRequest) -> operations.RemoveAssignmentResponse:
         r"""removeAssignment
         Remove role assignment from user

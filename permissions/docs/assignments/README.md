@@ -31,7 +31,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.AddAssignmentRequest(
     role_id='123:owner',
     user_id='1',
@@ -58,7 +57,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.AssignRolesRequest(
     request_body=[
@@ -90,7 +88,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetAssignedRolesForUserRequest(
     user_id='1',
@@ -140,7 +137,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.RemoveAssignmentRequest(
     role_id='123:owner',

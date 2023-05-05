@@ -22,6 +22,7 @@ class Roles:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def delete_role(self, request: operations.DeleteRoleRequest) -> operations.DeleteRoleResponse:
         r"""deleteRole
         Delete role by id
@@ -45,6 +46,7 @@ class Roles:
 
         return res
 
+    
     def get_role(self, request: operations.GetRoleRequest) -> operations.GetRoleResponse:
         r"""getRole
         Get role by id
@@ -68,6 +70,7 @@ class Roles:
 
         return res
 
+    
     def list_all_roles(self) -> operations.ListAllRolesResponse:
         r"""listAllRoles
         Returns list of all roles in organization
@@ -91,6 +94,7 @@ class Roles:
 
         return res
 
+    
     def list_current_roles(self) -> operations.ListCurrentRolesResponse:
         r"""listCurrentRoles
         Returns roles and grants assigned to current user
@@ -114,6 +118,7 @@ class Roles:
 
         return res
 
+    
     def put_role(self, request: operations.PutRoleRequest) -> operations.PutRoleResponse:
         r"""putRole
         Create or update role
@@ -141,6 +146,7 @@ class Roles:
 
         return res
 
+    
     def refresh_permissions(self) -> operations.RefreshPermissionsResponse:
         r"""refreshPermissions
         Makes sure the user has a role in the organization
@@ -160,6 +166,7 @@ class Roles:
 
         return res
 
+    
     def search_roles(self, request: shared.RoleSearchInput) -> operations.SearchRolesResponse:
         r"""searchRoles
         Search Roles
