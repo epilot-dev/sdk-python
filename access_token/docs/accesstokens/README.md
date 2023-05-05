@@ -38,7 +38,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.JourneyTokenParameters(
     journey_id='quibusdam',
     name='Postman Access Token',
@@ -66,7 +65,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.ListAccessTokensRequest(
     token_type=[
@@ -97,7 +95,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.RevokeAccessTokenRequest(
     id='api_5ZugdRXasLfWBypHi93Fk',

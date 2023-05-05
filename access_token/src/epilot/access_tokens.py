@@ -22,6 +22,7 @@ class AccessTokens:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_access_token(self, request: Any) -> operations.CreateAccessTokenResponse:
         r"""createAccessToken
         **Access Token type: `API`** (default if not specified):
@@ -60,6 +61,7 @@ class AccessTokens:
 
         return res
 
+    
     def list_access_tokens(self, request: operations.ListAccessTokensRequest) -> operations.ListAccessTokensResponse:
         r"""listAccessTokens
         Lists all Access Tokens for current user (by default excludes system generated tokens)
@@ -84,6 +86,7 @@ class AccessTokens:
 
         return res
 
+    
     def revoke_access_token(self, request: operations.RevokeAccessTokenRequest) -> operations.RevokeAccessTokenResponse:
         r"""revokeAccessToken
         Revokes an Access Token so it can't be used anymore.
