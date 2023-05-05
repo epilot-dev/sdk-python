@@ -9,7 +9,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ActivatePartnerRequest(
     activate_partner_payload=shared.ActivatePartnerPayload(
         company_name='Company name',

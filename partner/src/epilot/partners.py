@@ -22,6 +22,7 @@ class Partners:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def activate_partner(self, request: operations.ActivatePartnerRequest) -> operations.ActivatePartnerResponse:
         r"""activatePartner
         Activate partner using an invite token
@@ -46,6 +47,7 @@ class Partners:
 
         return res
 
+    
     def approve_partner(self, request: operations.ApprovePartnerRequest) -> operations.ApprovePartnerResponse:
         r"""approvePartner
         Approve partner request
@@ -71,6 +73,7 @@ class Partners:
 
         return res
 
+    
     def batch_get_assignable(self, request: list[operations.BatchGetAssignableRequestBody]) -> operations.BatchGetAssignableResponse:
         r"""batchGet
         Search for assignable users from this organization by its ids
@@ -98,6 +101,7 @@ class Partners:
 
         return res
 
+    
     def get_partner_by_token(self, request: operations.GetPartnerByTokenRequest) -> operations.GetPartnerByTokenResponse:
         r"""getPartnerByToken
         Get partner by token
@@ -124,6 +128,7 @@ class Partners:
 
         return res
 
+    
     def invite_partner(self, request: operations.InvitePartnerRequest) -> operations.InvitePartnerResponse:
         r"""invitePartner
         Create a new partner in partner directory and send an invite email to accept request
@@ -153,6 +158,7 @@ class Partners:
 
         return res
 
+    
     def reject_partner(self, request: operations.RejectPartnerRequest) -> operations.RejectPartnerResponse:
         r"""rejectPartner
         Reject partner request
@@ -178,6 +184,7 @@ class Partners:
 
         return res
 
+    
     def resend_partner_invitation(self, request: operations.ResendPartnerInvitationRequest) -> operations.ResendPartnerInvitationResponse:
         r"""resendPartnerInvitation
         Resend partner invitation email
@@ -207,6 +214,7 @@ class Partners:
 
         return res
 
+    
     def search_assignable(self, request: operations.SearchAssignableRequestBody) -> operations.SearchAssignableResponse:
         r"""searchAssignables
         Search for assignable users/organizations from this organization and Partners

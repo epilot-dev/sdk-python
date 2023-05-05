@@ -31,7 +31,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ActivatePartnerRequest(
     activate_partner_payload=shared.ActivatePartnerPayload(
         company_name='Company name',
@@ -63,7 +62,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ApprovePartnerRequest(
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
@@ -90,7 +88,6 @@ s = epilot.Epilot(
         as_organization="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = [
     operations.BatchGetAssignableRequestBody(
@@ -133,7 +130,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetPartnerByTokenRequest(
     token='iusto',
 )
@@ -159,7 +155,6 @@ s = epilot.Epilot(
         as_organization="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.InvitePartnerRequest(
     partner_invitation_payload=shared.PartnerInvitationPayload(
@@ -190,7 +185,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.RejectPartnerRequest(
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
@@ -216,7 +210,6 @@ s = epilot.Epilot(
         as_organization="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.ResendPartnerInvitationRequest(
     request_body=operations.ResendPartnerInvitationRequestBody(
@@ -252,7 +245,6 @@ s = epilot.Epilot(
         as_organization="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.SearchAssignableRequestBody(
     from_=925597,
