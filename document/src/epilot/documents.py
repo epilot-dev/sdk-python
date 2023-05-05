@@ -22,6 +22,7 @@ class Documents:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def generate_document(self, request: operations.GenerateDocumentRequestBody) -> operations.GenerateDocumentResponse:
         r"""generateDocument
         Builds document generated from input document with variables.
@@ -57,6 +58,7 @@ class Documents:
 
         return res
 
+    
     def generate_document_v2(self, request: operations.GenerateDocumentV2Request) -> operations.GenerateDocumentV2Response:
         r"""generateDocumentV2
         Builds document generated from input document with variables.

@@ -9,7 +9,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GenerateDocumentRequestBody(
     context_entity_id='bcd0aab9-b544-42b0-8bfb-6d449d02eacc',
     language='de',
