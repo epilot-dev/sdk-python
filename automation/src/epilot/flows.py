@@ -22,6 +22,7 @@ class Flows:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_flow(self, request: shared.AutomationFlowInput) -> operations.CreateFlowResponse:
         r"""createFlow
         Create new automation flow
@@ -49,6 +50,7 @@ class Flows:
 
         return res
 
+    
     def delete_flow(self, request: operations.DeleteFlowRequest) -> operations.DeleteFlowResponse:
         r"""deleteFlow
         Update automation flow by id
@@ -72,6 +74,7 @@ class Flows:
 
         return res
 
+    
     def get_flow(self, request: operations.GetFlowRequest) -> operations.GetFlowResponse:
         r"""getFlow
         List available automation flows
@@ -95,6 +98,7 @@ class Flows:
 
         return res
 
+    
     def put_flow(self, request: operations.PutFlowRequest) -> operations.PutFlowResponse:
         r"""putFlow
         Update automation flow by id
@@ -122,6 +126,7 @@ class Flows:
 
         return res
 
+    
     def search_flows(self, request: operations.SearchFlowsRequest) -> operations.SearchFlowsResponse:
         r"""searchFlows
         Search available automation flows

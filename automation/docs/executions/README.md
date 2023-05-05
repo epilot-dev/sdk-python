@@ -28,7 +28,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.CancelExecutionRequest(
     execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4',
 )
@@ -55,7 +54,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetExecutionRequest(
     execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4',
 )
@@ -81,7 +79,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetExecutionsRequest(
     entity_id='e3d3ebac-baab-4395-abf4-50b5bf1f8b74',
@@ -110,7 +107,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.RetriggerActionRequest(
     retry_req=shared.RetryReq(
@@ -141,7 +137,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.StartExecutionRequestInput(
     entity_id='e3d3ebac-baab-4395-abf4-50b5bf1f8b74',

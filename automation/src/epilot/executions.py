@@ -22,6 +22,7 @@ class Executions:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def cancel_execution(self, request: operations.CancelExecutionRequest) -> operations.CancelExecutionResponse:
         r"""cancelExecution
         Cancel automation execution
@@ -45,6 +46,7 @@ class Executions:
 
         return res
 
+    
     def get_execution(self, request: operations.GetExecutionRequest) -> operations.GetExecutionResponse:
         r"""getExecution
         Get automation execution
@@ -68,6 +70,7 @@ class Executions:
 
         return res
 
+    
     def get_executions(self, request: operations.GetExecutionsRequest) -> operations.GetExecutionsResponse:
         r"""getExecutions
         List automation executions
@@ -92,6 +95,7 @@ class Executions:
 
         return res
 
+    
     def retrigger_action(self, request: operations.RetriggerActionRequest) -> operations.RetriggerActionResponse:
         r"""retriggerAction
         Retry a specific automation execution action which failed / is stuck.
@@ -115,6 +119,7 @@ class Executions:
 
         return res
 
+    
     def start_execution(self, request: shared.StartExecutionRequestInput) -> operations.StartExecutionResponse:
         r"""startExecution
         Start new automation execution

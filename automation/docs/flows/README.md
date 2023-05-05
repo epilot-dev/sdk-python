@@ -28,7 +28,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.AutomationFlowInput(
     enabled=False,
     entity_schema='submission',
@@ -101,7 +100,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteFlowRequest(
     flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f',
 )
@@ -128,7 +126,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetFlowRequest(
     flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f',
 )
@@ -154,7 +151,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.PutFlowRequest(
     automation_flow_input=shared.AutomationFlowInput(
@@ -222,7 +218,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.SearchFlowsRequest(
     from_=870088,
