@@ -21,7 +21,6 @@ from epilot.models import shared
 
 s = epilot.Epilot()
 
-
 req = shared.SubmissionPayload(
     ivy_opportunity_ids=[
         'sapiente',

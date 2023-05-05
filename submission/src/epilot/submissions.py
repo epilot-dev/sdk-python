@@ -21,6 +21,7 @@ class Submissions:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_submission(self, request: shared.SubmissionPayload) -> operations.CreateSubmissionResponse:
         r"""createSubmission
         Creates a submission from a public facing Journey
