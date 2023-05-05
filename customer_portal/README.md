@@ -16,7 +16,6 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-
 req = operations.AddEndCustomerRelationToEntityRequest(
     id='89bd9d8d-69a6-474e-8f46-7cc8796ed151',
     slug='contact',

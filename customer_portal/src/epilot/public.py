@@ -22,6 +22,7 @@ class Public:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def activate_user(self, request: operations.ActivateUserRequest) -> operations.ActivateUserResponse:
         r"""activateUser
         Activates the user
@@ -46,6 +47,7 @@ class Public:
 
         return res
 
+    
     def confirm_user(self, request: operations.ConfirmUserRequest) -> operations.ConfirmUserResponse:
         r"""confirmUser
         TODO
@@ -70,6 +72,7 @@ class Public:
 
         return res
 
+    
     def create_user(self, request: operations.CreateUserRequest) -> operations.CreateUserResponse:
         r"""creates a user
         Creates a user in cognito pool and db item
@@ -104,6 +107,7 @@ class Public:
 
         return res
 
+    
     def get_count_by_email(self, request: operations.GetCountByEmailRequest) -> operations.GetCountByEmailResponse:
         r"""getCountByEmail
         Check Contact by email
@@ -128,6 +132,7 @@ class Public:
 
         return res
 
+    
     def user_exists(self, request: operations.UserExistsRequest) -> operations.UserExistsResponse:
         r"""userExists
         Checks whether a user exists in the customer portal

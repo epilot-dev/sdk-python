@@ -42,7 +42,6 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-
 req = operations.AddEndCustomerRelationToEntityRequest(
     id='a05dfc2d-df7c-4c78-8a1b-a928fc816742',
     slug='contact',
@@ -67,7 +66,6 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot()
-
 
 req = shared.DeleteEntityFile(
     entity_id='123456',
@@ -215,7 +213,6 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-
 req = operations.GetContractRequest(
     id='b7392059-2939-46fe-a759-6eb10faaa235',
 )
@@ -239,7 +236,6 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot()
-
 
 req = operations.GetEntitiesByIdentifiersRequest(
     request_body={
@@ -268,7 +264,6 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-
 req = operations.GetOpportunityRequest(
     id='955907af-f1a3-4a2f-a946-7739251aa52c',
 )
@@ -292,7 +287,6 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot()
-
 
 req = operations.GetOrderRequest(
     id='3f5ad019-da1f-4fe7-8f09-7b0074f15471',
@@ -341,7 +335,6 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-
 req = operations.GetPortalConfigRequest(
     origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
@@ -369,7 +362,6 @@ s = epilot.Epilot(
         as_customer="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetPortalConfigByDomainRequest(
     domain='example.com',
@@ -438,7 +430,6 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot()
-
 
 req = shared.SaveEntityFile(
     entity_id='123456',
@@ -522,7 +513,6 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-
 req = {
     "quidem": 'molestias',
 }
@@ -546,7 +536,6 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot()
-
 
 req = operations.UpdateContractRequest(
     request_body={
@@ -576,7 +565,6 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot()
-
 
 req = operations.UpdateOpportunityRequest(
     request_body={
@@ -608,7 +596,6 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-
 req = operations.UpdateOrderRequest(
     request_body={
         "nisi": 'vel',
@@ -637,7 +624,6 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot()
-
 
 req = {
     "doloribus": 'debitis',

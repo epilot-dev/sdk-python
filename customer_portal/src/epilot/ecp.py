@@ -22,6 +22,7 @@ class Ecp:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def add_end_customer_relation_to_entity(self, request: operations.AddEndCustomerRelationToEntityRequest, security: operations.AddEndCustomerRelationToEntitySecurity) -> operations.AddEndCustomerRelationToEntityResponse:
         r"""addEndCustomerRelationToEntity
         Add EndCustomer Relation To an Entity
@@ -45,6 +46,7 @@ class Ecp:
 
         return res
 
+    
     def delete_entity_file(self, request: shared.DeleteEntityFile, security: operations.DeleteEntityFileSecurity) -> operations.DeleteEntityFileResponse:
         r"""Delete files from an entity
         Delete files from an entity
@@ -74,6 +76,7 @@ class Ecp:
 
         return res
 
+    
     def delete_portal_user(self) -> operations.DeletePortalUserResponse:
         r"""deletePortalUser
         TODO
@@ -96,6 +99,7 @@ class Ecp:
 
         return res
 
+    
     def get_all_contracts(self) -> operations.GetAllContractsResponse:
         r"""getAllContracts
         TODO
@@ -119,6 +123,7 @@ class Ecp:
 
         return res
 
+    
     def get_all_opportunities(self) -> operations.GetAllOpportunitiesResponse:
         r"""getAllOpportunities
         TODO
@@ -142,6 +147,7 @@ class Ecp:
 
         return res
 
+    
     def get_all_orders(self) -> operations.GetAllOrdersResponse:
         r"""getAllOrders
         TODO
@@ -165,6 +171,7 @@ class Ecp:
 
         return res
 
+    
     def get_contact(self) -> operations.GetContactResponse:
         r"""getContact
         Get the Contact by id
@@ -192,6 +199,7 @@ class Ecp:
 
         return res
 
+    
     def get_contract(self, request: operations.GetContractRequest, security: operations.GetContractSecurity) -> operations.GetContractResponse:
         r"""get contract based on id
         TODO
@@ -215,6 +223,7 @@ class Ecp:
 
         return res
 
+    
     def get_entities_by_identifiers(self, request: operations.GetEntitiesByIdentifiersRequest, security: operations.GetEntitiesByIdentifiersSecurity) -> operations.GetEntitiesByIdentifiersResponse:
         r"""getEntitiesByIdentifiers
         Get Entities By Identifiers
@@ -244,6 +253,7 @@ class Ecp:
 
         return res
 
+    
     def get_opportunity(self, request: operations.GetOpportunityRequest, security: operations.GetOpportunitySecurity) -> operations.GetOpportunityResponse:
         r"""getOpportunity
         TODO
@@ -267,6 +277,7 @@ class Ecp:
 
         return res
 
+    
     def get_order(self, request: operations.GetOrderRequest, security: operations.GetOrderSecurity) -> operations.GetOrderResponse:
         r"""getOrder
         TODO
@@ -290,6 +301,7 @@ class Ecp:
 
         return res
 
+    
     def get_organization_settings(self) -> operations.GetOrganizationSettingsResponse:
         r"""getOrganizationSettings
         get organization settings
@@ -313,6 +325,7 @@ class Ecp:
 
         return res
 
+    
     def get_portal_config(self, request: operations.GetPortalConfigRequest, security: operations.GetPortalConfigSecurity) -> operations.GetPortalConfigResponse:
         r"""getPortalConfig
         TODO
@@ -337,6 +350,7 @@ class Ecp:
 
         return res
 
+    
     def get_portal_config_by_domain(self, request: operations.GetPortalConfigByDomainRequest) -> operations.GetPortalConfigByDomainResponse:
         r"""getPortalConfigByDomain
         TODO
@@ -361,6 +375,7 @@ class Ecp:
 
         return res
 
+    
     def get_portal_user(self) -> operations.GetPortalUserResponse:
         r"""getPortalUser
         TODO
@@ -384,6 +399,7 @@ class Ecp:
 
         return res
 
+    
     def get_schemas(self) -> operations.GetSchemasResponse:
         r"""getSchemas
         TODO
@@ -407,6 +423,7 @@ class Ecp:
 
         return res
 
+    
     def save_entity_file(self, request: shared.SaveEntityFile, security: operations.SaveEntityFileSecurity) -> operations.SaveEntityFileResponse:
         r"""Add files to an entity
         Add files to an entity
@@ -436,6 +453,7 @@ class Ecp:
 
         return res
 
+    
     def test_auth(self) -> operations.TestAuthResponse:
         r"""testAuth
         TODO
@@ -455,6 +473,7 @@ class Ecp:
 
         return res
 
+    
     def update_contact(self, request: dict[str, Any], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
         r"""updateContact
         Update the contact details
@@ -482,6 +501,7 @@ class Ecp:
 
         return res
 
+    
     def update_contract(self, request: operations.UpdateContractRequest, security: operations.UpdateContractSecurity) -> operations.UpdateContractResponse:
         r"""Update contract based on id
         TODO
@@ -511,6 +531,7 @@ class Ecp:
 
         return res
 
+    
     def update_opportunity(self, request: operations.UpdateOpportunityRequest, security: operations.UpdateOpportunitySecurity) -> operations.UpdateOpportunityResponse:
         r"""Update an opportunity based on id
         TODO
@@ -540,6 +561,7 @@ class Ecp:
 
         return res
 
+    
     def update_order(self, request: operations.UpdateOrderRequest, security: operations.UpdateOrderSecurity) -> operations.UpdateOrderResponse:
         r"""updateOrder
         Update the order details
@@ -567,6 +589,7 @@ class Ecp:
 
         return res
 
+    
     def update_portal_user(self, request: dict[str, Any], security: operations.UpdatePortalUserSecurity) -> operations.UpdatePortalUserResponse:
         r"""updatePortalUser
         Update the portal user details

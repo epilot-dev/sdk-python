@@ -35,7 +35,6 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-
 req = operations.ConfigureDistributionRequest(
     origin=shared.OriginEnum.INSTALLER_PORTAL,
 )
@@ -59,7 +58,6 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot()
-
 
 req = operations.CreateSSOUserRequest(
     request_body=operations.CreateSSOUserRequestBody(
@@ -89,7 +87,6 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot()
-
 
 req = operations.DeletePortalRequest(
     origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
@@ -161,7 +158,6 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-
 req = operations.GetECPContactRequest(
     id='1234',
 )
@@ -185,7 +181,6 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot()
-
 
 req = operations.GetEmailTemplatesRequest(
     origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
@@ -211,7 +206,6 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-
 req = operations.GetEntityIdentifiersRequest(
     slug='contact',
 )
@@ -236,7 +230,6 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-
 req = operations.GetOrgPortalConfigRequest(
     origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
 )
@@ -260,7 +253,6 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot()
-
 
 req = operations.GetPortalConfigRequest(
     origin=shared.OriginEnum.INSTALLER_PORTAL,
@@ -289,7 +281,6 @@ s = epilot.Epilot(
         as_customer="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.GetPublicPortalConfigRequest(
     org_id='12324',
@@ -337,7 +328,6 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-
 req = operations.ReplaceECPTemplateVariablesRequest(
     request_body=operations.ReplaceECPTemplateVariablesRequestBody(
         contact_id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
@@ -364,7 +354,6 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot()
-
 
 req = shared.SavePortalFile(
     files=[
@@ -420,7 +409,6 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-
 req = operations.UpsertEmailTemplatesRequest(
     email_templates=shared.EmailTemplates(
         confirm_account='saepe',
@@ -451,7 +439,6 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot()
-
 
 req = operations.UpsertPortalRequest(
     upsert_portal_config=shared.UpsertPortalConfig(

@@ -28,7 +28,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ActivateUserRequest(
     user_activation_payload=shared.UserActivationPayload(
         display_name='Example User',
@@ -59,7 +58,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ConfirmUserRequest(
     id='fbb25870-5320-42c7-bd5f-e9b90c28909b',
     org_id='123',
@@ -87,7 +85,6 @@ s = epilot.Epilot(
         as_customer="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.CreateUserRequest(
     request_body=operations.CreateUserRequestBody(
@@ -122,7 +119,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetCountByEmailRequest(
     email='test@test.com',
     org_id='123',
@@ -149,7 +145,6 @@ s = epilot.Epilot(
         as_customer="YOUR_API_KEY_HERE",
     ),
 )
-
 
 req = operations.UserExistsRequest(
     email='user@example.com',

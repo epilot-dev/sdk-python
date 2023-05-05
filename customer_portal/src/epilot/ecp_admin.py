@@ -22,6 +22,7 @@ class ECPAdmin:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def configure_distribution(self, request: operations.ConfigureDistributionRequest, security: operations.ConfigureDistributionSecurity) -> operations.ConfigureDistributionResponse:
         r"""configureDistribution
         TODO
@@ -46,6 +47,7 @@ class ECPAdmin:
 
         return res
 
+    
     def create_sso_user(self, request: operations.CreateSSOUserRequest, security: operations.CreateSSOUserSecurity) -> operations.CreateSSOUserResponse:
         r"""creates a sso user
         Creates a sso user as portal user
@@ -80,6 +82,7 @@ class ECPAdmin:
 
         return res
 
+    
     def delete_portal(self, request: operations.DeletePortalRequest, security: operations.DeletePortalSecurity) -> operations.DeletePortalResponse:
         r"""deletePortal
         TODO
@@ -100,6 +103,7 @@ class ECPAdmin:
 
         return res
 
+    
     def extra_permission_attributes(self) -> operations.ExtraPermissionAttributesResponse:
         r"""extraPermissionAttributes
         TODO
@@ -123,6 +127,7 @@ class ECPAdmin:
 
         return res
 
+    
     def get_all_portal_configs(self) -> operations.GetAllPortalConfigsResponse:
         r"""getAllPortalConfigs
         TODO
@@ -146,6 +151,7 @@ class ECPAdmin:
 
         return res
 
+    
     def get_ecp_contact(self, request: operations.GetECPContactRequest, security: operations.GetECPContactSecurity) -> operations.GetECPContactResponse:
         r"""getECPContact
         Get the Contact by id
@@ -174,6 +180,7 @@ class ECPAdmin:
 
         return res
 
+    
     def get_email_templates(self, request: operations.GetEmailTemplatesRequest, security: operations.GetEmailTemplatesSecurity) -> operations.GetEmailTemplatesResponse:
         r"""getEmailTemplates
         TODO
@@ -198,6 +205,7 @@ class ECPAdmin:
 
         return res
 
+    
     def get_entity_identifiers(self, request: operations.GetEntityIdentifiersRequest, security: operations.GetEntityIdentifiersSecurity) -> operations.GetEntityIdentifiersResponse:
         r"""getEntityIdentifiers
         Get Entity's Identifiers
@@ -221,6 +229,7 @@ class ECPAdmin:
 
         return res
 
+    
     def get_org_portal_config(self, request: operations.GetOrgPortalConfigRequest, security: operations.GetOrgPortalConfigSecurity) -> operations.GetOrgPortalConfigResponse:
         r"""getOrgPortalConfig
         TODO
@@ -245,6 +254,7 @@ class ECPAdmin:
 
         return res
 
+    
     def get_portal_config(self, request: operations.GetPortalConfigRequest, security: operations.GetPortalConfigSecurity) -> operations.GetPortalConfigResponse:
         r"""getPortalConfig
         TODO
@@ -269,6 +279,7 @@ class ECPAdmin:
 
         return res
 
+    
     def get_public_portal_config(self, request: operations.GetPublicPortalConfigRequest) -> operations.GetPublicPortalConfigResponse:
         r"""getPublicPortalConfig
         TODO
@@ -293,6 +304,7 @@ class ECPAdmin:
 
         return res
 
+    
     def get_valid_secondary_attributes(self) -> operations.GetValidSecondaryAttributesResponse:
         r"""getValidSecondaryAttributes
         Get Valid Secondary Attributes
@@ -316,6 +328,7 @@ class ECPAdmin:
 
         return res
 
+    
     def replace_ecp_template_variables(self, request: operations.ReplaceECPTemplateVariablesRequest, security: operations.ReplaceECPTemplateVariablesSecurity) -> operations.ReplaceECPTemplateVariablesResponse:
         r"""replaceECPTemplateVariables
         TODO
@@ -346,6 +359,7 @@ class ECPAdmin:
 
         return res
 
+    
     def save_portal_files(self, request: shared.SavePortalFile, security: operations.SavePortalFilesSecurity) -> operations.SavePortalFilesResponse:
         r"""Add files to portal
         Add files to portal
@@ -375,6 +389,7 @@ class ECPAdmin:
 
         return res
 
+    
     def upsert_email_templates(self, request: operations.UpsertEmailTemplatesRequest, security: operations.UpsertEmailTemplatesSecurity) -> operations.UpsertEmailTemplatesResponse:
         r"""upsertEmailTemplates
         TODO
@@ -405,6 +420,7 @@ class ECPAdmin:
 
         return res
 
+    
     def upsert_portal(self, request: operations.UpsertPortalRequest, security: operations.UpsertPortalSecurity) -> operations.UpsertPortalResponse:
         r"""upserts a portal
         upserts a portal and db item
