@@ -27,7 +27,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.AssignThreadRequest(
     request_body=[
         operations.AssignThreadRequestBody(
@@ -76,7 +75,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteThreadRequest(
     id='9280d1ba-77a8-49eb-b737-ae4203ce5e6a',
 )
@@ -103,7 +101,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.MarkReadThreadRequest(
     id='95d8a0d4-46ce-42af-ba73-cf3be453f870',
 )
@@ -129,7 +126,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.MarkUnreadThreadRequest(
     id='b326b5a7-3429-4cdb-9a84-22bb679d2322',
@@ -162,7 +158,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.SearchParams(
     from_=488056,
     q='subject:"Request for solar panel price" AND _tags:INBOX',
@@ -191,7 +186,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.TrashThreadRequest(
     id='5bf0cbb1-e31b-48b9-8f34-43a1108e0adc',
 )
@@ -217,7 +211,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UntrashThreadRequest(
     id='f4b92187-9fce-4953-b73e-f7fbc7abd74d',

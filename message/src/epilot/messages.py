@@ -21,6 +21,7 @@ class Messages:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def delete_message(self, request: operations.DeleteMessageRequest) -> operations.DeleteMessageResponse:
         r"""deleteMessage
         Immediately and permanently delete a message. This operation cannot be undone.
@@ -40,6 +41,7 @@ class Messages:
 
         return res
 
+    
     def get_message(self, request: operations.GetMessageRequest) -> operations.GetMessageResponse:
         r"""getMessage
         Get an email message by id
@@ -65,6 +67,7 @@ class Messages:
 
         return res
 
+    
     def mark_read_message(self, request: operations.MarkReadMessageRequest) -> operations.MarkReadMessageResponse:
         r"""markReadMessage
         Mark message as read
@@ -84,6 +87,7 @@ class Messages:
 
         return res
 
+    
     def mark_unread_message(self, request: operations.MarkUnreadMessageRequest) -> operations.MarkUnreadMessageResponse:
         r"""markUnreadMessage
         Mark message as unread
@@ -103,6 +107,7 @@ class Messages:
 
         return res
 
+    
     def send_message(self, request: shared.MessageRequestParams) -> operations.SendMessageResponse:
         r"""sendMessage
         Send an email message
@@ -132,6 +137,7 @@ class Messages:
 
         return res
 
+    
     def trash_message(self, request: operations.TrashMessageRequest) -> operations.TrashMessageResponse:
         r"""trashMessage
         Move a message to the trash
@@ -151,6 +157,7 @@ class Messages:
 
         return res
 
+    
     def untrash_message(self, request: operations.UntrashMessageRequest) -> operations.UntrashMessageResponse:
         r"""untrashMessage
         Restore a trashed message
@@ -170,6 +177,7 @@ class Messages:
 
         return res
 
+    
     def update_message(self) -> operations.UpdateMessageResponse:
         r"""updateMessage
         Update message metadata

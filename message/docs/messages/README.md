@@ -27,7 +27,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteMessageRequest(
     id='c3f5ad01-9da1-4ffe-b8f0-97b0074f1547',
 )
@@ -53,7 +52,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetMessageRequest(
     id='1b5e6e13-b99d-4488-a1e9-1e450ad2abd4',
@@ -81,7 +79,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.MarkReadMessageRequest(
     id='4269802d-502a-494b-b4f6-3c969e9a3efa',
 )
@@ -108,7 +105,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.MarkUnreadMessageRequest(
     id='77dfb14c-d66a-4e39-9efb-9ba88f3a6699',
 )
@@ -134,7 +130,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.MessageRequestParams(
     bcc=[
@@ -278,7 +273,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.TrashMessageRequest(
     id='dc692601-fb57-46b0-95f0-d30c5fbb2587',
 )
@@ -304,7 +298,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UntrashMessageRequest(
     id='053202c7-3d5f-4e9b-90c2-8909b3fe49a8',

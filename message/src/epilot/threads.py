@@ -21,6 +21,7 @@ class Threads:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def assign_thread(self, request: operations.AssignThreadRequest) -> operations.AssignThreadResponse:
         r"""assignThread
         Assign thread to entities
@@ -46,6 +47,7 @@ class Threads:
 
         return res
 
+    
     def delete_thread(self, request: operations.DeleteThreadRequest) -> operations.DeleteThreadResponse:
         r"""deleteThread
         Immediately and permanently delete a thread. This operation cannot be undone.
@@ -65,6 +67,7 @@ class Threads:
 
         return res
 
+    
     def mark_read_thread(self, request: operations.MarkReadThreadRequest) -> operations.MarkReadThreadResponse:
         r"""markReadThread
         Mark thread as read
@@ -84,6 +87,7 @@ class Threads:
 
         return res
 
+    
     def mark_unread_thread(self, request: operations.MarkUnreadThreadRequest) -> operations.MarkUnreadThreadResponse:
         r"""markUnreadThread
         Mark thread as unread
@@ -103,6 +107,7 @@ class Threads:
 
         return res
 
+    
     def search_threads(self, request: shared.SearchParams) -> operations.SearchThreadsResponse:
         r"""searchThreads
         Search for threads of email messages.
@@ -136,6 +141,7 @@ class Threads:
 
         return res
 
+    
     def trash_thread(self, request: operations.TrashThreadRequest) -> operations.TrashThreadResponse:
         r"""trashThread
         Move a thread to trash
@@ -155,6 +161,7 @@ class Threads:
 
         return res
 
+    
     def untrash_thread(self, request: operations.UntrashThreadRequest) -> operations.UntrashThreadResponse:
         r"""untrashThread
         Restore a trashed thread
@@ -174,6 +181,7 @@ class Threads:
 
         return res
 
+    
     def update_thread(self) -> operations.UpdateThreadResponse:
         r"""updateThread
         Modify thread metadata

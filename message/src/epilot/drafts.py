@@ -21,6 +21,7 @@ class Drafts:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_draft(self, request: shared.MessageRequestParams) -> operations.CreateDraftResponse:
         r"""createDraft
         Create a new draft
@@ -50,6 +51,7 @@ class Drafts:
 
         return res
 
+    
     def send_draft(self) -> operations.SendDraftResponse:
         r"""sendDraft
         Send the existing draft to the recipients

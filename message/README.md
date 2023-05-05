@@ -20,7 +20,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.MessageRequestParams(
     bcc=[
         shared.Address(
