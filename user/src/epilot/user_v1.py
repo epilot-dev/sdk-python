@@ -22,6 +22,7 @@ class UserV1:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_me(self) -> operations.GetMeResponse:
         r"""getMe
         Get currently logged in user
@@ -45,6 +46,7 @@ class UserV1:
 
         return res
 
+    
     def get_user(self, request: operations.GetUserRequest) -> operations.GetUserResponse:
         r"""getUser
         Get user by id
@@ -68,6 +70,7 @@ class UserV1:
 
         return res
 
+    
     def get_user_login_parameters(self, request: operations.GetUserLoginParametersRequest) -> operations.GetUserLoginParametersResponse:
         r"""getUserLoginParameters
         Get user organization login parameters by username
@@ -91,6 +94,7 @@ class UserV1:
 
         return res
 
+    
     def list_users(self, request: operations.ListUsersRequest) -> operations.ListUsersResponse:
         r"""listUsers
         Lists users in organizations you have access to

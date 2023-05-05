@@ -34,7 +34,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ActivateUserRequest(
     user_activation_payload=shared.UserActivationPayload(
         display_name='Example User',
@@ -64,7 +63,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.DeleteUserV2Request(
     id='7cc78ca1-ba92-48fc-8167-42cb73920592',
@@ -115,7 +113,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetUserLoginParametersV2Request(
     username='Leora.Fadel',
 )
@@ -142,7 +139,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetUserV2Request(
     id='fea7596e-b10f-4aaa-a352-c5955907aff1',
 )
@@ -168,7 +164,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.UserInvitationPayload(
     email='test@example.com',
@@ -200,7 +195,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ListUsersV2Request(
     limit=6350.59,
     offset=1613.09,
@@ -229,7 +223,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ResendUserInvitationRequestBody(
     email='test@example.com',
     language=operations.ResendUserInvitationRequestBodyLanguageEnum.DE,
@@ -256,7 +249,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.SignUpUserRequest(
     signup_user_payload=shared.SignupUserPayload(
@@ -295,7 +287,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateUserV2Request(
     user_v2=shared.UserV2(
@@ -350,7 +341,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.VerifyEmailWithTokenRequest(
     user_verification_payload=shared.UserVerificationPayload(

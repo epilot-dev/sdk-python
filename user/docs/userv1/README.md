@@ -50,7 +50,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetUserRequest(
     id='89bd9d8d-69a6-474e-8f46-7cc8796ed151',
 )
@@ -77,7 +76,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetUserLoginParametersRequest(
     username='Lydia_Aufderhar',
 )
@@ -103,7 +101,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.ListUsersRequest(
     limit=9571.56,

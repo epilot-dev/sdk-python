@@ -22,6 +22,7 @@ class UserV2:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def activate_user(self, request: operations.ActivateUserRequest) -> operations.ActivateUserResponse:
         r"""activateUser
         Activate user using an invite token
@@ -46,6 +47,7 @@ class UserV2:
 
         return res
 
+    
     def delete_user_v2(self, request: operations.DeleteUserV2Request) -> operations.DeleteUserV2Response:
         r"""deleteUserV2
         Delete user by user id
@@ -69,6 +71,7 @@ class UserV2:
 
         return res
 
+    
     def get_me_v2(self) -> operations.GetMeV2Response:
         r"""getMeV2
         Get currently logged in user
@@ -92,6 +95,7 @@ class UserV2:
 
         return res
 
+    
     def get_user_login_parameters_v2(self, request: operations.GetUserLoginParametersV2Request) -> operations.GetUserLoginParametersV2Response:
         r"""getUserLoginParametersV2
         Get user organization login parameters by username
@@ -115,6 +119,7 @@ class UserV2:
 
         return res
 
+    
     def get_user_v2(self, request: operations.GetUserV2Request) -> operations.GetUserV2Response:
         r"""getUserV2
         Get user details by user id
@@ -138,6 +143,7 @@ class UserV2:
 
         return res
 
+    
     def invite_user(self, request: shared.UserInvitationPayload) -> operations.InviteUserResponse:
         r"""inviteUser
         Creates a new user in the caller's organization and sends an invite email to activate
@@ -167,6 +173,7 @@ class UserV2:
 
         return res
 
+    
     def list_users_v2(self, request: operations.ListUsersV2Request) -> operations.ListUsersV2Response:
         r"""listUsersV2
         Get the list of organization users
@@ -191,6 +198,7 @@ class UserV2:
 
         return res
 
+    
     def resend_user_invitation(self, request: operations.ResendUserInvitationRequestBody) -> operations.ResendUserInvitationResponse:
         r"""resendUserInvitation
         Resend user invitation email
@@ -220,6 +228,7 @@ class UserV2:
 
         return res
 
+    
     def sign_up_user(self, request: operations.SignUpUserRequest) -> operations.SignUpUserResponse:
         r"""signUpUser"""
         base_url = self._server_url
@@ -246,6 +255,7 @@ class UserV2:
 
         return res
 
+    
     def update_user_v2(self, request: operations.UpdateUserV2Request) -> operations.UpdateUserV2Response:
         r"""updateUserV2
         Update user details
@@ -273,6 +283,7 @@ class UserV2:
 
         return res
 
+    
     def verify_email_with_token(self, request: operations.VerifyEmailWithTokenRequest) -> operations.VerifyEmailWithTokenResponse:
         r"""verifyEmailWithToken
         Update new email using an verification token
