@@ -29,7 +29,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = {
     "vel": 'error',
     "deserunt": 'suscipit',
@@ -59,7 +58,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetNotificationRequest(
     id=9636.63,
 )
@@ -85,7 +83,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetNotificationsRequest(
     after_id=272656,
@@ -159,7 +156,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.MarkAsReadRequest(
     id=477665,

@@ -22,6 +22,7 @@ class Notification:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_notification(self, request: dict[str, Any]) -> operations.CreateNotificationResponse:
         r"""createNotification
         Create a message that can be displayed in the notification panel.
@@ -45,6 +46,7 @@ class Notification:
 
         return res
 
+    
     def get_notification(self, request: operations.GetNotificationRequest) -> operations.GetNotificationResponse:
         r"""getNotification
         Get the details of a single notification.
@@ -68,6 +70,7 @@ class Notification:
 
         return res
 
+    
     def get_notifications(self, request: operations.GetNotificationsRequest) -> operations.GetNotificationsResponse:
         r"""getNotifications
         Get notifications
@@ -92,6 +95,7 @@ class Notification:
 
         return res
 
+    
     def get_total_unread(self) -> operations.GetTotalUnreadResponse:
         r"""getTotalUnread
         Get total unread
@@ -114,6 +118,7 @@ class Notification:
 
         return res
 
+    
     def mark_all_as_read(self) -> operations.MarkAllAsReadResponse:
         r"""markAllAsRead
         Mark all as read
@@ -133,6 +138,7 @@ class Notification:
 
         return res
 
+    
     def mark_as_read(self, request: operations.MarkAsReadRequest) -> operations.MarkAsReadResponse:
         r"""markAsRead
         Mark as read
