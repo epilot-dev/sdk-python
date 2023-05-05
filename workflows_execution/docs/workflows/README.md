@@ -34,7 +34,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.WorkflowExecutionCreateReq(
     assigned_to=[
         'mollitia',
@@ -71,7 +70,6 @@ s = epilot.Epilot(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.CreateStepRequest(
     create_step_req=shared.CreateStepReq(
@@ -111,7 +109,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteExecutionRequest(
     execution_id='iusto',
 )
@@ -137,7 +134,6 @@ s = epilot.Epilot(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.DeleteStepRequest(
     execution_id='dicta',
@@ -169,7 +165,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetClosingReasonExecutionRequest(
     execution_id='enim',
 )
@@ -195,7 +190,6 @@ s = epilot.Epilot(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetExecutionRequest(
     execution_id='accusamus',
@@ -223,7 +217,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetExecutionsRequest(
     context='commodi',
     schema='repudiandae',
@@ -250,7 +243,6 @@ s = epilot.Epilot(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.SearchExecutionsReq(
     assigned_to='quae',
@@ -285,7 +277,6 @@ s = epilot.Epilot(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.SearchStepsReq(
     assigned_to=939.4,
@@ -322,7 +313,6 @@ s = epilot.Epilot(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateExecutionRequest(
     workflow_execution_update_req=shared.WorkflowExecutionUpdateReq(
@@ -395,7 +385,6 @@ s = epilot.Epilot(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateStepRequest(
     update_step_req=shared.UpdateStepReq(

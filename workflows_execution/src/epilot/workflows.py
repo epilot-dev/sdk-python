@@ -22,6 +22,7 @@ class Workflows:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_execution(self, request: shared.WorkflowExecutionCreateReq) -> operations.CreateExecutionResponse:
         r"""createExecution
         Create a Workflow Execution. Start a new workflow execution, based on a workflow definition (template).
@@ -55,6 +56,7 @@ class Workflows:
 
         return res
 
+    
     def create_step(self, request: operations.CreateStepRequest) -> operations.CreateStepResponse:
         r"""createStep
         Create a new step in current workflow execution.
@@ -88,6 +90,7 @@ class Workflows:
 
         return res
 
+    
     def delete_execution(self, request: operations.DeleteExecutionRequest) -> operations.DeleteExecutionResponse:
         r"""deleteExecution
         Delete workflow execution by id. Workflow contexts will NOT be deleted.
@@ -113,6 +116,7 @@ class Workflows:
 
         return res
 
+    
     def delete_step(self, request: operations.DeleteStepRequest) -> operations.DeleteStepResponse:
         r"""deleteStep
         Deletes a step from a workflow execution.
@@ -138,6 +142,7 @@ class Workflows:
 
         return res
 
+    
     def get_closing_reason_execution(self, request: operations.GetClosingReasonExecutionRequest) -> operations.GetClosingReasonExecutionResponse:
         r"""getClosingReasonExecution
         Shows all Closing Reasons defined at the moment of starting the Workflow Execution.
@@ -167,6 +172,7 @@ class Workflows:
 
         return res
 
+    
     def get_execution(self, request: operations.GetExecutionRequest) -> operations.GetExecutionResponse:
         r"""getExecution
         Get a full workflow execution, included steps information, by execution id.
@@ -194,6 +200,7 @@ class Workflows:
 
         return res
 
+    
     def get_executions(self, request: operations.GetExecutionsRequest) -> operations.GetExecutionsResponse:
         r"""getExecutions
         Retrieve Workflow Executions. Optionally, you can filter them by context & schema. Please be aware, these executions are more light weight - steps are not loaded with all information.
@@ -222,6 +229,7 @@ class Workflows:
 
         return res
 
+    
     def search_executions(self, request: shared.SearchExecutionsReq) -> operations.SearchExecutionsResponse:
         r"""searchExecutions
         Search Workflow Executions by different filters.
@@ -255,6 +263,7 @@ class Workflows:
 
         return res
 
+    
     def search_steps(self, request: shared.SearchStepsReq) -> operations.SearchStepsResponse:
         r"""searchSteps
         Search workflow execution steps by different filters.
@@ -288,6 +297,7 @@ class Workflows:
 
         return res
 
+    
     def update_execution(self, request: operations.UpdateExecutionRequest) -> operations.UpdateExecutionResponse:
         r"""updateExecution
         Patches updates like assignees, status, closingReason for a single Workflow Execution.
@@ -319,6 +329,7 @@ class Workflows:
 
         return res
 
+    
     def update_step(self, request: operations.UpdateStepRequest) -> operations.UpdateStepResponse:
         r"""updateStep
         Patches various changes to a workflow execution step.
