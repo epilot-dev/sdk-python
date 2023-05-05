@@ -22,6 +22,7 @@ class OrganizationSettings:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def delete_settings_value(self, request: operations.DeleteSettingsValueRequest) -> operations.DeleteSettingsValueResponse:
         r"""deleteSettingsValue
         Updates an organizatio nsetting
@@ -41,6 +42,7 @@ class OrganizationSettings:
 
         return res
 
+    
     def get_settings(self, request: operations.GetSettingsRequest) -> operations.GetSettingsResponse:
         r"""getSettings
         Get full organization settings object
@@ -64,6 +66,7 @@ class OrganizationSettings:
 
         return res
 
+    
     def put_settings_value(self, request: operations.PutSettingsValueRequest) -> operations.PutSettingsValueResponse:
         r"""putSettingsValue
         Updates an organization setting

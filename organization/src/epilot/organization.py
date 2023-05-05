@@ -22,6 +22,7 @@ class Organization:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_organization(self, request: operations.GetOrganizationRequest) -> operations.GetOrganizationResponse:
         r"""getOrganization"""
         base_url = self._server_url
@@ -43,6 +44,7 @@ class Organization:
 
         return res
 
+    
     def update_organization(self, request: operations.UpdateOrganizationRequest) -> operations.UpdateOrganizationResponse:
         r"""updateOrganization"""
         base_url = self._server_url

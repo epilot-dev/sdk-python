@@ -26,7 +26,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteSettingsValueRequest(
     key='veritatis',
     org_id='739224',
@@ -54,7 +53,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetSettingsRequest(
     org_id='739224',
 )
@@ -80,7 +78,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.PutSettingsValueRequest(
     request_body=[
