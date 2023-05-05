@@ -21,6 +21,7 @@ class Workflows:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_definition(self, request: shared.WorkflowDefinition) -> operations.CreateDefinitionResponse:
         r"""createDefinition
         Create a Workflow Definition.
@@ -54,6 +55,7 @@ class Workflows:
 
         return res
 
+    
     def delete_definition(self, request: operations.DeleteDefinitionRequest) -> operations.DeleteDefinitionResponse:
         r"""deleteDefinition
         Delete Workflow Definition.
@@ -79,6 +81,7 @@ class Workflows:
 
         return res
 
+    
     def get_definition(self, request: operations.GetDefinitionRequest) -> operations.GetDefinitionResponse:
         r"""getDefinition
         Get specific Definition by id from the Organization.
@@ -110,6 +113,7 @@ class Workflows:
 
         return res
 
+    
     def get_definitions(self) -> operations.GetDefinitionsResponse:
         r"""getDefinitions
         Retrieve all Workflow Definitions from an Organization
@@ -137,6 +141,7 @@ class Workflows:
 
         return res
 
+    
     def get_max_allowed_limit(self) -> operations.GetMaxAllowedLimitResponse:
         r"""getMaxAllowedLimit
         Get limits and number of created executions for an Organization.
@@ -164,6 +169,7 @@ class Workflows:
 
         return res
 
+    
     def get_workflow_closing_reasons(self, request: operations.GetWorkflowClosingReasonsRequest) -> operations.GetWorkflowClosingReasonsResponse:
         r"""getWorkflowClosingReasons
         Returns all closing reasons defined for the workflow.
@@ -187,6 +193,7 @@ class Workflows:
 
         return res
 
+    
     def set_workflow_closing_reasons(self, request: operations.SetWorkflowClosingReasonsRequest) -> operations.SetWorkflowClosingReasonsResponse:
         r"""setWorkflowClosingReasons
         Sets which closing reasons are defined for this workflow, based on the entire closing reasons catalog.
@@ -212,6 +219,7 @@ class Workflows:
 
         return res
 
+    
     def update_definition(self, request: operations.UpdateDefinitionRequest) -> operations.UpdateDefinitionResponse:
         r"""updateDefinition
         Update Workflow Definition.

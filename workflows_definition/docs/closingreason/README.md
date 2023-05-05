@@ -22,7 +22,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ChangeReasonStatusRequest(
     change_reason_status_req=shared.ChangeReasonStatusReq(
         status=shared.ClosingReasonsStatusEnum.INACTIVE,
@@ -51,7 +50,6 @@ s = sdk.SDK(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.ClosingReason(
     creation_time='unde',
@@ -82,7 +80,6 @@ s = sdk.SDK(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetAllClosingReasonsRequest(
     include_inactive=False,

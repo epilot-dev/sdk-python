@@ -27,7 +27,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = shared.WorkflowDefinition(
     assigned_to=[
         'maiores',
@@ -246,7 +245,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.DeleteDefinitionRequest(
     definition_id='eum',
 )
@@ -272,7 +270,6 @@ s = sdk.SDK(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetDefinitionRequest(
     definition_id='dolor',
@@ -346,7 +343,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.GetWorkflowClosingReasonsRequest(
     definition_id='necessitatibus',
 )
@@ -372,7 +368,6 @@ s = sdk.SDK(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.SetWorkflowClosingReasonsRequest(
     closing_reasons_ids=shared.ClosingReasonsIds(
@@ -406,7 +401,6 @@ s = sdk.SDK(
         bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateDefinitionRequest(
     workflow_definition=shared.WorkflowDefinition(

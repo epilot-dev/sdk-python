@@ -21,6 +21,7 @@ class ClosingReason:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def change_reason_status(self, request: operations.ChangeReasonStatusRequest) -> operations.ChangeReasonStatusResponse:
         r"""changeReasonStatus
         Change the status of a Closing Reason (eg. ACTIVE to INACTIVE).
@@ -50,6 +51,7 @@ class ClosingReason:
 
         return res
 
+    
     def create_closing_reason(self, request: shared.ClosingReason) -> operations.CreateClosingReasonResponse:
         r"""createClosingReason
         A created Closing Reason is stored for the organization and will be displayed in the library of reasons.
@@ -79,6 +81,7 @@ class ClosingReason:
 
         return res
 
+    
     def get_all_closing_reasons(self, request: operations.GetAllClosingReasonsRequest) -> operations.GetAllClosingReasonsResponse:
         r"""getAllClosingReasons
         Get all Closing Reasons defined in the organization by default all Active.

@@ -20,7 +20,6 @@ s = sdk.SDK(
     ),
 )
 
-
 req = operations.ChangeReasonStatusRequest(
     change_reason_status_req=shared.ChangeReasonStatusReq(
         status=shared.ClosingReasonsStatusEnum.INACTIVE,
