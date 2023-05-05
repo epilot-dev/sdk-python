@@ -25,7 +25,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.CustomVariable(
     config={
         "debitis": 'ipsa',
@@ -175,7 +174,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteCustomVariableRequest(
     id='8796ed15-1a05-4dfc-addf-7cc78ca1ba92',
 )
@@ -225,7 +223,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetCustomVariableRequest(
     id='8fc81674-2cb7-4392-8592-9396fea7596e',
 )
@@ -274,7 +271,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateCustomVariableRequest(
     custom_variable=shared.CustomVariable(

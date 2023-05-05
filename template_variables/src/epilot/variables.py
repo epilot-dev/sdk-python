@@ -22,6 +22,7 @@ class Variables:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def generate_q_rcode(self, request: operations.GenerateQRcodeRequest) -> operations.GenerateQRcodeResponse:
         r"""generateQRcode
         Generate QR Code for the given payload
@@ -42,6 +43,7 @@ class Variables:
 
         return res
 
+    
     def get_categories(self, request: operations.GetCategoriesRequest) -> operations.GetCategoriesResponse:
         r"""getCategories
         Get all template variable categories
@@ -66,6 +68,7 @@ class Variables:
 
         return res
 
+    
     def get_variable_context(self, request: operations.GetVariableContextRequestBody) -> operations.GetVariableContextResponse:
         r"""getVariableContext
         Get full variable context
@@ -95,6 +98,7 @@ class Variables:
 
         return res
 
+    
     def replace_templates(self, request: operations.ReplaceTemplatesRequestBody) -> operations.ReplaceTemplatesResponse:
         r"""replaceTemplates
         Replace variables in handlebars templates
@@ -124,6 +128,7 @@ class Variables:
 
         return res
 
+    
     def search_variables(self, request: operations.SearchVariablesRequestBody) -> operations.SearchVariablesResponse:
         r"""searchVariables
         Search variables

@@ -28,7 +28,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GenerateQRcodeRequest(
     qrdata='enim',
 )
@@ -54,7 +53,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetCategoriesRequest(
     lang=operations.GetCategoriesLangEnum.DE,
@@ -84,7 +82,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetVariableContextRequestBody(
     parameters=shared.VariableParameters(
@@ -149,7 +146,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ReplaceTemplatesRequestBody(
     inputs=[
         'Hello, {{contact.first_name}}!
@@ -212,7 +208,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.SearchVariablesRequestBody(
     entity_schemas=[

@@ -21,6 +21,7 @@ class CustomVariables:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_custom_variable(self, request: shared.CustomVariable) -> operations.CreateCustomVariableResponse:
         r"""Create custom variable
         Create custom variable
@@ -44,6 +45,7 @@ class CustomVariables:
 
         return res
 
+    
     def delete_custom_variable(self, request: operations.DeleteCustomVariableRequest) -> operations.DeleteCustomVariableResponse:
         r"""Delete custom variable
         Immediately and permanently deletes a custom variable
@@ -63,6 +65,7 @@ class CustomVariables:
 
         return res
 
+    
     def get_blue_print_table_config(self) -> operations.GetBluePrintTableConfigResponse:
         r"""Get default table config
         Get default table config
@@ -88,6 +91,7 @@ class CustomVariables:
 
         return res
 
+    
     def get_custom_variable(self, request: operations.GetCustomVariableRequest) -> operations.GetCustomVariableResponse:
         r"""Get custom variable
         Get custom variable
@@ -113,6 +117,7 @@ class CustomVariables:
 
         return res
 
+    
     def get_custom_variables(self) -> operations.GetCustomVariablesResponse:
         r"""Get custom variables
         Get all custom variables of organization
@@ -138,6 +143,7 @@ class CustomVariables:
 
         return res
 
+    
     def update_custom_variable(self, request: operations.UpdateCustomVariableRequest) -> operations.UpdateCustomVariableResponse:
         r"""Update custom variable
         Update custom variable
