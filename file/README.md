@@ -20,7 +20,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.DeleteFilePayload(
     s3ref=shared.S3Reference(
         bucket='epilot-files-prod',

@@ -31,7 +31,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.DeleteFilePayload(
     s3ref=shared.S3Reference(
         bucket='epilot-files-prod',
@@ -61,7 +60,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DownloadFileRequest(
     attachment=False,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
@@ -89,7 +87,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.DownloadS3FileRequest(
     attachment=False,
@@ -119,7 +116,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.PreviewFileRequest(
     h=844266,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
@@ -148,7 +144,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.PreviewS3FileRequest(
     s3_reference=shared.S3Reference(
@@ -186,7 +181,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = {
     "error": 'deserunt',
     "suscipit": 'iure',
@@ -216,7 +210,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UploadFileRequest(
     upload_file_payload=shared.UploadFilePayload(
@@ -250,7 +243,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.UploadFilePayload(
     filename='document.pdf',

@@ -22,6 +22,7 @@ class Files:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def delete_file(self, request: shared.DeleteFilePayload) -> operations.DeleteFileResponse:
         r"""deleteFile
         Delete file entity
@@ -45,6 +46,7 @@ class Files:
 
         return res
 
+    
     def download_file(self, request: operations.DownloadFileRequest) -> operations.DownloadFileResponse:
         r"""downloadFile
         Generate pre-signed download S3 url for a file
@@ -69,6 +71,7 @@ class Files:
 
         return res
 
+    
     def download_s3_file(self, request: operations.DownloadS3FileRequest) -> operations.DownloadS3FileResponse:
         r"""downloadS3File
         Generate pre-signed download S3 url for a file
@@ -93,6 +96,7 @@ class Files:
 
         return res
 
+    
     def preview_file(self, request: operations.PreviewFileRequest) -> operations.PreviewFileResponse:
         r"""previewFile
         Generate thumbnail preview for a file entity
@@ -113,6 +117,7 @@ class Files:
 
         return res
 
+    
     def preview_s3_file(self, request: operations.PreviewS3FileRequest) -> operations.PreviewS3FileResponse:
         r"""previewS3File
         Generate thumbnail preview from an s3 reference for a file entity
@@ -137,6 +142,7 @@ class Files:
 
         return res
 
+    
     def save_file(self, request: dict[str, Any]) -> operations.SaveFileResponse:
         r"""saveFile
         Create / Update a permanent File entity
@@ -168,6 +174,7 @@ class Files:
 
         return res
 
+    
     def upload_file(self, request: operations.UploadFileRequest) -> operations.UploadFileResponse:
         r"""uploadFile
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).
@@ -198,6 +205,7 @@ class Files:
 
         return res
 
+    
     def upload_file_public(self, request: shared.UploadFilePayload) -> operations.UploadFilePublicResponse:
         r"""uploadFilePublic
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).
