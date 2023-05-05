@@ -28,7 +28,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.SavedView(
     created_by=shared.SavedViewCreatedBy1(
         user_id='10598',
@@ -67,7 +66,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteSavedViewRequest(
     id='4e523c7e-0bc7-4178-a479-6f2a70c68828',
 )
@@ -93,7 +91,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetSavedViewRequest(
     id='2aa48256-2f22-42e9-817e-e17cbe61e6b7',
@@ -143,7 +140,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateSavedViewRequest(
     saved_view=shared.SavedView(

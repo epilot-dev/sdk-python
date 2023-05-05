@@ -21,6 +21,7 @@ class Export:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def export_entities(self, request: operations.ExportEntitiesRequest) -> operations.ExportEntitiesResponse:
         r"""exportEntities
         create export file of entities
@@ -45,6 +46,7 @@ class Export:
 
         return res
 
+    
     def import_entities(self, request: operations.ImportEntitiesRequest) -> operations.ImportEntitiesResponse:
         r"""importEntities
         import entity data from

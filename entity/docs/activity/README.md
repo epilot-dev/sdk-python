@@ -27,7 +27,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.AttachActivityRequest(
     entities=[
         'c5955907-aff1-4a3a-afa9-467739251aa5',
@@ -60,7 +59,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.CreateActivityRequest(
     activity=shared.Activity(
@@ -101,7 +99,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetActivityRequest(
     id='01F130Q52Q6MWSNS8N2AVXV4JN',
     operations_from=301575,
@@ -131,7 +128,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetEntityActivityFeedRequest(
     after=dateutil.parser.isoparse('2022-06-04T18:23:50.695Z'),

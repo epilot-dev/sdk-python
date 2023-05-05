@@ -30,7 +30,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteSchemaRequest(
     slug='contact',
 )
@@ -56,7 +55,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetSchemaRequest(
     id='4f157560-82d6-48ea-99f1-d17051339d08',
@@ -84,7 +82,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetSchemaVersionsRequest(
     drafts_from=156.06,
@@ -139,7 +136,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.ListSchemasRequest(
     unpublished=False,
 )
@@ -165,7 +161,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.ListTaxonomyClassificationsForSchemaRequest(
     query='ab',
@@ -196,7 +191,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.PutSchemaRequest(
     entity_schema=shared.EntitySchema(

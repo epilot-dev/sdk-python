@@ -28,7 +28,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.AddRelationsRequest(
     request_body=[
         shared.RelationItem(
@@ -67,7 +66,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DeleteRelationRequest(
     async_=False,
     attribute='cupiditate',
@@ -103,7 +101,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetRelationsRequest(
     hydrate=False,
     id='f5d2cff7-c70a-4456-a6d4-36813f16d9f5',
@@ -137,7 +134,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.GetRelationsV2Request(
     fields_=[
@@ -176,7 +172,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateRelationRequest(
     request_body=operations.UpdateRelationRequestBody(

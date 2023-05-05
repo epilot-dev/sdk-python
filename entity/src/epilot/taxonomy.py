@@ -22,6 +22,7 @@ class Taxonomy:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def get_taxonomy(self, request: operations.GetTaxonomyRequest) -> operations.GetTaxonomyResponse:
         r"""getTaxonomy
         Get taxonomy by slug
@@ -45,6 +46,7 @@ class Taxonomy:
 
         return res
 
+    
     def list_taxonomies(self) -> operations.ListTaxonomiesResponse:
         r"""listTaxonomies
         List taxonomies in an organisation
@@ -68,6 +70,7 @@ class Taxonomy:
 
         return res
 
+    
     def taxonomies_classifications_search(self, request: operations.TaxonomiesClassificationsSearchRequest) -> operations.TaxonomiesClassificationsSearchResponse:
         r"""taxonomiesClassificationsSearch
         List taxonomy classifications in an organisation based on taxonomy slug
@@ -96,6 +99,7 @@ class Taxonomy:
 
         return res
 
+    
     def taxonomy_autocomplete(self, request: operations.TaxonomyAutocompleteRequest) -> operations.TaxonomyAutocompleteResponse:
         r"""taxonomyAutocomplete
         Taxonomies autocomplete
@@ -120,6 +124,7 @@ class Taxonomy:
 
         return res
 
+    
     def update_classifications_for_taxonomy(self, request: operations.UpdateClassificationsForTaxonomyRequest) -> operations.UpdateClassificationsForTaxonomyResponse:
         r"""updateClassificationsForTaxonomy
         Update taxonomies in an organisation based in taxonomy slug

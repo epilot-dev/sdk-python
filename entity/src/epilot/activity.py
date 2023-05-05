@@ -22,6 +22,7 @@ class Activity:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def attach_activity(self, request: operations.AttachActivityRequest) -> operations.AttachActivityResponse:
         r"""attachActivity
         Attach existing activity to entity activity feeds
@@ -46,6 +47,7 @@ class Activity:
 
         return res
 
+    
     def create_activity(self, request: operations.CreateActivityRequest) -> operations.CreateActivityResponse:
         r"""createActivity
         Create an activity that can be displayed in activity feeds.
@@ -77,6 +79,7 @@ class Activity:
 
         return res
 
+    
     def get_activity(self, request: operations.GetActivityRequest) -> operations.GetActivityResponse:
         r"""getActivity
         Get activity by id
@@ -101,6 +104,7 @@ class Activity:
 
         return res
 
+    
     def get_entity_activity_feed(self, request: operations.GetEntityActivityFeedRequest) -> operations.GetEntityActivityFeedResponse:
         r"""getEntityActivityFeed
         Get activity feed for an entity

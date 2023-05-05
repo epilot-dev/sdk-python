@@ -28,7 +28,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetTaxonomyRequest(
     taxonomy_slug='purpose',
 )
@@ -78,7 +77,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.TaxonomiesClassificationsSearchRequest(
     request_body=operations.TaxonomiesClassificationsSearchRequestBody(
         classification_ids=[
@@ -111,7 +109,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.TaxonomyAutocompleteRequest(
     query='eveniet',
     size=4837.53,
@@ -140,7 +137,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpdateClassificationsForTaxonomyRequest(
     classifications_update=shared.ClassificationsUpdate(

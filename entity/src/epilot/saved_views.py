@@ -22,6 +22,7 @@ class SavedViews:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_saved_view(self, request: shared.SavedView) -> operations.CreateSavedViewResponse:
         r"""createSavedView
         Creates a new saved view
@@ -49,6 +50,7 @@ class SavedViews:
 
         return res
 
+    
     def delete_saved_view(self, request: operations.DeleteSavedViewRequest) -> operations.DeleteSavedViewResponse:
         r"""deleteSavedView
         Deletes a saved view
@@ -68,6 +70,7 @@ class SavedViews:
 
         return res
 
+    
     def get_saved_view(self, request: operations.GetSavedViewRequest) -> operations.GetSavedViewResponse:
         r"""getSavedView
         Gets Saved View configuration by id.
@@ -91,6 +94,7 @@ class SavedViews:
 
         return res
 
+    
     def list_saved_views(self) -> operations.ListSavedViewsResponse:
         r"""listSavedViews
         Get the Saved Views based on the schema
@@ -114,6 +118,7 @@ class SavedViews:
 
         return res
 
+    
     def update_saved_view(self, request: operations.UpdateSavedViewRequest) -> operations.UpdateSavedViewResponse:
         r"""updateSavedView
         Updates a saved view

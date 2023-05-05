@@ -22,6 +22,7 @@ class Entities:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def autocomplete(self, request: operations.AutocompleteRequest) -> operations.AutocompleteResponse:
         r"""autocomplete
         Autocomplete entity attributes
@@ -46,6 +47,7 @@ class Entities:
 
         return res
 
+    
     def create_entity(self, request: operations.CreateEntityRequest) -> operations.CreateEntityResponse:
         r"""createEntity
         Creates a new entity using a key.
@@ -98,6 +100,7 @@ class Entities:
 
         return res
 
+    
     def delete_entity(self, request: operations.DeleteEntityRequest) -> operations.DeleteEntityResponse:
         r"""deleteEntity
         Deletes an Entity
@@ -122,6 +125,7 @@ class Entities:
 
         return res
 
+    
     def get_entity(self, request: operations.GetEntityRequest) -> operations.GetEntityResponse:
         r"""getEntity
         Gets Entity and relations by id.
@@ -208,6 +212,7 @@ class Entities:
 
         return res
 
+    
     def patch_entity(self, request: operations.PatchEntityRequest) -> operations.PatchEntityResponse:
         r"""patchEntity
         Partially updates an entity with the passed in entity data.
@@ -266,6 +271,7 @@ class Entities:
 
         return res
 
+    
     def search_entities(self, request: shared.EntitySearchParams) -> operations.SearchEntitiesResponse:
         r"""searchEntities
         Search for entities. Supports ordering and pagination. Lucene query syntax supported for complex querying.
@@ -359,6 +365,7 @@ class Entities:
 
         return res
 
+    
     def update_entity(self, request: operations.UpdateEntityRequest) -> operations.UpdateEntityResponse:
         r"""updateEntity
         Updates an Entity
@@ -411,6 +418,7 @@ class Entities:
 
         return res
 
+    
     def upsert_entity(self, request: operations.UpsertEntityRequest) -> operations.UpsertEntityResponse:
         r"""upsertEntity
         Create or update an entity using `unique_key`

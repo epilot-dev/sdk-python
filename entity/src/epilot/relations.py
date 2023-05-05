@@ -22,6 +22,7 @@ class Relations:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def add_relations(self, request: operations.AddRelationsRequest) -> operations.AddRelationsResponse:
         r"""addRelations
         Relates one or more entities to parent entity by adding items to a relation attribute
@@ -50,6 +51,7 @@ class Relations:
 
         return res
 
+    
     def delete_relation(self, request: operations.DeleteRelationRequest) -> operations.DeleteRelationResponse:
         r"""deleteRelation
         Removes relation between two entities
@@ -70,6 +72,7 @@ class Relations:
 
         return res
 
+    
     def get_relations(self, request: operations.GetRelationsRequest) -> operations.GetRelationsResponse:
         r"""getRelations
         Returns 1st level direct relations for an entity.
@@ -98,6 +101,7 @@ class Relations:
 
         return res
 
+    
     def get_relations_v2(self, request: operations.GetRelationsV2Request) -> operations.GetRelationsV2Response:
         r"""getRelationsV2
         Returns 1st level direct relations for an entity with pagination.
@@ -126,6 +130,7 @@ class Relations:
 
         return res
 
+    
     def update_relation(self, request: operations.UpdateRelationRequest) -> operations.UpdateRelationResponse:
         r"""updateRelation
         Updates an existing relation between two entities.

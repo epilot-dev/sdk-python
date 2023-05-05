@@ -32,7 +32,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.AutocompleteRequest(
     attribute='_tags',
     input='architecto',
@@ -87,7 +86,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.CreateEntityRequest(
     request_body={
         "expedita": 'nihil',
@@ -124,7 +122,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.DeleteEntityRequest(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
@@ -217,7 +214,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetEntityRequest(
     hydrate=False,
     id='30c5fbb2-5870-4532-82c7-3d5fe9b90c28',
@@ -272,7 +268,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.PatchEntityRequest(
     request_body={
@@ -374,7 +369,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = shared.EntitySearchParams(
     aggs={
         "accusamus": 'quidem',
@@ -440,7 +434,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.UpdateEntityRequest(
     request_body={
         "dolorum": 'iusto',
@@ -483,7 +476,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.UpsertEntityRequest(
     request_body=operations.UpsertEntityRequestBody(

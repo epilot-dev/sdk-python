@@ -22,6 +22,7 @@ class Schemas:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def delete_schema(self, request: operations.DeleteSchemaRequest) -> operations.DeleteSchemaResponse:
         r"""deleteSchema
         Delete a schema, or a specific version of a schema
@@ -41,6 +42,7 @@ class Schemas:
 
         return res
 
+    
     def get_schema(self, request: operations.GetSchemaRequest) -> operations.GetSchemaResponse:
         r"""getSchema
         By default gets the latest version of the Schema and to get the specific version of schema pass the id.
@@ -65,6 +67,7 @@ class Schemas:
 
         return res
 
+    
     def get_schema_versions(self, request: operations.GetSchemaVersionsRequest) -> operations.GetSchemaVersionsResponse:
         r"""getSchemaVersions
         Get all versions of this schema ordered by the latest versions including drafts.
@@ -89,6 +92,7 @@ class Schemas:
 
         return res
 
+    
     def list_schema_blueprints(self) -> operations.ListSchemaBlueprintsResponse:
         r"""listSchemaBlueprints
         List canonical versions of all available schemas
@@ -112,6 +116,7 @@ class Schemas:
 
         return res
 
+    
     def list_schemas(self, request: operations.ListSchemasRequest) -> operations.ListSchemasResponse:
         r"""listSchemas
         Get the latest versions of all schemas
@@ -136,6 +141,7 @@ class Schemas:
 
         return res
 
+    
     def list_taxonomy_classifications_for_schema(self, request: operations.ListTaxonomyClassificationsForSchemaRequest) -> operations.ListTaxonomyClassificationsForSchemaResponse:
         r"""listTaxonomyClassificationsForSchema
         List taxonomy classifications for a given schema
@@ -160,6 +166,7 @@ class Schemas:
 
         return res
 
+    
     def put_schema(self, request: operations.PutSchemaRequest) -> operations.PutSchemaResponse:
         r"""putSchema
         Create or update a schema with a new version
