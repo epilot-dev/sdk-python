@@ -26,7 +26,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = {
     "vel": 'error',
     "deserunt": 'suscipit',
@@ -56,7 +55,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetJourneyRequest(
     id='509cdffe-424f-457a-95c2-9708c304ce77',
     org_id='delectus',
@@ -85,7 +83,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.GetJourneysByOrgIDRequest(
     id='123',
 )
@@ -111,7 +108,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = {
     "molestiae": 'minus',
@@ -140,7 +136,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.RemoveJourneyRequest(
     id='509cdffe-424f-457a-95c2-9708c304ce77',
 )
@@ -166,7 +161,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = shared.SearchJourneysQueryRequest(
     from_=479977,
@@ -196,7 +190,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = {
     "nisi": 'recusandae',

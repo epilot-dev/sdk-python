@@ -21,6 +21,7 @@ class Journeys:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_journey(self, request: dict[str, Any]) -> operations.CreateJourneyResponse:
         r"""createJourney
         Create a Journey
@@ -48,6 +49,7 @@ class Journeys:
 
         return res
 
+    
     def get_journey(self, request: operations.GetJourneyRequest) -> operations.GetJourneyResponse:
         r"""getJourney
         Get journey by id
@@ -72,6 +74,7 @@ class Journeys:
 
         return res
 
+    
     def get_journeys_by_org_id(self, request: operations.GetJourneysByOrgIDRequest) -> operations.GetJourneysByOrgIDResponse:
         r"""getJourneysByOrgId
         Get all journeys by organization id
@@ -95,6 +98,7 @@ class Journeys:
 
         return res
 
+    
     def patch_update_journey(self, request: dict[str, Any]) -> operations.PatchUpdateJourneyResponse:
         r"""patchUpdateJourney
         Update a Journey (partially / patch). Support for nested properties updates (e.g. \"property[0].name\").
@@ -122,6 +126,7 @@ class Journeys:
 
         return res
 
+    
     def remove_journey(self, request: operations.RemoveJourneyRequest) -> operations.RemoveJourneyResponse:
         r"""removeJourney
         Remove journey by id
@@ -141,6 +146,7 @@ class Journeys:
 
         return res
 
+    
     def search_journeys(self, request: shared.SearchJourneysQueryRequest) -> operations.SearchJourneysResponse:
         r"""searchJourneys
         Search Journeys
@@ -168,6 +174,7 @@ class Journeys:
 
         return res
 
+    
     def update_journey(self, request: dict[str, Any]) -> operations.UpdateJourneyResponse:
         r"""updateJourney
         Update a Journey
