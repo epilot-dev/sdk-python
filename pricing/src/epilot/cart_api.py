@@ -26,6 +26,7 @@ class CartAPI:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def dollar_checkout_cart(self, request: operations.DollarCheckoutCartRequest) -> operations.DollarCheckoutCartResponse:
         r"""checkoutCart
         Checkouts a cart and executes the specified checkout `mode` process.

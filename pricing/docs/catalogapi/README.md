@@ -26,7 +26,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DollarSearchCatalogRequest(
     catalog_search=shared.CatalogSearch(
         availability=shared.AvailabilityFilters(

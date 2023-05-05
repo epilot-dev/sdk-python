@@ -21,7 +21,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DollarAvailabilityCheckRequest(
     availability_check_params=shared.AvailabilityCheckParams(
         filters=shared.AvailabilityFilters(

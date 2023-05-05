@@ -22,6 +22,7 @@ class AvailabilityAPI:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def dollar_availability_check(self, request: operations.DollarAvailabilityCheckRequest) -> operations.DollarAvailabilityCheckResponse:
         r"""availabilityCheck
         The availability check endpoint

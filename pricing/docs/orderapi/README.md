@@ -28,7 +28,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = {
     "reiciendis": 'est',
 }
@@ -54,7 +53,6 @@ s = epilot.Epilot(
         epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
     ),
 )
-
 
 req = operations.PutOrderRequest(
     request_body={

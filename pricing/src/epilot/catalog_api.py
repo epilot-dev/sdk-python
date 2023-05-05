@@ -22,6 +22,7 @@ class CatalogAPI:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def dollar_search_catalog(self, request: operations.DollarSearchCatalogRequest) -> operations.DollarSearchCatalogResponse:
         r"""searchCatalog
         Provides a querying functionalities over products and prices of the Catalog for a given organization.

@@ -39,7 +39,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DollarCheckoutCartRequest(
     checkout_cart_input=shared.CheckoutCartInput(
         cart='nam',

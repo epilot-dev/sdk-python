@@ -21,6 +21,7 @@ class Deprecated:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def dollar_create_opportunity(self, request: operations.DollarCreateOpportunityRequest) -> operations.DollarCreateOpportunityResponse:
         r"""createOpportunity
         This API is Deprecated. Please use the Entity API or Submission API to create opportunities.

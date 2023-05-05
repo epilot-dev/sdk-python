@@ -25,6 +25,7 @@ class OrderAPI:
         self._sdk_version = sdk_version
         self._gen_version = gen_version
         
+    
     def create_order(self, request: dict[str, Any]) -> operations.CreateOrderResponse:
         r"""createOrder
         Create an order
@@ -58,6 +59,7 @@ class OrderAPI:
 
         return res
 
+    
     def put_order(self, request: operations.PutOrderRequest) -> operations.PutOrderResponse:
         r"""putOrder
         Update an existing Order

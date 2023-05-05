@@ -24,7 +24,6 @@ s = epilot.Epilot(
     ),
 )
 
-
 req = operations.DollarCreateOpportunityRequest(
     request_body={
         "saepe": 'fuga',
