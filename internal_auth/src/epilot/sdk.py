@@ -20,8 +20,8 @@ class Epilot:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.11.0"
-    _gen_version: str = "2.26.0"
+    _sdk_version: str = "1.11.1"
+    _gen_version: str = "2.26.1"
 
     def __init__(self,
                  server_url: str = None,
@@ -107,7 +107,7 @@ class Epilot:
         return res
 
     
-    def get_token(self) -> operations.GetTokenResponse:
+    def get_token(self, security: operations.GetTokenSecurity) -> operations.GetTokenResponse:
         r"""getToken
         Generates token for internal API access
         
@@ -139,7 +139,7 @@ class Epilot:
         url = base_url.removesuffix('/') + '/auth'
         
         
-        client = self._client
+        client = utils.configure_security_client(self._client, security)
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')

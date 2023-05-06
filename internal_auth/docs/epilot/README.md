@@ -88,12 +88,14 @@ Example JWT payload:
 
 ```python
 import epilot
-
+from epilot.models import operations
 
 s = epilot.Epilot()
 
 
-res = s.epilot.get_token()
+res = s.epilot.get_token(operations.GetTokenSecurity(
+    sigv4="YOUR_API_KEY_HERE",
+))
 
 if res.get_token_200_application_json_object is not None:
     # handle response
