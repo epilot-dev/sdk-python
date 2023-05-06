@@ -8,6 +8,12 @@ from typing import Optional
 
 
 @dataclasses.dataclass
+class GetOrganizationSettingsSecurity:
+    
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+    
+
+@dataclasses.dataclass
 class GetOrganizationSettingsResponse:
     
     content_type: str = dataclasses.field()

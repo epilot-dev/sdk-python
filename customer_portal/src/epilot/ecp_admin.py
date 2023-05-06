@@ -104,7 +104,7 @@ class ECPAdmin:
         return res
 
     
-    def extra_permission_attributes(self) -> operations.ExtraPermissionAttributesResponse:
+    def extra_permission_attributes(self, security: operations.ExtraPermissionAttributesSecurity) -> operations.ExtraPermissionAttributesResponse:
         r"""extraPermissionAttributes
         TODO
         """
@@ -113,7 +113,7 @@ class ECPAdmin:
         url = base_url.removesuffix('/') + '/v2/portal/extra-permission-attributes'
         
         
-        client = self._security_client
+        client = utils.configure_security_client(self._client, security)
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -128,7 +128,7 @@ class ECPAdmin:
         return res
 
     
-    def get_all_portal_configs(self) -> operations.GetAllPortalConfigsResponse:
+    def get_all_portal_configs(self, security: operations.GetAllPortalConfigsSecurity) -> operations.GetAllPortalConfigsResponse:
         r"""getAllPortalConfigs
         TODO
         """
@@ -137,7 +137,7 @@ class ECPAdmin:
         url = base_url.removesuffix('/') + '/v2/portal/configs'
         
         
-        client = self._security_client
+        client = utils.configure_security_client(self._client, security)
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')
@@ -305,7 +305,7 @@ class ECPAdmin:
         return res
 
     
-    def get_valid_secondary_attributes(self) -> operations.GetValidSecondaryAttributesResponse:
+    def get_valid_secondary_attributes(self, security: operations.GetValidSecondaryAttributesSecurity) -> operations.GetValidSecondaryAttributesResponse:
         r"""getValidSecondaryAttributes
         Get Valid Secondary Attributes
         """
@@ -314,7 +314,7 @@ class ECPAdmin:
         url = base_url.removesuffix('/') + '/v2/portal/contact/valid/secondary/attributes'
         
         
-        client = self._security_client
+        client = utils.configure_security_client(self._client, security)
         
         http_res = client.request('GET', url)
         content_type = http_res.headers.get('Content-Type')

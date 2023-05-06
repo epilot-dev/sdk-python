@@ -94,16 +94,14 @@ TODO
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp.delete_portal_user()
+res = s.ecp.delete_portal_user(operations.DeletePortalUserSecurity(
+    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.delete_portal_user_200_application_json_string is not None:
     # handle response
@@ -117,16 +115,14 @@ TODO
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp.get_all_contracts()
+res = s.ecp.get_all_contracts(operations.GetAllContractsSecurity(
+    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.get_all_contracts_200_application_json_object is not None:
     # handle response
@@ -140,16 +136,14 @@ TODO
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp.get_all_opportunities()
+res = s.ecp.get_all_opportunities(operations.GetAllOpportunitiesSecurity(
+    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.get_all_opportunities_200_application_json_object is not None:
     # handle response
@@ -163,16 +157,14 @@ TODO
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp.get_all_orders()
+res = s.ecp.get_all_orders(operations.GetAllOrdersSecurity(
+    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.get_all_orders_200_application_json_object is not None:
     # handle response
@@ -186,16 +178,14 @@ Get the Contact by id
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp.get_contact()
+res = s.ecp.get_contact(operations.GetContactSecurity(
+    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.get_contact_200_application_json_object is not None:
     # handle response
@@ -308,16 +298,14 @@ get organization settings
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp.get_organization_settings()
+res = s.ecp.get_organization_settings(operations.GetOrganizationSettingsSecurity(
+    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.organization_settings is not None:
     # handle response
@@ -381,16 +369,14 @@ TODO
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp.get_portal_user()
+res = s.ecp.get_portal_user(operations.GetPortalUserSecurity(
+    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.entity_item is not None:
     # handle response
@@ -404,16 +390,14 @@ TODO
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp.get_schemas()
+res = s.ecp.get_schemas(operations.GetSchemasSecurity(
+    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.get_schemas_200_application_json_object is not None:
     # handle response

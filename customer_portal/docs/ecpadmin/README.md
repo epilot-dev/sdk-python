@@ -108,16 +108,14 @@ TODO
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp_admin.extra_permission_attributes()
+res = s.ecp_admin.extra_permission_attributes(operations.ExtraPermissionAttributesSecurity(
+    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.extra_permission_attributes_200_application_json_object is not None:
     # handle response
@@ -131,16 +129,14 @@ TODO
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp_admin.get_all_portal_configs()
+res = s.ecp_admin.get_all_portal_configs(operations.GetAllPortalConfigsSecurity(
+    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.get_all_portal_configs_200_application_json_object is not None:
     # handle response
@@ -301,16 +297,14 @@ Get Valid Secondary Attributes
 
 ```python
 import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
 
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-
-res = s.ecp_admin.get_valid_secondary_attributes()
+res = s.ecp_admin.get_valid_secondary_attributes(operations.GetValidSecondaryAttributesSecurity(
+    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+))
 
 if res.get_valid_secondary_attributes_200_application_json_object is not None:
     # handle response

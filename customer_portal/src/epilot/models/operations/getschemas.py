@@ -8,6 +8,12 @@ from epilot import utils
 from typing import Any, Optional
 
 
+@dataclasses.dataclass
+class GetSchemasSecurity:
+    
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+    
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetSchemas200ApplicationJSON:
