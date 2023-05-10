@@ -67,7 +67,7 @@ if res.availability_result is not None:
 
 ### [deprecated](docs/deprecated/README.md)
 
-* [dollar_create_opportunity](docs/deprecated/README.md#dollar_create_opportunity) - createOpportunity
+* [~~dollar_create_opportunity~~](docs/deprecated/README.md#dollar_create_opportunity) - createOpportunity :warning: **Deprecated**
 
 ### [order_api](docs/orderapi/README.md)
 

@@ -28,6 +28,8 @@ class Deprecated:
         
         Enables the creation of a new opportunity. During the creation of an opportunity, an unique customer-readable `opportunity_number` will be generated.
         The `opportunity_number` can be used to universally identify an opportunity within epilot platform.
+        
+        Deprecated: this method will be removed in a future release, please migrate away from it as soon as possible
         """
         base_url = self._server_url
         
