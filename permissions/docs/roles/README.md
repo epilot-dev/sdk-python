@@ -252,7 +252,7 @@ req = operations.PutRoleRequest(
         name='Owner',
         organization_id='123',
         slug='owner',
-        type='fugit',
+        type=operations.PutRoleRequestBody3TypeEnum.SHARE_ROLE,
     ),
     role_id='123:owner',
 )
@@ -307,12 +307,9 @@ req = shared.RoleSearchInput(
     offset=1,
     org_ids=[
         '123',
-        '123',
-        '123',
     ],
     query='Administrator',
     role_ids=[
-        '123:owner',
         '123:owner',
         '123:owner',
         '123:owner',
