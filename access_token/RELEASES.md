@@ -149,3 +149,9 @@ Based on:
 Based on:
 - OpenAPI Doc 0.2.0 https://docs.api.epilot.io/access-token.yaml
 - Speakeasy CLI 1.30.0 (2.26.3) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-12 00:42:58
+### Changes
+Based on:
+- OpenAPI Doc 0.2.0 https://docs.api.epilot.io/access-token.yaml
+- Speakeasy CLI 1.30.1 (2.26.4) https://github.com/speakeasy-api/speakeasy
