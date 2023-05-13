@@ -40,7 +40,7 @@ req = operations.ConfigureDistributionRequest(
 )
 
 res = s.ecp_admin.configure_distribution(req, operations.ConfigureDistributionSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.configure_distribution_200_application_json_object is not None:
@@ -69,7 +69,7 @@ req = operations.CreateSSOUserRequest(
 )
 
 res = s.ecp_admin.create_sso_user(req, operations.CreateSSOUserSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.create_sso_user_201_application_json_object is not None:
@@ -93,7 +93,7 @@ req = operations.DeletePortalRequest(
 )
 
 res = s.ecp_admin.delete_portal(req, operations.DeletePortalSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.status_code == 200:
@@ -114,7 +114,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp_admin.extra_permission_attributes(operations.ExtraPermissionAttributesSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.extra_permission_attributes_200_application_json_object is not None:
@@ -135,7 +135,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp_admin.get_all_portal_configs(operations.GetAllPortalConfigsSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.get_all_portal_configs_200_application_json_object is not None:
@@ -159,7 +159,7 @@ req = operations.GetECPContactRequest(
 )
 
 res = s.ecp_admin.get_ecp_contact(req, operations.GetECPContactSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.entity_item is not None:
@@ -183,7 +183,7 @@ req = operations.GetEmailTemplatesRequest(
 )
 
 res = s.ecp_admin.get_email_templates(req, operations.GetEmailTemplatesSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.email_templates is not None:
@@ -207,7 +207,7 @@ req = operations.GetEntityIdentifiersRequest(
 )
 
 res = s.ecp_admin.get_entity_identifiers(req, operations.GetEntityIdentifiersSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.get_entity_identifiers_200_application_json_object is not None:
@@ -231,7 +231,7 @@ req = operations.GetOrgPortalConfigRequest(
 )
 
 res = s.ecp_admin.get_org_portal_config(req, operations.GetOrgPortalConfigSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.portal_config is not None:
@@ -255,7 +255,7 @@ req = operations.GetPortalConfigRequest(
 )
 
 res = s.ecp_admin.get_portal_config(req, operations.GetPortalConfigSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.portal_config is not None:
@@ -303,7 +303,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp_admin.get_valid_secondary_attributes(operations.GetValidSecondaryAttributesSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.get_valid_secondary_attributes_200_application_json_object is not None:
@@ -330,7 +330,7 @@ req = operations.ReplaceECPTemplateVariablesRequest(
 )
 
 res = s.ecp_admin.replace_ecp_template_variables(req, operations.ReplaceECPTemplateVariablesSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.replace_ecp_template_variables_200_application_json_object is not None:
@@ -384,7 +384,7 @@ req = shared.SavePortalFile(
 )
 
 res = s.ecp_admin.save_portal_files(req, operations.SavePortalFilesSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.entity_item is not None:
@@ -415,7 +415,7 @@ req = operations.UpsertEmailTemplatesRequest(
 )
 
 res = s.ecp_admin.upsert_email_templates(req, operations.UpsertEmailTemplatesSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.upsert_email_templates_200_application_json_object is not None:
@@ -536,7 +536,7 @@ req = operations.UpsertPortalRequest(
 )
 
 res = s.ecp_admin.upsert_portal(req, operations.UpsertPortalSecurity(
-    epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
 if res.add_portal_resp is not None:
