@@ -30,13 +30,13 @@ class Workflows:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/workflows/executions'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -64,13 +64,13 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateStepRequest, base_url, '/v1/workflows/executions/{executionId}/steps', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "create_step_req", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -98,11 +98,12 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteExecutionRequest, base_url, '/v1/workflows/executions/{executionId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteExecutionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -124,11 +125,12 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteStepRequest, base_url, '/v1/workflows/executions/{executionId}/steps/{stepId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteStepResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -152,11 +154,12 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetClosingReasonExecutionRequest, base_url, '/v1/workflows/executions/{executionId}/closing-reasons', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetClosingReasonExecutionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -180,11 +183,12 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetExecutionRequest, base_url, '/v1/workflows/executions/{executionId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetExecutionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -208,12 +212,13 @@ class Workflows:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/workflows/executions'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetExecutionsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetExecutionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -237,13 +242,13 @@ class Workflows:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/workflows/executions/search'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -271,13 +276,13 @@ class Workflows:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/workflows/executions/steps/search'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -305,13 +310,13 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateExecutionRequest, base_url, '/v1/workflows/executions/{executionId}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "workflow_execution_update_req", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -337,13 +342,13 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateStepRequest, base_url, '/v1/workflows/executions/{executionId}/steps/{stepId}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "update_step_req", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
