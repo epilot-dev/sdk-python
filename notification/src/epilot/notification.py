@@ -30,11 +30,11 @@ class Notification:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/notification/notifications'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -54,11 +54,12 @@ class Notification:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetNotificationRequest, base_url, '/v1/notification/notifications/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -78,12 +79,13 @@ class Notification:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/notification/notifications'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetNotificationsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetNotificationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -103,11 +105,12 @@ class Notification:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/notification/unreads'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetTotalUnreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -126,11 +129,12 @@ class Notification:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/notification/notifications/mark'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('PUT', url)
+        http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.MarkAllAsReadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -146,11 +150,12 @@ class Notification:
         base_url = self._server_url
         
         url = utils.generate_url(operations.MarkAsReadRequest, base_url, '/v1/notification/notifications/{id}/mark', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('PUT', url)
+        http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.MarkAsReadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
