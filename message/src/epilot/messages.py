@@ -29,11 +29,12 @@ class Messages:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteMessageRequest, base_url, '/v1/message/messages/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -49,11 +50,12 @@ class Messages:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetMessageRequest, base_url, '/v1/message/messages/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -75,11 +77,12 @@ class Messages:
         base_url = self._server_url
         
         url = utils.generate_url(operations.MarkReadMessageRequest, base_url, '/v1/message/messages/{id}/read', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.MarkReadMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -95,11 +98,12 @@ class Messages:
         base_url = self._server_url
         
         url = utils.generate_url(operations.MarkUnreadMessageRequest, base_url, '/v1/message/messages/{id}/unread', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.MarkUnreadMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -115,11 +119,11 @@ class Messages:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/message/messages'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -145,11 +149,12 @@ class Messages:
         base_url = self._server_url
         
         url = utils.generate_url(operations.TrashMessageRequest, base_url, '/v1/message/messages/{id}/trash', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.TrashMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -165,11 +170,12 @@ class Messages:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UntrashMessageRequest, base_url, '/v1/message/messages/{id}/untrash', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.UntrashMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -185,11 +191,12 @@ class Messages:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/message/messages'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('PUT', url)
+        http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.UpdateMessageResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

@@ -29,13 +29,13 @@ class Threads:
         base_url = self._server_url
         
         url = utils.generate_url(operations.AssignThreadRequest, base_url, '/v1/message/threads/{id}/assign', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -55,11 +55,12 @@ class Threads:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteThreadRequest, base_url, '/v1/message/threads/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -75,11 +76,12 @@ class Threads:
         base_url = self._server_url
         
         url = utils.generate_url(operations.MarkReadThreadRequest, base_url, '/v1/message/threads/{id}/read', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.MarkReadThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -95,11 +97,12 @@ class Threads:
         base_url = self._server_url
         
         url = utils.generate_url(operations.MarkUnreadThreadRequest, base_url, '/v1/message/threads/{id}/unread', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.MarkUnreadThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -119,11 +122,11 @@ class Threads:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/message/threads:search'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -149,11 +152,12 @@ class Threads:
         base_url = self._server_url
         
         url = utils.generate_url(operations.TrashThreadRequest, base_url, '/v1/message/threads/{id}/trash', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.TrashThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -169,11 +173,12 @@ class Threads:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UntrashThreadRequest, base_url, '/v1/message/threads/{id}/untrash', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.UntrashThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -189,11 +194,12 @@ class Threads:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/message/threads'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('PUT', url)
+        http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.UpdateThreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
