@@ -41,11 +41,11 @@ class AccessTokens:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/access-tokens'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -69,12 +69,13 @@ class AccessTokens:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/access-tokens'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ListAccessTokensRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ListAccessTokensResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -94,11 +95,12 @@ class AccessTokens:
         base_url = self._server_url
         
         url = utils.generate_url(operations.RevokeAccessTokenRequest, base_url, '/v1/access-tokens/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.RevokeAccessTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
