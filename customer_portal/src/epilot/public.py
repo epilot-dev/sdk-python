@@ -30,12 +30,12 @@ class Public:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/public/activate'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "user_activation_payload", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.ActivateUserRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -55,12 +55,13 @@ class Public:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ConfirmUserRequest, base_url, '/v2/portal/user/confirm/{id}', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ConfirmUserRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ConfirmUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -80,7 +81,6 @@ class Public:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/public/user'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -88,6 +88,7 @@ class Public:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.CreateUserRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -115,12 +116,13 @@ class Public:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/contact/email/count'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetCountByEmailRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetCountByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -140,12 +142,13 @@ class Public:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/public/user/exists'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.UserExistsRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.UserExistsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

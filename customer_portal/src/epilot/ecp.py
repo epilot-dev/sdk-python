@@ -30,11 +30,12 @@ class Ecp:
         base_url = self._server_url
         
         url = utils.generate_url(operations.AddEndCustomerRelationToEntityRequest, base_url, '/v2/portal/entity/add-end-customer/{slug}/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('PUT', url)
+        http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.AddEndCustomerRelationToEntityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -54,13 +55,13 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/entity/file'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -84,11 +85,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/user'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeletePortalUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -107,11 +109,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/contract'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetAllContractsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -131,11 +134,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/opportunity'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetAllOpportunitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -155,11 +159,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/order'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetAllOrdersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -179,11 +184,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/contact'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetContactResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -207,11 +213,12 @@ class Ecp:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetContractRequest, base_url, '/v2/portal/contract/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetContractResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -231,13 +238,13 @@ class Ecp:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetEntitiesByIdentifiersRequest, base_url, '/v2/portal/entity/by-identifiers/{slug}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -261,11 +268,12 @@ class Ecp:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetOpportunityRequest, base_url, '/v2/portal/opportunities/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetOpportunityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -285,11 +293,12 @@ class Ecp:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetOrderRequest, base_url, '/v2/portal/order/{id}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetOrderResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -309,11 +318,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/org/settings'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetOrganizationSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -333,12 +343,13 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/config'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetPortalConfigRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPortalConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -358,12 +369,13 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/public/config'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetPortalConfigByDomainRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPortalConfigByDomainResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -383,11 +395,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/user'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPortalUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -407,11 +420,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/schemas'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetSchemasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -431,13 +445,13 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/entity/file'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -461,11 +475,12 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/auth'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.TestAuthResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -481,11 +496,11 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/contact'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -509,13 +524,13 @@ class Ecp:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateContractRequest, base_url, '/v2/portal/contract/{id}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -539,13 +554,13 @@ class Ecp:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateOpportunityRequest, base_url, '/v2/portal/opportunities/{id}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -569,11 +584,11 @@ class Ecp:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateOrderRequest, base_url, '/v2/portal/order/{id}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -597,11 +612,11 @@ class Ecp:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/user'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         

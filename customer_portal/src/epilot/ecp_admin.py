@@ -30,12 +30,13 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/configure-distribution'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.ConfigureDistributionRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ConfigureDistributionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -55,7 +56,6 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/sso/user'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -63,6 +63,7 @@ class ECPAdmin:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.CreateSSOUserRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -90,12 +91,13 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/config'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.DeletePortalRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('DELETE', url, params=query_params)
+        http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeletePortalResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -111,11 +113,12 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/extra-permission-attributes'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ExtraPermissionAttributesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -135,11 +138,12 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/configs'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetAllPortalConfigsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -159,12 +163,13 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/ecp/contact'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetECPContactRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetECPContactResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -188,12 +193,13 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/email-templates'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetEmailTemplatesRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetEmailTemplatesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -213,11 +219,12 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetEntityIdentifiersRequest, base_url, '/v2/portal/entity/identifiers/{slug}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetEntityIdentifiersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -237,12 +244,13 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/org/portal/config'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetOrgPortalConfigRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetOrgPortalConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -262,12 +270,13 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/config'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetPortalConfigRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPortalConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -287,12 +296,13 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/public/portal/config'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetPublicPortalConfigRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPublicPortalConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -312,11 +322,12 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/contact/valid/secondary/attributes'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetValidSecondaryAttributesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -336,7 +347,6 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/replace-ecp-template-variables'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -344,6 +354,7 @@ class ECPAdmin:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.ReplaceECPTemplateVariablesRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -367,13 +378,13 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/portal/files'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -397,7 +408,6 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/email-templates'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "email_templates", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -405,6 +415,7 @@ class ECPAdmin:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.UpsertEmailTemplatesRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
@@ -428,7 +439,6 @@ class ECPAdmin:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/portal'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "upsert_portal_config", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -436,6 +446,7 @@ class ECPAdmin:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.UpsertPortalRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
         
