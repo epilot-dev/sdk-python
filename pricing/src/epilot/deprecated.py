@@ -34,13 +34,13 @@ class Deprecated:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/public/opportunity'
-        
         headers = utils.get_headers(request)
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
