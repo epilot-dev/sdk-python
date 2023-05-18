@@ -30,12 +30,13 @@ class Entities:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/entity:autocomplete'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.AutocompleteRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.AutocompleteResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -79,12 +80,12 @@ class Entities:
         base_url = self._server_url
         
         url = utils.generate_url(operations.CreateEntityRequest, base_url, '/v1/entity/{slug}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.CreateEntityRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -112,12 +113,13 @@ class Entities:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteEntityRequest, base_url, '/v1/entity/{slug}/{id}', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.DeleteEntityRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url, params=query_params)
+        http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteEntityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -195,12 +197,13 @@ class Entities:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetEntityRequest, base_url, '/v1/entity/{slug}/{id}', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetEntityRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetEntityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -246,7 +249,6 @@ class Entities:
         base_url = self._server_url
         
         url = utils.generate_url(operations.PatchEntityRequest, base_url, '/v1/entity/{slug}/{id}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -254,6 +256,7 @@ class Entities:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.PatchEntityRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -343,11 +346,11 @@ class Entities:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/entity:search'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -397,12 +400,12 @@ class Entities:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateEntityRequest, base_url, '/v1/entity/{slug}/{id}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.UpdateEntityRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -434,12 +437,12 @@ class Entities:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpsertEntityRequest, base_url, '/v1/entity/{slug}:upsert', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.UpsertEntityRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
