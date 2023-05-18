@@ -30,12 +30,12 @@ class Partners:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/partner-directory/public/activate'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "activate_partner_payload", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.ActivatePartnerRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -55,11 +55,12 @@ class Partners:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ApprovePartnerRequest, base_url, '/v1/partners/{id}/approve', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.ApprovePartnerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -81,11 +82,11 @@ class Partners:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/partners/assignables:batchGet'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -109,12 +110,13 @@ class Partners:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/partner-directory/public/getPartnerByToken'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.GetPartnerByTokenRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetPartnerByTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -136,11 +138,11 @@ class Partners:
         base_url = self._server_url
         
         url = utils.generate_url(operations.InvitePartnerRequest, base_url, '/v1/partners/{id}/invite', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "partner_invitation_payload", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -166,11 +168,12 @@ class Partners:
         base_url = self._server_url
         
         url = utils.generate_url(operations.RejectPartnerRequest, base_url, '/v1/partners/{id}/reject', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url)
+        http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.RejectPartnerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -192,11 +195,11 @@ class Partners:
         base_url = self._server_url
         
         url = utils.generate_url(operations.ResendPartnerInvitationRequest, base_url, '/v1/partners/{id}/invite:resendEmail', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -227,11 +230,11 @@ class Partners:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/partners/assignables:search'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
