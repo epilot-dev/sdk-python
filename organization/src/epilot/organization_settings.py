@@ -30,11 +30,12 @@ class OrganizationSettings:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteSettingsValueRequest, base_url, '/v2/organization/{org_id}/settings/{key}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteSettingsValueResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -50,11 +51,12 @@ class OrganizationSettings:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetSettingsRequest, base_url, '/v2/organization/{org_id}/settings', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -74,11 +76,11 @@ class OrganizationSettings:
         base_url = self._server_url
         
         url = utils.generate_url(operations.PutSettingsValueRequest, base_url, '/v2/organization/{org_id}/settings/{key}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
