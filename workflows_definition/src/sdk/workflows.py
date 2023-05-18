@@ -29,13 +29,13 @@ class Workflows:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/workflows/definitions'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -63,11 +63,12 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DeleteDefinitionRequest, base_url, '/v1/workflows/definitions/{definitionId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('DELETE', url)
+        http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DeleteDefinitionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -89,11 +90,12 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetDefinitionRequest, base_url, '/v1/workflows/definitions/{definitionId}', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetDefinitionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -121,11 +123,12 @@ class Workflows:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/workflows/definitions'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetDefinitionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -149,11 +152,12 @@ class Workflows:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/workflows/limits/max-allowed'
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetMaxAllowedLimitResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -177,11 +181,12 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetWorkflowClosingReasonsRequest, base_url, '/v1/workflows/definitions/{definitionId}/closing-reasons', request)
-        
+        headers = {}
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url)
+        http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetWorkflowClosingReasonsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -201,13 +206,13 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.SetWorkflowClosingReasonsRequest, base_url, '/v1/workflows/definitions/{definitionId}/closing-reasons', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "closing_reasons_ids", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -227,13 +232,13 @@ class Workflows:
         base_url = self._server_url
         
         url = utils.generate_url(operations.UpdateDefinitionRequest, base_url, '/v1/workflows/definitions/{definitionId}', request)
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "workflow_definition", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
