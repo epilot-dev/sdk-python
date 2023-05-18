@@ -30,11 +30,11 @@ class Files:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/files/delete'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -54,12 +54,13 @@ class Files:
         base_url = self._server_url
         
         url = utils.generate_url(operations.DownloadFileRequest, base_url, '/v1/files/{id}/download', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.DownloadFileRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DownloadFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -79,12 +80,13 @@ class Files:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/files:downloadS3'
-        
+        headers = {}
         query_params = utils.get_query_params(operations.DownloadS3FileRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('POST', url, params=query_params)
+        http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.DownloadS3FileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -104,12 +106,13 @@ class Files:
         base_url = self._server_url
         
         url = utils.generate_url(operations.PreviewFileRequest, base_url, '/v1/files/{id}/preview', request)
-        
+        headers = {}
         query_params = utils.get_query_params(operations.PreviewFileRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
-        http_res = client.request('GET', url, params=query_params)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.PreviewFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -125,12 +128,12 @@ class Files:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/files:previewS3'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "s3_reference", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.PreviewS3FileRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -154,11 +157,11 @@ class Files:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/files'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -184,12 +187,12 @@ class Files:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/files/upload'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "upload_file_payload", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.UploadFileRequest, request)
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
@@ -215,11 +218,11 @@ class Files:
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v1/files/public/upload'
-        
         headers = {}
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
         
