@@ -6,4 +6,4 @@ from .s3reference import *
 from .security import *
 from .uploadfilepayload import *
 
-__all__ = ["DeleteFilePayload","FileEntity","FileEntityAccessControlEnum","FileEntityTypeEnum","FileEntityVersions","S3Reference","Security","UploadFilePayload"]
+__all__ = ["DeleteFilePayload","FileEntity","FileEntityAccessControl","FileEntityType","FileEntityVersions","S3Reference","Security","UploadFilePayload"]
