@@ -20,8 +20,8 @@ class Epilot:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.15.0"
-    _gen_version: str = "2.30.0"
+    _sdk_version: str = "1.16.0"
+    _gen_version: str = "2.31.0"
 
     def __init__(self,
                  server_url: str = None,
@@ -64,6 +64,7 @@ class Epilot:
         
         url = base_url.removesuffix('/') + '/.well-known/jwks.json'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._client
@@ -92,6 +93,7 @@ class Epilot:
         
         url = base_url.removesuffix('/') + '/.well-known/openid-configuration'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._client
@@ -140,6 +142,7 @@ class Epilot:
         
         url = base_url.removesuffix('/') + '/auth'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -193,6 +196,7 @@ class Epilot:
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
