@@ -3,6 +3,6 @@
 from __future__ import annotations
 from enum import Enum
 
-class ClosingReasonsStatusEnum(str, Enum):
+class ClosingReasonsStatus(str, Enum):
     ACTIVE = 'ACTIVE'
     INACTIVE = 'INACTIVE'

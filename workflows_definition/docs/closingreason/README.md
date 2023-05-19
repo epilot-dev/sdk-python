@@ -24,7 +24,7 @@ s = sdk.SDK(
 
 req = operations.ChangeReasonStatusRequest(
     change_reason_status_req=shared.ChangeReasonStatusReq(
-        status=shared.ClosingReasonsStatusEnum.INACTIVE,
+        status=shared.ClosingReasonsStatus.INACTIVE,
     ),
     reason_id='quibusdam',
 )
@@ -55,7 +55,7 @@ req = shared.ClosingReason(
     creation_time='unde',
     id='d8d69a67-4e0f-4467-8c87-96ed151a05df',
     last_update_time='quo',
-    status=shared.ClosingReasonsStatusEnum.ACTIVE,
+    status=shared.ClosingReasonsStatus.ACTIVE,
     title='Dr.',
 )
 

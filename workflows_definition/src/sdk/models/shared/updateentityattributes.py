@@ -6,7 +6,7 @@ from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
 
-class UpdateEntityAttributesSourceEnum(str, Enum):
+class UpdateEntityAttributesSource(str, Enum):
     WORKFLOW_STATUS = 'workflow_status'
     CURRENT_SECTION = 'current_section'
     CURRENT_STEP = 'current_step'
@@ -24,6 +24,6 @@ class UpdateEntityAttributesTarget:
 @dataclasses.dataclass
 class UpdateEntityAttributes:
     
-    source: UpdateEntityAttributesSourceEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})
+    source: UpdateEntityAttributesSource = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})
     target: UpdateEntityAttributesTarget = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
     

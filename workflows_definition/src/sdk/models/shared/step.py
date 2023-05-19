@@ -4,9 +4,9 @@ from __future__ import annotations
 import dataclasses
 from ..shared import dynamicduedate as shared_dynamicduedate
 from ..shared import ecpdetails as shared_ecpdetails
-from ..shared import itemtype_enum as shared_itemtype_enum
+from ..shared import itemtype as shared_itemtype
 from ..shared import steprequirement as shared_steprequirement
-from ..shared import steptype_enum as shared_steptype_enum
+from ..shared import steptype as shared_steptype
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import Optional
@@ -27,7 +27,7 @@ class Step:
     
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     order: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order') }})
-    type: shared_itemtype_enum.ItemTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: shared_itemtype.ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     automation_config: Optional[StepAutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})
     due_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dueDate'), 'exclude': lambda f: f is None }})
@@ -35,7 +35,7 @@ class Step:
     r"""set a Duedate for a step then a specific"""
     ecp: Optional[shared_ecpdetails.ECPDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ecp'), 'exclude': lambda f: f is None }})
     r"""Details regarding ECP for the workflow step"""
-    execution_type: Optional[shared_steptype_enum.StepTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
+    execution_type: Optional[shared_steptype.StepType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     requirements: Optional[list[shared_steprequirement.StepRequirement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements'), 'exclude': lambda f: f is None }})
     r"""requirements that need to be fulfilled in order to enable the step execution"""
