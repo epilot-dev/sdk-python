@@ -4,4 +4,4 @@ from .searchjourneysqueryrequest import *
 from .searchjourneysresponse import *
 from .security import *
 
-__all__ = ["SearchJourneysQueryRequest","SearchJourneysResponse","SearchJourneysResponseResults","SearchJourneysResponseResultsCreatedBy","SearchJourneysResponseResultsJourneyVersionEnum","Security"]
+__all__ = ["SearchJourneysQueryRequest","SearchJourneysResponse","SearchJourneysResponseResults","SearchJourneysResponseResultsCreatedBy","SearchJourneysResponseResultsJourneyVersion","Security"]

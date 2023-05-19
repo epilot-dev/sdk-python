@@ -18,7 +18,7 @@ class SearchJourneysResponseResultsCreatedBy:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""User ID"""
     
-class SearchJourneysResponseResultsJourneyVersionEnum(str, Enum):
+class SearchJourneysResponseResultsJourneyVersion(str, Enum):
     r"""Journey Version"""
     FLEX = 'Flex'
     WIDGET = 'Widget'
@@ -48,7 +48,7 @@ class SearchJourneysResponseResults:
     r"""Journey Name"""
     journey_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_type'), 'exclude': lambda f: f is None }})
     r"""Journey Template"""
-    journey_version: Optional[SearchJourneysResponseResultsJourneyVersionEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_version'), 'exclude': lambda f: f is None }})
+    journey_version: Optional[SearchJourneysResponseResultsJourneyVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_version'), 'exclude': lambda f: f is None }})
     r"""Journey Version"""
     
 
