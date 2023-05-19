@@ -43,7 +43,7 @@ req = shared.WorkflowExecutionCreateReq(
             title='Miss',
         ),
     ],
-    trigger=shared.TriggerTypeEnum.AUTOMATIC,
+    trigger=shared.TriggerType.AUTOMATIC,
     workflow_id='sapiente',
 )
 

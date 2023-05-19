@@ -5,10 +5,10 @@ import dataclasses
 from ..shared import closingreason as shared_closingreason
 from ..shared import dynamicduedate as shared_dynamicduedate
 from ..shared import stepid as shared_stepid
-from ..shared import triggertype_enum as shared_triggertype_enum
+from ..shared import triggertype as shared_triggertype
 from ..shared import updateentityattributes as shared_updateentityattributes
 from ..shared import workflowcontext as shared_workflowcontext
-from ..shared import workflowstatus_enum as shared_workflowstatus_enum
+from ..shared import workflowstatus as shared_workflowstatus
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Optional
@@ -41,8 +41,8 @@ class WorkflowExecutionSlim:
     next_open_step: Optional[shared_stepid.StepID] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextOpenStep'), 'exclude': lambda f: f is None }})
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId'), 'exclude': lambda f: f is None }})
     selected_closing_reasons: Optional[list[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('selectedClosingReasons'), 'exclude': lambda f: f is None }})
-    status: Optional[shared_workflowstatus_enum.WorkflowStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
-    trigger: Optional[shared_triggertype_enum.TriggerTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger'), 'exclude': lambda f: f is None }})
+    status: Optional[shared_workflowstatus.WorkflowStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    trigger: Optional[shared_triggertype.TriggerType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger'), 'exclude': lambda f: f is None }})
     update_entity_attributes: Optional[list[shared_updateentityattributes.UpdateEntityAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateEntityAttributes'), 'exclude': lambda f: f is None }})
     version: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version'), 'exclude': lambda f: f is None }})
     r"""Version of the workflow execution"""

@@ -3,7 +3,6 @@
 from __future__ import annotations
 from enum import Enum
 
-class WorkflowStatusEnum(str, Enum):
-    STARTED = 'STARTED'
-    DONE = 'DONE'
-    CLOSED = 'CLOSED'
+class StepType(str, Enum):
+    MANUAL = 'MANUAL'
+    AUTOMATION = 'AUTOMATION'

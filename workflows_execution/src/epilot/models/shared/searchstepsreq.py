@@ -3,13 +3,13 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import searchpagination as shared_searchpagination
-from ..shared import searchsorting_enum as shared_searchsorting_enum
+from ..shared import searchsorting as shared_searchsorting
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class SearchStepsReqStatusEnum(str, Enum):
+class SearchStepsReqStatus(str, Enum):
     OPEN = 'OPEN'
     COMPLETE = 'COMPLETE'
     NEXT_OPEN_ITEM_IN_WORKFLOW = 'NEXT_OPEN_ITEM_IN_WORKFLOW'
@@ -25,7 +25,7 @@ class SearchStepsReq:
     include_done_workflows: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDoneWorkflows'), 'exclude': lambda f: f is None }})
     manually_created: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manuallyCreated'), 'exclude': lambda f: f is None }})
     pagination: Optional[shared_searchpagination.SearchPagination] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagination'), 'exclude': lambda f: f is None }})
-    sorting: Optional[shared_searchsorting_enum.SearchSortingEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sorting'), 'exclude': lambda f: f is None }})
-    status: Optional[SearchStepsReqStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    sorting: Optional[shared_searchsorting.SearchSorting] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sorting'), 'exclude': lambda f: f is None }})
+    status: Optional[SearchStepsReqStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     step_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepName'), 'exclude': lambda f: f is None }})
     

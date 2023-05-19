@@ -5,7 +5,7 @@ import dataclasses
 from ..shared import automationconfig as shared_automationconfig
 from ..shared import dynamicduedate as shared_dynamicduedate
 from ..shared import steppositionat as shared_steppositionat
-from ..shared import stepstatus_enum as shared_stepstatus_enum
+from ..shared import stepstatus as shared_stepstatus
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -27,7 +27,7 @@ class UpdateStepReq:
     r"""set a Duedate for a step then a specific"""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     position: Optional[shared_steppositionat.StepPositionAt] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('position'), 'exclude': lambda f: f is None }})
-    status: Optional[shared_stepstatus_enum.StepStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[shared_stepstatus.StepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
     r"""This field is deprecated. Please use assignedTo"""
     

@@ -45,7 +45,7 @@ req = shared.WorkflowExecutionCreateReq(
             title='Dr.',
         ),
     ],
-    trigger=shared.TriggerTypeEnum.MANUAL,
+    trigger=shared.TriggerType.MANUAL,
     workflow_id='praesentium',
 )
 
@@ -78,11 +78,11 @@ req = operations.CreateStepRequest(
             execution_status='ipsa',
             flow_id='omnis',
         ),
-        execution_type=shared.StepTypeEnum.MANUAL,
+        execution_type=shared.StepType.MANUAL,
         insertion_index=7392.64,
         name='Sharon Kiehn',
         section_id='dicta',
-        status=shared.StepStatusEnum.ASSIGNED,
+        status=shared.StepStatus.ASSIGNED,
     ),
     execution_id='dolore',
 )
@@ -252,8 +252,8 @@ req = shared.SearchExecutionsReq(
         creation_time='modi',
         org_id='praesentium',
     ),
-    sorting=shared.SearchSortingEnum.DUE_DATE_DESC,
-    status=shared.WorkflowStatusEnum.CLOSED,
+    sorting=shared.SearchSorting.DUE_DATE_DESC,
+    status=shared.WorkflowStatus.CLOSED,
 )
 
 res = s.workflows.search_executions(req)
@@ -287,8 +287,8 @@ req = shared.SearchStepsReq(
         from_=5759.47,
         size=831.12,
     ),
-    sorting=shared.SearchSortingEnum.TRIGGER_DATE_DESC,
-    status=shared.SearchStepsReqStatusEnum.OPEN,
+    sorting=shared.SearchSorting.TRIGGER_DATE_DESC,
+    status=shared.SearchStepsReqStatus.OPEN,
     step_name='enim',
 )
 
@@ -340,10 +340,10 @@ req = operations.UpdateExecutionRequest(
         ],
         due_date='doloribus',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeConditionEnum.STEP_CLOSED,
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
             number_of_units=2603.41,
             step_id='maxime',
-            time_period=shared.DynamicDueDateTimePeriodEnum.WEEKS,
+            time_period=shared.DynamicDueDateTimePeriod.WEEKS,
         ),
         selected_closing_reasons=[
             shared.ClosingReason(
@@ -359,7 +359,7 @@ req = operations.UpdateExecutionRequest(
                 title='Dr.',
             ),
         ],
-        status=shared.WorkflowStatusEnum.DONE,
+        status=shared.WorkflowStatus.DONE,
     ),
     execution_id='cum',
 )
@@ -400,10 +400,10 @@ req = operations.UpdateStepRequest(
         ),
         due_date='ipsa',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeConditionEnum.WORKFLOW_STARTED,
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
             number_of_units=4344.17,
             step_id='odio',
-            time_period=shared.DynamicDueDateTimePeriodEnum.DAYS,
+            time_period=shared.DynamicDueDateTimePeriod.DAYS,
         ),
         entity_ref_id='accusamus',
         name='Jan Hodkiewicz',
@@ -411,7 +411,7 @@ req = operations.UpdateStepRequest(
             index=5424.99,
             section_id='sit',
         ),
-        status=shared.StepStatusEnum.IN_PROGRESS,
+        status=shared.StepStatus.IN_PROGRESS,
         user_ids=[
             7438.35,
         ],

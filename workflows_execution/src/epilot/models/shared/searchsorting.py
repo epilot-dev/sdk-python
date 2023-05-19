@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class SearchSortingEnum(str, Enum):
+class SearchSorting(str, Enum):
     A_Z = 'A_Z'
     Z_A = 'Z_A'
     DUE_DATE_ASC = 'DUE_DATE_ASC'

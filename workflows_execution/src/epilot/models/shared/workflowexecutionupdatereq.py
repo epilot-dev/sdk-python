@@ -5,7 +5,7 @@ import dataclasses
 from ..shared import closingreason as shared_closingreason
 from ..shared import dynamicduedate as shared_dynamicduedate
 from ..shared import workflowcontext as shared_workflowcontext
-from ..shared import workflowstatus_enum as shared_workflowstatus_enum
+from ..shared import workflowstatus as shared_workflowstatus
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -25,5 +25,5 @@ class WorkflowExecutionUpdateReq:
     dynamic_due_date: Optional[shared_dynamicduedate.DynamicDueDate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dynamicDueDate'), 'exclude': lambda f: f is None }})
     r"""set a Duedate for a step then a specific"""
     selected_closing_reasons: Optional[list[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('selectedClosingReasons'), 'exclude': lambda f: f is None }})
-    status: Optional[shared_workflowstatus_enum.WorkflowStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[shared_workflowstatus.WorkflowStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     

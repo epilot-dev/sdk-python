@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class StepStatusEnum(str, Enum):
+class StepStatus(str, Enum):
     UNASSIGNED = 'UNASSIGNED'
     ASSIGNED = 'ASSIGNED'
     COMPLETED = 'COMPLETED'
