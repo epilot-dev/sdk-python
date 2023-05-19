@@ -82,7 +82,7 @@ s = epilot.Epilot(
 req = operations.GenerateDocumentV2Request(
     request_body=operations.GenerateDocumentV2RequestBody(
         context_entity_id='bcd0aab9-b544-42b0-8bfb-6d449d02eacc',
-        language=operations.GenerateDocumentV2RequestBodyLanguageEnum.DE,
+        language=operations.GenerateDocumentV2RequestBodyLanguage.DE,
         template_document=operations.GenerateDocumentV2RequestBodyTemplateDocument(
             filename='my-template-{{order.order_number}}.docx',
             s3ref=shared.S3Reference(
@@ -96,7 +96,7 @@ req = operations.GenerateDocumentV2Request(
         ),
     ),
     job_id='provident',
-    mode=operations.GenerateDocumentV2ModeEnum.FULL_GENERATION,
+    mode=operations.GenerateDocumentV2Mode.FULL_GENERATION,
 )
 
 res = s.documents.generate_document_v2(req)

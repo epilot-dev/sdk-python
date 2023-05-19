@@ -9,7 +9,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class GenerateDocumentV2RequestBodyLanguageEnum(str, Enum):
+class GenerateDocumentV2RequestBodyLanguage(str, Enum):
     r"""Language to use"""
     EN = 'en'
     DE = 'de'
@@ -41,14 +41,14 @@ class GenerateDocumentV2RequestBody:
     r"""Input template document"""
     context_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_entity_id'), 'exclude': lambda f: f is None }})
     r"""Entity to use for variable context"""
-    language: Optional[GenerateDocumentV2RequestBodyLanguageEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    language: Optional[GenerateDocumentV2RequestBodyLanguage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language to use"""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
     r"""User Id for variable context"""
     variable_payload: Optional[GenerateDocumentV2RequestBodyVariablePayload] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('variable_payload'), 'exclude': lambda f: f is None }})
     r"""Custom values for variables in the template. Takes the higher precedence than others."""
     
-class GenerateDocumentV2ModeEnum(str, Enum):
+class GenerateDocumentV2Mode(str, Enum):
     r"""Type of mode used for document generation flow.
     Partial - Will have a intermediate step for users to validate and replace the variable values before generating the final document.
     Full - Goes through all the steps for the full generation of final document
@@ -62,7 +62,7 @@ class GenerateDocumentV2Request:
     
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'job_id', 'style': 'form', 'explode': True }})
     r"""Job ID for tracking the status of document generation action"""
-    mode: Optional[GenerateDocumentV2ModeEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'mode', 'style': 'form', 'explode': True }})
+    mode: Optional[GenerateDocumentV2Mode] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'mode', 'style': 'form', 'explode': True }})
     r"""Type of mode used for document generation flow.
     Partial - Will have a intermediate step for users to validate and replace the variable values before generating the final document.
     Full - Goes through all the steps for the full generation of final document
@@ -87,7 +87,7 @@ class GenerateDocumentV2200ApplicationJSONDocxOutput:
     preview_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview_url'), 'exclude': lambda f: f is None }})
     r"""Pre-signed S3 GET URL for DOCX preview"""
     
-class GenerateDocumentV2200ApplicationJSONJobStatusEnum(str, Enum):
+class GenerateDocumentV2200ApplicationJSONJobStatus(str, Enum):
     r"""Status of the job"""
     STARTED = 'STARTED'
     PROCESSING = 'PROCESSING'
@@ -128,7 +128,7 @@ class GenerateDocumentV2200ApplicationJSON:
     
     docx_output: Optional[GenerateDocumentV2200ApplicationJSONDocxOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('docx_output'), 'exclude': lambda f: f is None }})
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_id'), 'exclude': lambda f: f is None }})
-    job_status: Optional[GenerateDocumentV2200ApplicationJSONJobStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_status'), 'exclude': lambda f: f is None }})
+    job_status: Optional[GenerateDocumentV2200ApplicationJSONJobStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('job_status'), 'exclude': lambda f: f is None }})
     r"""Status of the job"""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     r"""A message explaining the progress"""
