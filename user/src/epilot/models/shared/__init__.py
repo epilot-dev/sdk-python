@@ -11,4 +11,4 @@ from .userinvitationpayload import *
 from .userv2 import *
 from .userverificationpayload import *
 
-__all__ = ["LoginParameters","LoginParametersOauthResponseTypeEnum","Organization","OrganizationAddress","OrganizationTypeEnum","Security","SignupUserPayload","SignupUserPayloadLanguageEnum","User","UserActivationPayload","UserDetail","UserInvitationPayload","UserInvitationPayloadLanguageEnum","UserProperties","UserV2","UserV2Properties","UserV2StatusEnum","UserVerificationPayload"]
+__all__ = ["LoginParameters","LoginParametersOauthResponseType","Organization","OrganizationAddress","OrganizationType","Security","SignupUserPayload","SignupUserPayloadLanguage","User","UserActivationPayload","UserDetail","UserInvitationPayload","UserInvitationPayloadLanguage","UserProperties","UserV2","UserV2Properties","UserV2Status","UserVerificationPayload"]

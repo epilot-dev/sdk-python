@@ -167,7 +167,7 @@ s = epilot.Epilot(
 
 req = shared.UserInvitationPayload(
     email='test@example.com',
-    language=shared.UserInvitationPayloadLanguageEnum.DE,
+    language=shared.UserInvitationPayloadLanguage.DE,
     roles=[
         '123:owner',
     ],
@@ -225,7 +225,7 @@ s = epilot.Epilot(
 
 req = operations.ResendUserInvitationRequestBody(
     email='test@example.com',
-    language=operations.ResendUserInvitationRequestBodyLanguageEnum.DE,
+    language=operations.ResendUserInvitationRequestBodyLanguage.DE,
 )
 
 res = s.user_v2.resend_user_invitation(req)
@@ -252,7 +252,7 @@ s = epilot.Epilot(
 
 req = operations.SignUpUserRequest(
     signup_user_payload=shared.SignupUserPayload(
-        language=shared.SignupUserPayloadLanguageEnum.DE,
+        language=shared.SignupUserPayloadLanguage.DE,
         organization_detail={
             "commodi": 'quam',
             "molestiae": 'velit',
@@ -314,7 +314,7 @@ req = operations.UpdateUserV2Request(
             ),
         ],
         signature='<p>Thanks</p>',
-        status=shared.UserV2StatusEnum.DELETED,
+        status=shared.UserV2Status.DELETED,
         token='65dc527f-cb2d-4158-8f2e-8978dbceb599',
     ),
     id='91e450ad-2abd-4442-a980-2d502a94bb4f',

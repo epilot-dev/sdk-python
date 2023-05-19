@@ -31,6 +31,7 @@ class UserV1:
         
         url = base_url.removesuffix('/') + '/v1/users/me'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -56,6 +57,7 @@ class UserV1:
         
         url = utils.generate_url(operations.GetUserRequest, base_url, '/v1/users/{id}', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -81,6 +83,7 @@ class UserV1:
         
         url = utils.generate_url(operations.GetUserLoginParametersRequest, base_url, '/v1/users/username/{username}:getLoginParameters', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -107,6 +110,7 @@ class UserV1:
         url = base_url.removesuffix('/') + '/v1/users'
         headers = {}
         query_params = utils.get_query_params(operations.ListUsersRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

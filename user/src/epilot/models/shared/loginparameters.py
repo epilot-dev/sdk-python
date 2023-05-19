@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class LoginParametersOauthResponseTypeEnum(str, Enum):
+class LoginParametersOauthResponseType(str, Enum):
     CODE = 'code'
     TOKEN = 'token'
 
@@ -22,7 +22,7 @@ class LoginParameters:
     cognito_region: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_region'), 'exclude': lambda f: f is None }})
     cognito_user_pool_client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_user_pool_client_id'), 'exclude': lambda f: f is None }})
     cognito_user_pool_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_user_pool_id'), 'exclude': lambda f: f is None }})
-    oauth_response_type: Optional[LoginParametersOauthResponseTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauth_response_type'), 'exclude': lambda f: f is None }})
+    oauth_response_type: Optional[LoginParametersOauthResponseType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('oauth_response_type'), 'exclude': lambda f: f is None }})
     organization_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id'), 'exclude': lambda f: f is None }})
     organization_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_name'), 'exclude': lambda f: f is None }})
     organization_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_type'), 'exclude': lambda f: f is None }})

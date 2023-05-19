@@ -9,7 +9,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class ResendUserInvitationRequestBodyLanguageEnum(str, Enum):
+class ResendUserInvitationRequestBodyLanguage(str, Enum):
     r"""Language for user invitation email"""
     EN = 'en'
     DE = 'de'
@@ -21,7 +21,7 @@ class ResendUserInvitationRequestBody:
     
     email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
     r"""Email address of the address"""
-    language: Optional[ResendUserInvitationRequestBodyLanguageEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    language: Optional[ResendUserInvitationRequestBodyLanguage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language for user invitation email"""
     
 

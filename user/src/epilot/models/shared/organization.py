@@ -18,7 +18,7 @@ class OrganizationAddress:
     street: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street'), 'exclude': lambda f: f is None }})
     street_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('street_number'), 'exclude': lambda f: f is None }})
     
-class OrganizationTypeEnum(str, Enum):
+class OrganizationType(str, Enum):
     VENDOR = 'Vendor'
     PARTNER = 'Partner'
 
@@ -38,6 +38,6 @@ class Organization:
     pricing_tier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pricing_tier'), 'exclude': lambda f: f is None }})
     signature: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signature'), 'exclude': lambda f: f is None }})
     symbol: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('symbol'), 'exclude': lambda f: f is None }})
-    type: Optional[OrganizationTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[OrganizationType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     website: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website'), 'exclude': lambda f: f is None }})
     

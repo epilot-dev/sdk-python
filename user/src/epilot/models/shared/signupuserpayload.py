@@ -8,7 +8,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
-class SignupUserPayloadLanguageEnum(str, Enum):
+class SignupUserPayloadLanguage(str, Enum):
     r"""Language for user invitation email"""
     EN = 'en'
     DE = 'de'
@@ -18,7 +18,7 @@ class SignupUserPayloadLanguageEnum(str, Enum):
 @dataclasses.dataclass
 class SignupUserPayload:
     
-    language: Optional[SignupUserPayloadLanguageEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    language: Optional[SignupUserPayloadLanguage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language for user invitation email"""
     organization_detail: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_detail'), 'exclude': lambda f: f is None }})
     user_detail: Optional[shared_userdetail.UserDetail] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_detail'), 'exclude': lambda f: f is None }})
