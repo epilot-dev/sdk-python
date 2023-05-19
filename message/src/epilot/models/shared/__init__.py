@@ -8,4 +8,4 @@ from .messagerequestparams import *
 from .searchparams import *
 from .security import *
 
-__all__ = ["Address","AddressSendStatusEnum","AttachmentsRelation","File","Message","MessageRequestParams","MessageRequestParamsThread","MessageSendStatusEnum","MessageTypeEnum","SearchParams","Security"]
+__all__ = ["Address","AddressSendStatus","AttachmentsRelation","File","Message","MessageRequestParams","MessageRequestParamsThread","MessageSendStatus","MessageType","SearchParams","Security"]

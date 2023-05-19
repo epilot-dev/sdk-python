@@ -19,7 +19,7 @@ req = shared.MessageRequestParams(
                 "unde": 'nulla',
                 "corrupti": 'illum',
             },
-            send_status=shared.AddressSendStatusEnum.REJECT,
+            send_status=shared.AddressSendStatus.REJECT,
         ),
         shared.Address(
             address='messaging@epilot.cloud',
@@ -29,7 +29,7 @@ req = shared.MessageRequestParams(
                 "iure": 'magnam',
                 "debitis": 'ipsa',
             },
-            send_status=shared.AddressSendStatusEnum.ERROR,
+            send_status=shared.AddressSendStatus.ERROR,
         ),
         shared.Address(
             address='messaging@epilot.cloud',
@@ -38,7 +38,7 @@ req = shared.MessageRequestParams(
                 "suscipit": 'molestiae',
                 "minus": 'placeat',
             },
-            send_status=shared.AddressSendStatusEnum.COMPLAINT,
+            send_status=shared.AddressSendStatus.COMPLAINT,
         ),
     ],
     cc=[
@@ -50,7 +50,7 @@ req = shared.MessageRequestParams(
                 "temporibus": 'ab',
                 "quis": 'veritatis',
             },
-            send_status=shared.AddressSendStatusEnum.COMPLAINT,
+            send_status=shared.AddressSendStatus.COMPLAINT,
         ),
         shared.Address(
             address='messaging@epilot.cloud',
@@ -58,7 +58,7 @@ req = shared.MessageRequestParams(
             send_error={
                 "ipsam": 'repellendus',
             },
-            send_status=shared.AddressSendStatusEnum.ERROR,
+            send_status=shared.AddressSendStatus.ERROR,
         ),
     ],
     file=shared.AttachmentsRelation(
@@ -103,7 +103,7 @@ req = shared.MessageRequestParams(
         send_error={
             "at": 'at',
         },
-        send_status=shared.AddressSendStatusEnum.ERROR,
+        send_status=shared.AddressSendStatus.ERROR,
     ),
     html='<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>',
     parent_id='44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2',
@@ -114,7 +114,7 @@ req = shared.MessageRequestParams(
             "quod": 'quod',
             "esse": 'totam',
         },
-        send_status=shared.AddressSendStatusEnum.BOUNCE,
+        send_status=shared.AddressSendStatus.BOUNCE,
     ),
     subject='Request for solar panel price',
     text='We at ABC GmbH would like to request a price quote for the solar panel.',
@@ -135,7 +135,7 @@ req = shared.MessageRequestParams(
                 "totam": 'beatae',
                 "commodi": 'molestiae',
             },
-            send_status=shared.AddressSendStatusEnum.DELIVERY,
+            send_status=shared.AddressSendStatus.DELIVERY,
         ),
     ],
 )

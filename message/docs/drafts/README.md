@@ -32,7 +32,7 @@ req = shared.MessageRequestParams(
                 "aspernatur": 'perferendis',
                 "ad": 'natus',
             },
-            send_status=shared.AddressSendStatusEnum.SEND,
+            send_status=shared.AddressSendStatus.SEND,
         ),
     ],
     cc=[
@@ -42,7 +42,7 @@ req = shared.MessageRequestParams(
             send_error={
                 "natus": 'laboriosam',
             },
-            send_status=shared.AddressSendStatusEnum.ERROR,
+            send_status=shared.AddressSendStatus.ERROR,
         ),
         shared.Address(
             address='messaging@epilot.cloud',
@@ -53,7 +53,7 @@ req = shared.MessageRequestParams(
                 "iure": 'saepe',
                 "quidem": 'architecto',
             },
-            send_status=shared.AddressSendStatusEnum.SEND,
+            send_status=shared.AddressSendStatus.SEND,
         ),
         shared.Address(
             address='messaging@epilot.cloud',
@@ -64,7 +64,7 @@ req = shared.MessageRequestParams(
                 "dolorem": 'corporis',
                 "explicabo": 'nobis',
             },
-            send_status=shared.AddressSendStatusEnum.DELIVERY,
+            send_status=shared.AddressSendStatus.DELIVERY,
         ),
     ],
     file=shared.AttachmentsRelation(
@@ -102,7 +102,7 @@ req = shared.MessageRequestParams(
             "minima": 'excepturi',
             "accusantium": 'iure',
         },
-        send_status=shared.AddressSendStatusEnum.COMPLAINT,
+        send_status=shared.AddressSendStatus.COMPLAINT,
     ),
     html='<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>',
     parent_id='44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2',
@@ -115,7 +115,7 @@ req = shared.MessageRequestParams(
             "culpa": 'consequuntur',
             "repellat": 'mollitia',
         },
-        send_status=shared.AddressSendStatusEnum.COMPLAINT,
+        send_status=shared.AddressSendStatus.COMPLAINT,
     ),
     subject='Request for solar panel price',
     text='We at ABC GmbH would like to request a price quote for the solar panel.',
@@ -135,7 +135,7 @@ req = shared.MessageRequestParams(
                 "vitae": 'laborum',
                 "animi": 'enim',
             },
-            send_status=shared.AddressSendStatusEnum.SEND,
+            send_status=shared.AddressSendStatus.SEND,
         ),
     ],
 )

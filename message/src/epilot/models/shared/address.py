@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
-class AddressSendStatusEnum(str, Enum):
+class AddressSendStatus(str, Enum):
     r"""Sent message status regarding to this recipient.\ 
     Reference at <https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html>
     """
@@ -31,7 +31,7 @@ class Address:
     r"""Information about reject, complaint or bounce event. Only available if `send_status` is REJECT, COMPLAINT, BOUNCE or ERROR.\ 
     JSON object is defined by AWS SES. Reference at <https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notification-contents.html>
     """
-    send_status: Optional[AddressSendStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('send_status'), 'exclude': lambda f: f is None }})
+    send_status: Optional[AddressSendStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('send_status'), 'exclude': lambda f: f is None }})
     r"""Sent message status regarding to this recipient.\ 
     Reference at <https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html>
     """

@@ -9,7 +9,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class MessageSendStatusEnum(str, Enum):
+class MessageSendStatus(str, Enum):
     SEND = 'SEND'
     DELIVERY = 'DELIVERY'
     REJECT = 'REJECT'
@@ -17,7 +17,7 @@ class MessageSendStatusEnum(str, Enum):
     BOUNCE = 'BOUNCE'
     ERROR = 'ERROR'
 
-class MessageTypeEnum(str, Enum):
+class MessageType(str, Enum):
     r"""Message type"""
     SENT = 'SENT'
     RECEIVED = 'RECEIVED'
@@ -50,7 +50,7 @@ class Message:
     The basic idea is that sender should copy `references` from the parent and append the parent's `message_id` when replying.
     """
     reply_to: Optional[shared_address.Address] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reply_to'), 'exclude': lambda f: f is None }})
-    send_status: Optional[list[MessageSendStatusEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('send_status'), 'exclude': lambda f: f is None }})
+    send_status: Optional[list[MessageSendStatus]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('send_status'), 'exclude': lambda f: f is None }})
     r"""Sent message status. The array contains sending message status corresponding to all recipients. For more detail, check `send_status` of each recipient in `to`, `cc`, `bcc`\ 
     Reference at <https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html>
     """
@@ -60,7 +60,7 @@ class Message:
     r"""Text body"""
     to: Optional[list[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('to'), 'exclude': lambda f: f is None }})
     r"""To email addresses"""
-    type: Optional[MessageTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[MessageType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Message type"""
     user_read_message: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_read_message'), 'exclude': lambda f: f is None }})
     r"""Ivy User ID of user read the message."""
