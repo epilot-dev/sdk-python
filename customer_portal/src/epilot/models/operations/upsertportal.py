@@ -5,7 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import addportalresp as shared_addportalresp
 from ..shared import errorresp as shared_errorresp
-from ..shared import origin_enum as shared_origin_enum
+from ..shared import origin as shared_origin
 from ..shared import upsertportalconfig as shared_upsertportalconfig
 from typing import Optional
 
@@ -21,7 +21,7 @@ class UpsertPortalRequest:
     
     upsert_portal_config: shared_upsertportalconfig.UpsertPortalConfig = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Portal payload"""
-    origin: Optional[shared_origin_enum.OriginEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    origin: Optional[shared_origin.Origin] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
 

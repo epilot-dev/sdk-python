@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import grant as shared_grant
-from ..shared import origin_enum as shared_origin_enum
+from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Optional
@@ -83,7 +83,7 @@ class PortalConfig:
     is_epilot_domain: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_epilot_domain'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     org_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_name'), 'exclude': lambda f: f is None }})
-    origin: Optional[shared_origin_enum.OriginEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin'), 'exclude': lambda f: f is None }})
+    origin: Optional[shared_origin.Origin] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin'), 'exclude': lambda f: f is None }})
     r"""Origin of the portal"""
     self_registration: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration'), 'exclude': lambda f: f is None }})
     r"""Whether portal user has self registration"""

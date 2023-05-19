@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class OriginEnum(str, Enum):
+class Origin(str, Enum):
     r"""Origin of the portal"""
     END_CUSTOMER_PORTAL = 'END_CUSTOMER_PORTAL'
     INSTALLER_PORTAL = 'INSTALLER_PORTAL'

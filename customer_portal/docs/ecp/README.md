@@ -324,7 +324,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalConfigRequest(
-    origin=shared.OriginEnum.INSTALLER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -426,7 +426,7 @@ req = shared.SaveEntityFile(
                 '12345',
                 '12345',
             ],
-            access_control=shared.SaveEntityFileFilesAccessControlEnum.PRIVATE,
+            access_control=shared.SaveEntityFileFilesAccessControl.PRIVATE,
             document_type='12345',
             file_entity_id='12345',
             filename='12345',
@@ -442,7 +442,7 @@ req = shared.SaveEntityFile(
                 '12345',
                 '12345',
             ],
-            access_control=shared.SaveEntityFileFilesAccessControlEnum.PRIVATE,
+            access_control=shared.SaveEntityFileFilesAccessControl.PRIVATE,
             document_type='12345',
             file_entity_id='12345',
             filename='12345',

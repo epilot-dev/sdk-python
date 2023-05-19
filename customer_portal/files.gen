@@ -57,7 +57,7 @@ src/epilot/models/shared/deleteentityfile.py
 src/epilot/models/shared/errorresp.py
 src/epilot/models/shared/organizationsettings.py
 src/epilot/models/shared/portalconfig.py
-src/epilot/models/shared/origin_enum.py
+src/epilot/models/shared/origin.py
 src/epilot/models/shared/grant.py
 src/epilot/models/shared/saveentityfile.py
 src/epilot/models/shared/extraschemaattributes.py

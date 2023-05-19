@@ -36,7 +36,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.ConfigureDistributionRequest(
-    origin=shared.OriginEnum.INSTALLER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.configure_distribution(req, operations.ConfigureDistributionSecurity(
@@ -65,7 +65,7 @@ req = operations.CreateSSOUserRequest(
         first_name='John',
         last_name='Doe',
     ),
-    origin=shared.OriginEnum.INSTALLER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.create_sso_user(req, operations.CreateSSOUserSecurity(
@@ -89,7 +89,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.DeletePortalRequest(
-    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.delete_portal(req, operations.DeletePortalSecurity(
@@ -179,7 +179,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetEmailTemplatesRequest(
-    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_email_templates(req, operations.GetEmailTemplatesSecurity(
@@ -227,7 +227,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetOrgPortalConfigRequest(
-    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_org_portal_config(req, operations.GetOrgPortalConfigSecurity(
@@ -251,7 +251,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalConfigRequest(
-    origin=shared.OriginEnum.INSTALLER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -280,7 +280,7 @@ s = epilot.Epilot(
 
 req = operations.GetPublicPortalConfigRequest(
     org_id='12324',
-    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_public_portal_config(req)
@@ -326,7 +326,7 @@ req = operations.ReplaceECPTemplateVariablesRequest(
     request_body=operations.ReplaceECPTemplateVariablesRequestBody(
         contact_id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
     ),
-    origin=shared.OriginEnum.INSTALLER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.replace_ecp_template_variables(req, operations.ReplaceECPTemplateVariablesSecurity(
@@ -380,7 +380,7 @@ req = shared.SavePortalFile(
             ),
         ),
     ],
-    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.save_portal_files(req, operations.SavePortalFilesSecurity(
@@ -411,7 +411,7 @@ req = operations.UpsertEmailTemplatesRequest(
         on_map_a_pending_user='consequuntur',
         on_new_quote='praesentium',
     ),
-    origin=shared.OriginEnum.INSTALLER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_email_templates(req, operations.UpsertEmailTemplatesSecurity(
@@ -519,7 +519,7 @@ req = operations.UpsertPortalRequest(
         grants=[
             shared.Grant(
                 action='entity-read',
-                effect=shared.GrantEffectEnum.ALLOW,
+                effect=shared.GrantEffect.ALLOW,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
         ],
@@ -532,7 +532,7 @@ req = operations.UpsertPortalRequest(
         name='My Portal',
         self_registration=False,
     ),
-    origin=shared.OriginEnum.INSTALLER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal(req, operations.UpsertPortalSecurity(

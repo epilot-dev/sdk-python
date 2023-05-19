@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import origin_enum as shared_origin_enum
+from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -32,6 +32,6 @@ class SavePortalFile:
     r"""Save portal file"""
     
     files: list[SavePortalFileFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
-    origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin') }})
+    origin: shared_origin.Origin = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin') }})
     r"""Origin of the portal"""
     

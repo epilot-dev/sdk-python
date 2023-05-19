@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import origin_enum as shared_origin_enum
+from ..shared import origin as shared_origin
 from ..shared import portalconfig as shared_portalconfig
 from typing import Optional
 
@@ -17,7 +17,7 @@ class GetOrgPortalConfigSecurity:
 @dataclasses.dataclass
 class GetOrgPortalConfigRequest:
     
-    origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
 

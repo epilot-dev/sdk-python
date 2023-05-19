@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import origin_enum as shared_origin_enum
+from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -26,7 +26,7 @@ class ReplaceECPTemplateVariablesRequestBody:
 @dataclasses.dataclass
 class ReplaceECPTemplateVariablesRequest:
     
-    origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     request_body: ReplaceECPTemplateVariablesRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""ECPVariables payload"""

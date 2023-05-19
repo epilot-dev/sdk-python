@@ -61,7 +61,7 @@ s = epilot.Epilot(
 req = operations.ConfirmUserRequest(
     id='fbb25870-5320-42c7-bd5f-e9b90c28909b',
     org_id='123',
-    origin=shared.OriginEnum.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.confirm_user(req)
@@ -94,7 +94,7 @@ req = operations.CreateUserRequest(
         password='Pass1234!',
         secondary_identifier='123456',
     ),
-    origin=shared.OriginEnum.INSTALLER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.public.create_user(req)

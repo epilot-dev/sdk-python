@@ -5,7 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import addportalresp as shared_addportalresp
 from ..shared import errorresp as shared_errorresp
-from ..shared import origin_enum as shared_origin_enum
+from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -26,7 +26,7 @@ class CreateUserRequestBody:
 @dataclasses.dataclass
 class CreateUserRequest:
     
-    origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     request_body: CreateUserRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Portal payload"""
