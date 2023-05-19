@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import accesstokentype_enum as shared_accesstokentype_enum
+from ..shared import accesstokentype as shared_accesstokentype
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
@@ -24,6 +24,6 @@ class AccessTokenItem:
     r"""List of role ids attached to an user"""
     journey_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_id'), 'exclude': lambda f: f is None }})
     r"""Journey ID for access token type \\"journey\\" """
-    token_type: Optional[shared_accesstokentype_enum.AccessTokenTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
+    token_type: Optional[shared_accesstokentype.AccessTokenType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
     r"""Access token type"""
     

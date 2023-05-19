@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class AccessTokenParametersTokenTypeEnum(str, Enum):
+class AccessTokenParametersTokenType(str, Enum):
     API = 'api'
 
 
@@ -19,5 +19,5 @@ class AccessTokenParameters:
     r"""Human readable name for access token"""
     assignments: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
     r"""List of role ids attached to an user"""
-    token_type: Optional[AccessTokenParametersTokenTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
+    token_type: Optional[AccessTokenParametersTokenType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
     

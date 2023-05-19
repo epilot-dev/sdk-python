@@ -31,6 +31,7 @@ class Public:
         
         url = base_url.removesuffix('/') + '/v1/access-tokens/.well-known/jwks.json'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -59,6 +60,7 @@ class Public:
         
         url = base_url.removesuffix('/') + '/v1/access-tokens/.well-known/openid-configuration'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -84,6 +86,7 @@ class Public:
         
         url = base_url.removesuffix('/') + '/v1/access-tokens/public/.well-known/jwks.json'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -112,6 +115,7 @@ class Public:
         
         url = base_url.removesuffix('/') + '/v1/access-tokens/public/.well-known/openid-configuration'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

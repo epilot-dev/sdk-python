@@ -23,7 +23,7 @@ s = epilot.Epilot(
 req = shared.JourneyTokenParameters(
     journey_id='provident',
     name='Postman Access Token',
-    token_type=shared.JourneyTokenParametersTokenTypeEnum.JOURNEY,
+    token_type=shared.JourneyTokenParametersTokenType.JOURNEY,
 )
 
 res = s.access_tokens.create_access_token(req)

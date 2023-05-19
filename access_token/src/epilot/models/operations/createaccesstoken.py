@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import accesstokentype_enum as shared_accesstokentype_enum
+from ..shared import accesstokentype as shared_accesstokentype
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
@@ -27,7 +27,7 @@ class CreateAccessToken201ApplicationJSON:
     r"""Journey ID for access token type \\"journey\\" """
     token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})
     r"""A JWT Access Token"""
-    token_type: Optional[shared_accesstokentype_enum.AccessTokenTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
+    token_type: Optional[shared_accesstokentype.AccessTokenType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
     r"""Access token type"""
     
 

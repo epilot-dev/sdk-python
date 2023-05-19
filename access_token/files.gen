@@ -16,7 +16,7 @@ src/epilot/models/operations/getaccesstokenoidc.py
 src/epilot/models/operations/getpublictokenjwks.py
 src/epilot/models/operations/getpublictokenoidc.py
 src/epilot/models/operations/__init__.py
-src/epilot/models/shared/accesstokentype_enum.py
+src/epilot/models/shared/accesstokentype.py
 src/epilot/models/shared/accesstokenparameters.py
 src/epilot/models/shared/journeytokenparameters.py
 src/epilot/models/shared/accesstokenitem.py
