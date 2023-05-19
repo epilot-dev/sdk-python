@@ -158,7 +158,7 @@ s = epilot.Epilot(
 
 req = operations.InvitePartnerRequest(
     partner_invitation_payload=shared.PartnerInvitationPayload(
-        language=shared.PartnerInvitationPayloadLanguageEnum.DE,
+        language=shared.PartnerInvitationPayloadLanguage.DE,
     ),
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
@@ -213,7 +213,7 @@ s = epilot.Epilot(
 
 req = operations.ResendPartnerInvitationRequest(
     request_body=operations.ResendPartnerInvitationRequestBody(
-        language=operations.ResendPartnerInvitationRequestBodyLanguageEnum.EN,
+        language=operations.ResendPartnerInvitationRequestBodyLanguage.EN,
     ),
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
@@ -257,7 +257,7 @@ req = operations.SearchAssignableRequestBody(
     q='ab',
     size=337396,
     types=[
-        operations.SearchAssignableRequestBodyTypesEnum.PARTNER_USER,
+        operations.SearchAssignableRequestBodyTypes.PARTNER_USER,
     ],
 )
 

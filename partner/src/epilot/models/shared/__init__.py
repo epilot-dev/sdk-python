@@ -8,4 +8,4 @@ from .partner import *
 from .partnerinvitationpayload import *
 from .security import *
 
-__all__ = ["ActivatePartnerPayload","AssignableOrganization","AssignableOrganizationImageURI","AssignableOrganizationTypeEnum","AssignablePartnerUser","AssignablePartnerUserImageURI","AssignablePartnerUserTypeEnum","AssignableUser","AssignableUserImageURI","AssignableUserTypeEnum","Partner","PartnerInvitationPayload","PartnerInvitationPayloadLanguageEnum","PartnerStatusEnum","Security"]
+__all__ = ["ActivatePartnerPayload","AssignableOrganization","AssignableOrganizationImageURI","AssignableOrganizationType","AssignablePartnerUser","AssignablePartnerUserImageURI","AssignablePartnerUserType","AssignableUser","AssignableUserImageURI","AssignableUserType","Partner","PartnerInvitationPayload","PartnerInvitationPayloadLanguage","PartnerStatus","Security"]

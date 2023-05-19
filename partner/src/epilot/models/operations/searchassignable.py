@@ -8,7 +8,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
-class SearchAssignableRequestBodyTypesEnum(str, Enum):
+class SearchAssignableRequestBodyTypes(str, Enum):
     USER = 'user'
     PARTNER_USER = 'partner_user'
     PARTNER_ORGANIZATION = 'partner_organization'
@@ -26,7 +26,7 @@ class SearchAssignableRequestBody:
     r"""filter results to specific organizations. defaults to all orgs"""
     size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
     r"""limit number of results to return"""
-    types: Optional[list[SearchAssignableRequestBodyTypesEnum]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('types'), 'exclude': lambda f: f is None }})
+    types: Optional[list[SearchAssignableRequestBodyTypes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('types'), 'exclude': lambda f: f is None }})
     r"""filter results to specific types of assignables. defaults to all types"""
     
 
