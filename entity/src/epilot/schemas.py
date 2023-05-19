@@ -31,6 +31,7 @@ class Schemas:
         
         url = utils.generate_url(operations.DeleteSchemaRequest, base_url, '/v1/entity/schemas/{slug}', request)
         headers = {}
+        headers['Accept'] = '*/*'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -53,6 +54,7 @@ class Schemas:
         url = utils.generate_url(operations.GetSchemaRequest, base_url, '/v1/entity/schemas/{slug}', request)
         headers = {}
         query_params = utils.get_query_params(operations.GetSchemaRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -79,6 +81,7 @@ class Schemas:
         url = utils.generate_url(operations.GetSchemaVersionsRequest, base_url, '/v1/entity/schemas/{slug}/versions', request)
         headers = {}
         query_params = utils.get_query_params(operations.GetSchemaVersionsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -104,6 +107,7 @@ class Schemas:
         
         url = base_url.removesuffix('/') + '/v1/entity/schemas/blueprints'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -130,6 +134,7 @@ class Schemas:
         url = base_url.removesuffix('/') + '/v1/entity/schemas'
         headers = {}
         query_params = utils.get_query_params(operations.ListSchemasRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -156,6 +161,7 @@ class Schemas:
         url = utils.generate_url(operations.ListTaxonomyClassificationsForSchemaRequest, base_url, '/v1/entity/schemas/{slug}/taxonomy/{taxonomySlug}', request)
         headers = {}
         query_params = utils.get_query_params(operations.ListTaxonomyClassificationsForSchemaRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -185,6 +191,7 @@ class Schemas:
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.PutSchemaRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

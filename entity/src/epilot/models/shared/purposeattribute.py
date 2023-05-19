@@ -34,7 +34,7 @@ class PurposeAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
-class PurposeAttributeTypeEnum(str, Enum):
+class PurposeAttributeType(str, Enum):
     PURPOSE = 'purpose'
 
 
@@ -89,7 +89,7 @@ class PurposeAttribute:
     r"""This attribute should only be active when the setting is enabled"""
     show_in_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_in_table'), 'exclude': lambda f: f is None }})
     r"""Render as a column in table views. When defined, overrides `hidden`"""
-    type: Optional[PurposeAttributeTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[PurposeAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     

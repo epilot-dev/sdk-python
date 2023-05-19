@@ -31,12 +31,12 @@ class RepeatableAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
-class RepeatableAttributeRelationAffinityModeEnum(str, Enum):
+class RepeatableAttributeRelationAffinityMode(str, Enum):
     r"""Weak repeatable attributes are kept when duplicating an entity. Strong repeatable attributes are discarded when duplicating an entity."""
     WEAK = 'weak'
     STRONG = 'strong'
 
-class RepeatableAttributeTypeEnum(str, Enum):
+class RepeatableAttributeType(str, Enum):
     STRING = 'string'
     PHONE = 'phone'
     EMAIL = 'email'
@@ -88,7 +88,7 @@ class RepeatableAttribute:
     protected: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('protected'), 'exclude': lambda f: f is None }})
     r"""Setting to `true` prevents the attribute from being modified / deleted"""
     readonly: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('readonly'), 'exclude': lambda f: f is None }})
-    relation_affinity_mode: Optional[RepeatableAttributeRelationAffinityModeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_affinity_mode'), 'exclude': lambda f: f is None }})
+    relation_affinity_mode: Optional[RepeatableAttributeRelationAffinityMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_affinity_mode'), 'exclude': lambda f: f is None }})
     r"""Weak repeatable attributes are kept when duplicating an entity. Strong repeatable attributes are discarded when duplicating an entity."""
     render_condition: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('render_condition'), 'exclude': lambda f: f is None }})
     r"""Defines the conditional rendering expression for showing this field.
@@ -101,6 +101,6 @@ class RepeatableAttribute:
     r"""This attribute should only be active when the setting is enabled"""
     show_in_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_in_table'), 'exclude': lambda f: f is None }})
     r"""Render as a column in table views. When defined, overrides `hidden`"""
-    type: Optional[RepeatableAttributeTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[RepeatableAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     

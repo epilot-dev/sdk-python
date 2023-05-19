@@ -229,7 +229,7 @@ req = operations.PutSchemaRequest(
                 required=False,
                 setting_flag='MY_SETTING',
                 show_in_table=False,
-                type=shared.TextAttributeTypeEnum.STRING,
+                type=shared.TextAttributeType.STRING,
                 value_formatter='in',
             ),
             shared.RelationAttribute(
@@ -241,7 +241,7 @@ req = operations.PutSchemaRequest(
                 ],
                 actions=[
                     shared.RelationAttributeActions(
-                        action_type=shared.RelationAttributeActionsActionTypeEnum.CREATE_NEW,
+                        action_type=shared.RelationAttributeActionsActionType.CREATE_NEW,
                         default=False,
                         feature_flag='veniam',
                         label='minima',
@@ -254,7 +254,7 @@ req = operations.PutSchemaRequest(
                         setting_flag='officiis',
                     ),
                     shared.RelationAttributeActions(
-                        action_type=shared.RelationAttributeActionsActionTypeEnum.ADD_EXISTING,
+                        action_type=shared.RelationAttributeActionsActionType.ADD_EXISTING,
                         default=False,
                         feature_flag='laudantium',
                         label='exercitationem',
@@ -266,7 +266,7 @@ req = operations.PutSchemaRequest(
                         setting_flag='expedita',
                     ),
                     shared.RelationAttributeActions(
-                        action_type=shared.RelationAttributeActionsActionTypeEnum.CREATE_FROM_EXISTING,
+                        action_type=shared.RelationAttributeActionsActionType.CREATE_FROM_EXISTING,
                         default=False,
                         feature_flag='neque',
                         label='dolorum',
@@ -277,7 +277,7 @@ req = operations.PutSchemaRequest(
                         setting_flag='tempora',
                     ),
                     shared.RelationAttributeActions(
-                        action_type=shared.RelationAttributeActionsActionTypeEnum.CREATE_NEW,
+                        action_type=shared.RelationAttributeActionsActionType.CREATE_NEW,
                         default=False,
                         feature_flag='fugit',
                         label='ut',
@@ -304,8 +304,8 @@ req = operations.PutSchemaRequest(
                 default_value='sit',
                 deprecated=False,
                 details_view_mode_enabled=False,
-                drawer_size=shared.RelationAttributeDrawerSizeEnum.MEDIUM,
-                edit_mode=shared.RelationAttributeEditModeEnum.LIST_VIEW,
+                drawer_size=shared.RelationAttributeDrawerSize.MEDIUM,
+                edit_mode=shared.RelationAttributeEditMode.LIST_VIEW,
                 enable_relation_picker=False,
                 enable_relation_tags=False,
                 entity_builder_disable_edit=False,
@@ -329,8 +329,8 @@ req = operations.PutSchemaRequest(
                 preview_value_formatter='laborum',
                 protected=False,
                 readonly=False,
-                relation_affinity_mode=shared.RelationAttributeRelationAffinityModeEnum.STRONG,
-                relation_type=shared.RelationAttributeRelationTypeEnum.HAS_ONE,
+                relation_affinity_mode=shared.RelationAttributeRelationAffinityMode.STRONG,
+                relation_type=shared.RelationAttributeRelationType.HAS_ONE,
                 render_condition='laboriosam',
                 required=False,
                 reverse_attributes={
@@ -349,7 +349,7 @@ req = operations.PutSchemaRequest(
                         field='voluptates',
                     ),
                 ],
-                type=shared.RelationAttributeTypeEnum.RELATION,
+                type=shared.RelationAttributeType.RELATION,
                 value_formatter='perferendis',
             ),
         ],
@@ -396,13 +396,13 @@ req = operations.PutSchemaRequest(
                         preview_value_formatter='beatae',
                         protected=False,
                         readonly=False,
-                        relation_affinity_mode=shared.RepeatableAttributeRelationAffinityModeEnum.STRONG,
+                        relation_affinity_mode=shared.RepeatableAttributeRelationAffinityMode.STRONG,
                         render_condition='provident',
                         repeatable=False,
                         required=False,
                         setting_flag='MY_SETTING',
                         show_in_table=False,
-                        type=shared.RepeatableAttributeTypeEnum.DATE,
+                        type=shared.RepeatableAttributeType.DATE,
                         value_formatter='soluta',
                     ),
                     shared.InternalUserAttribute(
@@ -443,7 +443,7 @@ req = operations.PutSchemaRequest(
                         required=False,
                         setting_flag='MY_SETTING',
                         show_in_table=False,
-                        type=shared.InternalUserAttributeTypeEnum.INTERNAL_USER,
+                        type=shared.InternalUserAttributeType.INTERNAL_USER,
                         value_formatter='sed',
                     ),
                     shared.SequenceAttribute(
@@ -482,7 +482,7 @@ req = operations.PutSchemaRequest(
                         setting_flag='MY_SETTING',
                         show_in_table=False,
                         start_number=746837,
-                        type=shared.SequenceAttributeTypeEnum.SEQUENCE,
+                        type=shared.SequenceAttributeType.SEQUENCE,
                         value_formatter='alias',
                     ),
                 ],
@@ -527,7 +527,7 @@ req = operations.PutSchemaRequest(
                     "non": 'maiores',
                 },
                 index=False,
-                type=shared.SearchMappingsTypeEnum.BOOLEAN,
+                type=shared.SearchMappingsType.BOOLEAN,
             ),
         },
         feature_flag='FF_MY_FEATURE_FLAG',
@@ -603,10 +603,10 @@ req = operations.PutSchemaRequest(
         ui_config=shared.EntitySchemaUIConfig(
             create_view=shared.RedirectEntityView(
                 route='/app/pricing-hub/product/:entityId',
-                view_type=shared.RedirectEntityViewViewTypeEnum.REDIRECT,
+                view_type=shared.RedirectEntityViewViewType.REDIRECT,
             ),
             edit_view=shared.EntityViewDisabled(
-                view_type=shared.EntityViewDisabledViewTypeEnum.DISABLED,
+                view_type=shared.EntityViewDisabledViewType.DISABLED,
             ),
             list_item=shared.EntitySchemaUIConfigListItem(
                 summary_attributes=[
@@ -628,7 +628,7 @@ req = operations.PutSchemaRequest(
                 show_sharing_button=True,
             ),
             single_view=shared.EntityViewDisabled(
-                view_type=shared.EntityViewDisabledViewTypeEnum.DISABLED,
+                view_type=shared.EntityViewDisabledViewType.DISABLED,
             ),
             table_view=shared.EntityDefaultTable(
                 classic_view='maxime',
@@ -637,7 +637,7 @@ req = operations.PutSchemaRequest(
                         feature_flag='FF_MY_FEATURE_FLAG',
                         legacy=False,
                         title='Opportunities',
-                        type=shared.EntityDefaultTableDropdownItems2TypeEnum.LINK,
+                        type=shared.EntityDefaultTableDropdownItems2Type.LINK,
                         uri='expedita',
                     ),
                 ],
@@ -735,7 +735,7 @@ req = operations.PutSchemaRequest(
                     'provident',
                     'consectetur',
                 ],
-                view_type=shared.EntityDefaultTableViewTypeEnum.DEFAULT,
+                view_type=shared.EntityDefaultTableViewType.DEFAULT,
             ),
         ),
         version=753240,

@@ -31,7 +31,7 @@ class ComputedAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
-class ComputedAttributeTypeEnum(str, Enum):
+class ComputedAttributeType(str, Enum):
     COMPUTED = 'computed'
 
 
@@ -83,6 +83,6 @@ class ComputedAttribute:
     r"""This attribute should only be active when the setting is enabled"""
     show_in_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_in_table'), 'exclude': lambda f: f is None }})
     r"""Render as a column in table views. When defined, overrides `hidden`"""
-    type: Optional[ComputedAttributeTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[ComputedAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     

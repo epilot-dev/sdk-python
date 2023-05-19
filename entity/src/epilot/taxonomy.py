@@ -31,6 +31,7 @@ class Taxonomy:
         
         url = utils.generate_url(operations.GetTaxonomyRequest, base_url, '/v1/entity/taxonomies/{taxonomySlug}', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -56,6 +57,7 @@ class Taxonomy:
         
         url = base_url.removesuffix('/') + '/v1/entity/listTaxonomies'
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -85,6 +87,7 @@ class Taxonomy:
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.TaxonomiesClassificationsSearchRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -111,6 +114,7 @@ class Taxonomy:
         url = utils.generate_url(operations.TaxonomyAutocompleteRequest, base_url, '/v1/entity/taxonomies/{taxonomySlug}:autocomplete', request)
         headers = {}
         query_params = utils.get_query_params(operations.TaxonomyAutocompleteRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -139,6 +143,7 @@ class Taxonomy:
         req_content_type, data, form = utils.serialize_request_body(request, "classifications_update", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

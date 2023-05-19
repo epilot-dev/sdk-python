@@ -31,7 +31,7 @@ class SequenceAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
-class SequenceAttributeTypeEnum(str, Enum):
+class SequenceAttributeType(str, Enum):
     SEQUENCE = 'sequence'
 
 
@@ -86,6 +86,6 @@ class SequenceAttribute:
     show_in_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_in_table'), 'exclude': lambda f: f is None }})
     r"""Render as a column in table views. When defined, overrides `hidden`"""
     start_number: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_number'), 'exclude': lambda f: f is None }})
-    type: Optional[SequenceAttributeTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[SequenceAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     

@@ -31,7 +31,7 @@ class AddressRelationAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
-class AddressRelationAttributeTypeEnum(str, Enum):
+class AddressRelationAttributeType(str, Enum):
     RELATION_ADDRESS = 'relation_address'
 
 
@@ -84,6 +84,6 @@ class AddressRelationAttribute:
     r"""This attribute should only be active when the setting is enabled"""
     show_in_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_in_table'), 'exclude': lambda f: f is None }})
     r"""Render as a column in table views. When defined, overrides `hidden`"""
-    type: Optional[AddressRelationAttributeTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[AddressRelationAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     

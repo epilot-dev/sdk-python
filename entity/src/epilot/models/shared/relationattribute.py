@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
-class RelationAttributeActionsActionTypeEnum(str, Enum):
+class RelationAttributeActionsActionType(str, Enum):
     r"""The action type. Currently supported actions:
     
     | action | description |
@@ -25,7 +25,7 @@ class RelationAttributeActionsActionTypeEnum(str, Enum):
 @dataclasses.dataclass
 class RelationAttributeActions:
     
-    action_type: Optional[RelationAttributeActionsActionTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action_type'), 'exclude': lambda f: f is None }})
+    action_type: Optional[RelationAttributeActionsActionType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action_type'), 'exclude': lambda f: f is None }})
     r"""The action type. Currently supported actions:
     
     | action | description |
@@ -44,12 +44,12 @@ class RelationAttributeActions:
     setting_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('setting_flag'), 'exclude': lambda f: f is None }})
     r"""Name of the setting flag that enables this action"""
     
-class RelationAttributeDrawerSizeEnum(str, Enum):
+class RelationAttributeDrawerSize(str, Enum):
     SMALL = 'small'
     MEDIUM = 'medium'
     LARGE = 'large'
 
-class RelationAttributeEditModeEnum(str, Enum):
+class RelationAttributeEditMode(str, Enum):
     LIST_VIEW = 'list-view'
 
 
@@ -76,16 +76,16 @@ class RelationAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
-class RelationAttributeRelationAffinityModeEnum(str, Enum):
+class RelationAttributeRelationAffinityMode(str, Enum):
     r"""Weak relation attributes are kept when duplicating an entity. Strong relation attributes are discarded when duplicating an entity."""
     WEAK = 'weak'
     STRONG = 'strong'
 
-class RelationAttributeRelationTypeEnum(str, Enum):
+class RelationAttributeRelationType(str, Enum):
     HAS_MANY = 'has_many'
     HAS_ONE = 'has_one'
 
-class RelationAttributeTypeEnum(str, Enum):
+class RelationAttributeType(str, Enum):
     RELATION = 'relation'
 
 
@@ -109,8 +109,8 @@ class RelationAttribute:
     deprecated: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deprecated'), 'exclude': lambda f: f is None }})
     details_view_mode_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('details_view_mode_enabled'), 'exclude': lambda f: f is None }})
     r"""Enables the preview, edition, and creation of relation items on a Master-Details view mode."""
-    drawer_size: Optional[RelationAttributeDrawerSizeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drawer_size'), 'exclude': lambda f: f is None }})
-    edit_mode: Optional[RelationAttributeEditModeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('edit_mode'), 'exclude': lambda f: f is None }})
+    drawer_size: Optional[RelationAttributeDrawerSize] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drawer_size'), 'exclude': lambda f: f is None }})
+    edit_mode: Optional[RelationAttributeEditMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('edit_mode'), 'exclude': lambda f: f is None }})
     enable_relation_picker: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_relation_picker'), 'exclude': lambda f: f is None }})
     r"""When enable_relation_picker is set to true the user will be able to pick existing relations as values. Otherwise, the user will need to create new relation to link."""
     enable_relation_tags: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_relation_tags'), 'exclude': lambda f: f is None }})
@@ -137,9 +137,9 @@ class RelationAttribute:
     protected: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('protected'), 'exclude': lambda f: f is None }})
     r"""Setting to `true` prevents the attribute from being modified / deleted"""
     readonly: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('readonly'), 'exclude': lambda f: f is None }})
-    relation_affinity_mode: Optional[RelationAttributeRelationAffinityModeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_affinity_mode'), 'exclude': lambda f: f is None }})
+    relation_affinity_mode: Optional[RelationAttributeRelationAffinityMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_affinity_mode'), 'exclude': lambda f: f is None }})
     r"""Weak relation attributes are kept when duplicating an entity. Strong relation attributes are discarded when duplicating an entity."""
-    relation_type: Optional[RelationAttributeRelationTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_type'), 'exclude': lambda f: f is None }})
+    relation_type: Optional[RelationAttributeRelationType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_type'), 'exclude': lambda f: f is None }})
     render_condition: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('render_condition'), 'exclude': lambda f: f is None }})
     r"""Defines the conditional rendering expression for showing this field.
     When a valid expression is parsed, their evaluation defines the visibility of this attribute.
@@ -155,6 +155,6 @@ class RelationAttribute:
     show_in_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_in_table'), 'exclude': lambda f: f is None }})
     r"""Render as a column in table views. When defined, overrides `hidden`"""
     summary_fields: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_fields'), 'exclude': lambda f: f is None }})
-    type: Optional[RelationAttributeTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[RelationAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     

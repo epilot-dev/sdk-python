@@ -35,6 +35,7 @@ class Relations:
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.AddRelationsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -61,6 +62,7 @@ class Relations:
         url = utils.generate_url(operations.DeleteRelationRequest, base_url, '/v1/entity/{slug}/{id}/relations/{attribute}/{entity_id}', request)
         headers = {}
         query_params = utils.get_query_params(operations.DeleteRelationRequest, request)
+        headers['Accept'] = '*/*'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -87,6 +89,7 @@ class Relations:
         url = utils.generate_url(operations.GetRelationsRequest, base_url, '/v1/entity/{slug}/{id}/relations', request)
         headers = {}
         query_params = utils.get_query_params(operations.GetRelationsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -117,6 +120,7 @@ class Relations:
         url = utils.generate_url(operations.GetRelationsV2Request, base_url, '/v2/entity/{slug}/{id}/relations', request)
         headers = {}
         query_params = utils.get_query_params(operations.GetRelationsV2Request, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -146,6 +150,7 @@ class Relations:
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.UpdateRelationRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

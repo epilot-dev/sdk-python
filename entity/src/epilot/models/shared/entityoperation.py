@@ -16,7 +16,7 @@ class EntityOperationDiff:
     deleted: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
     updated: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
     
-class EntityOperationOperationEnum(str, Enum):
+class EntityOperationOperation(str, Enum):
     CREATE_ENTITY = 'createEntity'
     UPDATE_ENTITY = 'updateEntity'
     DELETE_ENTITY = 'deleteEntity'
@@ -36,7 +36,7 @@ class EntityOperationParams:
 class EntityOperation:
     
     entity: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity') }})
-    operation: EntityOperationOperationEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
+    operation: EntityOperationOperation = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
     org: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org') }})
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_id'), 'exclude': lambda f: f is None }})
     r"""See https://github.com/ulid/spec"""

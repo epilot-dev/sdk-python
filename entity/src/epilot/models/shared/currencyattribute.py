@@ -42,7 +42,7 @@ class CurrencyAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
-class CurrencyAttributeTypeEnum(str, Enum):
+class CurrencyAttributeType(str, Enum):
     CURRENCY = 'currency'
 
 
@@ -55,7 +55,7 @@ class CurrencyAttribute:
     r"""An array of currency configurations with a country code (ISO-4217)"""
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    type: CurrencyAttributeTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: CurrencyAttributeType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
     constraints: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.

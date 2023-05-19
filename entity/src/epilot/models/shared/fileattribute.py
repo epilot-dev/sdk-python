@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
-class FileAttributeDefaultAccessControlEnum(str, Enum):
+class FileAttributeDefaultAccessControl(str, Enum):
     PUBLIC_READ = 'public-read'
     PRIVATE = 'private'
 
@@ -35,7 +35,7 @@ class FileAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
-class FileAttributeTypeEnum(str, Enum):
+class FileAttributeType(str, Enum):
     IMAGE = 'image'
     FILE = 'file'
 
@@ -47,7 +47,7 @@ class FileAttribute:
     
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    type: FileAttributeTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: FileAttributeType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
     allowed_extensions: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowed_extensions'), 'exclude': lambda f: f is None }})
     r"""List of file extensions (without the dot suffix)"""
@@ -55,7 +55,7 @@ class FileAttribute:
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
     """
-    default_access_control: Optional[FileAttributeDefaultAccessControlEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_access_control'), 'exclude': lambda f: f is None }})
+    default_access_control: Optional[FileAttributeDefaultAccessControl] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_access_control'), 'exclude': lambda f: f is None }})
     default_value: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_value'), 'exclude': lambda f: f is None }})
     deprecated: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deprecated'), 'exclude': lambda f: f is None }})
     display_images_landscaped: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_images_landscaped'), 'exclude': lambda f: f is None }})

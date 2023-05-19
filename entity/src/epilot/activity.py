@@ -32,6 +32,7 @@ class Activity:
         url = utils.generate_url(operations.AttachActivityRequest, base_url, '/v1/entity/activity/{id}:attach', request)
         headers = {}
         query_params = utils.get_query_params(operations.AttachActivityRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -64,6 +65,7 @@ class Activity:
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.CreateActivityRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -90,6 +92,7 @@ class Activity:
         url = utils.generate_url(operations.GetActivityRequest, base_url, '/v1/entity/activity/{id}', request)
         headers = {}
         query_params = utils.get_query_params(operations.GetActivityRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -116,6 +119,7 @@ class Activity:
         url = utils.generate_url(operations.GetEntityActivityFeedRequest, base_url, '/v1/entity/{slug}/{id}/activity', request)
         headers = {}
         query_params = utils.get_query_params(operations.GetEntityActivityFeedRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
