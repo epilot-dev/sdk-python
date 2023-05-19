@@ -76,7 +76,7 @@ req = operations.UpdateOrganizationRequest(
             "temporibus": 'ab',
         },
         symbol='EPI',
-        type=shared.OrganizationTypeEnum.VENDOR,
+        type=shared.OrganizationType.VENDOR,
         website='https://epilot.cloud',
     ),
     org_id='739224',
