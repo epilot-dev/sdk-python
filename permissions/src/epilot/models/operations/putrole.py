@@ -12,7 +12,7 @@ from epilot import utils
 from marshmallow import fields
 from typing import Any, Optional
 
-class PutRoleRequestBody4TypeEnum(str, Enum):
+class PutRoleRequestBody4Type(str, Enum):
     PARTNER_ROLE = 'partner_role'
 
 
@@ -31,12 +31,12 @@ class PutRoleRequestBody4:
     r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly name for the role"""
-    type: PutRoleRequestBody4TypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: PutRoleRequestBody4Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
     partner_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_org_id'), 'exclude': lambda f: f is None }})
     
-class PutRoleRequestBody3TypeEnum(str, Enum):
+class PutRoleRequestBody3Type(str, Enum):
     SHARE_ROLE = 'share_role'
 
 
@@ -55,11 +55,11 @@ class PutRoleRequestBody3:
     r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly name for the role"""
-    type: PutRoleRequestBody3TypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: PutRoleRequestBody3Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
     
-class PutRoleRequestBody2TypeEnum(str, Enum):
+class PutRoleRequestBody2Type(str, Enum):
     ORG_ROLE = 'org_role'
 
 
@@ -78,11 +78,11 @@ class PutRoleRequestBody2:
     r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly name for the role"""
-    type: PutRoleRequestBody2TypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: PutRoleRequestBody2Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
     
-class PutRoleRequestBody1TypeEnum(str, Enum):
+class PutRoleRequestBody1Type(str, Enum):
     USER_ROLE = 'user_role'
 
 
@@ -101,7 +101,7 @@ class PutRoleRequestBody1:
     r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly name for the role"""
-    type: PutRoleRequestBody1TypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: PutRoleRequestBody1Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
     

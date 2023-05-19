@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any
 
-class EqualsConditionOperationEnum(str, Enum):
+class EqualsConditionOperation(str, Enum):
     EQUALS = 'equals'
 
 
@@ -17,6 +17,6 @@ class EqualsCondition:
     r"""Check if attribute equals to any of the values"""
     
     attribute: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribute') }})
-    operation: EqualsConditionOperationEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
+    operation: EqualsConditionOperation = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
     values: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values') }})
     

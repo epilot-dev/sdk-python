@@ -11,7 +11,7 @@ from epilot import utils
 from marshmallow import fields
 from typing import Optional
 
-class UserRoleTypeEnum(str, Enum):
+class UserRoleType(str, Enum):
     USER_ROLE = 'user_role'
 
 
@@ -30,7 +30,7 @@ class UserRole:
     r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly name for the role"""
-    type: UserRoleTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: UserRoleType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
     

@@ -138,7 +138,7 @@ req = operations.PutRoleRequest(
                 conditions=[
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'nulla',
                             'corrupti',
@@ -147,7 +147,7 @@ req = operations.PutRoleRequest(
                     ),
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'error',
                             'deserunt',
@@ -155,7 +155,7 @@ req = operations.PutRoleRequest(
                     ),
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'iure',
                             'magnam',
@@ -163,7 +163,7 @@ req = operations.PutRoleRequest(
                     ),
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'ipsa',
                             'delectus',
@@ -172,7 +172,7 @@ req = operations.PutRoleRequest(
                         ],
                     ),
                 ],
-                effect=shared.GrantEffectEnum.ALLOW,
+                effect=shared.GrantEffect.ALLOW,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
             shared.Grant(
@@ -180,7 +180,7 @@ req = operations.PutRoleRequest(
                 conditions=[
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'voluptatum',
                             'iusto',
@@ -190,7 +190,7 @@ req = operations.PutRoleRequest(
                     ),
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'temporibus',
                             'ab',
@@ -200,7 +200,7 @@ req = operations.PutRoleRequest(
                     ),
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'perferendis',
                             'ipsam',
@@ -209,7 +209,7 @@ req = operations.PutRoleRequest(
                     ),
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'quo',
                             'odit',
@@ -218,7 +218,7 @@ req = operations.PutRoleRequest(
                         ],
                     ),
                 ],
-                effect=shared.GrantEffectEnum.DENY,
+                effect=shared.GrantEffect.DENY,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
             shared.Grant(
@@ -226,7 +226,7 @@ req = operations.PutRoleRequest(
                 conditions=[
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'quod',
                             'esse',
@@ -236,7 +236,7 @@ req = operations.PutRoleRequest(
                     ),
                     shared.EqualsCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperationEnum.EQUALS,
+                        operation=shared.EqualsConditionOperation.EQUALS,
                         values=[
                             'dicta',
                             'nam',
@@ -244,7 +244,7 @@ req = operations.PutRoleRequest(
                         ],
                     ),
                 ],
-                effect=shared.GrantEffectEnum.DENY,
+                effect=shared.GrantEffect.DENY,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
         ],
@@ -252,7 +252,7 @@ req = operations.PutRoleRequest(
         name='Owner',
         organization_id='123',
         slug='owner',
-        type=operations.PutRoleRequestBody3TypeEnum.SHARE_ROLE,
+        type=operations.PutRoleRequestBody3Type.SHARE_ROLE,
     ),
     role_id='123:owner',
 )
