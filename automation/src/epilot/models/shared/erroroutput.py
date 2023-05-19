@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import errorcode_enum as shared_errorcode_enum
+from ..shared import errorcode as shared_errorcode
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 
@@ -11,6 +11,6 @@ from epilot import utils
 @dataclasses.dataclass
 class ErrorOutput:
     
-    error_code: shared_errorcode_enum.ErrorCodeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_code') }})
+    error_code: shared_errorcode.ErrorCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_code') }})
     error_reason: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_reason') }})
     

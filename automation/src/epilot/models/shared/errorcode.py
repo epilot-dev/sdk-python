@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class ErrorCodeEnum(str, Enum):
+class ErrorCode(str, Enum):
     MAPPING_ERROR = 'MAPPING_ERROR'
     REFRESH_RELATIONS_ERROR = 'REFRESH_RELATIONS_ERROR'
     DUPLICATE_ENTITY_ERROR = 'DUPLICATE_ENTITY_ERROR'

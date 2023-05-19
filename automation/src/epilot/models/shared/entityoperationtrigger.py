@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import entityoperation_enum as shared_entityoperation_enum
+from ..shared import entityoperation as shared_entityoperation
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -13,12 +13,12 @@ from typing import Optional
 @dataclasses.dataclass
 class EntityOperationTriggerConfiguration:
     
-    operations: list[shared_entityoperation_enum.EntityOperationEnum] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operations') }})
+    operations: list[shared_entityoperation.EntityOperation] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operations') }})
     schema: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema') }})
     exclude_activities: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exclude_activities'), 'exclude': lambda f: f is None }})
     include_activities: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_activities'), 'exclude': lambda f: f is None }})
     
-class EntityOperationTriggerTypeEnum(str, Enum):
+class EntityOperationTriggerType(str, Enum):
     ENTITY_OPERATION = 'entity_operation'
 
 
@@ -27,5 +27,5 @@ class EntityOperationTriggerTypeEnum(str, Enum):
 class EntityOperationTrigger:
     
     configuration: EntityOperationTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-    type: EntityOperationTriggerTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: EntityOperationTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     

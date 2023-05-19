@@ -8,7 +8,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class CreateDocumentActionConfigTypeEnum(str, Enum):
+class CreateDocumentActionConfigType(str, Enum):
     CREATE_DOCUMENT = 'create-document'
 
 
@@ -24,5 +24,5 @@ class CreateDocumentActionConfig:
     flow_action_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_action_id'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-    type: Optional[CreateDocumentActionConfigTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[CreateDocumentActionConfigType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     

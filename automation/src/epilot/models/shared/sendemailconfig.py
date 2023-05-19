@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class SendEmailConfigAttachmentsSourceFilterDocumentTypeEnum(str, Enum):
+class SendEmailConfigAttachmentsSourceFilterDocumentType(str, Enum):
     r"""Filter by a specific document type (e.g. document)"""
     DOCUMENT = 'document'
     TEXT = 'text'
@@ -29,7 +29,7 @@ class SendEmailConfigAttachmentsSourceFilter:
     
     attribute: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribute'), 'exclude': lambda f: f is None }})
     r"""Filter by a specific relation attribute on the main entity"""
-    document_type: Optional[SendEmailConfigAttachmentsSourceFilterDocumentTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type'), 'exclude': lambda f: f is None }})
+    document_type: Optional[SendEmailConfigAttachmentsSourceFilterDocumentType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type'), 'exclude': lambda f: f is None }})
     r"""Filter by a specific document type (e.g. document)"""
     filename_regex: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename_regex'), 'exclude': lambda f: f is None }})
     r"""Match by filename. Regex syntax supported"""
@@ -50,7 +50,7 @@ class SendEmailConfigAttachments:
     source_filter: Optional[SendEmailConfigAttachmentsSourceFilter] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_filter'), 'exclude': lambda f: f is None }})
     r"""Specify filters to match file entities related to main entity"""
     
-class SendEmailConfigLanguageCodeEnum(str, Enum):
+class SendEmailConfigLanguageCode(str, Enum):
     DE = 'de'
     EN = 'en'
 
@@ -65,5 +65,5 @@ class SendEmailConfig:
     Attachments in email template will be sent regardless of this configuration.
     """
     email_template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_template_id'), 'exclude': lambda f: f is None }})
-    language_code: Optional[SendEmailConfigLanguageCodeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language_code'), 'exclude': lambda f: f is None }})
+    language_code: Optional[SendEmailConfigLanguageCode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language_code'), 'exclude': lambda f: f is None }})
     

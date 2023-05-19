@@ -15,7 +15,7 @@ class EntityManualTriggerConfiguration:
     schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema'), 'exclude': lambda f: f is None }})
     r"""Which entity type can this automation be triggered from"""
     
-class EntityManualTriggerTypeEnum(str, Enum):
+class EntityManualTriggerType(str, Enum):
     ENTITY_MANUAL = 'entity_manual'
 
 
@@ -24,5 +24,5 @@ class EntityManualTriggerTypeEnum(str, Enum):
 class EntityManualTrigger:
     
     configuration: EntityManualTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-    type: EntityManualTriggerTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: EntityManualTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     

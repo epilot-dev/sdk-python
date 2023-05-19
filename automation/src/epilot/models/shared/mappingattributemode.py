@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class MappingAttributeModeEnum(str, Enum):
+class MappingAttributeMode(str, Enum):
     r"""- copy_if_exists - it replaces the target attribute with the source value - append_if_exists - it currently replaces target attribute with array like values. Useful when you have multiple values to be added into one attribute. - set_value - it sets a value to a predefined value. Must be used together with value property."""
     COPY_IF_EXISTS = 'copy_if_exists'
     APPEND_IF_EXISTS = 'append_if_exists'

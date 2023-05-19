@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class TriggerEventEntityActivityTypeEnum(str, Enum):
+class TriggerEventEntityActivityType(str, Enum):
     ENTITY_ACTIVITY = 'entity_activity'
 
 
@@ -19,5 +19,5 @@ class TriggerEventEntityActivity:
     activity_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_type') }})
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is None }})
-    type: Optional[TriggerEventEntityActivityTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[TriggerEventEntityActivityType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     

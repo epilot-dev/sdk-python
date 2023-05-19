@@ -34,6 +34,7 @@ class Flows:
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -59,6 +60,7 @@ class Flows:
         
         url = utils.generate_url(operations.DeleteFlowRequest, base_url, '/v1/automation/flows/{flow_id}', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -84,6 +86,7 @@ class Flows:
         
         url = utils.generate_url(operations.GetFlowRequest, base_url, '/v1/automation/flows/{flow_id}', request)
         headers = {}
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -112,6 +115,7 @@ class Flows:
         req_content_type, data, form = utils.serialize_request_body(request, "automation_flow_input", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -138,6 +142,7 @@ class Flows:
         url = base_url.removesuffix('/') + '/v1/automation/flows'
         headers = {}
         query_params = utils.get_query_params(operations.SearchFlowsRequest, request)
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client

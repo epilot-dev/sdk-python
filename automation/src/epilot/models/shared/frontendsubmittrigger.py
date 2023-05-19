@@ -14,7 +14,7 @@ class FrontendSubmitTriggerConfiguration:
     
     source_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id'), 'exclude': lambda f: f is None }})
     
-class FrontendSubmitTriggerTypeEnum(str, Enum):
+class FrontendSubmitTriggerType(str, Enum):
     FRONTEND_SUBMISSION = 'frontend_submission'
 
 
@@ -23,5 +23,5 @@ class FrontendSubmitTriggerTypeEnum(str, Enum):
 class FrontendSubmitTrigger:
     
     configuration: FrontendSubmitTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-    type: FrontendSubmitTriggerTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: FrontendSubmitTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     

@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
-class RelationAttributeModeEnum(str, Enum):
+class RelationAttributeMode(str, Enum):
     APPEND = 'append'
     PREPEND = 'prepend'
     SET = 'set'
@@ -36,7 +36,7 @@ class RelationAttributeSourceFilter:
 @dataclasses.dataclass
 class RelationAttribute:
     
-    mode: RelationAttributeModeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
+    mode: RelationAttributeMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
     target: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
     r"""Target attribute to store the relation in"""
     related_to: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('related_to'), 'exclude': lambda f: f is None }})

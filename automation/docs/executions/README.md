@@ -110,7 +110,7 @@ s = epilot.Epilot(
 
 req = operations.RetriggerActionRequest(
     retry_req=shared.RetryReq(
-        retry_strategy=shared.RetryStrategyEnum.RETRY_AND_STOP,
+        retry_strategy=shared.RetryStrategy.RETRY_AND_STOP,
     ),
     action_id='9ec3711b-db63-449c-b894-54d5bb622a8f',
     execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4',

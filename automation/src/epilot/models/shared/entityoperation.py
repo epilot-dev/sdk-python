@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class EntityOperationEnum(str, Enum):
+class EntityOperation(str, Enum):
     CREATE_ENTITY = 'createEntity'
     UPDATE_ENTITY = 'updateEntity'
     DELETE_ENTITY = 'deleteEntity'

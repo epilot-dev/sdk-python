@@ -35,7 +35,7 @@ req = shared.AutomationFlowInput(
     runs=7,
     trigger_conditions=[
         shared.TriggerCondition(
-            comparison=shared.ComparisonEnum.NOT_EMPTY,
+            comparison=shared.Comparison.NOT_EMPTY,
             source='nulla',
             value=[
                 'vel',
@@ -45,19 +45,19 @@ req = shared.AutomationFlowInput(
             ],
         ),
         shared.TriggerCondition(
-            comparison=shared.ComparisonEnum.ANY_OF,
+            comparison=shared.Comparison.ANY_OF,
             source='magnam',
             value=[
                 9636.63,
             ],
         ),
         shared.TriggerCondition(
-            comparison=shared.ComparisonEnum.ANY_OF,
+            comparison=shared.Comparison.ANY_OF,
             source='suscipit',
             value=7917.25,
         ),
         shared.TriggerCondition(
-            comparison=shared.ComparisonEnum.IS_EMPTY,
+            comparison=shared.Comparison.IS_EMPTY,
             source='voluptatum',
             value=5680.45,
         ),
@@ -65,15 +65,15 @@ req = shared.AutomationFlowInput(
     triggers=[
         shared.ReceivedEmailTrigger(
             configuration=shared.ReceivedEmailTriggerConfiguration(
-                message_type=shared.ReceivedEmailTriggerConfigurationMessageTypeEnum.RECEIVED,
+                message_type=shared.ReceivedEmailTriggerConfigurationMessageType.RECEIVED,
             ),
-            type=shared.ReceivedEmailTriggerTypeEnum.RECEIVED_EMAIL,
+            type=shared.ReceivedEmailTriggerType.RECEIVED_EMAIL,
         ),
         shared.EntityManualTrigger(
             configuration=shared.EntityManualTriggerConfiguration(
                 schema='submission',
             ),
-            type=shared.EntityManualTriggerTypeEnum.ENTITY_MANUAL,
+            type=shared.EntityManualTriggerType.ENTITY_MANUAL,
         ),
     ],
 )
@@ -160,7 +160,7 @@ req = operations.PutFlowRequest(
         runs=7,
         trigger_conditions=[
             shared.TriggerCondition(
-                comparison=shared.ComparisonEnum.ANY_OF,
+                comparison=shared.Comparison.ANY_OF,
                 source='veritatis',
                 value=[
                     'ipsam',
@@ -170,27 +170,27 @@ req = operations.PutFlowRequest(
         triggers=[
             shared.ReceivedEmailTrigger(
                 configuration=shared.ReceivedEmailTriggerConfiguration(
-                    message_type=shared.ReceivedEmailTriggerConfigurationMessageTypeEnum.RECEIVED,
+                    message_type=shared.ReceivedEmailTriggerConfigurationMessageType.RECEIVED,
                 ),
-                type=shared.ReceivedEmailTriggerTypeEnum.RECEIVED_EMAIL,
+                type=shared.ReceivedEmailTriggerType.RECEIVED_EMAIL,
             ),
             shared.EntityManualTrigger(
                 configuration=shared.EntityManualTriggerConfiguration(
                     schema='submission',
                 ),
-                type=shared.EntityManualTriggerTypeEnum.ENTITY_MANUAL,
+                type=shared.EntityManualTriggerType.ENTITY_MANUAL,
             ),
             shared.FrontendSubmitTrigger(
                 configuration=shared.FrontendSubmitTriggerConfiguration(
                     source_id='99',
                 ),
-                type=shared.FrontendSubmitTriggerTypeEnum.FRONTEND_SUBMISSION,
+                type=shared.FrontendSubmitTriggerType.FRONTEND_SUBMISSION,
             ),
             shared.ReceivedEmailTrigger(
                 configuration=shared.ReceivedEmailTriggerConfiguration(
-                    message_type=shared.ReceivedEmailTriggerConfigurationMessageTypeEnum.RECEIVED,
+                    message_type=shared.ReceivedEmailTriggerConfigurationMessageType.RECEIVED,
                 ),
-                type=shared.ReceivedEmailTriggerTypeEnum.RECEIVED_EMAIL,
+                type=shared.ReceivedEmailTriggerType.RECEIVED_EMAIL,
             ),
         ],
     ),

@@ -11,30 +11,30 @@ from .automationflow import *
 from .cartcheckoutaction import *
 from .cartcheckoutactionconfig import *
 from .cartcheckoutconfig import *
-from .comparison_enum import *
+from .comparison import *
 from .copyvaluemapper import *
 from .createdocumentaction import *
 from .createdocumentactionconfig import *
 from .createdocumentconfig import *
 from .entitymanualtrigger import *
-from .entityoperation_enum import *
+from .entityoperation import *
 from .entityoperationtrigger import *
-from .errorcode_enum import *
+from .errorcode import *
 from .erroroutput import *
-from .executionstatus_enum import *
+from .executionstatus import *
 from .frontendsubmittrigger import *
 from .getexecutionsresp import *
 from .journeysubmittrigger import *
 from .mapentityaction import *
 from .mapentityactionconfig import *
 from .mapentityconfig import *
-from .mappingattributemode_enum import *
+from .mappingattributemode import *
 from .mappingattributev2 import *
 from .mappingconfigref import *
 from .receivedemailtrigger import *
 from .relationattribute import *
 from .retryreq import *
-from .retrystrategy_enum import *
+from .retrystrategy import *
 from .searchautomationsresp import *
 from .security import *
 from .sendemailaction import *
@@ -54,4 +54,4 @@ from .triggerworkflowactionconfig import *
 from .triggerworkflowcondition import *
 from .triggerworkflowconfig import *
 
-__all__ = ["APISubmissionTrigger","APISubmissionTriggerConfiguration","APISubmissionTriggerTypeEnum","ActivityTrigger","ActivityTriggerConfiguration","ActivityTriggerConfigurationTypesEnum","ActivityTriggerTypeEnum","AppendValueMapper","AssignUsersToStep","AutomationAction","AutomationActionConfig","AutomationExecution","AutomationFlow","AutomationFlowInput","CartCheckoutAction","CartCheckoutActionConfig","CartCheckoutActionConfigTypeEnum","CartCheckoutConfig","ComparisonEnum","CopyValueMapper","CreateDocumentAction","CreateDocumentActionConfig","CreateDocumentActionConfigTypeEnum","CreateDocumentConfig","EntityManualTrigger","EntityManualTriggerConfiguration","EntityManualTriggerTypeEnum","EntityOperationEnum","EntityOperationTrigger","EntityOperationTriggerConfiguration","EntityOperationTriggerTypeEnum","ErrorCodeEnum","ErrorOutput","ExecutionStatusEnum","FrontendSubmitTrigger","FrontendSubmitTriggerConfiguration","FrontendSubmitTriggerTypeEnum","GetExecutionsResp","JourneySubmitTrigger","JourneySubmitTriggerConfiguration","JourneySubmitTriggerTypeEnum","MapEntityAction","MapEntityActionConfig","MapEntityActionConfigTypeEnum","MapEntityConfig","MappingAttributeModeEnum","MappingAttributeV2","MappingConfigRef","ReceivedEmailTrigger","ReceivedEmailTriggerConfiguration","ReceivedEmailTriggerConfigurationMessageTypeEnum","ReceivedEmailTriggerTypeEnum","RelationAttribute","RelationAttributeModeEnum","RelationAttributeSourceFilter","RetryReq","RetryStrategyEnum","SearchAutomationsResp","Security","SendEmailAction","SendEmailActionConfig","SendEmailActionConfigTypeEnum","SendEmailConfig","SendEmailConfigAttachments","SendEmailConfigAttachmentsSourceFilter","SendEmailConfigAttachmentsSourceFilterDocumentTypeEnum","SendEmailConfigLanguageCodeEnum","SetValueMapper","StartExecutionRequestInput","TriggerCondition","TriggerEventEntityActivity","TriggerEventEntityActivityTypeEnum","TriggerEventEntityOperation","TriggerEventEntityOperationTypeEnum","TriggerEventManual","TriggerEventManualTypeEnum","TriggerWebhookAction","TriggerWebhookActionConfig","TriggerWebhookActionConfigTypeEnum","TriggerWebhookConfig","TriggerWorkflowAction","TriggerWorkflowActionConfig","TriggerWorkflowActionConfigTypeEnum","TriggerWorkflowCondition","TriggerWorkflowConfig"]
+__all__ = ["APISubmissionTrigger","APISubmissionTriggerConfiguration","APISubmissionTriggerType","ActivityTrigger","ActivityTriggerConfiguration","ActivityTriggerConfigurationTypes","ActivityTriggerType","AppendValueMapper","AssignUsersToStep","AutomationAction","AutomationActionConfig","AutomationExecution","AutomationFlow","AutomationFlowInput","CartCheckoutAction","CartCheckoutActionConfig","CartCheckoutActionConfigType","CartCheckoutConfig","Comparison","CopyValueMapper","CreateDocumentAction","CreateDocumentActionConfig","CreateDocumentActionConfigType","CreateDocumentConfig","EntityManualTrigger","EntityManualTriggerConfiguration","EntityManualTriggerType","EntityOperation","EntityOperationTrigger","EntityOperationTriggerConfiguration","EntityOperationTriggerType","ErrorCode","ErrorOutput","ExecutionStatus","FrontendSubmitTrigger","FrontendSubmitTriggerConfiguration","FrontendSubmitTriggerType","GetExecutionsResp","JourneySubmitTrigger","JourneySubmitTriggerConfiguration","JourneySubmitTriggerType","MapEntityAction","MapEntityActionConfig","MapEntityActionConfigType","MapEntityConfig","MappingAttributeMode","MappingAttributeV2","MappingConfigRef","ReceivedEmailTrigger","ReceivedEmailTriggerConfiguration","ReceivedEmailTriggerConfigurationMessageType","ReceivedEmailTriggerType","RelationAttribute","RelationAttributeMode","RelationAttributeSourceFilter","RetryReq","RetryStrategy","SearchAutomationsResp","Security","SendEmailAction","SendEmailActionConfig","SendEmailActionConfigType","SendEmailConfig","SendEmailConfigAttachments","SendEmailConfigAttachmentsSourceFilter","SendEmailConfigAttachmentsSourceFilterDocumentType","SendEmailConfigLanguageCode","SetValueMapper","StartExecutionRequestInput","TriggerCondition","TriggerEventEntityActivity","TriggerEventEntityActivityType","TriggerEventEntityOperation","TriggerEventEntityOperationType","TriggerEventManual","TriggerEventManualType","TriggerWebhookAction","TriggerWebhookActionConfig","TriggerWebhookActionConfigType","TriggerWebhookConfig","TriggerWorkflowAction","TriggerWorkflowActionConfig","TriggerWorkflowActionConfigType","TriggerWorkflowCondition","TriggerWorkflowConfig"]

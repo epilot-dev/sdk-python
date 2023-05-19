@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class ComparisonEnum(str, Enum):
+class Comparison(str, Enum):
     EQUALS = 'equals'
     ANY_OF = 'any_of'
     NOT_EMPTY = 'not_empty'

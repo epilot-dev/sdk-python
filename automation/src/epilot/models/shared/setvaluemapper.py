@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import mappingattributemode_enum as shared_mappingattributemode_enum
+from ..shared import mappingattributemode as shared_mappingattributemode
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any
@@ -12,7 +12,7 @@ from typing import Any
 @dataclasses.dataclass
 class SetValueMapper:
     
-    mode: shared_mappingattributemode_enum.MappingAttributeModeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
+    mode: shared_mappingattributemode.MappingAttributeMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
     r"""- copy_if_exists - it replaces the target attribute with the source value - append_if_exists - it currently replaces target attribute with array like values. Useful when you have multiple values to be added into one attribute. - set_value - it sets a value to a predefined value. Must be used together with value property."""
     target: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
     r"""JSON like target path for the attribute. Eg. last_name"""
