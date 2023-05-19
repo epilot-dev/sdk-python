@@ -7,7 +7,7 @@ from ..shared import categoryresult as shared_categoryresult
 from enum import Enum
 from typing import Optional
 
-class GetCategoriesLangEnum(str, Enum):
+class GetCategoriesLang(str, Enum):
     r"""Language"""
     EN = 'en'
     DE = 'de'
@@ -16,7 +16,7 @@ class GetCategoriesLangEnum(str, Enum):
 @dataclasses.dataclass
 class GetCategoriesRequest:
     
-    lang: Optional[GetCategoriesLangEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
+    lang: Optional[GetCategoriesLang] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
     r"""Language"""
     
 

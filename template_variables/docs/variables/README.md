@@ -55,7 +55,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetCategoriesRequest(
-    lang=operations.GetCategoriesLangEnum.DE,
+    lang=operations.GetCategoriesLang.DE,
 )
 
 res = s.variables.get_categories(req)
@@ -107,7 +107,7 @@ req = operations.GetVariableContextRequestBody(
                 variable='{{craftsmen.invitation_link}}',
             ),
         ],
-        language=shared.VariableParametersLanguageEnum.EN,
+        language=shared.VariableParametersLanguage.EN,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
         template_name='id',
         template_tags=[
@@ -116,7 +116,7 @@ req = operations.GetVariableContextRequestBody(
             'error',
             'temporibus',
         ],
-        template_type=shared.TemplateTypeEnum.DOCUMENT,
+        template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
     ),
 )
@@ -175,14 +175,14 @@ req = operations.ReplaceTemplatesRequestBody(
                 variable='{{craftsmen.invitation_link}}',
             ),
         ],
-        language=shared.VariableParametersLanguageEnum.EN,
+        language=shared.VariableParametersLanguage.EN,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
         template_name='doloremque',
         template_tags=[
             'ut',
             'maiores',
         ],
-        template_type=shared.TemplateTypeEnum.EMAIL,
+        template_type=shared.TemplateType.EMAIL,
         user_id='50001',
     ),
 )
@@ -215,10 +215,10 @@ req = operations.SearchVariablesRequestBody(
         'contact',
     ],
     from_=296140,
-    lang=operations.SearchVariablesRequestBodyLangEnum.EN,
+    lang=operations.SearchVariablesRequestBodyLang.EN,
     query='logo',
     size=118727,
-    template_type=shared.TemplateTypeEnum.DOCUMENT,
+    template_type=shared.TemplateType.DOCUMENT,
 )
 
 res = s.variables.search_variables(req)

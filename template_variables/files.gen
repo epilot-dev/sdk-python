@@ -24,7 +24,7 @@ src/epilot/models/shared/customvariable.py
 src/epilot/models/shared/categoryresult.py
 src/epilot/models/shared/variablecontext.py
 src/epilot/models/shared/variableparameters.py
-src/epilot/models/shared/templatetype_enum.py
+src/epilot/models/shared/templatetype.py
 src/epilot/models/shared/externalcustomvariable.py
 src/epilot/models/shared/variableresult.py
 src/epilot/models/shared/security.py

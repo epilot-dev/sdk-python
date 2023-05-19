@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
-class CustomVariableTypeEnum(str, Enum):
+class CustomVariableType(str, Enum):
     r"""Custom variable type"""
     ORDER_TABLE = 'order_table'
     CUSTOM = 'custom'
@@ -36,7 +36,7 @@ class CustomVariable:
     r"""Custom variable name"""
     template: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template'), 'exclude': lambda f: f is None }})
     r"""Handlebar template that used to generate the variable content"""
-    type: Optional[CustomVariableTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[CustomVariableType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Custom variable type"""
     updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'exclude': lambda f: f is None }})
     r"""Last update time"""

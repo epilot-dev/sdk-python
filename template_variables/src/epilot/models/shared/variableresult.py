@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class VariableResultTypeEnum(str, Enum):
+class VariableResultType(str, Enum):
     SIMPLE = 'simple'
     PARTIAL = 'partial'
 
@@ -24,5 +24,5 @@ class VariableResult:
     r"""The value which is used to insert to template"""
     qrdata: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('qrdata'), 'exclude': lambda f: f is None }})
     r"""Payload for the QR data"""
-    type: Optional[VariableResultTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[VariableResultType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     

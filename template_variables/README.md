@@ -145,7 +145,7 @@ req = shared.CustomVariable(
   </tbody>
 </table>
 ',
-    type=shared.CustomVariableTypeEnum.ORDER_TABLE,
+    type=shared.CustomVariableType.ORDER_TABLE,
     updated_at='2022-04-20T12:41:43.662Z',
     updated_by='100042',
 )
