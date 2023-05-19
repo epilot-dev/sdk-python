@@ -9,14 +9,14 @@ from .catalogsearch import *
 from .catalogsearchresult import *
 from .checkoutcart import *
 from .checkoutcartresult import *
-from .checkoutmode_enum import *
+from .checkoutmode import *
 from .customer import *
 from .error import *
 from .metadata import *
 from .ordersource import *
-from .orderstatus_enum import *
+from .orderstatus import *
 from .paymentmethod import *
 from .priceitemsdto import *
 from .security import *
 
-__all__ = ["AvailabilityCheckParams","AvailabilityFilters","AvailabilityLocation","AvailabilityResult","AvailabilityResultCheckResults","CartDtoInput","CatalogSearch","CatalogSearchResult","CheckoutCartInput","CheckoutCartResult","CheckoutModeEnum","Customer","Error","MetaData","OrderSource","OrderStatusEnum","PaymentMethod","PriceItemsDtoInput","PriceItemsDtoTypeEnum","Security"]
+__all__ = ["AvailabilityCheckParams","AvailabilityFilters","AvailabilityLocation","AvailabilityResult","AvailabilityResultCheckResults","CartDtoInput","CatalogSearch","CatalogSearchResult","CheckoutCartInput","CheckoutCartResult","CheckoutMode","Customer","Error","MetaData","OrderSource","OrderStatus","PaymentMethod","PriceItemsDtoInput","PriceItemsDtoType","Security"]

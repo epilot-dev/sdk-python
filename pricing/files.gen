@@ -25,9 +25,9 @@ src/epilot/models/shared/availabilityfilters.py
 src/epilot/models/shared/availabilitylocation.py
 src/epilot/models/shared/checkoutcartresult.py
 src/epilot/models/shared/checkoutcart.py
-src/epilot/models/shared/checkoutmode_enum.py
+src/epilot/models/shared/checkoutmode.py
 src/epilot/models/shared/cartdto.py
-src/epilot/models/shared/orderstatus_enum.py
+src/epilot/models/shared/orderstatus.py
 src/epilot/models/shared/ordersource.py
 src/epilot/models/shared/paymentmethod.py
 src/epilot/models/shared/metadata.py

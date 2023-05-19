@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class OrderStatusEnum(str, Enum):
+class OrderStatus(str, Enum):
     r"""| status      | description |
     |-------------|-------|
     | `draft`     | \u200B\u200BStarting state for all orders, at this point we can still edit the order |

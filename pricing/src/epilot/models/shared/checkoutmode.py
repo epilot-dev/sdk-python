@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class CheckoutModeEnum(str, Enum):
+class CheckoutMode(str, Enum):
     r"""The checkout mode for the cart checkout."""
     CREATE_ORDER = 'create_order'
     CREATE_INVOICE = 'create_invoice'

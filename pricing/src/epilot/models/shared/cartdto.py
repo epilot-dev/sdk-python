@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from ..shared import customer as shared_customer
 from ..shared import ordersource as shared_ordersource
-from ..shared import orderstatus_enum as shared_orderstatus_enum
+from ..shared import orderstatus as shared_orderstatus
 from ..shared import paymentmethod as shared_paymentmethod
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
@@ -36,7 +36,7 @@ class CartDtoInput:
     r"""identifier for source e.g. journey ID"""
     source_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_type'), 'exclude': lambda f: f is None }})
     r"""type of source, e.g. journey or manual"""
-    status: Optional[shared_orderstatus_enum.OrderStatusEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[shared_orderstatus.OrderStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""| status      | description |
     |-------------|-------|
     | `draft`     | \u200B\u200BStarting state for all orders, at this point we can still edit the order |

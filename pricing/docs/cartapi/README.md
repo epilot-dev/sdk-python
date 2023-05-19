@@ -42,7 +42,7 @@ s = epilot.Epilot(
 req = operations.DollarCheckoutCartRequest(
     checkout_cart_input=shared.CheckoutCartInput(
         cart='nam',
-        mode=shared.CheckoutModeEnum.CREATE_INVOICE,
+        mode=shared.CheckoutMode.CREATE_INVOICE,
     ),
     x_ivy_org_id='occaecati',
 )

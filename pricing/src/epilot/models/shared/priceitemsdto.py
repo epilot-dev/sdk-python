@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
-class PriceItemsDtoTypeEnum(str, Enum):
+class PriceItemsDtoType(str, Enum):
     r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
     ONE_TIME = 'one_time'
     RECURRING = 'recurring'
@@ -34,7 +34,7 @@ class PriceItemsDtoInput:
     r"""The id of the product."""
     quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }})
     r"""The quantity of products being purchased."""
-    type: Optional[PriceItemsDtoTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[PriceItemsDtoType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
     unit_amount: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount'), 'exclude': lambda f: f is None }})
     r"""The unit amount value"""
