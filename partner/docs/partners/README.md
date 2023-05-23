@@ -14,6 +14,7 @@ Partners
 * [reject_partner](#reject_partner) - rejectPartner
 * [resend_partner_invitation](#resend_partner_invitation) - resendPartnerInvitation
 * [search_assignable](#search_assignable) - searchAssignables
+* [search_geolocation_for_text](#search_geolocation_for_text) - searchGeolocationForText
 
 ## activate_partner
 
@@ -264,5 +265,31 @@ req = operations.SearchAssignableRequestBody(
 res = s.partners.search_assignable(req)
 
 if res.search_assignable_200_application_json_object is not None:
+    # handle response
+```
+
+## search_geolocation_for_text
+
+Converts a given string, in the format of an address, to geo-location latitude and longitude
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        as_organization="YOUR_API_KEY_HERE",
+    ),
+)
+
+req = shared.SearchGeolocation(
+    address='Auweg 1, 93055 Regensburg, DE',
+)
+
+res = s.partners.search_geolocation_for_text(req)
+
+if res.geolocation is not None:
     # handle response
 ```

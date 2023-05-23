@@ -259,3 +259,34 @@ class Partners:
         return res
 
     
+    def search_geolocation_for_text(self, request: shared.SearchGeolocation) -> operations.SearchGeolocationForTextResponse:
+        r"""searchGeolocationForText
+        Converts a given string, in the format of an address, to geo-location latitude and longitude
+        """
+        base_url = self._server_url
+        
+        url = base_url.removesuffix('/') + '/v1/geolocation/text:search'
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
+        
+        client = self._security_client
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.SearchGeolocationForTextResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Geolocation])
+                res.geolocation = out
+        elif http_res.status_code in [400, 404]:
+            pass
+
+        return res
+
+    

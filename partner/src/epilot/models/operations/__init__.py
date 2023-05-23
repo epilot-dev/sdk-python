@@ -8,5 +8,6 @@ from .invitepartner import *
 from .rejectpartner import *
 from .resendpartnerinvitation import *
 from .searchassignable import *
+from .searchgeolocationfortext import *
 
-__all__ = ["ActivatePartnerRequest","ActivatePartnerResponse","ApprovePartnerRequest","ApprovePartnerResponse","BatchGetAssignable200ApplicationJSON","BatchGetAssignableRequestBody","BatchGetAssignableResponse","GetPartnerByTokenRequest","GetPartnerByTokenResponse","InvitePartnerRequest","InvitePartnerResponse","RejectPartnerRequest","RejectPartnerResponse","ResendPartnerInvitationRequest","ResendPartnerInvitationRequestBody","ResendPartnerInvitationRequestBodyLanguage","ResendPartnerInvitationResponse","SearchAssignable200ApplicationJSON","SearchAssignableRequestBody","SearchAssignableRequestBodyTypes","SearchAssignableResponse"]
+__all__ = ["ActivatePartnerRequest","ActivatePartnerResponse","ApprovePartnerRequest","ApprovePartnerResponse","BatchGetAssignable200ApplicationJSON","BatchGetAssignableRequestBody","BatchGetAssignableResponse","GetPartnerByTokenRequest","GetPartnerByTokenResponse","InvitePartnerRequest","InvitePartnerResponse","RejectPartnerRequest","RejectPartnerResponse","ResendPartnerInvitationRequest","ResendPartnerInvitationRequestBody","ResendPartnerInvitationRequestBodyLanguage","ResendPartnerInvitationResponse","SearchAssignable200ApplicationJSON","SearchAssignableRequestBody","SearchAssignableRequestBodyTypes","SearchAssignableResponse","SearchGeolocationForTextResponse"]
