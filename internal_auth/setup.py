@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="epilot-internal-auth",
-    version="1.16.0",
+    version="1.17.0",
     author="epilot",
     description="Python Client SDK for Epilot",
     long_description=long_description,
