@@ -1,5 +1,6 @@
 src/epilot/activity.py
 src/epilot/entities.py
+src/epilot/entity_import.py
 src/epilot/export.py
 src/epilot/relations.py
 src/epilot/saved_views.py
@@ -25,8 +26,8 @@ src/epilot/models/operations/patchentity.py
 src/epilot/models/operations/searchentities.py
 src/epilot/models/operations/updateentity.py
 src/epilot/models/operations/upsertentity.py
-src/epilot/models/operations/exportentities.py
 src/epilot/models/operations/importentities.py
+src/epilot/models/operations/exportentities.py
 src/epilot/models/operations/addrelations.py
 src/epilot/models/operations/deleterelation.py
 src/epilot/models/operations/getrelations.py
@@ -107,6 +108,7 @@ src/epilot/models/shared/__init__.py
 docs/epilot/README.md
 docs/activity/README.md
 docs/entities/README.md
+docs/entityimport/README.md
 docs/export/README.md
 docs/relations/README.md
 docs/savedviews/README.md

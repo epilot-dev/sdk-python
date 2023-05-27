@@ -32,6 +32,8 @@ req = operations.AddRelationsRequest(
     request_body=[
         shared.RelationItem(
             tags=[
+                'neque',
+                'sed',
                 'vel',
             ],
             attribute='libero',

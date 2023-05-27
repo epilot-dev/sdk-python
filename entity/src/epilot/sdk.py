@@ -4,6 +4,7 @@ import requests as requests_http
 from . import utils
 from .activity import Activity
 from .entities import Entities
+from .entity_import import EntityImport
 from .export import Export
 from .relations import Relations
 from .saved_views import SavedViews
@@ -27,6 +28,7 @@ class Epilot:
     r"""Entity Events"""
     entities: Entities
     r"""CRUD Access for Entities"""
+    entity_import: EntityImport
     export: Export
     r"""Export and Import entities via files"""
     relations: Relations
@@ -42,8 +44,8 @@ class Epilot:
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.17.0"
-    _gen_version: str = "2.32.2"
+    _sdk_version: str = "1.17.1"
+    _gen_version: str = "2.32.7"
 
     def __init__(self,
                  security: shared.Security = None,
@@ -90,6 +92,15 @@ class Epilot:
         )
         
         self.entities = Entities(
+            self._client,
+            self._security_client,
+            self._server_url,
+            self._language,
+            self._sdk_version,
+            self._gen_version
+        )
+        
+        self.entity_import = EntityImport(
             self._client,
             self._security_client,
             self._server_url,

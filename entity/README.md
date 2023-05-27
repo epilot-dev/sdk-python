@@ -58,10 +58,13 @@ if res.activity_item is not None:
 * [update_entity](docs/entities/README.md#update_entity) - updateEntity
 * [upsert_entity](docs/entities/README.md#upsert_entity) - upsertEntity
 
+### [entity_import](docs/entityimport/README.md)
+
+* [import_entities](docs/entityimport/README.md#import_entities) - Import Entities
+
 ### [export](docs/export/README.md)
 
 * [export_entities](docs/export/README.md#export_entities) - exportEntities
-* [import_entities](docs/export/README.md#import_entities) - importEntities
 
 ### [relations](docs/relations/README.md)
 

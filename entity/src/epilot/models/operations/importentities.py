@@ -12,7 +12,7 @@ class ImportEntitiesRequest:
     
     entity_import_params: Optional[shared_entityimportparams.EntityImportParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'job_id', 'style': 'form', 'explode': True }})
-    r"""Import Job Id to get the result"""
+    r"""The ID of the import job. This ID is used to track the progress and fetch the result of the import operation."""
     
 
 @dataclasses.dataclass

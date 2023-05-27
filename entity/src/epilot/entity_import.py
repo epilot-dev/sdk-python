@@ -4,8 +4,7 @@ import requests as requests_http
 from . import utils
 from epilot.models import operations
 
-class Export:
-    r"""Export and Import entities via files"""
+class EntityImport:
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -22,18 +21,20 @@ class Export:
         self._gen_version = gen_version
         
     
-    def export_entities(self, request: operations.ExportEntitiesRequest) -> operations.ExportEntitiesResponse:
-        r"""exportEntities
-        create export file of entities
+    def import_entities(self, request: operations.ImportEntitiesRequest) -> operations.ImportEntitiesResponse:
+        r"""Import Entities
+        This endpoint enables the import of entities into the platform.
+        The entities should be provided in a CSV format inside an S3 bucket.
+        This API will return the `job_id`` which can be used to fetch the status of the import process.
         """
         base_url = self._server_url
         
-        url = base_url.removesuffix('/') + '/v1/entity:export'
+        url = base_url.removesuffix('/') + '/v1/entity:import'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "entity_search_params", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "entity_import_params", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.ExportEntitiesRequest, request)
+        query_params = utils.get_query_params(operations.ImportEntitiesRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
@@ -42,7 +43,7 @@ class Export:
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.ExportEntitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ImportEntitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
 
         return res
