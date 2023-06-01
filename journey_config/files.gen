@@ -1,5 +1,6 @@
 src/epilot/journeys.py
 src/epilot/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/epilot/__init__.py
