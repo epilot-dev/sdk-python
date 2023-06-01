@@ -1,6 +1,7 @@
 src/epilot/custom_variables.py
 src/epilot/variables.py
 src/epilot/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/epilot/__init__.py
