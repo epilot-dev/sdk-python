@@ -1,6 +1,7 @@
 src/epilot/organization.py
 src/epilot/organization_settings.py
 src/epilot/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/epilot/__init__.py
