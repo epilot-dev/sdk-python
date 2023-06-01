@@ -1,6 +1,7 @@
 src/epilot/access_tokens.py
 src/epilot/public.py
 src/epilot/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/epilot/__init__.py
