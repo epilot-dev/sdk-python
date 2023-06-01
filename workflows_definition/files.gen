@@ -1,6 +1,7 @@
 src/sdk/closing_reason.py
 src/sdk/workflows.py
 src/sdk/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/sdk/__init__.py
