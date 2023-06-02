@@ -13,7 +13,9 @@ from typing import Optional
 class SavePortalFileFilesS3ref:
     
     bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})
+    r"""S3 bucket name"""
     key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
+    r"""S3 key"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -21,15 +23,18 @@ class SavePortalFileFilesS3ref:
 class SavePortalFileFiles:
     
     file_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file_type') }})
+    r"""File type"""
     tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
+    r"""Array of file tags"""
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
+    r"""File name"""
     s3ref: Optional[SavePortalFileFilesS3ref] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SavePortalFile:
-    r"""Save portal file"""
+    r"""portal files request"""
     
     files: list[SavePortalFileFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
     origin: shared_origin.Origin = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin') }})

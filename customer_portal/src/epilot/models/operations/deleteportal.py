@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
 from typing import Optional
 
@@ -25,5 +26,7 @@ class DeletePortalResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

@@ -15,18 +15,18 @@ SERVERS = [
 class Epilot:
     r"""Backend for epilot end customer portals"""
     ecp: Ecp
-    r"""ECP"""
+    r"""APIs defined for a portal user"""
     ecp_admin: ECPAdmin
-    r"""ECP Admin"""
+    r"""APIs defined for a ECP Admin"""
     public: Public
-    r"""Public"""
+    r"""Public APIs"""
 
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.18.0"
-    _gen_version: str = "2.34.2"
+    _sdk_version: str = "1.18.1"
+    _gen_version: str = "2.34.7"
 
     def __init__(self,
                  security: shared.Security = None,

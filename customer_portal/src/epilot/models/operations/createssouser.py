@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import createssouserrequest as shared_createssouserrequest
 from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
@@ -16,31 +17,22 @@ class CreateSSOUserSecurity:
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateSSOUserRequestBody:
-    r"""Portal payload"""
-    
-    email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
-    first_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name'), 'exclude': lambda f: f is None }})
-    last_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name'), 'exclude': lambda f: f is None }})
-    
-
 @dataclasses.dataclass
 class CreateSSOUserRequest:
     
+    create_sso_user_request: shared_createssouserrequest.CreateSSOUserRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    r"""Portal user payload"""
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
-    request_body: CreateSSOUserRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Portal payload"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateSSOUser201ApplicationJSON:
-    r"""Success - SSO User created with success."""
+    r"""SSO User created successfully."""
     
     data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    r"""The portal user entity"""
     
 
 @dataclasses.dataclass
@@ -49,8 +41,8 @@ class CreateSSOUserResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_sso_user_201_application_json_object: Optional[CreateSSOUser201ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success - SSO User created with success."""
+    r"""SSO User created successfully."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""
+    r"""The request could not be validated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

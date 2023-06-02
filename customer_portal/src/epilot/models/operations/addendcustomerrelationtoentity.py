@@ -3,6 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import entityslug as shared_entityslug
+from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Optional
@@ -18,15 +20,15 @@ class AddEndCustomerRelationToEntitySecurity:
 class AddEndCustomerRelationToEntityRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The Id of the Entity"""
-    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    r"""The ID of the Entity"""
+    slug: shared_entityslug.EntitySlug = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""The slug of an entity"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AddEndCustomerRelationToEntity200ApplicationJSON:
-    r"""The returned Entity"""
+    r"""Portal user is added as a relation to the requested entity successfully."""
     
     entity: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
     relations: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
@@ -38,6 +40,8 @@ class AddEndCustomerRelationToEntityResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     add_end_customer_relation_to_entity_200_application_json_object: Optional[AddEndCustomerRelationToEntity200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned Entity"""
+    r"""Portal user is added as a relation to the requested entity successfully."""
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

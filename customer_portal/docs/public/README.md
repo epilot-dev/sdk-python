@@ -2,49 +2,20 @@
 
 ## Overview
 
-Public
+Public APIs
 
 ### Available Operations
 
-* [activate_user](#activate_user) - activateUser
 * [confirm_user](#confirm_user) - confirmUser
-* [create_user](#create_user) - creates a user
+* [create_user](#create_user) - createUser
 * [get_count_by_email](#get_count_by_email) - getCountByEmail
+* [get_portal_config_by_domain](#get_portal_config_by_domain) - getPortalConfigByDomain
+* [get_public_portal_config](#get_public_portal_config) - getPublicPortalConfig
 * [user_exists](#user_exists) - userExists
-
-## activate_user
-
-Activates the user
-
-### Example Usage
-
-```python
-import epilot
-from epilot.models import operations, shared
-
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-req = operations.ActivateUserRequest(
-    user_activation_payload=shared.UserActivationPayload(
-        display_name='Example User',
-        password='AKjhdakjsdh@!34',
-    ),
-    token='corporis',
-)
-
-res = s.public.activate_user(req)
-
-if res.status_code == 200:
-    # handle response
-```
 
 ## confirm_user
 
-TODO
+Confirm a portal user
 
 ### Example Usage
 
@@ -54,25 +25,25 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
+        epilot_auth="YOUR_BEARER_TOKEN_HERE",
     ),
 )
 
 req = operations.ConfirmUserRequest(
-    id='fbb25870-5320-42c7-bd5f-e9b90c28909b',
+    id='5da0a718-c822-403d-9f5d-20d4584e0528',
     org_id='123',
     origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.confirm_user(req)
 
-if res.entity_item is not None:
+if res.status_code == 200:
     # handle response
 ```
 
 ## create_user
 
-Creates a user in cognito pool and db item
+Registers a portal user
 
 ### Example Usage
 
@@ -82,24 +53,26 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
+        epilot_auth="YOUR_BEARER_TOKEN_HERE",
     ),
 )
 
 req = operations.CreateUserRequest(
-    request_body=operations.CreateUserRequestBody(
+    create_user_request=shared.CreateUserRequest(
         contact_id='123456',
         email='testemail921@yopmail.com',
+        first_name='John',
+        last_name='Doe',
         org_id='728',
-        password='Pass1234!',
+        password='124n$aAJs*d41h4',
         secondary_identifier='123456',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.create_user(req)
 
-if res.add_portal_resp is not None:
+if res.create_user_201_application_json_object is not None:
     # handle response
 ```
 
@@ -115,7 +88,7 @@ from epilot.models import operations
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
+        epilot_auth="YOUR_BEARER_TOKEN_HERE",
     ),
 )
 
@@ -130,9 +103,9 @@ if res.get_count_by_email_200_application_json_object is not None:
     # handle response
 ```
 
-## user_exists
+## get_portal_config_by_domain
 
-Checks whether a user exists in the customer portal
+Retrieves the portal configuration by domain.
 
 ### Example Usage
 
@@ -142,7 +115,60 @@ from epilot.models import operations
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
+        epilot_auth="YOUR_BEARER_TOKEN_HERE",
+    ),
+)
+
+req = operations.GetPortalConfigByDomainRequest(
+    domain='example.com',
+)
+
+res = s.public.get_portal_config_by_domain(req)
+
+if res.portal_config is not None:
+    # handle response
+```
+
+## get_public_portal_config
+
+Retrieves the public portal configuration.
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="YOUR_BEARER_TOKEN_HERE",
+    ),
+)
+
+req = operations.GetPublicPortalConfigRequest(
+    org_id='12324',
+    origin=shared.Origin.INSTALLER_PORTAL,
+)
+
+res = s.public.get_public_portal_config(req)
+
+if res.portal_config is not None:
+    # handle response
+```
+
+## user_exists
+
+Checks whether a user exists in the portal
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="YOUR_BEARER_TOKEN_HERE",
     ),
 )
 

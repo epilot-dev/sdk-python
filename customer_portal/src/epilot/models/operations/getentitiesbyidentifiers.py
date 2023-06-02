@@ -3,6 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import entityslug as shared_entityslug
+from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Optional
@@ -18,8 +20,8 @@ class GetEntitiesByIdentifiersSecurity:
 class GetEntitiesByIdentifiersRequest:
     
     request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Entity Identifiers"""
-    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    r"""The entities are retrieved successfully."""
+    slug: shared_entityslug.EntitySlug = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""The slug of an entity"""
     
 
@@ -36,6 +38,8 @@ class GetEntitiesByIdentifiersResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""The request could not be validated"""
     get_entities_by_identifiers_200_application_json_object: Optional[GetEntitiesByIdentifiers200ApplicationJSON] = dataclasses.field(default=None)
     r"""The returned Entities"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

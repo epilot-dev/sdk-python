@@ -3,6 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
+from dataclasses_json import Undefined, dataclass_json
+from epilot import utils
 from typing import Any, Optional
 
 
@@ -16,8 +19,17 @@ class UpdateOrderSecurity:
 class UpdateOrderRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The Id of order"""
+    r"""The ID of order"""
     request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class UpdateOrder200ApplicationJSON:
+    r"""Updated the order details successfully."""
+    
+    data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    r"""The order entity"""
     
 
 @dataclasses.dataclass
@@ -25,7 +37,9 @@ class UpdateOrderResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The returned order"""
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    update_order_200_application_json_object: Optional[UpdateOrder200ApplicationJSON] = dataclasses.field(default=None)
+    r"""Updated the order details successfully."""
     

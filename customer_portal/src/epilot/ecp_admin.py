@@ -3,10 +3,10 @@
 import requests as requests_http
 from . import utils
 from epilot.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class ECPAdmin:
-    r"""ECP Admin"""
+    r"""APIs defined for a ECP Admin"""
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -25,14 +25,14 @@ class ECPAdmin:
     
     def configure_distribution(self, request: operations.ConfigureDistributionRequest, security: operations.ConfigureDistributionSecurity) -> operations.ConfigureDistributionResponse:
         r"""configureDistribution
-        TODO
+        Configure the distribution for the portal's custom domain
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/configure-distribution'
         headers = {}
         query_params = utils.get_query_params(operations.ConfigureDistributionRequest, request)
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -46,19 +46,23 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.ConfigureDistribution200ApplicationJSON])
                 res.configure_distribution_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def create_sso_user(self, request: operations.CreateSSOUserRequest, security: operations.CreateSSOUserSecurity) -> operations.CreateSSOUserResponse:
-        r"""creates a sso user
-        Creates a sso user as portal user
+        r"""createSSOUser
+        Creates a portal user as an SSO user.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/sso/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "create_sso_user_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -88,14 +92,14 @@ class ECPAdmin:
     
     def delete_portal(self, request: operations.DeletePortalRequest, security: operations.DeletePortalSecurity) -> operations.DeletePortalResponse:
         r"""deletePortal
-        TODO
+        Deletes the portal.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/config'
         headers = {}
         query_params = utils.get_query_params(operations.DeletePortalRequest, request)
-        headers['Accept'] = '*/*'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -105,19 +109,25 @@ class ECPAdmin:
 
         res = operations.DeletePortalResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
+        if http_res.status_code == 204:
+            pass
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def extra_permission_attributes(self, security: operations.ExtraPermissionAttributesSecurity) -> operations.ExtraPermissionAttributesResponse:
         r"""extraPermissionAttributes
-        TODO
+        Retrieves the extra permission attributes.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/extra-permission-attributes'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -131,19 +141,23 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.ExtraPermissionAttributes200ApplicationJSON])
                 res.extra_permission_attributes_200_application_json_object = out
+        elif http_res.status_code == 500:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_all_portal_configs(self, security: operations.GetAllPortalConfigsSecurity) -> operations.GetAllPortalConfigsResponse:
         r"""getAllPortalConfigs
-        TODO
+        Retrieves all portal configurations.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/configs'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -157,6 +171,10 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetAllPortalConfigs200ApplicationJSON])
                 res.get_all_portal_configs_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
@@ -182,9 +200,9 @@ class ECPAdmin:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
-                res.entity_item = out
-        elif http_res.status_code == 500:
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetECPContact200ApplicationJSON])
+                res.get_ecp_contact_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
                 res.error_resp = out
@@ -194,14 +212,14 @@ class ECPAdmin:
     
     def get_email_templates(self, request: operations.GetEmailTemplatesRequest, security: operations.GetEmailTemplatesSecurity) -> operations.GetEmailTemplatesResponse:
         r"""getEmailTemplates
-        TODO
+        Retrieves the email templates of a portal
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/email-templates'
         headers = {}
         query_params = utils.get_query_params(operations.GetEmailTemplatesRequest, request)
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -215,19 +233,23 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.EmailTemplates])
                 res.email_templates = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_entity_identifiers(self, request: operations.GetEntityIdentifiersRequest, security: operations.GetEntityIdentifiersSecurity) -> operations.GetEntityIdentifiersResponse:
         r"""getEntityIdentifiers
-        Get Entity's Identifiers
+        Retrieve a list of entity identifiers used for entity search by portal users.
         """
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetEntityIdentifiersRequest, base_url, '/v2/portal/entity/identifiers/{slug}', request)
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -241,20 +263,24 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetEntityIdentifiers200ApplicationJSON])
                 res.get_entity_identifiers_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_org_portal_config(self, request: operations.GetOrgPortalConfigRequest, security: operations.GetOrgPortalConfigSecurity) -> operations.GetOrgPortalConfigResponse:
         r"""getOrgPortalConfig
-        TODO
+        Retrieves the portal configuration for the organization.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/org/portal/config'
         headers = {}
         query_params = utils.get_query_params(operations.GetOrgPortalConfigRequest, request)
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -268,20 +294,24 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.PortalConfig])
                 res.portal_config = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_portal_config(self, request: operations.GetPortalConfigRequest, security: operations.GetPortalConfigSecurity) -> operations.GetPortalConfigResponse:
         r"""getPortalConfig
-        TODO
+        Retrieves the portal configuration.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/config'
         headers = {}
         query_params = utils.get_query_params(operations.GetPortalConfigRequest, request)
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -295,46 +325,23 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.PortalConfig])
                 res.portal_config = out
-
-        return res
-
-    
-    def get_public_portal_config(self, request: operations.GetPublicPortalConfigRequest) -> operations.GetPublicPortalConfigResponse:
-        r"""getPublicPortalConfig
-        TODO
-        """
-        base_url = self._server_url
-        
-        url = base_url.removesuffix('/') + '/v2/portal/public/portal/config'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetPublicPortalConfigRequest, request)
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
-        
-        client = self._security_client
-        
-        http_res = client.request('GET', url, params=query_params, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.GetPublicPortalConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
+        elif http_res.status_code in [401, 403, 500]:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PortalConfig])
-                res.portal_config = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_valid_secondary_attributes(self, security: operations.GetValidSecondaryAttributesSecurity) -> operations.GetValidSecondaryAttributesResponse:
         r"""getValidSecondaryAttributes
-        Get Valid Secondary Attributes
+        Get valid secondary attributes that are used while mapping a contact on registration
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/contact/valid/secondary/attributes'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -348,13 +355,17 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetValidSecondaryAttributes200ApplicationJSON])
                 res.get_valid_secondary_attributes_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def replace_ecp_template_variables(self, request: operations.ReplaceECPTemplateVariablesRequest, security: operations.ReplaceECPTemplateVariablesSecurity) -> operations.ReplaceECPTemplateVariablesResponse:
         r"""replaceECPTemplateVariables
-        TODO
+        Replaces the template variables of a portal
         """
         base_url = self._server_url
         
@@ -366,7 +377,7 @@ class ECPAdmin:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.ReplaceECPTemplateVariablesRequest, request)
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -380,12 +391,16 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.ReplaceECPTemplateVariables200ApplicationJSON])
                 res.replace_ecp_template_variables_200_application_json_object = out
+        elif http_res.status_code in [401, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def save_portal_files(self, request: shared.SavePortalFile, security: operations.SavePortalFilesSecurity) -> operations.SavePortalFilesResponse:
-        r"""Add files to portal
+        r"""savePortalFiles
         Add files to portal
         """
         base_url = self._server_url
@@ -397,7 +412,7 @@ class ECPAdmin:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -407,17 +422,21 @@ class ECPAdmin:
 
         res = operations.SavePortalFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
+        if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
-                res.entity_item = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.SavePortalFiles201ApplicationJSON])
+                res.save_portal_files_201_application_json_object = out
+        elif http_res.status_code in [400, 401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def upsert_email_templates(self, request: operations.UpsertEmailTemplatesRequest, security: operations.UpsertEmailTemplatesSecurity) -> operations.UpsertEmailTemplatesResponse:
         r"""upsertEmailTemplates
-        TODO
+        Upserts the email templates of a portal
         """
         base_url = self._server_url
         
@@ -429,7 +448,7 @@ class ECPAdmin:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.UpsertEmailTemplatesRequest, request)
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -443,13 +462,17 @@ class ECPAdmin:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UpsertEmailTemplates200ApplicationJSON])
                 res.upsert_email_templates_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def upsert_portal(self, request: operations.UpsertPortalRequest, security: operations.UpsertPortalSecurity) -> operations.UpsertPortalResponse:
-        r"""upserts a portal
-        upserts a portal and db item
+        r"""upsertPortal
+        Upserts the settings for a portal of an organization.
         """
         base_url = self._server_url
         
@@ -473,9 +496,9 @@ class ECPAdmin:
         
         if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.AddPortalResp])
-                res.add_portal_resp = out
-        elif http_res.status_code in [400, 401, 500]:
+                out = utils.unmarshal_json(http_res.text, Optional[shared.PortalConfig])
+                res.portal_config = out
+        elif http_res.status_code in [400, 401, 403, 500]:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
                 res.error_resp = out

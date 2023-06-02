@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -18,9 +19,10 @@ class GetCountByEmailRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetCountByEmail200ApplicationJSON:
-    r"""The returned count of contact"""
+    r"""Contact count for the requested email successfully."""
     
     count: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
+    r"""Count of Contact"""
     
 
 @dataclasses.dataclass
@@ -28,7 +30,9 @@ class GetCountByEmailResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Internal Server Error"""
     get_count_by_email_200_application_json_object: Optional[GetCountByEmail200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned count of contact"""
+    r"""Contact count for the requested email successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

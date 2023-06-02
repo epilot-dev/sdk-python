@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import addportalresp as shared_addportalresp
 from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
+from ..shared import portalconfig as shared_portalconfig
 from ..shared import upsertportalconfig as shared_upsertportalconfig
 from typing import Optional
 
@@ -19,10 +19,10 @@ class UpsertPortalSecurity:
 @dataclasses.dataclass
 class UpsertPortalRequest:
     
+    origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Origin of the portal"""
     upsert_portal_config: shared_upsertportalconfig.UpsertPortalConfig = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Portal payload"""
-    origin: Optional[shared_origin.Origin] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""
     
 
 @dataclasses.dataclass
@@ -30,9 +30,9 @@ class UpsertPortalResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    add_portal_resp: Optional[shared_addportalresp.AddPortalResp] = dataclasses.field(default=None)
-    r"""Success - portal created with success."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""
+    r"""The request could not be validated"""
+    portal_config: Optional[shared_portalconfig.PortalConfig] = dataclasses.field(default=None)
+    r"""Portal upserted successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

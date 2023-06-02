@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
@@ -25,9 +26,10 @@ class ConfigureDistributionRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ConfigureDistribution200ApplicationJSON:
-    r"""The returned configured distribution id"""
+    r"""The cloudfront distribution has been configure successfully for the custom domain."""
     
     domain_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domainName'), 'exclude': lambda f: f is None }})
+    r"""The domain name of the configured distribution"""
     
 
 @dataclasses.dataclass
@@ -36,6 +38,8 @@ class ConfigureDistributionResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     configure_distribution_200_application_json_object: Optional[ConfigureDistribution200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned configured distribution id"""
+    r"""The cloudfront distribution has been configure successfully for the custom domain."""
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

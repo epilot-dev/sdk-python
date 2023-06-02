@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -19,13 +20,15 @@ class GetValidSecondaryAttributesSecurity:
 class GetValidSecondaryAttributes200ApplicationJSONData:
     
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
+    r"""Name of the secondary attribute"""
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    r"""Type of the secondary attribute"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetValidSecondaryAttributes200ApplicationJSON:
-    r"""The returned count of contact"""
+    r"""Valid secondary attributes for the contact entity are returned successfully."""
     
     data: Optional[list[GetValidSecondaryAttributes200ApplicationJSONData]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -35,7 +38,9 @@ class GetValidSecondaryAttributesResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
     get_valid_secondary_attributes_200_application_json_object: Optional[GetValidSecondaryAttributes200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned count of contact"""
+    r"""Valid secondary attributes for the contact entity are returned successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

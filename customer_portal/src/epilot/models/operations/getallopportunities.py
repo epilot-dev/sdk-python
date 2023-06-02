@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Optional
@@ -17,7 +18,7 @@ class GetAllOpportunitiesSecurity:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetAllOpportunities200ApplicationJSON:
-    r"""The returned opportunities"""
+    r"""The opportunities is retrieved successfully for the portal user."""
     
     data: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -27,7 +28,9 @@ class GetAllOpportunitiesResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
     get_all_opportunities_200_application_json_object: Optional[GetAllOpportunities200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned opportunities"""
+    r"""The opportunities is retrieved successfully for the portal user."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

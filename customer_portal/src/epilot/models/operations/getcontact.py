@@ -18,9 +18,10 @@ class GetContactSecurity:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetContact200ApplicationJSON:
-    r"""The returned contact"""
+    r"""Retrieves the mapped contact of the logged in user successfully."""
     
     entity: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
+    r"""The mapped contact of the portal user"""
     files: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
     relations: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
     
@@ -31,8 +32,8 @@ class GetContactResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""
+    r"""Could not authenticate the user"""
     get_contact_200_application_json_object: Optional[GetContact200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned contact"""
+    r"""Retrieves the mapped contact of the logged in user successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

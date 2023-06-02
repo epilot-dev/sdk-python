@@ -3,6 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import entityslug as shared_entityslug
+from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -17,7 +19,7 @@ class GetEntityIdentifiersSecurity:
 @dataclasses.dataclass
 class GetEntityIdentifiersRequest:
     
-    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    slug: shared_entityslug.EntitySlug = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""The slug of an entity"""
     
 
@@ -26,13 +28,15 @@ class GetEntityIdentifiersRequest:
 class GetEntityIdentifiers200ApplicationJSONData:
     
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
+    r"""The name of the identifier"""
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    r"""The type of the identifier"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetEntityIdentifiers200ApplicationJSON:
-    r"""The returned identifiers of an entity"""
+    r"""The identifiers of the requested entity returned successfully."""
     
     data: Optional[list[GetEntityIdentifiers200ApplicationJSONData]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
@@ -42,7 +46,9 @@ class GetEntityIdentifiersResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
     get_entity_identifiers_200_application_json_object: Optional[GetEntityIdentifiers200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned identifiers of an entity"""
+    r"""The identifiers of the requested entity returned successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

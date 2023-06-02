@@ -6,7 +6,7 @@ from epilot.models import operations, shared
 from typing import Any, Optional
 
 class Ecp:
-    r"""ECP"""
+    r"""APIs defined for a portal user"""
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -25,13 +25,13 @@ class Ecp:
     
     def add_end_customer_relation_to_entity(self, request: operations.AddEndCustomerRelationToEntityRequest, security: operations.AddEndCustomerRelationToEntitySecurity) -> operations.AddEndCustomerRelationToEntityResponse:
         r"""addEndCustomerRelationToEntity
-        Add EndCustomer Relation To an Entity
+        Add portal user relation to an entity
         """
         base_url = self._server_url
         
         url = utils.generate_url(operations.AddEndCustomerRelationToEntityRequest, base_url, '/v2/portal/entity/add-end-customer/{slug}/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -45,12 +45,16 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.AddEndCustomerRelationToEntity200ApplicationJSON])
                 res.add_end_customer_relation_to_entity_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def delete_entity_file(self, request: shared.DeleteEntityFile, security: operations.DeleteEntityFileSecurity) -> operations.DeleteEntityFileResponse:
-        r"""Delete files from an entity
+        r"""deleteEntityFile
         Delete files from an entity
         """
         base_url = self._server_url
@@ -62,7 +66,7 @@ class Ecp:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -72,23 +76,27 @@ class Ecp:
 
         res = operations.DeleteEntityFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
+        if http_res.status_code == 202:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteEntityFile200ApplicationJSON])
-                res.delete_entity_file_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteEntityFile202ApplicationJSON])
+                res.delete_entity_file_202_application_json_object = out
+        elif http_res.status_code in [400, 401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def delete_portal_user(self, security: operations.DeletePortalUserSecurity) -> operations.DeletePortalUserResponse:
         r"""deletePortalUser
-        TODO
+        Delete the portal user
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/user'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -100,20 +108,25 @@ class Ecp:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                res.delete_portal_user_200_application_json_string = http_res.content
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DeletePortalUser200ApplicationJSON])
+                res.delete_portal_user_200_application_json_object = out
+        elif http_res.status_code in [401, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_all_contracts(self, security: operations.GetAllContractsSecurity) -> operations.GetAllContractsResponse:
         r"""getAllContracts
-        TODO
+        Get all contracts for a portal user
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/contract'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -127,19 +140,23 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetAllContracts200ApplicationJSON])
                 res.get_all_contracts_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_all_opportunities(self, security: operations.GetAllOpportunitiesSecurity) -> operations.GetAllOpportunitiesResponse:
         r"""getAllOpportunities
-        TODO
+        Get all opportunities of a portal user
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/opportunity'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -153,19 +170,23 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetAllOpportunities200ApplicationJSON])
                 res.get_all_opportunities_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_all_orders(self, security: operations.GetAllOrdersSecurity) -> operations.GetAllOrdersResponse:
         r"""getAllOrders
-        TODO
+        Get all orders for the portal user
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/order'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -179,13 +200,17 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetAllOrders200ApplicationJSON])
                 res.get_all_orders_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_contact(self, security: operations.GetContactSecurity) -> operations.GetContactResponse:
         r"""getContact
-        Get the Contact by id
+        Retrieves the contact by ID.
         """
         base_url = self._server_url
         
@@ -205,7 +230,7 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetContact200ApplicationJSON])
                 res.get_contact_200_application_json_object = out
-        elif http_res.status_code == 500:
+        elif http_res.status_code in [401, 403, 404, 500]:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
                 res.error_resp = out
@@ -214,14 +239,14 @@ class Ecp:
 
     
     def get_contract(self, request: operations.GetContractRequest, security: operations.GetContractSecurity) -> operations.GetContractResponse:
-        r"""get contract based on id
-        TODO
+        r"""getContract
+        Get a contract by id
         """
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetContractRequest, base_url, '/v2/portal/contract/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -235,13 +260,17 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetContract200ApplicationJSON])
                 res.get_contract_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_entities_by_identifiers(self, request: operations.GetEntitiesByIdentifiersRequest, security: operations.GetEntitiesByIdentifiersSecurity) -> operations.GetEntitiesByIdentifiersResponse:
         r"""getEntitiesByIdentifiers
-        Get Entities By Identifiers
+        Get entities by identifiers by portal user
         """
         base_url = self._server_url
         
@@ -252,7 +281,7 @@ class Ecp:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -266,19 +295,23 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetEntitiesByIdentifiers200ApplicationJSON])
                 res.get_entities_by_identifiers_200_application_json_object = out
+        elif http_res.status_code in [400, 401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_opportunity(self, request: operations.GetOpportunityRequest, security: operations.GetOpportunitySecurity) -> operations.GetOpportunityResponse:
         r"""getOpportunity
-        TODO
+        Get an opportunity by id
         """
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetOpportunityRequest, base_url, '/v2/portal/opportunities/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -292,19 +325,23 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetOpportunity200ApplicationJSON])
                 res.get_opportunity_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_order(self, request: operations.GetOrderRequest, security: operations.GetOrderSecurity) -> operations.GetOrderResponse:
         r"""getOrder
-        TODO
+        Get an order by id
         """
         base_url = self._server_url
         
         url = utils.generate_url(operations.GetOrderRequest, base_url, '/v2/portal/order/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -318,19 +355,23 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetOrder200ApplicationJSON])
                 res.get_order_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_organization_settings(self, security: operations.GetOrganizationSettingsSecurity) -> operations.GetOrganizationSettingsResponse:
         r"""getOrganizationSettings
-        get organization settings
+        Retrieves the organization settings.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/org/settings'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -342,22 +383,26 @@ class Ecp:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSettings])
-                res.organization_settings = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetOrganizationSettings200ApplicationJSON])
+                res.get_organization_settings_200_application_json_object = out
+        elif http_res.status_code in [401, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_portal_config(self, request: operations.GetPortalConfigRequest, security: operations.GetPortalConfigSecurity) -> operations.GetPortalConfigResponse:
         r"""getPortalConfig
-        TODO
+        Retrieves the portal configuration.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/config'
         headers = {}
         query_params = utils.get_query_params(operations.GetPortalConfigRequest, request)
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -371,46 +416,23 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.PortalConfig])
                 res.portal_config = out
-
-        return res
-
-    
-    def get_portal_config_by_domain(self, request: operations.GetPortalConfigByDomainRequest) -> operations.GetPortalConfigByDomainResponse:
-        r"""getPortalConfigByDomain
-        TODO
-        """
-        base_url = self._server_url
-        
-        url = base_url.removesuffix('/') + '/v2/portal/public/config'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetPortalConfigByDomainRequest, request)
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
-        
-        client = self._security_client
-        
-        http_res = client.request('GET', url, params=query_params, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.GetPortalConfigByDomainResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
+        elif http_res.status_code in [401, 403, 500]:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.PortalConfig])
-                res.portal_config = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_portal_user(self, security: operations.GetPortalUserSecurity) -> operations.GetPortalUserResponse:
         r"""getPortalUser
-        TODO
+        Get the portal user details
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/user'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -422,21 +444,25 @@ class Ecp:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
-                res.entity_item = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetPortalUser200ApplicationJSON])
+                res.get_portal_user_200_application_json_object = out
+        elif http_res.status_code in [401, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def get_schemas(self, security: operations.GetSchemasSecurity) -> operations.GetSchemasResponse:
         r"""getSchemas
-        TODO
+        Retrieves the schemas.
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/schemas'
         headers = {}
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -450,12 +476,16 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetSchemas200ApplicationJSON])
                 res.get_schemas_200_application_json_object = out
+        elif http_res.status_code in [401, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def save_entity_file(self, request: shared.SaveEntityFile, security: operations.SaveEntityFileSecurity) -> operations.SaveEntityFileResponse:
-        r"""Add files to an entity
+        r"""saveEntityFile
         Add files to an entity
         """
         base_url = self._server_url
@@ -467,7 +497,7 @@ class Ecp:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -477,39 +507,21 @@ class Ecp:
 
         res = operations.SaveEntityFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
+        if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.SaveEntityFile200ApplicationJSON])
-                res.save_entity_file_200_application_json_object = out
-
-        return res
-
-    
-    def test_auth(self) -> operations.TestAuthResponse:
-        r"""testAuth
-        TODO
-        """
-        base_url = self._server_url
-        
-        url = base_url.removesuffix('/') + '/v2/portal/auth'
-        headers = {}
-        headers['Accept'] = '*/*'
-        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
-        
-        client = self._security_client
-        
-        http_res = client.request('GET', url, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.TestAuthResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
+                out = utils.unmarshal_json(http_res.text, Optional[operations.SaveEntityFile201ApplicationJSON])
+                res.save_entity_file_201_application_json_object = out
+        elif http_res.status_code in [400, 401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def update_contact(self, request: dict[str, Any], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
         r"""updateContact
-        Update the contact details
+        Updates the contact details.
         """
         base_url = self._server_url
         
@@ -518,7 +530,7 @@ class Ecp:
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -530,15 +542,19 @@ class Ecp:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
-                res.entity_item = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateContact200ApplicationJSON])
+                res.update_contact_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def update_contract(self, request: operations.UpdateContractRequest, security: operations.UpdateContractSecurity) -> operations.UpdateContractResponse:
-        r"""Update contract based on id
-        TODO
+        r"""updateContract
+        Update a contract by id
         """
         base_url = self._server_url
         
@@ -549,7 +565,7 @@ class Ecp:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -563,13 +579,17 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateContract200ApplicationJSON])
                 res.update_contract_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def update_opportunity(self, request: operations.UpdateOpportunityRequest, security: operations.UpdateOpportunitySecurity) -> operations.UpdateOpportunityResponse:
-        r"""Update an opportunity based on id
-        TODO
+        r"""updateOpportunity
+        Update an opportunity by id
         """
         base_url = self._server_url
         
@@ -580,7 +600,7 @@ class Ecp:
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -594,13 +614,17 @@ class Ecp:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateOpportunity200ApplicationJSON])
                 res.update_opportunity_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def update_order(self, request: operations.UpdateOrderRequest, security: operations.UpdateOrderSecurity) -> operations.UpdateOrderResponse:
         r"""updateOrder
-        Update the order details
+        Update an order by id
         """
         base_url = self._server_url
         
@@ -609,7 +633,7 @@ class Ecp:
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -621,8 +645,12 @@ class Ecp:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
-                res.entity_item = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateOrder200ApplicationJSON])
+                res.update_order_200_application_json_object = out
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
@@ -638,7 +666,7 @@ class Ecp:
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = utils.configure_security_client(self._client, security)
@@ -650,8 +678,12 @@ class Ecp:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
-                res.entity_item = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdatePortalUser200ApplicationJSON])
+                res.update_portal_user_200_application_json_object = out
+        elif http_res.status_code in [401, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 

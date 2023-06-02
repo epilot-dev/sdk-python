@@ -1,13 +1,13 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
 req = operations.AddEndCustomerRelationToEntityRequest(
-    id='89bd9d8d-69a6-474e-8f46-7cc8796ed151',
-    slug='contact',
+    id='5da0a718-c822-403d-9f5d-20d4584e0528',
+    slug=shared.EntitySlug.CONTACT,
 )
 
 res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(

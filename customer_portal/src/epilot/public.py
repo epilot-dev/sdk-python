@@ -3,10 +3,10 @@
 import requests as requests_http
 from . import utils
 from epilot.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class Public:
-    r"""Public"""
+    r"""Public APIs"""
     _client: requests_http.Session
     _security_client: requests_http.Session
     _server_url: str
@@ -23,35 +23,9 @@ class Public:
         self._gen_version = gen_version
         
     
-    def activate_user(self, request: operations.ActivateUserRequest) -> operations.ActivateUserResponse:
-        r"""activateUser
-        Activates the user
-        """
-        base_url = self._server_url
-        
-        url = base_url.removesuffix('/') + '/v2/portal/public/activate'
-        headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "user_activation_payload", 'json')
-        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.ActivateUserRequest, request)
-        headers['Accept'] = '*/*'
-        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
-        
-        client = self._security_client
-        
-        http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.ActivateUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-
-        return res
-
-    
     def confirm_user(self, request: operations.ConfirmUserRequest) -> operations.ConfirmUserResponse:
         r"""confirmUser
-        TODO
+        Confirm a portal user
         """
         base_url = self._server_url
         
@@ -68,23 +42,25 @@ class Public:
 
         res = operations.ConfirmUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if http_res.status_code == 200:
+        if http_res.status_code == 301:
+            pass
+        elif http_res.status_code == 500:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
-                res.entity_item = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def create_user(self, request: operations.CreateUserRequest) -> operations.CreateUserResponse:
-        r"""creates a user
-        Creates a user in cognito pool and db item
+        r"""createUser
+        Registers a portal user
         """
         base_url = self._server_url
         
         url = base_url.removesuffix('/') + '/v2/portal/public/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "create_user_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -102,9 +78,9 @@ class Public:
         
         if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.AddPortalResp])
-                res.add_portal_resp = out
-        elif http_res.status_code in [400, 401, 500]:
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CreateUser201ApplicationJSON])
+                res.create_user_201_application_json_object = out
+        elif http_res.status_code in [400, 500]:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
                 res.error_resp = out
@@ -121,7 +97,7 @@ class Public:
         url = base_url.removesuffix('/') + '/v2/portal/contact/email/count'
         headers = {}
         query_params = utils.get_query_params(operations.GetCountByEmailRequest, request)
-        headers['Accept'] = 'application/json'
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
         
         client = self._security_client
@@ -135,13 +111,79 @@ class Public:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetCountByEmail200ApplicationJSON])
                 res.get_count_by_email_200_application_json_object = out
+        elif http_res.status_code == 500:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
+
+        return res
+
+    
+    def get_portal_config_by_domain(self, request: operations.GetPortalConfigByDomainRequest) -> operations.GetPortalConfigByDomainResponse:
+        r"""getPortalConfigByDomain
+        Retrieves the portal configuration by domain.
+        """
+        base_url = self._server_url
+        
+        url = base_url.removesuffix('/') + '/v2/portal/public/config'
+        headers = {}
+        query_params = utils.get_query_params(operations.GetPortalConfigByDomainRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
+        
+        client = self._security_client
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetPortalConfigByDomainResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.PortalConfig])
+                res.portal_config = out
+        elif http_res.status_code == 500:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
+
+        return res
+
+    
+    def get_public_portal_config(self, request: operations.GetPublicPortalConfigRequest) -> operations.GetPublicPortalConfigResponse:
+        r"""getPublicPortalConfig
+        Retrieves the public portal configuration.
+        """
+        base_url = self._server_url
+        
+        url = base_url.removesuffix('/') + '/v2/portal/public/portal/config'
+        headers = {}
+        query_params = utils.get_query_params(operations.GetPublicPortalConfigRequest, request)
+        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['user-agent'] = f'speakeasy-sdk/{self._language} {self._sdk_version} {self._gen_version}'
+        
+        client = self._security_client
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetPublicPortalConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.PortalConfig])
+                res.portal_config = out
+        elif http_res.status_code == 500:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 
     
     def user_exists(self, request: operations.UserExistsRequest) -> operations.UserExistsResponse:
         r"""userExists
-        Checks whether a user exists in the customer portal
+        Checks whether a user exists in the portal
         """
         base_url = self._server_url
         
@@ -162,10 +204,10 @@ class Public:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UserExists200ApplicationJSON])
                 res.user_exists_200_application_json_object = out
-        elif http_res.status_code == 404:
+        elif http_res.status_code == 500:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.UserExists404ApplicationJSON])
-                res.user_exists_404_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
 
         return res
 

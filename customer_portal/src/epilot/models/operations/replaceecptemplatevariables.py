@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
@@ -21,6 +22,7 @@ class ReplaceECPTemplateVariablesRequestBody:
     r"""ECPVariables payload"""
     
     contact_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contactId'), 'exclude': lambda f: f is None }})
+    r"""ID of the contact"""
     
 
 @dataclasses.dataclass
@@ -42,7 +44,7 @@ class ReplaceECPTemplateVariables200ApplicationJSONPortalUser:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ReplaceECPTemplateVariables200ApplicationJSON:
-    r"""ok"""
+    r"""Replaced portal template variables successfully."""
     
     portal_user: Optional[ReplaceECPTemplateVariables200ApplicationJSONPortalUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('portalUser'), 'exclude': lambda f: f is None }})
     
@@ -52,7 +54,9 @@ class ReplaceECPTemplateVariablesResponse:
     
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     replace_ecp_template_variables_200_application_json_object: Optional[ReplaceECPTemplateVariables200ApplicationJSON] = dataclasses.field(default=None)
-    r"""ok"""
+    r"""Replaced portal template variables successfully."""
     

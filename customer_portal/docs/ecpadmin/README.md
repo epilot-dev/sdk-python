@@ -2,12 +2,12 @@
 
 ## Overview
 
-ECP Admin
+APIs defined for a ECP Admin
 
 ### Available Operations
 
 * [configure_distribution](#configure_distribution) - configureDistribution
-* [create_sso_user](#create_sso_user) - creates a sso user
+* [create_sso_user](#create_sso_user) - createSSOUser
 * [delete_portal](#delete_portal) - deletePortal
 * [extra_permission_attributes](#extra_permission_attributes) - extraPermissionAttributes
 * [get_all_portal_configs](#get_all_portal_configs) - getAllPortalConfigs
@@ -16,16 +16,15 @@ ECP Admin
 * [get_entity_identifiers](#get_entity_identifiers) - getEntityIdentifiers
 * [get_org_portal_config](#get_org_portal_config) - getOrgPortalConfig
 * [get_portal_config](#get_portal_config) - getPortalConfig
-* [get_public_portal_config](#get_public_portal_config) - getPublicPortalConfig
 * [get_valid_secondary_attributes](#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [replace_ecp_template_variables](#replace_ecp_template_variables) - replaceECPTemplateVariables
-* [save_portal_files](#save_portal_files) - Add files to portal
+* [save_portal_files](#save_portal_files) - savePortalFiles
 * [upsert_email_templates](#upsert_email_templates) - upsertEmailTemplates
-* [upsert_portal](#upsert_portal) - upserts a portal
+* [upsert_portal](#upsert_portal) - upsertPortal
 
 ## configure_distribution
 
-TODO
+Configure the distribution for the portal's custom domain
 
 ### Example Usage
 
@@ -49,7 +48,7 @@ if res.configure_distribution_200_application_json_object is not None:
 
 ## create_sso_user
 
-Creates a sso user as portal user
+Creates a portal user as an SSO user.
 
 ### Example Usage
 
@@ -60,7 +59,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.CreateSSOUserRequest(
-    request_body=operations.CreateSSOUserRequestBody(
+    create_sso_user_request=shared.CreateSSOUserRequest(
         email='testemail921@yopmail.com',
         first_name='John',
         last_name='Doe',
@@ -78,7 +77,7 @@ if res.create_sso_user_201_application_json_object is not None:
 
 ## delete_portal
 
-TODO
+Deletes the portal.
 
 ### Example Usage
 
@@ -102,7 +101,7 @@ if res.status_code == 200:
 
 ## extra_permission_attributes
 
-TODO
+Retrieves the extra permission attributes.
 
 ### Example Usage
 
@@ -123,7 +122,7 @@ if res.extra_permission_attributes_200_application_json_object is not None:
 
 ## get_all_portal_configs
 
-TODO
+Retrieves all portal configurations.
 
 ### Example Usage
 
@@ -162,13 +161,13 @@ res = s.ecp_admin.get_ecp_contact(req, operations.GetECPContactSecurity(
     epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
-if res.entity_item is not None:
+if res.get_ecp_contact_200_application_json_object is not None:
     # handle response
 ```
 
 ## get_email_templates
 
-TODO
+Retrieves the email templates of a portal
 
 ### Example Usage
 
@@ -192,18 +191,18 @@ if res.email_templates is not None:
 
 ## get_entity_identifiers
 
-Get Entity's Identifiers
+Retrieve a list of entity identifiers used for entity search by portal users.
 
 ### Example Usage
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
 req = operations.GetEntityIdentifiersRequest(
-    slug='contact',
+    slug=shared.EntitySlug.CONTACT,
 )
 
 res = s.ecp_admin.get_entity_identifiers(req, operations.GetEntityIdentifiersSecurity(
@@ -216,7 +215,7 @@ if res.get_entity_identifiers_200_application_json_object is not None:
 
 ## get_org_portal_config
 
-TODO
+Retrieves the portal configuration for the organization.
 
 ### Example Usage
 
@@ -240,7 +239,7 @@ if res.portal_config is not None:
 
 ## get_portal_config
 
-TODO
+Retrieves the portal configuration.
 
 ### Example Usage
 
@@ -251,7 +250,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalConfigRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -262,36 +261,9 @@ if res.portal_config is not None:
     # handle response
 ```
 
-## get_public_portal_config
-
-TODO
-
-### Example Usage
-
-```python
-import epilot
-from epilot.models import operations, shared
-
-s = epilot.Epilot(
-    security=shared.Security(
-        as_customer="YOUR_API_KEY_HERE",
-    ),
-)
-
-req = operations.GetPublicPortalConfigRequest(
-    org_id='12324',
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
-)
-
-res = s.ecp_admin.get_public_portal_config(req)
-
-if res.portal_config is not None:
-    # handle response
-```
-
 ## get_valid_secondary_attributes
 
-Get Valid Secondary Attributes
+Get valid secondary attributes that are used while mapping a contact on registration
 
 ### Example Usage
 
@@ -312,7 +284,7 @@ if res.get_valid_secondary_attributes_200_application_json_object is not None:
 
 ## replace_ecp_template_variables
 
-TODO
+Replaces the template variables of a portal
 
 ### Example Usage
 
@@ -326,7 +298,7 @@ req = operations.ReplaceECPTemplateVariablesRequest(
     request_body=operations.ReplaceECPTemplateVariablesRequestBody(
         contact_id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.replace_ecp_template_variables(req, operations.ReplaceECPTemplateVariablesSecurity(
@@ -353,10 +325,9 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
-                '12345',
-                '12345',
-                '12345',
-                '12345',
+                'esse',
+                'ipsum',
+                'excepturi',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -367,10 +338,32 @@ req = shared.SavePortalFile(
         ),
         shared.SavePortalFileFiles(
             tags=[
-                '12345',
-                '12345',
-                '12345',
-                '12345',
+                'perferendis',
+            ],
+            file_type='orderRightTeaser',
+            filename='12345',
+            s3ref=shared.SavePortalFileFilesS3ref(
+                bucket='12345',
+                key='12345',
+            ),
+        ),
+        shared.SavePortalFileFiles(
+            tags=[
+                'natus',
+                'sed',
+            ],
+            file_type='orderRightTeaser',
+            filename='12345',
+            s3ref=shared.SavePortalFileFilesS3ref(
+                bucket='12345',
+                key='12345',
+            ),
+        ),
+        shared.SavePortalFileFiles(
+            tags=[
+                'dolor',
+                'natus',
+                'laboriosam',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -380,20 +373,20 @@ req = shared.SavePortalFile(
             ),
         ),
     ],
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.save_portal_files(req, operations.SavePortalFilesSecurity(
     epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
-if res.entity_item is not None:
+if res.save_portal_files_201_application_json_object is not None:
     # handle response
 ```
 
 ## upsert_email_templates
 
-TODO
+Upserts the email templates of a portal
 
 ### Example Usage
 
@@ -405,11 +398,11 @@ s = epilot.Epilot()
 
 req = operations.UpsertEmailTemplatesRequest(
     email_templates=shared.EmailTemplates(
-        confirm_account='saepe',
-        forgot_password='pariatur',
-        invitation='accusantium',
-        on_map_a_pending_user='consequuntur',
-        on_new_quote='praesentium',
+        confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
+        forgot_password='6538fddb-f0e9-4f0f-af51-6e57891ff20a',
+        invitation='14ae65fb-0dc1-4863-8743-6bc01da469f6',
+        on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
+        on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
     ),
     origin=shared.Origin.INSTALLER_PORTAL,
 )
@@ -424,7 +417,7 @@ if res.upsert_email_templates_200_application_json_object is not None:
 
 ## upsert_portal
 
-upserts a portal and db item
+Upserts the settings for a portal of an organization.
 
 ### Example Usage
 
@@ -441,82 +434,74 @@ req = operations.UpsertPortalRequest(
             cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
             cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config='magni',
+        config='fuga',
         contact_secondary_identifier='full_name',
-        default_user_to_notify={
-            "quo": 'illum',
-        },
-        design_id='3134',
-        email_templates=shared.UpsertPortalConfigEmailTemplates(
+        default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
+            on_pending_user={
+                "corporis": 'iste',
+                "iure": 'saepe',
+            },
+        ),
+        design_id='9ba94f20-b872-4217-a259-2a90a8ee1a29',
+        domain='abc.com',
+        email_templates=shared.EmailTemplates(
             confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
             forgot_password='6538fddb-f0e9-4f0f-af51-6e57891ff20a',
             invitation='14ae65fb-0dc1-4863-8743-6bc01da469f6',
+            on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
+            on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
         ),
-        enabled=True,
+        enabled=False,
         entity_actions=[
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='maxime',
-                    en='ea',
+                    de='architecto',
+                    en='ipsa',
                 ),
-                journey_id='excepturi',
-                slug='contact',
+                journey_id='reiciendis',
+                slug=shared.EntitySlug.CONTACT,
             ),
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='odit',
-                    en='ea',
+                    de='est',
+                    en='mollitia',
                 ),
-                journey_id='accusantium',
-                slug='contact',
+                journey_id='laborum',
+                slug=shared.EntitySlug.CONTACT,
             ),
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='ab',
-                    en='maiores',
+                    de='dolores',
+                    en='dolorem',
                 ),
-                journey_id='quidem',
-                slug='contact',
-            ),
-            shared.UpsertPortalConfigEntityActions(
-                action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='ipsam',
-                    en='voluptate',
-                ),
-                journey_id='autem',
-                slug='contact',
+                journey_id='corporis',
+                slug=shared.EntitySlug.CONTACT,
             ),
         ],
-        entity_identifiers={
-            "eaque": shared.UpsertPortalConfigEntityIdentifiers(
+        entity_identifiers=shared.UpsertPortalConfigEntityIdentifiers(
+            type=shared.UpsertPortalConfigEntityIdentifiersType(
                 attributes=[
-                    'contract_number',
-                    'contract_number',
-                    'contract_number',
                     'contract_number',
                 ],
                 is_enabled=False,
             ),
-            "nemo": shared.UpsertPortalConfigEntityIdentifiers(
-                attributes=[
-                    'contract_number',
-                    'contract_number',
-                    'contract_number',
-                    'contract_number',
-                ],
-                is_enabled=False,
-            ),
-            "perferendis": shared.UpsertPortalConfigEntityIdentifiers(
-                attributes=[
-                    'contract_number',
-                    'contract_number',
-                    'contract_number',
-                    'contract_number',
-                ],
-                is_enabled=False,
-            ),
-        },
+        ),
         grants=[
+            shared.Grant(
+                action='entity-read',
+                effect=shared.GrantEffect.ALLOW,
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
+            ),
+            shared.Grant(
+                action='entity-read',
+                effect=shared.GrantEffect.DENY,
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
+            ),
+            shared.Grant(
+                action='entity-read',
+                effect=shared.GrantEffect.ALLOW,
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
+            ),
             shared.Grant(
                 action='entity-read',
                 effect=shared.GrantEffect.ALLOW,
@@ -528,8 +513,8 @@ req = operations.UpsertPortalRequest(
             order_right_teaser='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg',
             welcome_banner='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg',
         ),
-        is_epilot_domain=True,
-        name='My Portal',
+        is_epilot_domain=False,
+        name='Installer Portal',
         self_registration=False,
     ),
     origin=shared.Origin.INSTALLER_PORTAL,
@@ -539,6 +524,6 @@ res = s.ecp_admin.upsert_portal(req, operations.UpsertPortalSecurity(
     epilot_auth="YOUR_BEARER_TOKEN_HERE",
 ))
 
-if res.add_portal_resp is not None:
+if res.portal_config is not None:
     # handle response
 ```
