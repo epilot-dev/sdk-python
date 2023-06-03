@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/ecp.py
 src/epilot/ecp_admin.py
 src/epilot/public.py

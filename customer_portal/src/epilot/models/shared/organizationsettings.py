@@ -100,7 +100,7 @@ class OrganizationSettingsEntitySchemaBuilder:
 class OrganizationSettingsInstallerPortal:
     
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
-    r"""Enable/Disable end customer portal"""
+    r"""Enable/Disable installer portal"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
