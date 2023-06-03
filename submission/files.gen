@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/submissions.py
 src/epilot/sdk.py
 .gitignore
