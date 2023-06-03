@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/drafts.py
 src/epilot/messages.py
 src/epilot/threads.py
