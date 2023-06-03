@@ -1,3 +1,4 @@
+src/sdk/sdkconfiguration.py
 src/sdk/closing_reason.py
 src/sdk/workflows.py
 src/sdk/sdk.py
