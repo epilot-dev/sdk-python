@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/activity.py
 src/epilot/entities.py
 src/epilot/entity_import.py
