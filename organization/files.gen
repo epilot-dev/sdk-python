@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/organization.py
 src/epilot/organization_settings.py
 src/epilot/sdk.py
