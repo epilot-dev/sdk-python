@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/availability_api.py
 src/epilot/cart_api.py
 src/epilot/catalog_api.py
