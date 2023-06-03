@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/custom_variables.py
 src/epilot/variables.py
 src/epilot/sdk.py
