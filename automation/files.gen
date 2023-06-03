@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/executions.py
 src/epilot/flows.py
 src/epilot/sdk.py
