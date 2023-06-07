@@ -2,7 +2,7 @@
 
 ## Overview
 
-Backend for epilot portals - End Customer Portal & Installer Portal
+Portal API: Backend for epilot portals - End Customer Portal & Installer Portal
 
 ### Available Operations
 

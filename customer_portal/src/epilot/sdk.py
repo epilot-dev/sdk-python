@@ -9,7 +9,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Backend for epilot portals - End Customer Portal & Installer Portal"""
+    r"""Portal API: Backend for epilot portals - End Customer Portal & Installer Portal"""
     ecp: Ecp
     r"""APIs defined for a portal user"""
     ecp_admin: ECPAdmin
