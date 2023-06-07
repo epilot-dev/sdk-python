@@ -2,7 +2,7 @@
 
 ## Overview
 
-Management of Partners in epilot
+Partner API: Management of Partners in epilot
 
 ### Available Operations
 

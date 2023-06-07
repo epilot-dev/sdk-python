@@ -7,7 +7,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Management of Partners in epilot"""
+    r"""Partner API: Management of Partners in epilot"""
     partners: Partners
     r"""Partners"""
 
