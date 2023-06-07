@@ -8,7 +8,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""API Backend for epilot Automation Workflows feature"""
+    r"""Automation API: API Backend for epilot Automation Workflows feature"""
     executions: Executions
     r"""Automation executions"""
     flows: Flows

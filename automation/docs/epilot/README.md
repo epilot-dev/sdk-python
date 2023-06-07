@@ -2,7 +2,7 @@
 
 ## Overview
 
-API Backend for epilot Automation Workflows feature
+Automation API: API Backend for epilot Automation Workflows feature
 
 ### Available Operations
 
