@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage epilot tenant organizations
+Organization API: Manage epilot tenant organizations
 
 ### Available Operations
 

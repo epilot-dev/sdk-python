@@ -8,7 +8,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Manage epilot tenant organizations"""
+    r"""Organization API: Manage epilot tenant organizations"""
     organization: Organization
     r"""Organization info"""
     organization_settings: OrganizationSettings
