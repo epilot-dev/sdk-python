@@ -2,7 +2,7 @@
 
 ## Overview
 
-Send and receive email messages via your epilot organization
+Message API: Send and receive email messages via your epilot organization
 
 
 ### Available Operations

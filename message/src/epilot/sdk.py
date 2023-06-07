@@ -9,7 +9,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Send and receive email messages via your epilot organization"""
+    r"""Message API: Send and receive email messages via your epilot organization"""
     drafts: Drafts
     messages: Messages
     threads: Threads
