@@ -7,7 +7,7 @@ from epilot.models import operations
 from typing import Any, Optional
 
 class Epilot:
-    r"""Auth API to provide JWT tokens for internal API access that work with the epilot custom authorizer.
+    r"""Internal Auth API: Auth API to provide JWT tokens for internal API access that work with the epilot custom authorizer.
     
     Converts AWS credentials into a JWT token with caller's ARN `callerIdentity` and list of `policies` granting access to API Gateway as claims.
     """
