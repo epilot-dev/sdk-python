@@ -2,7 +2,7 @@
 
 ## Overview
 
-Flexible data layer for epilot Entities.
+Entity API: Flexible data layer for epilot Entities.
 
 Use this API configure and access your business objects like Contacts, Opportunities and Products.
 
