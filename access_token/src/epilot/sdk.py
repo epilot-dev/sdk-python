@@ -8,7 +8,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Generate Access Tokens for 3rd party applications that need access to epilot APIs."""
+    r"""Access Token API: Generate Access Tokens for 3rd party applications that need access to epilot APIs."""
     access_tokens: AccessTokens
     r"""Create Access Tokens for epilot APIs"""
     public: Public
