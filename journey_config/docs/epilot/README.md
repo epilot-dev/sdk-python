@@ -2,7 +2,7 @@
 
 ## Overview
 
-API to configure journeys
+Journey API: API to configure journeys
 
 ### Available Operations
 

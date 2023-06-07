@@ -7,7 +7,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""API to configure journeys"""
+    r"""Journey API: API to configure journeys"""
     journeys: Journeys
 
     sdk_configuration: SDKConfiguration
