@@ -7,7 +7,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Notification API for epilot 360"""
+    r"""Notification API: Notification API for epilot 360"""
     notification: Notification
     r"""Notification"""
 

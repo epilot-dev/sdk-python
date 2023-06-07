@@ -2,7 +2,7 @@
 
 ## Overview
 
-Notification API for epilot 360
+Notification API: Notification API for epilot 360
 
 ### Available Operations
 
