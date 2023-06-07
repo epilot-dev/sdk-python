@@ -7,7 +7,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Upload and manage all files stored in epilot"""
+    r"""File API: Upload and manage all files stored in epilot"""
     files: Files
     r"""Files"""
 

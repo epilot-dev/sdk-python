@@ -2,7 +2,7 @@
 
 ## Overview
 
-Upload and manage all files stored in epilot
+File API: Upload and manage all files stored in epilot
 
 ### Available Operations
 
