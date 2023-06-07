@@ -8,7 +8,7 @@ from sdk import utils
 from sdk.models import shared
 
 class SDK:
-    r"""Service for Workflow Definitions for different processes inside of an Organization"""
+    r"""Workflows Definitions: Service for Workflow Definitions for different processes inside of an Organization"""
     closing_reason: ClosingReason
     workflows: Workflows
 
