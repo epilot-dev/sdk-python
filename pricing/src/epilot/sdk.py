@@ -11,7 +11,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""The `pricing-api` hub sets the foundations for the following Pricing APIs:
+    r"""Pricing API: The `pricing-api` hub sets the foundations for the following Pricing APIs:
     
     ### Order API
     This api enables the management of orders in epilot 360, providing features such as:
