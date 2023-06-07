@@ -6,7 +6,7 @@ from .submissions import Submissions
 from epilot import utils
 
 class Epilot:
-    r"""Use this API to handle submissions entities from external sources e.g. journeys and frontends"""
+    r"""Submission API: Use this API to handle submissions entities from external sources e.g. journeys and frontends"""
     submissions: Submissions
     r"""Journey Submission"""
 
