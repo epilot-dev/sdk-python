@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage users in epilot organization(s)
+User API: Manage users in epilot organization(s)
 
 
 ### Available Operations

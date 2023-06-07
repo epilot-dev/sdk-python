@@ -8,7 +8,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Manage users in epilot organization(s)"""
+    r"""User API: Manage users in epilot organization(s)"""
     user_v1: UserV1
     r"""Legacy User API"""
     user_v2: UserV2
