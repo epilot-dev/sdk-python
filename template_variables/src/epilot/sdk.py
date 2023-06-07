@@ -8,7 +8,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""API to provide variables for email and document templates."""
+    r"""Template Variables API: API to provide variables for email and document templates."""
     custom_variables: CustomVariables
     variables: Variables
     r"""Variables"""
