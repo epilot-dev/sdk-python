@@ -7,7 +7,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Service for Workflow Executions which covers executions of processes defined in an Organization"""
+    r"""Workflows Executions: Service for Workflow Executions which covers executions of processes defined in an Organization"""
     workflows: Workflows
     r"""Interact with workflow executions - start / close / retrieve one or all / search / delete"""
 
