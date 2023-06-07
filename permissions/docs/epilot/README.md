@@ -2,7 +2,7 @@
 
 ## Overview
 
-Flexible Role-based Access Control for epilot
+Permissions API: Flexible Role-based Access Control for epilot
 
 ### Available Operations
 

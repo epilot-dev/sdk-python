@@ -8,7 +8,7 @@ from epilot import utils
 from epilot.models import shared
 
 class Epilot:
-    r"""Flexible Role-based Access Control for epilot"""
+    r"""Permissions API: Flexible Role-based Access Control for epilot"""
     assignments: Assignments
     r"""Assign roles to users"""
     roles: Roles
