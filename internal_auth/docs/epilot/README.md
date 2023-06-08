@@ -94,7 +94,7 @@ s = epilot.Epilot()
 
 
 res = s.epilot.get_token(operations.GetTokenSecurity(
-    sigv4="YOUR_API_KEY_HERE",
+    sigv4="",
 ))
 
 if res.get_token_200_application_json_object is not None:
@@ -146,7 +146,7 @@ req = {
 }
 
 res = s.epilot.get_token_v2(req, operations.GetTokenV2Security(
-    sigv4="YOUR_API_KEY_HERE",
+    sigv4="",
 ))
 
 if res.get_token_v2_200_application_json_object is not None:
