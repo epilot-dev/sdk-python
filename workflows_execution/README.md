@@ -16,7 +16,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        bearer_auth="YOUR_BEARER_TOKEN_HERE",
+        bearer_auth="",
     ),
 )
 
