@@ -46,7 +46,7 @@ req = operations.AddEndCustomerRelationToEntityRequest(
 )
 
 res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.add_end_customer_relation_to_entity_200_application_json_object is not None:
@@ -76,7 +76,7 @@ req = shared.DeleteEntityFile(
 )
 
 res = s.ecp.delete_entity_file(req, operations.DeleteEntityFileSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.delete_entity_file_202_application_json_object is not None:
@@ -97,7 +97,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.delete_portal_user(operations.DeletePortalUserSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.delete_portal_user_200_application_json_object is not None:
@@ -118,7 +118,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_all_contracts(operations.GetAllContractsSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_all_contracts_200_application_json_object is not None:
@@ -139,7 +139,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_all_opportunities(operations.GetAllOpportunitiesSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_all_opportunities_200_application_json_object is not None:
@@ -160,7 +160,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_all_orders(operations.GetAllOrdersSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_all_orders_200_application_json_object is not None:
@@ -181,7 +181,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_contact(operations.GetContactSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_contact_200_application_json_object is not None:
@@ -205,7 +205,7 @@ req = operations.GetContractRequest(
 )
 
 res = s.ecp.get_contract(req, operations.GetContractSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_contract_200_application_json_object is not None:
@@ -234,7 +234,7 @@ req = operations.GetEntitiesByIdentifiersRequest(
 )
 
 res = s.ecp.get_entities_by_identifiers(req, operations.GetEntitiesByIdentifiersSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_entities_by_identifiers_200_application_json_object is not None:
@@ -258,7 +258,7 @@ req = operations.GetOpportunityRequest(
 )
 
 res = s.ecp.get_opportunity(req, operations.GetOpportunitySecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_opportunity_200_application_json_object is not None:
@@ -282,7 +282,7 @@ req = operations.GetOrderRequest(
 )
 
 res = s.ecp.get_order(req, operations.GetOrderSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_order_200_application_json_object is not None:
@@ -303,7 +303,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_organization_settings(operations.GetOrganizationSettingsSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_organization_settings_200_application_json_object is not None:
@@ -327,7 +327,7 @@ req = operations.GetPortalConfigRequest(
 )
 
 res = s.ecp.get_portal_config(req, operations.GetPortalConfigSecurity(
-    epilot_auth="YOUR_BEARER_TOKEN_HERE",
+    epilot_auth="",
 ))
 
 if res.portal_config is not None:
@@ -348,7 +348,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_portal_user(operations.GetPortalUserSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_portal_user_200_application_json_object is not None:
@@ -369,7 +369,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_schemas(operations.GetSchemasSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.get_schemas_200_application_json_object is not None:
@@ -438,7 +438,7 @@ req = shared.SaveEntityFile(
 )
 
 res = s.ecp.save_entity_file(req, operations.SaveEntityFileSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.save_entity_file_201_application_json_object is not None:
@@ -464,7 +464,7 @@ req = {
 }
 
 res = s.ecp.update_contact(req, operations.UpdateContactSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.update_contact_200_application_json_object is not None:
@@ -492,7 +492,7 @@ req = operations.UpdateContractRequest(
 )
 
 res = s.ecp.update_contract(req, operations.UpdateContractSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.update_contract_200_application_json_object is not None:
@@ -522,7 +522,7 @@ req = operations.UpdateOpportunityRequest(
 )
 
 res = s.ecp.update_opportunity(req, operations.UpdateOpportunitySecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.update_opportunity_200_application_json_object is not None:
@@ -552,7 +552,7 @@ req = operations.UpdateOrderRequest(
 )
 
 res = s.ecp.update_order(req, operations.UpdateOrderSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.update_order_200_application_json_object is not None:
@@ -576,7 +576,7 @@ req = {
 }
 
 res = s.ecp.update_portal_user(req, operations.UpdatePortalUserSecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.update_portal_user_200_application_json_object is not None:

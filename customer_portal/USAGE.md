@@ -11,7 +11,7 @@ req = operations.AddEndCustomerRelationToEntityRequest(
 )
 
 res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
-    portal_auth="YOUR_BEARER_TOKEN_HERE",
+    portal_auth="",
 ))
 
 if res.add_end_customer_relation_to_entity_200_application_json_object is not None:
