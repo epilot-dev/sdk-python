@@ -25,7 +25,7 @@ import epilot
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
@@ -54,7 +54,7 @@ from epilot.models import operations
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
@@ -80,7 +80,7 @@ from epilot.models import operations
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
@@ -107,7 +107,7 @@ import epilot
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
@@ -130,7 +130,7 @@ import epilot
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
@@ -153,7 +153,7 @@ from epilot.models import operations
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
