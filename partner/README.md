@@ -16,7 +16,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="YOUR_API_KEY_HERE",
+        as_organization="",
     ),
 )
 
