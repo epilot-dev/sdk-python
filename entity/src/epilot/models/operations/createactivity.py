@@ -11,17 +11,17 @@ from typing import Optional
 @dataclasses.dataclass
 class CreateActivityRequest:
     
-    activity: Optional[shared_activity.Activity] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    activity: Optional[shared_activity.Activity] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     entities: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entities', 'style': 'form', 'explode': False }})
-    r"""Comma-separated list of entities which the activity primarily concerns"""  
+    r"""Comma-separated list of entities which the activity primarily concerns"""
     
 
 @dataclasses.dataclass
 class CreateActivityResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    status_code: int = dataclasses.field()
     activity_item: Optional[shared_activityitem.ActivityItem] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Success"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

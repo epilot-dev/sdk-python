@@ -14,19 +14,19 @@ from typing import Optional
 class GetEntityActivityFeedRequest:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Entity id"""  
+    r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Type"""  
+    r"""Entity Type"""
     after: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after', 'style': 'form', 'explode': True }})
-    r"""Get activities after this timestamp"""  
+    r"""Get activities after this timestamp"""
     before: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'before', 'style': 'form', 'explode': True }})
-    r"""get activities before this timestamp"""  
+    r"""get activities before this timestamp"""
     from_: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
-    r"""start from page"""  
+    r"""start from page"""
     size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
-    r"""max number of results to return"""  
+    r"""max number of results to return"""
     type: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
-    r"""Activity type"""  
+    r"""Activity type"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -34,16 +34,16 @@ class GetEntityActivityFeedRequest:
 class GetEntityActivityFeed200ApplicationJSON:
     r"""Success"""
     
-    results: Optional[list[shared_activityitem.ActivityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
-    total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})  
+    results: Optional[list[shared_activityitem.ActivityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass
 class GetEntityActivityFeedResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    status_code: int = dataclasses.field()
     get_entity_activity_feed_200_application_json_object: Optional[GetEntityActivityFeed200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Success"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

@@ -11,29 +11,29 @@ from typing import Optional
 class GetRelationsV2Request:
     
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Entity id"""  
+    r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Type"""  
-    fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'fields', 'style': 'form', 'explode': True }})
-    r"""List of entity fields to include in results"""  
+    r"""Entity Type"""
+    fields_: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'fields', 'style': 'form', 'explode': True }})
+    r"""List of entity fields to include in results"""
     from_: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
-    r"""Starting page number"""  
+    r"""Starting page number"""
     hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
-    r"""When true, expand relation items with full blown entities."""  
+    r"""When true, expand relation items with full blown entities."""
     include_reverse: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
-    r"""When true, includes reverse relations in response (other entities pointing to this entity)"""  
+    r"""When true, includes reverse relations in response (other entities pointing to this entity)"""
     query: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
-    r"""Input to filter search results"""  
+    r"""Input to filter search results"""
     size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
-    r"""Number of results to return per page"""  
+    r"""Number of results to return per page"""
     
 
 @dataclasses.dataclass
 class GetRelationsV2Response:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    status_code: int = dataclasses.field()
     get_relations_resp_with_pagination: Optional[shared_getrelationsrespwithpagination.GetRelationsRespWithPagination] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Success"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

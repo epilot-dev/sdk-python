@@ -21,25 +21,23 @@ class SummaryAttribute:
     }
     ```
     The value field supports handlebar expressions from which you can pick any field from the entity state.
-    
     """
     
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
-    r"""Label to be shown on the top of the value."""  
+    r"""Label to be shown on the top of the value."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
-    r"""A static value or an handlebar expression."""  
+    r"""A static value or an handlebar expression."""
     feature_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_flag'), 'exclude': lambda f: f is None }})
-    r"""Binds summary field visibility to the feature flag state."""  
+    r"""Binds summary field visibility to the feature flag state."""
     render_condition: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('render_condition'), 'exclude': lambda f: f is None }})
     r"""Defines the conditional rendering expression for showing this field.
     When a valid expression is parsed, their evaluation defines the visibility of this attribute.
     Note: Empty or invalid expression have no effect on the field visibility.
-    
-    """  
+    """
     setting_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('setting_flag'), 'exclude': lambda f: f is None }})
-    r"""Binds summary field visibility to the setting flag state."""  
+    r"""Binds summary field visibility to the setting flag state."""
     show_as_tag: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_as_tag'), 'exclude': lambda f: f is None }})
-    r"""Displays the value within a tag chip."""  
+    r"""Displays the value within a tag chip."""
     tag_color: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag_color'), 'exclude': lambda f: f is None }})
-    r"""CSS hex color or CSS color name for the tag chip."""  
+    r"""CSS hex color or CSS color name for the tag chip."""
     

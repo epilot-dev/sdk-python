@@ -12,7 +12,11 @@ from typing import Optional
 @dataclasses.dataclass
 class GetSchemaVersionsRequest:
     
-    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})  
+    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    drafts_from: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'drafts_from', 'style': 'form', 'explode': True }})
+    drafts_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'drafts_size', 'style': 'form', 'explode': True }})
+    versions_from: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'versions_from', 'style': 'form', 'explode': True }})
+    versions_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'versions_size', 'style': 'form', 'explode': True }})
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -20,16 +24,16 @@ class GetSchemaVersionsRequest:
 class GetSchemaVersions200ApplicationJSON:
     r"""Success"""
     
-    drafts: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drafts'), 'exclude': lambda f: f is None }})  
-    versions: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})  
+    drafts: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drafts'), 'exclude': lambda f: f is None }})
+    versions: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})
     
 
 @dataclasses.dataclass
 class GetSchemaVersionsResponse:
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    status_code: int = dataclasses.field()
     get_schema_versions_200_application_json_object: Optional[GetSchemaVersions200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Success"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

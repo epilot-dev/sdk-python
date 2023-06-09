@@ -12,24 +12,23 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=entity
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
-
 req = operations.AttachActivityRequest(
     entities=[
-        "9bd9d8d6-9a67-44e0-b467-cc8796ed151a",
-        "05dfc2dd-f7cc-478c-a1ba-928fc816742c",
-        "b7392059-2939-46fe-a759-6eb10faaa235",
+        '9bd9d8d6-9a67-44e0-b467-cc8796ed151a',
+        '05dfc2dd-f7cc-478c-a1ba-928fc816742c',
+        'b7392059-2939-46fe-a759-6eb10faaa235',
     ],
-    id="01F130Q52Q6MWSNS8N2AVXV4JN",
+    id='01F130Q52Q6MWSNS8N2AVXV4JN',
 )
-    
+
 res = s.activity.attach_activity(req)
 
 if res.activity_item is not None:
@@ -38,65 +37,68 @@ if res.activity_item is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
-### activity
+### [activity](docs/activity/README.md)
 
-* `attach_activity` - attachActivity
-* `create_activity` - createActivity
-* `get_activity` - getActivity
-* `get_entity_activity_feed` - getEntityActivityFeed
+* [attach_activity](docs/activity/README.md#attach_activity) - attachActivity
+* [create_activity](docs/activity/README.md#create_activity) - createActivity
+* [get_activity](docs/activity/README.md#get_activity) - getActivity
+* [get_entity_activity_feed](docs/activity/README.md#get_entity_activity_feed) - getEntityActivityFeed
 
-### entities
+### [entities](docs/entities/README.md)
 
-* `autocomplete` - autocomplete
-* `create_entity` - createEntity
-* `delete_entity` - deleteEntity
-* `get_entity` - getEntity
-* `patch_entity` - patchEntity
-* `search_entities` - searchEntities
-* `update_entity` - updateEntity
-* `upsert_entity` - upsertEntity
+* [autocomplete](docs/entities/README.md#autocomplete) - autocomplete
+* [create_entity](docs/entities/README.md#create_entity) - createEntity
+* [delete_entity](docs/entities/README.md#delete_entity) - deleteEntity
+* [get_entity](docs/entities/README.md#get_entity) - getEntity
+* [patch_entity](docs/entities/README.md#patch_entity) - patchEntity
+* [search_entities](docs/entities/README.md#search_entities) - searchEntities
+* [update_entity](docs/entities/README.md#update_entity) - updateEntity
+* [upsert_entity](docs/entities/README.md#upsert_entity) - upsertEntity
 
-### export
+### [entity_import](docs/entityimport/README.md)
 
-* `export_entities` - exportEntities
-* `import_entities` - importEntities
+* [import_entities](docs/entityimport/README.md#import_entities) - Import Entities
 
-### relations
+### [export](docs/export/README.md)
 
-* `add_relations` - addRelations
-* `delete_relation` - deleteRelation
-* `get_relations` - getRelations
-* `get_relations_v2` - getRelationsV2
-* `update_relation` - updateRelation
+* [export_entities](docs/export/README.md#export_entities) - exportEntities
 
-### saved_views
+### [relations](docs/relations/README.md)
 
-* `create_saved_view` - createSavedView
-* `delete_saved_view` - deleteSavedView
-* `get_saved_view` - getSavedView
-* `list_saved_views` - listSavedViews
-* `update_saved_view` - updateSavedView
+* [add_relations](docs/relations/README.md#add_relations) - addRelations
+* [delete_relation](docs/relations/README.md#delete_relation) - deleteRelation
+* [get_relations](docs/relations/README.md#get_relations) - getRelations
+* [get_relations_v2](docs/relations/README.md#get_relations_v2) - getRelationsV2
+* [update_relation](docs/relations/README.md#update_relation) - updateRelation
 
-### schemas
+### [saved_views](docs/savedviews/README.md)
 
-* `delete_schema` - deleteSchema
-* `get_schema` - getSchema
-* `get_schema_versions` - getSchemaVersions
-* `list_schema_blueprints` - listSchemaBlueprints
-* `list_schemas` - listSchemas
-* `list_taxonomy_classifications_for_schema` - listTaxonomyClassificationsForSchema
-* `put_schema` - putSchema
+* [create_saved_view](docs/savedviews/README.md#create_saved_view) - createSavedView
+* [delete_saved_view](docs/savedviews/README.md#delete_saved_view) - deleteSavedView
+* [get_saved_view](docs/savedviews/README.md#get_saved_view) - getSavedView
+* [list_saved_views](docs/savedviews/README.md#list_saved_views) - listSavedViews
+* [update_saved_view](docs/savedviews/README.md#update_saved_view) - updateSavedView
 
-### taxonomy
+### [schemas](docs/schemas/README.md)
 
-* `get_taxonomy` - getTaxonomy
-* `list_taxonomies` - listTaxonomies
-* `taxonomies_classifications_search` - taxonomiesClassificationsSearch
-* `taxonomy_autocomplete` - taxonomyAutocomplete
-* `update_classifications_for_taxonomy` - updateClassificationsForTaxonomy
+* [delete_schema](docs/schemas/README.md#delete_schema) - deleteSchema
+* [get_schema](docs/schemas/README.md#get_schema) - getSchema
+* [get_schema_versions](docs/schemas/README.md#get_schema_versions) - getSchemaVersions
+* [list_schema_blueprints](docs/schemas/README.md#list_schema_blueprints) - listSchemaBlueprints
+* [list_schemas](docs/schemas/README.md#list_schemas) - listSchemas
+* [list_taxonomy_classifications_for_schema](docs/schemas/README.md#list_taxonomy_classifications_for_schema) - listTaxonomyClassificationsForSchema
+* [put_schema](docs/schemas/README.md#put_schema) - putSchema
+
+### [taxonomy](docs/taxonomy/README.md)
+
+* [get_taxonomy](docs/taxonomy/README.md#get_taxonomy) - getTaxonomy
+* [list_taxonomies](docs/taxonomy/README.md#list_taxonomies) - listTaxonomies
+* [taxonomies_classifications_search](docs/taxonomy/README.md#taxonomies_classifications_search) - taxonomiesClassificationsSearch
+* [taxonomy_autocomplete](docs/taxonomy/README.md#taxonomy_autocomplete) - taxonomyAutocomplete
+* [update_classifications_for_taxonomy](docs/taxonomy/README.md#update_classifications_for_taxonomy) - updateClassificationsForTaxonomy
 <!-- End SDK Available Operations -->
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
