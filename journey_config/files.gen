@@ -1,5 +1,7 @@
+src/epilot/sdkconfiguration.py
 src/epilot/journeys.py
 src/epilot/sdk.py
+.gitignore
 pylintrc
 setup.py
 src/epilot/__init__.py
@@ -19,4 +21,6 @@ src/epilot/models/shared/searchjourneysresponse.py
 src/epilot/models/shared/searchjourneysqueryrequest.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+docs/epilot/README.md
+docs/journeys/README.md
 USAGE.md

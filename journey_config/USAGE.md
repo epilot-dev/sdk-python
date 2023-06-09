@@ -1,21 +1,20 @@
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
-
 req = {
-    "deserunt": "porro",
-    "nulla": "id",
-    "vero": "perspiciatis",
+    "provident": 'distinctio',
+    "quibusdam": 'unde',
+    "nulla": 'corrupti',
 }
-    
+
 res = s.journeys.create_journey(req)
 
 if res.journey_response is not None:

@@ -16,40 +16,40 @@ from typing import Optional
 class SearchJourneysResponseResultsCreatedBy:
     
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""User ID"""  
+    r"""User ID"""
     
-class SearchJourneysResponseResultsJourneyVersionEnum(str, Enum):
+class SearchJourneysResponseResultsJourneyVersion(str, Enum):
     r"""Journey Version"""
-    FLEX = "Flex"
-    WIDGET = "Widget"
+    FLEX = 'Flex'
+    WIDGET = 'Widget'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SearchJourneysResponseResults:
     
-    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})  
+    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
-    r"""Journey Entity ID"""  
+    r"""Journey Entity ID"""
     org: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_org'), 'exclude': lambda f: f is None }})
-    r"""Organization ID"""  
+    r"""Organization ID"""
     schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_schema'), 'exclude': lambda f: f is None }})
-    r"""Entity Schema (journey always in this case)"""  
-    tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})  
+    r"""Entity Schema (journey always in this case)"""
+    tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_title'), 'exclude': lambda f: f is None }})
-    r"""Journey Entity Title"""  
-    updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})  
-    created_by: Optional[list[SearchJourneysResponseResultsCreatedBy]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_by'), 'exclude': lambda f: f is None }})  
+    r"""Journey Entity Title"""
+    updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
+    created_by: Optional[list[SearchJourneysResponseResultsCreatedBy]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_by'), 'exclude': lambda f: f is None }})
     design: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('design'), 'exclude': lambda f: f is None }})
-    r"""Journey Design Name"""  
+    r"""Journey Design Name"""
     journey_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_id'), 'exclude': lambda f: f is None }})
-    r"""Journey config ID"""  
+    r"""Journey config ID"""
     journey_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_name'), 'exclude': lambda f: f is None }})
-    r"""Journey Name"""  
+    r"""Journey Name"""
     journey_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_type'), 'exclude': lambda f: f is None }})
-    r"""Journey Template"""  
-    journey_version: Optional[SearchJourneysResponseResultsJourneyVersionEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_version'), 'exclude': lambda f: f is None }})
-    r"""Journey Version"""  
+    r"""Journey Template"""
+    journey_version: Optional[SearchJourneysResponseResultsJourneyVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_version'), 'exclude': lambda f: f is None }})
+    r"""Journey Version"""
     
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -58,11 +58,7 @@ class SearchJourneysResponse:
     r"""Success"""
     
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
-    r"""The total number of hits.
-    
-    """  
+    r"""The total number of hits."""
     results: Optional[list[SearchJourneysResponseResults]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
-    r"""The results.
-    
-    """  
+    r"""The results."""
     
