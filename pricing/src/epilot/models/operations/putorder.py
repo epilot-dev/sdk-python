@@ -7,17 +7,19 @@ from ..shared import error as shared_error
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class PutOrderRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Order entity ID"""
     request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
+
 @dataclasses.dataclass
 class PutOrderResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
@@ -26,3 +28,4 @@ class PutOrderResponse:
     r"""Order result"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

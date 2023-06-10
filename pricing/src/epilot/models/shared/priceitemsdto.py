@@ -14,10 +14,10 @@ class PriceItemsDtoType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PriceItemsDtoInput:
     r"""Represents a valid base price item from a client."""
-    
     price: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
     r"""The snapshot of the price linked to the price item."""
     product: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_product'), 'exclude': lambda f: f is None }})
@@ -41,3 +41,4 @@ class PriceItemsDtoInput:
     unit_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount_decimal'), 'exclude': lambda f: f is None }})
     r"""The unit amount in cents to be charged, represented as a decimal string with at most 12 decimal places."""
     
+

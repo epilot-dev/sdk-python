@@ -12,10 +12,10 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CartDtoInput:
     r"""A valid cart payload from a client."""
-    
     line_items: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_items') }})
     r"""A valid set of product prices, quantities, (discounts) and taxes from a client."""
     additional_addresses: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('additional_addresses'), 'exclude': lambda f: f is None }})
@@ -47,3 +47,4 @@ class CartDtoInput:
     """
     tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags'), 'exclude': lambda f: f is None }})
     
+

@@ -9,10 +9,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CatalogSearch:
     r"""A catalog search payload"""
-    
     q: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('q') }})
     r"""The query to perform using lucene query syntax."""
     availability: Optional[shared_availabilityfilters.AvailabilityFilters] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('availability'), 'exclude': lambda f: f is None }})
@@ -26,3 +26,4 @@ class CatalogSearch:
     sort: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sort'), 'exclude': lambda f: f is None }})
     r"""The sort expression to sort the results."""
     
+

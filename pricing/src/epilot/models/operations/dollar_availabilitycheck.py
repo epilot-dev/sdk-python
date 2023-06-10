@@ -9,17 +9,19 @@ from ..shared import error as shared_error
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DollarAvailabilityCheckRequest:
-    
     availability_check_params: shared_availabilitycheckparams.AvailabilityCheckParams = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
     r"""The target Organization Id represented by the caller"""
     
 
+
+
+
 @dataclasses.dataclass
 class DollarAvailabilityCheckResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     availability_result: Optional[shared_availabilityresult.AvailabilityResult] = dataclasses.field(default=None)
@@ -28,3 +30,4 @@ class DollarAvailabilityCheckResponse:
     r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

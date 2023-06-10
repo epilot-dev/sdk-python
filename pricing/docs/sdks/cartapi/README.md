@@ -52,3 +52,15 @@ res = s.cart_api.dollar_checkout_cart(req)
 if res.checkout_cart_result is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.DollarCheckoutCartRequest](../../models/operations/dollarcheckoutcartrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+
+### Response
+
+**[operations.DollarCheckoutCartResponse](../../models/operations/dollarcheckoutcartresponse.md)**
+

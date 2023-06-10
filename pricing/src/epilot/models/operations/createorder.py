@@ -7,9 +7,9 @@ from ..shared import error as shared_error
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class CreateOrderResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
@@ -18,3 +18,4 @@ class CreateOrderResponse:
     r"""Order result"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -9,11 +9,12 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CheckoutCartInput:
     r"""The cart checkout request payload"""
-    
     cart: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cart'), 'exclude': lambda f: f is None }})
     mode: Optional[shared_checkoutmode.CheckoutMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode'), 'exclude': lambda f: f is None }})
     r"""The checkout mode for the cart checkout."""
     
+

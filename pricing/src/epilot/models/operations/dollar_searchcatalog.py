@@ -9,17 +9,19 @@ from ..shared import error as shared_error
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DollarSearchCatalogRequest:
-    
     catalog_search: shared_catalogsearch.CatalogSearch = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
     r"""The target Organization Id represented by the caller"""
     
 
+
+
+
 @dataclasses.dataclass
 class DollarSearchCatalogResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     catalog_search_result: Optional[shared_catalogsearchresult.CatalogSearchResult] = dataclasses.field(default=None)
@@ -28,3 +30,4 @@ class DollarSearchCatalogResponse:
     r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

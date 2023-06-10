@@ -9,17 +9,19 @@ from ..shared import error as shared_error
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DollarCheckoutCartRequest:
-    
     checkout_cart_input: shared_checkoutcart.CheckoutCartInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
     r"""The target Organization Id represented by the caller"""
     
 
+
+
+
 @dataclasses.dataclass
 class DollarCheckoutCartResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     checkout_cart_result: Optional[shared_checkoutcartresult.CheckoutCartResult] = dataclasses.field(default=None)
@@ -28,3 +30,4 @@ class DollarCheckoutCartResponse:
     r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

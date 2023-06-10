@@ -8,9 +8,9 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AvailabilityResultCheckResults:
-    
     product_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_id') }})
     matching_error: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('matching_error'), 'exclude': lambda f: f is None }})
     r"""A set of matching errors when checking availability"""
@@ -18,12 +18,15 @@ class AvailabilityResultCheckResults:
     r"""The number of rules matched"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AvailabilityResult:
     r"""The availability check result payload"""
-    
     available_products: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('available_products') }})
     check_results: Optional[list[AvailabilityResultCheckResults]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_results'), 'exclude': lambda f: f is None }})
     r"""The check result details"""
     
+
