@@ -13,10 +13,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateAccessToken201ApplicationJSON:
     r"""The new generated Access Token"""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -31,12 +31,15 @@ class CreateAccessToken201ApplicationJSON:
     r"""Access token type"""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateAccessTokenResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_access_token_201_application_json_object: Optional[CreateAccessToken201ApplicationJSON] = dataclasses.field(default=None)
     r"""The new generated Access Token"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
