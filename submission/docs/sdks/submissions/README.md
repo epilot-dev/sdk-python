@@ -89,3 +89,15 @@ res = s.submissions.create_submission(req)
 if res.status_code == 200:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.SubmissionPayload](../../models/shared/submissionpayload.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+
+
+### Response
+
+**[operations.CreateSubmissionResponse](../../models/operations/createsubmissionresponse.md)**
+

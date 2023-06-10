@@ -9,10 +9,10 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SubmissionPayload:
     r"""Holds content and meta information"""
-    
     entities: list[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entities') }})
     r"""Entities to create from submission"""
     organization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id') }})
@@ -28,3 +28,4 @@ class SubmissionPayload:
     opt_ins: Optional[list[shared_optin.OptIn]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('opt_ins'), 'exclude': lambda f: f is None }})
     r"""Opt-ins to create from submission"""
     
+

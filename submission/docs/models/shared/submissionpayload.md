@@ -1,0 +1,16 @@
+# SubmissionPayload
+
+Holds content and meta information
+
+
+## Fields
+
+| Field                                                | Type                                                 | Required                                             | Description                                          | Example                                              |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| `ivy_opportunity_ids`                                | list[*str*]                                          | :heavy_minus_sign:                                   | Related Ivy Opportunity Ids                          |                                                      |
+| `entities`                                           | list[dict[str, *Any*]]                               | :heavy_check_mark:                                   | Entities to create from submission<br/>              |                                                      |
+| `journey_submit_id`                                  | *Optional[str]*                                      | :heavy_minus_sign:                                   | journey submit uid                                   | 123                                                  |
+| `opt_ins`                                            | list[[OptIn](../../models/shared/optin.md)]          | :heavy_minus_sign:                                   | Opt-ins to create from submission<br/>               |                                                      |
+| `organization_id`                                    | *str*                                                | :heavy_check_mark:                                   | organization id                                      | 123                                                  |
+| `source_id`                                          | *str*                                                | :heavy_check_mark:                                   | identifier for source e.g. journey ID or frontend ID | ce99875f-fba9-4fe2-a8f9-afaf52059051                 |
+| `source_type`                                        | *str*                                                | :heavy_check_mark:                                   | type of source, e.g. journey or frontend             | journey                                              |
