@@ -33,6 +33,12 @@ if res.get_jwks_200_application_json_object is not None:
     # handle response
 ```
 
+
+### Response
+
+**[operations.GetJwksResponse](../../models/operations/getjwksresponse.md)**
+
+
 ## get_open_id_configuration
 
 OpenID Connect configuration for internal auth as identity provider
@@ -55,6 +61,12 @@ res = s.epilot.get_open_id_configuration()
 if res.get_open_id_configuration_200_application_json_object is not None:
     # handle response
 ```
+
+
+### Response
+
+**[operations.GetOpenIDConfigurationResponse](../../models/operations/getopenidconfigurationresponse.md)**
+
 
 ## get_token
 
@@ -100,6 +112,18 @@ res = s.epilot.get_token(operations.GetTokenSecurity(
 if res.get_token_200_application_json_object is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `security`                                                                 | [operations.GetTokenSecurity](../../models/operations/gettokensecurity.md) | :heavy_check_mark:                                                         | The security requirements to use for the request.                          |
+
+
+### Response
+
+**[operations.GetTokenResponse](../../models/operations/gettokenresponse.md)**
+
 
 ## get_token_v2
 
@@ -152,3 +176,16 @@ res = s.epilot.get_token_v2(req, operations.GetTokenV2Security(
 if res.get_token_v2_200_application_json_object is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [dict[str, Any]](../../models//.md)                                            | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `security`                                                                     | [operations.GetTokenV2Security](../../models/operations/gettokenv2security.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+
+
+### Response
+
+**[operations.GetTokenV2Response](../../models/operations/gettokenv2response.md)**
+

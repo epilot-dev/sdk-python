@@ -9,9 +9,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJwks200ApplicationJSONKeys:
-    
     alg: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alg'), 'exclude': lambda f: f is None }})
     e: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('e'), 'exclude': lambda f: f is None }})
     kid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('kid'), 'exclude': lambda f: f is None }})
@@ -20,20 +20,25 @@ class GetJwks200ApplicationJSONKeys:
     use: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('use'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetJwks200ApplicationJSON:
     r"""Set of jwks"""
-    
     keys: Optional[list[GetJwks200ApplicationJSONKeys]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keys'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetJwksResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_jwks_200_application_json_object: Optional[GetJwks200ApplicationJSON] = dataclasses.field(default=None)
     r"""Set of jwks"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
