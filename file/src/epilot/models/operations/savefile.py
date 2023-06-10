@@ -7,12 +7,13 @@ from ..shared import fileentity as shared_fileentity
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class SaveFileResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     file_entity: Optional[shared_fileentity.FileEntity] = dataclasses.field(default=None)
     r"""Created File Entity"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

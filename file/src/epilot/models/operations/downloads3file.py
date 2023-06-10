@@ -8,29 +8,34 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DownloadS3FileRequest:
-    
     s3_bucket: str = dataclasses.field(metadata={'query_param': { 'field_name': 's3_bucket', 'style': 'form', 'explode': True }})
     s3_key: str = dataclasses.field(metadata={'query_param': { 'field_name': 's3_key', 'style': 'form', 'explode': True }})
     attachment: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'attachment', 'style': 'form', 'explode': True }})
     r"""Controls the Content-Disposition header to control browser behaviour. Set to true to trigger download."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DownloadS3File200ApplicationJSON:
     r"""Generated thumbnail image"""
-    
     download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('download_url'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class DownloadS3FileResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     download_s3_file_200_application_json_object: Optional[DownloadS3File200ApplicationJSON] = dataclasses.field(default=None)
     r"""Generated thumbnail image"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
