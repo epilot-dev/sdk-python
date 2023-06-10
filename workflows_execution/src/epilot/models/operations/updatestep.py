@@ -9,9 +9,9 @@ from ..shared import updatestepreq as shared_updatestepreq
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class UpdateStepRequest:
-    
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
     r"""Id of the execution"""
     step_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'stepId', 'style': 'simple', 'explode': False }})
@@ -20,9 +20,11 @@ class UpdateStepRequest:
     r"""Workflow Execution Step payload"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateStepResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -31,3 +33,4 @@ class UpdateStepResponse:
     step: Optional[shared_step.Step] = dataclasses.field(default=None)
     r"""Success - if the step is updated successfully"""
     
+

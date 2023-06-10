@@ -9,9 +9,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ClosingReasonResp:
     r"""returns all Closing Reasons for this Execution"""
-    
     reasons: Optional[list[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reasons'), 'exclude': lambda f: f is None }})
     
+

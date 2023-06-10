@@ -8,16 +8,18 @@ from ..shared import errorresp as shared_errorresp
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetClosingReasonExecutionRequest:
-    
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
     r"""Id of the execution"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetClosingReasonExecutionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     closing_reason_resp: Optional[shared_closingreasonresp.ClosingReasonResp] = dataclasses.field(default=None)
@@ -26,3 +28,4 @@ class GetClosingReasonExecutionResponse:
     r"""Internal Issues"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

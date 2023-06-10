@@ -17,9 +17,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class StepExtended:
-    
     entity_ref_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityRefId') }})
     execution_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionId') }})
     execution_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionName') }})
@@ -51,3 +51,4 @@ class StepExtended:
     user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
     r"""This field is deprecated. Please use assignedTo"""
     
+

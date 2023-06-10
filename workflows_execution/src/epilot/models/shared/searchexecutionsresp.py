@@ -10,10 +10,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchExecutionsResp:
     r"""Success - filtered steps are returned"""
-    
     executions: list[shared_workflowexecutionslim.WorkflowExecutionSlim] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executions') }})
     last_evaluated_key: Optional[shared_lastevaluatedkey.LastEvaluatedKey] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lastEvaluatedKey'), 'exclude': lambda f: f is None }})
     
+

@@ -1,0 +1,16 @@
+# Section
+
+A group of Steps that define the progress of the Workflow
+
+
+## Fields
+
+| Field                                           | Type                                            | Required                                        | Description                                     | Example                                         |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `assigned_to`                                   | list[*str*]                                     | :heavy_minus_sign:                              | N/A                                             |                                                 |
+| `definition_id`                                 | *Optional[str]*                                 | :heavy_minus_sign:                              | N/A                                             |                                                 |
+| `id`                                            | *str*                                           | :heavy_check_mark:                              | N/A                                             |                                                 |
+| `name`                                          | *str*                                           | :heavy_check_mark:                              | Name for this Section                           | Lead Qualification                              |
+| `steps`                                         | list[[Step](../../models/shared/step.md)]       | :heavy_check_mark:                              | N/A                                             |                                                 |
+| `type`                                          | [ItemType](../../models/shared/itemtype.md)     | :heavy_check_mark:                              | N/A                                             |                                                 |
+| `user_ids`                                      | list[*float*]                                   | :heavy_minus_sign:                              | This field is deprecated. Please use assignedTo |                                                 |

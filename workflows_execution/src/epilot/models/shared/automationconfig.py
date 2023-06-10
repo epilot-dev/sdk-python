@@ -8,10 +8,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AutomationConfig:
     r"""Configuration for automation execution to run"""
-    
     flow_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flowId') }})
     r"""Id of the configured automation to run"""
     execution_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionId'), 'exclude': lambda f: f is None }})
@@ -19,3 +19,4 @@ class AutomationConfig:
     execution_status: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionStatus'), 'exclude': lambda f: f is None }})
     r"""Status of Automation Execution. Types can be found in Automation API"""
     
+

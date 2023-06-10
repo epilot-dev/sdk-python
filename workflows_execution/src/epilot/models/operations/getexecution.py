@@ -8,16 +8,18 @@ from ..shared import workflowexecution as shared_workflowexecution
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetExecutionRequest:
-    
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
     r"""Id of the execution"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetExecutionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -26,3 +28,4 @@ class GetExecutionResponse:
     workflow_execution: Optional[shared_workflowexecution.WorkflowExecution] = dataclasses.field(default=None)
     r"""Success - execution loaded with success. Empty response execution was not found."""
     
+

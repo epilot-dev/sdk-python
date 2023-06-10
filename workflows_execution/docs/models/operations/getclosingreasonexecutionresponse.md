@@ -1,0 +1,12 @@
+# GetClosingReasonExecutionResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `closing_reason_resp`                                                                 | [Optional[shared.ClosingReasonResp]](../../models/shared/closingreasonresp.md)        | :heavy_minus_sign:                                                                    | returns all Closing Reasons for this Execution                                        |
+| `content_type`                                                                        | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `error_resp`                                                                          | [Optional[shared.ErrorResp]](../../models/shared/errorresp.md)                        | :heavy_minus_sign:                                                                    | Internal Issues                                                                       |
+| `status_code`                                                                         | *int*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_minus_sign:                                                                    | N/A                                                                                   |

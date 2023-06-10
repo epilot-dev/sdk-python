@@ -11,10 +11,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateStepReq:
     r"""Workflow Execution Step payload"""
-    
     insertion_index: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insertionIndex') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     automation_config: Optional[shared_automationconfig.AutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})
@@ -23,3 +23,4 @@ class CreateStepReq:
     section_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sectionId'), 'exclude': lambda f: f is None }})
     status: Optional[shared_stepstatus.StepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
+

@@ -8,9 +8,9 @@ from ..shared import searchstepsresp as shared_searchstepsresp
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class SearchStepsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -19,3 +19,4 @@ class SearchStepsResponse:
     search_steps_resp: Optional[shared_searchstepsresp.SearchStepsResp] = dataclasses.field(default=None)
     r"""Success - filtered steps are returned"""
     
+

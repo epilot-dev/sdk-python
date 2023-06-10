@@ -1,0 +1,12 @@
+# SearchExecutionsResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `content_type`                                                                        | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `error_resp`                                                                          | [Optional[shared.ErrorResp]](../../models/shared/errorresp.md)                        | :heavy_minus_sign:                                                                    | Validation Errors                                                                     |
+| `search_executions_resp`                                                              | [Optional[shared.SearchExecutionsResp]](../../models/shared/searchexecutionsresp.md)  | :heavy_minus_sign:                                                                    | Success - filtered steps are returned                                                 |
+| `status_code`                                                                         | *int*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_minus_sign:                                                                    | N/A                                                                                   |

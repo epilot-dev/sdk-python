@@ -8,18 +8,20 @@ from ..shared import workflowexecutionslim as shared_workflowexecutionslim
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetExecutionsRequest:
-    
     context: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'context', 'style': 'form', 'explode': True }})
     r"""Id of an Entity"""
     schema: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'schema', 'style': 'form', 'explode': True }})
     r"""Schema of an Entity"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetExecutionsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -28,3 +30,4 @@ class GetExecutionsResponse:
     workflow_execution_slims: Optional[list[shared_workflowexecutionslim.WorkflowExecutionSlim]] = dataclasses.field(default=None)
     r"""Success - executions loaded with success. Empty array if org has no executions."""
     
+

@@ -12,9 +12,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class StepSimplified:
-    
     entity_ref_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityRefId') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -26,3 +26,4 @@ class StepSimplified:
     execution_type: Optional[shared_steptype.StepType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
     requirements: Optional[list[shared_steprequirement.StepRequirement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements'), 'exclude': lambda f: f is None }})
     
+

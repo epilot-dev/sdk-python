@@ -12,10 +12,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class WorkflowExecutionUpdateReq:
     r"""Patch Updates for Workflow Execution payload."""
-    
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     closed_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closedBy'), 'exclude': lambda f: f is None }})
     r"""id of the user / partner user who is closing the workflow. For partner pass orgId_userId."""
@@ -27,3 +27,4 @@ class WorkflowExecutionUpdateReq:
     selected_closing_reasons: Optional[list[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('selectedClosingReasons'), 'exclude': lambda f: f is None }})
     status: Optional[shared_workflowstatus.WorkflowStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
+

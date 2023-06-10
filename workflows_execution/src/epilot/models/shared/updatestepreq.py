@@ -12,10 +12,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateStepReq:
     r"""Workflow Execution Step payload"""
-    
     entity_ref_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityRefId') }})
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     assigned_to_in_progress: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedToInProgress'), 'exclude': lambda f: f is None }})
@@ -31,3 +31,4 @@ class UpdateStepReq:
     user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
     r"""This field is deprecated. Please use assignedTo"""
     
+

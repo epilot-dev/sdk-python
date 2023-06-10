@@ -10,12 +10,13 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class WorkflowExecutionCreateReq:
     r"""Workflow Execution payload"""
-    
     workflow_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workflowId') }})
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     contexts: Optional[list[shared_workflowcontext.WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
     trigger: Optional[shared_triggertype.TriggerType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger'), 'exclude': lambda f: f is None }})
     
+
