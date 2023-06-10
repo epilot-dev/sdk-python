@@ -10,23 +10,27 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetAllPortalConfigsSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetAllPortalConfigs200ApplicationJSON:
     r"""All portal configs retrieved successfully."""
-    
     data: Optional[list[shared_portalconfig.PortalConfig]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetAllPortalConfigsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -35,3 +39,4 @@ class GetAllPortalConfigsResponse:
     r"""All portal configs retrieved successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -8,15 +8,17 @@ from ..shared import portalconfig as shared_portalconfig
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetPortalConfigByDomainRequest:
-    
     domain: str = dataclasses.field(metadata={'query_param': { 'field_name': 'domain', 'style': 'form', 'explode': True }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetPortalConfigByDomainResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -25,3 +27,4 @@ class GetPortalConfigByDomainResponse:
     r"""Portal config retrieved successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

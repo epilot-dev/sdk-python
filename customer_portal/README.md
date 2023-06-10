@@ -34,56 +34,56 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 ## Available Resources and Operations
 
 
-### [ecp](docs/ecp/README.md)
+### [ecp](docs/sdks/ecp/README.md)
 
-* [add_end_customer_relation_to_entity](docs/ecp/README.md#add_end_customer_relation_to_entity) - addEndCustomerRelationToEntity
-* [delete_entity_file](docs/ecp/README.md#delete_entity_file) - deleteEntityFile
-* [delete_portal_user](docs/ecp/README.md#delete_portal_user) - deletePortalUser
-* [get_all_contracts](docs/ecp/README.md#get_all_contracts) - getAllContracts
-* [get_all_opportunities](docs/ecp/README.md#get_all_opportunities) - getAllOpportunities
-* [get_all_orders](docs/ecp/README.md#get_all_orders) - getAllOrders
-* [get_contact](docs/ecp/README.md#get_contact) - getContact
-* [get_contract](docs/ecp/README.md#get_contract) - getContract
-* [get_entities_by_identifiers](docs/ecp/README.md#get_entities_by_identifiers) - getEntitiesByIdentifiers
-* [get_opportunity](docs/ecp/README.md#get_opportunity) - getOpportunity
-* [get_order](docs/ecp/README.md#get_order) - getOrder
-* [get_organization_settings](docs/ecp/README.md#get_organization_settings) - getOrganizationSettings
-* [get_portal_config](docs/ecp/README.md#get_portal_config) - getPortalConfig
-* [get_portal_user](docs/ecp/README.md#get_portal_user) - getPortalUser
-* [get_schemas](docs/ecp/README.md#get_schemas) - getSchemas
-* [save_entity_file](docs/ecp/README.md#save_entity_file) - saveEntityFile
-* [update_contact](docs/ecp/README.md#update_contact) - updateContact
-* [update_contract](docs/ecp/README.md#update_contract) - updateContract
-* [update_opportunity](docs/ecp/README.md#update_opportunity) - updateOpportunity
-* [update_order](docs/ecp/README.md#update_order) - updateOrder
-* [update_portal_user](docs/ecp/README.md#update_portal_user) - updatePortalUser
+* [add_end_customer_relation_to_entity](docs/sdks/ecp/README.md#add_end_customer_relation_to_entity) - addEndCustomerRelationToEntity
+* [delete_entity_file](docs/sdks/ecp/README.md#delete_entity_file) - deleteEntityFile
+* [delete_portal_user](docs/sdks/ecp/README.md#delete_portal_user) - deletePortalUser
+* [get_all_contracts](docs/sdks/ecp/README.md#get_all_contracts) - getAllContracts
+* [get_all_opportunities](docs/sdks/ecp/README.md#get_all_opportunities) - getAllOpportunities
+* [get_all_orders](docs/sdks/ecp/README.md#get_all_orders) - getAllOrders
+* [get_contact](docs/sdks/ecp/README.md#get_contact) - getContact
+* [get_contract](docs/sdks/ecp/README.md#get_contract) - getContract
+* [get_entities_by_identifiers](docs/sdks/ecp/README.md#get_entities_by_identifiers) - getEntitiesByIdentifiers
+* [get_opportunity](docs/sdks/ecp/README.md#get_opportunity) - getOpportunity
+* [get_order](docs/sdks/ecp/README.md#get_order) - getOrder
+* [get_organization_settings](docs/sdks/ecp/README.md#get_organization_settings) - getOrganizationSettings
+* [get_portal_config](docs/sdks/ecp/README.md#get_portal_config) - getPortalConfig
+* [get_portal_user](docs/sdks/ecp/README.md#get_portal_user) - getPortalUser
+* [get_schemas](docs/sdks/ecp/README.md#get_schemas) - getSchemas
+* [save_entity_file](docs/sdks/ecp/README.md#save_entity_file) - saveEntityFile
+* [update_contact](docs/sdks/ecp/README.md#update_contact) - updateContact
+* [update_contract](docs/sdks/ecp/README.md#update_contract) - updateContract
+* [update_opportunity](docs/sdks/ecp/README.md#update_opportunity) - updateOpportunity
+* [update_order](docs/sdks/ecp/README.md#update_order) - updateOrder
+* [update_portal_user](docs/sdks/ecp/README.md#update_portal_user) - updatePortalUser
 
-### [ecp_admin](docs/ecpadmin/README.md)
+### [ecp_admin](docs/sdks/ecpadmin/README.md)
 
-* [configure_distribution](docs/ecpadmin/README.md#configure_distribution) - configureDistribution
-* [create_sso_user](docs/ecpadmin/README.md#create_sso_user) - createSSOUser
-* [delete_portal](docs/ecpadmin/README.md#delete_portal) - deletePortal
-* [extra_permission_attributes](docs/ecpadmin/README.md#extra_permission_attributes) - extraPermissionAttributes
-* [get_all_portal_configs](docs/ecpadmin/README.md#get_all_portal_configs) - getAllPortalConfigs
-* [get_ecp_contact](docs/ecpadmin/README.md#get_ecp_contact) - getECPContact
-* [get_email_templates](docs/ecpadmin/README.md#get_email_templates) - getEmailTemplates
-* [get_entity_identifiers](docs/ecpadmin/README.md#get_entity_identifiers) - getEntityIdentifiers
-* [get_org_portal_config](docs/ecpadmin/README.md#get_org_portal_config) - getOrgPortalConfig
-* [get_portal_config](docs/ecpadmin/README.md#get_portal_config) - getPortalConfig
-* [get_valid_secondary_attributes](docs/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
-* [replace_ecp_template_variables](docs/ecpadmin/README.md#replace_ecp_template_variables) - replaceECPTemplateVariables
-* [save_portal_files](docs/ecpadmin/README.md#save_portal_files) - savePortalFiles
-* [upsert_email_templates](docs/ecpadmin/README.md#upsert_email_templates) - upsertEmailTemplates
-* [upsert_portal](docs/ecpadmin/README.md#upsert_portal) - upsertPortal
+* [configure_distribution](docs/sdks/ecpadmin/README.md#configure_distribution) - configureDistribution
+* [create_sso_user](docs/sdks/ecpadmin/README.md#create_sso_user) - createSSOUser
+* [delete_portal](docs/sdks/ecpadmin/README.md#delete_portal) - deletePortal
+* [extra_permission_attributes](docs/sdks/ecpadmin/README.md#extra_permission_attributes) - extraPermissionAttributes
+* [get_all_portal_configs](docs/sdks/ecpadmin/README.md#get_all_portal_configs) - getAllPortalConfigs
+* [get_ecp_contact](docs/sdks/ecpadmin/README.md#get_ecp_contact) - getECPContact
+* [get_email_templates](docs/sdks/ecpadmin/README.md#get_email_templates) - getEmailTemplates
+* [get_entity_identifiers](docs/sdks/ecpadmin/README.md#get_entity_identifiers) - getEntityIdentifiers
+* [get_org_portal_config](docs/sdks/ecpadmin/README.md#get_org_portal_config) - getOrgPortalConfig
+* [get_portal_config](docs/sdks/ecpadmin/README.md#get_portal_config) - getPortalConfig
+* [get_valid_secondary_attributes](docs/sdks/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
+* [replace_ecp_template_variables](docs/sdks/ecpadmin/README.md#replace_ecp_template_variables) - replaceECPTemplateVariables
+* [save_portal_files](docs/sdks/ecpadmin/README.md#save_portal_files) - savePortalFiles
+* [upsert_email_templates](docs/sdks/ecpadmin/README.md#upsert_email_templates) - upsertEmailTemplates
+* [upsert_portal](docs/sdks/ecpadmin/README.md#upsert_portal) - upsertPortal
 
-### [public](docs/public/README.md)
+### [public](docs/sdks/public/README.md)
 
-* [confirm_user](docs/public/README.md#confirm_user) - confirmUser
-* [create_user](docs/public/README.md#create_user) - createUser
-* [get_count_by_email](docs/public/README.md#get_count_by_email) - getCountByEmail
-* [get_portal_config_by_domain](docs/public/README.md#get_portal_config_by_domain) - getPortalConfigByDomain
-* [get_public_portal_config](docs/public/README.md#get_public_portal_config) - getPublicPortalConfig
-* [user_exists](docs/public/README.md#user_exists) - userExists
+* [confirm_user](docs/sdks/public/README.md#confirm_user) - confirmUser
+* [create_user](docs/sdks/public/README.md#create_user) - createUser
+* [get_count_by_email](docs/sdks/public/README.md#get_count_by_email) - getCountByEmail
+* [get_portal_config_by_domain](docs/sdks/public/README.md#get_portal_config_by_domain) - getPortalConfigByDomain
+* [get_public_portal_config](docs/sdks/public/README.md#get_public_portal_config) - getPublicPortalConfig
+* [user_exists](docs/sdks/public/README.md#user_exists) - userExists
 <!-- End SDK Available Operations -->
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)

@@ -10,31 +10,37 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ConfigureDistributionSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class ConfigureDistributionRequest:
-    
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ConfigureDistribution200ApplicationJSON:
     r"""The cloudfront distribution has been configure successfully for the custom domain."""
-    
     domain_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domainName'), 'exclude': lambda f: f is None }})
     r"""The domain name of the configured distribution"""
     
 
+
+
+
 @dataclasses.dataclass
 class ConfigureDistributionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     configure_distribution_200_application_json_object: Optional[ConfigureDistribution200ApplicationJSON] = dataclasses.field(default=None)
@@ -43,3 +49,4 @@ class ConfigureDistributionResponse:
     r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

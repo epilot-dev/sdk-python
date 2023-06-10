@@ -9,24 +9,28 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetPortalUserSecurity:
-    
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetPortalUser200ApplicationJSON:
     r"""Portal user returned successfully."""
-    
     data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The portal user entity"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetPortalUserResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -35,3 +39,4 @@ class GetPortalUserResponse:
     r"""Portal user returned successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

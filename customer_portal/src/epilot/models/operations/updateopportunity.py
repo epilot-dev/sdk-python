@@ -9,33 +9,39 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class UpdateOpportunitySecurity:
-    
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateOpportunityRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The ID of opportunity"""
     request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Requested opportunity body to update"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateOpportunity200ApplicationJSON:
     r"""Updated the opportunity successfully."""
-    
     data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The opportunity entity"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateOpportunityResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -44,3 +50,4 @@ class UpdateOpportunityResponse:
     update_opportunity_200_application_json_object: Optional[UpdateOpportunity200ApplicationJSON] = dataclasses.field(default=None)
     r"""Updated the opportunity successfully."""
     
+

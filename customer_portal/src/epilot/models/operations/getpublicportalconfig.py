@@ -9,17 +9,19 @@ from ..shared import portalconfig as shared_portalconfig
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetPublicPortalConfigRequest:
-    
     org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetPublicPortalConfigResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -28,3 +30,4 @@ class GetPublicPortalConfigResponse:
     r"""Portal config retrieved successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

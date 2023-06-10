@@ -12,31 +12,35 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class CreateUserRequest:
-    
     create_user_request: shared_createuserrequest.CreateUserRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Portal user payload"""
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
+
+
 class CreateUser201ApplicationJSONMessage(str, Enum):
     USER_CREATED_SUCCESSFULLY = 'User created successfully'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateUser201ApplicationJSON:
     r"""User created successfully."""
-    
     message: CreateUser201ApplicationJSONMessage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     response: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('response') }})
     r"""The portal user entity"""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateUserResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_user_201_application_json_object: Optional[CreateUser201ApplicationJSON] = dataclasses.field(default=None)
@@ -45,3 +49,4 @@ class CreateUserResponse:
     r"""The request could not be validated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

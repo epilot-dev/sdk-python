@@ -9,23 +9,27 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DeleteEntityFileSecurity:
-    
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DeleteEntityFile202ApplicationJSON:
     r"""The files are removed from the requested entity successfully."""
-    
     deleted_files: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedFiles'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class DeleteEntityFileResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     delete_entity_file_202_application_json_object: Optional[DeleteEntityFile202ApplicationJSON] = dataclasses.field(default=None)
@@ -34,3 +38,4 @@ class DeleteEntityFileResponse:
     r"""The request could not be validated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

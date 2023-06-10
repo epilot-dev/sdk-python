@@ -8,9 +8,9 @@ from ..shared import origin as shared_origin
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ConfirmUserRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The ID of portal user id"""
     org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
@@ -19,12 +19,15 @@ class ConfirmUserRequest:
     r"""Origin of the portal"""
     
 
+
+
+
 @dataclasses.dataclass
 class ConfirmUserResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Internal Server Error"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

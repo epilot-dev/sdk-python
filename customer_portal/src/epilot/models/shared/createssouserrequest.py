@@ -8,10 +8,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateSSOUserRequest:
     r"""Portal user payload"""
-    
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     r"""User's email address"""
     first_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name'), 'exclude': lambda f: f is None }})
@@ -19,3 +19,4 @@ class CreateSSOUserRequest:
     last_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name'), 'exclude': lambda f: f is None }})
     r"""Last Name of the portal user"""
     
+

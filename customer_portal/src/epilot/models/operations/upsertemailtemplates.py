@@ -12,37 +12,43 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class UpsertEmailTemplatesSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpsertEmailTemplatesRequest:
-    
     email_templates: shared_emailtemplates.EmailTemplates = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Email templates payload"""
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
+
+
 class UpsertEmailTemplates200ApplicationJSONMessage(str, Enum):
     EMAIL_TEMPLATES_UPSERTED_SUCCESSFULLY = 'Email Templates upserted successfully'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertEmailTemplates200ApplicationJSON:
     r"""Upserted email templates of the portal successfully."""
-    
     email_templates: shared_emailtemplates.EmailTemplates = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emailTemplates') }})
     r"""Email templates used for authentication and internal processes"""
     message: UpsertEmailTemplates200ApplicationJSONMessage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpsertEmailTemplatesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -51,3 +57,4 @@ class UpsertEmailTemplatesResponse:
     upsert_email_templates_200_application_json_object: Optional[UpsertEmailTemplates200ApplicationJSON] = dataclasses.field(default=None)
     r"""Upserted email templates of the portal successfully."""
     
+

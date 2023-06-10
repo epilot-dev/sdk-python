@@ -1,0 +1,12 @@
+# GetPortalConfigResponse
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `content_type`                                                                        | *str*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `error_resp`                                                                          | [Optional[shared.ErrorResp]](../../models/shared/errorresp.md)                        | :heavy_minus_sign:                                                                    | Could not authenticate the user                                                       |
+| `portal_config`                                                                       | [Optional[shared.PortalConfig]](../../models/shared/portalconfig.md)                  | :heavy_minus_sign:                                                                    | Portal config retrieved successfully.                                                 |
+| `status_code`                                                                         | *int*                                                                                 | :heavy_check_mark:                                                                    | N/A                                                                                   |
+| `raw_response`                                                                        | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) | :heavy_minus_sign:                                                                    | N/A                                                                                   |

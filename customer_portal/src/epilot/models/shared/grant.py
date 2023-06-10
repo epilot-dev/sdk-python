@@ -14,9 +14,9 @@ class GrantEffect(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Grant:
-    
     action: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action') }})
     r"""Action for granting permission"""
     effect: Optional[GrantEffect] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('effect'), 'exclude': lambda f: f is None }})
@@ -24,3 +24,4 @@ class Grant:
     resource: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resource'), 'exclude': lambda f: f is None }})
     r"""Resource for granting permission"""
     
+

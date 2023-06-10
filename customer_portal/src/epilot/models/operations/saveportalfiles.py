@@ -9,23 +9,27 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class SavePortalFilesSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SavePortalFiles201ApplicationJSON:
     r"""The files have been saved to the portal successfully."""
-    
     created_files: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdFiles'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class SavePortalFilesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -34,3 +38,4 @@ class SavePortalFilesResponse:
     save_portal_files_201_application_json_object: Optional[SavePortalFiles201ApplicationJSON] = dataclasses.field(default=None)
     r"""The files have been saved to the portal successfully."""
     
+

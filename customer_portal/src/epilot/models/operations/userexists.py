@@ -9,27 +9,31 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class UserExistsRequest:
-    
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UserExists200ApplicationJSON:
     r"""Returned whether the user exists in the portal or not successfully."""
-    
     exists: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists') }})
     r"""Whether the user exists in the portal"""
     user: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
     r"""The portal user entity"""
     
 
+
+
+
 @dataclasses.dataclass
 class UserExistsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -38,3 +42,4 @@ class UserExistsResponse:
     user_exists_200_application_json_object: Optional[UserExists200ApplicationJSON] = dataclasses.field(default=None)
     r"""Returned whether the user exists in the portal or not successfully."""
     
+

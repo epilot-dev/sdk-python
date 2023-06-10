@@ -9,30 +9,36 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetECPContactSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetECPContactRequest:
-    
     id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'id', 'style': 'form', 'explode': True }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetECPContact200ApplicationJSON:
     r"""The contact returned successfully."""
-    
     data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The mapped contact of the portal user"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetECPContactResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -41,3 +47,4 @@ class GetECPContactResponse:
     r"""The contact returned successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

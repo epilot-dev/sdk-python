@@ -9,33 +9,39 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetValidSecondaryAttributesSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetValidSecondaryAttributes200ApplicationJSONData:
-    
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""Name of the secondary attribute"""
     type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Type of the secondary attribute"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetValidSecondaryAttributes200ApplicationJSON:
     r"""Valid secondary attributes for the contact entity are returned successfully."""
-    
     data: Optional[list[GetValidSecondaryAttributes200ApplicationJSONData]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetValidSecondaryAttributesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -44,3 +50,4 @@ class GetValidSecondaryAttributesResponse:
     r"""Valid secondary attributes for the contact entity are returned successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

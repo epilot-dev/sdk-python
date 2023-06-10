@@ -8,161 +8,199 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsAutomationEntityMapping:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable automation entity mapping"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsAutomationPreview:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable automation preview"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsCentralInboxPreviewSetting:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable central inbox preview setting"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsContractsPreviewSetting:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable contracts preview setting"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsDisableIvy:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable Ivy"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsDoubleOptIn:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable double opt-in"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsEcommerceCatalogPreview:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable ecommerce catalog preview"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsEcommerceOpportunitiesPreview:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable ecommerce opportunities preview"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsEcommercePreview:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable ecommerce preview"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsEndCustomerPortal:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable end customer portal"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsEntitySchemaBuilder:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable entity schema builder"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsInstallerPortal:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable installer portal"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsLogicEditorPreview:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable logic editor preview"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsNewNavigation:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable new navigation"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsPartnering:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable partnering"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsProductAvailability:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable product availability"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsSso:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable single sign-on (SSO)"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsSubmissionPreview:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable submission preview"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettingsUserRolesPreview:
-    
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable user roles preview"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class OrganizationSettings:
-    
     automation_entity_mapping: Optional[OrganizationSettingsAutomationEntityMapping] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automation_entity_mapping'), 'exclude': lambda f: f is None }})
     automation_preview: Optional[OrganizationSettingsAutomationPreview] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automation_preview'), 'exclude': lambda f: f is None }})
     central_inbox_preview_setting: Optional[OrganizationSettingsCentralInboxPreviewSetting] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('central_inbox_preview_setting'), 'exclude': lambda f: f is None }})
@@ -183,3 +221,4 @@ class OrganizationSettings:
     submission_preview: Optional[OrganizationSettingsSubmissionPreview] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('submission_preview'), 'exclude': lambda f: f is None }})
     user_roles_preview: Optional[OrganizationSettingsUserRolesPreview] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_roles_preview'), 'exclude': lambda f: f is None }})
     
+

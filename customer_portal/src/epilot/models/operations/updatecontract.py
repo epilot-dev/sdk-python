@@ -9,33 +9,39 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class UpdateContractSecurity:
-    
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateContractRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The ID of the contract"""
     request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Requested contract body to update"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateContract200ApplicationJSON:
     r"""Updated the contract successfully."""
-    
     data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The contract entity"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateContractResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -44,3 +50,4 @@ class UpdateContractResponse:
     update_contract_200_application_json_object: Optional[UpdateContract200ApplicationJSON] = dataclasses.field(default=None)
     r"""Updated the contract successfully."""
     
+

@@ -11,10 +11,10 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertPortalConfigCognitoDetails:
     r"""AWS Cognito Pool details for the portal"""
-    
     cognito_user_pool_arn: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_user_pool_arn'), 'exclude': lambda f: f is None }})
     r"""Cognito user pool ARN"""
     cognito_user_pool_client_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_user_pool_client_id'), 'exclude': lambda f: f is None }})
@@ -23,55 +23,68 @@ class UpsertPortalConfigCognitoDetails:
     r"""Cognito user pool ID"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertPortalConfigDefaultUserToNotify:
     r"""Default 360 user to notify upon an internal notification"""
-    
-    on_pending_user: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onPendingUser'), 'exclude': lambda f: f is None }})
+    on_pending_user: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onPendingUser'), 'exclude': lambda f: f is None }})
+    r"""Default admin users for pending user notification to notify"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertPortalConfigEntityActionsActionLabel:
-    
     de: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('de'), 'exclude': lambda f: f is None }})
     en: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('en'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertPortalConfigEntityActions:
-    
     action_label: Optional[UpsertPortalConfigEntityActionsActionLabel] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action_Label'), 'exclude': lambda f: f is None }})
     journey_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_id'), 'exclude': lambda f: f is None }})
     slug: Optional[shared_entityslug.EntitySlug] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug'), 'exclude': lambda f: f is None }})
     r"""URL-friendly identifier for the entity schema"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertPortalConfigEntityIdentifiersType:
-    
     attributes: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
     r"""Attributes used to identify an entity"""
     is_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isEnabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable the entity identifier"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertPortalConfigEntityIdentifiers:
     r"""Identifiers used to identify an entity by a portal user"""
-    
     type: Optional[UpsertPortalConfigEntityIdentifiersType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertPortalConfigImages:
     r"""Teaser & Banner Image web links"""
-    
     order_left_teaser: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderLeftTeaser'), 'exclude': lambda f: f is None }})
     r"""URL of the order left teaser image"""
     order_right_teaser: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderRightTeaser'), 'exclude': lambda f: f is None }})
@@ -80,11 +93,13 @@ class UpsertPortalConfigImages:
     r"""URL of the welcome banner image"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpsertPortalConfig:
     r"""Portal payload"""
-    
     design_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('design_id') }})
     r"""ID of the design used to build the portal"""
     cognito_details: Optional[UpsertPortalConfigCognitoDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_details'), 'exclude': lambda f: f is None }})
@@ -116,3 +131,4 @@ class UpsertPortalConfig:
     self_registration: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration'), 'exclude': lambda f: f is None }})
     r"""Allow portal user self-registration without a mapped contact"""
     
+

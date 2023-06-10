@@ -8,10 +8,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class EmailTemplates:
     r"""Email templates used for authentication and internal processes"""
-    
     confirm_account: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('confirmAccount'), 'exclude': lambda f: f is None }})
     r"""ID of the confirmation email template upon registration"""
     forgot_password: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('forgotPassword'), 'exclude': lambda f: f is None }})
@@ -23,3 +23,4 @@ class EmailTemplates:
     on_new_quote: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onNewQuote'), 'exclude': lambda f: f is None }})
     r"""ID of the email template for new quote"""
     
+

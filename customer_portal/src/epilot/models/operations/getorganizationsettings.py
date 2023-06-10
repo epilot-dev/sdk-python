@@ -10,23 +10,27 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetOrganizationSettingsSecurity:
-    
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetOrganizationSettings200ApplicationJSON:
     r"""Retrieved the settings for an organization successfully."""
-    
     data: Optional[shared_organizationsettings.OrganizationSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetOrganizationSettingsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -35,3 +39,4 @@ class GetOrganizationSettingsResponse:
     r"""Retrieved the settings for an organization successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

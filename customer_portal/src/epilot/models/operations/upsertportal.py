@@ -10,24 +10,28 @@ from ..shared import upsertportalconfig as shared_upsertportalconfig
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class UpsertPortalSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpsertPortalRequest:
-    
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     upsert_portal_config: shared_upsertportalconfig.UpsertPortalConfig = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Portal payload"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpsertPortalResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -36,3 +40,4 @@ class UpsertPortalResponse:
     r"""Portal upserted successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

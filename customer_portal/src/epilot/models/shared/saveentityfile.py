@@ -14,19 +14,21 @@ class SaveEntityFileFilesAccessControl(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SaveEntityFileFilesS3ref:
-    
     bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})
     r"""S3 bucket name"""
     key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
     r"""S3 key"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SaveEntityFileFiles:
-    
     filename: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename') }})
     r"""File name"""
     s3ref: SaveEntityFileFilesS3ref = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
@@ -40,14 +42,17 @@ class SaveEntityFileFiles:
     r"""File entity ID"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SaveEntityFile:
     r"""The request of an file entity"""
-    
     entity_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id') }})
     r"""Entity ID"""
     entity_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_type') }})
     r"""Entity type"""
     files: list[SaveEntityFileFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
     
+

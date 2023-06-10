@@ -11,33 +11,39 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class CreateSSOUserSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class CreateSSOUserRequest:
-    
     create_sso_user_request: shared_createssouserrequest.CreateSSOUserRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Portal user payload"""
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateSSOUser201ApplicationJSON:
     r"""SSO User created successfully."""
-    
     data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The portal user entity"""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateSSOUserResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_sso_user_201_application_json_object: Optional[CreateSSOUser201ApplicationJSON] = dataclasses.field(default=None)
@@ -46,3 +52,4 @@ class CreateSSOUserResponse:
     r"""The request could not be validated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -8,25 +8,30 @@ from ..shared import origin as shared_origin
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class DeletePortalSecurity:
-    
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
+
 @dataclasses.dataclass
 class DeletePortalRequest:
-    
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
 
+
+
+
 @dataclasses.dataclass
 class DeletePortalResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

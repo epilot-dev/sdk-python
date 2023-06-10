@@ -8,10 +8,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CreateUserRequest:
     r"""Portal user payload"""
-    
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     r"""User's email address"""
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})
@@ -27,3 +27,4 @@ class CreateUserRequest:
     secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondaryIdentifier'), 'exclude': lambda f: f is None }})
     r"""Secondary identifier to identify a contact"""
     
+

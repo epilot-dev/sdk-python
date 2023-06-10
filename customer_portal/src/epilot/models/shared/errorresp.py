@@ -8,10 +8,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ErrorResp:
     r"""Could not authenticate the user"""
-    
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     r"""Error message"""
     
+
