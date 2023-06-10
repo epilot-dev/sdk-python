@@ -53,6 +53,18 @@ if res.generate_document_200_application_json_object is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.GenerateDocumentRequestBody](../../models/operations/generatedocumentrequestbody.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+
+
+### Response
+
+**[operations.GenerateDocumentResponse](../../models/operations/generatedocumentresponse.md)**
+
+
 ## generate_document_v2
 
 Builds document generated from input document with variables.
@@ -104,3 +116,15 @@ res = s.documents.generate_document_v2(req)
 if res.generate_document_v2_200_application_json_object is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.GenerateDocumentV2Request](../../models/operations/generatedocumentv2request.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+
+### Response
+
+**[operations.GenerateDocumentV2Response](../../models/operations/generatedocumentv2response.md)**
+
