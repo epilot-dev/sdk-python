@@ -1,0 +1,10 @@
+# PutSchemaRequest
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `entity_schema`                                                      | [Optional[shared.EntitySchema]](../../models/shared/entityschema.md) | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |
+| `draft`                                                              | *Optional[bool]*                                                     | :heavy_minus_sign:                                                   | N/A                                                                  |                                                                      |
+| `slug`                                                               | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  | contact                                                              |

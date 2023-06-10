@@ -7,9 +7,9 @@ from ..shared import getrelationsrespwithpagination as shared_getrelationsrespwi
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetRelationsV2Request:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
@@ -28,12 +28,15 @@ class GetRelationsV2Request:
     r"""Number of results to return per page"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetRelationsV2Response:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_relations_resp_with_pagination: Optional[shared_getrelationsrespwithpagination.GetRelationsRespWithPagination] = dataclasses.field(default=None)
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

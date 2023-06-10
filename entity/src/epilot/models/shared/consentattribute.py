@@ -8,11 +8,20 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
+@dataclasses.dataclass
+class ConsentAttributeConstraints:
+    r"""A set of constraints applicable to the attribute.
+    These constraints should and will be enforced by the attribute renderer.
+    """
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ConsentAttributeInfoHelpers:
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
-    
     hint_custom_component: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_custom_component'), 'exclude': lambda f: f is None }})
     r"""The name of the custom component to be used as the hint helper.
     The component should be registered in the `@epilot360/entity-ui` on the index of the components directory.
@@ -31,21 +40,23 @@ class ConsentAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
+
+
 class ConsentAttributeType(str, Enum):
     CONSENT = 'consent'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ConsentAttribute:
     r"""Consent Management"""
-    
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     topic: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('topic') }})
     type: ConsentAttributeType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
-    constraints: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
+    constraints: Optional[ConsentAttributeConstraints] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
     """
@@ -88,3 +99,4 @@ class ConsentAttribute:
     r"""Render as a column in table views. When defined, overrides `hidden`"""
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     
+

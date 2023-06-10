@@ -22,9 +22,9 @@ class RelationAttributeActionsActionType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RelationAttributeActions:
-    
     action_type: Optional[RelationAttributeActionsActionType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action_type'), 'exclude': lambda f: f is None }})
     r"""The action type. Currently supported actions:
     
@@ -44,6 +44,17 @@ class RelationAttributeActions:
     setting_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('setting_flag'), 'exclude': lambda f: f is None }})
     r"""Name of the setting flag that enables this action"""
     
+
+
+
+
+@dataclasses.dataclass
+class RelationAttributeConstraints:
+    r"""A set of constraints applicable to the attribute.
+    These constraints should and will be enforced by the attribute renderer.
+    """
+    pass
+
 class RelationAttributeDrawerSize(str, Enum):
     SMALL = 'small'
     MEDIUM = 'medium'
@@ -54,10 +65,10 @@ class RelationAttributeEditMode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RelationAttributeInfoHelpers:
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
-    
     hint_custom_component: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_custom_component'), 'exclude': lambda f: f is None }})
     r"""The name of the custom component to be used as the hint helper.
     The component should be registered in the `@epilot360/entity-ui` on the index of the components directory.
@@ -76,6 +87,8 @@ class RelationAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
+
+
 class RelationAttributeRelationAffinityMode(str, Enum):
     r"""Weak relation attributes are kept when duplicating an entity. Strong relation attributes are discarded when duplicating an entity."""
     WEAK = 'weak'
@@ -90,10 +103,10 @@ class RelationAttributeType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RelationAttribute:
     r"""Entity Relationship"""
-    
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
@@ -101,7 +114,7 @@ class RelationAttribute:
     add_button_label: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('add_button_label'), 'exclude': lambda f: f is None }})
     r"""Optional label for the add button. The translated value for add_button_lable is used, if found else the string is used as is."""
     allowed_schemas: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowedSchemas'), 'exclude': lambda f: f is None }})
-    constraints: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
+    constraints: Optional[RelationAttributeConstraints] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
     """
@@ -158,3 +171,4 @@ class RelationAttribute:
     type: Optional[RelationAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     
+

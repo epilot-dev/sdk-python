@@ -8,11 +8,20 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
+@dataclasses.dataclass
+class InvitationEmailAttributeConstraints:
+    r"""A set of constraints applicable to the attribute.
+    These constraints should and will be enforced by the attribute renderer.
+    """
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class InvitationEmailAttributeInfoHelpers:
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
-    
     hint_custom_component: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_custom_component'), 'exclude': lambda f: f is None }})
     r"""The name of the custom component to be used as the hint helper.
     The component should be registered in the `@epilot360/entity-ui` on the index of the components directory.
@@ -31,19 +40,21 @@ class InvitationEmailAttributeInfoHelpers:
     The value should be a valid `@mui/core` tooltip placement.
     """
     
+
+
 class InvitationEmailAttributeType(str, Enum):
     INVITATION_EMAIL = 'invitation_email'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class InvitationEmailAttribute:
     r"""Email address for send invitation"""
-    
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
-    constraints: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
+    constraints: Optional[InvitationEmailAttributeConstraints] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
     """
@@ -86,3 +97,4 @@ class InvitationEmailAttribute:
     type: Optional[InvitationEmailAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     
+

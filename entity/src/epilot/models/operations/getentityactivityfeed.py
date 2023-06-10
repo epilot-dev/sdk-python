@@ -10,9 +10,9 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetEntityActivityFeedRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
@@ -29,21 +29,26 @@ class GetEntityActivityFeedRequest:
     r"""Activity type"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetEntityActivityFeed200ApplicationJSON:
     r"""Success"""
-    
     results: Optional[list[shared_activityitem.ActivityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetEntityActivityFeedResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_entity_activity_feed_200_application_json_object: Optional[GetEntityActivityFeed200ApplicationJSON] = dataclasses.field(default=None)
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

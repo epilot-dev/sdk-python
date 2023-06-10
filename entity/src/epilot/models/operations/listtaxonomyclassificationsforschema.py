@@ -9,29 +9,34 @@ from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ListTaxonomyClassificationsForSchemaRequest:
-    
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     taxonomy_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taxonomySlug', 'style': 'simple', 'explode': False }})
     query: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
     size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListTaxonomyClassificationsForSchema200ApplicationJSON:
     r"""List of taxonomy classifications"""
-    
     results: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class ListTaxonomyClassificationsForSchemaResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     list_taxonomy_classifications_for_schema_200_application_json_object: Optional[ListTaxonomyClassificationsForSchema200ApplicationJSON] = dataclasses.field(default=None)
     r"""List of taxonomy classifications"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

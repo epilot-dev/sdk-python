@@ -6,9 +6,9 @@ import requests as requests_http
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class PatchEntityRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Entity Id"""
     request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -22,12 +22,15 @@ class PatchEntityRequest:
     r"""Dry Run mode = returns the patch result but doesn't perform the patch."""
     
 
+
+
+
 @dataclasses.dataclass
 class PatchEntityResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
     r"""Entity was updated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

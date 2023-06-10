@@ -1,0 +1,231 @@
+# saved_views
+
+## Overview
+
+Saved Views for Entities
+
+### Available Operations
+
+* [create_saved_view](#create_saved_view) - createSavedView
+* [delete_saved_view](#delete_saved_view) - deleteSavedView
+* [get_saved_view](#get_saved_view) - getSavedView
+* [list_saved_views](#list_saved_views) - listSavedViews
+* [update_saved_view](#update_saved_view) - updateSavedView
+
+## create_saved_view
+
+Creates a new saved view
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = shared.SavedView(
+    created_by={
+        "possimus": 'quia',
+        "eveniet": 'asperiores',
+        "facere": 'veritatis',
+        "consequuntur": 'quasi',
+    },
+    name='View listing German',
+    org='66',
+    shared=True,
+    slug=[
+        'contact',
+        'contact',
+        'contact',
+    ],
+    ui_config={
+        "aliquid": 'tenetur',
+        "quae": 'earum',
+        "vel": 'in',
+    },
+)
+
+res = s.saved_views.create_saved_view(req)
+
+if res.saved_view_item is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                            | Type                                                 | Required                                             | Description                                          |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| `request`                                            | [shared.SavedView](../../models/shared/savedview.md) | :heavy_check_mark:                                   | The request object to use for the request.           |
+
+
+### Response
+
+**[operations.CreateSavedViewResponse](../../models/operations/createsavedviewresponse.md)**
+
+
+## delete_saved_view
+
+Deletes a saved view
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = operations.DeleteSavedViewRequest(
+    id='4bdb04f1-5756-4082-968e-a19f1d170513',
+)
+
+res = s.saved_views.delete_saved_view(req)
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.DeleteSavedViewRequest](../../models/operations/deletesavedviewrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+
+
+### Response
+
+**[operations.DeleteSavedViewResponse](../../models/operations/deletesavedviewresponse.md)**
+
+
+## get_saved_view
+
+Gets Saved View configuration by id.
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = operations.GetSavedViewRequest(
+    id='39d08086-a184-4039-8c26-071f93f5f064',
+)
+
+res = s.saved_views.get_saved_view(req)
+
+if res.get_saved_view_200_application_json_object is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.GetSavedViewRequest](../../models/operations/getsavedviewrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+
+
+### Response
+
+**[operations.GetSavedViewResponse](../../models/operations/getsavedviewresponse.md)**
+
+
+## list_saved_views
+
+Get the Saved Views based on the schema
+
+### Example Usage
+
+```python
+import epilot
+
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+
+res = s.saved_views.list_saved_views()
+
+if res.list_saved_views_200_application_json_object is not None:
+    # handle response
+```
+
+
+### Response
+
+**[operations.ListSavedViewsResponse](../../models/operations/listsavedviewsresponse.md)**
+
+
+## update_saved_view
+
+Updates a saved view
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = operations.UpdateSavedViewRequest(
+    saved_view=shared.SavedView(
+        created_by=shared.SavedViewCreatedBy1(
+            user_id='10598',
+        ),
+        name='View listing German',
+        org='66',
+        shared=True,
+        slug=[
+            'contact',
+            'contact',
+            'contact',
+            'contact',
+        ],
+        ui_config={
+            "maxime": 'dignissimos',
+            "officia": 'asperiores',
+            "nemo": 'quae',
+        },
+    ),
+    id='5cc413aa-63aa-4e8d-a786-4dbb675fd5e6',
+)
+
+res = s.saved_views.update_saved_view(req)
+
+if res.saved_view_item is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.UpdateSavedViewRequest](../../models/operations/updatesavedviewrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+
+
+### Response
+
+**[operations.UpdateSavedViewResponse](../../models/operations/updatesavedviewresponse.md)**
+

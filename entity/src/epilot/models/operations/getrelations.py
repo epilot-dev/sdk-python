@@ -6,9 +6,9 @@ import requests as requests_http
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetRelationsRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
@@ -19,12 +19,15 @@ class GetRelationsRequest:
     r"""When true, includes reverse relations in response (other entities pointing to this entity)"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetRelationsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_relations_resp: Optional[list[Any]] = dataclasses.field(default=None)
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

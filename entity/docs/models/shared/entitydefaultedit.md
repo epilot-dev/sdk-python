@@ -1,0 +1,10 @@
+# EntityDefaultEdit
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `search_params`                                                                                         | dict[str, *str*]                                                                                        | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| `table_menu_options`                                                                                    | [Optional[EntityDefaultEditTableMenuOptions]](../../models/shared/entitydefaultedittablemenuoptions.md) | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| `view_type`                                                                                             | [Optional[EntityDefaultEditViewType]](../../models/shared/entitydefaulteditviewtype.md)                 | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |

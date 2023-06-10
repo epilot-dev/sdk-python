@@ -12,8 +12,9 @@ class EntityViewDisabledViewType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class EntityViewDisabled:
-    
     view_type: Optional[EntityViewDisabledViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
+

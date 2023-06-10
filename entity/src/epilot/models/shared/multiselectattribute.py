@@ -8,11 +8,20 @@ from epilot import utils
 from typing import Any, Optional
 
 
+
+@dataclasses.dataclass
+class MultiSelectAttributeConstraints:
+    r"""A set of constraints applicable to the attribute.
+    These constraints should and will be enforced by the attribute renderer.
+    """
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MultiSelectAttributeInfoHelpers:
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
-    
     hint_custom_component: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hint_custom_component'), 'exclude': lambda f: f is None }})
     r"""The name of the custom component to be used as the hint helper.
     The component should be registered in the `@epilot360/entity-ui` on the index of the components directory.
@@ -32,23 +41,27 @@ class MultiSelectAttributeInfoHelpers:
     """
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MultiSelectAttributeOptions2:
-    
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
     
+
+
 class MultiSelectAttributeType(str, Enum):
     MULTISELECT = 'multiselect'
     CHECKBOX = 'checkbox'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MultiSelectAttribute:
     r"""Multi Choice Selection"""
-    
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
@@ -56,7 +69,7 @@ class MultiSelectAttribute:
     r"""Allow arbitrary input values in addition to provided options"""
     allow_extra_options: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allow_extra_options'), 'exclude': lambda f: f is None }})
     r"""controls if the 360 ui will allow the user to enter a value which is not defined by the options"""
-    constraints: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
+    constraints: Optional[MultiSelectAttributeConstraints] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
     """
@@ -102,3 +115,4 @@ class MultiSelectAttribute:
     type: Optional[MultiSelectAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     
+

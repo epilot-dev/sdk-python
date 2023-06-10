@@ -12,9 +12,10 @@ class RedirectEntityViewViewType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RedirectEntityView:
-    
     route: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('route'), 'exclude': lambda f: f is None }})
     view_type: Optional[RedirectEntityViewViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
+

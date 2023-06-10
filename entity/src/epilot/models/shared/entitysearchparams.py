@@ -4,16 +4,23 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class EntitySearchParamsAggs:
+    r"""Aggregation supported by ElasticSearch allows summarizing data as metrics, statistics, or other analytics."""
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class EntitySearchParams:
-    
     q: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('q') }})
     r"""Lucene queries supported with ElasticSearch"""
-    aggs: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aggs'), 'exclude': lambda f: f is None }})
+    aggs: Optional[EntitySearchParamsAggs] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aggs'), 'exclude': lambda f: f is None }})
     r"""Aggregation supported by ElasticSearch allows summarizing data as metrics, statistics, or other analytics."""
     fields_: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
     r"""List of entity fields to include in search results"""
@@ -26,3 +33,4 @@ class EntitySearchParams:
     r"""Max search size is 1000 with higher values defaulting to 1000"""
     sort: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sort'), 'exclude': lambda f: f is None }})
     
+

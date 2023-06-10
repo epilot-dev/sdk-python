@@ -8,6 +8,7 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SummaryAttribute:
     r"""Represents an expanded version of an attribute to be displayed in the list item summary.
@@ -22,7 +23,6 @@ class SummaryAttribute:
     ```
     The value field supports handlebar expressions from which you can pick any field from the entity state.
     """
-    
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     r"""Label to be shown on the top of the value."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
@@ -41,3 +41,4 @@ class SummaryAttribute:
     tag_color: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag_color'), 'exclude': lambda f: f is None }})
     r"""CSS hex color or CSS color name for the tag chip."""
     
+
