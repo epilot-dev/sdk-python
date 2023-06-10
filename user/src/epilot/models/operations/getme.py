@@ -7,12 +7,13 @@ from ..shared import user as shared_user
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetMeResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     user: Optional[shared_user.User] = dataclasses.field(default=None)
     r"""Currently logged in user"""
     
+

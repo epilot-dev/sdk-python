@@ -1,0 +1,19 @@
+# User
+
+Currently logged in user
+
+
+## Fields
+
+| Field                                                         | Type                                                          | Required                                                      | Description                                                   | Example                                                       |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `display_name`                                                | *Optional[str]*                                               | :heavy_minus_sign:                                            | N/A                                                           | Example user                                                  |
+| `email`                                                       | *str*                                                         | :heavy_check_mark:                                            | N/A                                                           |                                                               |
+| `id`                                                          | *str*                                                         | :heavy_check_mark:                                            | N/A                                                           |                                                               |
+| `image_uri`                                                   | dict[str, *Any*]                                              | :heavy_minus_sign:                                            | N/A                                                           |                                                               |
+| `name`                                                        | *str*                                                         | :heavy_check_mark:                                            | N/A                                                           | Example user                                                  |
+| `organization_id`                                             | *str*                                                         | :heavy_check_mark:                                            | N/A                                                           |                                                               |
+| `preferred_language`                                          | *str*                                                         | :heavy_check_mark:                                            | N/A                                                           | de                                                            |
+| `properties`                                                  | list[[UserProperties](../../models/shared/userproperties.md)] | :heavy_check_mark:                                            | N/A                                                           |                                                               |
+| `roles`                                                       | list[*str*]                                                   | :heavy_check_mark:                                            | Deprecated! Please use Permissions API instead                |                                                               |
+| `signature`                                                   | *Optional[str]*                                               | :heavy_minus_sign:                                            | N/A                                                           | <p>Thanks</p>                                                 |

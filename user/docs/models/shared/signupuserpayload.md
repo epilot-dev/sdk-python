@@ -1,0 +1,10 @@
+# SignupUserPayload
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `language`                                                                              | [Optional[SignupUserPayloadLanguage]](../../models/shared/signupuserpayloadlanguage.md) | :heavy_minus_sign:                                                                      | Language for user invitation email                                                      |
+| `organization_detail`                                                                   | dict[str, *Any*]                                                                        | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `user_detail`                                                                           | [Optional[UserDetail]](../../models/shared/userdetail.md)                               | :heavy_minus_sign:                                                                      | N/A                                                                                     |
