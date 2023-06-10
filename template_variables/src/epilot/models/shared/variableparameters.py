@@ -7,7 +7,14 @@ from ..shared import templatetype as shared_templatetype
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class VariableParametersContextData:
+    r"""If context data is avaialble, this data will be used for variable replace."""
+    pass
 
 class VariableParametersLanguage(str, Enum):
     EN = 'en'
@@ -15,13 +22,13 @@ class VariableParametersLanguage(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class VariableParameters:
-    
     template_type: shared_templatetype.TemplateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})
     brand_id: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('brand_id'), 'exclude': lambda f: f is None }})
     r"""Brand ID"""
-    context_data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_data'), 'exclude': lambda f: f is None }})
+    context_data: Optional[VariableParametersContextData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_data'), 'exclude': lambda f: f is None }})
     r"""If context data is avaialble, this data will be used for variable replace."""
     custom_variables: Optional[list[shared_externalcustomvariable.ExternalCustomVariable]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_variables'), 'exclude': lambda f: f is None }})
     r"""Custom variables with specified values form other services."""
@@ -35,3 +42,4 @@ class VariableParameters:
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
     r"""User ID"""
     
+

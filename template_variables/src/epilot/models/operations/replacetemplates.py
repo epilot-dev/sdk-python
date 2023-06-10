@@ -10,27 +10,32 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ReplaceTemplatesRequestBody:
-    
     inputs: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('inputs'), 'exclude': lambda f: f is None }})
     parameters: Optional[shared_variableparameters.VariableParameters] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ReplaceTemplates200ApplicationJSON:
     r"""ok"""
-    
     outputs: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outputs'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class ReplaceTemplatesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     replace_templates_200_application_json_object: Optional[ReplaceTemplates200ApplicationJSON] = dataclasses.field(default=None)
     r"""ok"""
     
+

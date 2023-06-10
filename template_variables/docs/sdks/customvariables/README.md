@@ -26,16 +26,15 @@ s = epilot.Epilot(
 )
 
 req = shared.CustomVariable(
-    config={
-        "debitis": 'ipsa',
-        "delectus": 'tempora',
-    },
+    config=shared.CustomVariableConfig(),
     created_at='2022-04-19T12:41:43.662Z',
     created_by='100042',
     helper_logic='return param1 * param2;',
     helper_params=[
-        'molestiae',
-        'minus',
+        'corrupti',
+        'illum',
+        'vel',
+        'error',
     ],
     id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
     key='my_custom_table',
@@ -158,6 +157,18 @@ if res.status_code == 200:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `request`                                                      | [shared.CustomVariable](../../models/shared/customvariable.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
+
+
+### Response
+
+**[operations.CreateCustomVariableResponse](../../models/operations/createcustomvariableresponse.md)**
+
+
 ## delete_custom_variable
 
 Immediately and permanently deletes a custom variable
@@ -175,7 +186,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteCustomVariableRequest(
-    id='8796ed15-1a05-4dfc-addf-7cc78ca1ba92',
+    id='674e0f46-7cc8-4796-ad15-1a05dfc2ddf7',
 )
 
 res = s.custom_variables.delete_custom_variable(req)
@@ -183,6 +194,18 @@ res = s.custom_variables.delete_custom_variable(req)
 if res.status_code == 200:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.DeleteCustomVariableRequest](../../models/operations/deletecustomvariablerequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+
+
+### Response
+
+**[operations.DeleteCustomVariableResponse](../../models/operations/deletecustomvariableresponse.md)**
+
 
 ## get_blue_print_table_config
 
@@ -207,6 +230,12 @@ if res.custom_variable is not None:
     # handle response
 ```
 
+
+### Response
+
+**[operations.GetBluePrintTableConfigResponse](../../models/operations/getblueprinttableconfigresponse.md)**
+
+
 ## get_custom_variable
 
 Get custom variable
@@ -224,7 +253,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetCustomVariableRequest(
-    id='8fc81674-2cb7-4392-8592-9396fea7596e',
+    id='cc78ca1b-a928-4fc8-9674-2cb739205929',
 )
 
 res = s.custom_variables.get_custom_variable(req)
@@ -232,6 +261,18 @@ res = s.custom_variables.get_custom_variable(req)
 if res.custom_variable is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetCustomVariableRequest](../../models/operations/getcustomvariablerequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+
+
+### Response
+
+**[operations.GetCustomVariableResponse](../../models/operations/getcustomvariableresponse.md)**
+
 
 ## get_custom_variables
 
@@ -256,6 +297,12 @@ if res.custom_variables is not None:
     # handle response
 ```
 
+
+### Response
+
+**[operations.GetCustomVariablesResponse](../../models/operations/getcustomvariablesresponse.md)**
+
+
 ## update_custom_variable
 
 Update custom variable
@@ -274,16 +321,12 @@ s = epilot.Epilot(
 
 req = operations.UpdateCustomVariableRequest(
     custom_variable=shared.CustomVariable(
-        config={
-            "architecto": 'ipsa',
-            "reiciendis": 'est',
-            "mollitia": 'laborum',
-        },
+        config=shared.CustomVariableConfig(),
         created_at='2022-04-19T12:41:43.662Z',
         created_by='100042',
         helper_logic='return param1 * param2;',
         helper_params=[
-            'dolorem',
+            'natus',
         ],
         id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
         key='my_custom_table',
@@ -399,7 +442,7 @@ req = operations.UpdateCustomVariableRequest(
         updated_at='2022-04-20T12:41:43.662Z',
         updated_by='100042',
     ),
-    id='2c595590-7aff-41a3-a2fa-9467739251aa',
+    id='fea7596e-b10f-4aaa-a352-c5955907aff1',
 )
 
 res = s.custom_variables.update_custom_variable(req)
@@ -407,3 +450,15 @@ res = s.custom_variables.update_custom_variable(req)
 if res.status_code == 200:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.UpdateCustomVariableRequest](../../models/operations/updatecustomvariablerequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+
+
+### Response
+
+**[operations.UpdateCustomVariableResponse](../../models/operations/updatecustomvariableresponse.md)**
+

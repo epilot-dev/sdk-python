@@ -5,7 +5,14 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class CustomVariableConfig:
+    r"""Variable configuration"""
+    pass
 
 class CustomVariableType(str, Enum):
     r"""Custom variable type"""
@@ -14,11 +21,11 @@ class CustomVariableType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CustomVariable:
     r"""Success"""
-    
-    config: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
+    config: Optional[CustomVariableConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
     r"""Variable configuration"""
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'exclude': lambda f: f is None }})
     r"""Creation time"""
@@ -43,3 +50,4 @@ class CustomVariable:
     updated_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_by'), 'exclude': lambda f: f is None }})
     r"""Updated by"""
     
+
