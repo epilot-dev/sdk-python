@@ -13,10 +13,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchThreads200ApplicationJSONResults:
     r"""Thread properties depend on API caller as it's not pre-defined. We do recommend having at least `topic` property for categorizing."""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""Created date"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id') }})
@@ -41,23 +41,28 @@ class SearchThreads200ApplicationJSONResults:
     r"""Ivy Organization ID of organization read the message."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchThreads200ApplicationJSON:
     r"""Success"""
-    
     hits: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits') }})
     r"""Total of matched threads"""
     results: list[SearchThreads200ApplicationJSONResults] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     r"""Matched threads"""
     
 
+
+
+
 @dataclasses.dataclass
 class SearchThreadsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     search_threads_200_application_json_object: Optional[SearchThreads200ApplicationJSON] = dataclasses.field(default=None)
     r"""Success"""
     
+

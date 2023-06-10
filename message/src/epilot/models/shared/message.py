@@ -24,9 +24,9 @@ class MessageType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Message:
-    
     from_: shared_address.Address = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from') }})
     subject: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subject') }})
     r"""Subject"""
@@ -65,3 +65,4 @@ class Message:
     user_read_message: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_read_message'), 'exclude': lambda f: f is None }})
     r"""Ivy User ID of user read the message."""
     
+

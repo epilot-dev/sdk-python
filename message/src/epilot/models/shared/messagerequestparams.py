@@ -10,23 +10,25 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MessageRequestParamsThread:
     r"""Open new thread when sending the very first message in conversation. Thread should contains context related to all messages in it (eg. topic, brand_id, opportunity_id, assigned_to,...).\ 
     Thread properties depend on API caller as it's not pre-defined. We do recommend having at least `topic` property for categorizing.\
     `thread` or `parent_id` must be provided either.
     """
-    
     topic: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('topic') }})
     r"""Message topic (e.g. which service sends the message or message category)"""
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assigned_to'), 'exclude': lambda f: f is None }})
     r"""Ivy User ID of who the message is assigned to. Default is the user who sends message."""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MessageRequestParams:
-    
     from_: shared_address.Address = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from') }})
     subject: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subject') }})
     r"""Subject"""
@@ -53,3 +55,4 @@ class MessageRequestParams:
     to: Optional[list[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('to'), 'exclude': lambda f: f is None }})
     r"""To email addresses"""
     
+

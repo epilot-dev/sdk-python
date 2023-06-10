@@ -28,10 +28,10 @@ class SendMessage201ApplicationJSONType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SendMessage201ApplicationJSON:
     r"""Success"""
-    
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
     r"""Created date"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id') }})
@@ -85,12 +85,15 @@ class SendMessage201ApplicationJSON:
     r"""Ivy User ID of user read the message."""
     
 
+
+
+
 @dataclasses.dataclass
 class SendMessageResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     send_message_201_application_json_object: Optional[SendMessage201ApplicationJSON] = dataclasses.field(default=None)
     r"""Success"""
     
+

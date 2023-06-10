@@ -8,9 +8,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class File:
-    
     entity_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id') }})
     r"""File entity ID"""
     cid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cid'), 'exclude': lambda f: f is None }})
@@ -28,3 +28,4 @@ class File:
     In this case, service doesn't process this attachment.
     """
     
+
