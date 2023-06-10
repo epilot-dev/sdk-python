@@ -84,6 +84,18 @@ if res.automation_flow is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [shared.AutomationFlowInput](../../models/shared/automationflowinput.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+
+
+### Response
+
+**[operations.CreateFlowResponse](../../models/operations/createflowresponse.md)**
+
+
 ## delete_flow
 
 Update automation flow by id
@@ -110,6 +122,18 @@ if res.automation_flow is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.DeleteFlowRequest](../../models/operations/deleteflowrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+
+
+### Response
+
+**[operations.DeleteFlowResponse](../../models/operations/deleteflowresponse.md)**
+
+
 ## get_flow
 
 List available automation flows
@@ -135,6 +159,18 @@ res = s.flows.get_flow(req)
 if res.automation_flow is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [operations.GetFlowRequest](../../models/operations/getflowrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+
+
+### Response
+
+**[operations.GetFlowResponse](../../models/operations/getflowresponse.md)**
+
 
 ## put_flow
 
@@ -203,6 +239,18 @@ if res.automation_flow is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [operations.PutFlowRequest](../../models/operations/putflowrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+
+
+### Response
+
+**[operations.PutFlowResponse](../../models/operations/putflowresponse.md)**
+
+
 ## search_flows
 
 Search available automation flows
@@ -231,3 +279,15 @@ res = s.flows.search_flows(req)
 if res.search_automations_resp is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.SearchFlowsRequest](../../models/operations/searchflowsrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+
+
+### Response
+
+**[operations.SearchFlowsResponse](../../models/operations/searchflowsresponse.md)**
+

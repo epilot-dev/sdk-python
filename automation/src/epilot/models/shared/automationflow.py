@@ -12,10 +12,10 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AutomationFlow:
     r"""The created automation flow"""
-    
     actions: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions') }})
     flow_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_name') }})
     r"""A descriptive name for the Automation"""
@@ -38,11 +38,13 @@ class AutomationFlow:
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AutomationFlowInput:
     r"""Automation flow to create"""
-    
     flow_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_name') }})
     r"""A descriptive name for the Automation"""
     triggers: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('triggers') }})
@@ -54,3 +56,4 @@ class AutomationFlowInput:
     r"""Number of automation executions that ran"""
     trigger_conditions: Optional[list[shared_triggercondition.TriggerCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger_conditions'), 'exclude': lambda f: f is None }})
     
+

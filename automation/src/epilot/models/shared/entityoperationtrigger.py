@@ -10,22 +10,25 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class EntityOperationTriggerConfiguration:
-    
     operations: list[shared_entityoperation.EntityOperation] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operations') }})
     schema: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema') }})
     exclude_activities: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exclude_activities'), 'exclude': lambda f: f is None }})
     include_activities: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_activities'), 'exclude': lambda f: f is None }})
     
+
+
 class EntityOperationTriggerType(str, Enum):
     ENTITY_OPERATION = 'entity_operation'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class EntityOperationTrigger:
-    
     configuration: EntityOperationTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
     type: EntityOperationTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
+

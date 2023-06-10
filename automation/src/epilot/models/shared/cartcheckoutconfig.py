@@ -10,9 +10,9 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CartCheckoutConfig:
-    
     linkback_relation_attribute: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('linkback_relation_attribute'), 'exclude': lambda f: f is None }})
     r"""Relation attribute on the main entity where the target entity will be linked. Set to false to disable linkback"""
     linkback_relation_tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('linkback_relation_tags'), 'exclude': lambda f: f is None }})
@@ -25,3 +25,4 @@ class CartCheckoutConfig:
     version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version'), 'exclude': lambda f: f is None }})
     r"""Version of the config"""
     
+

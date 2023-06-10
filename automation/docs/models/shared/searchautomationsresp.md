@@ -1,0 +1,11 @@
+# SearchAutomationsResp
+
+List of automation flows, including total count
+
+
+## Fields
+
+| Field                                                         | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `results`                                                     | list[[AutomationFlow](../../models/shared/automationflow.md)] | :heavy_check_mark:                                            | N/A                                                           |
+| `total`                                                       | *float*                                                       | :heavy_check_mark:                                            | N/A                                                           |

@@ -8,9 +8,10 @@ from epilot import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ErrorOutput:
-    
     error_code: shared_errorcode.ErrorCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_code') }})
     error_reason: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_reason') }})
     
+

@@ -9,9 +9,9 @@ from typing import Any
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SetValueMapper:
-    
     mode: shared_mappingattributemode.MappingAttributeMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
     r"""- copy_if_exists - it replaces the target attribute with the source value - append_if_exists - it currently replaces target attribute with array like values. Useful when you have multiple values to be added into one attribute. - set_value - it sets a value to a predefined value. Must be used together with value property."""
     target: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
@@ -19,3 +19,4 @@ class SetValueMapper:
     value: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Any value to be set: string, number, string[], number[], JSON object, etc. It will override existing values, if any."""
     
+

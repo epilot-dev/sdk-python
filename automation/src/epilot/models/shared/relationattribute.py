@@ -14,10 +14,10 @@ class RelationAttributeMode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RelationAttributeSourceFilter:
     r"""A filter to identify which source entities to pick as relations from main entity"""
-    
     attribute: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribute'), 'exclude': lambda f: f is None }})
     r"""Filter by a specific relation attribute on the main entity"""
     limit: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})
@@ -32,10 +32,12 @@ class RelationAttributeSourceFilter:
     r"""Filter by a specific tag on the related entity"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RelationAttribute:
-    
     mode: RelationAttributeMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
     target: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
     r"""Target attribute to store the relation in"""
@@ -47,3 +49,4 @@ class RelationAttribute:
     target_tags_include_source: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_tags_include_source'), 'exclude': lambda f: f is None }})
     r"""Include all relation tags (labels) present on the main entity relation"""
     
+

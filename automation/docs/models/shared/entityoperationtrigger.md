@@ -1,0 +1,9 @@
+# EntityOperationTrigger
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `configuration`                                                                                   | [EntityOperationTriggerConfiguration](../../models/shared/entityoperationtriggerconfiguration.md) | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `type`                                                                                            | [EntityOperationTriggerType](../../models/shared/entityoperationtriggertype.md)                   | :heavy_check_mark:                                                                                | N/A                                                                                               |

@@ -13,10 +13,10 @@ class CartCheckoutActionConfigType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class CartCheckoutActionConfig:
     r"""Creates an order entity with prices from journey"""
-    
     allow_failure: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allow_failure'), 'exclude': lambda f: f is None }})
     r"""Whether to stop execution in a failed state if this action fails"""
     config: Optional[shared_cartcheckoutconfig.CartCheckoutConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
@@ -27,3 +27,4 @@ class CartCheckoutActionConfig:
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     type: Optional[CartCheckoutActionConfigType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
+

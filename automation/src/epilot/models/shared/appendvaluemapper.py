@@ -9,9 +9,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AppendValueMapper:
-    
     mode: shared_mappingattributemode.MappingAttributeMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
     r"""- copy_if_exists - it replaces the target attribute with the source value - append_if_exists - it currently replaces target attribute with array like values. Useful when you have multiple values to be added into one attribute. - set_value - it sets a value to a predefined value. Must be used together with value property."""
     target: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
@@ -23,3 +23,4 @@ class AppendValueMapper:
     target_unique: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_unique'), 'exclude': lambda f: f is None }})
     r"""Array of keys which should be used when checking for uniqueness. Eg: [country, city, postal_code]"""
     
+

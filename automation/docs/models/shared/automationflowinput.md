@@ -1,0 +1,15 @@
+# AutomationFlowInput
+
+Automation flow to create
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       | Example                                                           |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `enabled`                                                         | *Optional[bool]*                                                  | :heavy_minus_sign:                                                | Whether the automation is enabled or not                          |                                                                   |
+| `entity_schema`                                                   | *Optional[str]*                                                   | :heavy_minus_sign:                                                | The triggering entity schema                                      | submission                                                        |
+| `flow_name`                                                       | *str*                                                             | :heavy_check_mark:                                                | A descriptive name for the Automation                             | Handle contact form                                               |
+| `runs`                                                            | *Optional[float]*                                                 | :heavy_minus_sign:                                                | Number of automation executions that ran                          | 7                                                                 |
+| `trigger_conditions`                                              | list[[TriggerCondition](../../models/shared/triggercondition.md)] | :heavy_minus_sign:                                                | N/A                                                               |                                                                   |
+| `triggers`                                                        | list[*Any*]                                                       | :heavy_check_mark:                                                | N/A                                                               |                                                                   |

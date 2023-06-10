@@ -13,12 +13,13 @@ class TriggerEventEntityOperationType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class TriggerEventEntityOperation:
-    
     activity_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_id') }})
     entity_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id') }})
     operation_type: shared_entityoperation.EntityOperation = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation_type') }})
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
     type: Optional[TriggerEventEntityOperationType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
+

@@ -7,19 +7,22 @@ from ..shared import automationflow as shared_automationflow
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetFlowRequest:
-    
     flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flow_id', 'style': 'simple', 'explode': False }})
     r"""Automation Workflow ID"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetFlowResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     automation_flow: Optional[shared_automationflow.AutomationFlow] = dataclasses.field(default=None)
     r"""The returned automation flow"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

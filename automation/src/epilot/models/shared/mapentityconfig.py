@@ -10,9 +10,9 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class MapEntityConfig:
-    
     target_schema: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_schema') }})
     r"""Schema of target entity"""
     linkback_relation_attribute: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('linkback_relation_attribute'), 'exclude': lambda f: f is None }})
@@ -27,3 +27,4 @@ class MapEntityConfig:
     target_unique: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_unique'), 'exclude': lambda f: f is None }})
     r"""Unique key for target entity (see upsertEntity of Entity API)"""
     
+

@@ -1,0 +1,11 @@
+# EntityOperationTriggerConfiguration
+
+
+## Fields
+
+| Field                                                           | Type                                                            | Required                                                        | Description                                                     | Example                                                         |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `exclude_activities`                                            | list[*str*]                                                     | :heavy_minus_sign:                                              | N/A                                                             |                                                                 |
+| `include_activities`                                            | list[*str*]                                                     | :heavy_minus_sign:                                              | N/A                                                             |                                                                 |
+| `operations`                                                    | list[[EntityOperation](../../models/shared/entityoperation.md)] | :heavy_check_mark:                                              | N/A                                                             |                                                                 |
+| `schema`                                                        | *str*                                                           | :heavy_check_mark:                                              | N/A                                                             | submission                                                      |
