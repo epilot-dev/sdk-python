@@ -9,19 +9,22 @@ from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListAllRoles200ApplicationJSON:
     r"""ok"""
-    
     roles: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles'), 'exclude': lambda f: f is None }})
     
 
+
+
+
 @dataclasses.dataclass
 class ListAllRolesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     list_all_roles_200_application_json_object: Optional[ListAllRoles200ApplicationJSON] = dataclasses.field(default=None)
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

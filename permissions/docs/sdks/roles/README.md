@@ -40,6 +40,18 @@ if res.role is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.DeleteRoleRequest](../../models/operations/deleterolerequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+
+
+### Response
+
+**[operations.DeleteRoleResponse](../../models/operations/deleteroleresponse.md)**
+
+
 ## get_role
 
 Get role by id
@@ -66,6 +78,18 @@ if res.role is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [operations.GetRoleRequest](../../models/operations/getrolerequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+
+
+### Response
+
+**[operations.GetRoleResponse](../../models/operations/getroleresponse.md)**
+
+
 ## list_all_roles
 
 Returns list of all roles in organization
@@ -89,6 +113,12 @@ if res.list_all_roles_200_application_json_object is not None:
     # handle response
 ```
 
+
+### Response
+
+**[operations.ListAllRolesResponse](../../models/operations/listallrolesresponse.md)**
+
+
 ## list_current_roles
 
 Returns roles and grants assigned to current user
@@ -111,6 +141,12 @@ res = s.roles.list_current_roles()
 if res.list_current_roles_200_application_json_object is not None:
     # handle response
 ```
+
+
+### Response
+
+**[operations.ListCurrentRolesResponse](../../models/operations/listcurrentrolesresponse.md)**
+
 
 ## put_role
 
@@ -263,6 +299,18 @@ if res.role is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [operations.PutRoleRequest](../../models/operations/putrolerequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+
+
+### Response
+
+**[operations.PutRoleResponse](../../models/operations/putroleresponse.md)**
+
+
 ## refresh_permissions
 
 Makes sure the user has a role in the organization
@@ -285,6 +333,12 @@ res = s.roles.refresh_permissions()
 if res.status_code == 200:
     # handle response
 ```
+
+
+### Response
+
+**[operations.RefreshPermissionsResponse](../../models/operations/refreshpermissionsresponse.md)**
+
 
 ## search_roles
 
@@ -327,3 +381,15 @@ res = s.roles.search_roles(req)
 if res.search_roles_200_application_json_object is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `request`                                                        | [shared.RoleSearchInput](../../models/shared/rolesearchinput.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
+
+
+### Response
+
+**[operations.SearchRolesResponse](../../models/operations/searchrolesresponse.md)**
+

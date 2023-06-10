@@ -6,19 +6,22 @@ import requests as requests_http
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class AssignRolesRequest:
-    
     user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})
     request_body: Optional[list[str]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
+
 @dataclasses.dataclass
 class AssignRolesResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     assignments: Optional[list[str]] = dataclasses.field(default=None)
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
