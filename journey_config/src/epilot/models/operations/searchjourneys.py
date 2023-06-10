@@ -7,12 +7,13 @@ from ..shared import searchjourneysresponse as shared_searchjourneysresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class SearchJourneysResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     search_journeys_response: Optional[shared_searchjourneysresponse.SearchJourneysResponse] = dataclasses.field(default=None)
     r"""Success"""
     
+

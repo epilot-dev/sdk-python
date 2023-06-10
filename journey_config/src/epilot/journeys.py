@@ -35,7 +35,7 @@ class Journeys:
         
         if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.JourneyResponse])
                 res.journey_response = out
 
         return res
@@ -62,7 +62,7 @@ class Journeys:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.JourneyResponse])
                 res.journey_response = out
 
         return res
@@ -88,7 +88,7 @@ class Journeys:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.GetJourneysResponse])
                 res.get_journeys_response = out
 
         return res
@@ -117,7 +117,7 @@ class Journeys:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.JourneyResponse])
                 res.journey_response = out
 
         return res
@@ -197,7 +197,7 @@ class Journeys:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.JourneyResponse])
                 res.journey_response = out
 
         return res

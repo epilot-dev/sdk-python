@@ -3,15 +3,17 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ..shared import journeyresponse as shared_journeyresponse
+from typing import Optional
+
 
 
 @dataclasses.dataclass
 class CreateJourneyResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    journey_response: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    journey_response: Optional[shared_journeyresponse.JourneyResponse] = dataclasses.field(default=None)
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
