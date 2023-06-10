@@ -7,12 +7,13 @@ from ..shared import geolocation as shared_geolocation
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class SearchGeolocationForTextResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     geolocation: Optional[shared_geolocation.Geolocation] = dataclasses.field(default=None)
     r"""Geo-location converted from text"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

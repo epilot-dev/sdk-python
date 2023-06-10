@@ -7,9 +7,10 @@ from epilot import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SearchGeolocation:
-    
     address: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     r"""Address text to convert into geolocation coordinates"""
     
+

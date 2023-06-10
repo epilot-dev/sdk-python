@@ -8,10 +8,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Geolocation:
     r"""Geo-location converted from text"""
-    
     lat: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lat') }})
     r"""Latitude"""
     lng: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lng') }})
@@ -21,3 +21,4 @@ class Geolocation:
     relevance: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relevance'), 'exclude': lambda f: f is None }})
     r"""Relevance of the result. A number between 0 and 1. Closer to 1 means more relevant"""
     
+

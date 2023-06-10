@@ -10,20 +10,22 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AssignableOrganizationImageURI:
-    
     original: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original') }})
     thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})
     
+
+
 class AssignableOrganizationType(str, Enum):
     PARTNER_ORGANIZATION = 'partner_organization'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AssignableOrganization:
-    
     display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
     partner_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_id') }})
@@ -35,3 +37,4 @@ class AssignableOrganization:
     image_uri: Optional[AssignableOrganizationImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri'), 'exclude': lambda f: f is None }})
     phone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone'), 'exclude': lambda f: f is None }})
     
+

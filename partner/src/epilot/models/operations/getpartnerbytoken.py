@@ -7,19 +7,22 @@ from ..shared import partner as shared_partner
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetPartnerByTokenRequest:
-    
     token: str = dataclasses.field(metadata={'query_param': { 'field_name': 'token', 'style': 'form', 'explode': True }})
     r"""Invite Token"""
     
 
+
+
+
 @dataclasses.dataclass
 class GetPartnerByTokenResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     partner: Optional[shared_partner.Partner] = dataclasses.field(default=None)
     r"""Partner"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

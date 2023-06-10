@@ -9,9 +9,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AddressGeolocation:
-    
     address: shared_address.Address = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address') }})
     lat: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lat') }})
     r"""Latitude"""
@@ -22,3 +22,4 @@ class AddressGeolocation:
     relevance: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relevance'), 'exclude': lambda f: f is None }})
     r"""Relevance of the result. A number between 0 and 1. Closer to 1 means more relevant"""
     
+
