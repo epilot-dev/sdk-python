@@ -8,9 +8,9 @@ from ..shared import workflowdefinition as shared_workflowdefinition
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetDefinitionsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -19,3 +19,4 @@ class GetDefinitionsResponse:
     workflow_definitions: Optional[list[shared_workflowdefinition.WorkflowDefinition]] = dataclasses.field(default=None)
     r"""Success - definitions loaded with success. Empty array if org has no definitions."""
     
+

@@ -8,9 +8,10 @@ from sdk import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ClosingReasonsIds:
     r"""Returns the entire catalog of closing reasons for a specific workflow"""
-    
     reasons: list[shared_closingreasonid.ClosingReasonID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reasons') }})
     
+

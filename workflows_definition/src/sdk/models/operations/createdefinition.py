@@ -8,9 +8,9 @@ from ..shared import workflowdefinition as shared_workflowdefinition
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class CreateDefinitionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -19,3 +19,4 @@ class CreateDefinitionResponse:
     workflow_definition: Optional[shared_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
     r"""Success - if the definition is created successfully"""
     
+

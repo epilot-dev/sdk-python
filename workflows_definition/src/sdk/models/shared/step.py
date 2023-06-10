@@ -13,18 +13,20 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class StepAutomationConfig:
-    
     flow_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flowId') }})
     r"""Id of the configured automation to run"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class Step:
     r"""Action that needs to be done in a Workflow"""
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     order: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order') }})
     type: shared_itemtype.ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -42,3 +44,4 @@ class Step:
     user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
     r"""This field is deprecated. Please use assignedTo"""
     
+

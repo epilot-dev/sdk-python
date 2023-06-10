@@ -229,6 +229,18 @@ if res.workflow_definition is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [shared.WorkflowDefinition](../../models/shared/workflowdefinition.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+
+
+### Response
+
+**[operations.CreateDefinitionResponse](../../models/operations/createdefinitionresponse.md)**
+
+
 ## delete_definition
 
 Delete Workflow Definition.
@@ -254,6 +266,18 @@ res = s.workflows.delete_definition(req)
 if res.status_code == 200:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.DeleteDefinitionRequest](../../models/operations/deletedefinitionrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+
+
+### Response
+
+**[operations.DeleteDefinitionResponse](../../models/operations/deletedefinitionresponse.md)**
+
 
 ## get_definition
 
@@ -281,6 +305,18 @@ if res.workflow_definition is not None:
     # handle response
 ```
 
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.GetDefinitionRequest](../../models/operations/getdefinitionrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+
+
+### Response
+
+**[operations.GetDefinitionResponse](../../models/operations/getdefinitionresponse.md)**
+
+
 ## get_definitions
 
 Retrieve all Workflow Definitions from an Organization
@@ -304,6 +340,12 @@ if res.workflow_definitions is not None:
     # handle response
 ```
 
+
+### Response
+
+**[operations.GetDefinitionsResponse](../../models/operations/getdefinitionsresponse.md)**
+
+
 ## get_max_allowed_limit
 
 Get limits and number of created executions for an Organization.
@@ -326,6 +368,12 @@ res = s.workflows.get_max_allowed_limit()
 if res.max_allowed_limit is not None:
     # handle response
 ```
+
+
+### Response
+
+**[operations.GetMaxAllowedLimitResponse](../../models/operations/getmaxallowedlimitresponse.md)**
+
 
 ## get_workflow_closing_reasons
 
@@ -352,6 +400,18 @@ res = s.workflows.get_workflow_closing_reasons(req)
 if res.closing_reasons_ids is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.GetWorkflowClosingReasonsRequest](../../models/operations/getworkflowclosingreasonsrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+
+
+### Response
+
+**[operations.GetWorkflowClosingReasonsResponse](../../models/operations/getworkflowclosingreasonsresponse.md)**
+
 
 ## set_workflow_closing_reasons
 
@@ -385,6 +445,18 @@ res = s.workflows.set_workflow_closing_reasons(req)
 if res.status_code == 200:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.SetWorkflowClosingReasonsRequest](../../models/operations/setworkflowclosingreasonsrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+
+
+### Response
+
+**[operations.SetWorkflowClosingReasonsResponse](../../models/operations/setworkflowclosingreasonsresponse.md)**
+
 
 ## update_definition
 
@@ -712,3 +784,15 @@ res = s.workflows.update_definition(req)
 if res.workflow_definition is not None:
     # handle response
 ```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.UpdateDefinitionRequest](../../models/operations/updatedefinitionrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+
+
+### Response
+
+**[operations.UpdateDefinitionResponse](../../models/operations/updatedefinitionresponse.md)**
+

@@ -8,18 +8,20 @@ from ..shared import workflowdefinition as shared_workflowdefinition
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class UpdateDefinitionRequest:
-    
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
     r"""Short uuid (length 8) to identify the Workflow Definition."""
     workflow_definition: shared_workflowdefinition.WorkflowDefinition = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Workflow Definition payload"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateDefinitionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
@@ -28,3 +30,4 @@ class UpdateDefinitionResponse:
     workflow_definition: Optional[shared_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
     r"""Success - if the definition is updated successfully"""
     
+
