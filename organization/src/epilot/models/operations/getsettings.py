@@ -6,19 +6,22 @@ import requests as requests_http
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class GetSettingsRequest:
-    
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""The Id of the organization."""
     
 
+
+
+
 @dataclasses.dataclass
 class GetSettingsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     settings: Optional[dict[str, Any]] = dataclasses.field(default=None)
     r"""Returns the organization settings"""
     
+

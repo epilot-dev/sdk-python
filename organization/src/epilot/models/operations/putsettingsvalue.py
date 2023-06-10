@@ -6,9 +6,9 @@ import requests as requests_http
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class PutSettingsValueRequest:
-    
     key: str = dataclasses.field(metadata={'path_param': { 'field_name': 'key', 'style': 'simple', 'explode': False }})
     r"""Organization setting key"""
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
@@ -17,12 +17,15 @@ class PutSettingsValueRequest:
     r"""Value to set"""
     
 
+
+
+
 @dataclasses.dataclass
 class PutSettingsValueResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     settings_value: Optional[Any] = dataclasses.field(default=None)
     r"""Returns the value of the setting"""
     
+
