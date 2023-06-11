@@ -12,7 +12,8 @@ from typing import Optional
 @dataclasses.dataclass
 class CustomVariableConfig:
     r"""Variable configuration"""
-    pass
+    
+
 
 class CustomVariableType(str, Enum):
     r"""Custom variable type"""

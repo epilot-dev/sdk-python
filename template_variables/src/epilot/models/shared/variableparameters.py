@@ -14,7 +14,8 @@ from typing import Optional
 @dataclasses.dataclass
 class VariableParametersContextData:
     r"""If context data is avaialble, this data will be used for variable replace."""
-    pass
+    
+
 
 class VariableParametersLanguage(str, Enum):
     EN = 'en'
