@@ -8,4 +8,5 @@ import dataclasses
 @dataclasses.dataclass
 class GetJourneysResponse:
     r"""Success"""
-    pass
+    
+
