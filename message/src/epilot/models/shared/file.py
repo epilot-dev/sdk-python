@@ -8,25 +8,24 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class File:
-    
     entity_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id') }})
-    r"""File entity ID"""  
+    r"""File entity ID"""
     cid: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cid'), 'exclude': lambda f: f is None }})
-    r"""Content ID (for inline)"""  
+    r"""Content ID (for inline)"""
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
-    r"""File name"""  
+    r"""File name"""
     inline: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('inline'), 'exclude': lambda f: f is None }})
-    r"""If true then this attachment should not be offered for download (at least not in the main attachments list).\
+    r"""If true then this attachment should not be offered for download (at least not in the main attachments list).\ 
     The usecase is CID embedded image (aka inline image).
-    
-    """  
+    """
     is_message_attachment: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_message_attachment'), 'exclude': lambda f: f is None }})
-    r"""To indicate this file relation is message attachment. If false then this file will not be sent and simply kept as a file relation."""  
+    r"""To indicate this file relation is message attachment. If false then this file will not be sent and simply kept as a file relation."""
     send_as_link: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('send_as_link'), 'exclude': lambda f: f is None }})
-    r"""If true then this attachment is sent via link. The link have to be inserted to email body by API caller.\
+    r"""If true then this attachment is sent via link. The link have to be inserted to email body by API caller.\ 
     In this case, service doesn't process this attachment.
+    """
     
-    """  
-    
+
