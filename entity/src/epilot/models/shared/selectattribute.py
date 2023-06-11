@@ -14,7 +14,8 @@ class SelectAttributeConstraints:
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
     """
-    pass
+    
+
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

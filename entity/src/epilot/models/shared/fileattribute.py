@@ -14,7 +14,8 @@ class FileAttributeConstraints:
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
     """
-    pass
+    
+
 
 class FileAttributeDefaultAccessControl(str, Enum):
     PUBLIC_READ = 'public-read'

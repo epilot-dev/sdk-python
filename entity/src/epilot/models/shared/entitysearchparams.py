@@ -11,7 +11,8 @@ from typing import Optional
 @dataclasses.dataclass
 class EntitySearchParamsAggs:
     r"""Aggregation supported by ElasticSearch allows summarizing data as metrics, statistics, or other analytics."""
-    pass
+    
+
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
