@@ -12,3 +12,5 @@ class EntitySlug(str, Enum):
     OPPORTUNITY = 'opportunity'
     PRODUCT = 'product'
     PRICE = 'price'
+    METER = 'meter'
+    METER_COUNTER = 'meter_counter'
