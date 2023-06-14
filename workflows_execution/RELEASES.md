@@ -239,3 +239,9 @@ Based on:
 Based on:
 - OpenAPI Doc 1.0.0 https://docs.api.epilot.io/workflows-execution.yaml
 - Speakeasy CLI 1.47.1 (2.39.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-14 01:18:00
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/workflows-execution.yaml
+- Speakeasy CLI 1.47.3 (2.40.1) https://github.com/speakeasy-api/speakeasy

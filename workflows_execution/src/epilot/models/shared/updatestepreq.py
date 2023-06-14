@@ -29,6 +29,9 @@ class UpdateStepReq:
     position: Optional[shared_steppositionat.StepPositionAt] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('position'), 'exclude': lambda f: f is None }})
     status: Optional[shared_stepstatus.StepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
-    r"""This field is deprecated. Please use assignedTo"""
+    r"""This field is deprecated. Please use assignedTo
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
+    """
     
 
