@@ -5,7 +5,6 @@ src/epilot/catalog_api.py
 src/epilot/deprecated.py
 src/epilot/order_api.py
 src/epilot/sdk.py
-.gitignore
 pylintrc
 setup.py
 src/epilot/__init__.py
