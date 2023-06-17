@@ -7,18 +7,21 @@ from ..shared import activatepartnerpayload as shared_activatepartnerpayload
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ActivatePartnerRequest:
-    
     token: str = dataclasses.field(metadata={'query_param': { 'field_name': 'token', 'style': 'form', 'explode': True }})
-    r"""Invite Token"""  
-    activate_partner_payload: Optional[shared_activatepartnerpayload.ActivatePartnerPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    r"""Invite Token"""
+    activate_partner_payload: Optional[shared_activatepartnerpayload.ActivatePartnerPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
+
+
+
 
 @dataclasses.dataclass
 class ActivatePartnerResponse:
+    content_type: str = dataclasses.field()
+    status_code: int = dataclasses.field()
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
