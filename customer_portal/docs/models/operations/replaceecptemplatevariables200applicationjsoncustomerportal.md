@@ -1,4 +1,4 @@
-# ReplaceECPTemplateVariables200ApplicationJSONPortalUser
+# ReplaceECPTemplateVariables200ApplicationJSONCustomerPortal
 
 
 ## Fields

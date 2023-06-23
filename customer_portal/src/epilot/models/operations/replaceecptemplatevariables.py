@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
-from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -29,13 +28,11 @@ class ReplaceECPTemplateVariablesRequestBody:
 
 
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class ReplaceECPTemplateVariablesRequest:
-    origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""
-    request_body: ReplaceECPTemplateVariablesRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""ECPVariables payload"""
+class ReplaceECPTemplateVariables200ApplicationJSONCustomerPortal:
+    invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
     
 
 
@@ -43,7 +40,7 @@ class ReplaceECPTemplateVariablesRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class ReplaceECPTemplateVariables200ApplicationJSONPortalUser:
+class ReplaceECPTemplateVariables200ApplicationJSONInstallerPortal:
     invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
     
 
@@ -54,7 +51,8 @@ class ReplaceECPTemplateVariables200ApplicationJSONPortalUser:
 @dataclasses.dataclass
 class ReplaceECPTemplateVariables200ApplicationJSON:
     r"""Replaced portal template variables successfully."""
-    portal_user: Optional[ReplaceECPTemplateVariables200ApplicationJSONPortalUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('portalUser'), 'exclude': lambda f: f is None }})
+    customer_portal: Optional[ReplaceECPTemplateVariables200ApplicationJSONCustomerPortal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customerPortal'), 'exclude': lambda f: f is None }})
+    installer_portal: Optional[ReplaceECPTemplateVariables200ApplicationJSONInstallerPortal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installerPortal'), 'exclude': lambda f: f is None }})
     
 
 

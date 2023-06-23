@@ -184,8 +184,8 @@ docs/models/operations/getvalidsecondaryattributes200applicationjson.md
 docs/models/operations/getvalidsecondaryattributesresponse.md
 docs/models/operations/replaceecptemplatevariablessecurity.md
 docs/models/operations/replaceecptemplatevariablesrequestbody.md
-docs/models/operations/replaceecptemplatevariablesrequest.md
-docs/models/operations/replaceecptemplatevariables200applicationjsonportaluser.md
+docs/models/operations/replaceecptemplatevariables200applicationjsoncustomerportal.md
+docs/models/operations/replaceecptemplatevariables200applicationjsoninstallerportal.md
 docs/models/operations/replaceecptemplatevariables200applicationjson.md
 docs/models/operations/replaceecptemplatevariablesresponse.md
 docs/models/operations/saveportalfilessecurity.md
@@ -245,6 +245,7 @@ docs/models/shared/portalconfigentityactions.md
 docs/models/shared/portalconfigentityidentifierstype.md
 docs/models/shared/portalconfigentityidentifiers.md
 docs/models/shared/portalconfigimages.md
+docs/models/shared/portalconfigselfregistrationsetting.md
 docs/models/shared/portalconfig.md
 docs/models/shared/origin.md
 docs/models/shared/granteffect.md
@@ -266,6 +267,7 @@ docs/models/shared/upsertportalconfigentityactions.md
 docs/models/shared/upsertportalconfigentityidentifierstype.md
 docs/models/shared/upsertportalconfigentityidentifiers.md
 docs/models/shared/upsertportalconfigimages.md
+docs/models/shared/upsertportalconfigselfregistrationsetting.md
 docs/models/shared/upsertportalconfig.md
 docs/models/shared/createuserrequest.md
 docs/models/shared/security.md

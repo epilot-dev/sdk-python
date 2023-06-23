@@ -7,6 +7,7 @@ from ..shared import entityslug as shared_entityslug
 from ..shared import grant as shared_grant
 from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
 from typing import Any, Optional
 
@@ -95,6 +96,11 @@ class PortalConfigImages:
     
 
 
+class PortalConfigSelfRegistrationSetting(str, Enum):
+    ALLOW_WITH_CONTACT_CREATION = 'ALLOW_WITH_CONTACT_CREATION'
+    ALLOW_WITHOUT_CONTACT_CREATION = 'ALLOW_WITHOUT_CONTACT_CREATION'
+    DENY = 'DENY'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -107,8 +113,13 @@ class PortalConfig:
     r"""AWS Cognito Pool details for the portal"""
     config: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
     r"""Stringified object with configuration details"""
+    contact_identifiers: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_identifiers'), 'exclude': lambda f: f is None }})
+    r"""Identifiers to identify a contact."""
     contact_secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_secondary_identifier'), 'exclude': lambda f: f is None }})
-    r"""Secondary identifier to identify a contact other than the email"""
+    r"""Secondary identifier to identify a contact other than the email
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
+    """
     default_user_to_notify: Optional[PortalConfigDefaultUserToNotify] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_user_to_notify'), 'exclude': lambda f: f is None }})
     r"""Default 360 user to notify upon an internal notification"""
     domain: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domain'), 'exclude': lambda f: f is None }})
@@ -136,6 +147,10 @@ class PortalConfig:
     origin: Optional[shared_origin.Origin] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin'), 'exclude': lambda f: f is None }})
     r"""Origin of the portal"""
     self_registration: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration'), 'exclude': lambda f: f is None }})
-    r"""Allow portal user self-registration without a mapped contact"""
+    r"""Allow portal user self-registration without a mapped contact
+    
+    Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
+    """
+    self_registration_setting: Optional[PortalConfigSelfRegistrationSetting] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration_setting'), 'exclude': lambda f: f is None }})
     
 

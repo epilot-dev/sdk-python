@@ -430,15 +430,12 @@ Replaces the template variables of a portal
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot()
 
-req = operations.ReplaceECPTemplateVariablesRequest(
-    request_body=operations.ReplaceECPTemplateVariablesRequestBody(
-        contact_id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
-    ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+req = operations.ReplaceECPTemplateVariablesRequestBody(
+    contact_id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
 )
 
 res = s.ecp_admin.replace_ecp_template_variables(req, operations.ReplaceECPTemplateVariablesSecurity(
@@ -451,10 +448,10 @@ if res.replace_ecp_template_variables_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.ReplaceECPTemplateVariablesRequest](../../models/operations/replaceecptemplatevariablesrequest.md)   | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `security`                                                                                                       | [operations.ReplaceECPTemplateVariablesSecurity](../../models/operations/replaceecptemplatevariablessecurity.md) | :heavy_check_mark:                                                                                               | The security requirements to use for the request.                                                                |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                              | [operations.ReplaceECPTemplateVariablesRequestBody](../../models/operations/replaceecptemplatevariablesrequestbody.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
+| `security`                                                                                                             | [operations.ReplaceECPTemplateVariablesSecurity](../../models/operations/replaceecptemplatevariablessecurity.md)       | :heavy_check_mark:                                                                                                     | The security requirements to use for the request.                                                                      |
 
 
 ### Response
@@ -478,6 +475,7 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
+                'cum',
                 'esse',
                 'ipsum',
                 'excepturi',
@@ -489,44 +487,8 @@ req = shared.SavePortalFile(
                 key='12345',
             ),
         ),
-        shared.SavePortalFileFiles(
-            tags=[
-                'perferendis',
-            ],
-            file_type='orderRightTeaser',
-            filename='12345',
-            s3ref=shared.SavePortalFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
-        shared.SavePortalFileFiles(
-            tags=[
-                'natus',
-                'sed',
-            ],
-            file_type='orderRightTeaser',
-            filename='12345',
-            s3ref=shared.SavePortalFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
-        shared.SavePortalFileFiles(
-            tags=[
-                'dolor',
-                'natus',
-                'laboriosam',
-            ],
-            file_type='orderRightTeaser',
-            filename='12345',
-            s3ref=shared.SavePortalFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
     ],
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.save_portal_files(req, operations.SavePortalFilesSecurity(
@@ -570,7 +532,7 @@ req = operations.UpsertEmailTemplatesRequest(
         on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
         on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_email_templates(req, operations.UpsertEmailTemplatesSecurity(
@@ -613,10 +575,19 @@ req = operations.UpsertPortalRequest(
             cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
             cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config='fuga',
+        config='ad',
+        contact_identifiers=[
+            'sed',
+            'iste',
+            'dolor',
+        ],
         contact_secondary_identifier='full_name',
         default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
             on_pending_user=[
+                {
+                    "hic": 'saepe',
+                    "fuga": 'in',
+                },
                 {
                     "iste": 'iure',
                     "saepe": 'quidem',
@@ -691,8 +662,9 @@ req = operations.UpsertPortalRequest(
         is_epilot_domain=False,
         name='Installer Portal',
         self_registration=False,
+        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITHOUT_CONTACT_CREATION,
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal(req, operations.UpsertPortalSecurity(

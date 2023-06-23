@@ -195,7 +195,7 @@ s = epilot.Epilot(
 
 req = operations.GetPublicPortalConfigRequest(
     org_id='12324',
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.get_public_portal_config(req)

@@ -1,9 +1,0 @@
-# ReplaceECPTemplateVariablesRequest
-
-
-## Fields
-
-| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `request_body`                                                                                              | [ReplaceECPTemplateVariablesRequestBody](../../models/operations/replaceecptemplatevariablesrequestbody.md) | :heavy_check_mark:                                                                                          | ECPVariables payload                                                                                        |
-| `origin`                                                                                                    | [shared.Origin](../../models/shared/origin.md)                                                              | :heavy_check_mark:                                                                                          | Origin of the portal                                                                                        |
