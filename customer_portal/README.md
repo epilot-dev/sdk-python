@@ -80,6 +80,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 
 * [confirm_user](docs/sdks/public/README.md#confirm_user) - confirmUser
 * [create_user](docs/sdks/public/README.md#create_user) - createUser
+* [get_contact_count](docs/sdks/public/README.md#get_contact_count) - getContactCount
 * [get_count_by_email](docs/sdks/public/README.md#get_count_by_email) - getCountByEmail
 * [get_portal_config_by_domain](docs/sdks/public/README.md#get_portal_config_by_domain) - getPortalConfigByDomain
 * [get_public_portal_config](docs/sdks/public/README.md#get_public_portal_config) - getPublicPortalConfig

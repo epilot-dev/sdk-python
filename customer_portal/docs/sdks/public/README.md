@@ -8,6 +8,7 @@ Public APIs
 
 * [confirm_user](#confirm_user) - confirmUser
 * [create_user](#create_user) - createUser
+* [get_contact_count](#get_contact_count) - getContactCount
 * [get_count_by_email](#get_count_by_email) - getCountByEmail
 * [get_portal_config_by_domain](#get_portal_config_by_domain) - getPortalConfigByDomain
 * [get_public_portal_config](#get_public_portal_config) - getPublicPortalConfig
@@ -72,6 +73,12 @@ s = epilot.Epilot(
 req = operations.CreateUserRequest(
     create_user_request=shared.CreateUserRequest(
         contact_id='123456',
+        contact_identifiers={
+            "architecto": 'mollitia',
+            "dolorem": 'culpa',
+            "consequuntur": 'repellat',
+            "mollitia": 'occaecati',
+        },
         email='testemail921@yopmail.com',
         first_name='John',
         last_name='Doe',
@@ -79,7 +86,7 @@ req = operations.CreateUserRequest(
         password='124n$aAJs*d41h4',
         secondary_identifier='123456',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.create_user(req)
@@ -98,6 +105,51 @@ if res.create_user_201_application_json_object is not None:
 ### Response
 
 **[operations.CreateUserResponse](../../models/operations/createuserresponse.md)**
+
+
+## get_contact_count
+
+Check existence of contacts.
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = operations.GetContactCountRequest(
+    contact_count_request=shared.ContactCountRequest(
+        contact_identifiers={
+            "quam": 'molestiae',
+            "velit": 'error',
+        },
+        org_id='728',
+    ),
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
+)
+
+res = s.public.get_contact_count(req)
+
+if res.get_contact_count_200_application_json_object is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetContactCountRequest](../../models/operations/getcontactcountrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+
+
+### Response
+
+**[operations.GetContactCountResponse](../../models/operations/getcontactcountresponse.md)**
 
 
 ## get_count_by_email

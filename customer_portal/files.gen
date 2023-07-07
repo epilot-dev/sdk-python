@@ -47,6 +47,7 @@ src/epilot/models/operations/upsertemailtemplates.py
 src/epilot/models/operations/upsertportal.py
 src/epilot/models/operations/confirmuser.py
 src/epilot/models/operations/createuser.py
+src/epilot/models/operations/getcontactcount.py
 src/epilot/models/operations/getcountbyemail.py
 src/epilot/models/operations/getportalconfigbydomain.py
 src/epilot/models/operations/getpublicportalconfig.py
@@ -66,6 +67,7 @@ src/epilot/models/shared/extraschemaattributes.py
 src/epilot/models/shared/saveportalfile.py
 src/epilot/models/shared/upsertportalconfig.py
 src/epilot/models/shared/createuserrequest.py
+src/epilot/models/shared/contactcountrequest.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 docs/sdks/epilot/README.md
@@ -205,6 +207,9 @@ docs/models/operations/createuserrequest.md
 docs/models/operations/createuser201applicationjsonmessage.md
 docs/models/operations/createuser201applicationjson.md
 docs/models/operations/createuserresponse.md
+docs/models/operations/getcontactcountrequest.md
+docs/models/operations/getcontactcount200applicationjson.md
+docs/models/operations/getcontactcountresponse.md
 docs/models/operations/getcountbyemailrequest.md
 docs/models/operations/getcountbyemail200applicationjson.md
 docs/models/operations/getcountbyemailresponse.md
@@ -270,4 +275,5 @@ docs/models/shared/upsertportalconfigimages.md
 docs/models/shared/upsertportalconfigselfregistrationsetting.md
 docs/models/shared/upsertportalconfig.md
 docs/models/shared/createuserrequest.md
+docs/models/shared/contactcountrequest.md
 docs/models/shared/security.md
