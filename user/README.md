@@ -48,6 +48,7 @@ if res.user is not None:
 * [get_user_v2](docs/sdks/userv2/README.md#get_user_v2) - getUserV2
 * [invite_user](docs/sdks/userv2/README.md#invite_user) - inviteUser
 * [list_users_v2](docs/sdks/userv2/README.md#list_users_v2) - listUsersV2
+* [redirect_to_zendesk](docs/sdks/userv2/README.md#redirect_to_zendesk) - redirectToZendesk
 * [resend_user_invitation](docs/sdks/userv2/README.md#resend_user_invitation) - resendUserInvitation
 * [sign_up_user](docs/sdks/userv2/README.md#sign_up_user) - signUpUser
 * [update_user_v2](docs/sdks/userv2/README.md#update_user_v2) - updateUserV2

@@ -305,3 +305,9 @@ Based on:
 Based on:
 - OpenAPI Doc 2.0.0 https://docs.api.epilot.io/user.yaml
 - Speakeasy CLI 1.53.1 (2.58.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-11 00:41:27
+### Changes
+Based on:
+- OpenAPI Doc 2.0.0 https://docs.api.epilot.io/user.yaml
+- Speakeasy CLI 1.56.0 (2.61.0) https://github.com/speakeasy-api/speakeasy

@@ -11,9 +11,10 @@ from .getuserv2 import *
 from .inviteuser import *
 from .listusers import *
 from .listusersv2 import *
+from .redirecttozendesk import *
 from .resenduserinvitation import *
 from .signupuser import *
 from .updateuserv2 import *
 from .verifyemailwithtoken import *
 
-__all__ = ["ActivateUserRequest","ActivateUserResponse","DeleteUserV2Request","DeleteUserV2Response","GetMeResponse","GetMeV2Response","GetUserLoginParameters200ApplicationJSON","GetUserLoginParametersRequest","GetUserLoginParametersResponse","GetUserLoginParametersV2200ApplicationJSON","GetUserLoginParametersV2Request","GetUserLoginParametersV2Response","GetUserRequest","GetUserResponse","GetUserV2Request","GetUserV2Response","InviteUserResponse","ListUsers200ApplicationJSON","ListUsersRequest","ListUsersResponse","ListUsersV2200ApplicationJSON","ListUsersV2Request","ListUsersV2Response","ResendUserInvitationRequestBody","ResendUserInvitationRequestBodyLanguage","ResendUserInvitationResponse","SignUpUser200ApplicationJSON","SignUpUserRequest","SignUpUserResponse","UpdateUserV2Request","UpdateUserV2Response","VerifyEmailWithTokenRequest","VerifyEmailWithTokenResponse"]
+__all__ = ["ActivateUserRequest","ActivateUserResponse","DeleteUserV2Request","DeleteUserV2Response","GetMeResponse","GetMeV2Response","GetUserLoginParameters200ApplicationJSON","GetUserLoginParametersRequest","GetUserLoginParametersResponse","GetUserLoginParametersV2200ApplicationJSON","GetUserLoginParametersV2Request","GetUserLoginParametersV2Response","GetUserRequest","GetUserResponse","GetUserV2Request","GetUserV2Response","InviteUserResponse","ListUsers200ApplicationJSON","ListUsersRequest","ListUsersResponse","ListUsersV2200ApplicationJSON","ListUsersV2Request","ListUsersV2Response","RedirectToZendesk200ApplicationJSON","RedirectToZendeskResponse","ResendUserInvitationRequestBody","ResendUserInvitationRequestBodyLanguage","ResendUserInvitationResponse","SignUpUser200ApplicationJSON","SignUpUserRequest","SignUpUserResponse","UpdateUserV2Request","UpdateUserV2Response","VerifyEmailWithTokenRequest","VerifyEmailWithTokenResponse"]
