@@ -20,15 +20,15 @@ class CartAPI:
     def dollar_checkout_cart(self, request: operations.DollarCheckoutCartRequest) -> operations.DollarCheckoutCartResponse:
         r"""checkoutCart
         Checkouts a cart and executes the specified checkout `mode` process.
-        
+
         A Checkout implicitly finalizes the provided cart (if not transient from a fast-checkout) and behaves in one of the following modes:
         - `create_order` (**default**): the payment happens at a later date or managed by 3rd-party CRM (SAP)
         - `create_invoice`: the payment happens on the online checkout (paypal, stripe, adyen)
         - `create_quote`: the checkout represents a price quote request
-        
+
         Fast checkout is also supported, by passing the Cart contents directly.
         When a fast checkout is performed the cart is considered transient and there is no cart persistance.
-        
+
         If the checkout `mode` is omitted, the `mode` will default to `create_order`.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
