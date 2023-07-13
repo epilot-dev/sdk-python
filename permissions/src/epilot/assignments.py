@@ -16,7 +16,7 @@ class Assignments:
     def add_assignment(self, request: operations.AddAssignmentRequest) -> operations.AddAssignmentResponse:
         r"""addAssignment
         Assign a user to a role.
-        
+
         Use the `x-epilot-org-id` header to assign share roles to users in other orgs
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
