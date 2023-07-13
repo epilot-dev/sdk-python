@@ -65,7 +65,7 @@ class SendEmailConfigLanguageCode(str, Enum):
 class SendEmailConfig:
     attachments: Optional[list[SendEmailConfigAttachments]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attachments'), 'exclude': lambda f: f is None }})
     r"""Include extra file attachments in sent email.
-    
+
     Attachments in email template will be sent regardless of this configuration.
     """
     email_template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_template_id'), 'exclude': lambda f: f is None }})
