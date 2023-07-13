@@ -250,6 +250,9 @@ docs/models/shared/portalconfigentityactions.md
 docs/models/shared/portalconfigentityidentifierstype.md
 docs/models/shared/portalconfigentityidentifiers.md
 docs/models/shared/portalconfigimages.md
+docs/models/shared/portalconfigorgsettingscanary.md
+docs/models/shared/portalconfigorgsettingsreleasecandidate.md
+docs/models/shared/portalconfigorgsettings.md
 docs/models/shared/portalconfigselfregistrationsetting.md
 docs/models/shared/portalconfig.md
 docs/models/shared/origin.md

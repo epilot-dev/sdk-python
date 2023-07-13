@@ -96,6 +96,41 @@ class PortalConfigImages:
     
 
 
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class PortalConfigOrgSettingsCanary:
+    r"""Canary feature flag"""
+    enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
+    r"""Enable/Disable the canary feature"""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class PortalConfigOrgSettingsReleaseCandidate:
+    r"""Release candidate settings"""
+    enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
+    r"""Enable/Disable the release candidate feature"""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class PortalConfigOrgSettings:
+    r"""Organization settings"""
+    canary: Optional[PortalConfigOrgSettingsCanary] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('canary'), 'exclude': lambda f: f is None }})
+    r"""Canary feature flag"""
+    release_candidate: Optional[PortalConfigOrgSettingsReleaseCandidate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('release_candidate'), 'exclude': lambda f: f is None }})
+    r"""Release candidate settings"""
+    
+
+
 class PortalConfigSelfRegistrationSetting(str, Enum):
     ALLOW_WITH_CONTACT_CREATION = 'ALLOW_WITH_CONTACT_CREATION'
     ALLOW_WITHOUT_CONTACT_CREATION = 'ALLOW_WITHOUT_CONTACT_CREATION'
@@ -117,7 +152,7 @@ class PortalConfig:
     r"""Identifiers to identify a contact."""
     contact_secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_secondary_identifier'), 'exclude': lambda f: f is None }})
     r"""Secondary identifier to identify a contact other than the email
-    
+
     Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     default_user_to_notify: Optional[PortalConfigDefaultUserToNotify] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_user_to_notify'), 'exclude': lambda f: f is None }})
@@ -144,11 +179,13 @@ class PortalConfig:
     r"""A short name to identify your portal"""
     org_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_name'), 'exclude': lambda f: f is None }})
     r"""Name of the organization"""
+    org_settings: Optional[PortalConfigOrgSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_settings'), 'exclude': lambda f: f is None }})
+    r"""Organization settings"""
     origin: Optional[shared_origin.Origin] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin'), 'exclude': lambda f: f is None }})
     r"""Origin of the portal"""
     self_registration: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration'), 'exclude': lambda f: f is None }})
     r"""Allow portal user self-registration without a mapped contact
-    
+
     Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     self_registration_setting: Optional[PortalConfigSelfRegistrationSetting] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration_setting'), 'exclude': lambda f: f is None }})

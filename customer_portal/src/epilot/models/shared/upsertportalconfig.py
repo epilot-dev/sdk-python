@@ -116,7 +116,7 @@ class UpsertPortalConfig:
     r"""Identifiers to identify a contact."""
     contact_secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_secondary_identifier'), 'exclude': lambda f: f is None }})
     r"""Secondary identifier to identify a contact other than the email
-    
+
     Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     default_user_to_notify: Optional[UpsertPortalConfigDefaultUserToNotify] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default_user_to_notify'), 'exclude': lambda f: f is None }})
@@ -141,7 +141,7 @@ class UpsertPortalConfig:
     r"""A short name to identify your portal"""
     self_registration: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration'), 'exclude': lambda f: f is None }})
     r"""Allow portal user self-registration without a mapped contact
-    
+
     Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     self_registration_setting: Optional[UpsertPortalConfigSelfRegistrationSetting] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration_setting'), 'exclude': lambda f: f is None }})
