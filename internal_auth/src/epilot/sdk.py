@@ -8,7 +8,7 @@ from typing import Any, Optional
 
 class Epilot:
     r"""Internal Auth API: Auth API to provide JWT tokens for internal API access that work with the epilot custom authorizer.
-    
+
     Converts AWS credentials into a JWT token with caller's ARN `callerIdentity` and list of `policies` granting access to API Gateway as claims.
     """
 
@@ -75,7 +75,7 @@ class Epilot:
     def get_open_id_configuration(self) -> operations.GetOpenIDConfigurationResponse:
         r"""getOpenIDConfiguration
         OpenID Connect configuration for internal auth as identity provider
-        
+
         Note: This API is not a fully compliant OAuth2.0 / OIDC identity provider, but this endpoint is useful to
         automate the process of verifying JWT tokens.
         """
@@ -104,9 +104,9 @@ class Epilot:
     def get_token(self, security: operations.GetTokenSecurity) -> operations.GetTokenResponse:
         r"""getToken
         Generates token for internal API access
-        
+
         Example JWT payload:
-        
+
         ```json
         {
           \"callerIdentity\": \"arn:aws:sts::912468240823:assumed-role/ep_prod_access_admin/awsmfa_20210225T193753\",
@@ -153,9 +153,9 @@ class Epilot:
     def get_token_v2(self, request: dict[str, Any], security: operations.GetTokenV2Security) -> operations.GetTokenV2Response:
         r"""getTokenV2
         Generates token for internal API access with internal roles
-        
+
         Example JWT payload:
-        
+
         ```json
         {
           \"callerIdentity\": \"arn:aws:sts::912468240823:assumed-role/ep_prod_access_admin/awsmfa_20210225T193753\",
