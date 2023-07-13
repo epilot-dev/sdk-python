@@ -16,13 +16,13 @@ class Documents:
     def generate_document(self, request: operations.GenerateDocumentRequestBody) -> operations.GenerateDocumentResponse:
         r"""generateDocument
         Builds document generated from input document with variables.
-        
+
         Supported input document types:
         - .docx
-        
+
         Supported output document types:
         - .pdf
-        
+
         Uses [Template Variables API](https://docs.epilot.io/api/template-variables) to replace variables in the document.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -53,14 +53,14 @@ class Documents:
     def generate_document_v2(self, request: operations.GenerateDocumentV2Request) -> operations.GenerateDocumentV2Response:
         r"""generateDocumentV2
         Builds document generated from input document with variables.
-        
+
         Supported input document types:
         - .docx
-        
+
         Supported output document types:
         - .pdf
         - .docx but limited to only text based variables
-        
+
         Uses [Template Variables API](https://docs.epilot.io/api/template-variables) to replace variables in the document.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())

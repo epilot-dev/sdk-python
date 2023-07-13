@@ -8,7 +8,7 @@ from epilot.models import shared
 
 class Epilot:
     r"""Document API: Generate documents with epilot data
-    
+
     [Feature Documentation](https://docs.epilot.io/docs/files/document-generation)
     """
     documents: Documents
