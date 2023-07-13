@@ -218,7 +218,7 @@ class Partners:
     def search_assignable(self, request: operations.SearchAssignableRequestBody) -> operations.SearchAssignableResponse:
         r"""searchAssignables
         Search for assignable users/organizations from this organization and Partners
-        
+
         Results can include:
          - Users in your organization
          - Users in partner organizations
