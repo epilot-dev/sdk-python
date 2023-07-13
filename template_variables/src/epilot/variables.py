@@ -66,7 +66,7 @@ class Variables:
     def get_variable_context(self, request: operations.GetVariableContextRequestBody) -> operations.GetVariableContextResponse:
         r"""getVariableContext
         Get full variable context
-        
+
         Calls Entity API, User API, Brand API and others to construct full context object used for template variable replace
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -97,7 +97,7 @@ class Variables:
     def replace_templates(self, request: operations.ReplaceTemplatesRequestBody) -> operations.ReplaceTemplatesResponse:
         r"""replaceTemplates
         Replace variables in handlebars templates
-        
+
         Takes in an array of input templates and outputs the output text with replaced variables
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())

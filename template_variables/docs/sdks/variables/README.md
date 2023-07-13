@@ -171,11 +171,11 @@ s = epilot.Epilot(
 req = operations.ReplaceTemplatesRequestBody(
     inputs=[
         'Hello, {{contact.first_name}}!
-        
+
         {{{brand.signature}}}
         ',
         'Hello, {{contact.first_name}}!
-        
+
         {{{brand.signature}}}
         ',
     ],
