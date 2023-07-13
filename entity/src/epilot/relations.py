@@ -69,9 +69,9 @@ class Relations:
     def get_relations(self, request: operations.GetRelationsRequest) -> operations.GetRelationsResponse:
         r"""getRelations
         Returns 1st level direct relations for an entity.
-        
+
         You can control whether to return the full entity or just the relation item with the `?hydrate` query param.
-        
+
         Reverse relations i.e. entities referring to this entity are included with the `?include_reverse` query param.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -100,9 +100,9 @@ class Relations:
     def get_relations_v2(self, request: operations.GetRelationsV2Request) -> operations.GetRelationsV2Response:
         r"""getRelationsV2
         Returns 1st level direct relations for an entity with pagination.
-        
+
         You can control whether to return the full entity or just the relation item with the `?hydrate` query param.
-        
+
         Reverse relations i.e. entities referring to this entity are included with the `?include_reverse` query param.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())

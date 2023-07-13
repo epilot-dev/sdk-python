@@ -9,7 +9,7 @@ from typing import Any, Optional
 
 class RelationAttributeActionsActionType(str, Enum):
     r"""The action type. Currently supported actions:
-    
+
     | action | description |
     |--------|-------------|
     | add_existing | Enables the user to pick an existing entity to link as relation |
@@ -27,7 +27,7 @@ class RelationAttributeActionsActionType(str, Enum):
 class RelationAttributeActions:
     action_type: Optional[RelationAttributeActionsActionType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action_type'), 'exclude': lambda f: f is None }})
     r"""The action type. Currently supported actions:
-    
+
     | action | description |
     |--------|-------------|
     | add_existing | Enables the user to pick an existing entity to link as relation |

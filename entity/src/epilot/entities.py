@@ -43,17 +43,17 @@ class Entities:
     def create_entity(self, request: operations.CreateEntityRequest) -> operations.CreateEntityResponse:
         r"""createEntity
         Creates a new entity using a key.
-        
+
         ## Activity
-        
+
         If no `activity_id` query parameter is provided, implicitly creates Activity of type `EntityCreated`
-        
+
         ## Relations
-        
+
         To create a relation, store a property object that defines a `$relation` array.
-        
+
         Example:
-        
+
         ```json
         {
           \"contacts\": {
@@ -63,7 +63,7 @@ class Entities:
           }
         }
         ```
-        
+
         The items in `$relation` support two properties:
         - `entity_id` - The ID of the entity to link
         - `_tags` - Tags or labels for the relation (optional)
@@ -97,9 +97,9 @@ class Entities:
     def delete_entity(self, request: operations.DeleteEntityRequest) -> operations.DeleteEntityResponse:
         r"""deleteEntity
         Deletes an Entity
-        
+
         ## Activity
-        
+
         If no `activity_id` query parameter is provided, implicitly creates Activity of type `EntityDeleted`
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -124,11 +124,11 @@ class Entities:
     def get_entity(self, request: operations.GetEntityRequest) -> operations.GetEntityResponse:
         r"""getEntity
         Gets Entity and relations by id.
-        
+
         ## Relations
-        
+
         When `hydrate=true`, relation attributes are replaced in-place with nested entity values.
-        
+
         Example:
         ```json
         {
@@ -149,7 +149,7 @@ class Entities:
           }
         }
         ```
-        
+
         Becomes:
         ```json
         {
@@ -213,19 +213,19 @@ class Entities:
     def patch_entity(self, request: operations.PatchEntityRequest) -> operations.PatchEntityResponse:
         r"""patchEntity
         Partially updates an entity with the passed in entity data.
-        
+
         - If an _updated_at is passed and the server contains a newer version of the entity a `409` Error is returned
-        
+
         ## Activity
-        
+
         If no `activity_id` query parameter is provided, implicitly creates Activity of type `EntityUpdated`
-        
+
         ## Relations
-        
+
         To create a relation, store a property that defines a `$relation` array.
-        
+
         Example:
-        
+
         ```json
         {
           \"contacts\": {
@@ -235,7 +235,7 @@ class Entities:
           }
         }
         ```
-        
+
         The items in `$relation` support two properties:
         - `entity_id` - The ID of the entity to link
         - `_tags` - Tags or labels for the relation (optional)
@@ -273,13 +273,13 @@ class Entities:
     def search_entities(self, request: shared.EntitySearchParams) -> operations.SearchEntitiesResponse:
         r"""searchEntities
         Search for entities. Supports ordering and pagination. Lucene query syntax supported for complex querying.
-        
+
         Passing comma-separated `x-epilot-org-id` is supported for cross-org entity search.
-        
+
         ## Relations
-        
+
         When `hydrate=true`, relation attributes are replaced in-place with nested entity values.
-        
+
         Example:
         ```json
         {
@@ -300,7 +300,7 @@ class Entities:
           }
         }
         ```
-        
+
         Becomes:
         ```json
         {
@@ -368,17 +368,17 @@ class Entities:
     def update_entity(self, request: operations.UpdateEntityRequest) -> operations.UpdateEntityResponse:
         r"""updateEntity
         Updates an Entity
-        
+
         ## Activity
-        
+
         If no `activity_id` query parameter is provided, implicitly creates Activity of type `EntityUpdated`
-        
+
         ## Relations
-        
+
         To create a relation, store a property that defines a `$relation` array.
-        
+
         Example:
-        
+
         ```json
         {
           \"contacts\": {
@@ -388,7 +388,7 @@ class Entities:
           }
         }
         ```
-        
+
         The items in `$relation` support two properties:
         - `entity_id` - The ID of the entity to link
         - `_tags` - Tags or labels for the relation (optional)
@@ -422,13 +422,13 @@ class Entities:
     def upsert_entity(self, request: operations.UpsertEntityRequest) -> operations.UpsertEntityResponse:
         r"""upsertEntity
         Create or update an entity using `unique_key`
-        
+
         - If no entities are matched, a new entity is created.
         - If exactly one entity is matched, a `PATCH`-style update is applied to the existing entity.
         - If more than one entity is matched a `409` Error is returned
-        
+
         ## Activity
-        
+
         If no `activity_id` query parameter is provided, implicitly creates Activity of type `EntityCreated` or `EntityUpdated`
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())

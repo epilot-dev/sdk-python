@@ -43,7 +43,7 @@ class Activity:
     def create_activity(self, request: operations.CreateActivityRequest) -> operations.CreateActivityResponse:
         r"""createActivity
         Create an activity that can be displayed in activity feeds.
-        
+
         - All activites are published as events on the event bus
         - Entity mutations are always part of an activity
         """
