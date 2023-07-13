@@ -23,7 +23,7 @@ class SubmissionPayload:
     r"""type of source, e.g. journey or frontend"""
     ivy_opportunity_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_ivy_opportunity_ids'), 'exclude': lambda f: f is None }})
     r"""Related Ivy Opportunity Ids
-    
+
     Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible
     """
     journey_submit_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_submit_id'), 'exclude': lambda f: f is None }})
