@@ -144,9 +144,9 @@ class Files:
     def save_file(self, request: dict[str, Any]) -> operations.SaveFileResponse:
         r"""saveFile
         Create / Update a permanent File entity
-        
+
         Makes file object permanent
-        
+
         Saves metadata to file entity
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -177,7 +177,7 @@ class Files:
     def upload_file(self, request: operations.UploadFileRequest) -> operations.UploadFileResponse:
         r"""uploadFile
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).
-        
+
         Use the createFile operation to store file file permanently.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -209,7 +209,7 @@ class Files:
     def upload_file_public(self, request: shared.UploadFilePayload) -> operations.UploadFilePublicResponse:
         r"""uploadFilePublic
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).
-        
+
         Use the createFile operation to store file file permanently.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
