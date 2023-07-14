@@ -125,7 +125,7 @@ Delete workflow execution by id. Workflow contexts will NOT be deleted.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -163,7 +163,7 @@ Deletes a step from a workflow execution.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -205,7 +205,7 @@ from the state of the Definition when the instance was created.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -243,7 +243,7 @@ Get a full workflow execution, included steps information, by execution id.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -281,7 +281,7 @@ Retrieve Workflow Executions. Optionally, you can filter them by context & schem
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
