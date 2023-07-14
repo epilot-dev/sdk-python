@@ -23,7 +23,7 @@ Use the `x-epilot-org-id` header to assign share roles to users in other orgs
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -62,7 +62,7 @@ Assign / unassign roles to users.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -105,7 +105,7 @@ Get list of assigned roles by user id
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -143,7 +143,7 @@ Returns list of all assignments in organization
 
 ```python
 import epilot
-
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -172,7 +172,7 @@ Remove role assignment from user
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(

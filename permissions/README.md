@@ -10,9 +10,11 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=permis
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+
+
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
