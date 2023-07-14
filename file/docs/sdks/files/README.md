@@ -64,7 +64,7 @@ Generate pre-signed download S3 url for a file
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -104,7 +104,7 @@ Generate pre-signed download S3 url for a file
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -144,7 +144,7 @@ Generate thumbnail preview for a file entity
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -233,7 +233,7 @@ Saves metadata to file entity
 
 ```python
 import epilot
-
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
