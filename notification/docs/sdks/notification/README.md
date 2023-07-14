@@ -21,7 +21,7 @@ Create a message that can be displayed in the notification panel.
 
 ```python
 import epilot
-
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -62,7 +62,7 @@ Get the details of a single notification.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -100,7 +100,7 @@ Get notifications
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -139,7 +139,7 @@ Get total unread
 
 ```python
 import epilot
-
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -168,7 +168,7 @@ Mark all as read
 
 ```python
 import epilot
-
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -197,7 +197,7 @@ Mark as read
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
