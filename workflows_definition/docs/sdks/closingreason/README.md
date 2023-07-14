@@ -97,7 +97,7 @@ Get all Closing Reasons defined in the organization by default all Active.
 
 ```python
 import sdk
-from sdk.models import operations
+from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(

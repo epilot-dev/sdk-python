@@ -249,7 +249,7 @@ Delete Workflow Definition.
 
 ```python
 import sdk
-from sdk.models import operations
+from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
@@ -287,7 +287,7 @@ Get specific Definition by id from the Organization.
 
 ```python
 import sdk
-from sdk.models import operations
+from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
@@ -325,7 +325,7 @@ Retrieve all Workflow Definitions from an Organization
 
 ```python
 import sdk
-
+from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
@@ -354,7 +354,7 @@ Get limits and number of created executions for an Organization.
 
 ```python
 import sdk
-
+from sdk.models import shared
 
 s = sdk.SDK(
     security=shared.Security(
@@ -383,7 +383,7 @@ Returns all closing reasons defined for the workflow.
 
 ```python
 import sdk
-from sdk.models import operations
+from sdk.models import operations, shared
 
 s = sdk.SDK(
     security=shared.Security(
