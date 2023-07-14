@@ -160,7 +160,7 @@ Check Contact by email
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -199,7 +199,7 @@ Retrieves the portal configuration by domain.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -276,7 +276,7 @@ Checks whether a user exists in the portal
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
