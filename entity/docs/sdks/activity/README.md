@@ -19,7 +19,7 @@ Attach existing activity to entity activity feeds
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -115,7 +115,7 @@ Get activity by id
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -157,7 +157,7 @@ Get activity feed for an entity
 ```python
 import epilot
 import dateutil.parser
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(

@@ -24,7 +24,7 @@ Autocomplete entity attributes
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -90,7 +90,7 @@ The items in `$relation` support two properties:
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -139,7 +139,7 @@ If no `activity_id` query parameter is provided, implicitly creates Activity of 
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -242,7 +242,7 @@ Becomes:
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -309,7 +309,7 @@ The items in `$relation` support two properties:
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -494,7 +494,7 @@ The items in `$relation` support two properties:
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -549,7 +549,7 @@ If no `activity_id` query parameter is provided, implicitly creates Activity of 
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(

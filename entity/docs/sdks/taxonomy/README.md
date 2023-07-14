@@ -20,7 +20,7 @@ Get taxonomy by slug
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -58,7 +58,7 @@ List taxonomies in an organisation
 
 ```python
 import epilot
-
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -87,7 +87,7 @@ List taxonomy classifications in an organisation based on taxonomy slug
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -133,7 +133,7 @@ Taxonomies autocomplete
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(

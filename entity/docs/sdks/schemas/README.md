@@ -22,7 +22,7 @@ Delete a schema, or a specific version of a schema
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -60,7 +60,7 @@ By default gets the latest version of the Schema and to get the specific version
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -99,7 +99,7 @@ Get all versions of this schema ordered by the latest versions including drafts.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -141,7 +141,7 @@ List canonical versions of all available schemas
 
 ```python
 import epilot
-
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -170,7 +170,7 @@ Get the latest versions of all schemas
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -208,7 +208,7 @@ List taxonomy classifications for a given schema
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(

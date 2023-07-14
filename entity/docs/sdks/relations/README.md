@@ -98,7 +98,7 @@ Removes relation between two entities
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -145,7 +145,7 @@ Reverse relations i.e. entities referring to this entity are included with the `
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -191,7 +191,7 @@ Reverse relations i.e. entities referring to this entity are included with the `
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -240,7 +240,7 @@ Updates an existing relation between two entities.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(

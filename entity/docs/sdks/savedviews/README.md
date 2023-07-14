@@ -76,7 +76,7 @@ Deletes a saved view
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -114,7 +114,7 @@ Gets Saved View configuration by id.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -152,7 +152,7 @@ Get the Saved Views based on the schema
 
 ```python
 import epilot
-
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
