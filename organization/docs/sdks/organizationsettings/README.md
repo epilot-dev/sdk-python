@@ -18,7 +18,7 @@ Updates an organizatio nsetting
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -57,7 +57,7 @@ Get full organization settings object
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -95,7 +95,7 @@ Updates an organization setting
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
