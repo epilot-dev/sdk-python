@@ -12,6 +12,7 @@ pylintrc
 setup.py
 src/epilot/__init__.py
 src/epilot/models/__init__.py
+src/epilot/models/errors/sdkerror.py
 src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
