@@ -6,6 +6,7 @@ pylintrc
 setup.py
 src/sdk/__init__.py
 src/sdk/models/__init__.py
+src/sdk/models/errors/sdkerror.py
 src/sdk/utils/__init__.py
 src/sdk/utils/retries.py
 src/sdk/utils/utils.py
