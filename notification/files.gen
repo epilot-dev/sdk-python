@@ -18,6 +18,7 @@ src/epilot/models/operations/markasread.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+src/epilot/models/errors/__init__.py
 docs/sdks/epilot/README.md
 docs/sdks/notification/README.md
 USAGE.md
