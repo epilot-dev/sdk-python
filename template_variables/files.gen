@@ -31,6 +31,7 @@ src/epilot/models/shared/externalcustomvariable.py
 src/epilot/models/shared/variableresult.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+src/epilot/models/errors/__init__.py
 docs/sdks/epilot/README.md
 docs/sdks/customvariables/README.md
 docs/sdks/variables/README.md
