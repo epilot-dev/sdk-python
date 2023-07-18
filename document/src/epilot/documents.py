@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
-from epilot.models import operations
+from epilot.models import errors, operations
 from typing import Optional
 
 class Documents:
