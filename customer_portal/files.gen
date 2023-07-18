@@ -7,6 +7,7 @@ pylintrc
 setup.py
 src/epilot/__init__.py
 src/epilot/models/__init__.py
+src/epilot/models/errors/sdkerror.py
 src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
@@ -70,6 +71,7 @@ src/epilot/models/shared/createuserrequest.py
 src/epilot/models/shared/contactcountrequest.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+src/epilot/models/errors/__init__.py
 docs/sdks/epilot/README.md
 docs/sdks/ecp/README.md
 docs/sdks/ecpadmin/README.md
