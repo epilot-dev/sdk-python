@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
-from epilot.models import operations
+from epilot.models import errors, operations
 from typing import Any, Optional
 
 class OrganizationSettings:
@@ -57,6 +57,8 @@ class OrganizationSettings:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
                 res.settings = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -86,6 +88,8 @@ class OrganizationSettings:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[Any])
                 res.settings_value = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
