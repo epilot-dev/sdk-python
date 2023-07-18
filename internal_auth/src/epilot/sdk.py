@@ -3,7 +3,7 @@
 import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
-from epilot.models import operations
+from epilot.models import errors, operations
 from typing import Any, Optional
 
 class Epilot:
@@ -68,6 +68,8 @@ class Epilot:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetJwks200ApplicationJSON])
                 res.get_jwks_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -97,6 +99,8 @@ class Epilot:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetOpenIDConfiguration200ApplicationJSON])
                 res.get_open_id_configuration_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -146,6 +150,8 @@ class Epilot:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetToken200ApplicationJSON])
                 res.get_token_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -200,6 +206,8 @@ class Epilot:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetTokenV2200ApplicationJSON])
                 res.get_token_v2_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
