@@ -14,6 +14,7 @@ src/epilot/models/operations/__init__.py
 src/epilot/models/shared/submissionpayload.py
 src/epilot/models/shared/optin.py
 src/epilot/models/shared/__init__.py
+src/epilot/models/errors/__init__.py
 docs/sdks/epilot/README.md
 docs/sdks/submissions/README.md
 USAGE.md
