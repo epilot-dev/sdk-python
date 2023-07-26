@@ -137,3 +137,9 @@ Based on:
 Based on:
 - OpenAPI Doc 1.0.0 https://docs.api.epilot.io/partner-directory-api.yaml
 - Speakeasy CLI 1.64.0 (2.71.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-26 00:57:39
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/partner-directory-api.yaml
+- Speakeasy CLI 1.65.0 (2.73.0) https://github.com/speakeasy-api/speakeasy
