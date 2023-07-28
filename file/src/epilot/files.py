@@ -119,6 +119,29 @@ class Files:
         return res
 
     
+    def preview_public_file(self, request: operations.PreviewPublicFileRequest) -> operations.PreviewPublicFileResponse:
+        r"""previewPublicFile
+        Generate thumbnail preview for a public file entity
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.PreviewPublicFileRequest, base_url, '/v1/files/{id}/preview_public', request)
+        headers = {}
+        query_params = utils.get_query_params(operations.PreviewPublicFileRequest, request)
+        headers['Accept'] = '*/*'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.PreviewPublicFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+
+        return res
+
+    
     def preview_s3_file(self, request: operations.PreviewS3FileRequest) -> operations.PreviewS3FileResponse:
         r"""previewS3File
         Generate thumbnail preview from an s3 reference for a file entity

@@ -46,6 +46,7 @@ if res.status_code == 200:
 * [download_file](docs/sdks/files/README.md#download_file) - downloadFile
 * [download_s3_file](docs/sdks/files/README.md#download_s3_file) - downloadS3File
 * [preview_file](docs/sdks/files/README.md#preview_file) - previewFile
+* [preview_public_file](docs/sdks/files/README.md#preview_public_file) - previewPublicFile
 * [preview_s3_file](docs/sdks/files/README.md#preview_s3_file) - previewS3File
 * [save_file](docs/sdks/files/README.md#save_file) - saveFile
 * [upload_file](docs/sdks/files/README.md#upload_file) - uploadFile

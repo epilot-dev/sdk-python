@@ -10,6 +10,7 @@ Files
 * [download_file](#download_file) - downloadFile
 * [download_s3_file](#download_s3_file) - downloadS3File
 * [preview_file](#preview_file) - previewFile
+* [preview_public_file](#preview_public_file) - previewPublicFile
 * [preview_s3_file](#preview_s3_file) - previewS3File
 * [save_file](#save_file) - saveFile
 * [upload_file](#upload_file) - uploadFile
@@ -177,6 +178,47 @@ if res.status_code == 200:
 **[operations.PreviewFileResponse](../../models/operations/previewfileresponse.md)**
 
 
+## preview_public_file
+
+Generate thumbnail preview for a public file entity
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = operations.PreviewPublicFileRequest(
+    h=544883,
+    id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
+    version=847252,
+    w=423655,
+)
+
+res = s.files.preview_public_file(req)
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PreviewPublicFileRequest](../../models/operations/previewpublicfilerequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+
+
+### Response
+
+**[operations.PreviewPublicFileResponse](../../models/operations/previewpublicfileresponse.md)**
+
+
 ## preview_s3_file
 
 Generate thumbnail preview from an s3 reference for a file entity
@@ -198,8 +240,8 @@ req = operations.PreviewS3FileRequest(
         bucket='epilot-files-prod',
         key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
-    h=544883,
-    w=847252,
+    h=623564,
+    w=645894,
 )
 
 res = s.files.preview_s3_file(req)
@@ -242,8 +284,8 @@ s = epilot.Epilot(
 )
 
 req = {
-    "error": 'deserunt',
-    "suscipit": 'iure',
+    "iure": 'magnam',
+    "debitis": 'ipsa',
 }
 
 res = s.files.save_file(req)
