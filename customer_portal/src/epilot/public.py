@@ -58,7 +58,7 @@ class Public:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.CreateUserRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
@@ -98,7 +98,7 @@ class Public:
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.GetContactCountRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
@@ -133,7 +133,7 @@ class Public:
         url = base_url + '/v2/portal/contact/email/count'
         headers = {}
         query_params = utils.get_query_params(operations.GetCountByEmailRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
@@ -168,7 +168,7 @@ class Public:
         url = base_url + '/v2/portal/public/config'
         headers = {}
         query_params = utils.get_query_params(operations.GetPortalConfigByDomainRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
@@ -203,7 +203,7 @@ class Public:
         url = base_url + '/v2/portal/public/portal/config'
         headers = {}
         query_params = utils.get_query_params(operations.GetPublicPortalConfigRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
@@ -238,7 +238,7 @@ class Public:
         url = base_url + '/v2/portal/public/user/exists'
         headers = {}
         query_params = utils.get_query_params(operations.UserExistsRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.client
