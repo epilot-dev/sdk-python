@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import itemtype as shared_itemtype
+from ..shared import sectionstatus as shared_sectionstatus
 from ..shared import step as shared_step
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
@@ -20,7 +21,10 @@ class Section:
     steps: list[shared_step.Step] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('steps') }})
     type: shared_itemtype.ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
+    completed_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedTime'), 'exclude': lambda f: f is None }})
     definition_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId'), 'exclude': lambda f: f is None }})
+    started_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('startedTime'), 'exclude': lambda f: f is None }})
+    status: Optional[shared_sectionstatus.SectionStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
     r"""This field is deprecated. Please use assignedTo
 

@@ -21,10 +21,12 @@ class WorkflowExecutionSlim:
     flow: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow') }})
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     closing_reason_description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closingReasonDescription'), 'exclude': lambda f: f is None }})
+    completed_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedTime'), 'exclude': lambda f: f is None }})
+    r"""Completed time of the workflow execution"""
     configured_closing_reason_snapshot: Optional[list[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuredClosingReasonSnapshot'), 'exclude': lambda f: f is None }})
     contexts: Optional[list[shared_workflowcontext.WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
     creation_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creationTime'), 'exclude': lambda f: f is None }})
-    r"""Creation timestamp"""
+    r"""Creation timestamp which will double as started time as well"""
     definition_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId'), 'exclude': lambda f: f is None }})
     due_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dueDate'), 'exclude': lambda f: f is None }})
     r"""Due date for finishing the workflow"""

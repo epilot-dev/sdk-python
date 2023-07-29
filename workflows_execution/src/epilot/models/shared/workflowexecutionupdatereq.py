@@ -20,6 +20,8 @@ class WorkflowExecutionUpdateReq:
     closed_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closedBy'), 'exclude': lambda f: f is None }})
     r"""id of the user / partner user who is closing the workflow. For partner pass orgId_userId."""
     closing_reason_description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closingReasonDescription'), 'exclude': lambda f: f is None }})
+    completed_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedTime'), 'exclude': lambda f: f is None }})
+    r"""Completed time of the workflow execution"""
     contexts: Optional[list[shared_workflowcontext.WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
     due_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dueDate'), 'exclude': lambda f: f is None }})
     dynamic_due_date: Optional[shared_dynamicduedate.DynamicDueDate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dynamicDueDate'), 'exclude': lambda f: f is None }})

@@ -22,11 +22,13 @@ class UpdateStepReq:
     r"""The user which moved the step/task to the IN_PROGRESS state. The user should also be present in the assignedTo property of the step/task"""
     automation_config: Optional[shared_automationconfig.AutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})
     r"""Configuration for automation execution to run"""
+    completed_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedTime'), 'exclude': lambda f: f is None }})
     due_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dueDate'), 'exclude': lambda f: f is None }})
     dynamic_due_date: Optional[shared_dynamicduedate.DynamicDueDate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dynamicDueDate'), 'exclude': lambda f: f is None }})
     r"""set a Duedate for a step then a specific"""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     position: Optional[shared_steppositionat.StepPositionAt] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('position'), 'exclude': lambda f: f is None }})
+    started_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('startedTime'), 'exclude': lambda f: f is None }})
     status: Optional[shared_stepstatus.StepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
     r"""This field is deprecated. Please use assignedTo

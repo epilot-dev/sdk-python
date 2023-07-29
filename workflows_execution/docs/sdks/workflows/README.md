@@ -429,47 +429,44 @@ req = operations.UpdateExecutionRequest(
         ],
         closed_by='quibusdam',
         closing_reason_description='explicabo',
+        completed_time='deserunt',
         contexts=[
             shared.WorkflowContext(
-                id='bd442698-02d5-402a-94bb-4f63c969e9a3',
-                schema='debitis',
+                id='d4426980-2d50-42a9-8bb4-f63c969e9a3e',
+                schema='a',
+                title='Miss',
+            ),
+            shared.WorkflowContext(
+                id='77dfb14c-d66a-4e39-9efb-9ba88f3a6699',
+                schema='molestiae',
+                title='Mr.',
+            ),
+            shared.WorkflowContext(
+                id='74ba4469-b6e2-4141-9598-90afa563e251',
+                schema='iure',
                 title='Dr.',
             ),
-            shared.WorkflowContext(
-                id='a77dfb14-cd66-4ae3-95ef-b9ba88f3a669',
-                schema='omnis',
-                title='Ms.',
-            ),
-            shared.WorkflowContext(
-                id='074ba446-9b6e-4214-9959-890afa563e25',
-                schema='quasi',
-                title='Ms.',
-            ),
         ],
-        due_date='doloribus',
+        due_date='debitis',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-            number_of_units=2603.41,
-            step_id='maxime',
-            time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+            number_of_units=8061.94,
+            step_id='deleniti',
+            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
         ),
         selected_closing_reasons=[
             shared.ClosingReason(
-                id='711e5b7f-d2ed-4028-921c-ddc692601fb5',
+                id='11e5b7fd-2ed0-4289-a1cd-dc692601fb57',
                 title='Ms.',
             ),
             shared.ClosingReason(
-                id='6b0d5f0d-30c5-4fbb-a587-053202c73d5f',
-                title='Dr.',
-            ),
-            shared.ClosingReason(
-                id='9b90c289-09b3-4fe4-9a8d-9cbf48633323',
-                title='Dr.',
+                id='b0d5f0d3-0c5f-4bb2-9870-53202c73d5fe',
+                title='Miss',
             ),
         ],
-        status=shared.WorkflowStatus.DONE,
+        status=shared.WorkflowStatus.CLOSED,
     ),
-    execution_id='cum',
+    execution_id='perspiciatis',
 )
 
 res = s.workflows.update_execution(req)
@@ -509,35 +506,37 @@ s = epilot.Epilot(
 req = operations.UpdateStepRequest(
     update_step_req=shared.UpdateStepReq(
         assigned_to=[
-            'dignissimos',
-            'reiciendis',
+            'porro',
         ],
-        assigned_to_in_progress='amet',
+        assigned_to_in_progress='consequuntur',
         automation_config=shared.AutomationConfig(
-            execution_id='dolorum',
-            execution_status='numquam',
-            flow_id='veritatis',
+            execution_id='blanditiis',
+            execution_status='error',
+            flow_id='eaque',
         ),
-        due_date='ipsa',
+        completed_time='occaecati',
+        due_date='rerum',
         dynamic_due_date=shared.DynamicDueDate(
             action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-            number_of_units=4344.17,
-            step_id='odio',
+            number_of_units=9923.97,
+            step_id='earum',
             time_period=shared.DynamicDueDateTimePeriod.DAYS,
         ),
-        entity_ref_id='accusamus',
-        name='Jan Hodkiewicz',
+        entity_ref_id='iste',
+        name='Casey Stracke',
         position=shared.StepPositionAt(
-            index=5424.99,
-            section_id='sit',
+            index=7301.22,
+            section_id='delectus',
         ),
-        status=shared.StepStatus.IN_PROGRESS,
+        started_time='quaerat',
+        status=shared.StepStatus.COMPLETED,
         user_ids=[
-            7438.35,
+            2123.9,
+            2098.43,
         ],
     ),
-    execution_id='dolorum',
-    step_id='iusto',
+    execution_id='dolor',
+    step_id='qui',
 )
 
 res = s.workflows.update_step(req)

@@ -18,6 +18,7 @@ from .searchstepsreq import *
 from .searchstepsresp import *
 from .section import *
 from .sectionsimplified import *
+from .sectionstatus import *
 from .security import *
 from .step import *
 from .stepextended import *
@@ -37,4 +38,4 @@ from .workflowexecutionslim import *
 from .workflowexecutionupdatereq import *
 from .workflowstatus import *
 
-__all__ = ["AutomationConfig","ClosingReason","ClosingReasonResp","CreateStepReq","DynamicDueDate","DynamicDueDateActionTypeCondition","DynamicDueDateTimePeriod","ECPDetails","ErrorResp","ExecutionPaginationDynamo","ItemType","LastEvaluatedKey","SearchExecutionsReq","SearchExecutionsResp","SearchPagination","SearchSorting","SearchStepsReq","SearchStepsReqStatus","SearchStepsResp","Section","SectionSimplified","Security","Step","StepExtended","StepID","StepPositionAt","StepRequirement","StepRequirementCondition","StepSimplified","StepStatus","StepType","TriggerType","UpdateEntityAttributes","UpdateEntityAttributesSource","UpdateEntityAttributesTarget","UpdateStepReq","WorkflowContext","WorkflowExecution","WorkflowExecutionCreateReq","WorkflowExecutionSlim","WorkflowExecutionUpdateReq","WorkflowStatus"]
+__all__ = ["AutomationConfig","ClosingReason","ClosingReasonResp","CreateStepReq","DynamicDueDate","DynamicDueDateActionTypeCondition","DynamicDueDateTimePeriod","ECPDetails","ErrorResp","ExecutionPaginationDynamo","ItemType","LastEvaluatedKey","SearchExecutionsReq","SearchExecutionsResp","SearchPagination","SearchSorting","SearchStepsReq","SearchStepsReqStatus","SearchStepsResp","Section","SectionSimplified","SectionStatus","Security","Step","StepExtended","StepID","StepPositionAt","StepRequirement","StepRequirementCondition","StepSimplified","StepStatus","StepType","TriggerType","UpdateEntityAttributes","UpdateEntityAttributesSource","UpdateEntityAttributesTarget","UpdateStepReq","WorkflowContext","WorkflowExecution","WorkflowExecutionCreateReq","WorkflowExecutionSlim","WorkflowExecutionUpdateReq","WorkflowStatus"]

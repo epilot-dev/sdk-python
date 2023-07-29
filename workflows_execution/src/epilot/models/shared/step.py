@@ -28,6 +28,7 @@ class Step:
     r"""The user which moved the step/task to the IN_PROGRESS state. The user should also be present in the assignedTo property of the step/task"""
     automation_config: Optional[shared_automationconfig.AutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})
     r"""Configuration for automation execution to run"""
+    completed_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedTime'), 'exclude': lambda f: f is None }})
     created: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'exclude': lambda f: f is None }})
     definition_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId'), 'exclude': lambda f: f is None }})
     due_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dueDate'), 'exclude': lambda f: f is None }})
@@ -43,6 +44,7 @@ class Step:
     manually_created: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manuallyCreated'), 'exclude': lambda f: f is None }})
     requirements: Optional[list[shared_steprequirement.StepRequirement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements'), 'exclude': lambda f: f is None }})
     section_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sectionId'), 'exclude': lambda f: f is None }})
+    started_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('startedTime'), 'exclude': lambda f: f is None }})
     status: Optional[shared_stepstatus.StepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     user_ids: Optional[list[float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds'), 'exclude': lambda f: f is None }})
     r"""This field is deprecated. Please use assignedTo

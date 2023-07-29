@@ -36,6 +36,7 @@ src/epilot/models/shared/steptype.py
 src/epilot/models/shared/ecpdetails.py
 src/epilot/models/shared/dynamicduedate.py
 src/epilot/models/shared/automationconfig.py
+src/epilot/models/shared/sectionstatus.py
 src/epilot/models/shared/workflowcontext.py
 src/epilot/models/shared/errorresp.py
 src/epilot/models/shared/workflowexecutioncreatereq.py
@@ -101,6 +102,7 @@ docs/models/shared/dynamicduedateactiontypecondition.md
 docs/models/shared/dynamicduedatetimeperiod.md
 docs/models/shared/dynamicduedate.md
 docs/models/shared/automationconfig.md
+docs/models/shared/sectionstatus.md
 docs/models/shared/workflowcontext.md
 docs/models/shared/errorresp.md
 docs/models/shared/workflowexecutioncreatereq.md
