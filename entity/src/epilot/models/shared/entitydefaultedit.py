@@ -26,6 +26,8 @@ class EntityDefaultEditViewType(str, Enum):
 @dataclasses.dataclass
 class EntityDefaultEdit:
     search_params: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('search_params'), 'exclude': lambda f: f is None }})
+    summary_attributes: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_attributes'), 'exclude': lambda f: f is None }})
+    r"""List of attribute names that we show in the summary header"""
     table_menu_options: Optional[EntityDefaultEditTableMenuOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('table_menu_options'), 'exclude': lambda f: f is None }})
     view_type: Optional[EntityDefaultEditViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
