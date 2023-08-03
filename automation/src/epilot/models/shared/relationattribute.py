@@ -42,7 +42,7 @@ class RelationAttribute:
     target: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
     r"""Target attribute to store the relation in"""
     related_to: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('related_to'), 'exclude': lambda f: f is None }})
-    r"""Deprecated: this field will be removed in a future release, please migrate away from it as soon as possible"""
+    r"""Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible."""
     source_filter: Optional[RelationAttributeSourceFilter] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_filter'), 'exclude': lambda f: f is None }})
     r"""A filter to identify which source entities to pick as relations from main entity"""
     target_tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_tags'), 'exclude': lambda f: f is None }})
