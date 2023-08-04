@@ -229,6 +229,41 @@ class Public:
         return res
 
     
+    def get_public_portal_widgets(self, request: operations.GetPublicPortalWidgetsRequest) -> operations.GetPublicPortalWidgetsResponse:
+        r"""getPublicPortalWidgets
+        Retrieves the public widgets of a portal
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/portal/public-widgets'
+        headers = {}
+        query_params = utils.get_query_params(operations.GetPublicPortalWidgetsRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.client
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetPublicPortalWidgetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.UpsertPortalWidget])
+                res.upsert_portal_widget = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def user_exists(self, request: operations.UserExistsRequest) -> operations.UserExistsResponse:
         r"""userExists
         Checks whether a user exists in the portal

@@ -10,6 +10,7 @@ APIs defined for a portal user
 * [delete_entity_file](#delete_entity_file) - deleteEntityFile
 * [delete_portal_user](#delete_portal_user) - deletePortalUser
 * [get_all_contracts](#get_all_contracts) - getAllContracts
+* [get_all_files](#get_all_files) - getAllFiles
 * [get_all_opportunities](#get_all_opportunities) - getAllOpportunities
 * [get_all_orders](#get_all_orders) - getAllOrders
 * [get_contact](#get_contact) - getContact
@@ -20,6 +21,7 @@ APIs defined for a portal user
 * [get_organization_settings](#get_organization_settings) - getOrganizationSettings
 * [get_portal_config](#get_portal_config) - getPortalConfig
 * [get_portal_user](#get_portal_user) - getPortalUser
+* [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
 * [get_schemas](#get_schemas) - getSchemas
 * [save_entity_file](#save_entity_file) - saveEntityFile
 * [update_contact](#update_contact) - updateContact
@@ -173,6 +175,39 @@ if res.get_all_contracts_200_application_json_object is not None:
 ### Response
 
 **[operations.GetAllContractsResponse](../../models/operations/getallcontractsresponse.md)**
+
+
+## get_all_files
+
+Fetch all documents under the related entities of a contact
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+
+res = s.ecp.get_all_files(operations.GetAllFilesSecurity(
+    portal_auth="",
+))
+
+if res.get_all_files_200_application_json_object is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `security`                                                                       | [operations.GetAllFilesSecurity](../../models/operations/getallfilessecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+
+
+### Response
+
+**[operations.GetAllFilesResponse](../../models/operations/getallfilesresponse.md)**
 
 
 ## get_all_opportunities
@@ -530,6 +565,43 @@ if res.get_portal_user_200_application_json_object is not None:
 **[operations.GetPortalUserResponse](../../models/operations/getportaluserresponse.md)**
 
 
+## get_portal_widgets
+
+Retrieves the widgets of a portal
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot()
+
+req = operations.GetPortalWidgetsRequest(
+    origin=shared.Origin.INSTALLER_PORTAL,
+)
+
+res = s.ecp.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
+    epilot_auth="",
+))
+
+if res.upsert_portal_widget is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetPortalWidgetsRequest](../../models/operations/getportalwidgetsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.GetPortalWidgetsSecurity](../../models/operations/getportalwidgetssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+
+
+### Response
+
+**[operations.GetPortalWidgetsResponse](../../models/operations/getportalwidgetsresponse.md)**
+
+
 ## get_schemas
 
 Retrieves the schemas.
@@ -581,7 +653,6 @@ req = shared.SaveEntityFile(
     files=[
         shared.SaveEntityFileFiles(
             tags=[
-                'suscipit',
                 'iure',
                 'magnam',
             ],

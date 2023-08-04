@@ -1,15 +1,15 @@
 configVersion: 1.0.0
 management:
-  docChecksum: a7c39e59d9186fd4ec398c9b6fb9eed0
+  docChecksum: dc21fe820cfe7c84a949bad012cb9015
   docVersion: 1.0.0
-  speakeasyVersion: 1.68.1
-  generationVersion: 2.77.1
+  speakeasyVersion: 1.68.3
+  generationVersion: 2.81.1
 generation:
   sdkClassName: epilot
   singleTagPerOp: false
   telemetryEnabled: false
 python:
-  version: 1.37.0
+  version: 1.38.0
   author: epilot
   description: Python Client SDK for Epilot
   maxMethodParams: 0

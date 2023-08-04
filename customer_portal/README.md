@@ -42,6 +42,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [delete_entity_file](docs/sdks/ecp/README.md#delete_entity_file) - deleteEntityFile
 * [delete_portal_user](docs/sdks/ecp/README.md#delete_portal_user) - deletePortalUser
 * [get_all_contracts](docs/sdks/ecp/README.md#get_all_contracts) - getAllContracts
+* [get_all_files](docs/sdks/ecp/README.md#get_all_files) - getAllFiles
 * [get_all_opportunities](docs/sdks/ecp/README.md#get_all_opportunities) - getAllOpportunities
 * [get_all_orders](docs/sdks/ecp/README.md#get_all_orders) - getAllOrders
 * [get_contact](docs/sdks/ecp/README.md#get_contact) - getContact
@@ -52,6 +53,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [get_organization_settings](docs/sdks/ecp/README.md#get_organization_settings) - getOrganizationSettings
 * [get_portal_config](docs/sdks/ecp/README.md#get_portal_config) - getPortalConfig
 * [get_portal_user](docs/sdks/ecp/README.md#get_portal_user) - getPortalUser
+* [get_portal_widgets](docs/sdks/ecp/README.md#get_portal_widgets) - getPortalWidgets
 * [get_schemas](docs/sdks/ecp/README.md#get_schemas) - getSchemas
 * [save_entity_file](docs/sdks/ecp/README.md#save_entity_file) - saveEntityFile
 * [update_contact](docs/sdks/ecp/README.md#update_contact) - updateContact
@@ -72,11 +74,13 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [get_entity_identifiers](docs/sdks/ecpadmin/README.md#get_entity_identifiers) - getEntityIdentifiers
 * [get_org_portal_config](docs/sdks/ecpadmin/README.md#get_org_portal_config) - getOrgPortalConfig
 * [get_portal_config](docs/sdks/ecpadmin/README.md#get_portal_config) - getPortalConfig
+* [get_portal_widgets](docs/sdks/ecpadmin/README.md#get_portal_widgets) - getPortalWidgets
 * [get_valid_secondary_attributes](docs/sdks/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [replace_ecp_template_variables](docs/sdks/ecpadmin/README.md#replace_ecp_template_variables) - replaceECPTemplateVariables
 * [save_portal_files](docs/sdks/ecpadmin/README.md#save_portal_files) - savePortalFiles
 * [upsert_email_templates](docs/sdks/ecpadmin/README.md#upsert_email_templates) - upsertEmailTemplates
 * [upsert_portal](docs/sdks/ecpadmin/README.md#upsert_portal) - upsertPortal
+* [upsert_portal_widget](docs/sdks/ecpadmin/README.md#upsert_portal_widget) - upsertPortalWidget
 
 ### [public](docs/sdks/public/README.md)
 
@@ -86,6 +90,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [get_count_by_email](docs/sdks/public/README.md#get_count_by_email) - getCountByEmail
 * [get_portal_config_by_domain](docs/sdks/public/README.md#get_portal_config_by_domain) - getPortalConfigByDomain
 * [get_public_portal_config](docs/sdks/public/README.md#get_public_portal_config) - getPublicPortalConfig
+* [get_public_portal_widgets](docs/sdks/public/README.md#get_public_portal_widgets) - getPublicPortalWidgets
 * [user_exists](docs/sdks/public/README.md#user_exists) - userExists
 <!-- End SDK Available Operations -->
 

@@ -16,11 +16,13 @@ APIs defined for a ECP Admin
 * [get_entity_identifiers](#get_entity_identifiers) - getEntityIdentifiers
 * [get_org_portal_config](#get_org_portal_config) - getOrgPortalConfig
 * [get_portal_config](#get_portal_config) - getPortalConfig
+* [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
 * [get_valid_secondary_attributes](#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [replace_ecp_template_variables](#replace_ecp_template_variables) - replaceECPTemplateVariables
 * [save_portal_files](#save_portal_files) - savePortalFiles
 * [upsert_email_templates](#upsert_email_templates) - upsertEmailTemplates
 * [upsert_portal](#upsert_portal) - upsertPortal
+* [upsert_portal_widget](#upsert_portal_widget) - upsertPortalWidget
 
 ## configure_distribution
 
@@ -389,6 +391,43 @@ if res.portal_config is not None:
 **[operations.GetPortalConfigResponse](../../models/operations/getportalconfigresponse.md)**
 
 
+## get_portal_widgets
+
+Retrieves the widgets of a portal
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot()
+
+req = operations.GetPortalWidgetsRequest(
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
+)
+
+res = s.ecp_admin.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
+    epilot_auth="",
+))
+
+if res.upsert_portal_widget is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetPortalWidgetsRequest](../../models/operations/getportalwidgetsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.GetPortalWidgetsSecurity](../../models/operations/getportalwidgetssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+
+
+### Response
+
+**[operations.GetPortalWidgetsResponse](../../models/operations/getportalwidgetsresponse.md)**
+
+
 ## get_valid_secondary_attributes
 
 Get valid secondary attributes that are used while mapping a contact on registration
@@ -475,7 +514,6 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
-                'cum',
                 'esse',
                 'ipsum',
                 'excepturi',
@@ -487,8 +525,44 @@ req = shared.SavePortalFile(
                 key='12345',
             ),
         ),
+        shared.SavePortalFileFiles(
+            tags=[
+                'perferendis',
+            ],
+            file_type='orderRightTeaser',
+            filename='12345',
+            s3ref=shared.SavePortalFileFilesS3ref(
+                bucket='12345',
+                key='12345',
+            ),
+        ),
+        shared.SavePortalFileFiles(
+            tags=[
+                'natus',
+                'sed',
+            ],
+            file_type='orderRightTeaser',
+            filename='12345',
+            s3ref=shared.SavePortalFileFilesS3ref(
+                bucket='12345',
+                key='12345',
+            ),
+        ),
+        shared.SavePortalFileFiles(
+            tags=[
+                'dolor',
+                'natus',
+                'laboriosam',
+            ],
+            file_type='orderRightTeaser',
+            filename='12345',
+            s3ref=shared.SavePortalFileFilesS3ref(
+                bucket='12345',
+                key='12345',
+            ),
+        ),
     ],
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.save_portal_files(req, operations.SavePortalFilesSecurity(
@@ -532,7 +606,7 @@ req = operations.UpsertEmailTemplatesRequest(
         on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
         on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_email_templates(req, operations.UpsertEmailTemplatesSecurity(
@@ -575,25 +649,22 @@ req = operations.UpsertPortalRequest(
             cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
             cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config='ad',
+        config='fuga',
         contact_identifiers=[
-            'sed',
+            'corporis',
             'iste',
-            'dolor',
         ],
         contact_secondary_identifier='full_name',
         default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
             on_pending_user=[
                 {
-                    "hic": 'saepe',
-                    "fuga": 'in',
-                },
-                {
-                    "iste": 'iure',
-                    "saepe": 'quidem',
-                },
-                {
+                    "quidem": 'architecto',
                     "ipsa": 'reiciendis',
+                    "est": 'mollitia',
+                    "laborum": 'dolores',
+                },
+                {
+                    "corporis": 'explicabo',
                 },
             ],
         ),
@@ -610,33 +681,40 @@ req = operations.UpsertPortalRequest(
         entity_actions=[
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='mollitia',
-                    en='laborum',
+                    de='enim',
+                    en='omnis',
                 ),
-                journey_id='dolores',
+                journey_id='nemo',
                 slug=shared.EntitySlug.CONTACT,
             ),
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='dolorem',
-                    en='corporis',
+                    de='minima',
+                    en='excepturi',
                 ),
-                journey_id='explicabo',
+                journey_id='accusantium',
                 slug=shared.EntitySlug.CONTACT,
             ),
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='nobis',
-                    en='enim',
+                    de='iure',
+                    en='culpa',
                 ),
-                journey_id='omnis',
+                journey_id='doloribus',
+                slug=shared.EntitySlug.CONTACT,
+            ),
+            shared.UpsertPortalConfigEntityActions(
+                action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
+                    de='sapiente',
+                    en='architecto',
+                ),
+                journey_id='mollitia',
                 slug=shared.EntitySlug.CONTACT,
             ),
         ],
         entity_identifiers=shared.UpsertPortalConfigEntityIdentifiers(
             type=shared.UpsertPortalConfigEntityIdentifiersType(
                 attributes=[
-                    'contract_number',
                     'contract_number',
                 ],
                 is_enabled=False,
@@ -645,12 +723,17 @@ req = operations.UpsertPortalRequest(
         grants=[
             shared.Grant(
                 action='entity-read',
+                effect=shared.GrantEffect.ALLOW,
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
+            ),
+            shared.Grant(
+                action='entity-read',
                 effect=shared.GrantEffect.DENY,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
             shared.Grant(
                 action='entity-read',
-                effect=shared.GrantEffect.ALLOW,
+                effect=shared.GrantEffect.DENY,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
         ],
@@ -664,7 +747,7 @@ req = operations.UpsertPortalRequest(
         self_registration=False,
         self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITHOUT_CONTACT_CREATION,
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal(req, operations.UpsertPortalSecurity(
@@ -686,4 +769,98 @@ if res.portal_config is not None:
 ### Response
 
 **[operations.UpsertPortalResponse](../../models/operations/upsertportalresponse.md)**
+
+
+## upsert_portal_widget
+
+Upsert widget for a portal of an organization.
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot()
+
+req = operations.UpsertPortalWidgetRequest(
+    upsert_portal_widget=shared.UpsertPortalWidget(
+        widgets=[
+            shared.ContentWidget(
+                address='2613 Marguerite Plain',
+                email='Britney94@gmail.com',
+                headline=shared.ContentWidgetHeadline(
+                    de='ipsam',
+                    en='id',
+                ),
+                id='d019da1f-fe78-4f09-bb00-74f15471b5e6',
+                list_index=918236,
+                phone='(365) 682-5590',
+                sub_headline=shared.ContentWidgetSubHeadline(
+                    de='repudiandae',
+                    en='sint',
+                ),
+                type=shared.ContentWidgetType.ACTION_WIDGET,
+            ),
+            shared.TeaserWidget(
+                actions=[
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='enim',
+                            en='consequatur',
+                        ),
+                        url='est',
+                    ),
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='quibusdam',
+                            en='explicabo',
+                        ),
+                        url='deserunt',
+                    ),
+                ],
+                headline=shared.TeaserWidgetHeadline(
+                    de='distinctio',
+                    en='quibusdam',
+                ),
+                id='44269802-d502-4a94-bb4f-63c969e9a3ef',
+                left=shared.TeaserWidgetLeft(
+                    show=False,
+                    show_button=False,
+                ),
+                list_index=680056,
+                right=shared.TeaserWidgetRight(
+                    show=False,
+                    show_button=False,
+                ),
+                sub_headline=shared.TeaserWidgetSubHeadline(
+                    de='in',
+                    en='in',
+                ),
+                type=shared.TeaserWidgetType.TEASER_WIDGET,
+            ),
+        ],
+    ),
+    origin=shared.Origin.INSTALLER_PORTAL,
+)
+
+res = s.ecp_admin.upsert_portal_widget(req, operations.UpsertPortalWidgetSecurity(
+    epilot_auth="",
+))
+
+if res.upsert_portal_widget is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.UpsertPortalWidgetRequest](../../models/operations/upsertportalwidgetrequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `security`                                                                                     | [operations.UpsertPortalWidgetSecurity](../../models/operations/upsertportalwidgetsecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+
+
+### Response
+
+**[operations.UpsertPortalWidgetResponse](../../models/operations/upsertportalwidgetresponse.md)**
 
