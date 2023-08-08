@@ -34,7 +34,7 @@ s = epilot.Epilot(
 req = operations.ConfirmUserRequest(
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
     org_id='123',
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.confirm_user(req)
@@ -75,7 +75,10 @@ req = operations.CreateUserRequest(
     create_user_request=shared.CreateUserRequest(
         contact_id='123456',
         contact_identifiers={
-            "magnam": 'cumque',
+            "facere": 'ea',
+            "aliquid": 'laborum',
+            "accusamus": 'non',
+            "occaecati": 'enim',
         },
         email='testemail921@yopmail.com',
         first_name='John',
@@ -124,8 +127,10 @@ s = epilot.Epilot(
 req = operations.GetContactCountRequest(
     contact_count_request=shared.ContactCountRequest(
         contact_identifiers={
-            "aliquid": 'laborum',
-            "accusamus": 'non',
+            "quidem": 'provident',
+            "nam": 'id',
+            "blanditiis": 'deleniti',
+            "sapiente": 'amet',
         },
         org_id='728',
     ),
@@ -284,7 +289,7 @@ s = epilot.Epilot(
 
 req = operations.GetPublicPortalWidgetsRequest(
     org_id='123',
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.get_public_portal_widgets(req)

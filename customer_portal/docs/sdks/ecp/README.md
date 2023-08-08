@@ -16,6 +16,7 @@ APIs defined for a portal user
 * [get_contact](#get_contact) - getContact
 * [get_contract](#get_contract) - getContract
 * [get_entities_by_identifiers](#get_entities_by_identifiers) - getEntitiesByIdentifiers
+* [get_file_by_id](#get_file_by_id) - getFileById
 * [get_opportunity](#get_opportunity) - getOpportunity
 * [get_order](#get_order) - getOrder
 * [get_organization_settings](#get_organization_settings) - getOrganizationSettings
@@ -189,8 +190,12 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
+req = operations.GetAllFilesRequest(
+    from_=0,
+    size=0,
+)
 
-res = s.ecp.get_all_files(operations.GetAllFilesSecurity(
+res = s.ecp.get_all_files(req, operations.GetAllFilesSecurity(
     portal_auth="",
 ))
 
@@ -202,6 +207,7 @@ if res.get_all_files_200_application_json_object is not None:
 
 | Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.GetAllFilesRequest](../../models/operations/getallfilesrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 | `security`                                                                       | [operations.GetAllFilesSecurity](../../models/operations/getallfilessecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
 
 
@@ -386,6 +392,43 @@ if res.get_entities_by_identifiers_200_application_json_object is not None:
 ### Response
 
 **[operations.GetEntitiesByIdentifiersResponse](../../models/operations/getentitiesbyidentifiersresponse.md)**
+
+
+## get_file_by_id
+
+Fetch a document with ID
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+req = operations.GetFileByIDRequest(
+    id='5da0a718-c822-403d-9f5d-20d4584e0528',
+)
+
+res = s.ecp.get_file_by_id(req, operations.GetFileByIDSecurity(
+    portal_auth="",
+))
+
+if res.get_file_by_id_200_application_json_object is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.GetFileByIDRequest](../../models/operations/getfilebyidrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `security`                                                                       | [operations.GetFileByIDSecurity](../../models/operations/getfilebyidsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+
+
+### Response
+
+**[operations.GetFileByIDResponse](../../models/operations/getfilebyidresponse.md)**
 
 
 ## get_opportunity

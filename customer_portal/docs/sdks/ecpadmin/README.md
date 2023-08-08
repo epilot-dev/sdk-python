@@ -809,39 +809,41 @@ req = operations.UpsertPortalWidgetRequest(
                             de='enim',
                             en='consequatur',
                         ),
-                        url='est',
+                        type=shared.WidgetActionType.JOURNEY,
+                        url='quibusdam',
                     ),
                     shared.WidgetAction(
                         label=shared.WidgetActionLabel(
-                            de='quibusdam',
-                            en='explicabo',
+                            de='explicabo',
+                            en='deserunt',
                         ),
-                        url='deserunt',
+                        type=shared.WidgetActionType.JOURNEY,
+                        url='quibusdam',
                     ),
                 ],
                 headline=shared.TeaserWidgetHeadline(
-                    de='distinctio',
-                    en='quibusdam',
+                    de='labore',
+                    en='modi',
                 ),
-                id='44269802-d502-4a94-bb4f-63c969e9a3ef',
+                id='269802d5-02a9-44bb-8f63-c969e9a3efa7',
                 left=shared.TeaserWidgetLeft(
                     show=False,
                     show_button=False,
                 ),
-                list_index=680056,
+                list_index=449198,
                 right=shared.TeaserWidgetRight(
                     show=False,
                     show_button=False,
                 ),
                 sub_headline=shared.TeaserWidgetSubHeadline(
-                    de='in',
-                    en='in',
+                    de='illum',
+                    en='maiores',
                 ),
-                type=shared.TeaserWidgetType.TEASER_WIDGET,
+                type=shared.TeaserWidgetType.ENTITY_WIDGET,
             ),
         ],
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal_widget(req, operations.UpsertPortalWidgetSecurity(

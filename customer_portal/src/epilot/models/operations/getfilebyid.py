@@ -11,7 +11,7 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class GetAllFilesSecurity:
+class GetFileByIDSecurity:
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
@@ -19,9 +19,9 @@ class GetAllFilesSecurity:
 
 
 @dataclasses.dataclass
-class GetAllFilesRequest:
-    from_: float = dataclasses.field(metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
-    size: float = dataclasses.field(metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+class GetFileByIDRequest:
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    r"""The Id of a file"""
     
 
 
@@ -29,23 +29,21 @@ class GetAllFilesRequest:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class GetAllFiles200ApplicationJSON:
+class GetFileByID200ApplicationJSON:
     r"""The files have been fetched successfully."""
-    hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
-    r"""Total number of files for pagination"""
-    results: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    file: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file'), 'exclude': lambda f: f is None }})
     
 
 
 
 
 @dataclasses.dataclass
-class GetAllFilesResponse:
+class GetFileByIDResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
-    get_all_files_200_application_json_object: Optional[GetAllFiles200ApplicationJSON] = dataclasses.field(default=None)
+    get_file_by_id_200_application_json_object: Optional[GetFileByID200ApplicationJSON] = dataclasses.field(default=None)
     r"""The files have been fetched successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

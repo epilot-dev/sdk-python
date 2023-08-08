@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
 from typing import Optional
 
@@ -16,6 +17,10 @@ class WidgetActionLabel:
     
 
 
+class WidgetActionType(str, Enum):
+    LINK = 'link'
+    JOURNEY = 'journey'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -23,5 +28,6 @@ class WidgetActionLabel:
 class WidgetAction:
     label: WidgetActionLabel = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
+    type: Optional[WidgetActionType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

@@ -21,6 +21,7 @@ src/epilot/models/operations/getallorders.py
 src/epilot/models/operations/getcontact.py
 src/epilot/models/operations/getcontract.py
 src/epilot/models/operations/getentitiesbyidentifiers.py
+src/epilot/models/operations/getfilebyid.py
 src/epilot/models/operations/getopportunity.py
 src/epilot/models/operations/getorder.py
 src/epilot/models/operations/getorganizationsettings.py
@@ -102,6 +103,7 @@ docs/models/operations/getallcontractssecurity.md
 docs/models/operations/getallcontracts200applicationjson.md
 docs/models/operations/getallcontractsresponse.md
 docs/models/operations/getallfilessecurity.md
+docs/models/operations/getallfilesrequest.md
 docs/models/operations/getallfiles200applicationjson.md
 docs/models/operations/getallfilesresponse.md
 docs/models/operations/getallopportunitiessecurity.md
@@ -121,6 +123,10 @@ docs/models/operations/getentitiesbyidentifierssecurity.md
 docs/models/operations/getentitiesbyidentifiersrequest.md
 docs/models/operations/getentitiesbyidentifiers200applicationjson.md
 docs/models/operations/getentitiesbyidentifiersresponse.md
+docs/models/operations/getfilebyidsecurity.md
+docs/models/operations/getfilebyidrequest.md
+docs/models/operations/getfilebyid200applicationjson.md
+docs/models/operations/getfilebyidresponse.md
 docs/models/operations/getopportunitysecurity.md
 docs/models/operations/getopportunityrequest.md
 docs/models/operations/getopportunity200applicationjson.md
@@ -296,6 +302,7 @@ docs/models/shared/actionwidgetsubheadline.md
 docs/models/shared/actionwidgettype.md
 docs/models/shared/actionwidget.md
 docs/models/shared/widgetactionlabel.md
+docs/models/shared/widgetactiontype.md
 docs/models/shared/widgetaction.md
 docs/models/shared/teaserwidgetheadline.md
 docs/models/shared/teaserwidgetleft.md
