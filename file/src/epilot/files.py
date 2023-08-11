@@ -125,13 +125,13 @@ class Files:
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PreviewPublicFileRequest, base_url, '/v1/files/{id}/preview_public', request)
+        url = utils.generate_url(operations.PreviewPublicFileRequest, base_url, '/v1/files/public/{id}/preview', request)
         headers = {}
         query_params = utils.get_query_params(operations.PreviewPublicFileRequest, request)
         headers['Accept'] = '*/*'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = self.sdk_configuration.security_client
+        client = self.sdk_configuration.client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

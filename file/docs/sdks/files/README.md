@@ -197,8 +197,9 @@ s = epilot.Epilot(
 req = operations.PreviewPublicFileRequest(
     h=544883,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-    version=847252,
-    w=423655,
+    org_id='illum',
+    version=423655,
+    w=623564,
 )
 
 res = s.files.preview_public_file(req)
@@ -240,8 +241,8 @@ req = operations.PreviewS3FileRequest(
         bucket='epilot-files-prod',
         key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
-    h=623564,
-    w=645894,
+    h=645894,
+    w=384382,
 )
 
 res = s.files.preview_s3_file(req)
@@ -284,8 +285,8 @@ s = epilot.Epilot(
 )
 
 req = {
-    "iure": 'magnam',
-    "debitis": 'ipsa',
+    "magnam": 'debitis',
+    "ipsa": 'delectus',
 }
 
 res = s.files.save_file(req)
