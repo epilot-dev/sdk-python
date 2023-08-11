@@ -787,59 +787,32 @@ req = operations.UpsertPortalWidgetRequest(
     upsert_portal_widget=shared.UpsertPortalWidget(
         widgets=[
             shared.ContentWidget(
-                address='2613 Marguerite Plain',
-                email='Britney94@gmail.com',
+                content='molestiae',
                 headline=shared.ContentWidgetHeadline(
-                    de='ipsam',
-                    en='id',
+                    de='velit',
+                    en='error',
                 ),
-                id='d019da1f-fe78-4f09-bb00-74f15471b5e6',
-                list_index=918236,
-                phone='(365) 682-5590',
+                id='251aa52c-3f5a-4d01-9da1-ffe78f097b00',
+                list_index=441711,
                 sub_headline=shared.ContentWidgetSubHeadline(
-                    de='repudiandae',
-                    en='sint',
+                    de='ut',
+                    en='maiores',
                 ),
                 type=shared.ContentWidgetType.ACTION_WIDGET,
             ),
-            shared.TeaserWidget(
-                actions=[
-                    shared.WidgetAction(
-                        label=shared.WidgetActionLabel(
-                            de='enim',
-                            en='consequatur',
-                        ),
-                        type=shared.WidgetActionType.JOURNEY,
-                        url='quibusdam',
-                    ),
-                    shared.WidgetAction(
-                        label=shared.WidgetActionLabel(
-                            de='explicabo',
-                            en='deserunt',
-                        ),
-                        type=shared.WidgetActionType.JOURNEY,
-                        url='quibusdam',
-                    ),
-                ],
-                headline=shared.TeaserWidgetHeadline(
-                    de='labore',
-                    en='modi',
+            shared.ContentWidget(
+                content='dolore',
+                headline=shared.ContentWidgetHeadline(
+                    de='iusto',
+                    en='dicta',
                 ),
-                id='269802d5-02a9-44bb-8f63-c969e9a3efa7',
-                left=shared.TeaserWidgetLeft(
-                    show=False,
-                    show_button=False,
+                id='b5e6e13b-99d4-488e-9e91-e450ad2abd44',
+                list_index=183191,
+                sub_headline=shared.ContentWidgetSubHeadline(
+                    de='aliquid',
+                    en='cupiditate',
                 ),
-                list_index=449198,
-                right=shared.TeaserWidgetRight(
-                    show=False,
-                    show_button=False,
-                ),
-                sub_headline=shared.TeaserWidgetSubHeadline(
-                    de='illum',
-                    en='maiores',
-                ),
-                type=shared.TeaserWidgetType.ENTITY_WIDGET,
+                type=shared.ContentWidgetType.ENTITY_WIDGET,
             ),
         ],
     ),
