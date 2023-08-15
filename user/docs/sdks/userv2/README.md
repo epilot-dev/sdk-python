@@ -13,7 +13,6 @@ User API V2
 * [get_user_v2](#get_user_v2) - getUserV2
 * [invite_user](#invite_user) - inviteUser
 * [list_users_v2](#list_users_v2) - listUsersV2
-* [redirect_to_zendesk](#redirect_to_zendesk) - redirectToZendesk
 * [resend_user_invitation](#resend_user_invitation) - resendUserInvitation
 * [sign_up_user](#sign_up_user) - signUpUser
 * [update_user_v2](#update_user_v2) - updateUserV2
@@ -284,35 +283,6 @@ if res.list_users_v2_200_application_json_object is not None:
 ### Response
 
 **[operations.ListUsersV2Response](../../models/operations/listusersv2response.md)**
-
-
-## redirect_to_zendesk
-
-redirectToZendesk
-
-### Example Usage
-
-```python
-import epilot
-from epilot.models import shared
-
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
-    ),
-)
-
-
-res = s.user_v2.redirect_to_zendesk()
-
-if res.redirect_to_zendesk_200_application_json_object is not None:
-    # handle response
-```
-
-
-### Response
-
-**[operations.RedirectToZendeskResponse](../../models/operations/redirecttozendeskresponse.md)**
 
 
 ## resend_user_invitation

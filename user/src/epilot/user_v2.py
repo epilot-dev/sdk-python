@@ -213,38 +213,6 @@ class UserV2:
         return res
 
     
-    def redirect_to_zendesk(self) -> operations.RedirectToZendeskResponse:
-        r"""redirectToZendesk"""
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/v2/users/zendesk/sso/redirect-url'
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
-        
-        client = self.sdk_configuration.security_client
-        
-        http_res = client.request('GET', url, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.RedirectToZendeskResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.RedirectToZendesk200ApplicationJSON])
-                res.redirect_to_zendesk_200_application_json_object = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code in [401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
-                res.error_resp = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
     def resend_user_invitation(self, request: operations.ResendUserInvitationRequestBody) -> operations.ResendUserInvitationResponse:
         r"""resendUserInvitation
         Resend user invitation email
