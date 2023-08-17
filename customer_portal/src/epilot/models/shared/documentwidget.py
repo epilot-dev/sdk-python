@@ -11,7 +11,7 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class ContentWidgetHeadline:
+class DocumentWidgetHeadline:
     de: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('de'), 'exclude': lambda f: f is None }})
     en: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('en'), 'exclude': lambda f: f is None }})
     
@@ -21,13 +21,13 @@ class ContentWidgetHeadline:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class ContentWidgetSubHeadline:
+class DocumentWidgetSubHeadline:
     de: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('de'), 'exclude': lambda f: f is None }})
     en: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('en'), 'exclude': lambda f: f is None }})
     
 
 
-class ContentWidgetType(str, Enum):
+class DocumentWidgetType(str, Enum):
     ACTION_WIDGET = 'ACTION_WIDGET'
     CONTENT_WIDGET = 'CONTENT_WIDGET'
     ENTITY_WIDGET = 'ENTITY_WIDGET'
@@ -38,13 +38,12 @@ class ContentWidgetType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class ContentWidget:
+class DocumentWidget:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     list_index: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('listIndex') }})
     r"""Index of the widget in the list, used for ordering (left or right)"""
-    type: ContentWidgetType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    content: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content'), 'exclude': lambda f: f is None }})
-    headline: Optional[ContentWidgetHeadline] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headline'), 'exclude': lambda f: f is None }})
-    sub_headline: Optional[ContentWidgetSubHeadline] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subHeadline'), 'exclude': lambda f: f is None }})
+    type: DocumentWidgetType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    headline: Optional[DocumentWidgetHeadline] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headline'), 'exclude': lambda f: f is None }})
+    sub_headline: Optional[DocumentWidgetSubHeadline] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subHeadline'), 'exclude': lambda f: f is None }})
     
 

@@ -75,10 +75,9 @@ req = operations.CreateUserRequest(
     create_user_request=shared.CreateUserRequest(
         contact_id='123456',
         contact_identifiers={
-            "ipsam": 'alias',
-            "fugit": 'dolorum',
-            "excepturi": 'tempora',
-            "facilis": 'tempore',
+            "tempore": 'labore',
+            "delectus": 'eum',
+            "non": 'eligendi',
         },
         email='testemail921@yopmail.com',
         first_name='John',
@@ -87,7 +86,7 @@ req = operations.CreateUserRequest(
         password='124n$aAJs*d41h4',
         secondary_identifier='123456',
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.public.create_user(req)
@@ -127,14 +126,12 @@ s = epilot.Epilot(
 req = operations.GetContactCountRequest(
     contact_count_request=shared.ContactCountRequest(
         contact_identifiers={
-            "eum": 'non',
-            "eligendi": 'sint',
-            "aliquid": 'provident',
-            "necessitatibus": 'sint',
+            "provident": 'necessitatibus',
+            "sint": 'officia',
         },
         org_id='728',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.get_contact_count(req)
@@ -250,7 +247,7 @@ s = epilot.Epilot(
 
 req = operations.GetPublicPortalConfigRequest(
     org_id='12324',
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.public.get_public_portal_config(req)

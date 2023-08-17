@@ -786,37 +786,53 @@ s = epilot.Epilot()
 req = operations.UpsertPortalWidgetRequest(
     upsert_portal_widget=shared.UpsertPortalWidget(
         widgets=[
-            shared.ContentWidget(
-                content='molestiae',
-                headline=shared.ContentWidgetHeadline(
-                    de='velit',
-                    en='error',
+            shared.ActionWidget(
+                actions=[
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='velit',
+                            en='error',
+                        ),
+                        type=shared.WidgetActionType.LINK,
+                        url='quis',
+                    ),
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='vitae',
+                            en='laborum',
+                        ),
+                        type=shared.WidgetActionType.JOURNEY,
+                        url='enim',
+                    ),
+                ],
+                headline=shared.ActionWidgetHeadline(
+                    de='odit',
+                    en='quo',
                 ),
-                id='251aa52c-3f5a-4d01-9da1-ffe78f097b00',
-                list_index=441711,
-                sub_headline=shared.ContentWidgetSubHeadline(
-                    de='ut',
-                    en='maiores',
+                id='3f5ad019-da1f-4fe7-8f09-7b0074f15471',
+                list_index=688661,
+                sub_headline=shared.ActionWidgetSubHeadline(
+                    de='enim',
+                    en='accusamus',
                 ),
-                type=shared.ContentWidgetType.ACTION_WIDGET,
+                type=shared.ActionWidgetType.ENTITY_WIDGET,
             ),
-            shared.ContentWidget(
-                content='dolore',
-                headline=shared.ContentWidgetHeadline(
-                    de='iusto',
-                    en='dicta',
+            shared.DocumentWidget(
+                headline=shared.DocumentWidgetHeadline(
+                    de='quae',
+                    en='ipsum',
                 ),
-                id='b5e6e13b-99d4-488e-9e91-e450ad2abd44',
-                list_index=183191,
-                sub_headline=shared.ContentWidgetSubHeadline(
-                    de='aliquid',
-                    en='cupiditate',
+                id='b99d488e-1e91-4e45-8ad2-abd44269802d',
+                list_index=369808,
+                sub_headline=shared.DocumentWidgetSubHeadline(
+                    de='alias',
+                    en='fugit',
                 ),
-                type=shared.ContentWidgetType.ENTITY_WIDGET,
+                type=shared.DocumentWidgetType.TEASER_WIDGET,
             ),
         ],
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal_widget(req, operations.UpsertPortalWidgetSecurity(

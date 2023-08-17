@@ -1,0 +1,12 @@
+# DocumentWidget
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `headline`                                                                              | [Optional[DocumentWidgetHeadline]](../../models/shared/documentwidgetheadline.md)       | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `id`                                                                                    | *str*                                                                                   | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `list_index`                                                                            | *int*                                                                                   | :heavy_check_mark:                                                                      | Index of the widget in the list, used for ordering (left or right)                      |
+| `sub_headline`                                                                          | [Optional[DocumentWidgetSubHeadline]](../../models/shared/documentwidgetsubheadline.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `type`                                                                                  | [DocumentWidgetType](../../models/shared/documentwidgettype.md)                         | :heavy_check_mark:                                                                      | N/A                                                                                     |

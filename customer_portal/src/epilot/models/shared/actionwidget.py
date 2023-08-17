@@ -33,6 +33,7 @@ class ActionWidgetType(str, Enum):
     CONTENT_WIDGET = 'CONTENT_WIDGET'
     ENTITY_WIDGET = 'ENTITY_WIDGET'
     TEASER_WIDGET = 'TEASER_WIDGET'
+    DOCUMENT_WIDGET = 'DOCUMENT_WIDGET'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

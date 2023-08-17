@@ -1,4 +1,4 @@
-# ContentWidgetType
+# DocumentWidgetType
 
 
 ## Values
