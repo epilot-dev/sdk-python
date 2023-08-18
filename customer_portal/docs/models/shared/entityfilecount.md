@@ -1,0 +1,11 @@
+# EntityFileCount
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `schema`                                                               | [EntitySlug](../../models/shared/entityslug.md)                        | :heavy_check_mark:                                                     | URL-friendly identifier for the entity schema                          | contact                                                                |
+| `title`                                                                | *Optional[str]*                                                        | :heavy_minus_sign:                                                     | The title of the parent entity                                         | Opportunity ABC                                                        |
+| `entity_id`                                                            | *str*                                                                  | :heavy_check_mark:                                                     | The ID of the parent entity                                            | d8dffa9a-6c90-4c4e-b8d1-032194b25526                                   |
+| `file_count`                                                           | *int*                                                                  | :heavy_check_mark:                                                     | Number of files associated with the entity and shared with portal user | 2                                                                      |

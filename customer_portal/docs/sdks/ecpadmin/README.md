@@ -79,7 +79,7 @@ req = operations.CreateSSOUserRequest(
         first_name='John',
         last_name='Doe',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.create_sso_user(req, operations.CreateSSOUserSecurity(
@@ -116,7 +116,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.DeletePortalRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.delete_portal(req, operations.DeletePortalSecurity(
@@ -330,7 +330,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetOrgPortalConfigRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.get_org_portal_config(req, operations.GetOrgPortalConfigSecurity(
@@ -404,7 +404,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalWidgetsRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
@@ -514,9 +514,9 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
-                'esse',
-                'ipsum',
-                'excepturi',
+                'in',
+                'corporis',
+                'iste',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -527,7 +527,8 @@ req = shared.SavePortalFile(
         ),
         shared.SavePortalFileFiles(
             tags=[
-                'perferendis',
+                'saepe',
+                'quidem',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -538,8 +539,7 @@ req = shared.SavePortalFile(
         ),
         shared.SavePortalFileFiles(
             tags=[
-                'natus',
-                'sed',
+                'ipsa',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -550,9 +550,10 @@ req = shared.SavePortalFile(
         ),
         shared.SavePortalFileFiles(
             tags=[
-                'dolor',
-                'natus',
-                'laboriosam',
+                'est',
+                'mollitia',
+                'laborum',
+                'dolores',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -562,7 +563,7 @@ req = shared.SavePortalFile(
             ),
         ),
     ],
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.save_portal_files(req, operations.SavePortalFilesSecurity(
@@ -606,7 +607,7 @@ req = operations.UpsertEmailTemplatesRequest(
         on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
         on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_email_templates(req, operations.UpsertEmailTemplatesSecurity(
@@ -649,22 +650,29 @@ req = operations.UpsertPortalRequest(
             cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
             cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config='fuga',
+        config='explicabo',
         contact_identifiers=[
-            'corporis',
-            'iste',
+            'enim',
+            'omnis',
+            'nemo',
+            'minima',
         ],
         contact_secondary_identifier='full_name',
         default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
             on_pending_user=[
                 {
-                    "quidem": 'architecto',
-                    "ipsa": 'reiciendis',
-                    "est": 'mollitia',
-                    "laborum": 'dolores',
+                    "iure": 'culpa',
                 },
                 {
-                    "corporis": 'explicabo',
+                    "sapiente": 'architecto',
+                    "mollitia": 'dolorem',
+                    "culpa": 'consequuntur',
+                    "repellat": 'mollitia',
+                },
+                {
+                    "numquam": 'commodi',
+                    "quam": 'molestiae',
+                    "velit": 'error',
                 },
             ],
         ),
@@ -681,40 +689,18 @@ req = operations.UpsertPortalRequest(
         entity_actions=[
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='enim',
-                    en='omnis',
+                    de='quis',
+                    en='vitae',
                 ),
-                journey_id='nemo',
-                slug=shared.EntitySlug.CONTACT,
-            ),
-            shared.UpsertPortalConfigEntityActions(
-                action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='minima',
-                    en='excepturi',
-                ),
-                journey_id='accusantium',
-                slug=shared.EntitySlug.CONTACT,
-            ),
-            shared.UpsertPortalConfigEntityActions(
-                action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='iure',
-                    en='culpa',
-                ),
-                journey_id='doloribus',
-                slug=shared.EntitySlug.CONTACT,
-            ),
-            shared.UpsertPortalConfigEntityActions(
-                action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='sapiente',
-                    en='architecto',
-                ),
-                journey_id='mollitia',
+                journey_id='laborum',
                 slug=shared.EntitySlug.CONTACT,
             ),
         ],
         entity_identifiers=shared.UpsertPortalConfigEntityIdentifiers(
             type=shared.UpsertPortalConfigEntityIdentifiersType(
                 attributes=[
+                    'contract_number',
+                    'contract_number',
                     'contract_number',
                 ],
                 is_enabled=False,
@@ -731,11 +717,6 @@ req = operations.UpsertPortalRequest(
                 effect=shared.GrantEffect.DENY,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
-            shared.Grant(
-                action='entity-read',
-                effect=shared.GrantEffect.DENY,
-                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
-            ),
         ],
         images=shared.UpsertPortalConfigImages(
             order_left_teaser='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg',
@@ -745,9 +726,9 @@ req = operations.UpsertPortalRequest(
         is_epilot_domain=False,
         name='Installer Portal',
         self_registration=False,
-        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITHOUT_CONTACT_CREATION,
+        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITH_CONTACT_CREATION,
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal(req, operations.UpsertPortalSecurity(
@@ -786,49 +767,115 @@ s = epilot.Epilot()
 req = operations.UpsertPortalWidgetRequest(
     upsert_portal_widget=shared.UpsertPortalWidget(
         widgets=[
-            shared.ActionWidget(
+            shared.TeaserWidget(
                 actions=[
                     shared.WidgetAction(
                         label=shared.WidgetActionLabel(
-                            de='velit',
-                            en='error',
+                            de='aut',
+                            en='quasi',
                         ),
-                        type=shared.WidgetActionType.LINK,
-                        url='quis',
+                        type=shared.WidgetActionType.JOURNEY,
+                        url='temporibus',
                     ),
                     shared.WidgetAction(
                         label=shared.WidgetActionLabel(
-                            de='vitae',
-                            en='laborum',
+                            de='laborum',
+                            en='quasi',
                         ),
                         type=shared.WidgetActionType.JOURNEY,
-                        url='enim',
+                        url='voluptatibus',
+                    ),
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='vero',
+                            en='nihil',
+                        ),
+                        type=shared.WidgetActionType.JOURNEY,
+                        url='voluptatibus',
+                    ),
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='ipsa',
+                            en='omnis',
+                        ),
+                        type=shared.WidgetActionType.LINK,
+                        url='cum',
                     ),
                 ],
-                headline=shared.ActionWidgetHeadline(
-                    de='odit',
-                    en='quo',
+                headline=shared.TeaserWidgetHeadline(
+                    de='perferendis',
+                    en='doloremque',
                 ),
-                id='3f5ad019-da1f-4fe7-8f09-7b0074f15471',
-                list_index=688661,
-                sub_headline=shared.ActionWidgetSubHeadline(
-                    de='enim',
-                    en='accusamus',
+                id='74f15471-b5e6-4e13-b99d-488e1e91e450',
+                left=shared.TeaserWidgetLeft(
+                    show=False,
+                    show_button=False,
                 ),
-                type=shared.ActionWidgetType.ENTITY_WIDGET,
+                list_index=667411,
+                right=shared.TeaserWidgetRight(
+                    show=False,
+                    show_button=False,
+                ),
+                sub_headline=shared.TeaserWidgetSubHeadline(
+                    de='quibusdam',
+                    en='explicabo',
+                ),
+                type=shared.TeaserWidgetType.TEASER_WIDGET,
             ),
-            shared.DocumentWidget(
-                headline=shared.DocumentWidgetHeadline(
-                    de='quae',
-                    en='ipsum',
+            shared.TeaserWidget(
+                actions=[
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='labore',
+                            en='modi',
+                        ),
+                        type=shared.WidgetActionType.LINK,
+                        url='aliquid',
+                    ),
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='cupiditate',
+                            en='quos',
+                        ),
+                        type=shared.WidgetActionType.LINK,
+                        url='magni',
+                    ),
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='assumenda',
+                            en='ipsam',
+                        ),
+                        type=shared.WidgetActionType.LINK,
+                        url='fugit',
+                    ),
+                    shared.WidgetAction(
+                        label=shared.WidgetActionLabel(
+                            de='dolorum',
+                            en='excepturi',
+                        ),
+                        type=shared.WidgetActionType.LINK,
+                        url='facilis',
+                    ),
+                ],
+                headline=shared.TeaserWidgetHeadline(
+                    de='tempore',
+                    en='labore',
                 ),
-                id='b99d488e-1e91-4e45-8ad2-abd44269802d',
-                list_index=369808,
-                sub_headline=shared.DocumentWidgetSubHeadline(
-                    de='alias',
-                    en='fugit',
+                id='f63c969e-9a3e-4fa7-bdfb-14cd66ae395e',
+                left=shared.TeaserWidgetLeft(
+                    show=False,
+                    show_button=False,
                 ),
-                type=shared.DocumentWidgetType.TEASER_WIDGET,
+                list_index=965417,
+                right=shared.TeaserWidgetRight(
+                    show=False,
+                    show_button=False,
+                ),
+                sub_headline=shared.TeaserWidgetSubHeadline(
+                    de='quidem',
+                    en='provident',
+                ),
+                type=shared.TeaserWidgetType.TEASER_WIDGET,
             ),
         ],
     ),

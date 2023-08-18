@@ -49,6 +49,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [get_contract](docs/sdks/ecp/README.md#get_contract) - getContract
 * [get_entities_by_identifiers](docs/sdks/ecp/README.md#get_entities_by_identifiers) - getEntitiesByIdentifiers
 * [get_file_by_id](docs/sdks/ecp/README.md#get_file_by_id) - getFileById
+* [get_files_count_by_entity](docs/sdks/ecp/README.md#get_files_count_by_entity) - getFileCountByEntity
 * [get_opportunity](docs/sdks/ecp/README.md#get_opportunity) - getOpportunity
 * [get_order](docs/sdks/ecp/README.md#get_order) - getOrder
 * [get_organization_settings](docs/sdks/ecp/README.md#get_organization_settings) - getOrganizationSettings

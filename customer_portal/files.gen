@@ -22,6 +22,7 @@ src/epilot/models/operations/getcontact.py
 src/epilot/models/operations/getcontract.py
 src/epilot/models/operations/getentitiesbyidentifiers.py
 src/epilot/models/operations/getfilebyid.py
+src/epilot/models/operations/getfilescountbyentity.py
 src/epilot/models/operations/getopportunity.py
 src/epilot/models/operations/getorder.py
 src/epilot/models/operations/getorganizationsettings.py
@@ -62,6 +63,7 @@ src/epilot/models/operations/__init__.py
 src/epilot/models/shared/errorresp.py
 src/epilot/models/shared/entityslug.py
 src/epilot/models/shared/deleteentityfile.py
+src/epilot/models/shared/entityfilecount.py
 src/epilot/models/shared/organizationsettings.py
 src/epilot/models/shared/portalconfig.py
 src/epilot/models/shared/origin.py
@@ -128,6 +130,8 @@ docs/models/operations/getfilebyidsecurity.md
 docs/models/operations/getfilebyidrequest.md
 docs/models/operations/getfilebyid200applicationjson.md
 docs/models/operations/getfilebyidresponse.md
+docs/models/operations/getfilescountbyentitysecurity.md
+docs/models/operations/getfilescountbyentityresponse.md
 docs/models/operations/getopportunitysecurity.md
 docs/models/operations/getopportunityrequest.md
 docs/models/operations/getopportunity200applicationjson.md
@@ -253,6 +257,7 @@ docs/models/operations/userexistsresponse.md
 docs/models/shared/errorresp.md
 docs/models/shared/entityslug.md
 docs/models/shared/deleteentityfile.md
+docs/models/shared/entityfilecount.md
 docs/models/shared/organizationsettingsautomationentitymapping.md
 docs/models/shared/organizationsettingsautomationpreview.md
 docs/models/shared/organizationsettingscentralinboxpreviewsetting.md

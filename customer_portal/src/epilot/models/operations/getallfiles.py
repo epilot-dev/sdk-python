@@ -22,6 +22,8 @@ class GetAllFilesSecurity:
 class GetAllFilesRequest:
     from_: float = dataclasses.field(metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
     size: float = dataclasses.field(metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    entity_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_ids', 'style': 'form', 'explode': True }})
+    r"""List of entity ids to filter the results"""
     
 
 

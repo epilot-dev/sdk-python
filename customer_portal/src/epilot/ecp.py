@@ -398,6 +398,40 @@ class Ecp:
         return res
 
     
+    def get_files_count_by_entity(self, security: operations.GetFilesCountByEntitySecurity) -> operations.GetFilesCountByEntityResponse:
+        r"""getFileCountByEntity
+        Fetch file counts for all ECP user related entities
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/portal/user/files/count-by-entity'
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetFilesCountByEntityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[list[shared.EntityFileCount]])
+                res.entity_file_counts = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def get_opportunity(self, request: operations.GetOpportunityRequest, security: operations.GetOpportunitySecurity) -> operations.GetOpportunityResponse:
         r"""getOpportunity
         Get an opportunity by id

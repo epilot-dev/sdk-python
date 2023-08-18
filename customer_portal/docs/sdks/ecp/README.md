@@ -17,6 +17,7 @@ APIs defined for a portal user
 * [get_contract](#get_contract) - getContract
 * [get_entities_by_identifiers](#get_entities_by_identifiers) - getEntitiesByIdentifiers
 * [get_file_by_id](#get_file_by_id) - getFileById
+* [get_files_count_by_entity](#get_files_count_by_entity) - getFileCountByEntity
 * [get_opportunity](#get_opportunity) - getOpportunity
 * [get_order](#get_order) - getOrder
 * [get_organization_settings](#get_organization_settings) - getOrganizationSettings
@@ -191,6 +192,11 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = operations.GetAllFilesRequest(
+    entity_ids=[
+        'distinctio',
+        'quibusdam',
+        'unde',
+    ],
     from_=0,
     size=0,
 )
@@ -366,9 +372,10 @@ s = epilot.Epilot()
 
 req = operations.GetEntitiesByIdentifiersRequest(
     request_body={
-        "distinctio": 'quibusdam',
-        "unde": 'nulla',
         "corrupti": 'illum',
+        "vel": 'error',
+        "deserunt": 'suscipit',
+        "iure": 'magnam',
     },
     slug=shared.EntitySlug.CONTACT,
 )
@@ -429,6 +436,39 @@ if res.get_file_by_id_200_application_json_object is not None:
 ### Response
 
 **[operations.GetFileByIDResponse](../../models/operations/getfilebyidresponse.md)**
+
+
+## get_files_count_by_entity
+
+Fetch file counts for all ECP user related entities
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+
+res = s.ecp.get_files_count_by_entity(operations.GetFilesCountByEntitySecurity(
+    portal_auth="",
+))
+
+if res.entity_file_counts is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `security`                                                                                           | [operations.GetFilesCountByEntitySecurity](../../models/operations/getfilescountbyentitysecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+
+
+### Response
+
+**[operations.GetFilesCountByEntityResponse](../../models/operations/getfilescountbyentityresponse.md)**
 
 
 ## get_opportunity
@@ -551,7 +591,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalConfigRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -621,7 +661,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalWidgetsRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
@@ -696,8 +736,8 @@ req = shared.SaveEntityFile(
     files=[
         shared.SaveEntityFileFiles(
             tags=[
-                'iure',
-                'magnam',
+                'suscipit',
+                'molestiae',
             ],
             access_control=shared.SaveEntityFileFilesAccessControl.PUBLIC_READ,
             document_type='12345',
@@ -710,7 +750,26 @@ req = shared.SaveEntityFile(
         ),
         shared.SaveEntityFileFiles(
             tags=[
-                'delectus',
+                'voluptatum',
+                'iusto',
+                'excepturi',
+                'nisi',
+            ],
+            access_control=shared.SaveEntityFileFilesAccessControl.PUBLIC_READ,
+            document_type='12345',
+            file_entity_id='12345',
+            filename='12345',
+            s3ref=shared.SaveEntityFileFilesS3ref(
+                bucket='12345',
+                key='12345',
+            ),
+        ),
+        shared.SaveEntityFileFiles(
+            tags=[
+                'ab',
+                'quis',
+                'veritatis',
+                'deserunt',
             ],
             access_control=shared.SaveEntityFileFilesAccessControl.PRIVATE,
             document_type='12345',
@@ -723,8 +782,8 @@ req = shared.SaveEntityFile(
         ),
         shared.SaveEntityFileFiles(
             tags=[
-                'molestiae',
-                'minus',
+                'repellendus',
+                'sapiente',
             ],
             access_control=shared.SaveEntityFileFilesAccessControl.PUBLIC_READ,
             document_type='12345',
@@ -772,9 +831,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "iusto": 'excepturi',
-    "nisi": 'recusandae',
-    "temporibus": 'ab',
+    "at": 'at',
 }
 
 res = s.ecp.update_contact(req, operations.UpdateContactSecurity(
@@ -812,8 +869,10 @@ s = epilot.Epilot()
 
 req = operations.UpdateContractRequest(
     request_body={
-        "veritatis": 'deserunt',
-        "perferendis": 'ipsam',
+        "molestiae": 'quod',
+        "quod": 'esse',
+        "totam": 'porro',
+        "dolorum": 'dicta',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -853,10 +912,9 @@ s = epilot.Epilot()
 
 req = operations.UpdateOpportunityRequest(
     request_body={
-        "sapiente": 'quo',
-        "odit": 'at',
-        "at": 'maiores',
-        "molestiae": 'quod',
+        "officia": 'occaecati',
+        "fugit": 'deleniti',
+        "hic": 'optio',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -896,10 +954,9 @@ s = epilot.Epilot()
 
 req = operations.UpdateOrderRequest(
     request_body={
-        "esse": 'totam',
-        "porro": 'dolorum',
-        "dicta": 'nam',
-        "officia": 'occaecati',
+        "beatae": 'commodi',
+        "molestiae": 'modi',
+        "qui": 'impedit',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -938,7 +995,9 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "deleniti": 'hic',
+    "esse": 'ipsum',
+    "excepturi": 'aspernatur',
+    "perferendis": 'ad',
 }
 
 res = s.ecp.update_portal_user(req, operations.UpdatePortalUserSecurity(
