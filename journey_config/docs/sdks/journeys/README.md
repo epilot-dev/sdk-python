@@ -4,6 +4,7 @@
 
 * [create_journey](#create_journey) - createJourney
 * [get_journey](#get_journey) - getJourney
+* [get_journey_products](#get_journey_products) - getJourneyProducts
 * [get_journeys_by_org_id](#get_journeys_by_org_id) - getJourneysByOrgId
 * [patch_update_journey](#patch_update_journey) - patchUpdateJourney
 * [remove_journey](#remove_journey) - removeJourney
@@ -91,6 +92,50 @@ if res.journey_response is not None:
 **[operations.GetJourneyResponse](../../models/operations/getjourneyresponse.md)**
 
 
+## get_journey_products
+
+Get products available in the journey by id
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = operations.GetJourneyProductsRequest(
+    city='South Paxton',
+    id='509cdffe-424f-457a-95c2-9708c304ce77',
+    org_id='placeat',
+    postal_code='45398-0306',
+    source='perferendis',
+    street='8971 Strosin Wall',
+    street_number='molestiae',
+)
+
+res = s.journeys.get_journey_products(req)
+
+if res.journey_products_response is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.GetJourneyProductsRequest](../../models/operations/getjourneyproductsrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+
+### Response
+
+**[operations.GetJourneyProductsResponse](../../models/operations/getjourneyproductsresponse.md)**
+
+
 ## get_journeys_by_org_id
 
 Get all journeys by organization id
@@ -146,8 +191,10 @@ s = epilot.Epilot(
 )
 
 req = {
-    "molestiae": 'minus',
-    "placeat": 'voluptatum',
+    "quod": 'esse',
+    "totam": 'porro',
+    "dolorum": 'dicta',
+    "nam": 'officia',
 }
 
 res = s.journeys.patch_update_journey(req)
@@ -264,8 +311,9 @@ s = epilot.Epilot(
 )
 
 req = {
-    "excepturi": 'nisi',
-    "recusandae": 'temporibus',
+    "fugit": 'deleniti',
+    "hic": 'optio',
+    "totam": 'beatae',
 }
 
 res = s.journeys.update_journey(req)

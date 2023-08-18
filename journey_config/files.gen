@@ -11,6 +11,7 @@ src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/operations/createjourney.py
 src/epilot/models/operations/getjourney.py
+src/epilot/models/operations/getjourneyproducts.py
 src/epilot/models/operations/getjourneysbyorgid.py
 src/epilot/models/operations/patchupdatejourney.py
 src/epilot/models/operations/removejourney.py
@@ -18,6 +19,7 @@ src/epilot/models/operations/searchjourneys.py
 src/epilot/models/operations/updatejourney.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/journeyresponse.py
+src/epilot/models/shared/journeyproductsresponse.py
 src/epilot/models/shared/getjourneysresponse.py
 src/epilot/models/shared/searchjourneysresponse.py
 src/epilot/models/shared/searchjourneysqueryrequest.py
@@ -30,6 +32,8 @@ USAGE.md
 docs/models/operations/createjourneyresponse.md
 docs/models/operations/getjourneyrequest.md
 docs/models/operations/getjourneyresponse.md
+docs/models/operations/getjourneyproductsrequest.md
+docs/models/operations/getjourneyproductsresponse.md
 docs/models/operations/getjourneysbyorgidrequest.md
 docs/models/operations/getjourneysbyorgidresponse.md
 docs/models/operations/patchupdatejourneyresponse.md
@@ -38,6 +42,8 @@ docs/models/operations/removejourneyresponse.md
 docs/models/operations/searchjourneysresponse.md
 docs/models/operations/updatejourneyresponse.md
 docs/models/shared/journeyresponse.md
+docs/models/shared/journeyproductsresponseprice.md
+docs/models/shared/journeyproductsresponse.md
 docs/models/shared/getjourneysresponse.md
 docs/models/shared/searchjourneysresponseresultscreatedby.md
 docs/models/shared/searchjourneysresponseresultsjourneyversion.md

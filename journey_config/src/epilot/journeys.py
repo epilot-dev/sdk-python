@@ -72,6 +72,35 @@ class Journeys:
         return res
 
     
+    def get_journey_products(self, request: operations.GetJourneyProductsRequest) -> operations.GetJourneyProductsResponse:
+        r"""getJourneyProducts
+        Get products available in the journey by id
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetJourneyProductsRequest, base_url, '/v1/journey/products/{id}', request)
+        headers = {}
+        query_params = utils.get_query_params(operations.GetJourneyProductsRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.client
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetJourneyProductsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[list[shared.JourneyProductsResponse]])
+                res.journey_products_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def get_journeys_by_org_id(self, request: operations.GetJourneysByOrgIDRequest) -> operations.GetJourneysByOrgIDResponse:
         r"""getJourneysByOrgId
         Get all journeys by organization id

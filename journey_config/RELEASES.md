@@ -211,3 +211,11 @@ Based on:
 - Speakeasy CLI 1.72.0 (2.84.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.23.0] journey_config
+
+## 2023-08-18 00:22:52
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/journey-config.yaml
+- Speakeasy CLI 1.73.1 (2.84.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.23.1] journey_config

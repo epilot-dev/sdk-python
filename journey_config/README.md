@@ -43,6 +43,7 @@ if res.journey_response is not None:
 
 * [create_journey](docs/sdks/journeys/README.md#create_journey) - createJourney
 * [get_journey](docs/sdks/journeys/README.md#get_journey) - getJourney
+* [get_journey_products](docs/sdks/journeys/README.md#get_journey_products) - getJourneyProducts
 * [get_journeys_by_org_id](docs/sdks/journeys/README.md#get_journeys_by_org_id) - getJourneysByOrgId
 * [patch_update_journey](docs/sdks/journeys/README.md#patch_update_journey) - patchUpdateJourney
 * [remove_journey](docs/sdks/journeys/README.md#remove_journey) - removeJourney
