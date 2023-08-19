@@ -57,3 +57,11 @@ Based on:
 - Speakeasy CLI 1.72.0 (2.84.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.4.0] access_token
+
+## 2023-08-19 00:34:32
+### Changes
+Based on:
+- OpenAPI Doc 0.2.0 https://docs.api.epilot.io/access-token.yaml
+- Speakeasy CLI 1.74.3 (2.86.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.4.1] access_token
