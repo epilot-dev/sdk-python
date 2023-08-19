@@ -8,6 +8,7 @@ Files
 
 * [delete_file](#delete_file) - deleteFile
 * [download_file](#download_file) - downloadFile
+* [download_files](#download_files) - downloadFiles
 * [download_s3_file](#download_s3_file) - downloadS3File
 * [preview_file](#preview_file) - previewFile
 * [preview_public_file](#preview_public_file) - previewPublicFile
@@ -97,6 +98,55 @@ if res.download_file_200_application_json_object is not None:
 **[operations.DownloadFileResponse](../../models/operations/downloadfileresponse.md)**
 
 
+## download_files
+
+Generate pre-signed download S3 urls for multiple files
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = [
+    shared.DownloadFilesPayload(
+        id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
+        version=0,
+    ),
+    shared.DownloadFilesPayload(
+        id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
+        version=0,
+    ),
+    shared.DownloadFilesPayload(
+        id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
+        version=0,
+    ),
+]
+
+res = s.files.download_files(req)
+
+if res.download_files_200_application_json_objects is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                              | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `request`                                              | [list[shared.DownloadFilesPayload]](../../models//.md) | :heavy_check_mark:                                     | The request object to use for the request.             |
+
+
+### Response
+
+**[operations.DownloadFilesResponse](../../models/operations/downloadfilesresponse.md)**
+
+
 ## download_s3_file
 
 Generate pre-signed download S3 url for a file
@@ -115,8 +165,8 @@ s = epilot.Epilot(
 
 req = operations.DownloadS3FileRequest(
     attachment=False,
-    s3_bucket='provident',
-    s3_key='distinctio',
+    s3_bucket='distinctio',
+    s3_key='quibusdam',
 )
 
 res = s.files.download_s3_file(req)
@@ -154,10 +204,10 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewFileRequest(
-    h=844266,
+    h=602763,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-    version=602763,
-    w=857946,
+    version=857946,
+    w=544883,
 )
 
 res = s.files.preview_file(req)
@@ -195,11 +245,11 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewPublicFileRequest(
-    h=544883,
+    h=847252,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-    org_id='illum',
-    version=423655,
-    w=623564,
+    org_id='vel',
+    version=623564,
+    w=645894,
 )
 
 res = s.files.preview_public_file(req)
@@ -241,8 +291,8 @@ req = operations.PreviewS3FileRequest(
         bucket='epilot-files-prod',
         key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
-    h=645894,
-    w=384382,
+    h=384382,
+    w=437587,
 )
 
 res = s.files.preview_s3_file(req)
@@ -285,8 +335,8 @@ s = epilot.Epilot(
 )
 
 req = {
-    "magnam": 'debitis',
-    "ipsa": 'delectus',
+    "debitis": 'ipsa',
+    "delectus": 'tempora',
 }
 
 res = s.files.save_file(req)

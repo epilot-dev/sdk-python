@@ -44,6 +44,7 @@ if res.status_code == 200:
 
 * [delete_file](docs/sdks/files/README.md#delete_file) - deleteFile
 * [download_file](docs/sdks/files/README.md#download_file) - downloadFile
+* [download_files](docs/sdks/files/README.md#download_files) - downloadFiles
 * [download_s3_file](docs/sdks/files/README.md#download_s3_file) - downloadS3File
 * [preview_file](docs/sdks/files/README.md#preview_file) - previewFile
 * [preview_public_file](docs/sdks/files/README.md#preview_public_file) - previewPublicFile

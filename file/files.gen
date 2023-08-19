@@ -11,6 +11,7 @@ src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/operations/deletefile.py
 src/epilot/models/operations/downloadfile.py
+src/epilot/models/operations/downloadfiles.py
 src/epilot/models/operations/downloads3file.py
 src/epilot/models/operations/previewfile.py
 src/epilot/models/operations/previewpublicfile.py
@@ -21,6 +22,7 @@ src/epilot/models/operations/uploadfilepublic.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/deletefilepayload.py
 src/epilot/models/shared/s3reference.py
+src/epilot/models/shared/downloadfilespayload.py
 src/epilot/models/shared/fileentity.py
 src/epilot/models/shared/uploadfilepayload.py
 src/epilot/models/shared/security.py
@@ -33,6 +35,8 @@ docs/models/operations/deletefileresponse.md
 docs/models/operations/downloadfilerequest.md
 docs/models/operations/downloadfile200applicationjson.md
 docs/models/operations/downloadfileresponse.md
+docs/models/operations/downloadfiles200applicationjson.md
+docs/models/operations/downloadfilesresponse.md
 docs/models/operations/downloads3filerequest.md
 docs/models/operations/downloads3file200applicationjson.md
 docs/models/operations/downloads3fileresponse.md
@@ -52,6 +56,7 @@ docs/models/operations/uploadfilepublic201applicationjson.md
 docs/models/operations/uploadfilepublicresponse.md
 docs/models/shared/deletefilepayload.md
 docs/models/shared/s3reference.md
+docs/models/shared/downloadfilespayload.md
 docs/models/shared/fileentityaccesscontrol.md
 docs/models/shared/fileentitytype.md
 docs/models/shared/fileentityversions.md

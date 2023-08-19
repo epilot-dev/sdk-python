@@ -2,6 +2,7 @@
 
 from .deletefile import *
 from .downloadfile import *
+from .downloadfiles import *
 from .downloads3file import *
 from .previewfile import *
 from .previewpublicfile import *
@@ -10,4 +11,4 @@ from .savefile import *
 from .uploadfile import *
 from .uploadfilepublic import *
 
-__all__ = ["DeleteFileResponse","DownloadFile200ApplicationJSON","DownloadFileRequest","DownloadFileResponse","DownloadS3File200ApplicationJSON","DownloadS3FileRequest","DownloadS3FileResponse","PreviewFileRequest","PreviewFileResponse","PreviewPublicFileRequest","PreviewPublicFileResponse","PreviewS3FileRequest","PreviewS3FileResponse","SaveFileResponse","UploadFile201ApplicationJSON","UploadFile201ApplicationJSONS3ref","UploadFilePublic201ApplicationJSON","UploadFilePublic201ApplicationJSONS3ref","UploadFilePublicResponse","UploadFileRequest","UploadFileResponse"]
+__all__ = ["DeleteFileResponse","DownloadFile200ApplicationJSON","DownloadFileRequest","DownloadFileResponse","DownloadFiles200ApplicationJSON","DownloadFilesResponse","DownloadS3File200ApplicationJSON","DownloadS3FileRequest","DownloadS3FileResponse","PreviewFileRequest","PreviewFileResponse","PreviewPublicFileRequest","PreviewPublicFileResponse","PreviewS3FileRequest","PreviewS3FileResponse","SaveFileResponse","UploadFile201ApplicationJSON","UploadFile201ApplicationJSONS3ref","UploadFilePublic201ApplicationJSON","UploadFilePublic201ApplicationJSONS3ref","UploadFilePublicResponse","UploadFileRequest","UploadFileResponse"]
