@@ -6,7 +6,7 @@ from epilot.models import errors, operations, shared
 from typing import Any, Optional
 
 class Files:
-    r"""Files"""
+    r"""Files API"""
     sdk_configuration: SDKConfiguration
 
     def __init__(self, sdk_config: SDKConfiguration) -> None:
@@ -194,6 +194,29 @@ class Files:
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.PreviewS3FileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+
+        return res
+
+    
+    def preview_s3_file_get(self, request: operations.PreviewS3FileGetRequest) -> operations.PreviewS3FileGetResponse:
+        r"""previewS3FileGet
+        Get thumbnail preview from an s3 reference for a file entity
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v1/files:previewS3'
+        headers = {}
+        query_params = utils.get_query_params(operations.PreviewS3FileGetRequest, request)
+        headers['Accept'] = '*/*'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.PreviewS3FileGetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
 
         return res

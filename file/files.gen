@@ -1,5 +1,6 @@
 src/epilot/sdkconfiguration.py
 src/epilot/files.py
+src/epilot/session.py
 src/epilot/sdk.py
 pylintrc
 setup.py
@@ -16,9 +17,12 @@ src/epilot/models/operations/downloads3file.py
 src/epilot/models/operations/previewfile.py
 src/epilot/models/operations/previewpublicfile.py
 src/epilot/models/operations/previews3file.py
+src/epilot/models/operations/previews3fileget.py
 src/epilot/models/operations/savefile.py
 src/epilot/models/operations/uploadfile.py
 src/epilot/models/operations/uploadfilepublic.py
+src/epilot/models/operations/deletesession.py
+src/epilot/models/operations/getsession.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/deletefilepayload.py
 src/epilot/models/shared/s3reference.py
@@ -30,6 +34,7 @@ src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
 docs/sdks/epilot/README.md
 docs/sdks/files/README.md
+docs/sdks/session/README.md
 USAGE.md
 docs/models/operations/deletefileresponse.md
 docs/models/operations/downloadfilerequest.md
@@ -46,6 +51,8 @@ docs/models/operations/previewpublicfilerequest.md
 docs/models/operations/previewpublicfileresponse.md
 docs/models/operations/previews3filerequest.md
 docs/models/operations/previews3fileresponse.md
+docs/models/operations/previews3filegetrequest.md
+docs/models/operations/previews3filegetresponse.md
 docs/models/operations/savefileresponse.md
 docs/models/operations/uploadfilerequest.md
 docs/models/operations/uploadfile201applicationjsons3ref.md
@@ -54,6 +61,8 @@ docs/models/operations/uploadfileresponse.md
 docs/models/operations/uploadfilepublic201applicationjsons3ref.md
 docs/models/operations/uploadfilepublic201applicationjson.md
 docs/models/operations/uploadfilepublicresponse.md
+docs/models/operations/deletesessionresponse.md
+docs/models/operations/getsessionresponse.md
 docs/models/shared/deletefilepayload.md
 docs/models/shared/s3reference.md
 docs/models/shared/downloadfilespayload.md

@@ -7,7 +7,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 

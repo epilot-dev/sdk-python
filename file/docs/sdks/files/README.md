@@ -2,7 +2,7 @@
 
 ## Overview
 
-Files
+Files API
 
 ### Available Operations
 
@@ -13,6 +13,7 @@ Files
 * [preview_file](#preview_file) - previewFile
 * [preview_public_file](#preview_public_file) - previewPublicFile
 * [preview_s3_file](#preview_s3_file) - previewS3File
+* [preview_s3_file_get](#preview_s3_file_get) - previewS3FileGet
 * [save_file](#save_file) - saveFile
 * [upload_file](#upload_file) - uploadFile
 * [upload_file_public](#upload_file_public) - uploadFilePublic
@@ -29,7 +30,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
@@ -70,7 +71,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
@@ -110,7 +111,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
@@ -159,7 +160,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
@@ -199,7 +200,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
@@ -240,7 +241,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
@@ -282,7 +283,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
@@ -313,6 +314,47 @@ if res.status_code == 200:
 **[operations.PreviewS3FileResponse](../../models/operations/previews3fileresponse.md)**
 
 
+## preview_s3_file_get
+
+Get thumbnail preview from an s3 reference for a file entity
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="",
+    ),
+)
+
+req = operations.PreviewS3FileGetRequest(
+    bucket='magnam',
+    h=891773,
+    key='ipsa',
+    w=963663,
+)
+
+res = s.files.preview_s3_file_get(req)
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.PreviewS3FileGetRequest](../../models/operations/previews3filegetrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+
+
+### Response
+
+**[operations.PreviewS3FileGetResponse](../../models/operations/previews3filegetresponse.md)**
+
+
 ## save_file
 
 Create / Update a permanent File entity
@@ -330,13 +372,13 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
 req = {
-    "debitis": 'ipsa',
-    "delectus": 'tempora',
+    "suscipit": 'molestiae',
+    "minus": 'placeat',
 }
 
 res = s.files.save_file(req)
@@ -372,7 +414,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 
@@ -417,7 +459,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        cookie_auth="",
     ),
 )
 

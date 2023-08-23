@@ -3,13 +3,16 @@
 import requests as requests_http
 from .files import Files
 from .sdkconfiguration import SDKConfiguration
+from .session import Session
 from epilot import utils
 from epilot.models import shared
 
 class Epilot:
     r"""File API: Upload and manage all files stored in epilot"""
     files: Files
-    r"""Files"""
+    r"""Files API"""
+    session: Session
+    r"""Session API for cookie authentication"""
 
     sdk_configuration: SDKConfiguration
 
@@ -48,4 +51,5 @@ class Epilot:
     
     def _init_sdks(self):
         self.files = Files(self.sdk_configuration)
+        self.session = Session(self.sdk_configuration)
     
