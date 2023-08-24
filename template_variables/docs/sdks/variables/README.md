@@ -128,6 +128,7 @@ req = operations.GetVariableContextRequestBody(
         ],
         template_type=shared.TemplateType.EMAIL,
         user_id='50001',
+        user_org_id='729224',
     ),
 )
 
@@ -197,6 +198,7 @@ req = operations.ReplaceTemplatesRequestBody(
         ],
         template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
+        user_org_id='729224',
     ),
 )
 

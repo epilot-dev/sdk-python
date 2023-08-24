@@ -42,5 +42,7 @@ class VariableParameters:
     r"""The tags of email template"""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
     r"""User ID"""
+    user_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_org_id'), 'exclude': lambda f: f is None }})
+    r"""Organization ID of the user"""
     
 
