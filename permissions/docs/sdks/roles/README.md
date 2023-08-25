@@ -172,34 +172,34 @@ req = operations.PutRoleRequest(
             shared.Grant(
                 action='entity-read',
                 conditions=[
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'nulla',
                             'corrupti',
                             'illum',
                         ],
                     ),
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'error',
                             'deserunt',
                         ],
                     ),
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'iure',
                             'magnam',
                         ],
                     ),
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'ipsa',
                             'delectus',
@@ -214,9 +214,9 @@ req = operations.PutRoleRequest(
             shared.Grant(
                 action='entity-read',
                 conditions=[
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'voluptatum',
                             'iusto',
@@ -224,9 +224,9 @@ req = operations.PutRoleRequest(
                             'nisi',
                         ],
                     ),
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'temporibus',
                             'ab',
@@ -234,18 +234,18 @@ req = operations.PutRoleRequest(
                             'veritatis',
                         ],
                     ),
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'perferendis',
                             'ipsam',
                             'repellendus',
                         ],
                     ),
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'quo',
                             'odit',
@@ -260,9 +260,9 @@ req = operations.PutRoleRequest(
             shared.Grant(
                 action='entity-read',
                 conditions=[
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'quod',
                             'esse',
@@ -270,9 +270,9 @@ req = operations.PutRoleRequest(
                             'porro',
                         ],
                     ),
-                    shared.EqualsCondition(
+                    shared.GrantCondition(
                         attribute='workflows.primary.task_name',
-                        operation=shared.EqualsConditionOperation.EQUALS,
+                        operation=shared.GrantConditionOperation.EQUALS,
                         values=[
                             'dicta',
                             'nam',
