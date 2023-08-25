@@ -12,7 +12,7 @@ Enables the creation of a new opportunity. During the creation of an opportunity
 The `opportunity_number` can be used to universally identify an opportunity within epilot platform.
 
 
-> :warning: **DEPRECATED**: this method will be removed in a future release, please migrate away from it as soon as possible.
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
