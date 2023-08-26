@@ -38,6 +38,7 @@ src/epilot/models/operations/updaterelation.py
 src/epilot/models/operations/createsavedview.py
 src/epilot/models/operations/deletesavedview.py
 src/epilot/models/operations/getsavedview.py
+src/epilot/models/operations/listfavoriteviewsforuser.py
 src/epilot/models/operations/listsavedviews.py
 src/epilot/models/operations/updatesavedview.py
 src/epilot/models/operations/deleteschema.py
@@ -166,6 +167,8 @@ docs/models/operations/deletesavedviewresponse.md
 docs/models/operations/getsavedviewrequest.md
 docs/models/operations/getsavedview200applicationjson.md
 docs/models/operations/getsavedviewresponse.md
+docs/models/operations/listfavoriteviewsforuser200applicationjson.md
+docs/models/operations/listfavoriteviewsforuserresponse.md
 docs/models/operations/listsavedviews200applicationjson.md
 docs/models/operations/listsavedviewsresponse.md
 docs/models/operations/updatesavedviewrequest.md

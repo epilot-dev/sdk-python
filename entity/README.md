@@ -81,6 +81,7 @@ if res.activity_item is not None:
 * [create_saved_view](docs/sdks/savedviews/README.md#create_saved_view) - createSavedView
 * [delete_saved_view](docs/sdks/savedviews/README.md#delete_saved_view) - deleteSavedView
 * [get_saved_view](docs/sdks/savedviews/README.md#get_saved_view) - getSavedView
+* [list_favorite_views_for_user](docs/sdks/savedviews/README.md#list_favorite_views_for_user) - listFavoriteViewsForUser
 * [list_saved_views](docs/sdks/savedviews/README.md#list_saved_views) - listSavedViews
 * [update_saved_view](docs/sdks/savedviews/README.md#update_saved_view) - updateSavedView
 

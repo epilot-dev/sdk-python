@@ -170,6 +170,7 @@ req = operations.GetEntityActivityFeedRequest(
     before=dateutil.parser.isoparse('2022-08-14T00:52:14.624Z'),
     from_=618016,
     id='b6e21419-5989-40af-a563-e2516fe4c8b7',
+    include_relations=False,
     size=100226,
     slug='contact',
     type='SyncActivity',

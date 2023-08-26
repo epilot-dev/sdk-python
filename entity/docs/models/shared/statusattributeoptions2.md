@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `title`            | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-| `value`            | *str*              | :heavy_check_mark: | N/A                |
+| Field                             | Type                              | Required                          | Description                       |
+| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
+| `title`                           | *Optional[str]*                   | :heavy_minus_sign:                | The displayed title of the option |
+| `value`                           | *str*                             | :heavy_check_mark:                | The stored value of the option    |

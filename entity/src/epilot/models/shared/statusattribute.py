@@ -49,7 +49,9 @@ class StatusAttributeInfoHelpers:
 @dataclasses.dataclass
 class StatusAttributeOptions2:
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
+    r"""The stored value of the option"""
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
+    r"""The displayed title of the option"""
     
 
 

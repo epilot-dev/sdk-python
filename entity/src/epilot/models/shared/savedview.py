@@ -28,6 +28,8 @@ class SavedView:
     slug: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""list of schemas a view can belong to"""
     ui_config: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ui_config') }})
+    is_favorited_by: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isFavoritedBy'), 'exclude': lambda f: f is None }})
+    r"""List of users (IDs) that have favorited the view"""
     org: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org'), 'exclude': lambda f: f is None }})
     r"""Organisation ID a view belongs to"""
     shared: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shared'), 'exclude': lambda f: f is None }})

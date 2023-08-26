@@ -9,6 +9,7 @@ Saved Views for Entities
 * [create_saved_view](#create_saved_view) - createSavedView
 * [delete_saved_view](#delete_saved_view) - deleteSavedView
 * [get_saved_view](#get_saved_view) - getSavedView
+* [list_favorite_views_for_user](#list_favorite_views_for_user) - listFavoriteViewsForUser
 * [list_saved_views](#list_saved_views) - listSavedViews
 * [update_saved_view](#update_saved_view) - updateSavedView
 
@@ -35,6 +36,11 @@ req = shared.SavedView(
         "facere": 'veritatis',
         "consequuntur": 'quasi',
     },
+    is_favorited_by=[
+        '11701',
+        '11701',
+        '11701',
+    ],
     name='View listing German',
     org='66',
     shared=True,
@@ -44,9 +50,8 @@ req = shared.SavedView(
         'contact',
     ],
     ui_config={
-        "aliquid": 'tenetur',
-        "quae": 'earum',
-        "vel": 'in',
+        "tenetur": 'quae',
+        "earum": 'vel',
     },
 )
 
@@ -85,7 +90,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteSavedViewRequest(
-    id='4bdb04f1-5756-4082-968e-a19f1d170513',
+    id='74bdb04f-1575-4608-ad68-ea19f1d17051',
 )
 
 res = s.saved_views.delete_saved_view(req)
@@ -123,7 +128,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSavedViewRequest(
-    id='39d08086-a184-4039-8c26-071f93f5f064',
+    id='339d0808-6a18-4403-94c2-6071f93f5f06',
 )
 
 res = s.saved_views.get_saved_view(req)
@@ -142,6 +147,35 @@ if res.get_saved_view_200_application_json_object is not None:
 ### Response
 
 **[operations.GetSavedViewResponse](../../models/operations/getsavedviewresponse.md)**
+
+
+## list_favorite_views_for_user
+
+Get the Favorite Saved Views for user based on the schema
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+
+res = s.saved_views.list_favorite_views_for_user()
+
+if res.list_favorite_views_for_user_200_application_json_object is not None:
+    # handle response
+```
+
+
+### Response
+
+**[operations.ListFavoriteViewsForUserResponse](../../models/operations/listfavoriteviewsforuserresponse.md)**
 
 
 ## list_saved_views
@@ -194,6 +228,9 @@ req = operations.UpdateSavedViewRequest(
         created_by=shared.SavedViewCreatedBy1(
             user_id='10598',
         ),
+        is_favorited_by=[
+            '11701',
+        ],
         name='View listing German',
         org='66',
         shared=True,
