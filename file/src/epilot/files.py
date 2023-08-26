@@ -222,7 +222,7 @@ class Files:
         return res
 
     
-    def save_file(self, request: dict[str, Any]) -> operations.SaveFileResponse:
+    def save_file(self, request: Any) -> operations.SaveFileResponse:
         r"""saveFile
         Create / Update a permanent File entity
 

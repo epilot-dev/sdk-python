@@ -377,8 +377,8 @@ s = epilot.Epilot(
 )
 
 req = {
-    "suscipit": 'molestiae',
-    "minus": 'placeat',
+    "molestiae": 'minus',
+    "placeat": 'voluptatum',
 }
 
 res = s.files.save_file(req)
@@ -391,7 +391,7 @@ if res.file_entity is not None:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
