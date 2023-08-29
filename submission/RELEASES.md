@@ -433,3 +433,11 @@ Based on:
 - Speakeasy CLI 1.74.16 (2.88.2) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.42.0] submission
+
+## 2023-08-29 01:09:28
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/submission-api.yaml
+- Speakeasy CLI 1.74.17 (2.88.5) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.42.1] submission
