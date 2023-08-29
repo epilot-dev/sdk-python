@@ -770,112 +770,74 @@ req = operations.UpsertPortalWidgetRequest(
             shared.TeaserWidget(
                 actions=[
                     shared.WidgetAction(
+                        id='019da1ff-e78f-4097-b007-4f15471b5e6e',
                         label=shared.WidgetActionLabel(
-                            de='aut',
-                            en='quasi',
+                            de='quae',
+                            en='ipsum',
                         ),
                         type=shared.WidgetActionType.JOURNEY,
-                        url='temporibus',
+                        url='molestias',
                     ),
                     shared.WidgetAction(
+                        id='9d488e1e-91e4-450a-92ab-d44269802d50',
                         label=shared.WidgetActionLabel(
-                            de='laborum',
-                            en='quasi',
+                            de='fugit',
+                            en='dolorum',
                         ),
                         type=shared.WidgetActionType.JOURNEY,
-                        url='voluptatibus',
+                        url='tempora',
                     ),
                     shared.WidgetAction(
+                        id='bb4f63c9-69e9-4a3e-ba77-dfb14cd66ae3',
                         label=shared.WidgetActionLabel(
-                            de='vero',
-                            en='nihil',
+                            de='occaecati',
+                            en='enim',
                         ),
                         type=shared.WidgetActionType.JOURNEY,
-                        url='voluptatibus',
+                        url='delectus',
                     ),
                     shared.WidgetAction(
+                        id='b9ba88f3-a669-4970-b4ba-4469b6e21419',
                         label=shared.WidgetActionLabel(
-                            de='ipsa',
-                            en='omnis',
+                            de='ullam',
+                            en='provident',
                         ),
-                        type=shared.WidgetActionType.LINK,
-                        url='cum',
+                        type=shared.WidgetActionType.JOURNEY,
+                        url='sint',
                     ),
                 ],
                 headline=shared.TeaserWidgetHeadline(
-                    de='perferendis',
-                    en='doloremque',
+                    de='accusantium',
+                    en='mollitia',
                 ),
-                id='74f15471-b5e6-4e13-b99d-488e1e91e450',
+                id='fa563e25-16fe-44c8-b711-e5b7fd2ed028',
                 left=shared.TeaserWidgetLeft(
                     show=False,
                     show_button=False,
                 ),
-                list_index=667411,
+                list_index=615560,
                 right=shared.TeaserWidgetRight(
                     show=False,
                     show_button=False,
                 ),
                 sub_headline=shared.TeaserWidgetSubHeadline(
-                    de='quibusdam',
-                    en='explicabo',
+                    de='magni',
+                    en='sunt',
                 ),
                 type=shared.TeaserWidgetType.TEASER_WIDGET,
             ),
-            shared.TeaserWidget(
-                actions=[
-                    shared.WidgetAction(
-                        label=shared.WidgetActionLabel(
-                            de='labore',
-                            en='modi',
-                        ),
-                        type=shared.WidgetActionType.LINK,
-                        url='aliquid',
-                    ),
-                    shared.WidgetAction(
-                        label=shared.WidgetActionLabel(
-                            de='cupiditate',
-                            en='quos',
-                        ),
-                        type=shared.WidgetActionType.LINK,
-                        url='magni',
-                    ),
-                    shared.WidgetAction(
-                        label=shared.WidgetActionLabel(
-                            de='assumenda',
-                            en='ipsam',
-                        ),
-                        type=shared.WidgetActionType.LINK,
-                        url='fugit',
-                    ),
-                    shared.WidgetAction(
-                        label=shared.WidgetActionLabel(
-                            de='dolorum',
-                            en='excepturi',
-                        ),
-                        type=shared.WidgetActionType.LINK,
-                        url='facilis',
-                    ),
-                ],
-                headline=shared.TeaserWidgetHeadline(
-                    de='tempore',
-                    en='labore',
+            shared.DocumentWidget(
+                headline=shared.DocumentWidgetHeadline(
+                    de='pariatur',
+                    en='maxime',
                 ),
-                id='f63c969e-9a3e-4fa7-bdfb-14cd66ae395e',
-                left=shared.TeaserWidgetLeft(
-                    show=False,
-                    show_button=False,
+                id='692601fb-576b-40d5-b0d3-0c5fbb258705',
+                list_index=199996,
+                sub_headline=shared.DocumentWidgetSubHeadline(
+                    de='eos',
+                    en='perferendis',
                 ),
-                list_index=965417,
-                right=shared.TeaserWidgetRight(
-                    show=False,
-                    show_button=False,
-                ),
-                sub_headline=shared.TeaserWidgetSubHeadline(
-                    de='quidem',
-                    en='provident',
-                ),
-                type=shared.TeaserWidgetType.TEASER_WIDGET,
+                type=shared.DocumentWidgetType.ACTION_WIDGET,
             ),
         ],
     ),
