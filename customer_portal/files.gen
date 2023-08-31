@@ -341,3 +341,4 @@ docs/models/shared/upsertportalconfig.md
 docs/models/shared/createuserrequest.md
 docs/models/shared/contactcountrequest.md
 docs/models/shared/security.md
+.gitattributes
