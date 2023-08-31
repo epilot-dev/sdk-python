@@ -27,3 +27,4 @@ docs/models/operations/gettokenresponse.md
 docs/models/operations/gettokenv2security.md
 docs/models/operations/gettokenv2200applicationjson.md
 docs/models/operations/gettokenv2response.md
+.gitattributes
