@@ -21,3 +21,4 @@ USAGE.md
 docs/models/operations/createsubmissionresponse.md
 docs/models/shared/submissionpayload.md
 docs/models/shared/optin.md
+.gitattributes
