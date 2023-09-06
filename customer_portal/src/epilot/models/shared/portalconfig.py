@@ -85,6 +85,17 @@ class PortalConfigEntityIdentifiers:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
+class PortalConfigFeatureSettings:
+    r"""Feature settings for the portal"""
+    start_page: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_page'), 'exclude': lambda f: f is None }})
+    r"""Start page feature flag"""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
 class PortalConfigImages:
     r"""Teaser & Banner Image web links"""
     order_left_teaser: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderLeftTeaser'), 'exclude': lambda f: f is None }})
@@ -167,6 +178,8 @@ class PortalConfig:
     r"""Journey actions allowed on an entity by a portal user"""
     entity_identifiers: Optional[PortalConfigEntityIdentifiers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_identifiers'), 'exclude': lambda f: f is None }})
     r"""Identifiers used to identify an entity by a portal user"""
+    feature_settings: Optional[PortalConfigFeatureSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_settings'), 'exclude': lambda f: f is None }})
+    r"""Feature settings for the portal"""
     grants: Optional[list[shared_grant.Grant]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants'), 'exclude': lambda f: f is None }})
     r"""Permissions granted to a portal user while accessing entities"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})

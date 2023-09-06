@@ -284,6 +284,7 @@ docs/models/shared/portalconfigentityactionsactionlabel.md
 docs/models/shared/portalconfigentityactions.md
 docs/models/shared/portalconfigentityidentifierstype.md
 docs/models/shared/portalconfigentityidentifiers.md
+docs/models/shared/portalconfigfeaturesettings.md
 docs/models/shared/portalconfigimages.md
 docs/models/shared/portalconfigorgsettingscanary.md
 docs/models/shared/portalconfigorgsettingsreleasecandidate.md
@@ -335,6 +336,7 @@ docs/models/shared/upsertportalconfigentityactionsactionlabel.md
 docs/models/shared/upsertportalconfigentityactions.md
 docs/models/shared/upsertportalconfigentityidentifierstype.md
 docs/models/shared/upsertportalconfigentityidentifiers.md
+docs/models/shared/upsertportalconfigfeaturesettings.md
 docs/models/shared/upsertportalconfigimages.md
 docs/models/shared/upsertportalconfigselfregistrationsetting.md
 docs/models/shared/upsertportalconfig.md

@@ -706,6 +706,9 @@ req = operations.UpsertPortalRequest(
                 is_enabled=False,
             ),
         ),
+        feature_settings=shared.UpsertPortalConfigFeatureSettings(
+            start_page=False,
+        ),
         grants=[
             shared.Grant(
                 action='entity-read',
