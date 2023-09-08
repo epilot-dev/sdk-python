@@ -7,7 +7,6 @@ from ..shared import entityoperation as shared_entityoperation
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
-from marshmallow import fields
 from typing import Any, Optional
 
 
@@ -15,7 +14,6 @@ from typing import Any, Optional
 
 @dataclasses.dataclass
 class ActivityItem:
-    r"""Success"""
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""Message for activity. Supports handlebars syntax."""
     title: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
@@ -28,6 +26,6 @@ class ActivityItem:
     operations_total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operations_total'), 'exclude': lambda f: f is None }})
     r"""Count of total operations attached to this activity"""
     payload: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})
-    timestamp: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestamp'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})
+    timestamp: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestamp'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     
 

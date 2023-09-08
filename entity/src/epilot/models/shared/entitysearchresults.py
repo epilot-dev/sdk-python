@@ -17,7 +17,6 @@ class EntitySearchResultsAggregations:
 
 @dataclasses.dataclass
 class EntitySearchResults:
-    r"""Success"""
     aggregations: Optional[EntitySearchResultsAggregations] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aggregations'), 'exclude': lambda f: f is None }})
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     results: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})

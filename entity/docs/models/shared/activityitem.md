@@ -1,7 +1,5 @@
 # ActivityItem
 
-Success
-
 
 ## Fields
 

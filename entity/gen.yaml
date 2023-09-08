@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: da8519d9328e11a8d680212f59139216
+  docChecksum: d9e9a66c98b8d69e3c80131964ce5f1f
   docVersion: 1.0.0
-  speakeasyVersion: 1.78.3
-  generationVersion: 2.96.3
+  speakeasyVersion: 1.82.0
+  generationVersion: 2.107.0
 generation:
   sdkClassName: epilot
   sdkFlattening: true
@@ -15,7 +15,7 @@ features:
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
 python:
-  version: 1.23.2
+  version: 1.23.3
   author: epilot
   description: Python Client SDK for Epilot
   maxMethodParams: 0

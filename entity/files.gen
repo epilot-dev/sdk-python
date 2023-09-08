@@ -102,6 +102,7 @@ src/epilot/models/shared/invitationemailattribute.py
 src/epilot/models/shared/automationattribute.py
 src/epilot/models/shared/internaluserattribute.py
 src/epilot/models/shared/purposeattribute.py
+src/epilot/models/shared/partnerorganisationattribute.py
 src/epilot/models/shared/taxonomyclassification.py
 src/epilot/models/shared/entityschema.py
 src/epilot/models/shared/taxonomy.py
@@ -375,6 +376,10 @@ docs/models/shared/purposeattributeconstraints.md
 docs/models/shared/purposeattributeinfohelpers.md
 docs/models/shared/purposeattributetype.md
 docs/models/shared/purposeattribute.md
+docs/models/shared/partnerorganisationattributeconstraints.md
+docs/models/shared/partnerorganisationattributeinfohelpers.md
+docs/models/shared/partnerorganisationattributetype.md
+docs/models/shared/partnerorganisationattribute.md
 docs/models/shared/taxonomyclassification.md
 docs/models/shared/entityschemagroupsettingsinfotooltiptitle.md
 docs/models/shared/entityschemagroupsettings.md

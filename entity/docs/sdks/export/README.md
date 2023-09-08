@@ -28,20 +28,18 @@ req = operations.ExportEntitiesRequest(
     entity_search_params=shared.EntitySearchParams(
         aggs=shared.EntitySearchParamsAggs(),
         fields_=[
-            'a',
-            'esse',
-            'harum',
+            'quos',
         ],
-        from_=483409,
+        from_=574325,
         hydrate=False,
         include_scores=False,
         q='_schema:contact AND status:active',
-        size=215507,
+        size=33625,
         sort='_created_at:desc',
     ),
     is_template=False,
     job_id='abc123',
-    language='quisquam',
+    language='mollitia',
 )
 
 res = s.export.export_entities(req)

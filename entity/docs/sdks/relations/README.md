@@ -32,43 +32,15 @@ req = operations.AddRelationsRequest(
     request_body=[
         shared.RelationItem(
             tags=[
-                'tempore',
+                'reiciendis',
             ],
-            attribute='accusamus',
-            entity_id='453f870b-326b-45a7-b429-cdb1a8422bb6',
-            reverse=False,
-        ),
-        shared.RelationItem(
-            tags=[
-                'molestias',
-                'temporibus',
-            ],
-            attribute='qui',
-            entity_id='322715bf-0cbb-41e3-9b8b-90f3443a1108',
-            reverse=False,
-        ),
-        shared.RelationItem(
-            tags=[
-                'consequatur',
-                'est',
-                'repellendus',
-                'porro',
-            ],
-            attribute='doloribus',
-            entity_id='4b921879-fce9-453f-b3ef-7fbc7abd74dd',
-            reverse=False,
-        ),
-        shared.RelationItem(
-            tags=[
-                'natus',
-            ],
-            attribute='impedit',
-            entity_id='0f5d2cff-7c70-4a45-a26d-436813f16d9f',
+            attribute='mollitia',
+            entity_id='563e2516-fe4c-48b7-91e5-b7fd2ed02892',
             reverse=False,
         ),
     ],
     async_=False,
-    id='5fce6c55-6146-4c3e-a50f-b008c42e141a',
+    id='1cddc692-601f-4b57-ab0d-5f0d30c5fbb2',
     slug='contact',
 )
 
@@ -108,9 +80,9 @@ s = epilot.Epilot(
 
 req = operations.DeleteRelationRequest(
     async_=False,
-    attribute='laborum',
-    entity_id='placeat',
-    id='366c8dd6-b144-4290-b474-778a7bd466d2',
+    attribute='quis',
+    entity_id='totam',
+    id='7053202c-73d5-4fe9-b90c-28909b3fe49a',
     slug='contact',
 )
 
@@ -155,7 +127,7 @@ s = epilot.Epilot(
 
 req = operations.GetRelationsRequest(
     hydrate=False,
-    id='8c10ab3c-dca4-4251-904e-523c7e0bc717',
+    id='8d9cbf48-6333-423f-9b77-f3a4100674eb',
     include_reverse=False,
     slug='contact',
 )
@@ -201,16 +173,14 @@ s = epilot.Epilot(
 
 req = operations.GetRelationsV2Request(
     fields_=[
-        'accusamus',
-        'aliquam',
-        'odio',
+        'voluptatibus',
     ],
-    from_=577543,
+    from_=377752,
     hydrate=False,
-    id='6f2a70c6-8828-42aa-8825-62f222e9817e',
+    id='9280d1ba-77a8-49eb-b737-ae4203ce5e6a',
     include_reverse=False,
-    query='accusamus',
-    size=82971,
+    query='provident',
+    size=324683,
     slug='contact',
 )
 
@@ -251,14 +221,13 @@ s = epilot.Epilot(
 req = operations.UpdateRelationRequest(
     request_body=operations.UpdateRelationRequestBody(
         tags=[
-            'quod',
-            'nam',
+            'repellendus',
         ],
     ),
     async_=False,
-    attribute='vero',
-    entity_id='aliquid',
-    id='1e6b7b95-bc0a-4b3c-a0c4-f3789fd871f9',
+    attribute='totam',
+    entity_id='similique',
+    id='0d446ce2-af7a-473c-b3be-453f870b326b',
     slug='contact',
 )
 

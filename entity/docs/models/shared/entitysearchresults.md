@@ -1,7 +1,5 @@
 # EntitySearchResults
 
-Success
-
 
 ## Fields
 

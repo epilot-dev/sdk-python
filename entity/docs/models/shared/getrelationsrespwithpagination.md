@@ -1,7 +1,5 @@
 # GetRelationsRespWithPagination
 
-Success
-
 
 ## Fields
 

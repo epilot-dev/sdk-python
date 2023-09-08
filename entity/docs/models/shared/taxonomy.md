@@ -1,7 +1,5 @@
 # Taxonomy
 
-Taxonomy
-
 
 ## Fields
 

@@ -30,15 +30,10 @@ s = epilot.Epilot(
 )
 
 req = shared.SavedView(
-    created_by={
-        "possimus": 'quia',
-        "eveniet": 'asperiores',
-        "facere": 'veritatis',
-        "consequuntur": 'quasi',
-    },
+    created_by=shared.SavedViewCreatedBy1(
+        user_id='10598',
+    ),
     is_favorited_by=[
-        '11701',
-        '11701',
         '11701',
     ],
     name='View listing German',
@@ -46,12 +41,9 @@ req = shared.SavedView(
     shared=True,
     slug=[
         'contact',
-        'contact',
-        'contact',
     ],
     ui_config={
-        "tenetur": 'quae',
-        "earum": 'vel',
+        "deserunt": 'quam',
     },
 )
 
@@ -90,7 +82,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteSavedViewRequest(
-    id='74bdb04f-1575-4608-ad68-ea19f1d17051',
+    id='3429cdb1-a842-42bb-a79d-2322715bf0cb',
 )
 
 res = s.saved_views.delete_saved_view(req)
@@ -128,7 +120,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSavedViewRequest(
-    id='339d0808-6a18-4403-94c2-6071f93f5f06',
+    id='b1e31b8b-90f3-4443-a110-8e0adcf4b921',
 )
 
 res = s.saved_views.get_saved_view(req)
@@ -225,9 +217,9 @@ s = epilot.Epilot(
 
 req = operations.UpdateSavedViewRequest(
     saved_view=shared.SavedView(
-        created_by=shared.SavedViewCreatedBy1(
-            user_id='10598',
-        ),
+        created_by={
+            "odio": 'occaecati',
+        },
         is_favorited_by=[
             '11701',
         ],
@@ -236,17 +228,12 @@ req = operations.UpdateSavedViewRequest(
         shared=True,
         slug=[
             'contact',
-            'contact',
-            'contact',
-            'contact',
         ],
         ui_config={
-            "maxime": 'dignissimos',
-            "officia": 'asperiores',
-            "nemo": 'quae',
+            "voluptatibus": 'quisquam',
         },
     ),
-    id='5cc413aa-63aa-4e8d-a786-4dbb675fd5e6',
+    id='e953f73e-f7fb-4c7a-bd74-dd39c0f5d2cf',
 )
 
 res = s.saved_views.update_saved_view(req)
