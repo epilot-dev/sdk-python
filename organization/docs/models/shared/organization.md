@@ -1,7 +1,5 @@
 # Organization
 
-The returned organization
-
 
 ## Fields
 

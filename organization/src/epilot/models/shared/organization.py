@@ -29,7 +29,6 @@ class OrganizationType(str, Enum):
 
 @dataclasses.dataclass
 class Organization:
-    r"""The returned organization"""
     address: Optional[OrganizationAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is None }})
     email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
     free_user_limit: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('free_user_limit'), 'exclude': lambda f: f is None }})

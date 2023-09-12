@@ -27,7 +27,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteSettingsValueRequest(
-    key='veritatis',
+    key='nisi',
     org_id='739224',
 )
 
@@ -104,13 +104,10 @@ s = epilot.Epilot(
 )
 
 req = operations.PutSettingsValueRequest(
-    request_body=[
-        {
-            "repellendus": 'sapiente',
-            "quo": 'odit',
-        },
-    ],
-    key='at',
+    request_body={
+        "temporibus": 'ab',
+    },
+    key='quis',
     org_id='739224',
 )
 
