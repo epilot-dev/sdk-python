@@ -120,14 +120,6 @@ req = [
         id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
         version=0,
     ),
-    shared.DownloadFilesPayload(
-        id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-        version=0,
-    ),
-    shared.DownloadFilesPayload(
-        id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-        version=0,
-    ),
 ]
 
 res = s.files.download_files(req)
@@ -166,8 +158,8 @@ s = epilot.Epilot(
 
 req = operations.DownloadS3FileRequest(
     attachment=False,
-    s3_bucket='distinctio',
-    s3_key='quibusdam',
+    s3_bucket='provident',
+    s3_key='distinctio',
 )
 
 res = s.files.download_s3_file(req)
@@ -205,10 +197,10 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewFileRequest(
-    h=602763,
+    h=844266,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-    version=857946,
-    w=544883,
+    version=602763,
+    w=857946,
 )
 
 res = s.files.preview_file(req)
@@ -246,11 +238,11 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewPublicFileRequest(
-    h=847252,
+    h=544883,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-    org_id='vel',
-    version=623564,
-    w=645894,
+    org_id='illum',
+    version=423655,
+    w=623564,
 )
 
 res = s.files.preview_public_file(req)
@@ -292,8 +284,8 @@ req = operations.PreviewS3FileRequest(
         bucket='epilot-files-prod',
         key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
-    h=384382,
-    w=437587,
+    h=645894,
+    w=384382,
 )
 
 res = s.files.preview_s3_file(req)
@@ -331,10 +323,10 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewS3FileGetRequest(
-    bucket='magnam',
-    h=891773,
-    key='ipsa',
-    w=963663,
+    bucket='iure',
+    h=297534,
+    key='debitis',
+    w=56713,
 )
 
 res = s.files.preview_s3_file_get(req)
@@ -377,8 +369,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "molestiae": 'minus',
-    "placeat": 'voluptatum',
+    "tempora": 'suscipit',
 }
 
 res = s.files.save_file(req)

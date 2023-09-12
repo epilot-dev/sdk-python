@@ -1,7 +1,5 @@
 # FileEntity
 
-Created File Entity
-
 
 ## Fields
 
