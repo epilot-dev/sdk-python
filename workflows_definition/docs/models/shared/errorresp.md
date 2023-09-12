@@ -1,7 +1,5 @@
 # ErrorResp
 
-bad request
-
 
 ## Fields
 

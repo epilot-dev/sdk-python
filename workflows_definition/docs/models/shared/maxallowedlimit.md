@@ -1,7 +1,5 @@
 # MaxAllowedLimit
 
-A combo of current number of workflows, and the max allowed number of workflows.
-
 
 ## Fields
 

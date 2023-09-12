@@ -1,7 +1,5 @@
 # ClosingReasons
 
-Returns the entire catalog of closing reasons per organization
-
 
 ## Fields
 

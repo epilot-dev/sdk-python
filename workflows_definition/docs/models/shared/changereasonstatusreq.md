@@ -1,7 +1,5 @@
 # ChangeReasonStatusReq
 
-change the status of a closing reason
-
 
 ## Fields
 

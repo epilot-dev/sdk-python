@@ -29,170 +29,61 @@ s = sdk.SDK(
 
 req = shared.WorkflowDefinition(
     assigned_to=[
-        'maiores',
-        'molestiae',
-        'quod',
-        'quod',
+        'at',
     ],
     closing_reasons=[
         shared.ClosingReasonID(
             id='x739cew',
         ),
-        shared.ClosingReasonID(
-            id='x739cew',
-        ),
     ],
     creation_time='2021-04-27T12:01:13.000Z',
-    description='totam',
+    description='maiores',
     due_date='2021-04-27T12:00:00.000Z',
     dynamic_due_date=shared.DynamicDueDate(
-        action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-        number_of_units=6788.8,
-        step_id='dicta',
-        time_period=shared.DynamicDueDateTimePeriod.MONTHS,
+        action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+        number_of_units=7991.59,
+        step_id='quod',
+        time_period=shared.DynamicDueDateTimePeriod.WEEKS,
     ),
     enable_ecp_workflow=False,
     flow=[
         shared.Step(
             assigned_to=[
-                'deleniti',
+                'porro',
             ],
             automation_config=shared.StepAutomationConfig(
-                flow_id='hic',
+                flow_id='dolorum',
             ),
             due_date='2021-04-27T12:00:00.000Z',
             dynamic_due_date=shared.DynamicDueDate(
-                action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-                number_of_units=5218.48,
-                step_id='beatae',
+                action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+                number_of_units=7206.33,
+                step_id='officia',
                 time_period=shared.DynamicDueDateTimePeriod.WEEKS,
             ),
             ecp=shared.ECPDetails(
-                label='molestiae',
+                label='fugit',
             ),
-            execution_type=shared.StepType.MANUAL,
-            id='2cb73920-5929-4396-bea7-596eb10faaa2',
-            name='Stacy Champlin',
-            order=6078.31,
+            execution_type=shared.StepType.AUTOMATION,
+            id='fc816742-cb73-4920-9929-396fea7596eb',
+            name='Brenda Wisozk',
+            order=6706.38,
             requirements=[
                 shared.StepRequirement(
                     condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='minima',
-                    type=shared.ItemType.SECTION,
-                ),
-                shared.StepRequirement(
-                    condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='accusantium',
+                    definition_id='dolores',
                     type=shared.ItemType.STEP,
-                ),
-            ],
-            type=shared.ItemType.SECTION,
-            user_ids=[
-                9589.5,
-                1020.44,
-                6527.9,
-                2088.76,
-            ],
-        ),
-        shared.Step(
-            assigned_to=[
-                'repellat',
-            ],
-            automation_config=shared.StepAutomationConfig(
-                flow_id='mollitia',
-            ),
-            due_date='2021-04-27T12:00:00.000Z',
-            dynamic_due_date=shared.DynamicDueDate(
-                action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-                number_of_units=2532.91,
-                step_id='commodi',
-                time_period=shared.DynamicDueDateTimePeriod.WEEKS,
-            ),
-            ecp=shared.ECPDetails(
-                label='molestiae',
-            ),
-            execution_type=shared.StepType.MANUAL,
-            id='9251aa52-c3f5-4ad0-99da-1ffe78f097b0',
-            name='Bessie Grady II',
-            order=2961.4,
-            requirements=[
-                shared.StepRequirement(
-                    condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='dicta',
-                    type=shared.ItemType.SECTION,
-                ),
-                shared.StepRequirement(
-                    condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='enim',
-                    type=shared.ItemType.SECTION,
                 ),
             ],
             type=shared.ItemType.STEP,
             user_ids=[
-                641.47,
-                2168.22,
-                6924.72,
-                5651.89,
-            ],
-        ),
-        shared.Step(
-            assigned_to=[
-                'modi',
-                'praesentium',
-                'rem',
-                'voluptates',
-            ],
-            automation_config=shared.StepAutomationConfig(
-                flow_id='quasi',
-            ),
-            due_date='2021-04-27T12:00:00.000Z',
-            dynamic_due_date=shared.DynamicDueDate(
-                action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-                number_of_units=5759.47,
-                step_id='veritatis',
-                time_period=shared.DynamicDueDateTimePeriod.MONTHS,
-            ),
-            ecp=shared.ECPDetails(
-                label='incidunt',
-            ),
-            execution_type=shared.StepType.MANUAL,
-            id='0ad2abd4-4269-4802-9502-a94bb4f63c96',
-            name='Terence Marquardt',
-            order=8915.55,
-            requirements=[
-                shared.StepRequirement(
-                    condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='dolorum',
-                    type=shared.ItemType.STEP,
-                ),
-                shared.StepRequirement(
-                    condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='in',
-                    type=shared.ItemType.SECTION,
-                ),
-                shared.StepRequirement(
-                    condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='maiores',
-                    type=shared.ItemType.SECTION,
-                ),
-                shared.StepRequirement(
-                    condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='dicta',
-                    type=shared.ItemType.STEP,
-                ),
-            ],
-            type=shared.ItemType.SECTION,
-            user_ids=[
-                4118.2,
-                3965.06,
-                6754.39,
-                8811.04,
+                1289.26,
             ],
         ),
     ],
-    id='395efb9b-a88f-43a6-a997-074ba4469b6e',
+    id='c5955907-aff1-4a3a-afa9-467739251aa5',
     last_update_time='2021-04-27T12:01:13.000Z',
-    name='Ms. Julie Gusikowski',
+    name='Angelica Dietrich',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
             source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
@@ -201,25 +92,9 @@ req = shared.WorkflowDefinition(
                 entity_schema='opportunity',
             ),
         ),
-        shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
-            target=shared.UpdateEntityAttributesTarget(
-                entity_attribute='my_status',
-                entity_schema='opportunity',
-            ),
-        ),
-        shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
-            target=shared.UpdateEntityAttributesTarget(
-                entity_attribute='my_status',
-                entity_schema='opportunity',
-            ),
-        ),
     ],
     user_ids=[
-        9689.62,
-        6521.03,
-        3209.97,
+        8209.94,
     ],
 )
 
@@ -258,7 +133,7 @@ s = sdk.SDK(
 )
 
 req = operations.DeleteDefinitionRequest(
-    definition_id='eum',
+    definition_id='aut',
 )
 
 res = s.workflows.delete_definition(req)
@@ -296,7 +171,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetDefinitionRequest(
-    definition_id='dolor',
+    definition_id='quasi',
 )
 
 res = s.workflows.get_definition(req)
@@ -392,7 +267,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetWorkflowClosingReasonsRequest(
-    definition_id='necessitatibus',
+    definition_id='error',
 )
 
 res = s.workflows.get_workflow_closing_reasons(req)
@@ -437,7 +312,7 @@ req = operations.SetWorkflowClosingReasonsRequest(
             ),
         ],
     ),
-    definition_id='nemo',
+    definition_id='temporibus',
 )
 
 res = s.workflows.set_workflow_closing_reasons(req)
@@ -477,292 +352,64 @@ s = sdk.SDK(
 req = operations.UpdateDefinitionRequest(
     workflow_definition=shared.WorkflowDefinition(
         assigned_to=[
-            'iure',
+            'laborum',
         ],
         closing_reasons=[
             shared.ClosingReasonID(
                 id='x739cew',
             ),
-            shared.ClosingReasonID(
-                id='x739cew',
-            ),
-            shared.ClosingReasonID(
-                id='x739cew',
-            ),
-            shared.ClosingReasonID(
-                id='x739cew',
-            ),
         ],
         creation_time='2021-04-27T12:01:13.000Z',
-        description='debitis',
+        description='quasi',
         due_date='2021-04-27T12:00:00.000Z',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-            number_of_units=8061.94,
-            step_id='deleniti',
-            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
+            number_of_units=9764.6,
+            step_id='vero',
+            time_period=shared.DynamicDueDateTimePeriod.WEEKS,
         ),
         enable_ecp_workflow=False,
         flow=[
-            shared.Section(
-                id='1e5b7fd2-ed02-4892-9cdd-c692601fb576',
-                name='Gary Streich',
-                order=166.27,
-                steps=[
-                    shared.Step(
-                        assigned_to=[
-                            'aut',
-                        ],
-                        automation_config=shared.StepAutomationConfig(
-                            flow_id='cumque',
-                        ),
-                        due_date='2021-04-27T12:00:00.000Z',
-                        dynamic_due_date=shared.DynamicDueDate(
-                            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-                            number_of_units=9441.24,
-                            step_id='libero',
-                            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
-                        ),
-                        ecp=shared.ECPDetails(
-                            label='dolores',
-                        ),
-                        execution_type=shared.StepType.MANUAL,
-                        id='87053202-c73d-45fe-9b90-c28909b3fe49',
-                        name='Casey Stracke',
-                        order=7301.22,
-                        requirements=[
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='quaerat',
-                                type=shared.ItemType.SECTION,
-                            ),
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='aliquid',
-                                type=shared.ItemType.STEP,
-                            ),
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='dolorem',
-                                type=shared.ItemType.STEP,
-                            ),
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='qui',
-                                type=shared.ItemType.STEP,
-                            ),
-                        ],
-                        type=shared.ItemType.SECTION,
-                        user_ids=[
-                            7395.51,
-                            4521.09,
-                            4904.59,
-                        ],
-                    ),
-                    shared.Step(
-                        assigned_to=[
-                            'amet',
-                            'dolorum',
-                            'numquam',
-                            'veritatis',
-                        ],
-                        automation_config=shared.StepAutomationConfig(
-                            flow_id='ipsa',
-                        ),
-                        due_date='2021-04-27T12:00:00.000Z',
-                        dynamic_due_date=shared.DynamicDueDate(
-                            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-                            number_of_units=4344.17,
-                            step_id='odio',
-                            time_period=shared.DynamicDueDateTimePeriod.DAYS,
-                        ),
-                        ecp=shared.ECPDetails(
-                            label='accusamus',
-                        ),
-                        execution_type=shared.StepType.AUTOMATION,
-                        id='f69280d1-ba77-4a89-abf7-37ae4203ce5e',
-                        name='Rosie McKenzie',
-                        order=5197.11,
-                        requirements=[
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='alias',
-                                type=shared.ItemType.SECTION,
-                            ),
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='quaerat',
-                                type=shared.ItemType.STEP,
-                            ),
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='vel',
-                                type=shared.ItemType.SECTION,
-                            ),
-                        ],
-                        type=shared.ItemType.SECTION,
-                        user_ids=[
-                            6798.8,
-                        ],
-                    ),
-                    shared.Step(
-                        assigned_to=[
-                            'esse',
-                            'harum',
-                            'iusto',
-                            'ipsum',
-                        ],
-                        automation_config=shared.StepAutomationConfig(
-                            flow_id='quisquam',
-                        ),
-                        due_date='2021-04-27T12:00:00.000Z',
-                        dynamic_due_date=shared.DynamicDueDate(
-                            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-                            number_of_units=2294.42,
-                            step_id='tempore',
-                            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
-                        ),
-                        ecp=shared.ECPDetails(
-                            label='numquam',
-                        ),
-                        execution_type=shared.StepType.MANUAL,
-                        id='3f870b32-6b5a-4734-a9cd-b1a8422bb679',
-                        name='Shawn Doyle',
-                        order=4880.56,
-                        requirements=[
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='ullam',
-                                type=shared.ItemType.SECTION,
-                            ),
-                        ],
-                        type=shared.ItemType.SECTION,
-                        user_ids=[
-                            7653.26,
-                        ],
-                    ),
-                    shared.Step(
-                        assigned_to=[
-                            'nobis',
-                            'et',
-                            'saepe',
-                        ],
-                        automation_config=shared.StepAutomationConfig(
-                            flow_id='ipsum',
-                        ),
-                        due_date='2021-04-27T12:00:00.000Z',
-                        dynamic_due_date=shared.DynamicDueDate(
-                            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-                            number_of_units=7492.55,
-                            step_id='quos',
-                            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
-                        ),
-                        ecp=shared.ECPDetails(
-                            label='cupiditate',
-                        ),
-                        execution_type=shared.StepType.MANUAL,
-                        id='f3443a11-08e0-4adc-b4b9-21879fce953f',
-                        name='Victoria Thiel',
-                        order=9413.78,
-                        requirements=[
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='quod',
-                                type=shared.ItemType.STEP,
-                            ),
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='similique',
-                                type=shared.ItemType.SECTION,
-                            ),
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='vero',
-                                type=shared.ItemType.STEP,
-                            ),
-                        ],
-                        type=shared.ItemType.STEP,
-                        user_ids=[
-                            8489.44,
-                            1943.42,
-                            6178.77,
-                            7733.26,
-                        ],
-                    ),
-                ],
-                type=shared.ItemType.STEP,
-            ),
             shared.Step(
                 assigned_to=[
-                    'nulla',
-                    'fugit',
+                    'voluptatibus',
                 ],
                 automation_config=shared.StepAutomationConfig(
-                    flow_id='porro',
+                    flow_id='ipsa',
                 ),
                 due_date='2021-04-27T12:00:00.000Z',
                 dynamic_due_date=shared.DynamicDueDate(
                     action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-                    number_of_units=9850.33,
-                    step_id='iusto',
-                    time_period=shared.DynamicDueDateTimePeriod.MONTHS,
+                    number_of_units=4511.59,
+                    step_id='cum',
+                    time_period=shared.DynamicDueDateTimePeriod.DAYS,
                 ),
                 ecp=shared.ECPDetails(
-                    label='ducimus',
+                    label='doloremque',
                 ),
                 execution_type=shared.StepType.MANUAL,
-                id='a45626d4-3681-43f1-ad9f-5fce6c556146',
-                name='Glenn Walter',
-                order=534.27,
+                id='4f15471b-5e6e-413b-99d4-88e1e91e450a',
+                name='Benjamin O'Connell',
+                order=2894.06,
                 requirements=[
                     shared.StepRequirement(
                         condition=shared.StepRequirementCondition.CLOSED,
-                        definition_id='libero',
+                        definition_id='modi',
                         type=shared.ItemType.STEP,
-                    ),
-                    shared.StepRequirement(
-                        condition=shared.StepRequirementCondition.CLOSED,
-                        definition_id='aut',
-                        type=shared.ItemType.SECTION,
-                    ),
-                    shared.StepRequirement(
-                        condition=shared.StepRequirementCondition.CLOSED,
-                        definition_id='impedit',
-                        type=shared.ItemType.STEP,
-                    ),
-                    shared.StepRequirement(
-                        condition=shared.StepRequirementCondition.CLOSED,
-                        definition_id='fugit',
-                        type=shared.ItemType.SECTION,
                     ),
                 ],
                 type=shared.ItemType.STEP,
                 user_ids=[
-                    896.03,
-                    6774.12,
+                    5865.13,
                 ],
             ),
         ],
-        id='ac366c8d-d6b1-4442-9074-74778a7bd466',
+        id='802d502a-94bb-44f6-bc96-9e9a3efa77df',
         last_update_time='2021-04-27T12:01:13.000Z',
-        name='Alan Lang Jr.',
+        name='Keith Gulgowski',
         update_entity_attributes=[
             shared.UpdateEntityAttributes(
-                source=shared.UpdateEntityAttributesSource.CURRENT_STEP,
-                target=shared.UpdateEntityAttributesTarget(
-                    entity_attribute='my_status',
-                    entity_schema='opportunity',
-                ),
-            ),
-            shared.UpdateEntityAttributes(
-                source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
-                target=shared.UpdateEntityAttributesTarget(
-                    entity_attribute='my_status',
-                    entity_schema='opportunity',
-                ),
-            ),
-            shared.UpdateEntityAttributes(
-                source=shared.UpdateEntityAttributesSource.CURRENT_STEP,
+                source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
                 target=shared.UpdateEntityAttributesTarget(
                     entity_attribute='my_status',
                     entity_schema='opportunity',
@@ -770,13 +417,10 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         user_ids=[
-            7774.08,
-            6813.59,
-            2594.22,
-            1783.67,
+            3965.06,
         ],
     ),
-    definition_id='voluptas',
+    definition_id='laborum',
 )
 
 res = s.workflows.update_definition(req)

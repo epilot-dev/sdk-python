@@ -1,7 +1,5 @@
 # ClosingReasonsIds
 
-Returns the entire catalog of closing reasons for a specific workflow
-
 
 ## Fields
 

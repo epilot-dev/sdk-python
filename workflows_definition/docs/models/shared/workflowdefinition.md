@@ -1,7 +1,5 @@
 # WorkflowDefinition
 
-Workflow Definition payload
-
 
 ## Fields
 
