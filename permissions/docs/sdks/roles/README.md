@@ -176,107 +176,7 @@ req = operations.PutRoleRequest(
                         attribute='workflows.primary.task_name',
                         operation=shared.GrantConditionOperation.EQUALS,
                         values=[
-                            'nulla',
-                            'corrupti',
-                            'illum',
-                        ],
-                    ),
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'error',
-                            'deserunt',
-                        ],
-                    ),
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'iure',
-                            'magnam',
-                        ],
-                    ),
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'ipsa',
-                            'delectus',
-                            'tempora',
-                            'suscipit',
-                        ],
-                    ),
-                ],
-                effect=shared.GrantEffect.ALLOW,
-                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
-            ),
-            shared.Grant(
-                action='entity-read',
-                conditions=[
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'voluptatum',
-                            'iusto',
-                            'excepturi',
-                            'nisi',
-                        ],
-                    ),
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'temporibus',
-                            'ab',
-                            'quis',
-                            'veritatis',
-                        ],
-                    ),
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'perferendis',
-                            'ipsam',
-                            'repellendus',
-                        ],
-                    ),
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'quo',
-                            'odit',
-                            'at',
-                            'at',
-                        ],
-                    ),
-                ],
-                effect=shared.GrantEffect.DENY,
-                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
-            ),
-            shared.Grant(
-                action='entity-read',
-                conditions=[
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'quod',
-                            'esse',
-                            'totam',
-                            'porro',
-                        ],
-                    ),
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'dicta',
-                            'nam',
-                            'officia',
+                            'provident',
                         ],
                     ),
                 ],
@@ -365,13 +265,8 @@ req = shared.RoleSearchInput(
     query='Administrator',
     role_ids=[
         '123:owner',
-        '123:owner',
-        '123:owner',
     ],
     slugs=[
-        'owner',
-        'owner',
-        'owner',
         'owner',
     ],
 )

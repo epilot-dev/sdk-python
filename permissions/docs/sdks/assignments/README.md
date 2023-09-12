@@ -73,8 +73,6 @@ s = epilot.Epilot(
 req = operations.AssignRolesRequest(
     request_body=[
         '123:owner',
-        '123:owner',
-        '123:owner',
     ],
     user_id='1',
 )
