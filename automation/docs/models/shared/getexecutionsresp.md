@@ -1,7 +1,5 @@
 # GetExecutionsResp
 
-List of automation executions
-
 
 ## Fields
 

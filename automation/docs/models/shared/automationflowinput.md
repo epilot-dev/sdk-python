@@ -1,7 +1,5 @@
 # AutomationFlowInput
 
-Automation flow to create
-
 
 ## Fields
 

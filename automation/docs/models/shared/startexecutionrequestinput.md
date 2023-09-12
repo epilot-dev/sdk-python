@@ -1,7 +1,5 @@
 # StartExecutionRequestInput
 
-Execution parameters
-
 
 ## Fields
 

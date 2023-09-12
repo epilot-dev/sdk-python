@@ -1,7 +1,5 @@
 # AutomationExecution
 
-The created execution
-
 
 ## Fields
 

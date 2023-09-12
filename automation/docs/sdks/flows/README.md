@@ -35,40 +35,14 @@ req = shared.AutomationFlowInput(
     runs=7,
     trigger_conditions=[
         shared.TriggerCondition(
-            comparison=shared.Comparison.NOT_EMPTY,
-            source='nulla',
-            value=[
-                'vel',
-                'error',
-                'deserunt',
-                'suscipit',
-            ],
-        ),
-        shared.TriggerCondition(
-            comparison=shared.Comparison.ANY_OF,
-            source='magnam',
-            value=[
-                9636.63,
-            ],
-        ),
-        shared.TriggerCondition(
-            comparison=shared.Comparison.ANY_OF,
-            source='suscipit',
-            value=7917.25,
-        ),
-        shared.TriggerCondition(
             comparison=shared.Comparison.IS_EMPTY,
-            source='voluptatum',
-            value=5680.45,
+            source='unde',
+            value=[
+                5448.83,
+            ],
         ),
     ],
     triggers=[
-        shared.ReceivedEmailTrigger(
-            configuration=shared.ReceivedEmailTriggerConfiguration(
-                message_type=shared.ReceivedEmailTriggerConfigurationMessageType.RECEIVED,
-            ),
-            type=shared.ReceivedEmailTriggerType.RECEIVED_EMAIL,
-        ),
         shared.EntityManualTrigger(
             configuration=shared.EntityManualTriggerConfiguration(
                 schema='submission',
@@ -197,36 +171,27 @@ req = operations.PutFlowRequest(
         trigger_conditions=[
             shared.TriggerCondition(
                 comparison=shared.Comparison.ANY_OF,
-                source='veritatis',
+                source='error',
                 value=[
-                    'ipsam',
+                    'suscipit',
                 ],
             ),
         ],
         triggers=[
-            shared.ReceivedEmailTrigger(
-                configuration=shared.ReceivedEmailTriggerConfiguration(
-                    message_type=shared.ReceivedEmailTriggerConfigurationMessageType.RECEIVED,
-                ),
-                type=shared.ReceivedEmailTriggerType.RECEIVED_EMAIL,
-            ),
-            shared.EntityManualTrigger(
-                configuration=shared.EntityManualTriggerConfiguration(
+            shared.EntityOperationTrigger(
+                configuration=shared.EntityOperationTriggerConfiguration(
+                    exclude_activities=[
+                        '["SyncEntity"]',
+                    ],
+                    include_activities=[
+                        '["CreateEntity"]',
+                    ],
+                    operations=[
+                        shared.EntityOperation.CREATE_ENTITY,
+                    ],
                     schema='submission',
                 ),
-                type=shared.EntityManualTriggerType.ENTITY_MANUAL,
-            ),
-            shared.FrontendSubmitTrigger(
-                configuration=shared.FrontendSubmitTriggerConfiguration(
-                    source_id='99',
-                ),
-                type=shared.FrontendSubmitTriggerType.FRONTEND_SUBMISSION,
-            ),
-            shared.ReceivedEmailTrigger(
-                configuration=shared.ReceivedEmailTriggerConfiguration(
-                    message_type=shared.ReceivedEmailTriggerConfigurationMessageType.RECEIVED,
-                ),
-                type=shared.ReceivedEmailTriggerType.RECEIVED_EMAIL,
+                type=shared.EntityOperationTriggerType.ENTITY_OPERATION,
             ),
         ],
     ),
@@ -268,9 +233,9 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchFlowsRequest(
-    from_=870088,
+    from_=891773,
     schema='submission',
-    size=978619,
+    size=56713,
     trigger_source_id='600945fe-212e-4b97-acf7-391d64648384',
 )
 

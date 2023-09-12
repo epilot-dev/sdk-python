@@ -1,7 +1,5 @@
 # SearchAutomationsResp
 
-List of automation flows, including total count
-
 
 ## Fields
 

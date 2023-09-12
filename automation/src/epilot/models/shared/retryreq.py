@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class RetryReq:
-    r"""Retry request details."""
     retry_strategy: Optional[shared_retrystrategy.RetryStrategy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('retry_strategy'), 'exclude': lambda f: f is None }})
     r"""different behaviors for retrying failed execution actions."""
     

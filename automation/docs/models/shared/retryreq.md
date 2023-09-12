@@ -1,7 +1,5 @@
 # RetryReq
 
-Retry request details.
-
 
 ## Fields
 

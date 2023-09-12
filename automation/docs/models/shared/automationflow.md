@@ -1,7 +1,5 @@
 # AutomationFlow
 
-The created automation flow
-
 
 ## Fields
 

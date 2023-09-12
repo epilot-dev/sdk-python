@@ -11,7 +11,6 @@ from epilot import utils
 
 @dataclasses.dataclass
 class SearchAutomationsResp:
-    r"""List of automation flows, including total count"""
     results: list[shared_automationflow.AutomationFlow] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
     total: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total') }})
     
