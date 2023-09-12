@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class CreateSSOUserRequest:
-    r"""Portal user payload"""
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     r"""User's email address"""
     first_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name'), 'exclude': lambda f: f is None }})

@@ -1,7 +1,5 @@
 # ContactCountRequest
 
-Request payload
-
 
 ## Fields
 

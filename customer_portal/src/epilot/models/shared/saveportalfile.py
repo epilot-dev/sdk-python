@@ -39,7 +39,6 @@ class SavePortalFileFiles:
 
 @dataclasses.dataclass
 class SavePortalFile:
-    r"""portal files request"""
     files: list[SavePortalFileFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
     origin: shared_origin.Origin = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin') }})
     r"""Origin of the portal"""

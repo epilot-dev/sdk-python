@@ -1,7 +1,5 @@
 # CreateSSOUserRequest
 
-Portal user payload
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # UpsertPortalConfig
 
-Portal payload
-
 
 ## Fields
 

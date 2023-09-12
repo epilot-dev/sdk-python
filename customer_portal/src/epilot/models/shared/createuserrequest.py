@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class CreateUserRequest:
-    r"""Portal user payload"""
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     r"""User's email address"""
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})

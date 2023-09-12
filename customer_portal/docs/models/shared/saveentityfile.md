@@ -1,7 +1,5 @@
 # SaveEntityFile
 
-The request of an file entity
-
 
 ## Fields
 

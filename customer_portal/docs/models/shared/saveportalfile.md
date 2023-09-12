@@ -1,7 +1,5 @@
 # SavePortalFile
 
-portal files request
-
 
 ## Fields
 

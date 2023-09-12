@@ -1,7 +1,5 @@
 # UpsertPortalWidget
 
-Retrieved the portal public widgets successfully.
-
 
 ## Fields
 

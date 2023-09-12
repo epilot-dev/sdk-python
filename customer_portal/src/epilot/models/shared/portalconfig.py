@@ -152,7 +152,6 @@ class PortalConfigSelfRegistrationSetting(str, Enum):
 
 @dataclasses.dataclass
 class PortalConfig:
-    r"""Portal config retrieved successfully."""
     design_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('design_id') }})
     r"""ID of the design used to build the portal"""
     cognito_details: Optional[PortalConfigCognitoDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_details'), 'exclude': lambda f: f is None }})

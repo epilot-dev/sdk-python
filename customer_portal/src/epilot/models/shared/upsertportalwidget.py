@@ -11,7 +11,6 @@ from typing import Any
 
 @dataclasses.dataclass
 class UpsertPortalWidget:
-    r"""Retrieved the portal public widgets successfully."""
     widgets: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('widgets') }})
     
 

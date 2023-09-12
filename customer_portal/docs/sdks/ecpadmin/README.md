@@ -37,7 +37,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.ConfigureDistributionRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.configure_distribution(req, operations.ConfigureDistributionSecurity(
@@ -116,7 +116,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.DeletePortalRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.delete_portal(req, operations.DeletePortalSecurity(
@@ -256,7 +256,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetEmailTemplatesRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.get_email_templates(req, operations.GetEmailTemplatesSecurity(
@@ -367,7 +367,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalConfigRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -404,7 +404,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalWidgetsRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
@@ -514,46 +514,7 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
-                'in',
-                'corporis',
-                'iste',
-            ],
-            file_type='orderRightTeaser',
-            filename='12345',
-            s3ref=shared.SavePortalFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
-        shared.SavePortalFileFiles(
-            tags=[
-                'saepe',
-                'quidem',
-            ],
-            file_type='orderRightTeaser',
-            filename='12345',
-            s3ref=shared.SavePortalFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
-        shared.SavePortalFileFiles(
-            tags=[
-                'ipsa',
-            ],
-            file_type='orderRightTeaser',
-            filename='12345',
-            s3ref=shared.SavePortalFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
-        shared.SavePortalFileFiles(
-            tags=[
-                'est',
-                'mollitia',
-                'laborum',
-                'dolores',
+                'excepturi',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -607,7 +568,7 @@ req = operations.UpsertEmailTemplatesRequest(
         on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
         on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_email_templates(req, operations.UpsertEmailTemplatesSecurity(
@@ -650,29 +611,15 @@ req = operations.UpsertPortalRequest(
             cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
             cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config='explicabo',
+        config='temporibus',
         contact_identifiers=[
-            'enim',
-            'omnis',
-            'nemo',
-            'minima',
+            'ab',
         ],
         contact_secondary_identifier='full_name',
         default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
             on_pending_user=[
                 {
-                    "iure": 'culpa',
-                },
-                {
-                    "sapiente": 'architecto',
-                    "mollitia": 'dolorem',
-                    "culpa": 'consequuntur',
-                    "repellat": 'mollitia',
-                },
-                {
-                    "numquam": 'commodi',
-                    "quam": 'molestiae',
-                    "velit": 'error',
+                    "quis": 'veritatis',
                 },
             ],
         ),
@@ -689,18 +636,16 @@ req = operations.UpsertPortalRequest(
         entity_actions=[
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='quis',
-                    en='vitae',
+                    de='deserunt',
+                    en='perferendis',
                 ),
-                journey_id='laborum',
+                journey_id='ipsam',
                 slug=shared.EntitySlug.CONTACT,
             ),
         ],
         entity_identifiers=shared.UpsertPortalConfigEntityIdentifiers(
             type=shared.UpsertPortalConfigEntityIdentifiersType(
                 attributes=[
-                    'contract_number',
-                    'contract_number',
                     'contract_number',
                 ],
                 is_enabled=False,
@@ -710,11 +655,6 @@ req = operations.UpsertPortalRequest(
             start_page=False,
         ),
         grants=[
-            shared.Grant(
-                action='entity-read',
-                effect=shared.GrantEffect.ALLOW,
-                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
-            ),
             shared.Grant(
                 action='entity-read',
                 effect=shared.GrantEffect.DENY,
@@ -729,7 +669,7 @@ req = operations.UpsertPortalRequest(
         is_epilot_domain=False,
         name='Installer Portal',
         self_registration=False,
-        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITH_CONTACT_CREATION,
+        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.DENY,
     ),
     origin=shared.Origin.INSTALLER_PORTAL,
 )
@@ -770,77 +710,19 @@ s = epilot.Epilot()
 req = operations.UpsertPortalWidgetRequest(
     upsert_portal_widget=shared.UpsertPortalWidget(
         widgets=[
-            shared.TeaserWidget(
-                actions=[
-                    shared.WidgetAction(
-                        id='019da1ff-e78f-4097-b007-4f15471b5e6e',
-                        label=shared.WidgetActionLabel(
-                            de='quae',
-                            en='ipsum',
-                        ),
-                        type=shared.WidgetActionType.JOURNEY,
-                        url='molestias',
-                    ),
-                    shared.WidgetAction(
-                        id='9d488e1e-91e4-450a-92ab-d44269802d50',
-                        label=shared.WidgetActionLabel(
-                            de='fugit',
-                            en='dolorum',
-                        ),
-                        type=shared.WidgetActionType.JOURNEY,
-                        url='tempora',
-                    ),
-                    shared.WidgetAction(
-                        id='bb4f63c9-69e9-4a3e-ba77-dfb14cd66ae3',
-                        label=shared.WidgetActionLabel(
-                            de='occaecati',
-                            en='enim',
-                        ),
-                        type=shared.WidgetActionType.JOURNEY,
-                        url='delectus',
-                    ),
-                    shared.WidgetAction(
-                        id='b9ba88f3-a669-4970-b4ba-4469b6e21419',
-                        label=shared.WidgetActionLabel(
-                            de='ullam',
-                            en='provident',
-                        ),
-                        type=shared.WidgetActionType.JOURNEY,
-                        url='sint',
-                    ),
-                ],
-                headline=shared.TeaserWidgetHeadline(
-                    de='accusantium',
-                    en='mollitia',
+            shared.EntityWidget(
+                headline=shared.EntityWidgetHeadline(
+                    de='at',
+                    en='at',
                 ),
-                id='fa563e25-16fe-44c8-b711-e5b7fd2ed028',
-                left=shared.TeaserWidgetLeft(
-                    show=False,
-                    show_button=False,
+                id='f7cc78ca-1ba9-428f-8816-742cb7392059',
+                list_index=149675,
+                schema='iste',
+                sub_headline=shared.EntityWidgetSubHeadline(
+                    de='dolor',
+                    en='natus',
                 ),
-                list_index=615560,
-                right=shared.TeaserWidgetRight(
-                    show=False,
-                    show_button=False,
-                ),
-                sub_headline=shared.TeaserWidgetSubHeadline(
-                    de='magni',
-                    en='sunt',
-                ),
-                type=shared.TeaserWidgetType.TEASER_WIDGET,
-            ),
-            shared.DocumentWidget(
-                headline=shared.DocumentWidgetHeadline(
-                    de='pariatur',
-                    en='maxime',
-                ),
-                id='692601fb-576b-40d5-b0d3-0c5fbb258705',
-                list_index=199996,
-                sub_headline=shared.DocumentWidgetSubHeadline(
-                    de='eos',
-                    en='perferendis',
-                ),
-                type=shared.DocumentWidgetType.ACTION_WIDGET,
+                type=shared.EntityWidgetType.CONTENT_WIDGET,
             ),
         ],
     ),

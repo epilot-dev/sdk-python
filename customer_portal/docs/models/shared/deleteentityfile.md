@@ -1,7 +1,5 @@
 # DeleteEntityFile
 
-Delete file
-
 
 ## Fields
 

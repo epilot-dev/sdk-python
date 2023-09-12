@@ -1,7 +1,5 @@
 # PortalConfig
 
-Portal config retrieved successfully.
-
 
 ## Fields
 

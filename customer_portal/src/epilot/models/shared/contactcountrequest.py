@@ -10,7 +10,6 @@ from epilot import utils
 
 @dataclasses.dataclass
 class ContactCountRequest:
-    r"""Request payload"""
     contact_identifiers: dict[str, str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contactIdentifiers') }})
     r"""Identifiers to identify a contact"""
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})

@@ -87,8 +87,6 @@ req = shared.DeleteEntityFile(
     entity_type='order',
     file_entity_ids=[
         '12345',
-        '12345',
-        '12345',
     ],
 )
 
@@ -193,9 +191,7 @@ s = epilot.Epilot()
 
 req = operations.GetAllFilesRequest(
     entity_ids=[
-        'distinctio',
-        'quibusdam',
-        'unde',
+        'corrupti',
     ],
     from_=0,
     size=0,
@@ -372,10 +368,7 @@ s = epilot.Epilot()
 
 req = operations.GetEntitiesByIdentifiersRequest(
     request_body={
-        "corrupti": 'illum',
-        "vel": 'error',
-        "deserunt": 'suscipit',
-        "iure": 'magnam',
+        "provident": 'distinctio',
     },
     slug=shared.EntitySlug.CONTACT,
 )
@@ -661,7 +654,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalWidgetsRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
@@ -736,54 +729,7 @@ req = shared.SaveEntityFile(
     files=[
         shared.SaveEntityFileFiles(
             tags=[
-                'suscipit',
-                'molestiae',
-            ],
-            access_control=shared.SaveEntityFileFilesAccessControl.PUBLIC_READ,
-            document_type='12345',
-            file_entity_id='12345',
-            filename='12345',
-            s3ref=shared.SaveEntityFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
-        shared.SaveEntityFileFiles(
-            tags=[
-                'voluptatum',
-                'iusto',
-                'excepturi',
-                'nisi',
-            ],
-            access_control=shared.SaveEntityFileFilesAccessControl.PUBLIC_READ,
-            document_type='12345',
-            file_entity_id='12345',
-            filename='12345',
-            s3ref=shared.SaveEntityFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
-        shared.SaveEntityFileFiles(
-            tags=[
-                'ab',
-                'quis',
-                'veritatis',
-                'deserunt',
-            ],
-            access_control=shared.SaveEntityFileFilesAccessControl.PRIVATE,
-            document_type='12345',
-            file_entity_id='12345',
-            filename='12345',
-            s3ref=shared.SaveEntityFileFilesS3ref(
-                bucket='12345',
-                key='12345',
-            ),
-        ),
-        shared.SaveEntityFileFiles(
-            tags=[
-                'repellendus',
-                'sapiente',
+                'nulla',
             ],
             access_control=shared.SaveEntityFileFilesAccessControl.PUBLIC_READ,
             document_type='12345',
@@ -831,7 +777,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "at": 'at',
+    "illum": 'vel',
 }
 
 res = s.ecp.update_contact(req, operations.UpdateContactSecurity(
@@ -869,10 +815,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateContractRequest(
     request_body={
-        "molestiae": 'quod',
-        "quod": 'esse',
-        "totam": 'porro',
-        "dolorum": 'dicta',
+        "error": 'deserunt',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -912,9 +855,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOpportunityRequest(
     request_body={
-        "officia": 'occaecati',
-        "fugit": 'deleniti',
-        "hic": 'optio',
+        "suscipit": 'iure',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -954,9 +895,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOrderRequest(
     request_body={
-        "beatae": 'commodi',
-        "molestiae": 'modi',
-        "qui": 'impedit',
+        "magnam": 'debitis',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -995,9 +934,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "esse": 'ipsum',
-    "excepturi": 'aspernatur',
-    "perferendis": 'ad',
+    "ipsa": 'delectus',
 }
 
 res = s.ecp.update_portal_user(req, operations.UpdatePortalUserSecurity(
