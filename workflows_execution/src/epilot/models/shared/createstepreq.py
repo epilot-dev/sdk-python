@@ -14,7 +14,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class CreateStepReq:
-    r"""Workflow Execution Step payload"""
     insertion_index: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insertionIndex') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     automation_config: Optional[shared_automationconfig.AutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})

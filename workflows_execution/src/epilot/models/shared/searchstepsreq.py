@@ -19,7 +19,6 @@ class SearchStepsReqStatus(str, Enum):
 
 @dataclasses.dataclass
 class SearchStepsReq:
-    r"""Search steps request"""
     assigned_to: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     execution_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionName'), 'exclude': lambda f: f is None }})
     include_done_workflows: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeDoneWorkflows'), 'exclude': lambda f: f is None }})

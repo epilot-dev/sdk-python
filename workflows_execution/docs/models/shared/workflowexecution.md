@@ -1,7 +1,5 @@
 # WorkflowExecution
 
-Success - if the execution is created successfully
-
 
 ## Fields
 

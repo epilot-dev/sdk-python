@@ -15,7 +15,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class WorkflowExecutionUpdateReq:
-    r"""Patch Updates for Workflow Execution payload."""
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     closed_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closedBy'), 'exclude': lambda f: f is None }})
     r"""id of the user / partner user who is closing the workflow. For partner pass orgId_userId."""

@@ -1,7 +1,5 @@
 # Step
 
-Success - if the step is created with success
-
 
 ## Fields
 

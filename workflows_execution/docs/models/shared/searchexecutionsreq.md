@@ -1,7 +1,5 @@
 # SearchExecutionsReq
 
-Search steps request
-
 
 ## Fields
 

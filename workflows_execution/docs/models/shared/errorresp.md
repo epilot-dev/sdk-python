@@ -1,7 +1,5 @@
 # ErrorResp
 
-Other errors
-
 
 ## Fields
 

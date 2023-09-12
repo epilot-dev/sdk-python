@@ -1,7 +1,5 @@
 # SearchExecutionsResp
 
-Success - filtered steps are returned
-
 
 ## Fields
 

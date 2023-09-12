@@ -1,7 +1,5 @@
 # ClosingReasonResp
 
-returns all Closing Reasons for this Execution
-
 
 ## Fields
 

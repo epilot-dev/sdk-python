@@ -1,7 +1,5 @@
 # WorkflowExecutionCreateReq
 
-Workflow Execution payload
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # WorkflowExecutionUpdateReq
 
-Patch Updates for Workflow Execution payload.
-
 
 ## Fields
 

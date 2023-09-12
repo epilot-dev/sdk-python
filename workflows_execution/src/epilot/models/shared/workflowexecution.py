@@ -18,7 +18,6 @@ from typing import Any, Optional
 
 @dataclasses.dataclass
 class WorkflowExecution:
-    r"""Success - if the execution is created successfully"""
     flow: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow') }})
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     closing_reason_description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closingReasonDescription'), 'exclude': lambda f: f is None }})

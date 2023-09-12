@@ -1,7 +1,5 @@
 # CreateStepReq
 
-Workflow Execution Step payload
-
 
 ## Fields
 

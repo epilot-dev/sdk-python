@@ -1,7 +1,5 @@
 # UpdateStepReq
 
-Workflow Execution Step payload
-
 
 ## Fields
 
