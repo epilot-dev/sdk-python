@@ -1,7 +1,5 @@
 # Geolocation
 
-Geo-location converted from text
-
 
 ## Fields
 

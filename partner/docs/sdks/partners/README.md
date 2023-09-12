@@ -116,20 +116,8 @@ s = epilot.Epilot(
 
 req = [
     operations.BatchGetAssignableRequestBody(
-        org_id='ipsa',
-        user_id='delectus',
-    ),
-    operations.BatchGetAssignableRequestBody(
-        org_id='tempora',
-        user_id='suscipit',
-    ),
-    operations.BatchGetAssignableRequestBody(
-        org_id='molestiae',
-        user_id='minus',
-    ),
-    operations.BatchGetAssignableRequestBody(
-        org_id='placeat',
-        user_id='voluptatum',
+        org_id='debitis',
+        user_id='ipsa',
     ),
 ]
 
@@ -168,7 +156,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetPartnerByTokenRequest(
-    token='iusto',
+    token='delectus',
 )
 
 res = s.partners.get_partner_by_token(req)
@@ -207,7 +195,7 @@ s = epilot.Epilot(
 
 req = operations.InvitePartnerRequest(
     partner_invitation_payload=shared.PartnerInvitationPayload(
-        language=shared.PartnerInvitationPayloadLanguage.DE,
+        language=shared.PartnerInvitationPayloadLanguage.EN,
     ),
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
@@ -332,15 +320,12 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchAssignableRequestBody(
-    from_=925597,
+    from_=477665,
     org_ids=[
         '123',
-        '123',
-        '123',
-        '123',
     ],
-    q='ab',
-    size=337396,
+    q='minus',
+    size=812169,
     types=[
         operations.SearchAssignableRequestBodyTypes.PARTNER_USER,
     ],

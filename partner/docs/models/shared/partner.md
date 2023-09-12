@@ -1,7 +1,5 @@
 # Partner
 
-Partner
-
 
 ## Fields
 

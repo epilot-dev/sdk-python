@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class Geolocation:
-    r"""Geo-location converted from text"""
     lat: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lat') }})
     r"""Latitude"""
     lng: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lng') }})
