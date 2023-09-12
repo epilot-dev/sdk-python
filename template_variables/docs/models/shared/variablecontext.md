@@ -1,7 +1,5 @@
 # VariableContext
 
-ok
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # CustomVariable
 
-Success
-
 
 ## Fields
 

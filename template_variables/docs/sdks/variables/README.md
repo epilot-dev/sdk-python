@@ -29,7 +29,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GenerateQRcodeRequest(
-    qrdata='mollitia',
+    qrdata='minima',
 )
 
 res = s.variables.generate_q_rcode(req)
@@ -119,14 +119,11 @@ req = operations.GetVariableContextRequestBody(
         ],
         language=shared.VariableParametersLanguage.DE,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_name='consequuntur',
+        template_name='accusantium',
         template_tags=[
-            'mollitia',
-            'occaecati',
-            'numquam',
-            'commodi',
+            'iure',
         ],
-        template_type=shared.TemplateType.EMAIL,
+        template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
         user_org_id='729224',
     ),
@@ -175,10 +172,6 @@ req = operations.ReplaceTemplatesRequestBody(
 
         {{{brand.signature}}}
         ',
-        'Hello, {{contact.first_name}}!
-
-        {{{brand.signature}}}
-        ',
     ],
     parameters=shared.VariableParameters(
         brand_id=123451,
@@ -191,10 +184,9 @@ req = operations.ReplaceTemplatesRequestBody(
         ],
         language=shared.VariableParametersLanguage.DE,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_name='quia',
+        template_name='sapiente',
         template_tags=[
-            'vitae',
-            'laborum',
+            'architecto',
         ],
         template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
@@ -239,12 +231,11 @@ s = epilot.Epilot(
 req = operations.SearchVariablesRequestBody(
     entity_schemas=[
         'contact',
-        'contact',
     ],
-    from_=138183,
+    from_=208876,
     lang=operations.SearchVariablesRequestBodyLang.DE,
     query='logo',
-    size=196582,
+    size=161309,
     template_type=shared.TemplateType.DOCUMENT,
 )
 

@@ -31,10 +31,7 @@ req = shared.CustomVariable(
     created_by='100042',
     helper_logic='return param1 * param2;',
     helper_params=[
-        'corrupti',
-        'illum',
-        'vel',
-        'error',
+        'distinctio',
     ],
     id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
     key='my_custom_table',
@@ -186,7 +183,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteCustomVariableRequest(
-    id='674e0f46-7cc8-4796-ad15-1a05dfc2ddf7',
+    id='9d8d69a6-74e0-4f46-bcc8-796ed151a05d',
 )
 
 res = s.custom_variables.delete_custom_variable(req)
@@ -253,7 +250,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetCustomVariableRequest(
-    id='cc78ca1b-a928-4fc8-9674-2cb739205929',
+    id='fc2ddf7c-c78c-4a1b-a928-fc816742cb73',
 )
 
 res = s.custom_variables.get_custom_variable(req)
@@ -326,7 +323,7 @@ req = operations.UpdateCustomVariableRequest(
         created_by='100042',
         helper_logic='return param1 * param2;',
         helper_params=[
-            'natus',
+            'excepturi',
         ],
         id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
         key='my_custom_table',
@@ -442,7 +439,7 @@ req = operations.UpdateCustomVariableRequest(
         updated_at='2022-04-20T12:41:43.662Z',
         updated_by='100042',
     ),
-    id='fea7596e-b10f-4aaa-a352-c5955907aff1',
+    id='05929396-fea7-4596-ab10-faaa2352c595',
 )
 
 res = s.custom_variables.update_custom_variable(req)

@@ -25,7 +25,6 @@ class CustomVariableType(str, Enum):
 
 @dataclasses.dataclass
 class CustomVariable:
-    r"""Success"""
     config: Optional[CustomVariableConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
     r"""Variable configuration"""
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'exclude': lambda f: f is None }})
