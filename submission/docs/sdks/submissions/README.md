@@ -23,32 +23,11 @@ s = epilot.Epilot()
 
 req = shared.SubmissionPayload(
     ivy_opportunity_ids=[
-        'sapiente',
-        'quo',
-        'odit',
-        'at',
+        'nulla',
     ],
     entities=[
         {
-            "molestiae": 'quod',
-            "quod": 'esse',
-            "totam": 'porro',
-            "dolorum": 'dicta',
-        },
-        {
-            "officia": 'occaecati',
-            "fugit": 'deleniti',
-            "hic": 'optio',
-        },
-        {
-            "beatae": 'commodi',
-            "molestiae": 'modi',
-            "qui": 'impedit',
-        },
-        {
-            "esse": 'ipsum',
-            "excepturi": 'aspernatur',
-            "perferendis": 'ad',
+            "corrupti": 'illum',
         },
     ],
     journey_submit_id='123',
@@ -56,25 +35,7 @@ req = shared.SubmissionPayload(
         shared.OptIn(
             identifier='example@email.com',
             meta={
-                "iste": 'dolor',
-            },
-            topic='EMAIL_MARKETING',
-        ),
-        shared.OptIn(
-            identifier='example@email.com',
-            meta={
-                "laboriosam": 'hic',
-                "saepe": 'fuga',
-                "in": 'corporis',
-            },
-            topic='EMAIL_MARKETING',
-        ),
-        shared.OptIn(
-            identifier='example@email.com',
-            meta={
-                "iure": 'saepe',
-                "quidem": 'architecto',
-                "ipsa": 'reiciendis',
+                "vel": 'error',
             },
             topic='EMAIL_MARKETING',
         ),
