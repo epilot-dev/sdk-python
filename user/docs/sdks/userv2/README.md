@@ -39,7 +39,7 @@ req = operations.ActivateUserRequest(
         display_name='Example User',
         password='AKjhdakjsdh@!34',
     ),
-    token='maiores',
+    token='at',
 )
 
 res = s.user_v2.activate_user(req)
@@ -77,7 +77,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteUserV2Request(
-    id='7cc78ca1-ba92-48fc-8167-42cb73920592',
+    id='f7cc78ca-1ba9-428f-8816-742cb7392059',
 )
 
 res = s.user_v2.delete_user_v2(req)
@@ -144,7 +144,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetUserLoginParametersV2Request(
-    username='Leora.Fadel',
+    username='Camden61',
 )
 
 res = s.user_v2.get_user_login_parameters_v2(req)
@@ -182,7 +182,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetUserV2Request(
-    id='fea7596e-b10f-4aaa-a352-c5955907aff1',
+    id='6fea7596-eb10-4faa-a235-2c5955907aff',
 )
 
 res = s.user_v2.get_user_v2(req)
@@ -221,7 +221,7 @@ s = epilot.Epilot(
 
 req = shared.UserInvitationPayload(
     email='test@example.com',
-    language=shared.UserInvitationPayloadLanguage.DE,
+    language=shared.UserInvitationPayloadLanguage.EN,
     roles=[
         '123:owner',
     ],
@@ -262,9 +262,9 @@ s = epilot.Epilot(
 )
 
 req = operations.ListUsersV2Request(
-    limit=6350.59,
-    offset=1613.09,
-    query='repellat',
+    limit=6527.9,
+    offset=2088.76,
+    query='culpa',
 )
 
 res = s.user_v2.list_users_v2(req)
@@ -303,7 +303,7 @@ s = epilot.Epilot(
 
 req = operations.ResendUserInvitationRequestBody(
     email='test@example.com',
-    language=operations.ResendUserInvitationRequestBodyLanguage.DE,
+    language=operations.ResendUserInvitationRequestBodyLanguage.EN,
 )
 
 res = s.user_v2.resend_user_invitation(req)
@@ -344,16 +344,15 @@ req = operations.SignUpUserRequest(
     signup_user_payload=shared.SignupUserPayload(
         language=shared.SignupUserPayloadLanguage.DE,
         organization_detail={
-            "commodi": 'quam',
-            "molestiae": 'velit',
+            "mollitia": 'occaecati',
         },
         user_detail=shared.UserDetail(
-            email='Carmelo67@yahoo.com',
+            email='Harvey.Konopelski@gmail.com',
             full_name='Example user',
             password='AKjhdakjsdh@!34',
         ),
     ),
-    token='animi',
+    token='error',
 )
 
 res = s.user_v2.sign_up_user(req)
@@ -395,17 +394,18 @@ req = operations.UpdateUserV2Request(
         created_at='2022-02-08T04:44:32.246Z',
         department='Sales',
         display_name='Example User',
-        draft_email='Britney94@gmail.com',
-        email='Makayla9@yahoo.com',
-        id='9da1ffe7-8f09-47b0-874f-15471b5e6e13',
+        draft_email='Eugene_Brown31@gmail.com',
+        email='Orlando.Dietrich66@gmail.com',
+        favorites={
+            "possimus": 'aut',
+        },
+        id='19da1ffe-78f0-497b-8074-f15471b5e6e1',
         image_uri={
-            "molestias": 'excepturi',
-            "pariatur": 'modi',
-            "praesentium": 'rem',
+            "ipsum": 'quidem',
         },
         is_signature_enabled=True,
         mfa_enabled=False,
-        organization_id='voluptates',
+        organization_id='molestias',
         phone='1234567890',
         phone_verified=True,
         preferred_language='de',
@@ -416,10 +416,10 @@ req = operations.UpdateUserV2Request(
             ),
         ],
         signature='<p>Thanks</p>',
-        status=shared.UserV2Status.DELETED,
+        status=shared.UserV2Status.DEACTIVATED,
         token='65dc527f-cb2d-4158-8f2e-8978dbceb599',
     ),
-    id='91e450ad-2abd-4442-a980-2d502a94bb4f',
+    id='d488e1e9-1e45-40ad-aabd-44269802d502',
 )
 
 res = s.user_v2.update_user_v2(req)
@@ -460,7 +460,7 @@ req = operations.VerifyEmailWithTokenRequest(
     user_verification_payload=shared.UserVerificationPayload(
         password='AKjhdakjsdh@!34',
     ),
-    token='eum',
+    token='dolorum',
 )
 
 res = s.user_v2.verify_email_with_token(req)

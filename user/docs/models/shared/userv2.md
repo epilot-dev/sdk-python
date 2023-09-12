@@ -1,7 +1,5 @@
 # UserV2
 
-Invited successfully
-
 
 ## Fields
 
@@ -12,6 +10,7 @@ Invited successfully
 | `display_name`                                                    | *Optional[str]*                                                   | :heavy_minus_sign:                                                | User's display name (default: email address)                      | Example User                                                      |
 | `draft_email`                                                     | *Optional[str]*                                                   | :heavy_minus_sign:                                                | N/A                                                               |                                                                   |
 | `email`                                                           | *Optional[str]*                                                   | :heavy_minus_sign:                                                | N/A                                                               |                                                                   |
+| `favorites`                                                       | dict[str, *Any*]                                                  | :heavy_minus_sign:                                                | N/A                                                               |                                                                   |
 | `id`                                                              | *Optional[str]*                                                   | :heavy_minus_sign:                                                | N/A                                                               |                                                                   |
 | `image_uri`                                                       | dict[str, *Any*]                                                  | :heavy_minus_sign:                                                | N/A                                                               |                                                                   |
 | `is_signature_enabled`                                            | *Optional[bool]*                                                  | :heavy_minus_sign:                                                | N/A                                                               | true                                                              |

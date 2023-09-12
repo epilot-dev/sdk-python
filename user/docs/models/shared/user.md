@@ -1,7 +1,5 @@
 # User
 
-Currently logged in user
-
 
 ## Fields
 
