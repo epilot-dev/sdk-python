@@ -164,9 +164,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "provident": 'distinctio',
-    "quibusdam": 'unde',
-    "nulla": 'corrupti',
+    "corrupti": 'provident',
 }
 
 res = s.epilot.get_token_v2(req, operations.GetTokenV2Security(
