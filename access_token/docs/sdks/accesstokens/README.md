@@ -81,8 +81,6 @@ s = epilot.Epilot(
 req = operations.ListAccessTokensRequest(
     token_type=[
         shared.AccessTokenType.API,
-        shared.AccessTokenType.API,
-        shared.AccessTokenType.API,
     ],
 )
 

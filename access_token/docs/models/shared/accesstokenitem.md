@@ -1,7 +1,5 @@
 # AccessTokenItem
 
-The revoked generated Access Token
-
 
 ## Fields
 
