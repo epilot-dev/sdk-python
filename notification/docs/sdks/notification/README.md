@@ -30,10 +30,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "vel": 'error',
-    "deserunt": 'suscipit',
-    "iure": 'magnam',
-    "debitis": 'ipsa',
+    "distinctio": 'quibusdam',
 }
 
 res = s.notification.create_notification(req)
@@ -71,7 +68,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetNotificationRequest(
-    id=9636.63,
+    id=6027.63,
 )
 
 res = s.notification.get_notification(req)
@@ -109,8 +106,8 @@ s = epilot.Epilot(
 )
 
 req = operations.GetNotificationsRequest(
-    after_id=272656,
-    limit=383441,
+    after_id=857946,
+    limit=544883,
 )
 
 res = s.notification.get_notifications(req)
@@ -206,7 +203,7 @@ s = epilot.Epilot(
 )
 
 req = operations.MarkAsReadRequest(
-    id=477665,
+    id=847252,
 )
 
 res = s.notification.mark_as_read(req)
