@@ -31,9 +31,9 @@ req = operations.DollarSearchCatalogRequest(
         availability=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city='New Tyrelfort',
-                country='Macedonia',
-                postal_code='44217',
+                city='Lake Luciestead',
+                country='Burundi',
+                postal_code='97514-4217',
                 street='425 Aiden Glen',
                 street_number='natus',
             ),

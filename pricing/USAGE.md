@@ -25,12 +25,10 @@ req = operations.DollarAvailabilityCheckRequest(
             ),
         ),
         products=[
-            'iusto',
-            'excepturi',
-            'nisi',
+            'voluptatum',
         ],
     ),
-    x_ivy_org_id='recusandae',
+    x_ivy_org_id='iusto',
 )
 
 res = s.availability_api.dollar_availability_check(req)

@@ -1,7 +1,5 @@
 # Error
 
-Invalid payload
-
 
 ## Fields
 

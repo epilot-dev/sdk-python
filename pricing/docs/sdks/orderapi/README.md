@@ -29,7 +29,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "reiciendis": 'est',
+    "in": 'corporis',
 }
 
 res = s.order_api.create_order(req)
@@ -68,11 +68,9 @@ s = epilot.Epilot(
 
 req = operations.PutOrderRequest(
     request_body={
-        "laborum": 'dolores',
-        "dolorem": 'corporis',
-        "explicabo": 'nobis',
+        "iste": 'iure',
     },
-    id='5955907a-ff1a-43a2-ba94-67739251aa52',
+    id='eb10faaa-2352-4c59-9590-7aff1a3a2fa9',
 )
 
 res = s.order_api.put_order(req)
