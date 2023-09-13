@@ -39,6 +39,7 @@ req = operations.AddRelationsRequest(
             reverse=False,
         ),
     ],
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     async_=False,
     id='1cddc692-601f-4b57-ab0d-5f0d30c5fbb2',
     slug='contact',
@@ -79,6 +80,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteRelationRequest(
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     async_=False,
     attribute='quis',
     entity_id='totam',
@@ -224,6 +226,7 @@ req = operations.UpdateRelationRequest(
             'repellendus',
         ],
     ),
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     async_=False,
     attribute='totam',
     entity_id='similique',
