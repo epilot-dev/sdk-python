@@ -56,14 +56,6 @@ docs/models/operations/listallroles200applicationjson.md
 docs/models/operations/listallrolesresponse.md
 docs/models/operations/listcurrentroles200applicationjson.md
 docs/models/operations/listcurrentrolesresponse.md
-docs/models/operations/putrolerequestbody4type.md
-docs/models/operations/putrolerequestbody4.md
-docs/models/operations/putrolerequestbody3type.md
-docs/models/operations/putrolerequestbody3.md
-docs/models/operations/putrolerequestbody2type.md
-docs/models/operations/putrolerequestbody2.md
-docs/models/operations/putrolerequestbody1type.md
-docs/models/operations/putrolerequestbody1.md
 docs/models/operations/putrolerequest.md
 docs/models/operations/putroleresponse.md
 docs/models/operations/refreshpermissionsresponse.md

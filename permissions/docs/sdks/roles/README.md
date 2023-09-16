@@ -1,4 +1,4 @@
-# roles
+# Roles
 
 ## Overview
 
@@ -156,7 +156,6 @@ Create or update role
 
 ```python
 import epilot
-import dateutil.parser
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -166,30 +165,7 @@ s = epilot.Epilot(
 )
 
 req = operations.PutRoleRequest(
-    request_body=operations.PutRoleRequestBody3(
-        expires_at=dateutil.parser.isoparse('2028-07-21T17:32:28Z'),
-        grants=[
-            shared.Grant(
-                action='entity-read',
-                conditions=[
-                    shared.GrantCondition(
-                        attribute='workflows.primary.task_name',
-                        operation=shared.GrantConditionOperation.EQUALS,
-                        values=[
-                            'provident',
-                        ],
-                    ),
-                ],
-                effect=shared.GrantEffect.DENY,
-                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
-            ),
-        ],
-        id='123:owner',
-        name='Owner',
-        organization_id='123',
-        slug='owner',
-        type=operations.PutRoleRequestBody3Type.SHARE_ROLE,
-    ),
+    request_body='corrupti',
     role_id='123:owner',
 )
 

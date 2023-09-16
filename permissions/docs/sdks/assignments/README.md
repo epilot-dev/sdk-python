@@ -1,4 +1,4 @@
-# assignments
+# Assignments
 
 ## Overview
 

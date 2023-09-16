@@ -38,7 +38,7 @@ if res.assignment is not None:
 ## Available Resources and Operations
 
 
-### [assignments](docs/sdks/assignments/README.md)
+### [Assignments](docs/sdks/assignments/README.md)
 
 * [add_assignment](docs/sdks/assignments/README.md#add_assignment) - addAssignment
 * [assign_roles](docs/sdks/assignments/README.md#assign_roles) - assignRoles
@@ -46,7 +46,7 @@ if res.assignment is not None:
 * [list_all_assignments](docs/sdks/assignments/README.md#list_all_assignments) - listAllAssignments
 * [remove_assignment](docs/sdks/assignments/README.md#remove_assignment) - removeAssignment
 
-### [roles](docs/sdks/roles/README.md)
+### [Roles](docs/sdks/roles/README.md)
 
 * [delete_role](docs/sdks/roles/README.md#delete_role) - deleteRole
 * [get_role](docs/sdks/roles/README.md#get_role) - getRole
