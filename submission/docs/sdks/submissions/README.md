@@ -1,4 +1,4 @@
-# submissions
+# Submissions
 
 ## Overview
 

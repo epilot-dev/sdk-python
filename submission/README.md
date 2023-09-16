@@ -53,7 +53,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [submissions](docs/sdks/submissions/README.md)
+### [Submissions](docs/sdks/submissions/README.md)
 
 * [create_submission](docs/sdks/submissions/README.md#create_submission) - createSubmission
 <!-- End SDK Available Operations -->
