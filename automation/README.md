@@ -37,7 +37,7 @@ if res.automation_execution is not None:
 ## Available Resources and Operations
 
 
-### [executions](docs/sdks/executions/README.md)
+### [Executions](docs/sdks/executions/README.md)
 
 * [cancel_execution](docs/sdks/executions/README.md#cancel_execution) - cancelExecution
 * [get_execution](docs/sdks/executions/README.md#get_execution) - getExecution
@@ -45,7 +45,7 @@ if res.automation_execution is not None:
 * [retrigger_action](docs/sdks/executions/README.md#retrigger_action) - retriggerAction
 * [start_execution](docs/sdks/executions/README.md#start_execution) - startExecution
 
-### [flows](docs/sdks/flows/README.md)
+### [Flows](docs/sdks/flows/README.md)
 
 * [create_flow](docs/sdks/flows/README.md#create_flow) - createFlow
 * [delete_flow](docs/sdks/flows/README.md#delete_flow) - deleteFlow
