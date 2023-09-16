@@ -1,4 +1,4 @@
-# organization_settings
+# OrganizationSettings
 
 ## Overview
 

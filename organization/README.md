@@ -37,12 +37,12 @@ if res.organization is not None:
 ## Available Resources and Operations
 
 
-### [organization](docs/sdks/organization/README.md)
+### [Organization](docs/sdks/organization/README.md)
 
 * [get_organization](docs/sdks/organization/README.md#get_organization) - getOrganization
 * [update_organization](docs/sdks/organization/README.md#update_organization) - updateOrganization
 
-### [organization_settings](docs/sdks/organizationsettings/README.md)
+### [OrganizationSettings](docs/sdks/organizationsettings/README.md)
 
 * [delete_settings_value](docs/sdks/organizationsettings/README.md#delete_settings_value) - deleteSettingsValue
 * [get_settings](docs/sdks/organizationsettings/README.md#get_settings) - getSettings
