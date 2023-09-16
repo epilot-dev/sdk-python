@@ -42,7 +42,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [partners](docs/sdks/partners/README.md)
+### [Partners](docs/sdks/partners/README.md)
 
 * [activate_partner](docs/sdks/partners/README.md#activate_partner) - activatePartner
 * [approve_partner](docs/sdks/partners/README.md#approve_partner) - approvePartner
