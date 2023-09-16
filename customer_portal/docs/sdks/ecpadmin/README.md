@@ -1,4 +1,4 @@
-# ecp_admin
+# ECPAdmin
 
 ## Overview
 

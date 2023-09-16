@@ -1,4 +1,4 @@
-# public
+# Public
 
 ## Overview
 
