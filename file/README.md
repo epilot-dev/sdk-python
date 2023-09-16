@@ -40,7 +40,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [files](docs/sdks/files/README.md)
+### [Files](docs/sdks/files/README.md)
 
 * [delete_file](docs/sdks/files/README.md#delete_file) - deleteFile
 * [download_file](docs/sdks/files/README.md#download_file) - downloadFile
@@ -54,7 +54,7 @@ if res.status_code == 200:
 * [upload_file](docs/sdks/files/README.md#upload_file) - uploadFile
 * [upload_file_public](docs/sdks/files/README.md#upload_file_public) - uploadFilePublic
 
-### [session](docs/sdks/session/README.md)
+### [Session](docs/sdks/session/README.md)
 
 * [delete_session](docs/sdks/session/README.md#delete_session) - deleteSession
 * [get_session](docs/sdks/session/README.md#get_session) - getSession
