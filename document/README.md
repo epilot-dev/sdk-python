@@ -46,7 +46,7 @@ if res.generate_document_200_application_json_object is not None:
 ## Available Resources and Operations
 
 
-### [documents](docs/sdks/documents/README.md)
+### [Documents](docs/sdks/documents/README.md)
 
 * [generate_document](docs/sdks/documents/README.md#generate_document) - generateDocument
 * [generate_document_v2](docs/sdks/documents/README.md#generate_document_v2) - generateDocumentV2
