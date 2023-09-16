@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="epilot-workflows-execution",
-    version="1.44.3",
+    version="1.44.4",
     author="epilot",
     description="Python Client SDK for Epilot",
     long_description=long_description,

@@ -48,7 +48,7 @@ if res.workflow_execution is not None:
 ## Available Resources and Operations
 
 
-### [workflows](docs/sdks/workflows/README.md)
+### [Workflows](docs/sdks/workflows/README.md)
 
 * [create_execution](docs/sdks/workflows/README.md#create_execution) - createExecution
 * [create_step](docs/sdks/workflows/README.md#create_step) - createStep
