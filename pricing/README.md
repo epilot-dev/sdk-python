@@ -53,23 +53,23 @@ if res.availability_result is not None:
 ## Available Resources and Operations
 
 
-### [availability_api](docs/sdks/availabilityapi/README.md)
+### [AvailabilityAPI](docs/sdks/availabilityapi/README.md)
 
 * [dollar_availability_check](docs/sdks/availabilityapi/README.md#dollar_availability_check) - availabilityCheck
 
-### [cart_api](docs/sdks/cartapi/README.md)
+### [CartAPI](docs/sdks/cartapi/README.md)
 
 * [dollar_checkout_cart](docs/sdks/cartapi/README.md#dollar_checkout_cart) - checkoutCart
 
-### [catalog_api](docs/sdks/catalogapi/README.md)
+### [CatalogAPI](docs/sdks/catalogapi/README.md)
 
 * [dollar_search_catalog](docs/sdks/catalogapi/README.md#dollar_search_catalog) - searchCatalog
 
-### [deprecated](docs/sdks/deprecated/README.md)
+### [Deprecated](docs/sdks/deprecated/README.md)
 
 * [~~dollar_create_opportunity~~](docs/sdks/deprecated/README.md#dollar_create_opportunity) - createOpportunity :warning: **Deprecated**
 
-### [order_api](docs/sdks/orderapi/README.md)
+### [OrderAPI](docs/sdks/orderapi/README.md)
 
 * [create_order](docs/sdks/orderapi/README.md#create_order) - createOrder
 * [put_order](docs/sdks/orderapi/README.md#put_order) - putOrder

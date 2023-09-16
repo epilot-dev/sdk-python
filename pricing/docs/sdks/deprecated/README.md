@@ -1,4 +1,4 @@
-# deprecated
+# Deprecated
 
 ### Available Operations
 

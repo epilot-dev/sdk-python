@@ -1,4 +1,4 @@
-# catalog_api
+# CatalogAPI
 
 ## Overview
 

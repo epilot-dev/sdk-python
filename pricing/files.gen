@@ -32,8 +32,7 @@ src/epilot/models/shared/cartdto.py
 src/epilot/models/shared/orderstatus.py
 src/epilot/models/shared/ordersource.py
 src/epilot/models/shared/paymentmethod.py
-src/epilot/models/shared/metadata.py
-src/epilot/models/shared/priceitemsdto.py
+src/epilot/models/shared/priceitemdto.py
 src/epilot/models/shared/customer.py
 src/epilot/models/shared/catalogsearchresult.py
 src/epilot/models/shared/catalogsearch.py
@@ -67,13 +66,14 @@ docs/models/shared/availabilitylocation.md
 docs/models/shared/checkoutcartresult.md
 docs/models/shared/checkoutcartinput.md
 docs/models/shared/checkoutmode.md
+docs/models/shared/cartdtometadata.md
 docs/models/shared/cartdtoinput.md
 docs/models/shared/orderstatus.md
 docs/models/shared/ordersource.md
 docs/models/shared/paymentmethod.md
-docs/models/shared/metadata.md
-docs/models/shared/priceitemsdtotype.md
-docs/models/shared/priceitemsdtoinput.md
+docs/models/shared/priceitemdtometadata.md
+docs/models/shared/priceitemdtotype.md
+docs/models/shared/priceitemdtoinput.md
 docs/models/shared/customer.md
 docs/models/shared/catalogsearchresult.md
 docs/models/shared/catalogsearch.md

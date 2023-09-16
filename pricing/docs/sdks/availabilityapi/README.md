@@ -1,4 +1,4 @@
-# availability_api
+# AvailabilityAPI
 
 ## Overview
 

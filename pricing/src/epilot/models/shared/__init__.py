@@ -12,11 +12,10 @@ from .checkoutcartresult import *
 from .checkoutmode import *
 from .customer import *
 from .error import *
-from .metadata import *
 from .ordersource import *
 from .orderstatus import *
 from .paymentmethod import *
-from .priceitemsdto import *
+from .priceitemdto import *
 from .security import *
 
-__all__ = ["AvailabilityCheckParams","AvailabilityFilters","AvailabilityLocation","AvailabilityResult","AvailabilityResultCheckResults","CartDtoInput","CatalogSearch","CatalogSearchResult","CheckoutCartInput","CheckoutCartResult","CheckoutMode","Customer","Error","MetaData","OrderSource","OrderStatus","PaymentMethod","PriceItemsDtoInput","PriceItemsDtoType","Security"]
+__all__ = ["AvailabilityCheckParams","AvailabilityFilters","AvailabilityLocation","AvailabilityResult","AvailabilityResultCheckResults","CartDtoInput","CartDtoMetadata","CatalogSearch","CatalogSearchResult","CheckoutCartInput","CheckoutCartResult","CheckoutMode","Customer","Error","OrderSource","OrderStatus","PaymentMethod","PriceItemDtoInput","PriceItemDtoMetadata","PriceItemDtoType","Security"]
