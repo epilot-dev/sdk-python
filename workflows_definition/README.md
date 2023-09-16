@@ -40,13 +40,13 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [closing_reason](docs/sdks/closingreason/README.md)
+### [ClosingReason](docs/sdks/closingreason/README.md)
 
 * [change_reason_status](docs/sdks/closingreason/README.md#change_reason_status) - changeReasonStatus
 * [create_closing_reason](docs/sdks/closingreason/README.md#create_closing_reason) - createClosingReason
 * [get_all_closing_reasons](docs/sdks/closingreason/README.md#get_all_closing_reasons) - getAllClosingReasons
 
-### [workflows](docs/sdks/workflows/README.md)
+### [Workflows](docs/sdks/workflows/README.md)
 
 * [create_definition](docs/sdks/workflows/README.md#create_definition) - createDefinition
 * [delete_definition](docs/sdks/workflows/README.md#delete_definition) - deleteDefinition

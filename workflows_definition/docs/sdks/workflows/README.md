@@ -1,4 +1,4 @@
-# workflows
+# Workflows
 
 ### Available Operations
 
