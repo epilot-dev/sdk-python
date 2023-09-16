@@ -1,4 +1,4 @@
-# relations
+# Relations
 
 ## Overview
 

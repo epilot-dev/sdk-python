@@ -40,14 +40,14 @@ if res.activity_item is not None:
 ## Available Resources and Operations
 
 
-### [activity](docs/sdks/activity/README.md)
+### [Activity](docs/sdks/activity/README.md)
 
 * [attach_activity](docs/sdks/activity/README.md#attach_activity) - attachActivity
 * [create_activity](docs/sdks/activity/README.md#create_activity) - createActivity
 * [get_activity](docs/sdks/activity/README.md#get_activity) - getActivity
 * [get_entity_activity_feed](docs/sdks/activity/README.md#get_entity_activity_feed) - getEntityActivityFeed
 
-### [entities](docs/sdks/entities/README.md)
+### [Entities](docs/sdks/entities/README.md)
 
 * [autocomplete](docs/sdks/entities/README.md#autocomplete) - autocomplete
 * [create_entity](docs/sdks/entities/README.md#create_entity) - createEntity
@@ -58,15 +58,15 @@ if res.activity_item is not None:
 * [update_entity](docs/sdks/entities/README.md#update_entity) - updateEntity
 * [upsert_entity](docs/sdks/entities/README.md#upsert_entity) - upsertEntity
 
-### [entity_import](docs/sdks/entityimport/README.md)
+### [EntityImport](docs/sdks/entityimport/README.md)
 
 * [import_entities](docs/sdks/entityimport/README.md#import_entities) - Import Entities
 
-### [export](docs/sdks/export/README.md)
+### [Export](docs/sdks/export/README.md)
 
 * [export_entities](docs/sdks/export/README.md#export_entities) - exportEntities
 
-### [relations](docs/sdks/relations/README.md)
+### [Relations](docs/sdks/relations/README.md)
 
 * [add_relations](docs/sdks/relations/README.md#add_relations) - addRelations
 * [delete_relation](docs/sdks/relations/README.md#delete_relation) - deleteRelation
@@ -74,7 +74,7 @@ if res.activity_item is not None:
 * [get_relations_v2](docs/sdks/relations/README.md#get_relations_v2) - getRelationsV2
 * [update_relation](docs/sdks/relations/README.md#update_relation) - updateRelation
 
-### [saved_views](docs/sdks/savedviews/README.md)
+### [SavedViews](docs/sdks/savedviews/README.md)
 
 * [create_saved_view](docs/sdks/savedviews/README.md#create_saved_view) - createSavedView
 * [delete_saved_view](docs/sdks/savedviews/README.md#delete_saved_view) - deleteSavedView
@@ -83,7 +83,7 @@ if res.activity_item is not None:
 * [list_saved_views](docs/sdks/savedviews/README.md#list_saved_views) - listSavedViews
 * [update_saved_view](docs/sdks/savedviews/README.md#update_saved_view) - updateSavedView
 
-### [schemas](docs/sdks/schemas/README.md)
+### [Schemas](docs/sdks/schemas/README.md)
 
 * [delete_schema](docs/sdks/schemas/README.md#delete_schema) - deleteSchema
 * [get_schema](docs/sdks/schemas/README.md#get_schema) - getSchema
@@ -93,7 +93,7 @@ if res.activity_item is not None:
 * [list_taxonomy_classifications_for_schema](docs/sdks/schemas/README.md#list_taxonomy_classifications_for_schema) - listTaxonomyClassificationsForSchema
 * [put_schema](docs/sdks/schemas/README.md#put_schema) - putSchema
 
-### [taxonomy](docs/sdks/taxonomy/README.md)
+### [Taxonomy](docs/sdks/taxonomy/README.md)
 
 * [get_taxonomy](docs/sdks/taxonomy/README.md#get_taxonomy) - getTaxonomy
 * [list_taxonomies](docs/sdks/taxonomy/README.md#list_taxonomies) - listTaxonomies
