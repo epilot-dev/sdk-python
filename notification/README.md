@@ -37,7 +37,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [notification](docs/sdks/notification/README.md)
+### [Notification](docs/sdks/notification/README.md)
 
 * [create_notification](docs/sdks/notification/README.md#create_notification) - createNotification
 * [get_notification](docs/sdks/notification/README.md#get_notification) - getNotification
