@@ -39,13 +39,13 @@ if res.create_access_token_201_application_json_object is not None:
 ## Available Resources and Operations
 
 
-### [access_tokens](docs/sdks/accesstokens/README.md)
+### [AccessTokens](docs/sdks/accesstokens/README.md)
 
 * [create_access_token](docs/sdks/accesstokens/README.md#create_access_token) - createAccessToken
 * [list_access_tokens](docs/sdks/accesstokens/README.md#list_access_tokens) - listAccessTokens
 * [revoke_access_token](docs/sdks/accesstokens/README.md#revoke_access_token) - revokeAccessToken
 
-### [public](docs/sdks/public/README.md)
+### [Public](docs/sdks/public/README.md)
 
 * [get_access_token_jwks](docs/sdks/public/README.md#get_access_token_jwks) - getAccessTokenJwks
 * [get_access_token_oidc](docs/sdks/public/README.md#get_access_token_oidc) - getAccessTokenOIDC

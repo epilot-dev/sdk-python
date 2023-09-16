@@ -1,4 +1,4 @@
-# access_tokens
+# AccessTokens
 
 ## Overview
 
