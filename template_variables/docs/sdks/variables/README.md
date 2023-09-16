@@ -1,4 +1,4 @@
-# variables
+# Variables
 
 ## Overview
 

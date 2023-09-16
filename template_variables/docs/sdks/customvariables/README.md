@@ -1,4 +1,4 @@
-# custom_variables
+# CustomVariables
 
 ### Available Operations
 

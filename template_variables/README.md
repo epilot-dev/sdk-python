@@ -156,7 +156,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [custom_variables](docs/sdks/customvariables/README.md)
+### [CustomVariables](docs/sdks/customvariables/README.md)
 
 * [create_custom_variable](docs/sdks/customvariables/README.md#create_custom_variable) - Create custom variable
 * [delete_custom_variable](docs/sdks/customvariables/README.md#delete_custom_variable) - Delete custom variable
@@ -165,7 +165,7 @@ if res.status_code == 200:
 * [get_custom_variables](docs/sdks/customvariables/README.md#get_custom_variables) - Get custom variables
 * [update_custom_variable](docs/sdks/customvariables/README.md#update_custom_variable) - Update custom variable
 
-### [variables](docs/sdks/variables/README.md)
+### [Variables](docs/sdks/variables/README.md)
 
 * [generate_q_rcode](docs/sdks/variables/README.md#generate_q_rcode) - generateQRcode
 * [get_categories](docs/sdks/variables/README.md#get_categories) - getCategories
