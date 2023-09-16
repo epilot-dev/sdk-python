@@ -34,14 +34,14 @@ if res.user is not None:
 ## Available Resources and Operations
 
 
-### [user_v1](docs/sdks/userv1/README.md)
+### [UserV1](docs/sdks/userv1/README.md)
 
 * [get_me](docs/sdks/userv1/README.md#get_me) - getMe
 * [get_user](docs/sdks/userv1/README.md#get_user) - getUser
 * [get_user_login_parameters](docs/sdks/userv1/README.md#get_user_login_parameters) - getUserLoginParameters
 * [list_users](docs/sdks/userv1/README.md#list_users) - listUsers
 
-### [user_v2](docs/sdks/userv2/README.md)
+### [UserV2](docs/sdks/userv2/README.md)
 
 * [activate_user](docs/sdks/userv2/README.md#activate_user) - activateUser
 * [delete_user_v2](docs/sdks/userv2/README.md#delete_user_v2) - deleteUserV2
