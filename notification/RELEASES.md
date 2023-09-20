@@ -483,3 +483,11 @@ Based on:
 - Speakeasy CLI 1.86.0 (2.115.2) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.44.4] notification
+
+## 2023-09-20 01:04:15
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/svc-notification-api.yaml
+- Speakeasy CLI 1.88.0 (2.118.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.44.5] notification
