@@ -11,7 +11,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class StepPositionAt:
-    index: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index') }})
+    index: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index'), 'exclude': lambda f: f is None }})
     section_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sectionId'), 'exclude': lambda f: f is None }})
     
 
