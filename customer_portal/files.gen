@@ -12,6 +12,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/operations/addendcustomerrelationtoentity.py
+src/epilot/models/operations/createcustomentityactivity.py
 src/epilot/models/operations/deleteentityfile.py
 src/epilot/models/operations/deleteportaluser.py
 src/epilot/models/operations/getallcontracts.py
@@ -62,6 +63,8 @@ src/epilot/models/operations/userexists.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/errorresp.py
 src/epilot/models/shared/entityslug.py
+src/epilot/models/shared/activityitem.py
+src/epilot/models/shared/activity.py
 src/epilot/models/shared/deleteentityfile.py
 src/epilot/models/shared/entityfilecount.py
 src/epilot/models/shared/organizationsettings.py
@@ -95,6 +98,9 @@ docs/models/operations/addendcustomerrelationtoentitysecurity.md
 docs/models/operations/addendcustomerrelationtoentityrequest.md
 docs/models/operations/addendcustomerrelationtoentity200applicationjson.md
 docs/models/operations/addendcustomerrelationtoentityresponse.md
+docs/models/operations/createcustomentityactivitysecurity.md
+docs/models/operations/createcustomentityactivityrequest.md
+docs/models/operations/createcustomentityactivityresponse.md
 docs/models/operations/deleteentityfilesecurity.md
 docs/models/operations/deleteentityfile202applicationjson.md
 docs/models/operations/deleteentityfileresponse.md
@@ -256,6 +262,10 @@ docs/models/operations/userexists200applicationjson.md
 docs/models/operations/userexistsresponse.md
 docs/models/shared/errorresp.md
 docs/models/shared/entityslug.md
+docs/models/shared/activityitempayloadentity.md
+docs/models/shared/activityitempayload.md
+docs/models/shared/activityitem.md
+docs/models/shared/activity.md
 docs/models/shared/deleteentityfile.md
 docs/models/shared/entityfilecount.md
 docs/models/shared/organizationsettingsautomationentitymapping.md

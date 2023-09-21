@@ -47,6 +47,44 @@ class Ecp:
         return res
 
     
+    def create_custom_entity_activity(self, request: operations.CreateCustomEntityActivityRequest, security: operations.CreateCustomEntityActivitySecurity) -> operations.CreateCustomEntityActivityResponse:
+        r"""createCustomEntityActivity
+        Create a custom activity that can be displayed in activity feed of an entity.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/portal/entity/activity'
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "activity", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        query_params = utils.get_query_params(operations.CreateCustomEntityActivityRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.CreateCustomEntityActivityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 201:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ActivityItem])
+                res.activity_item = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def delete_entity_file(self, request: shared.DeleteEntityFile, security: operations.DeleteEntityFileSecurity) -> operations.DeleteEntityFileResponse:
         r"""deleteEntityFile
         Delete files from an entity

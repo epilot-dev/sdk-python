@@ -7,6 +7,7 @@ APIs defined for a portal user
 ### Available Operations
 
 * [add_end_customer_relation_to_entity](#add_end_customer_relation_to_entity) - addEndCustomerRelationToEntity
+* [create_custom_entity_activity](#create_custom_entity_activity) - createCustomEntityActivity
 * [delete_entity_file](#delete_entity_file) - deleteEntityFile
 * [delete_portal_user](#delete_portal_user) - deletePortalUser
 * [get_all_contracts](#get_all_contracts) - getAllContracts
@@ -68,6 +69,53 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 ### Response
 
 **[operations.AddEndCustomerRelationToEntityResponse](../../models/operations/addendcustomerrelationtoentityresponse.md)**
+
+
+## create_custom_entity_activity
+
+Create a custom activity that can be displayed in activity feed of an entity.
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot()
+
+req = operations.CreateCustomEntityActivityRequest(
+    activity=shared.Activity(
+        message='{{caller}} did something with {{entity payload.entity.id}}.',
+        payload={
+            "corrupti": 'provident',
+        },
+        title='My custom activity',
+        type='MyCustomActivity',
+    ),
+    entities=[
+        '5da0a718-c822-403d-9f5d-20d4584e0528',
+    ],
+)
+
+res = s.ecp.create_custom_entity_activity(req, operations.CreateCustomEntityActivitySecurity(
+    portal_auth="",
+))
+
+if res.activity_item is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                      | [operations.CreateCustomEntityActivityRequest](../../models/operations/createcustomentityactivityrequest.md)   | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `security`                                                                                                     | [operations.CreateCustomEntityActivitySecurity](../../models/operations/createcustomentityactivitysecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
+
+
+### Response
+
+**[operations.CreateCustomEntityActivityResponse](../../models/operations/createcustomentityactivityresponse.md)**
 
 
 ## delete_entity_file
@@ -191,7 +239,7 @@ s = epilot.Epilot()
 
 req = operations.GetAllFilesRequest(
     entity_ids=[
-        'corrupti',
+        'distinctio',
     ],
     from_=0,
     size=0,
@@ -368,7 +416,7 @@ s = epilot.Epilot()
 
 req = operations.GetEntitiesByIdentifiersRequest(
     request_body={
-        "provident": 'distinctio',
+        "quibusdam": 'unde',
     },
     slug=shared.EntitySlug.CONTACT,
 )
@@ -729,9 +777,9 @@ req = shared.SaveEntityFile(
     files=[
         shared.SaveEntityFileFiles(
             tags=[
-                'nulla',
+                'illum',
             ],
-            access_control=shared.SaveEntityFileFilesAccessControl.PUBLIC_READ,
+            access_control=shared.SaveEntityFileFilesAccessControl.PRIVATE,
             document_type='12345',
             file_entity_id='12345',
             filename='12345',
@@ -777,7 +825,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "illum": 'vel',
+    "error": 'deserunt',
 }
 
 res = s.ecp.update_contact(req, operations.UpdateContactSecurity(
@@ -815,7 +863,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateContractRequest(
     request_body={
-        "error": 'deserunt',
+        "suscipit": 'iure',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -855,7 +903,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOpportunityRequest(
     request_body={
-        "suscipit": 'iure',
+        "magnam": 'debitis',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -895,7 +943,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOrderRequest(
     request_body={
-        "magnam": 'debitis',
+        "ipsa": 'delectus',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -934,7 +982,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "ipsa": 'delectus',
+    "tempora": 'suscipit',
 }
 
 res = s.ecp.update_portal_user(req, operations.UpdatePortalUserSecurity(

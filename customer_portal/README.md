@@ -39,6 +39,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 ### [Ecp](docs/sdks/ecp/README.md)
 
 * [add_end_customer_relation_to_entity](docs/sdks/ecp/README.md#add_end_customer_relation_to_entity) - addEndCustomerRelationToEntity
+* [create_custom_entity_activity](docs/sdks/ecp/README.md#create_custom_entity_activity) - createCustomEntityActivity
 * [delete_entity_file](docs/sdks/ecp/README.md#delete_entity_file) - deleteEntityFile
 * [delete_portal_user](docs/sdks/ecp/README.md#delete_portal_user) - deletePortalUser
 * [get_all_contracts](docs/sdks/ecp/README.md#get_all_contracts) - getAllContracts

@@ -79,7 +79,7 @@ req = operations.CreateSSOUserRequest(
         first_name='John',
         last_name='Doe',
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.create_sso_user(req, operations.CreateSSOUserSecurity(
@@ -116,7 +116,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.DeletePortalRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.delete_portal(req, operations.DeletePortalSecurity(
@@ -330,7 +330,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetOrgPortalConfigRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_org_portal_config(req, operations.GetOrgPortalConfigSecurity(
@@ -514,7 +514,7 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
-                'excepturi',
+                'recusandae',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -524,7 +524,7 @@ req = shared.SavePortalFile(
             ),
         ),
     ],
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.save_portal_files(req, operations.SavePortalFilesSecurity(
@@ -568,7 +568,7 @@ req = operations.UpsertEmailTemplatesRequest(
         on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
         on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_email_templates(req, operations.UpsertEmailTemplatesSecurity(
@@ -611,15 +611,15 @@ req = operations.UpsertPortalRequest(
             cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
             cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config='temporibus',
+        config='quis',
         contact_identifiers=[
-            'ab',
+            'veritatis',
         ],
         contact_secondary_identifier='full_name',
         default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
             on_pending_user=[
                 {
-                    "quis": 'veritatis',
+                    "deserunt": 'perferendis',
                 },
             ],
         ),
@@ -636,10 +636,10 @@ req = operations.UpsertPortalRequest(
         entity_actions=[
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='deserunt',
-                    en='perferendis',
+                    de='ipsam',
+                    en='repellendus',
                 ),
-                journey_id='ipsam',
+                journey_id='sapiente',
                 slug=shared.EntitySlug.CONTACT,
             ),
         ],
@@ -669,7 +669,7 @@ req = operations.UpsertPortalRequest(
         is_epilot_domain=False,
         name='Installer Portal',
         self_registration=False,
-        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.DENY,
+        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITH_CONTACT_CREATION,
     ),
     origin=shared.Origin.INSTALLER_PORTAL,
 )
@@ -710,19 +710,18 @@ s = epilot.Epilot()
 req = operations.UpsertPortalWidgetRequest(
     upsert_portal_widget=shared.UpsertPortalWidget(
         widgets=[
-            shared.EntityWidget(
-                headline=shared.EntityWidgetHeadline(
-                    de='at',
-                    en='at',
+            shared.DocumentWidget(
+                headline=shared.DocumentWidgetHeadline(
+                    de='maiores',
+                    en='molestiae',
                 ),
-                id='f7cc78ca-1ba9-428f-8816-742cb7392059',
-                list_index=149675,
-                schema='iste',
-                sub_headline=shared.EntityWidgetSubHeadline(
-                    de='dolor',
-                    en='natus',
+                id='cc78ca1b-a928-4fc8-9674-2cb739205929',
+                list_index=222321,
+                sub_headline=shared.DocumentWidgetSubHeadline(
+                    de='natus',
+                    en='laboriosam',
                 ),
-                type=shared.EntityWidgetType.CONTENT_WIDGET,
+                type=shared.DocumentWidgetType.DOCUMENT_WIDGET,
             ),
         ],
     ),
