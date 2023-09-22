@@ -43,7 +43,7 @@ req = shared.SavedView(
         'contact',
     ],
     ui_config={
-        "deserunt": 'quam',
+        "cumque": 'soluta',
     },
 )
 
@@ -82,7 +82,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteSavedViewRequest(
-    id='3429cdb1-a842-42bb-a79d-2322715bf0cb',
+    id='b1e31b8b-90f3-4443-a110-8e0adcf4b921',
 )
 
 res = s.saved_views.delete_saved_view(req)
@@ -120,7 +120,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSavedViewRequest(
-    id='b1e31b8b-90f3-4443-a110-8e0adcf4b921',
+    id='879fce95-3f73-4ef7-bbc7-abd74dd39c0f',
 )
 
 res = s.saved_views.get_saved_view(req)
@@ -217,9 +217,9 @@ s = epilot.Epilot(
 
 req = operations.UpdateSavedViewRequest(
     saved_view=shared.SavedView(
-        created_by={
-            "odio": 'occaecati',
-        },
+        created_by=shared.SavedViewCreatedBy1(
+            user_id='10598',
+        ),
         is_favorited_by=[
             '11701',
         ],
@@ -230,10 +230,10 @@ req = operations.UpdateSavedViewRequest(
             'contact',
         ],
         ui_config={
-            "voluptatibus": 'quisquam',
+            "nulla": 'fugit',
         },
     ),
-    id='e953f73e-f7fb-4c7a-bd74-dd39c0f5d2cf',
+    id='cff7c70a-4562-46d4-b681-3f16d9f5fce6',
 )
 
 res = s.saved_views.update_saved_view(req)

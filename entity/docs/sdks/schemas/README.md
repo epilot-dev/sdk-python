@@ -69,7 +69,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSchemaRequest(
-    id='f7c70a45-626d-4436-813f-16d9f5fce6c5',
+    id='c556146c-3e25-40fb-808c-42e141aac366',
     slug='contact',
 )
 
@@ -108,11 +108,11 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSchemaVersionsRequest(
-    drafts_from=3331.45,
-    drafts_size=3994.99,
+    drafts_from=7521.35,
+    drafts_size=5573.69,
     slug='contact',
-    versions_from=811.01,
-    versions_size=3018.31,
+    versions_from=8296.03,
+    versions_size=8605.52,
 )
 
 res = s.schemas.get_schema_versions(req)
@@ -217,8 +217,8 @@ s = epilot.Epilot(
 )
 
 req = operations.ListTaxonomyClassificationsForSchemaRequest(
-    query='ea',
-    size=7752.2,
+    query='voluptas',
+    size=7270.44,
     slug='contact',
     taxonomy_slug='purpose',
 )
@@ -261,96 +261,83 @@ s = epilot.Epilot(
 req = operations.PutSchemaRequest(
     entity_schema=shared.EntitySchema(
         attributes=[
-            shared.MultiSelectAttribute(
+            shared.DateAttribute(
                 purpose=[
-                    'e250fb00-8c42-4e14-9aac-366c8dd6b144',
+                    '44290747-4778-4a7b-9466-d28c10ab3cdc',
                 ],
-                allow_any=False,
-                allow_extra_options=False,
-                constraints=shared.MultiSelectAttributeConstraints(),
-                default_value='explicabo',
+                constraints=shared.DateAttributeConstraints(),
+                default_value='fuga',
                 deprecated=False,
-                disable_case_sensitive=False,
                 entity_builder_disable_edit=False,
                 feature_flag='FF_MY_FEATURE_FLAG',
-                group='provident',
+                group='eius',
                 hidden=False,
                 hide_label=False,
-                icon='ipsa',
-                info_helpers=shared.MultiSelectAttributeInfoHelpers(
-                    hint_custom_component='molestiae',
-                    hint_text='magnam',
-                    hint_text_key='odio',
+                icon='eos',
+                info_helpers=shared.DateAttributeInfoHelpers(
+                    hint_custom_component='voluptas',
+                    hint_text='ab',
+                    hint_text_key='cupiditate',
                     hint_tooltip_placement='top',
                 ),
-                label='eius',
+                label='consequatur',
                 layout='full_width',
-                name='Tamara Leffler',
-                options=[
-                    shared.MultiSelectAttributeOptions2(
-                        title='Dr.',
-                        value='ut',
-                    ),
-                ],
+                name='Henrietta Hilpert',
                 order=0,
-                placeholder='eum',
-                preview_value_formatter='suscipit',
+                placeholder='quo',
+                preview_value_formatter='esse',
                 protected=False,
                 readonly=False,
-                render_condition='assumenda',
+                render_condition='recusandae',
                 required=False,
                 setting_flag='MY_SETTING',
                 show_in_table=False,
-                type=shared.MultiSelectAttributeType.MULTISELECT,
-                value_formatter='praesentium',
+                sortable=False,
+                type=shared.DateAttributeType.DATE,
+                value_formatter='distinctio',
             ),
         ],
-        blueprint='c10ab3cd-ca42-4519-84e5-23c7e0bc7178',
+        blueprint='c7178e47-96f2-4a70-8688-282aa482562f',
         capabilities=[
             shared.EntityCapability(
                 purpose=[
-                    'e4796f2a-70c6-4882-82aa-482562f222e9',
+                    '222e9817-ee17-4cbe-a1e6-b7b95bc0ab3c',
                 ],
                 attributes=[
-                    shared.TagsAttribute(
+                    shared.BooleanAttribute(
                         purpose=[
-                            '17ee17cb-e61e-46b7-b95b-c0ab3c20c4f3',
+                            '0c4f3789-fd87-41f9-9dd2-efd121aa6f1e',
                         ],
-                        constraints=shared.TagsAttributeConstraints(),
-                        default_value='esse',
+                        constraints=shared.BooleanAttributeConstraints(),
+                        default_value='vel',
                         deprecated=False,
                         entity_builder_disable_edit=False,
                         feature_flag='FF_MY_FEATURE_FLAG',
-                        group='blanditiis',
+                        group='in',
                         hidden=False,
                         hide_label=False,
-                        icon='provident',
-                        info_helpers=shared.TagsAttributeInfoHelpers(
-                            hint_custom_component='a',
-                            hint_text='nulla',
-                            hint_text_key='quas',
+                        icon='eius',
+                        info_helpers=shared.BooleanAttributeInfoHelpers(
+                            hint_custom_component='libero',
+                            hint_text='illum',
+                            hint_text_key='soluta',
                             hint_tooltip_placement='top',
                         ),
-                        label='esse',
+                        label='accusantium',
                         layout='full_width',
-                        name='Lorene Mueller',
-                        options=[
-                            'possimus',
-                        ],
+                        name='Miranda Carter',
                         order=0,
-                        placeholder='quia',
-                        preview_value_formatter='eveniet',
+                        placeholder='ullam',
+                        preview_value_formatter='nisi',
                         protected=False,
                         readonly=False,
-                        render_condition='asperiores',
+                        render_condition='aut',
                         required=False,
                         setting_flag='MY_SETTING',
                         show_in_table=False,
-                        suggestions=[
-                            'facere',
-                        ],
-                        type=shared.TagsAttributeType.TAGS,
-                        value_formatter='veritatis',
+                        sortable=False,
+                        type=shared.BooleanAttributeType.BOOLEAN,
+                        value_formatter='voluptatum',
                     ),
                 ],
                 feature_flag='FF_MY_FEATURE_FLAG',
@@ -360,49 +347,49 @@ req = operations.PutSchemaRequest(
                 title='Messaging',
                 ui_hooks=[
                     {
-                        "consequuntur": 'quasi',
+                        "qui": 'quibusdam',
                     },
                 ],
             ),
         ],
         dialog_config={
-            "similique": 'culpa',
+            "ex": 'deleniti',
         },
         draft=False,
         enable_setting=[
             '360_features',
         ],
         explicit_search_mappings={
-            "aliquid": shared.SearchMappings(
+            "itaque": shared.SearchMappings(
                 fields_={
-                    "tenetur": 'quae',
+                    "dolorum": 'architecto',
                 },
                 index=False,
-                type=shared.SearchMappingsType.NESTED,
+                type=shared.SearchMappingsType.FLOAT,
             ),
         },
         feature_flag='FF_MY_FEATURE_FLAG',
         group_settings=[
             shared.EntitySchemaGroupSettings(
                 purpose=[
-                    '674bdb04-f157-4560-82d6-8ea19f1d1705',
+                    'f1d17051-339d-4080-86a1-840394c26071',
                 ],
                 expanded=False,
                 feature_flag='FF_MY_FEATURE_FLAG',
-                id='1339d080-86a1-4840-b94c-26071f93f5f0',
+                id='f93f5f06-42da-4c7a-b515-cc413aa63aae',
                 info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(
-                    default='ea',
-                    key='quaerat',
+                    default='totam',
+                    key='fugiat',
                 ),
-                label='consequuntur',
-                order=831520,
+                label='vel',
+                order=497678,
                 render_condition='_is_composite_price = "false"',
                 setting_flag='MY_SETTING',
             ),
         ],
         icon='person',
         layout_settings={
-            "officia": 'maxime',
+            "quos": 'vel',
         },
         name='Contact',
         plural='Contacts',
@@ -410,9 +397,15 @@ req = operations.PutSchemaRequest(
         slug='contact',
         title_template='{{first_name}} {{last_name}}',
         ui_config=shared.EntitySchemaUIConfig(
-            create_view=shared.RedirectEntityView(
-                route='/app/pricing-hub/product/:entityId',
-                view_type=shared.RedirectEntityViewViewType.REDIRECT,
+            create_view=shared.EntityDefaultCreate(
+                search_params={
+                    "possimus": 'facilis',
+                },
+                table_menu_options=shared.EntityDefaultCreateTableMenuOptions(
+                    icon='cum',
+                    label='commodi',
+                ),
+                view_type=shared.EntityDefaultCreateViewType.DEFAULT,
             ),
             edit_view=shared.RedirectEntityView(
                 route='/app/pricing-hub/product/:entityId',
@@ -420,25 +413,31 @@ req = operations.PutSchemaRequest(
             ),
             list_item=shared.EntitySchemaUIConfigListItem(
                 summary_attributes=[
-                    'email',
+                    shared.SummaryAttribute(
+                        feature_flag='reiciendis',
+                        label='assumenda',
+                        render_condition='nemo',
+                        setting_flag='recusandae',
+                        show_as_tag=False,
+                        tag_color='aliquid',
+                        value='aperiam',
+                    ),
                 ],
             ),
             sharing=shared.EntitySchemaUIConfigSharing(
                 show_sharing_button=True,
             ),
-            single_view=shared.RedirectEntityView(
-                route='/app/pricing-hub/product/:entityId',
-                view_type=shared.RedirectEntityViewViewType.REDIRECT,
+            single_view=shared.EntityViewDisabled(
+                view_type=shared.EntityViewDisabledViewType.DISABLED,
             ),
             table_view=shared.EntityDefaultTable(
-                classic_view='quaerat',
+                classic_view='in',
                 dropdown_items=[
-                    shared.EntityDefaultTableDropdownItems2(
+                    shared.EntityDefaultTableDropdownItems1(
+                        entity='contact',
                         feature_flag='FF_MY_FEATURE_FLAG',
                         legacy=False,
-                        title='Opportunities',
-                        type=shared.EntityDefaultTableDropdownItems2Type.LINK,
-                        uri='quod',
+                        type=shared.EntityDefaultTableDropdownItems1Type.ENTITY,
                     ),
                 ],
                 enable_thumbnails=False,
@@ -446,20 +445,20 @@ req = operations.PutSchemaRequest(
                     shared.EntityDefaultTableNavbarActions(
                         options=[
                             shared.EntityDefaultTableNavbarActionsOptions(
-                                label='labore',
+                                label='earum',
                                 params=shared.EntityDefaultTableNavbarActionsOptionsParams(),
                             ),
                         ],
-                        type='ab',
+                        type='facere',
                     ),
                 ],
                 row_actions=[
-                    'adipisci',
+                    'numquam',
                 ],
                 view_type=shared.EntityDefaultTableViewType.DEFAULT,
             ),
         ),
-        version=683573,
+        version=985492,
     ),
     draft=False,
     slug='contact',

@@ -1,4 +1,4 @@
-# CurrencyAttributeCurrency1
+# CurrencyAttributeCurrency
 
 A currency configuration
 

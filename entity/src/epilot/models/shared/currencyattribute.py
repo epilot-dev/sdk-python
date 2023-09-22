@@ -21,7 +21,7 @@ class CurrencyAttributeConstraints:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class CurrencyAttributeCurrency1:
+class CurrencyAttributeCurrency:
     r"""A currency configuration"""
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
@@ -65,7 +65,7 @@ class CurrencyAttributeType(str, Enum):
 @dataclasses.dataclass
 class CurrencyAttribute:
     r"""Currency input"""
-    currency: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
+    currency: list[CurrencyAttributeCurrency] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
     r"""An array of currency configurations with a country code (ISO-4217)"""
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -112,6 +112,8 @@ class CurrencyAttribute:
     r"""This attribute should only be active when the setting is enabled"""
     show_in_table: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_in_table'), 'exclude': lambda f: f is None }})
     r"""Render as a column in table views. When defined, overrides `hidden`"""
+    sortable: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sortable'), 'exclude': lambda f: f is None }})
+    r"""Allow sorting by this attribute in table views if `show_in_table` is true"""
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     
 
