@@ -89,10 +89,6 @@ src/epilot/models/shared/contactcountrequest.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
-docs/sdks/epilot/README.md
-docs/sdks/ecp/README.md
-docs/sdks/ecpadmin/README.md
-docs/sdks/public/README.md
 USAGE.md
 docs/models/operations/addendcustomerrelationtoentitysecurity.md
 docs/models/operations/addendcustomerrelationtoentityrequest.md
@@ -353,4 +349,8 @@ docs/models/shared/upsertportalconfig.md
 docs/models/shared/createuserrequest.md
 docs/models/shared/contactcountrequest.md
 docs/models/shared/security.md
+docs/sdks/epilot/README.md
+docs/sdks/ecp/README.md
+docs/sdks/ecpadmin/README.md
+docs/sdks/public/README.md
 .gitattributes
