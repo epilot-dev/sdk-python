@@ -3,9 +3,13 @@
 
 ```python
 import epilot
+from epilot.models import shared
 
-
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=shared.Security(
+        sigv4="",
+    ),
+)
 
 
 res = s.get_jwks()

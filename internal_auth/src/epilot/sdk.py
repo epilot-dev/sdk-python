@@ -3,7 +3,7 @@
 import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
-from epilot.models import errors, operations
+from epilot.models import errors, operations, shared
 from typing import Any, Optional
 
 class Epilot:
@@ -15,6 +15,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
+                 security: shared.Security = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -23,6 +24,8 @@ class Epilot:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
+        :param security: The security details required for authentication
+        :type security: shared.Security
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -37,7 +40,7 @@ class Epilot:
         if client is None:
             client = requests_http.Session()
         
-        security_client = client
+        security_client = utils.configure_security_client(client, security)
         
         if server_url is not None:
             if url_params is not None:
@@ -60,7 +63,7 @@ class Epilot:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = self.sdk_configuration.client
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -91,7 +94,7 @@ class Epilot:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = self.sdk_configuration.client
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -108,7 +111,7 @@ class Epilot:
         return res
 
     
-    def get_token(self, security: operations.GetTokenSecurity) -> operations.GetTokenResponse:
+    def get_token(self) -> operations.GetTokenResponse:
         r"""getToken
         Generates token for internal API access
 
@@ -142,7 +145,7 @@ class Epilot:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -159,7 +162,7 @@ class Epilot:
         return res
 
     
-    def get_token_v2(self, request: dict[str, Any], security: operations.GetTokenV2Security) -> operations.GetTokenV2Response:
+    def get_token_v2(self, request: dict[str, Any]) -> operations.GetTokenV2Response:
         r"""getTokenV2
         Generates token for internal API access with internal roles
 
@@ -198,7 +201,7 @@ class Epilot:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
