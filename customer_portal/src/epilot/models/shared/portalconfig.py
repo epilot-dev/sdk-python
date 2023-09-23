@@ -59,6 +59,36 @@ class PortalConfigEntityActions:
     
 
 
+class PortalConfigEntityEditRulesCadencePeriodType(str, Enum):
+    DAYS = 'days'
+    WEEKS = 'weeks'
+    MONTHS = 'months'
+
+class PortalConfigEntityEditRulesRuleType(str, Enum):
+    CADENCE = 'cadence'
+    RELATIVE_TO_CURRENT_VALUE = 'relative_to_current_value'
+    DAYS_BEFORE_DATE = 'days_before_date'
+    OVERDUE_PAYMENTS = 'overdue_payments'
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+
+@dataclasses.dataclass
+class PortalConfigEntityEditRules:
+    allowed_decrement: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowed_decrement'), 'exclude': lambda f: f is None }})
+    allowed_increment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowed_increment'), 'exclude': lambda f: f is None }})
+    attribute: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribute'), 'exclude': lambda f: f is None }})
+    cadence_period: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cadence_period'), 'exclude': lambda f: f is None }})
+    cadence_period_type: Optional[PortalConfigEntityEditRulesCadencePeriodType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cadence_period_type'), 'exclude': lambda f: f is None }})
+    changes_allowed: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changes_allowed'), 'exclude': lambda f: f is None }})
+    grace_period: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grace_period'), 'exclude': lambda f: f is None }})
+    number_of_days_before_restriction: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('number_of_days_before_restriction'), 'exclude': lambda f: f is None }})
+    rule_type: Optional[PortalConfigEntityEditRulesRuleType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rule_type'), 'exclude': lambda f: f is None }})
+    slug: Optional[shared_entityslug.EntitySlug] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug'), 'exclude': lambda f: f is None }})
+    r"""URL-friendly identifier for the entity schema"""
+    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -175,6 +205,8 @@ class PortalConfig:
     r"""Enable/Disable the portal access"""
     entity_actions: Optional[list[PortalConfigEntityActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_actions'), 'exclude': lambda f: f is None }})
     r"""Journey actions allowed on an entity by a portal user"""
+    entity_edit_rules: Optional[list[PortalConfigEntityEditRules]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_edit_rules'), 'exclude': lambda f: f is None }})
+    r"""Rules for editing an entity by a portal user"""
     entity_identifiers: Optional[PortalConfigEntityIdentifiers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_identifiers'), 'exclude': lambda f: f is None }})
     r"""Identifiers used to identify an entity by a portal user"""
     feature_settings: Optional[PortalConfigFeatureSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_settings'), 'exclude': lambda f: f is None }})

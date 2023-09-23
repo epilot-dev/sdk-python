@@ -643,6 +643,20 @@ req = operations.UpsertPortalRequest(
                 slug=shared.EntitySlug.CONTACT,
             ),
         ],
+        entity_edit_rules=[
+            shared.UpsertPortalConfigEntityEditRules(
+                allowed_decrement='10%',
+                allowed_increment='10%',
+                attribute='first_name',
+                cadence_period=1,
+                cadence_period_type=shared.UpsertPortalConfigEntityEditRulesCadencePeriodType.MONTHS,
+                changes_allowed=1,
+                grace_period=1,
+                number_of_days_before_restriction=10,
+                rule_type=shared.UpsertPortalConfigEntityEditRulesRuleType.CADENCE,
+                slug=shared.EntitySlug.CONTACT,
+            ),
+        ],
         entity_identifiers=shared.UpsertPortalConfigEntityIdentifiers(
             type=shared.UpsertPortalConfigEntityIdentifiersType(
                 attributes=[
@@ -669,7 +683,7 @@ req = operations.UpsertPortalRequest(
         is_epilot_domain=False,
         name='Installer Portal',
         self_registration=False,
-        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITH_CONTACT_CREATION,
+        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.DENY,
     ),
     origin=shared.Origin.INSTALLER_PORTAL,
 )
@@ -710,22 +724,33 @@ s = epilot.Epilot()
 req = operations.UpsertPortalWidgetRequest(
     upsert_portal_widget=shared.UpsertPortalWidget(
         widgets=[
-            shared.DocumentWidget(
-                headline=shared.DocumentWidgetHeadline(
-                    de='maiores',
-                    en='molestiae',
+            shared.ActionWidget(
+                actions=[
+                    shared.WidgetAction(
+                        id='cc78ca1b-a928-4fc8-9674-2cb739205929',
+                        label=shared.WidgetActionLabel(
+                            de='dolor',
+                            en='natus',
+                        ),
+                        type=shared.WidgetActionType.LINK,
+                        url='hic',
+                    ),
+                ],
+                headline=shared.ActionWidgetHeadline(
+                    de='saepe',
+                    en='fuga',
                 ),
-                id='cc78ca1b-a928-4fc8-9674-2cb739205929',
-                list_index=222321,
-                sub_headline=shared.DocumentWidgetSubHeadline(
-                    de='natus',
-                    en='laboriosam',
+                id='7596eb10-faaa-4235-ac59-55907aff1a3a',
+                list_index=161309,
+                sub_headline=shared.ActionWidgetSubHeadline(
+                    de='repellat',
+                    en='mollitia',
                 ),
-                type=shared.DocumentWidgetType.DOCUMENT_WIDGET,
+                type=shared.ActionWidgetType.ENTITY_WIDGET,
             ),
         ],
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal_widget(req, operations.UpsertPortalWidgetSecurity(

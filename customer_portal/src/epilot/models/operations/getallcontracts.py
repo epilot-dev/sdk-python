@@ -17,6 +17,15 @@ class GetAllContractsSecurity:
 
 
 
+
+@dataclasses.dataclass
+class GetAllContractsRequest:
+    from_: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    
+
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass

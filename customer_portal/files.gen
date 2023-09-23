@@ -105,6 +105,7 @@ docs/models/operations/deleteportaluser200applicationjsonmessage.md
 docs/models/operations/deleteportaluser200applicationjson.md
 docs/models/operations/deleteportaluserresponse.md
 docs/models/operations/getallcontractssecurity.md
+docs/models/operations/getallcontractsrequest.md
 docs/models/operations/getallcontracts200applicationjson.md
 docs/models/operations/getallcontractsresponse.md
 docs/models/operations/getallfilessecurity.md
@@ -112,9 +113,11 @@ docs/models/operations/getallfilesrequest.md
 docs/models/operations/getallfiles200applicationjson.md
 docs/models/operations/getallfilesresponse.md
 docs/models/operations/getallopportunitiessecurity.md
+docs/models/operations/getallopportunitiesrequest.md
 docs/models/operations/getallopportunities200applicationjson.md
 docs/models/operations/getallopportunitiesresponse.md
 docs/models/operations/getallorderssecurity.md
+docs/models/operations/getallordersrequest.md
 docs/models/operations/getallorders200applicationjson.md
 docs/models/operations/getallordersresponse.md
 docs/models/operations/getcontactsecurity.md
@@ -288,6 +291,9 @@ docs/models/shared/portalconfigcognitodetails.md
 docs/models/shared/portalconfigdefaultusertonotify.md
 docs/models/shared/portalconfigentityactionsactionlabel.md
 docs/models/shared/portalconfigentityactions.md
+docs/models/shared/portalconfigentityeditrulescadenceperiodtype.md
+docs/models/shared/portalconfigentityeditrulesruletype.md
+docs/models/shared/portalconfigentityeditrules.md
 docs/models/shared/portalconfigentityidentifierstype.md
 docs/models/shared/portalconfigentityidentifiers.md
 docs/models/shared/portalconfigfeaturesettings.md
@@ -340,6 +346,9 @@ docs/models/shared/upsertportalconfigcognitodetails.md
 docs/models/shared/upsertportalconfigdefaultusertonotify.md
 docs/models/shared/upsertportalconfigentityactionsactionlabel.md
 docs/models/shared/upsertportalconfigentityactions.md
+docs/models/shared/upsertportalconfigentityeditrulescadenceperiodtype.md
+docs/models/shared/upsertportalconfigentityeditrulesruletype.md
+docs/models/shared/upsertportalconfigentityeditrules.md
 docs/models/shared/upsertportalconfigentityidentifierstype.md
 docs/models/shared/upsertportalconfigentityidentifiers.md
 docs/models/shared/upsertportalconfigfeaturesettings.md

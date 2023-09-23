@@ -158,7 +158,7 @@ class Ecp:
         return res
 
     
-    def get_all_contracts(self, security: operations.GetAllContractsSecurity) -> operations.GetAllContractsResponse:
+    def get_all_contracts(self, request: operations.GetAllContractsRequest, security: operations.GetAllContractsSecurity) -> operations.GetAllContractsResponse:
         r"""getAllContracts
         Get all contracts for a portal user
         """
@@ -166,12 +166,13 @@ class Ecp:
         
         url = base_url + '/v2/portal/contract'
         headers = {}
+        query_params = utils.get_query_params(operations.GetAllContractsRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
-        http_res = client.request('GET', url, headers=headers)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetAllContractsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -227,7 +228,7 @@ class Ecp:
         return res
 
     
-    def get_all_opportunities(self, security: operations.GetAllOpportunitiesSecurity) -> operations.GetAllOpportunitiesResponse:
+    def get_all_opportunities(self, request: operations.GetAllOpportunitiesRequest, security: operations.GetAllOpportunitiesSecurity) -> operations.GetAllOpportunitiesResponse:
         r"""getAllOpportunities
         Get all opportunities of a portal user
         """
@@ -235,12 +236,13 @@ class Ecp:
         
         url = base_url + '/v2/portal/opportunity'
         headers = {}
+        query_params = utils.get_query_params(operations.GetAllOpportunitiesRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
-        http_res = client.request('GET', url, headers=headers)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetAllOpportunitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
@@ -261,7 +263,7 @@ class Ecp:
         return res
 
     
-    def get_all_orders(self, security: operations.GetAllOrdersSecurity) -> operations.GetAllOrdersResponse:
+    def get_all_orders(self, request: operations.GetAllOrdersRequest, security: operations.GetAllOrdersSecurity) -> operations.GetAllOrdersResponse:
         r"""getAllOrders
         Get all orders for the portal user
         """
@@ -269,12 +271,13 @@ class Ecp:
         
         url = base_url + '/v2/portal/order'
         headers = {}
+        query_params = utils.get_query_params(operations.GetAllOrdersRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
-        http_res = client.request('GET', url, headers=headers)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetAllOrdersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

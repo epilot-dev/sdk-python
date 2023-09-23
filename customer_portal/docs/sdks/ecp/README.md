@@ -204,8 +204,12 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
+req = operations.GetAllContractsRequest(
+    from_=0,
+    size=100,
+)
 
-res = s.ecp.get_all_contracts(operations.GetAllContractsSecurity(
+res = s.ecp.get_all_contracts(req, operations.GetAllContractsSecurity(
     portal_auth="",
 ))
 
@@ -217,6 +221,7 @@ if res.get_all_contracts_200_application_json_object is not None:
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.GetAllContractsRequest](../../models/operations/getallcontractsrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 | `security`                                                                               | [operations.GetAllContractsSecurity](../../models/operations/getallcontractssecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
 
 
@@ -278,8 +283,12 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
+req = operations.GetAllOpportunitiesRequest(
+    from_=0,
+    size=100,
+)
 
-res = s.ecp.get_all_opportunities(operations.GetAllOpportunitiesSecurity(
+res = s.ecp.get_all_opportunities(req, operations.GetAllOpportunitiesSecurity(
     portal_auth="",
 ))
 
@@ -291,6 +300,7 @@ if res.get_all_opportunities_200_application_json_object is not None:
 
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.GetAllOpportunitiesRequest](../../models/operations/getallopportunitiesrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 | `security`                                                                                       | [operations.GetAllOpportunitiesSecurity](../../models/operations/getallopportunitiessecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
 
 
@@ -311,8 +321,12 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
+req = operations.GetAllOrdersRequest(
+    from_=0,
+    size=100,
+)
 
-res = s.ecp.get_all_orders(operations.GetAllOrdersSecurity(
+res = s.ecp.get_all_orders(req, operations.GetAllOrdersSecurity(
     portal_auth="",
 ))
 
@@ -324,6 +338,7 @@ if res.get_all_orders_200_application_json_object is not None:
 
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.GetAllOrdersRequest](../../models/operations/getallordersrequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 | `security`                                                                         | [operations.GetAllOrdersSecurity](../../models/operations/getallorderssecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
 
 
