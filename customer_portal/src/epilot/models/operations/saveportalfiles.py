@@ -31,10 +31,13 @@ class SavePortalFiles201ApplicationJSON:
 @dataclasses.dataclass
 class SavePortalFilesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""The request could not be validated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     save_portal_files_201_application_json_object: Optional[SavePortalFiles201ApplicationJSON] = dataclasses.field(default=None)
     r"""The files have been saved to the portal successfully."""
     

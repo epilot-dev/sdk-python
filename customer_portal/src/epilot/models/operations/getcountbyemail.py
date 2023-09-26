@@ -33,11 +33,14 @@ class GetCountByEmail200ApplicationJSON:
 @dataclasses.dataclass
 class GetCountByEmailResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Internal Server Error"""
     get_count_by_email_200_application_json_object: Optional[GetCountByEmail200ApplicationJSON] = dataclasses.field(default=None)
     r"""Contact count for the requested email successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

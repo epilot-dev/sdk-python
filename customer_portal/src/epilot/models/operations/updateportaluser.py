@@ -32,10 +32,13 @@ class UpdatePortalUser200ApplicationJSON:
 @dataclasses.dataclass
 class UpdatePortalUserResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     update_portal_user_200_application_json_object: Optional[UpdatePortalUser200ApplicationJSON] = dataclasses.field(default=None)
     r"""The portal user updated successfully."""
     

@@ -33,11 +33,14 @@ class UpsertPortalRequest:
 @dataclasses.dataclass
 class UpsertPortalResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""The request could not be validated"""
     portal_config: Optional[shared_portalconfig.PortalConfig] = dataclasses.field(default=None)
     r"""Portal upserted successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -42,10 +42,13 @@ class UpdateOrder200ApplicationJSON:
 @dataclasses.dataclass
 class UpdateOrderResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     update_order_200_application_json_object: Optional[UpdateOrder200ApplicationJSON] = dataclasses.field(default=None)
     r"""Updated the order details successfully."""
     

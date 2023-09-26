@@ -20,11 +20,14 @@ class GetFilesCountByEntitySecurity:
 @dataclasses.dataclass
 class GetFilesCountByEntityResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     entity_file_counts: Optional[list[shared_entityfilecount.EntityFileCount]] = dataclasses.field(default=None)
     r"""The file counts have been fetched successfully."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

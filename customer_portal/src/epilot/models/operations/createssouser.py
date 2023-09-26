@@ -45,11 +45,14 @@ class CreateSSOUser201ApplicationJSON:
 @dataclasses.dataclass
 class CreateSSOUserResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_sso_user_201_application_json_object: Optional[CreateSSOUser201ApplicationJSON] = dataclasses.field(default=None)
     r"""SSO User created successfully."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""The request could not be validated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

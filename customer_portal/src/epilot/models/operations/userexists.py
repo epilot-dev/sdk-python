@@ -38,10 +38,13 @@ class UserExists200ApplicationJSON:
 @dataclasses.dataclass
 class UserExistsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Internal Server Error"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     user_exists_200_application_json_object: Optional[UserExists200ApplicationJSON] = dataclasses.field(default=None)
     r"""Returned whether the user exists in the portal or not successfully."""
     

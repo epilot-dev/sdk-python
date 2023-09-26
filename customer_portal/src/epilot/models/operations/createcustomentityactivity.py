@@ -31,11 +31,14 @@ class CreateCustomEntityActivityRequest:
 @dataclasses.dataclass
 class CreateCustomEntityActivityResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     activity_item: Optional[shared_activityitem.ActivityItem] = dataclasses.field(default=None)
     r"""Success"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

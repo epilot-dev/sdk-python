@@ -44,11 +44,14 @@ class AddEndCustomerRelationToEntity200ApplicationJSON:
 @dataclasses.dataclass
 class AddEndCustomerRelationToEntityResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     add_end_customer_relation_to_entity_200_application_json_object: Optional[AddEndCustomerRelationToEntity200ApplicationJSON] = dataclasses.field(default=None)
     r"""Portal user is added as a relation to the requested entity successfully."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

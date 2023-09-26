@@ -31,11 +31,14 @@ class DeleteEntityFile202ApplicationJSON:
 @dataclasses.dataclass
 class DeleteEntityFileResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_entity_file_202_application_json_object: Optional[DeleteEntityFile202ApplicationJSON] = dataclasses.field(default=None)
     r"""The files are removed from the requested entity successfully."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""The request could not be validated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

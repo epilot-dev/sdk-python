@@ -43,11 +43,14 @@ class GetValidSecondaryAttributes200ApplicationJSON:
 @dataclasses.dataclass
 class GetValidSecondaryAttributesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
     get_valid_secondary_attributes_200_application_json_object: Optional[GetValidSecondaryAttributes200ApplicationJSON] = dataclasses.field(default=None)
     r"""Valid secondary attributes for the contact entity are returned successfully."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
