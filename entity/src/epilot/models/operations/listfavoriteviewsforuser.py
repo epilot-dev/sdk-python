@@ -23,9 +23,12 @@ class ListFavoriteViewsForUser200ApplicationJSON:
 @dataclasses.dataclass
 class ListFavoriteViewsForUserResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_favorite_views_for_user_200_application_json_object: Optional[ListFavoriteViewsForUser200ApplicationJSON] = dataclasses.field(default=None)
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -11,8 +11,11 @@ from typing import Optional
 @dataclasses.dataclass
 class CreateSavedViewResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     saved_view_item: Optional[shared_savedviewitem.SavedViewItem] = dataclasses.field(default=None)
     r"""Success"""
     

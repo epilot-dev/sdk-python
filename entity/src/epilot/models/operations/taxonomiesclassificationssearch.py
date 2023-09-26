@@ -42,8 +42,11 @@ class TaxonomiesClassificationsSearch200ApplicationJSON:
 @dataclasses.dataclass
 class TaxonomiesClassificationsSearchResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     taxonomies_classifications_search_200_application_json_object: Optional[TaxonomiesClassificationsSearch200ApplicationJSON] = dataclasses.field(default=None)
     r"""Returns list of taxonomy classifications"""
     

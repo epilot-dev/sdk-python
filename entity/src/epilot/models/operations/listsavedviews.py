@@ -23,9 +23,12 @@ class ListSavedViews200ApplicationJSON:
 @dataclasses.dataclass
 class ListSavedViewsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_saved_views_200_application_json_object: Optional[ListSavedViews200ApplicationJSON] = dataclasses.field(default=None)
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
