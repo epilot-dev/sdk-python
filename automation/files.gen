@@ -76,9 +76,6 @@ src/epilot/models/shared/searchautomationsresp.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
-docs/sdks/epilot/README.md
-docs/sdks/executions/README.md
-docs/sdks/flows/README.md
 USAGE.md
 docs/models/operations/cancelexecutionrequest.md
 docs/models/operations/cancelexecutionresponse.md
@@ -183,4 +180,7 @@ docs/models/shared/cartcheckoutconfig.md
 docs/models/shared/automationactionconfig.md
 docs/models/shared/searchautomationsresp.md
 docs/models/shared/security.md
+docs/sdks/epilot/README.md
+docs/sdks/executions/README.md
+docs/sdks/flows/README.md
 .gitattributes

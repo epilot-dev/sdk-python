@@ -19,9 +19,12 @@ class GetExecutionRequest:
 @dataclasses.dataclass
 class GetExecutionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     automation_execution: Optional[shared_automationexecution.AutomationExecution] = dataclasses.field(default=None)
     r"""The returned execution"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
