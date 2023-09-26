@@ -60,8 +60,6 @@ src/epilot/models/shared/steppositionat.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
-docs/sdks/epilot/README.md
-docs/sdks/workflows/README.md
 USAGE.md
 docs/models/operations/createexecutionresponse.md
 docs/models/operations/createsteprequest.md
@@ -125,4 +123,6 @@ docs/models/shared/workflowexecutionupdatereq.md
 docs/models/shared/updatestepreq.md
 docs/models/shared/steppositionat.md
 docs/models/shared/security.md
+docs/sdks/epilot/README.md
+docs/sdks/workflows/README.md
 .gitattributes

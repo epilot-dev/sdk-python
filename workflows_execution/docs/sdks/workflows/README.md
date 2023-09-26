@@ -36,17 +36,17 @@ s = epilot.Epilot(
 
 req = shared.WorkflowExecutionCreateReq(
     assigned_to=[
-        'quo',
+        'iste',
     ],
     contexts=[
         shared.WorkflowContext(
-            id='2ddf7cc7-8ca1-4ba9-a8fc-816742cb7392',
-            schema='perferendis',
-            title='Mrs.',
+            id='396fea75-96eb-410f-aaa2-352c5955907a',
+            schema='doloribus',
+            title='Dr.',
         ),
     ],
-    trigger=shared.TriggerType.AUTOMATIC,
-    workflow_id='sed',
+    trigger=shared.TriggerType.MANUAL,
+    workflow_id='mollitia',
 )
 
 res = s.workflows.create_execution(req)
@@ -86,17 +86,17 @@ s = epilot.Epilot(
 req = operations.CreateStepRequest(
     create_step_req=shared.CreateStepReq(
         automation_config=shared.AutomationConfig(
-            execution_id='iste',
-            execution_status='dolor',
-            flow_id='natus',
+            execution_id='dolorem',
+            execution_status='culpa',
+            flow_id='consequuntur',
         ),
-        execution_type=shared.StepType.MANUAL,
-        insertion_index=9437.49,
-        name='Wilbur Kirlin',
-        section_id='iure',
-        status=shared.StepStatus.IN_PROGRESS,
+        execution_type=shared.StepType.AUTOMATION,
+        insertion_index=6531.08,
+        name='Francis Jerde',
+        section_id='velit',
+        status=shared.StepStatus.SKIPPED,
     ),
-    execution_id='quidem',
+    execution_id='quia',
 )
 
 res = s.workflows.create_step(req)
@@ -134,7 +134,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteExecutionRequest(
-    execution_id='architecto',
+    execution_id='quis',
 )
 
 res = s.workflows.delete_execution(req)
@@ -172,8 +172,8 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteStepRequest(
-    execution_id='ipsa',
-    step_id='reiciendis',
+    execution_id='vitae',
+    step_id='laborum',
 )
 
 res = s.workflows.delete_step(req)
@@ -214,7 +214,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetClosingReasonExecutionRequest(
-    execution_id='est',
+    execution_id='animi',
 )
 
 res = s.workflows.get_closing_reason_execution(req)
@@ -252,7 +252,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetExecutionRequest(
-    execution_id='mollitia',
+    execution_id='enim',
 )
 
 res = s.workflows.get_execution(req)
@@ -290,8 +290,8 @@ s = epilot.Epilot(
 )
 
 req = operations.GetExecutionsRequest(
-    context='laborum',
-    schema='dolores',
+    context='odit',
+    schema='quo',
 )
 
 res = s.workflows.get_executions(req)
@@ -329,14 +329,14 @@ s = epilot.Epilot(
 )
 
 req = shared.SearchExecutionsReq(
-    assigned_to='dolorem',
+    assigned_to='sequi',
     include_done_workflows=False,
-    name='Rose Rolfson',
+    name='Vernon Ondricka Sr.',
     pagination=shared.ExecutionPaginationDynamo(
-        creation_time='nemo',
-        org_id='minima',
+        creation_time='error',
+        org_id='temporibus',
     ),
-    sorting=shared.SearchSorting.DUE_DATE_DESC,
+    sorting=shared.SearchSorting.TRIGGER_DATE_ASC,
     status=shared.WorkflowStatus.STARTED,
 )
 
@@ -375,17 +375,17 @@ s = epilot.Epilot(
 )
 
 req = shared.SearchStepsReq(
-    assigned_to=4386.01,
-    execution_name='culpa',
+    assigned_to=9719.45,
+    execution_name='voluptatibus',
     include_done_workflows=False,
     manually_created=False,
     pagination=shared.SearchPagination(
-        from_=9883.74,
-        size=9589.5,
+        from_=8781.94,
+        size=4686.51,
     ),
-    sorting=shared.SearchSorting.A_Z,
-    status=shared.SearchStepsReqStatus.COMPLETE,
-    step_name='dolorem',
+    sorting=shared.SearchSorting.DUE_DATE_DESC,
+    status=shared.SearchStepsReqStatus.NEXT_OPEN_ITEM_IN_WORKFLOW,
+    step_name='ipsa',
 )
 
 res = s.workflows.search_steps(req)
@@ -425,34 +425,34 @@ s = epilot.Epilot(
 req = operations.UpdateExecutionRequest(
     workflow_execution_update_req=shared.WorkflowExecutionUpdateReq(
         assigned_to=[
-            'culpa',
+            'omnis',
         ],
-        closed_by='consequuntur',
-        closing_reason_description='repellat',
-        completed_time='mollitia',
+        closed_by='voluptate',
+        closing_reason_description='cum',
+        completed_time='perferendis',
         contexts=[
             shared.WorkflowContext(
-                id='94677392-51aa-452c-bf5a-d019da1ffe78',
-                schema='voluptatibus',
-                title='Mr.',
-            ),
-        ],
-        due_date='omnis',
-        dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-            number_of_units=7392.64,
-            step_id='perferendis',
-            time_period=shared.DynamicDueDateTimePeriod.DAYS,
-        ),
-        selected_closing_reasons=[
-            shared.ClosingReason(
-                id='74f15471-b5e6-4e13-b99d-488e1e91e450',
+                id='074f1547-1b5e-46e1-bb99-d488e1e91e45',
+                schema='consequatur',
                 title='Miss',
             ),
         ],
-        status=shared.WorkflowStatus.CLOSED,
+        due_date='quibusdam',
+        dynamic_due_date=shared.DynamicDueDate(
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+            number_of_units=6471.74,
+            step_id='distinctio',
+            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
+        ),
+        selected_closing_reasons=[
+            shared.ClosingReason(
+                id='44269802-d502-4a94-bb4f-63c969e9a3ef',
+                title='Miss',
+            ),
+        ],
+        status=shared.WorkflowStatus.DONE,
     ),
-    execution_id='explicabo',
+    execution_id='in',
 )
 
 res = s.workflows.update_execution(req)
@@ -492,36 +492,36 @@ s = epilot.Epilot(
 req = operations.UpdateStepRequest(
     update_step_req=shared.UpdateStepReq(
         assigned_to=[
-            'deserunt',
+            'illum',
         ],
-        assigned_to_in_progress='distinctio',
+        assigned_to_in_progress='maiores',
         automation_config=shared.AutomationConfig(
-            execution_id='quibusdam',
-            execution_status='labore',
-            flow_id='modi',
+            execution_id='rerum',
+            execution_status='dicta',
+            flow_id='magnam',
         ),
-        completed_time='qui',
-        due_date='aliquid',
+        completed_time='cumque',
+        due_date='facere',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-            number_of_units=5528.22,
-            step_id='perferendis',
-            time_period=shared.DynamicDueDateTimePeriod.DAYS,
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+            number_of_units=3965.06,
+            step_id='laborum',
+            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
         ),
-        entity_ref_id='assumenda',
-        name='Linda Corkery',
+        entity_ref_id='non',
+        name='Jon Tillman',
         position=shared.StepPositionAt(
-            index=2700.08,
-            section_id='facilis',
+            index=5884.65,
+            section_id='nam',
         ),
-        started_time='tempore',
-        status=shared.StepStatus.ASSIGNED,
+        started_time='id',
+        status=shared.StepStatus.COMPLETED,
         user_ids=[
-            9621.89,
+            5332.06,
         ],
     ),
-    execution_id='eum',
-    step_id='non',
+    execution_id='sapiente',
+    step_id='amet',
 )
 
 res = s.workflows.update_step(req)
