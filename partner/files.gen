@@ -32,8 +32,6 @@ src/epilot/models/shared/searchgeolocation.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
-docs/sdks/epilot/README.md
-docs/sdks/partners/README.md
 USAGE.md
 docs/models/operations/activatepartnerrequest.md
 docs/models/operations/activatepartnerresponse.md
@@ -76,4 +74,6 @@ docs/models/shared/partnerinvitationpayload.md
 docs/models/shared/geolocation.md
 docs/models/shared/searchgeolocation.md
 docs/models/shared/security.md
+docs/sdks/epilot/README.md
+docs/sdks/partners/README.md
 .gitattributes

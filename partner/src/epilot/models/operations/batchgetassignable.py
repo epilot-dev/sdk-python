@@ -36,9 +36,12 @@ class BatchGetAssignable200ApplicationJSON:
 @dataclasses.dataclass
 class BatchGetAssignableResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     batch_get_assignable_200_application_json_object: Optional[BatchGetAssignable200ApplicationJSON] = dataclasses.field(default=None)
     r"""List of assignable results"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

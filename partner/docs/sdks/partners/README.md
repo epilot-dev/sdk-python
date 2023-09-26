@@ -35,10 +35,10 @@ s = epilot.Epilot(
 req = operations.ActivatePartnerRequest(
     activate_partner_payload=shared.ActivatePartnerPayload(
         company_name='Company name',
-        organization_id='illum',
-        signed_up_email='Linda.Oberbrunner@yahoo.com',
+        organization_id='debitis',
+        signed_up_email='Vincenzo.Goldner@gmail.com',
     ),
-    token='magnam',
+    token='minus',
 )
 
 res = s.partners.activate_partner(req)
@@ -116,8 +116,8 @@ s = epilot.Epilot(
 
 req = [
     operations.BatchGetAssignableRequestBody(
-        org_id='debitis',
-        user_id='ipsa',
+        org_id='placeat',
+        user_id='voluptatum',
     ),
 ]
 
@@ -156,7 +156,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetPartnerByTokenRequest(
-    token='delectus',
+    token='iusto',
 )
 
 res = s.partners.get_partner_by_token(req)
@@ -195,7 +195,7 @@ s = epilot.Epilot(
 
 req = operations.InvitePartnerRequest(
     partner_invitation_payload=shared.PartnerInvitationPayload(
-        language=shared.PartnerInvitationPayloadLanguage.EN,
+        language=shared.PartnerInvitationPayloadLanguage.DE,
     ),
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
@@ -320,12 +320,12 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchAssignableRequestBody(
-    from_=477665,
+    from_=925597,
     org_ids=[
         '123',
     ],
-    q='minus',
-    size=812169,
+    q='temporibus',
+    size=71036,
     types=[
         operations.SearchAssignableRequestBodyTypes.PARTNER_USER,
     ],
