@@ -25,9 +25,6 @@ src/epilot/models/shared/accesstokenitem.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
-docs/sdks/epilot/README.md
-docs/sdks/accesstokens/README.md
-docs/sdks/public/README.md
 USAGE.md
 docs/models/operations/createaccesstoken201applicationjson.md
 docs/models/operations/createaccesstokenresponse.md
@@ -52,4 +49,7 @@ docs/models/shared/journeytokenparameterstokentype.md
 docs/models/shared/journeytokenparameters.md
 docs/models/shared/accesstokenitem.md
 docs/models/shared/security.md
+docs/sdks/epilot/README.md
+docs/sdks/accesstokens/README.md
+docs/sdks/public/README.md
 .gitattributes

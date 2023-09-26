@@ -21,9 +21,12 @@ class ListAccessTokensRequest:
 @dataclasses.dataclass
 class ListAccessTokensResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     access_token_items: Optional[list[shared_accesstokenitem.AccessTokenItem]] = dataclasses.field(default=None)
     r"""List of Access Tokens"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -39,7 +39,7 @@ s = epilot.Epilot(
 )
 
 req = shared.JourneyTokenParameters(
-    journey_id='quibusdam',
+    journey_id='nulla',
     name='Postman Access Token',
     token_type=shared.JourneyTokenParametersTokenType.JOURNEY,
 )

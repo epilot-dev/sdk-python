@@ -36,9 +36,12 @@ class CreateAccessToken201ApplicationJSON:
 @dataclasses.dataclass
 class CreateAccessTokenResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_access_token_201_application_json_object: Optional[CreateAccessToken201ApplicationJSON] = dataclasses.field(default=None)
     r"""The new generated Access Token"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
