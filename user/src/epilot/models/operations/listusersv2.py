@@ -36,9 +36,12 @@ class ListUsersV2200ApplicationJSON:
 @dataclasses.dataclass
 class ListUsersV2Response:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_users_v2_200_application_json_object: Optional[ListUsersV2200ApplicationJSON] = dataclasses.field(default=None)
     r"""List of organization users"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

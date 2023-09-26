@@ -20,8 +20,11 @@ class GetUserV2Request:
 @dataclasses.dataclass
 class GetUserV2Response:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     user_v2: Optional[shared_userv2.UserV2] = dataclasses.field(default=None)
     r"""The returned user"""
     

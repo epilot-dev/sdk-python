@@ -38,9 +38,6 @@ src/epilot/models/shared/userverificationpayload.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
-docs/sdks/epilot/README.md
-docs/sdks/userv1/README.md
-docs/sdks/userv2/README.md
 USAGE.md
 docs/models/operations/getmeresponse.md
 docs/models/operations/getuserrequest.md
@@ -93,4 +90,7 @@ docs/models/shared/signupuserpayload.md
 docs/models/shared/userdetail.md
 docs/models/shared/userverificationpayload.md
 docs/models/shared/security.md
+docs/sdks/epilot/README.md
+docs/sdks/userv1/README.md
+docs/sdks/userv2/README.md
 .gitattributes
