@@ -22,12 +22,15 @@ class GetDefinitionRequest:
 @dataclasses.dataclass
 class GetDefinitionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     definition_not_found_resp: Optional[shared_definitionnotfoundresp.DefinitionNotFoundResp] = dataclasses.field(default=None)
     r"""Definition Not found"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Validation Errors"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     workflow_definition: Optional[shared_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
     r"""Returns the Workflow definition"""
     

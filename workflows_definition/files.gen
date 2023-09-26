@@ -43,9 +43,6 @@ src/sdk/models/shared/closingreasonsids.py
 src/sdk/models/shared/security.py
 src/sdk/models/shared/__init__.py
 src/sdk/models/errors/__init__.py
-docs/sdks/sdk/README.md
-docs/sdks/closingreason/README.md
-docs/sdks/workflows/README.md
 USAGE.md
 docs/models/operations/changereasonstatusrequest.md
 docs/models/operations/changereasonstatusresponse.md
@@ -90,4 +87,7 @@ docs/models/shared/definitionnotfoundresp.md
 docs/models/shared/maxallowedlimit.md
 docs/models/shared/closingreasonsids.md
 docs/models/shared/security.md
+docs/sdks/sdk/README.md
+docs/sdks/closingreason/README.md
+docs/sdks/workflows/README.md
 .gitattributes

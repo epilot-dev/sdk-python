@@ -20,9 +20,12 @@ class GetAllClosingReasonsRequest:
 @dataclasses.dataclass
 class GetAllClosingReasonsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     closing_reasons: Optional[shared_closingreasons.ClosingReasons] = dataclasses.field(default=None)
     r"""Returns the entire catalog of closing reasons per organization"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -29,7 +29,7 @@ s = sdk.SDK(
 
 req = shared.WorkflowDefinition(
     assigned_to=[
-        'at',
+        'molestiae',
     ],
     closing_reasons=[
         shared.ClosingReasonID(
@@ -37,56 +37,56 @@ req = shared.WorkflowDefinition(
         ),
     ],
     creation_time='2021-04-27T12:01:13.000Z',
-    description='maiores',
+    description='quod',
     due_date='2021-04-27T12:00:00.000Z',
     dynamic_due_date=shared.DynamicDueDate(
-        action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-        number_of_units=7991.59,
-        step_id='quod',
-        time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+        action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
+        number_of_units=4614.79,
+        step_id='totam',
+        time_period=shared.DynamicDueDateTimePeriod.MONTHS,
     ),
     enable_ecp_workflow=False,
     flow=[
         shared.Step(
             assigned_to=[
-                'porro',
+                'dicta',
             ],
             automation_config=shared.StepAutomationConfig(
-                flow_id='dolorum',
+                flow_id='nam',
             ),
             due_date='2021-04-27T12:00:00.000Z',
             dynamic_due_date=shared.DynamicDueDate(
-                action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-                number_of_units=7206.33,
-                step_id='officia',
+                action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
+                number_of_units=5820.2,
+                step_id='fugit',
                 time_period=shared.DynamicDueDateTimePeriod.WEEKS,
             ),
             ecp=shared.ECPDetails(
-                label='fugit',
+                label='hic',
             ),
             execution_type=shared.StepType.AUTOMATION,
-            id='fc816742-cb73-4920-9929-396fea7596eb',
-            name='Brenda Wisozk',
-            order=6706.38,
+            id='816742cb-7392-4059-a939-6fea7596eb10',
+            name='Carlton O'Hara',
+            order=2103.82,
             requirements=[
                 shared.StepRequirement(
                     condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='dolores',
+                    definition_id='corporis',
                     type=shared.ItemType.STEP,
                 ),
             ],
-            type=shared.ItemType.STEP,
+            type=shared.ItemType.SECTION,
             user_ids=[
-                1289.26,
+                3154.28,
             ],
         ),
     ],
-    id='c5955907-aff1-4a3a-afa9-467739251aa5',
+    id='955907af-f1a3-4a2f-a946-7739251aa52c',
     last_update_time='2021-04-27T12:01:13.000Z',
-    name='Angelica Dietrich',
+    name='Mandy Hills',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
+            source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
             target=shared.UpdateEntityAttributesTarget(
                 entity_attribute='my_status',
                 entity_schema='opportunity',
@@ -94,7 +94,7 @@ req = shared.WorkflowDefinition(
         ),
     ],
     user_ids=[
-        8209.94,
+        971.01,
     ],
 )
 
@@ -133,7 +133,7 @@ s = sdk.SDK(
 )
 
 req = operations.DeleteDefinitionRequest(
-    definition_id='aut',
+    definition_id='error',
 )
 
 res = s.workflows.delete_definition(req)
@@ -171,7 +171,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetDefinitionRequest(
-    definition_id='quasi',
+    definition_id='temporibus',
 )
 
 res = s.workflows.get_definition(req)
@@ -267,7 +267,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetWorkflowClosingReasonsRequest(
-    definition_id='error',
+    definition_id='laborum',
 )
 
 res = s.workflows.get_workflow_closing_reasons(req)
@@ -312,7 +312,7 @@ req = operations.SetWorkflowClosingReasonsRequest(
             ),
         ],
     ),
-    definition_id='temporibus',
+    definition_id='quasi',
 )
 
 res = s.workflows.set_workflow_closing_reasons(req)
@@ -352,7 +352,7 @@ s = sdk.SDK(
 req = operations.UpdateDefinitionRequest(
     workflow_definition=shared.WorkflowDefinition(
         assigned_to=[
-            'laborum',
+            'reiciendis',
         ],
         closing_reasons=[
             shared.ClosingReasonID(
@@ -360,53 +360,61 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         creation_time='2021-04-27T12:01:13.000Z',
-        description='quasi',
+        description='voluptatibus',
         due_date='2021-04-27T12:00:00.000Z',
         dynamic_due_date=shared.DynamicDueDate(
             action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-            number_of_units=9764.6,
-            step_id='vero',
-            time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+            number_of_units=4686.51,
+            step_id='praesentium',
+            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
         ),
         enable_ecp_workflow=False,
         flow=[
-            shared.Step(
-                assigned_to=[
-                    'voluptatibus',
-                ],
-                automation_config=shared.StepAutomationConfig(
-                    flow_id='ipsa',
-                ),
-                due_date='2021-04-27T12:00:00.000Z',
-                dynamic_due_date=shared.DynamicDueDate(
-                    action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-                    number_of_units=4511.59,
-                    step_id='cum',
-                    time_period=shared.DynamicDueDateTimePeriod.DAYS,
-                ),
-                ecp=shared.ECPDetails(
-                    label='doloremque',
-                ),
-                execution_type=shared.StepType.MANUAL,
-                id='4f15471b-5e6e-413b-99d4-88e1e91e450a',
-                name='Benjamin O'Connell',
-                order=2894.06,
-                requirements=[
-                    shared.StepRequirement(
-                        condition=shared.StepRequirementCondition.CLOSED,
-                        definition_id='modi',
-                        type=shared.ItemType.STEP,
+            shared.Section(
+                id='97b0074f-1547-41b5-a6e1-3b99d488e1e9',
+                name='Patti Gottlieb MD',
+                order=8423.42,
+                steps=[
+                    shared.Step(
+                        assigned_to=[
+                            'explicabo',
+                        ],
+                        automation_config=shared.StepAutomationConfig(
+                            flow_id='deserunt',
+                        ),
+                        due_date='2021-04-27T12:00:00.000Z',
+                        dynamic_due_date=shared.DynamicDueDate(
+                            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
+                            number_of_units=8413.86,
+                            step_id='labore',
+                            time_period=shared.DynamicDueDateTimePeriod.DAYS,
+                        ),
+                        ecp=shared.ECPDetails(
+                            label='qui',
+                        ),
+                        execution_type=shared.StepType.MANUAL,
+                        id='9802d502-a94b-4b4f-a3c9-69e9a3efa77d',
+                        name='Jean Buckridge',
+                        order=8137.98,
+                        requirements=[
+                            shared.StepRequirement(
+                                condition=shared.StepRequirementCondition.CLOSED,
+                                definition_id='ea',
+                                type=shared.ItemType.STEP,
+                            ),
+                        ],
+                        type=shared.ItemType.SECTION,
+                        user_ids=[
+                            8811.04,
+                        ],
                     ),
                 ],
                 type=shared.ItemType.STEP,
-                user_ids=[
-                    5865.13,
-                ],
             ),
         ],
-        id='802d502a-94bb-44f6-bc96-9e9a3efa77df',
+        id='95efb9ba-88f3-4a66-9970-74ba4469b6e2',
         last_update_time='2021-04-27T12:01:13.000Z',
-        name='Keith Gulgowski',
+        name='Danielle Bosco',
         update_entity_attributes=[
             shared.UpdateEntityAttributes(
                 source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
@@ -417,10 +425,10 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         user_ids=[
-            3965.06,
+            5518.16,
         ],
     ),
-    definition_id='laborum',
+    definition_id='sint',
 )
 
 res = s.workflows.update_definition(req)

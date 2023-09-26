@@ -26,7 +26,7 @@ req = operations.ChangeReasonStatusRequest(
     change_reason_status_req=shared.ChangeReasonStatusReq(
         status=shared.ClosingReasonsStatus.INACTIVE,
     ),
-    reason_id='quibusdam',
+    reason_id='nulla',
 )
 
 res = s.closing_reason.change_reason_status(req)
@@ -64,10 +64,10 @@ s = sdk.SDK(
 )
 
 req = shared.ClosingReason(
-    creation_time='unde',
-    id='d8d69a67-4e0f-4467-8c87-96ed151a05df',
-    last_update_time='quo',
-    status=shared.ClosingReasonsStatus.ACTIVE,
+    creation_time='corrupti',
+    id='d69a674e-0f46-47cc-8796-ed151a05dfc2',
+    last_update_time='at',
+    status=shared.ClosingReasonsStatus.INACTIVE,
     title='Dr.',
 )
 

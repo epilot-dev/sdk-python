@@ -20,9 +20,12 @@ class GetWorkflowClosingReasonsRequest:
 @dataclasses.dataclass
 class GetWorkflowClosingReasonsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     closing_reasons_ids: Optional[shared_closingreasonsids.ClosingReasonsIds] = dataclasses.field(default=None)
     r"""Returns the entire catalog of closing reasons for a specific workflow"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
