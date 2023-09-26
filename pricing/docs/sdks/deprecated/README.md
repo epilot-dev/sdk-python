@@ -28,9 +28,9 @@ s = epilot.Epilot(
 
 req = operations.DollarCreateOpportunityRequest(
     request_body={
-        "hic": 'saepe',
+        "corporis": 'explicabo',
     },
-    x_ivy_org_id='fuga',
+    x_ivy_org_id='nobis',
 )
 
 res = s.deprecated.dollar_create_opportunity(req)

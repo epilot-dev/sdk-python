@@ -39,12 +39,6 @@ src/epilot/models/shared/catalogsearch.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
-docs/sdks/epilot/README.md
-docs/sdks/availabilityapi/README.md
-docs/sdks/cartapi/README.md
-docs/sdks/catalogapi/README.md
-docs/sdks/deprecated/README.md
-docs/sdks/orderapi/README.md
 USAGE.md
 docs/models/operations/dollaravailabilitycheckrequest.md
 docs/models/operations/dollaravailabilitycheckresponse.md
@@ -78,4 +72,10 @@ docs/models/shared/customer.md
 docs/models/shared/catalogsearchresult.md
 docs/models/shared/catalogsearch.md
 docs/models/shared/security.md
+docs/sdks/epilot/README.md
+docs/sdks/availabilityapi/README.md
+docs/sdks/cartapi/README.md
+docs/sdks/catalogapi/README.md
+docs/sdks/deprecated/README.md
+docs/sdks/orderapi/README.md
 .gitattributes

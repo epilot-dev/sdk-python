@@ -23,11 +23,14 @@ class DollarCheckoutCartRequest:
 @dataclasses.dataclass
 class DollarCheckoutCartResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     checkout_cart_result: Optional[shared_checkoutcartresult.CheckoutCartResult] = dataclasses.field(default=None)
     r"""The checkout result"""
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

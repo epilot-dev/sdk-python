@@ -23,11 +23,14 @@ class DollarAvailabilityCheckRequest:
 @dataclasses.dataclass
 class DollarAvailabilityCheckResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     availability_result: Optional[shared_availabilityresult.AvailabilityResult] = dataclasses.field(default=None)
     r"""The availability check result"""
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

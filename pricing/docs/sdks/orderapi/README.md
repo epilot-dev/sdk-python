@@ -29,7 +29,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "in": 'corporis',
+    "enim": 'omnis',
 }
 
 res = s.order_api.create_order(req)
@@ -68,9 +68,9 @@ s = epilot.Epilot(
 
 req = operations.PutOrderRequest(
     request_body={
-        "iste": 'iure',
+        "nemo": 'minima',
     },
-    id='eb10faaa-2352-4c59-9590-7aff1a3a2fa9',
+    id='907aff1a-3a2f-4a94-a773-9251aa52c3f5',
 )
 
 res = s.order_api.put_order(req)

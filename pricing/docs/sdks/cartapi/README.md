@@ -41,10 +41,10 @@ s = epilot.Epilot(
 
 req = operations.DollarCheckoutCartRequest(
     checkout_cart_input=shared.CheckoutCartInput(
-        cart='totam',
-        mode=shared.CheckoutMode.CREATE_QUOTE,
+        cart='ipsum',
+        mode=shared.CheckoutMode.CREATE_INVOICE,
     ),
-    x_ivy_org_id='dolorum',
+    x_ivy_org_id='aspernatur',
 )
 
 res = s.cart_api.dollar_checkout_cart(req)

@@ -31,20 +31,20 @@ req = operations.DollarSearchCatalogRequest(
         availability=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city='Lake Luciestead',
-                country='Burundi',
-                postal_code='97514-4217',
-                street='425 Aiden Glen',
-                street_number='natus',
+                city='West Liaville',
+                country='Namibia',
+                postal_code='63996',
+                street='3649 Boyle Cape',
+                street_number='reiciendis',
             ),
         ),
-        from_=1496.75,
+        from_=6667.67,
         hydrate=False,
-        q='iste',
-        size=2223.21,
-        sort='natus',
+        q='mollitia',
+        size=6706.38,
+        sort='dolores',
     ),
-    x_ivy_org_id='laboriosam',
+    x_ivy_org_id='dolorem',
 )
 
 res = s.catalog_api.dollar_search_catalog(req)
