@@ -34,8 +34,11 @@ class SearchVariablesRequestBody:
 @dataclasses.dataclass
 class SearchVariablesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     variable_results: Optional[list[shared_variableresult.VariableResult]] = dataclasses.field(default=None)
     r"""ok"""
     

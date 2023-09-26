@@ -29,7 +29,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GenerateQRcodeRequest(
-    qrdata='minima',
+    qrdata='accusantium',
 )
 
 res = s.variables.generate_q_rcode(req)
@@ -117,11 +117,11 @@ req = operations.GetVariableContextRequestBody(
                 variable='{{craftsmen.invitation_link}}',
             ),
         ],
-        language=shared.VariableParametersLanguage.DE,
+        language=shared.VariableParametersLanguage.EN,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_name='accusantium',
+        template_name='culpa',
         template_tags=[
-            'iure',
+            'doloribus',
         ],
         template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
@@ -182,11 +182,11 @@ req = operations.ReplaceTemplatesRequestBody(
                 variable='{{craftsmen.invitation_link}}',
             ),
         ],
-        language=shared.VariableParametersLanguage.DE,
+        language=shared.VariableParametersLanguage.EN,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_name='sapiente',
+        template_name='mollitia',
         template_tags=[
-            'architecto',
+            'dolorem',
         ],
         template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
@@ -232,10 +232,10 @@ req = operations.SearchVariablesRequestBody(
     entity_schemas=[
         'contact',
     ],
-    from_=208876,
+    from_=161309,
     lang=operations.SearchVariablesRequestBodyLang.DE,
     query='logo',
-    size=161309,
+    size=653108,
     template_type=shared.TemplateType.DOCUMENT,
 )
 
