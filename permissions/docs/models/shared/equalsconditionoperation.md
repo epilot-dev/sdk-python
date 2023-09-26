@@ -1,4 +1,4 @@
-# GrantConditionOperation
+# EqualsConditionOperation
 
 
 ## Values
