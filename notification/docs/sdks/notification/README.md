@@ -30,7 +30,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "distinctio": 'quibusdam',
+    "unde": 'nulla',
 }
 
 res = s.notification.create_notification(req)
@@ -68,7 +68,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetNotificationRequest(
-    id=6027.63,
+    id=5448.83,
 )
 
 res = s.notification.get_notification(req)
@@ -106,8 +106,8 @@ s = epilot.Epilot(
 )
 
 req = operations.GetNotificationsRequest(
-    after_id=857946,
-    limit=544883,
+    after_id=847252,
+    limit=423655,
 )
 
 res = s.notification.get_notifications(req)
@@ -203,7 +203,7 @@ s = epilot.Epilot(
 )
 
 req = operations.MarkAsReadRequest(
-    id=847252,
+    id=623564,
 )
 
 res = s.notification.mark_as_read(req)
