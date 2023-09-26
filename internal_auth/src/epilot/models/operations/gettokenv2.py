@@ -23,9 +23,12 @@ class GetTokenV2200ApplicationJSON:
 @dataclasses.dataclass
 class GetTokenV2Response:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_token_v2_200_application_json_object: Optional[GetTokenV2200ApplicationJSON] = dataclasses.field(default=None)
     r"""JWT Token"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

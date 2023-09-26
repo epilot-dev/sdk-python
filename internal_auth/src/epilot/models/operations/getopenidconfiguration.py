@@ -23,9 +23,12 @@ class GetOpenIDConfiguration200ApplicationJSON:
 @dataclasses.dataclass
 class GetOpenIDConfigurationResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_open_id_configuration_200_application_json_object: Optional[GetOpenIDConfiguration200ApplicationJSON] = dataclasses.field(default=None)
     r"""OpenID Configuration"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
