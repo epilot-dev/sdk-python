@@ -43,6 +43,7 @@ docs/models/operations/getpublictokenjwksresponse.md
 docs/models/operations/getpublictokenoidc200applicationjson.md
 docs/models/operations/getpublictokenoidcresponse.md
 docs/models/shared/accesstokentype.md
+docs/models/shared/tokenparameters.md
 docs/models/shared/accesstokenparameterstokentype.md
 docs/models/shared/accesstokenparameters.md
 docs/models/shared/journeytokenparameterstokentype.md
