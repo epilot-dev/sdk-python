@@ -32,14 +32,14 @@ if res.user is not None:
 ## Available Resources and Operations
 
 
-### [UserV1](docs/sdks/userv1/README.md)
+### [user_v1](docs/sdks/userv1/README.md)
 
 * [get_me](docs/sdks/userv1/README.md#get_me) - getMe
 * [get_user](docs/sdks/userv1/README.md#get_user) - getUser
 * [get_user_login_parameters](docs/sdks/userv1/README.md#get_user_login_parameters) - getUserLoginParameters
 * [list_users](docs/sdks/userv1/README.md#list_users) - listUsers
 
-### [UserV2](docs/sdks/userv2/README.md)
+### [user_v2](docs/sdks/userv2/README.md)
 
 * [activate_user](docs/sdks/userv2/README.md#activate_user) - activateUser
 * [delete_user_v2](docs/sdks/userv2/README.md#delete_user_v2) - deleteUserV2
@@ -58,8 +58,6 @@ if res.user is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -72,8 +70,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
