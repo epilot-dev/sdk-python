@@ -3,7 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ..shared import orgrole as shared_orgrole
+from ..shared import partnerrole as shared_partnerrole
+from ..shared import sharerole as shared_sharerole
+from ..shared import userrole as shared_userrole
+from typing import Optional, Union
 
 
 
@@ -23,7 +27,7 @@ class GetRoleResponse:
     r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    role: Optional[Any] = dataclasses.field(default=None)
+    role: Optional[Union[shared_userrole.UserRole, shared_orgrole.OrgRole, shared_sharerole.ShareRole, shared_partnerrole.PartnerRole]] = dataclasses.field(default=None)
     r"""ok"""
     
 

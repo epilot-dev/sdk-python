@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional, Union
 
 class Roles:
     r"""Manage roles and grants"""
@@ -33,7 +33,7 @@ class Roles:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[Union[shared.UserRole, shared.OrgRole, shared.ShareRole, shared.PartnerRole]])
                 res.role = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -61,7 +61,7 @@ class Roles:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[Union[shared.UserRole, shared.OrgRole, shared.ShareRole, shared.PartnerRole]])
                 res.role = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -133,7 +133,7 @@ class Roles:
         
         url = utils.generate_url(operations.PutRoleRequest, base_url, '/v1/permissions/roles/{roleId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "role_payload", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -148,7 +148,7 @@ class Roles:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[Union[shared.UserRole, shared.OrgRole, shared.ShareRole, shared.PartnerRole]])
                 res.role = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

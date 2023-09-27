@@ -3,9 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import orgrole as shared_orgrole
+from ..shared import partnerrole as shared_partnerrole
+from ..shared import sharerole as shared_sharerole
+from ..shared import userrole as shared_userrole
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -13,7 +17,7 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class ListAllRoles200ApplicationJSON:
     r"""ok"""
-    roles: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles'), 'exclude': lambda f: f is None }})
+    roles: Optional[list[Union[shared_userrole.UserRole, shared_orgrole.OrgRole, shared_sharerole.ShareRole, shared_partnerrole.PartnerRole]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles'), 'exclude': lambda f: f is None }})
     
 
 

@@ -1,4 +1,5 @@
 # Roles
+(*roles*)
 
 ## Overview
 
@@ -165,7 +166,7 @@ s = epilot.Epilot(
 )
 
 req = operations.PutRoleRequest(
-    request_body='corrupti',
+    role_payload=[],
     role_id='123:owner',
 )
 
