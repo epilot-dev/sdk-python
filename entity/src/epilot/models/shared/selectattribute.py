@@ -5,7 +5,7 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 
@@ -53,6 +53,12 @@ class SelectAttributeOptions1:
     
 
 
+
+
+@dataclasses.dataclass
+class SelectAttributeOptions:
+    pass
+
 class SelectAttributeType(str, Enum):
     SELECT = 'select'
     RADIO = 'radio'
@@ -91,7 +97,7 @@ class SelectAttribute:
     info_helpers: Optional[SelectAttributeInfoHelpers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('info_helpers'), 'exclude': lambda f: f is None }})
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
     layout: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('layout'), 'exclude': lambda f: f is None }})
-    options: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options'), 'exclude': lambda f: f is None }})
+    options: Optional[list[Union[SelectAttributeOptions1, str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options'), 'exclude': lambda f: f is None }})
     order: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})
     r"""Attribute sort order (ascending) in group"""
     placeholder: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('placeholder'), 'exclude': lambda f: f is None }})

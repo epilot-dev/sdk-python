@@ -1,4 +1,5 @@
 # Schemas
+(*schemas*)
 
 ## Overview
 
@@ -69,7 +70,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSchemaRequest(
-    id='c556146c-3e25-40fb-808c-42e141aac366',
+    id='e6c55614-6c3e-4250-bb00-8c42e141aac3',
     slug='contact',
 )
 
@@ -108,11 +109,11 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSchemaVersionsRequest(
-    drafts_from=7521.35,
-    drafts_size=5573.69,
+    drafts_from=4321.48,
+    drafts_size=4205.39,
     slug='contact',
-    versions_from=8296.03,
-    versions_size=8605.52,
+    versions_from=7521.35,
+    versions_size=5573.69,
 )
 
 res = s.schemas.get_schema_versions(req)
@@ -217,8 +218,8 @@ s = epilot.Epilot(
 )
 
 req = operations.ListTaxonomyClassificationsForSchemaRequest(
-    query='voluptas',
-    size=7270.44,
+    query='assumenda',
+    size=8605.52,
     slug='contact',
     taxonomy_slug='purpose',
 )
@@ -261,84 +262,16 @@ s = epilot.Epilot(
 req = operations.PutSchemaRequest(
     entity_schema=shared.EntitySchema(
         attributes=[
-            shared.DateAttribute(
-                purpose=[
-                    '44290747-4778-4a7b-9466-d28c10ab3cdc',
-                ],
-                constraints=shared.DateAttributeConstraints(),
-                default_value='fuga',
-                deprecated=False,
-                entity_builder_disable_edit=False,
-                feature_flag='FF_MY_FEATURE_FLAG',
-                group='eius',
-                hidden=False,
-                hide_label=False,
-                icon='eos',
-                info_helpers=shared.DateAttributeInfoHelpers(
-                    hint_custom_component='voluptas',
-                    hint_text='ab',
-                    hint_text_key='cupiditate',
-                    hint_tooltip_placement='top',
-                ),
-                label='consequatur',
-                layout='full_width',
-                name='Henrietta Hilpert',
-                order=0,
-                placeholder='quo',
-                preview_value_formatter='esse',
-                protected=False,
-                readonly=False,
-                render_condition='recusandae',
-                required=False,
-                setting_flag='MY_SETTING',
-                show_in_table=False,
-                sortable=False,
-                type=shared.DateAttributeType.DATE,
-                value_formatter='distinctio',
-            ),
+            [],
         ],
-        blueprint='c7178e47-96f2-4a70-8688-282aa482562f',
+        blueprint='6b144290-7474-4778-a7bd-466d28c10ab3',
         capabilities=[
             shared.EntityCapability(
                 purpose=[
-                    '222e9817-ee17-4cbe-a1e6-b7b95bc0ab3c',
+                    'cdca4251-904e-4523-87e0-bc7178e4796f',
                 ],
                 attributes=[
-                    shared.BooleanAttribute(
-                        purpose=[
-                            '0c4f3789-fd87-41f9-9dd2-efd121aa6f1e',
-                        ],
-                        constraints=shared.BooleanAttributeConstraints(),
-                        default_value='vel',
-                        deprecated=False,
-                        entity_builder_disable_edit=False,
-                        feature_flag='FF_MY_FEATURE_FLAG',
-                        group='in',
-                        hidden=False,
-                        hide_label=False,
-                        icon='eius',
-                        info_helpers=shared.BooleanAttributeInfoHelpers(
-                            hint_custom_component='libero',
-                            hint_text='illum',
-                            hint_text_key='soluta',
-                            hint_tooltip_placement='top',
-                        ),
-                        label='accusantium',
-                        layout='full_width',
-                        name='Miranda Carter',
-                        order=0,
-                        placeholder='ullam',
-                        preview_value_formatter='nisi',
-                        protected=False,
-                        readonly=False,
-                        render_condition='aut',
-                        required=False,
-                        setting_flag='MY_SETTING',
-                        show_in_table=False,
-                        sortable=False,
-                        type=shared.BooleanAttributeType.BOOLEAN,
-                        value_formatter='voluptatum',
-                    ),
+                    [],
                 ],
                 feature_flag='FF_MY_FEATURE_FLAG',
                 legacy=False,
@@ -347,49 +280,49 @@ req = operations.PutSchemaRequest(
                 title='Messaging',
                 ui_hooks=[
                     {
-                        "qui": 'quibusdam',
+                        "dolores": 'deserunt',
                     },
                 ],
             ),
         ],
         dialog_config={
-            "ex": 'deleniti',
+            "molestiae": 'accusantium',
         },
         draft=False,
         enable_setting=[
             '360_features',
         ],
         explicit_search_mappings={
-            "itaque": shared.SearchMappings(
+            "porro": shared.SearchMappings(
                 fields_={
-                    "dolorum": 'architecto',
+                    "eum": 'quas',
                 },
                 index=False,
-                type=shared.SearchMappingsType.FLOAT,
+                type=shared.SearchMappingsType.LONG,
             ),
         },
         feature_flag='FF_MY_FEATURE_FLAG',
         group_settings=[
             shared.EntitySchemaGroupSettings(
                 purpose=[
-                    'f1d17051-339d-4080-86a1-840394c26071',
+                    '282aa482-562f-4222-a981-7ee17cbe61e6',
                 ],
                 expanded=False,
                 feature_flag='FF_MY_FEATURE_FLAG',
-                id='f93f5f06-42da-4c7a-b515-cc413aa63aae',
+                id='b7b95bc0-ab3c-420c-8f37-89fd871f99dd',
                 info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(
-                    default='totam',
-                    key='fugiat',
+                    default='quia',
+                    key='eveniet',
                 ),
-                label='vel',
-                order=497678,
+                label='asperiores',
+                order=815524,
                 render_condition='_is_composite_price = "false"',
                 setting_flag='MY_SETTING',
             ),
         ],
         icon='person',
         layout_settings={
-            "quos": 'vel',
+            "veritatis": 'consequuntur',
         },
         name='Contact',
         plural='Contacts',
@@ -397,68 +330,20 @@ req = operations.PutSchemaRequest(
         slug='contact',
         title_template='{{first_name}} {{last_name}}',
         ui_config=shared.EntitySchemaUIConfig(
-            create_view=shared.EntityDefaultCreate(
-                search_params={
-                    "possimus": 'facilis',
-                },
-                table_menu_options=shared.EntityDefaultCreateTableMenuOptions(
-                    icon='cum',
-                    label='commodi',
-                ),
-                view_type=shared.EntityDefaultCreateViewType.DEFAULT,
-            ),
-            edit_view=shared.RedirectEntityView(
-                route='/app/pricing-hub/product/:entityId',
-                view_type=shared.RedirectEntityViewViewType.REDIRECT,
-            ),
+            create_view=[],
+            edit_view=[],
             list_item=shared.EntitySchemaUIConfigListItem(
                 summary_attributes=[
-                    shared.SummaryAttribute(
-                        feature_flag='reiciendis',
-                        label='assumenda',
-                        render_condition='nemo',
-                        setting_flag='recusandae',
-                        show_as_tag=False,
-                        tag_color='aliquid',
-                        value='aperiam',
-                    ),
+                    [],
                 ],
             ),
             sharing=shared.EntitySchemaUIConfigSharing(
                 show_sharing_button=True,
             ),
-            single_view=shared.EntityViewDisabled(
-                view_type=shared.EntityViewDisabledViewType.DISABLED,
-            ),
-            table_view=shared.EntityDefaultTable(
-                classic_view='in',
-                dropdown_items=[
-                    shared.EntityDefaultTableDropdownItems1(
-                        entity='contact',
-                        feature_flag='FF_MY_FEATURE_FLAG',
-                        legacy=False,
-                        type=shared.EntityDefaultTableDropdownItems1Type.ENTITY,
-                    ),
-                ],
-                enable_thumbnails=False,
-                navbar_actions=[
-                    shared.EntityDefaultTableNavbarActions(
-                        options=[
-                            shared.EntityDefaultTableNavbarActionsOptions(
-                                label='earum',
-                                params=shared.EntityDefaultTableNavbarActionsOptionsParams(),
-                            ),
-                        ],
-                        type='facere',
-                    ),
-                ],
-                row_actions=[
-                    'numquam',
-                ],
-                view_type=shared.EntityDefaultTableViewType.DEFAULT,
-            ),
+            single_view=[],
+            table_view=[],
         ),
-        version=985492,
+        version=94458,
     ),
     draft=False,
     slug='contact',

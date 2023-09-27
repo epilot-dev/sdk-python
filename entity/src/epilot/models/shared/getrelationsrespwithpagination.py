@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import relationitem as shared_relationitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -12,6 +13,6 @@ from typing import Any, Optional
 @dataclasses.dataclass
 class GetRelationsRespWithPagination:
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
-    relations: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
+    relations: Optional[list[Union[shared_relationitem.RelationItem, dict[str, Any]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
     
 

@@ -1,4 +1,5 @@
 # Taxonomy
+(*taxonomy*)
 
 ## Overview
 
@@ -98,10 +99,10 @@ s = epilot.Epilot(
 req = operations.TaxonomiesClassificationsSearchRequest(
     request_body=operations.TaxonomiesClassificationsSearchRequestBody(
         classification_ids=[
-            '6fbee41f-3331-47fe-b5b6-0eb1ea426555',
+            'aa6f1e67-4bdb-404f-9575-6082d68ea19f',
         ],
     ),
-    taxonomy_slug='nobis',
+    taxonomy_slug='quasi',
 )
 
 res = s.taxonomy.taxonomies_classifications_search(req)
@@ -139,9 +140,9 @@ s = epilot.Epilot(
 )
 
 req = operations.TaxonomyAutocompleteRequest(
-    query='dolorum',
-    size=2378.07,
-    taxonomy_slug='minus',
+    query='at',
+    size=920.27,
+    taxonomy_slug='voluptate',
 )
 
 res = s.taxonomy.taxonomy_autocomplete(req)
@@ -183,31 +184,31 @@ req = operations.UpdateClassificationsForTaxonomyRequest(
     classifications_update=shared.ClassificationsUpdate(
         create=[
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2022-07-01T01:32:29.196Z'),
-                id='744ed53b-88f3-4a8d-8f5c-0b2f2fb7b194',
+                created_at=dateutil.parser.isoparse('2022-09-03T18:06:00.164Z'),
+                id='1339d080-86a1-4840-b94c-26071f93f5f0',
                 name='Wallbox PV',
                 parents=[
-                    'a276b269-16fe-41f0-8f42-94e3698f447f',
+                    '642dac7a-f515-4cc4-93aa-63aae8d67864',
                 ],
-                updated_at=dateutil.parser.isoparse('2022-12-22T16:38:34.482Z'),
+                updated_at=dateutil.parser.isoparse('2020-11-18T07:12:59.777Z'),
             ),
         ],
         delete=[
-            '3e8b445e-80ca-455e-bd20-e457e1858b6a',
+            'b675fd5e-60b3-475e-94f6-fbee41f33317',
         ],
         update=[
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2021-10-03T15:49:29.329Z'),
-                id='fbe3a5aa-8e48-424d-8ab4-075088e51862',
+                created_at=dateutil.parser.isoparse('2020-04-29T18:47:01.945Z'),
+                id='35b60eb1-ea42-4655-9ba3-c28744ed53b8',
                 name='Wallbox PV',
                 parents=[
-                    '065e904f-3b11-494b-8abf-603a79f9dfe0',
+                    '8f3a8d8f-5c0b-42f2-bb7b-194a276b2691',
                 ],
-                updated_at=dateutil.parser.isoparse('2021-08-10T13:37:39.961Z'),
+                updated_at=dateutil.parser.isoparse('2022-01-15T12:09:02.064Z'),
             ),
         ],
     ),
-    taxonomy_slug='reprehenderit',
+    taxonomy_slug='debitis',
 )
 
 res = s.taxonomy.update_classifications_for_taxonomy(req)

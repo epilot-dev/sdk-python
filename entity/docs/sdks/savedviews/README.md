@@ -1,4 +1,5 @@
 # SavedViews
+(*saved_views*)
 
 ## Overview
 
@@ -30,9 +31,7 @@ s = epilot.Epilot(
 )
 
 req = shared.SavedView(
-    created_by=shared.SavedViewCreatedBy1(
-        user_id='10598',
-    ),
+    created_by=[],
     is_favorited_by=[
         '11701',
     ],
@@ -43,7 +42,7 @@ req = shared.SavedView(
         'contact',
     ],
     ui_config={
-        "cumque": 'soluta',
+        "voluptatem": 'cumque',
     },
 )
 
@@ -82,7 +81,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteSavedViewRequest(
-    id='b1e31b8b-90f3-4443-a110-8e0adcf4b921',
+    id='bb1e31b8-b90f-4344-ba11-08e0adcf4b92',
 )
 
 res = s.saved_views.delete_saved_view(req)
@@ -120,7 +119,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSavedViewRequest(
-    id='879fce95-3f73-4ef7-bbc7-abd74dd39c0f',
+    id='1879fce9-53f7-43ef-bfbc-7abd74dd39c0',
 )
 
 res = s.saved_views.get_saved_view(req)
@@ -217,9 +216,7 @@ s = epilot.Epilot(
 
 req = operations.UpdateSavedViewRequest(
     saved_view=shared.SavedView(
-        created_by=shared.SavedViewCreatedBy1(
-            user_id='10598',
-        ),
+        created_by=[],
         is_favorited_by=[
             '11701',
         ],
@@ -230,10 +227,10 @@ req = operations.UpdateSavedViewRequest(
             'contact',
         ],
         ui_config={
-            "nulla": 'fugit',
+            "voluptatibus": 'exercitationem',
         },
     ),
-    id='cff7c70a-4562-46d4-b681-3f16d9f5fce6',
+    id='d2cff7c7-0a45-4626-9436-813f16d9f5fc',
 )
 
 res = s.saved_views.update_saved_view(req)

@@ -5,7 +5,7 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional, Union
 
 class EntityDefaultTableDropdownItems2Type(str, Enum):
     LINK = 'link'
@@ -46,6 +46,12 @@ class EntityDefaultTableDropdownItems1:
 
 
 @dataclasses.dataclass
+class EntityDefaultTableDropdownItems:
+    pass
+
+
+
+@dataclasses.dataclass
 class EntityDefaultTableNavbarActionsOptionsParams:
     pass
 
@@ -78,7 +84,7 @@ class EntityDefaultTableViewType(str, Enum):
 @dataclasses.dataclass
 class EntityDefaultTable:
     classic_view: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classic_view'), 'exclude': lambda f: f is None }})
-    dropdown_items: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dropdown_items'), 'exclude': lambda f: f is None }})
+    dropdown_items: Optional[list[Union[EntityDefaultTableDropdownItems1, EntityDefaultTableDropdownItems2]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dropdown_items'), 'exclude': lambda f: f is None }})
     enable_thumbnails: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_thumbnails'), 'exclude': lambda f: f is None }})
     r"""Enable the thumbnail column"""
     navbar_actions: Optional[list[EntityDefaultTableNavbarActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('navbar_actions'), 'exclude': lambda f: f is None }})

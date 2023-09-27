@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -17,12 +17,18 @@ class SavedViewCreatedBy1:
 
 
 
+
+@dataclasses.dataclass
+class SavedViewCreatedBy:
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class SavedView:
     r"""A saved entity view"""
-    created_by: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_by') }})
+    created_by: Union[SavedViewCreatedBy1, dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_by') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""User-friendly identifier for the saved view"""
     slug: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})

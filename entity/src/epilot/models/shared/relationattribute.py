@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import summaryfield as shared_summaryfield
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 class RelationAttributeActionsActionType(str, Enum):
     r"""The action type. Currently supported actions:
@@ -99,6 +100,12 @@ class RelationAttributeRelationType(str, Enum):
     HAS_MANY = 'has_many'
     HAS_ONE = 'has_one'
 
+
+
+@dataclasses.dataclass
+class RelationAttributeSummaryFields:
+    pass
+
 class RelationAttributeType(str, Enum):
     RELATION = 'relation'
 
@@ -170,7 +177,7 @@ class RelationAttribute:
     r"""Render as a column in table views. When defined, overrides `hidden`"""
     sortable: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sortable'), 'exclude': lambda f: f is None }})
     r"""Allow sorting by this attribute in table views if `show_in_table` is true"""
-    summary_fields: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_fields'), 'exclude': lambda f: f is None }})
+    summary_fields: Optional[list[Union[str, shared_summaryfield.SummaryField]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_fields'), 'exclude': lambda f: f is None }})
     type: Optional[RelationAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     

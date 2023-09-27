@@ -2,11 +2,45 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import addressrelationattribute as shared_addressrelationattribute
+from ..shared import automationattribute as shared_automationattribute
+from ..shared import booleanattribute as shared_booleanattribute
+from ..shared import computedattribute as shared_computedattribute
+from ..shared import consentattribute as shared_consentattribute
+from ..shared import countryattribute as shared_countryattribute
+from ..shared import currencyattribute as shared_currencyattribute
+from ..shared import dateattribute as shared_dateattribute
 from ..shared import entitycapability as shared_entitycapability
+from ..shared import entitydefaultcreate as shared_entitydefaultcreate
+from ..shared import entitydefaultedit as shared_entitydefaultedit
+from ..shared import entitydefaulttable as shared_entitydefaulttable
+from ..shared import entityviewdisabled as shared_entityviewdisabled
+from ..shared import fileattribute as shared_fileattribute
+from ..shared import internalattribute as shared_internalattribute
+from ..shared import internaluserattribute as shared_internaluserattribute
+from ..shared import invitationemailattribute as shared_invitationemailattribute
+from ..shared import linkattribute as shared_linkattribute
+from ..shared import multiselectattribute as shared_multiselectattribute
+from ..shared import numberattribute as shared_numberattribute
+from ..shared import orderedlistattribute as shared_orderedlistattribute
+from ..shared import partnerorganisationattribute as shared_partnerorganisationattribute
+from ..shared import partnerstatusattribute as shared_partnerstatusattribute
+from ..shared import paymentmethodrelationattribute as shared_paymentmethodrelationattribute
+from ..shared import purposeattribute as shared_purposeattribute
+from ..shared import redirectentityview as shared_redirectentityview
+from ..shared import relationattribute as shared_relationattribute
+from ..shared import repeatableattribute as shared_repeatableattribute
 from ..shared import searchmappings as shared_searchmappings
+from ..shared import selectattribute as shared_selectattribute
+from ..shared import sequenceattribute as shared_sequenceattribute
+from ..shared import statusattribute as shared_statusattribute
+from ..shared import summaryattribute as shared_summaryattribute
+from ..shared import tagsattribute as shared_tagsattribute
+from ..shared import textattribute as shared_textattribute
+from ..shared import userrelationattribute as shared_userrelationattribute
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -39,11 +73,29 @@ class EntitySchemaGroupSettings:
 
 
 
+
+@dataclasses.dataclass
+class EntitySchemaUIConfigCreateView:
+    pass
+
+
+
+@dataclasses.dataclass
+class EntitySchemaUIConfigEditView:
+    pass
+
+
+
+@dataclasses.dataclass
+class EntitySchemaUIConfigListItemSummaryAttributes:
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class EntitySchemaUIConfigListItem:
-    summary_attributes: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_attributes'), 'exclude': lambda f: f is None }})
+    summary_attributes: Optional[list[Union[shared_summaryattribute.SummaryAttribute, str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_attributes'), 'exclude': lambda f: f is None }})
     
 
 
@@ -58,16 +110,28 @@ class EntitySchemaUIConfigSharing:
 
 
 
+
+@dataclasses.dataclass
+class EntitySchemaUIConfigSingleView:
+    pass
+
+
+
+@dataclasses.dataclass
+class EntitySchemaUIConfigTableView:
+    pass
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class EntitySchemaUIConfig:
-    create_view: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('create_view'), 'exclude': lambda f: f is None }})
-    edit_view: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('edit_view'), 'exclude': lambda f: f is None }})
+    create_view: Optional[Union[shared_entitydefaultcreate.EntityDefaultCreate, shared_redirectentityview.RedirectEntityView, shared_entityviewdisabled.EntityViewDisabled]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('create_view'), 'exclude': lambda f: f is None }})
+    edit_view: Optional[Union[shared_entitydefaultedit.EntityDefaultEdit, shared_redirectentityview.RedirectEntityView, shared_entityviewdisabled.EntityViewDisabled]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('edit_view'), 'exclude': lambda f: f is None }})
     list_item: Optional[EntitySchemaUIConfigListItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('list_item'), 'exclude': lambda f: f is None }})
     sharing: Optional[EntitySchemaUIConfigSharing] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sharing'), 'exclude': lambda f: f is None }})
-    single_view: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('single_view'), 'exclude': lambda f: f is None }})
-    table_view: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('table_view'), 'exclude': lambda f: f is None }})
+    single_view: Optional[Union[shared_entitydefaultedit.EntityDefaultEdit, shared_redirectentityview.RedirectEntityView, shared_entityviewdisabled.EntityViewDisabled]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('single_view'), 'exclude': lambda f: f is None }})
+    table_view: Optional[Union[shared_entitydefaulttable.EntityDefaultTable, shared_redirectentityview.RedirectEntityView, shared_entityviewdisabled.EntityViewDisabled]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('table_view'), 'exclude': lambda f: f is None }})
     
 
 
@@ -77,7 +141,7 @@ class EntitySchemaUIConfig:
 @dataclasses.dataclass
 class EntitySchema:
     r"""The \\"type\\" of an Entity. Describes the shape. Includes Entity Attributes, Relations and Capabilities."""
-    attributes: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
+    attributes: list[Union[shared_textattribute.TextAttribute, shared_linkattribute.LinkAttribute, shared_dateattribute.DateAttribute, shared_countryattribute.CountryAttribute, shared_booleanattribute.BooleanAttribute, shared_selectattribute.SelectAttribute, shared_multiselectattribute.MultiSelectAttribute, shared_statusattribute.StatusAttribute, shared_sequenceattribute.SequenceAttribute, shared_relationattribute.RelationAttribute, shared_userrelationattribute.UserRelationAttribute, shared_addressrelationattribute.AddressRelationAttribute, shared_paymentmethodrelationattribute.PaymentMethodRelationAttribute, shared_currencyattribute.CurrencyAttribute, shared_repeatableattribute.RepeatableAttribute, shared_tagsattribute.TagsAttribute, shared_numberattribute.NumberAttribute, shared_consentattribute.ConsentAttribute, shared_internalattribute.InternalAttribute, shared_orderedlistattribute.OrderedListAttribute, shared_fileattribute.FileAttribute, shared_computedattribute.ComputedAttribute, shared_partnerstatusattribute.PartnerStatusAttribute, shared_invitationemailattribute.InvitationEmailAttribute, shared_automationattribute.AutomationAttribute, shared_internaluserattribute.InternalUserAttribute, shared_purposeattribute.PurposeAttribute, shared_partnerorganisationattribute.PartnerOrganisationAttribute]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
     r"""An ordered list of attributes the entity contains"""
     capabilities: list[shared_entitycapability.EntityCapability] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capabilities') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})

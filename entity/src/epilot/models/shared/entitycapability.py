@@ -2,9 +2,37 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import addressrelationattribute as shared_addressrelationattribute
+from ..shared import automationattribute as shared_automationattribute
+from ..shared import booleanattribute as shared_booleanattribute
+from ..shared import computedattribute as shared_computedattribute
+from ..shared import consentattribute as shared_consentattribute
+from ..shared import countryattribute as shared_countryattribute
+from ..shared import currencyattribute as shared_currencyattribute
+from ..shared import dateattribute as shared_dateattribute
+from ..shared import fileattribute as shared_fileattribute
+from ..shared import internalattribute as shared_internalattribute
+from ..shared import internaluserattribute as shared_internaluserattribute
+from ..shared import invitationemailattribute as shared_invitationemailattribute
+from ..shared import linkattribute as shared_linkattribute
+from ..shared import multiselectattribute as shared_multiselectattribute
+from ..shared import numberattribute as shared_numberattribute
+from ..shared import orderedlistattribute as shared_orderedlistattribute
+from ..shared import partnerorganisationattribute as shared_partnerorganisationattribute
+from ..shared import partnerstatusattribute as shared_partnerstatusattribute
+from ..shared import paymentmethodrelationattribute as shared_paymentmethodrelationattribute
+from ..shared import purposeattribute as shared_purposeattribute
+from ..shared import relationattribute as shared_relationattribute
+from ..shared import repeatableattribute as shared_repeatableattribute
+from ..shared import selectattribute as shared_selectattribute
+from ..shared import sequenceattribute as shared_sequenceattribute
+from ..shared import statusattribute as shared_statusattribute
+from ..shared import tagsattribute as shared_tagsattribute
+from ..shared import textattribute as shared_textattribute
+from ..shared import userrelationattribute as shared_userrelationattribute
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -15,7 +43,7 @@ class EntityCapability:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Unique name for the capability"""
     purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
-    attributes: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
+    attributes: Optional[list[Union[shared_textattribute.TextAttribute, shared_linkattribute.LinkAttribute, shared_dateattribute.DateAttribute, shared_countryattribute.CountryAttribute, shared_booleanattribute.BooleanAttribute, shared_selectattribute.SelectAttribute, shared_multiselectattribute.MultiSelectAttribute, shared_statusattribute.StatusAttribute, shared_sequenceattribute.SequenceAttribute, shared_relationattribute.RelationAttribute, shared_userrelationattribute.UserRelationAttribute, shared_addressrelationattribute.AddressRelationAttribute, shared_paymentmethodrelationattribute.PaymentMethodRelationAttribute, shared_currencyattribute.CurrencyAttribute, shared_repeatableattribute.RepeatableAttribute, shared_tagsattribute.TagsAttribute, shared_numberattribute.NumberAttribute, shared_consentattribute.ConsentAttribute, shared_internalattribute.InternalAttribute, shared_orderedlistattribute.OrderedListAttribute, shared_fileattribute.FileAttribute, shared_computedattribute.ComputedAttribute, shared_partnerstatusattribute.PartnerStatusAttribute, shared_invitationemailattribute.InvitationEmailAttribute, shared_automationattribute.AutomationAttribute, shared_internaluserattribute.InternalUserAttribute, shared_purposeattribute.PurposeAttribute, shared_partnerorganisationattribute.PartnerOrganisationAttribute]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
     feature_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_flag'), 'exclude': lambda f: f is None }})
     r"""This capability should only be active when the feature flag is enabled"""
     legacy: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legacy'), 'exclude': lambda f: f is None }})
