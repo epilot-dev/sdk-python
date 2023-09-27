@@ -1,4 +1,5 @@
 # Flows
+(*flows*)
 
 ## Overview
 
@@ -37,18 +38,11 @@ req = shared.AutomationFlowInput(
         shared.TriggerCondition(
             comparison=shared.Comparison.IS_EMPTY,
             source='unde',
-            value=[
-                5448.83,
-            ],
+            value=[],
         ),
     ],
     triggers=[
-        shared.EntityManualTrigger(
-            configuration=shared.EntityManualTriggerConfiguration(
-                schema='submission',
-            ),
-            type=shared.EntityManualTriggerType.ENTITY_MANUAL,
-        ),
+        [],
     ],
 )
 
@@ -170,29 +164,13 @@ req = operations.PutFlowRequest(
         runs=7,
         trigger_conditions=[
             shared.TriggerCondition(
-                comparison=shared.Comparison.ANY_OF,
-                source='error',
-                value=[
-                    'suscipit',
-                ],
+                comparison=shared.Comparison.IS_EMPTY,
+                source='corrupti',
+                value=[],
             ),
         ],
         triggers=[
-            shared.EntityOperationTrigger(
-                configuration=shared.EntityOperationTriggerConfiguration(
-                    exclude_activities=[
-                        '["SyncEntity"]',
-                    ],
-                    include_activities=[
-                        '["CreateEntity"]',
-                    ],
-                    operations=[
-                        shared.EntityOperation.CREATE_ENTITY,
-                    ],
-                    schema='submission',
-                ),
-                type=shared.EntityOperationTriggerType.ENTITY_OPERATION,
-            ),
+            [],
         ],
     ),
     flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f',
@@ -233,9 +211,9 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchFlowsRequest(
-    from_=891773,
+    from_=847252,
     schema='submission',
-    size=56713,
+    size=423655,
     trigger_source_id='600945fe-212e-4b97-acf7-391d64648384',
 )
 

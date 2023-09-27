@@ -95,6 +95,7 @@ docs/models/operations/putflowrequest.md
 docs/models/operations/putflowresponse.md
 docs/models/operations/searchflowsrequest.md
 docs/models/operations/searchflowsresponse.md
+docs/models/shared/automationexecutiontriggerevent.md
 docs/models/shared/automationexecution.md
 docs/models/shared/triggereventmanualtype.md
 docs/models/shared/triggereventmanual.md
@@ -104,6 +105,7 @@ docs/models/shared/triggerevententityoperationtype.md
 docs/models/shared/triggerevententityoperation.md
 docs/models/shared/entityoperation.md
 docs/models/shared/executionstatus.md
+docs/models/shared/anyaction.md
 docs/models/shared/mapentityaction.md
 docs/models/shared/retrystrategy.md
 docs/models/shared/erroroutput.md
@@ -119,6 +121,7 @@ docs/models/shared/retryreq.md
 docs/models/shared/startexecutionrequestinput.md
 docs/models/shared/automationflow.md
 docs/models/shared/automationflowinput.md
+docs/models/shared/anytrigger.md
 docs/models/shared/frontendsubmittriggerconfiguration.md
 docs/models/shared/frontendsubmittriggertype.md
 docs/models/shared/frontendsubmittrigger.md
@@ -142,16 +145,21 @@ docs/models/shared/receivedemailtriggerconfigurationmessagetype.md
 docs/models/shared/receivedemailtriggerconfiguration.md
 docs/models/shared/receivedemailtriggertype.md
 docs/models/shared/receivedemailtrigger.md
+docs/models/shared/triggerconditionvalue.md
 docs/models/shared/triggercondition.md
 docs/models/shared/comparison.md
+docs/models/shared/anyactionconfig.md
 docs/models/shared/mapentityactionconfigtype.md
 docs/models/shared/mapentityactionconfig.md
+docs/models/shared/mapentityconfigmappingattributes.md
 docs/models/shared/mapentityconfig.md
 docs/models/shared/relationattributemode.md
 docs/models/shared/relationattributesourcefilter.md
 docs/models/shared/relationattribute.md
 docs/models/shared/mappingconfigref.md
 docs/models/shared/mappingattributev2.md
+docs/models/shared/operationnode.md
+docs/models/shared/mappingattribute.md
 docs/models/shared/setvaluemapper.md
 docs/models/shared/mappingattributemode.md
 docs/models/shared/copyvaluemapper.md
@@ -159,6 +167,7 @@ docs/models/shared/appendvaluemapper.md
 docs/models/shared/triggerworkflowactionconfigtype.md
 docs/models/shared/triggerworkflowactionconfig.md
 docs/models/shared/triggerworkflowconfig.md
+docs/models/shared/triggerworkflowconditionvalue.md
 docs/models/shared/triggerworkflowcondition.md
 docs/models/shared/assignuserstostep.md
 docs/models/shared/triggerwebhookactionconfigtype.md
@@ -176,6 +185,7 @@ docs/models/shared/sendemailconfiglanguagecode.md
 docs/models/shared/sendemailconfig.md
 docs/models/shared/cartcheckoutactionconfigtype.md
 docs/models/shared/cartcheckoutactionconfig.md
+docs/models/shared/cartcheckoutconfigmappingattributes.md
 docs/models/shared/cartcheckoutconfig.md
 docs/models/shared/automationactionconfig.md
 docs/models/shared/searchautomationsresp.md

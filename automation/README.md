@@ -35,7 +35,7 @@ if res.automation_execution is not None:
 ## Available Resources and Operations
 
 
-### [Executions](docs/sdks/executions/README.md)
+### [executions](docs/sdks/executions/README.md)
 
 * [cancel_execution](docs/sdks/executions/README.md#cancel_execution) - cancelExecution
 * [get_execution](docs/sdks/executions/README.md#get_execution) - getExecution
@@ -43,7 +43,7 @@ if res.automation_execution is not None:
 * [retrigger_action](docs/sdks/executions/README.md#retrigger_action) - retriggerAction
 * [start_execution](docs/sdks/executions/README.md#start_execution) - startExecution
 
-### [Flows](docs/sdks/flows/README.md)
+### [flows](docs/sdks/flows/README.md)
 
 * [create_flow](docs/sdks/flows/README.md#create_flow) - createFlow
 * [delete_flow](docs/sdks/flows/README.md#delete_flow) - deleteFlow
@@ -55,8 +55,6 @@ if res.automation_execution is not None:
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -70,8 +68,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

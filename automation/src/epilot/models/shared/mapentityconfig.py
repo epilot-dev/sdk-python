@@ -2,11 +2,21 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import appendvaluemapper as shared_appendvaluemapper
+from ..shared import copyvaluemapper as shared_copyvaluemapper
+from ..shared import mappingattributev2 as shared_mappingattributev2
 from ..shared import mappingconfigref as shared_mappingconfigref
 from ..shared import relationattribute as shared_relationattribute
+from ..shared import setvaluemapper as shared_setvaluemapper
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional, Union
+
+
+
+@dataclasses.dataclass
+class MapEntityConfigMappingAttributes:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -19,7 +29,7 @@ class MapEntityConfig:
     r"""Relation attribute on the main entity where the target entity will be linked. Set to false to disable linkback"""
     linkback_relation_tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('linkback_relation_tags'), 'exclude': lambda f: f is None }})
     r"""Relation tags (labels) to include in main entity linkback relation attribute"""
-    mapping_attributes: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mapping_attributes'), 'exclude': lambda f: f is None }})
+    mapping_attributes: Optional[list[Union[shared_mappingattributev2.MappingAttributeV2, Union[shared_setvaluemapper.SetValueMapper, shared_copyvaluemapper.CopyValueMapper, shared_appendvaluemapper.AppendValueMapper]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mapping_attributes'), 'exclude': lambda f: f is None }})
     r"""Attribute mappings"""
     mapping_config: Optional[shared_mappingconfigref.MappingConfigRef] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mapping_config'), 'exclude': lambda f: f is None }})
     relation_attributes: Optional[list[shared_relationattribute.RelationAttribute]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_attributes'), 'exclude': lambda f: f is None }})

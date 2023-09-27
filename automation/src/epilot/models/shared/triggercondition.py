@@ -5,7 +5,13 @@ import dataclasses
 from ..shared import comparison as shared_comparison
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional, Union
+
+
+
+@dataclasses.dataclass
+class TriggerConditionValue:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -14,6 +20,6 @@ from typing import Any, Optional
 class TriggerCondition:
     comparison: shared_comparison.Comparison = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comparison') }})
     source: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})
-    value: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
+    value: Optional[Union[str, float, list[str], list[float]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     
 
