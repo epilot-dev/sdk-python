@@ -1,4 +1,5 @@
 # Deprecated
+(*deprecated*)
 
 ### Available Operations
 
@@ -28,9 +29,9 @@ s = epilot.Epilot(
 
 req = operations.DollarCreateOpportunityRequest(
     request_body={
-        "corporis": 'explicabo',
+        "explicabo": 'nobis',
     },
-    x_ivy_org_id='nobis',
+    x_ivy_org_id='enim',
 )
 
 res = s.deprecated.dollar_create_opportunity(req)

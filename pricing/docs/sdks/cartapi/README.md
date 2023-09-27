@@ -1,4 +1,5 @@
 # CartAPI
+(*cart_api*)
 
 ## Overview
 
@@ -40,11 +41,11 @@ s = epilot.Epilot(
 )
 
 req = operations.DollarCheckoutCartRequest(
-    checkout_cart_input=shared.CheckoutCartInput(
-        cart='ipsum',
+    checkout_cart=shared.CheckoutCart(
+        cart=[],
         mode=shared.CheckoutMode.CREATE_INVOICE,
     ),
-    x_ivy_org_id='aspernatur',
+    x_ivy_org_id='ipsum',
 )
 
 res = s.cart_api.dollar_checkout_cart(req)

@@ -1,4 +1,5 @@
 # CatalogAPI
+(*catalog_api*)
 
 ## Overview
 
@@ -31,20 +32,20 @@ req = operations.DollarSearchCatalogRequest(
         availability=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city='West Liaville',
-                country='Namibia',
-                postal_code='63996',
-                street='3649 Boyle Cape',
-                street_number='reiciendis',
+                city='Briannetown',
+                country='Ghana',
+                postal_code='16263-9964',
+                street='6496 Andy Walks',
+                street_number='est',
             ),
         ),
-        from_=6667.67,
+        from_=6531.4,
         hydrate=False,
-        q='mollitia',
-        size=6706.38,
-        sort='dolores',
+        q='laborum',
+        size=1709.09,
+        sort='dolorem',
     ),
-    x_ivy_org_id='dolorem',
+    x_ivy_org_id='corporis',
 )
 
 res = s.catalog_api.dollar_search_catalog(req)

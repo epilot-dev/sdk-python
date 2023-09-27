@@ -1,4 +1,5 @@
 # OrderAPI
+(*order_api*)
 
 ## Overview
 
@@ -29,7 +30,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "enim": 'omnis',
+    "omnis": 'nemo',
 }
 
 res = s.order_api.create_order(req)
@@ -68,9 +69,9 @@ s = epilot.Epilot(
 
 req = operations.PutOrderRequest(
     request_body={
-        "nemo": 'minima',
+        "minima": 'excepturi',
     },
-    id='907aff1a-3a2f-4a94-a773-9251aa52c3f5',
+    id='07aff1a3-a2fa-4946-b739-251aa52c3f5a',
 )
 
 res = s.order_api.put_order(req)

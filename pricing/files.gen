@@ -58,7 +58,8 @@ docs/models/shared/availabilitycheckparams.md
 docs/models/shared/availabilityfilters.md
 docs/models/shared/availabilitylocation.md
 docs/models/shared/checkoutcartresult.md
-docs/models/shared/checkoutcartinput.md
+docs/models/shared/checkoutcartcartinput.md
+docs/models/shared/checkoutcart.md
 docs/models/shared/checkoutmode.md
 docs/models/shared/cartdtometadata.md
 docs/models/shared/cartdtoinput.md

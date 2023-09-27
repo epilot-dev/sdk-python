@@ -51,23 +51,23 @@ if res.availability_result is not None:
 ## Available Resources and Operations
 
 
-### [AvailabilityAPI](docs/sdks/availabilityapi/README.md)
+### [availability_api](docs/sdks/availabilityapi/README.md)
 
 * [dollar_availability_check](docs/sdks/availabilityapi/README.md#dollar_availability_check) - availabilityCheck
 
-### [CartAPI](docs/sdks/cartapi/README.md)
+### [cart_api](docs/sdks/cartapi/README.md)
 
 * [dollar_checkout_cart](docs/sdks/cartapi/README.md#dollar_checkout_cart) - checkoutCart
 
-### [CatalogAPI](docs/sdks/catalogapi/README.md)
+### [catalog_api](docs/sdks/catalogapi/README.md)
 
 * [dollar_search_catalog](docs/sdks/catalogapi/README.md#dollar_search_catalog) - searchCatalog
 
-### [Deprecated](docs/sdks/deprecated/README.md)
+### [deprecated](docs/sdks/deprecated/README.md)
 
 * [~~dollar_create_opportunity~~](docs/sdks/deprecated/README.md#dollar_create_opportunity) - createOpportunity :warning: **Deprecated**
 
-### [OrderAPI](docs/sdks/orderapi/README.md)
+### [order_api](docs/sdks/orderapi/README.md)
 
 * [create_order](docs/sdks/orderapi/README.md#create_order) - createOrder
 * [put_order](docs/sdks/orderapi/README.md#put_order) - putOrder
@@ -76,8 +76,6 @@ if res.availability_result is not None:
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -91,8 +89,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

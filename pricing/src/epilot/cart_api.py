@@ -35,7 +35,7 @@ class CartAPI:
         
         url = base_url + '/v1/public/cart:checkout'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "checkout_cart_input", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "checkout_cart", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
