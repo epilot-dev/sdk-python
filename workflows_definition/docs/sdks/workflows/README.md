@@ -1,4 +1,5 @@
 # Workflows
+(*workflows*)
 
 ### Available Operations
 
@@ -47,46 +48,14 @@ req = shared.WorkflowDefinition(
     ),
     enable_ecp_workflow=False,
     flow=[
-        shared.Step(
-            assigned_to=[
-                'dicta',
-            ],
-            automation_config=shared.StepAutomationConfig(
-                flow_id='nam',
-            ),
-            due_date='2021-04-27T12:00:00.000Z',
-            dynamic_due_date=shared.DynamicDueDate(
-                action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-                number_of_units=5820.2,
-                step_id='fugit',
-                time_period=shared.DynamicDueDateTimePeriod.WEEKS,
-            ),
-            ecp=shared.ECPDetails(
-                label='hic',
-            ),
-            execution_type=shared.StepType.AUTOMATION,
-            id='816742cb-7392-4059-a939-6fea7596eb10',
-            name='Carlton O'Hara',
-            order=2103.82,
-            requirements=[
-                shared.StepRequirement(
-                    condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='corporis',
-                    type=shared.ItemType.STEP,
-                ),
-            ],
-            type=shared.ItemType.SECTION,
-            user_ids=[
-                3154.28,
-            ],
-        ),
+        [],
     ],
-    id='955907af-f1a3-4a2f-a946-7739251aa52c',
+    id='a1ba928f-c816-4742-8b73-9205929396fe',
     last_update_time='2021-04-27T12:01:13.000Z',
-    name='Mandy Hills',
+    name='Harvey Hessel',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
+            source=shared.UpdateEntityAttributesSource.CURRENT_STEP,
             target=shared.UpdateEntityAttributesTarget(
                 entity_attribute='my_status',
                 entity_schema='opportunity',
@@ -94,7 +63,7 @@ req = shared.WorkflowDefinition(
         ),
     ],
     user_ids=[
-        971.01,
+        6976.31,
     ],
 )
 
@@ -133,7 +102,7 @@ s = sdk.SDK(
 )
 
 req = operations.DeleteDefinitionRequest(
-    definition_id='error',
+    definition_id='architecto',
 )
 
 res = s.workflows.delete_definition(req)
@@ -171,7 +140,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetDefinitionRequest(
-    definition_id='temporibus',
+    definition_id='ipsa',
 )
 
 res = s.workflows.get_definition(req)
@@ -267,7 +236,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetWorkflowClosingReasonsRequest(
-    definition_id='laborum',
+    definition_id='reiciendis',
 )
 
 res = s.workflows.get_workflow_closing_reasons(req)
@@ -312,7 +281,7 @@ req = operations.SetWorkflowClosingReasonsRequest(
             ),
         ],
     ),
-    definition_id='quasi',
+    definition_id='est',
 )
 
 res = s.workflows.set_workflow_closing_reasons(req)
@@ -352,7 +321,7 @@ s = sdk.SDK(
 req = operations.UpdateDefinitionRequest(
     workflow_definition=shared.WorkflowDefinition(
         assigned_to=[
-            'reiciendis',
+            'mollitia',
         ],
         closing_reasons=[
             shared.ClosingReasonID(
@@ -360,61 +329,21 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         creation_time='2021-04-27T12:01:13.000Z',
-        description='voluptatibus',
+        description='laborum',
         due_date='2021-04-27T12:00:00.000Z',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-            number_of_units=4686.51,
-            step_id='praesentium',
-            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+            number_of_units=2103.82,
+            step_id='corporis',
+            time_period=shared.DynamicDueDateTimePeriod.DAYS,
         ),
         enable_ecp_workflow=False,
         flow=[
-            shared.Section(
-                id='97b0074f-1547-41b5-a6e1-3b99d488e1e9',
-                name='Patti Gottlieb MD',
-                order=8423.42,
-                steps=[
-                    shared.Step(
-                        assigned_to=[
-                            'explicabo',
-                        ],
-                        automation_config=shared.StepAutomationConfig(
-                            flow_id='deserunt',
-                        ),
-                        due_date='2021-04-27T12:00:00.000Z',
-                        dynamic_due_date=shared.DynamicDueDate(
-                            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-                            number_of_units=8413.86,
-                            step_id='labore',
-                            time_period=shared.DynamicDueDateTimePeriod.DAYS,
-                        ),
-                        ecp=shared.ECPDetails(
-                            label='qui',
-                        ),
-                        execution_type=shared.StepType.MANUAL,
-                        id='9802d502-a94b-4b4f-a3c9-69e9a3efa77d',
-                        name='Jean Buckridge',
-                        order=8137.98,
-                        requirements=[
-                            shared.StepRequirement(
-                                condition=shared.StepRequirementCondition.CLOSED,
-                                definition_id='ea',
-                                type=shared.ItemType.STEP,
-                            ),
-                        ],
-                        type=shared.ItemType.SECTION,
-                        user_ids=[
-                            8811.04,
-                        ],
-                    ),
-                ],
-                type=shared.ItemType.STEP,
-            ),
+            [],
         ],
-        id='95efb9ba-88f3-4a66-9970-74ba4469b6e2',
+        id='c5955907-aff1-4a3a-afa9-467739251aa5',
         last_update_time='2021-04-27T12:01:13.000Z',
-        name='Danielle Bosco',
+        name='Angelica Dietrich',
         update_entity_attributes=[
             shared.UpdateEntityAttributes(
                 source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
@@ -425,10 +354,10 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         user_ids=[
-            5518.16,
+            8209.94,
         ],
     ),
-    definition_id='sint',
+    definition_id='aut',
 )
 
 res = s.workflows.update_definition(req)

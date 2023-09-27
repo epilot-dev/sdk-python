@@ -4,17 +4,25 @@ from __future__ import annotations
 import dataclasses
 from ..shared import closingreasonid as shared_closingreasonid
 from ..shared import dynamicduedate as shared_dynamicduedate
+from ..shared import section as shared_section
+from ..shared import step as shared_step
 from ..shared import updateentityattributes as shared_updateentityattributes
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
-from typing import Any, Optional
+from typing import Optional, Union
+
+
+
+@dataclasses.dataclass
+class WorkflowDefinitionFlow:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class WorkflowDefinition:
-    flow: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow') }})
+    flow: list[Union[shared_section.Section, shared_step.Step]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     closing_reasons: Optional[list[shared_closingreasonid.ClosingReasonID]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closingReasons'), 'exclude': lambda f: f is None }})

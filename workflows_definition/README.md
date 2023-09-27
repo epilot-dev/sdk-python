@@ -38,13 +38,13 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [ClosingReason](docs/sdks/closingreason/README.md)
+### [closing_reason](docs/sdks/closingreason/README.md)
 
 * [change_reason_status](docs/sdks/closingreason/README.md#change_reason_status) - changeReasonStatus
 * [create_closing_reason](docs/sdks/closingreason/README.md#create_closing_reason) - createClosingReason
 * [get_all_closing_reasons](docs/sdks/closingreason/README.md#get_all_closing_reasons) - getAllClosingReasons
 
-### [Workflows](docs/sdks/workflows/README.md)
+### [workflows](docs/sdks/workflows/README.md)
 
 * [create_definition](docs/sdks/workflows/README.md#create_definition) - createDefinition
 * [delete_definition](docs/sdks/workflows/README.md#delete_definition) - deleteDefinition
@@ -60,8 +60,6 @@ if res.status_code == 200:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -74,8 +72,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

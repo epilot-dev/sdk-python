@@ -67,6 +67,7 @@ docs/models/shared/changereasonstatusreq.md
 docs/models/shared/closingreasonsstatus.md
 docs/models/shared/closingreason.md
 docs/models/shared/closingreasons.md
+docs/models/shared/workflowdefinitionflow.md
 docs/models/shared/workflowdefinition.md
 docs/models/shared/updateentityattributessource.md
 docs/models/shared/updateentityattributestarget.md
