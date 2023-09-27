@@ -80,6 +80,7 @@ docs/models/operations/updateexecutionrequest.md
 docs/models/operations/updateexecutionresponse.md
 docs/models/operations/updatesteprequest.md
 docs/models/operations/updatestepresponse.md
+docs/models/shared/workflowexecutionflow.md
 docs/models/shared/workflowexecution.md
 docs/models/shared/updateentityattributessource.md
 docs/models/shared/updateentityattributestarget.md
@@ -106,6 +107,7 @@ docs/models/shared/errorresp.md
 docs/models/shared/workflowexecutioncreatereq.md
 docs/models/shared/createstepreq.md
 docs/models/shared/closingreasonresp.md
+docs/models/shared/workflowexecutionslimflow.md
 docs/models/shared/workflowexecutionslim.md
 docs/models/shared/sectionsimplified.md
 docs/models/shared/stepsimplified.md

@@ -4,6 +4,8 @@ from __future__ import annotations
 import dataclasses
 from ..shared import closingreason as shared_closingreason
 from ..shared import dynamicduedate as shared_dynamicduedate
+from ..shared import section as shared_section
+from ..shared import step as shared_step
 from ..shared import stepid as shared_stepid
 from ..shared import triggertype as shared_triggertype
 from ..shared import updateentityattributes as shared_updateentityattributes
@@ -11,14 +13,20 @@ from ..shared import workflowcontext as shared_workflowcontext
 from ..shared import workflowstatus as shared_workflowstatus
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional, Union
+
+
+
+@dataclasses.dataclass
+class WorkflowExecutionFlow:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class WorkflowExecution:
-    flow: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow') }})
+    flow: list[Union[shared_section.Section, shared_step.Step]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow') }})
     assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     closing_reason_description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closingReasonDescription'), 'exclude': lambda f: f is None }})
     completed_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedTime'), 'exclude': lambda f: f is None }})

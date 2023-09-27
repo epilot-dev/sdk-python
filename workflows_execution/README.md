@@ -46,7 +46,7 @@ if res.workflow_execution is not None:
 ## Available Resources and Operations
 
 
-### [Workflows](docs/sdks/workflows/README.md)
+### [workflows](docs/sdks/workflows/README.md)
 
 * [create_execution](docs/sdks/workflows/README.md#create_execution) - createExecution
 * [create_step](docs/sdks/workflows/README.md#create_step) - createStep
@@ -65,8 +65,6 @@ if res.workflow_execution is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -79,8 +77,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
