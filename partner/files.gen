@@ -58,6 +58,7 @@ docs/models/operations/searchgeolocationfortextresponse.md
 docs/models/shared/activatepartnerpayload.md
 docs/models/shared/partnerstatus.md
 docs/models/shared/partner.md
+docs/models/shared/assignable.md
 docs/models/shared/assignableuserimageuri.md
 docs/models/shared/assignableusertype.md
 docs/models/shared/assignableuser.md

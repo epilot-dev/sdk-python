@@ -40,7 +40,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [Partners](docs/sdks/partners/README.md)
+### [partners](docs/sdks/partners/README.md)
 
 * [activate_partner](docs/sdks/partners/README.md#activate_partner) - activatePartner
 * [approve_partner](docs/sdks/partners/README.md#approve_partner) - approvePartner
@@ -57,8 +57,6 @@ if res.status_code == 200:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -71,8 +69,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
