@@ -2,15 +2,20 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import actionwidget as shared_actionwidget
+from ..shared import contentwidget as shared_contentwidget
+from ..shared import documentwidget as shared_documentwidget
+from ..shared import entitywidget as shared_entitywidget
+from ..shared import teaserwidget as shared_teaserwidget
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any
+from typing import Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class UpsertPortalWidget:
-    widgets: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('widgets') }})
+    widgets: list[Union[shared_entitywidget.EntityWidget, shared_contentwidget.ContentWidget, shared_actionwidget.ActionWidget, shared_teaserwidget.TeaserWidget, shared_documentwidget.DocumentWidget]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('widgets') }})
     
 

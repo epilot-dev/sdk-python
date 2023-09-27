@@ -34,7 +34,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 ## Available Resources and Operations
 
 
-### [Ecp](docs/sdks/ecp/README.md)
+### [ecp](docs/sdks/ecp/README.md)
 
 * [add_end_customer_relation_to_entity](docs/sdks/ecp/README.md#add_end_customer_relation_to_entity) - addEndCustomerRelationToEntity
 * [create_custom_entity_activity](docs/sdks/ecp/README.md#create_custom_entity_activity) - createCustomEntityActivity
@@ -63,7 +63,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [update_order](docs/sdks/ecp/README.md#update_order) - updateOrder
 * [update_portal_user](docs/sdks/ecp/README.md#update_portal_user) - updatePortalUser
 
-### [ECPAdmin](docs/sdks/ecpadmin/README.md)
+### [ecp_admin](docs/sdks/ecpadmin/README.md)
 
 * [configure_distribution](docs/sdks/ecpadmin/README.md#configure_distribution) - configureDistribution
 * [create_sso_user](docs/sdks/ecpadmin/README.md#create_sso_user) - createSSOUser
@@ -83,7 +83,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [upsert_portal](docs/sdks/ecpadmin/README.md#upsert_portal) - upsertPortal
 * [upsert_portal_widget](docs/sdks/ecpadmin/README.md#upsert_portal_widget) - upsertPortalWidget
 
-### [Public](docs/sdks/public/README.md)
+### [public](docs/sdks/public/README.md)
 
 * [confirm_user](docs/sdks/public/README.md#confirm_user) - confirmUser
 * [create_user](docs/sdks/public/README.md#create_user) - createUser

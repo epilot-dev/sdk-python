@@ -308,6 +308,7 @@ docs/models/shared/granteffect.md
 docs/models/shared/grant.md
 docs/models/shared/emailtemplates.md
 docs/models/shared/upsertportalwidget.md
+docs/models/shared/portalwidget.md
 docs/models/shared/entitywidgetheadline.md
 docs/models/shared/entitywidgetsubheadline.md
 docs/models/shared/entitywidgettype.md

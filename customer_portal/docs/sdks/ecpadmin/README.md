@@ -1,4 +1,5 @@
 # ECPAdmin
+(*ecp_admin*)
 
 ## Overview
 
@@ -724,30 +725,7 @@ s = epilot.Epilot()
 req = operations.UpsertPortalWidgetRequest(
     upsert_portal_widget=shared.UpsertPortalWidget(
         widgets=[
-            shared.ActionWidget(
-                actions=[
-                    shared.WidgetAction(
-                        id='cc78ca1b-a928-4fc8-9674-2cb739205929',
-                        label=shared.WidgetActionLabel(
-                            de='dolor',
-                            en='natus',
-                        ),
-                        type=shared.WidgetActionType.LINK,
-                        url='hic',
-                    ),
-                ],
-                headline=shared.ActionWidgetHeadline(
-                    de='saepe',
-                    en='fuga',
-                ),
-                id='7596eb10-faaa-4235-ac59-55907aff1a3a',
-                list_index=161309,
-                sub_headline=shared.ActionWidgetSubHeadline(
-                    de='repellat',
-                    en='mollitia',
-                ),
-                type=shared.ActionWidgetType.ENTITY_WIDGET,
-            ),
+            [],
         ],
     ),
     origin=shared.Origin.END_CUSTOMER_PORTAL,
