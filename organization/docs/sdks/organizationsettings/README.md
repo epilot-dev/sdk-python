@@ -1,4 +1,5 @@
 # OrganizationSettings
+(*organization_settings*)
 
 ## Overview
 
@@ -104,10 +105,8 @@ s = epilot.Epilot(
 )
 
 req = operations.PutSettingsValueRequest(
-    request_body={
-        "temporibus": 'ab',
-    },
-    key='quis',
+    settings_value=[],
+    key='recusandae',
     org_id='739224',
 )
 

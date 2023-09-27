@@ -35,12 +35,12 @@ if res.organization is not None:
 ## Available Resources and Operations
 
 
-### [Organization](docs/sdks/organization/README.md)
+### [organization](docs/sdks/organization/README.md)
 
 * [get_organization](docs/sdks/organization/README.md#get_organization) - getOrganization
 * [update_organization](docs/sdks/organization/README.md#update_organization) - updateOrganization
 
-### [OrganizationSettings](docs/sdks/organizationsettings/README.md)
+### [organization_settings](docs/sdks/organizationsettings/README.md)
 
 * [delete_settings_value](docs/sdks/organizationsettings/README.md#delete_settings_value) - deleteSettingsValue
 * [get_settings](docs/sdks/organizationsettings/README.md#get_settings) - getSettings
@@ -50,8 +50,6 @@ if res.organization is not None:
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -65,8 +63,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

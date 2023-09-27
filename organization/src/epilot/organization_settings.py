@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 class OrganizationSettings:
     r"""Organisation Settings"""
@@ -71,7 +71,7 @@ class OrganizationSettings:
         
         url = utils.generate_url(operations.PutSettingsValueRequest, base_url, '/v2/organization/{org_id}/settings/{key}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "settings_value", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -86,7 +86,7 @@ class OrganizationSettings:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Any])
+                out = utils.unmarshal_json(http_res.text, Optional[Union[str, float, bool, list[dict[str, Any]], dict[str, Any]]])
                 res.settings_value = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

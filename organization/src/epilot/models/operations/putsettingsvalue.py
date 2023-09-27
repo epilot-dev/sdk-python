@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 
@@ -13,7 +13,7 @@ class PutSettingsValueRequest:
     r"""Organization setting key"""
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""The Id of the organization."""
-    request_body: Optional[Any] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    settings_value: Optional[Union[str, float, bool, list[dict[str, Any]], dict[str, Any]]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""Value to set"""
     
 
@@ -28,7 +28,7 @@ class PutSettingsValueResponse:
     r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    settings_value: Optional[Any] = dataclasses.field(default=None)
+    settings_value: Optional[Union[str, float, bool, list[dict[str, Any]], dict[str, Any]]] = dataclasses.field(default=None)
     r"""Returns the value of the setting"""
     
 

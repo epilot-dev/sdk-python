@@ -34,6 +34,7 @@ docs/models/operations/putsettingsvalueresponse.md
 docs/models/shared/organizationaddress.md
 docs/models/shared/organizationtype.md
 docs/models/shared/organization.md
+docs/models/shared/settingsvalue.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md
 docs/sdks/organization/README.md
