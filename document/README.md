@@ -44,7 +44,7 @@ if res.generate_document_200_application_json_object is not None:
 ## Available Resources and Operations
 
 
-### [Documents](docs/sdks/documents/README.md)
+### [documents](docs/sdks/documents/README.md)
 
 * [generate_document](docs/sdks/documents/README.md#generate_document) - generateDocument
 * [generate_document_v2](docs/sdks/documents/README.md#generate_document_v2) - generateDocumentV2
@@ -53,8 +53,6 @@ if res.generate_document_200_application_json_object is not None:
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -68,8 +66,6 @@ returned response object will have a `Next` method that can be called to pull do
 return value of `Next` is `None`, then there are no more pages to be fetched.
 
 Here's an example of one such pagination call:
-
-
 <!-- End Pagination -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
