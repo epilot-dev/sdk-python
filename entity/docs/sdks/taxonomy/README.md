@@ -99,10 +99,10 @@ s = epilot.Epilot(
 req = operations.TaxonomiesClassificationsSearchRequest(
     request_body=operations.TaxonomiesClassificationsSearchRequestBody(
         classification_ids=[
-            'aa6f1e67-4bdb-404f-9575-6082d68ea19f',
+            '140d9b86-5e3a-4ede-b609-1ca17c7aaeae',
         ],
     ),
-    taxonomy_slug='quasi',
+    taxonomy_slug='Oklahoma azure illum',
 )
 
 res = s.taxonomy.taxonomies_classifications_search(req)
@@ -140,9 +140,9 @@ s = epilot.Epilot(
 )
 
 req = operations.TaxonomyAutocompleteRequest(
-    query='at',
-    size=920.27,
-    taxonomy_slug='voluptate',
+    query='Polarised optio Hybrid',
+    size=7186.02,
+    taxonomy_slug='Ball',
 )
 
 res = s.taxonomy.taxonomy_autocomplete(req)
@@ -184,31 +184,31 @@ req = operations.UpdateClassificationsForTaxonomyRequest(
     classifications_update=shared.ClassificationsUpdate(
         create=[
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2022-09-03T18:06:00.164Z'),
-                id='1339d080-86a1-4840-b94c-26071f93f5f0',
+                created_at=dateutil.parser.isoparse('2023-01-29T09:39:45.161Z'),
+                id='4e342f29-dee0-402b-8415-ef6fe03f06e9',
                 name='Wallbox PV',
                 parents=[
-                    '642dac7a-f515-4cc4-93aa-63aae8d67864',
+                    '998bd322-c31e-42b7-b181-91a2c6ad60b4',
                 ],
-                updated_at=dateutil.parser.isoparse('2020-11-18T07:12:59.777Z'),
+                updated_at=dateutil.parser.isoparse('2021-07-20T21:22:16.417Z'),
             ),
         ],
         delete=[
-            'b675fd5e-60b3-475e-94f6-fbee41f33317',
+            '062aff2d-f8b9-4512-81f6-8f95bbd35ce8',
         ],
         update=[
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2020-04-29T18:47:01.945Z'),
-                id='35b60eb1-ea42-4655-9ba3-c28744ed53b8',
+                created_at=dateutil.parser.isoparse('2023-06-17T13:37:21.887Z'),
+                id='b159c7e2-9866-4889-9ce5-7236fb33115f',
                 name='Wallbox PV',
                 parents=[
-                    '8f3a8d8f-5c0b-42f2-bb7b-194a276b2691',
+                    'c5f1737e-932d-42ff-8b5b-7733cd73fa8c',
                 ],
-                updated_at=dateutil.parser.isoparse('2022-01-15T12:09:02.064Z'),
+                updated_at=dateutil.parser.isoparse('2021-03-21T21:08:25.425Z'),
             ),
         ],
     ),
-    taxonomy_slug='debitis',
+    taxonomy_slug='flexibility Cadillac North',
 )
 
 res = s.taxonomy.update_classifications_for_taxonomy(req)

@@ -42,7 +42,7 @@ req = shared.SavedView(
         'contact',
     ],
     ui_config={
-        "voluptatem": 'cumque',
+        "eos": 'Cyclocross',
     },
 )
 
@@ -81,7 +81,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteSavedViewRequest(
-    id='bb1e31b8-b90f-4344-ba11-08e0adcf4b92',
+    id='59eccd11-7c56-46ef-bb90-41cbc04178cc',
 )
 
 res = s.saved_views.delete_saved_view(req)
@@ -119,7 +119,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSavedViewRequest(
-    id='1879fce9-53f7-43ef-bfbc-7abd74dd39c0',
+    id='638188cd-8a1e-442e-95b2-8864469eafc5',
 )
 
 res = s.saved_views.get_saved_view(req)
@@ -227,10 +227,10 @@ req = operations.UpdateSavedViewRequest(
             'contact',
         ],
         ui_config={
-            "voluptatibus": 'exercitationem',
+            "aut": 'red',
         },
     ),
-    id='d2cff7c7-0a45-4626-9436-813f16d9f5fc',
+    id='3092cd47-8166-44df-95b0-841d72e4e501',
 )
 
 res = s.saved_views.update_saved_view(req)

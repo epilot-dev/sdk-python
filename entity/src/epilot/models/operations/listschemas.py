@@ -12,7 +12,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class ListSchemasRequest:
-    unpublished: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'unpublished', 'style': 'form', 'explode': True }})
+    unpublished: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'unpublished', 'style': 'form', 'explode': True }})
     r"""Return unpublished draft schemas"""
     
 

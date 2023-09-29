@@ -15,7 +15,7 @@ class AutocompleteRequest:
     r"""Autocomplete attribute"""
     input: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'input', 'style': 'form', 'explode': True }})
     r"""Input to autocomplete"""
-    size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    size: Optional[int] = dataclasses.field(default=10, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     r"""Maximum number of results to return"""
     slug: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'slug', 'style': 'form', 'explode': True }})
     r"""Limit results to entity schema"""

@@ -21,11 +21,11 @@ class GetEntityActivityFeedRequest:
     r"""Get activities after this timestamp"""
     before: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'before', 'style': 'form', 'explode': True }})
     r"""get activities before this timestamp"""
-    from_: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
     r"""start from page"""
-    include_relations: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_relations', 'style': 'form', 'explode': True }})
+    include_relations: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'include_relations', 'style': 'form', 'explode': True }})
     r"""Include activities from related entities"""
-    size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    size: Optional[int] = dataclasses.field(default=25, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     r"""max number of results to return"""
     type: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
     r"""Filter by activity type"""

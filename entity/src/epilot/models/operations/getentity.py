@@ -15,7 +15,7 @@ class GetEntityRequest:
     r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""Entity Type"""
-    hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
+    hydrate: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
     r"""When true, enables entity hydration to resolve nested $relation & $relation_ref references in-place."""
     
 

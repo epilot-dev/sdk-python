@@ -14,9 +14,9 @@ class GetRelationsRequest:
     r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""Entity Type"""
-    hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
+    hydrate: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
     r"""When true, expand relation items with full blown entities."""
-    include_reverse: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
+    include_reverse: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
     r"""When true, includes reverse relations in response (other entities pointing to this entity)"""
     
 

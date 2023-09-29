@@ -70,7 +70,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSchemaRequest(
-    id='e6c55614-6c3e-4250-bb00-8c42e141aac3',
+    id='3bcef047-7721-42cd-8bca-92e24545d526',
     slug='contact',
 )
 
@@ -109,11 +109,11 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSchemaVersionsRequest(
-    drafts_from=4321.48,
-    drafts_size=4205.39,
+    drafts_from=8135.81,
+    drafts_size=8621.33,
     slug='contact',
-    versions_from=7521.35,
-    versions_size=5573.69,
+    versions_from=8101.78,
+    versions_size=8257.35,
 )
 
 res = s.schemas.get_schema_versions(req)
@@ -218,8 +218,8 @@ s = epilot.Epilot(
 )
 
 req = operations.ListTaxonomyClassificationsForSchemaRequest(
-    query='assumenda',
-    size=8605.52,
+    query='Gasoline Torrance tesla',
+    size=8668.67,
     slug='contact',
     taxonomy_slug='purpose',
 )
@@ -264,11 +264,11 @@ req = operations.PutSchemaRequest(
         attributes=[
             [],
         ],
-        blueprint='6b144290-7474-4778-a7bd-466d28c10ab3',
+        blueprint='a93c7b74-037c-43b9-94a9-6166aa0e2336',
         capabilities=[
             shared.EntityCapability(
                 purpose=[
-                    'cdca4251-904e-4523-87e0-bc7178e4796f',
+                    '535d6bf8-fcc1-4de0-b32d-65715210cf50',
                 ],
                 attributes=[
                     [],
@@ -280,49 +280,49 @@ req = operations.PutSchemaRequest(
                 title='Messaging',
                 ui_hooks=[
                     {
-                        "dolores": 'deserunt',
+                        "modi": 'Home',
                     },
                 ],
             ),
         ],
         dialog_config={
-            "molestiae": 'accusantium',
+            "eveniet": 'Strategist',
         },
         draft=False,
         enable_setting=[
             '360_features',
         ],
         explicit_search_mappings={
-            "porro": shared.SearchMappings(
+            "vel": shared.SearchMappings(
                 fields_={
-                    "eum": 'quas',
+                    "distinctio": 'warmly',
                 },
                 index=False,
-                type=shared.SearchMappingsType.LONG,
+                type=shared.SearchMappingsType.TEXT,
             ),
         },
         feature_flag='FF_MY_FEATURE_FLAG',
         group_settings=[
             shared.EntitySchemaGroupSettings(
                 purpose=[
-                    '282aa482-562f-4222-a981-7ee17cbe61e6',
+                    '0dd287b6-15b3-4e0e-a8c6-d1668543e4eb',
                 ],
                 expanded=False,
                 feature_flag='FF_MY_FEATURE_FLAG',
-                id='b7b95bc0-ab3c-420c-8f37-89fd871f99dd',
+                id='<ID>',
                 info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(
-                    default='quia',
-                    key='eveniet',
+                    default='Wooden',
+                    key='<key>',
                 ),
-                label='asperiores',
-                order=815524,
+                label='deposit Pakistan XSS',
+                order=834474,
                 render_condition='_is_composite_price = "false"',
                 setting_flag='MY_SETTING',
             ),
         ],
         icon='person',
         layout_settings={
-            "veritatis": 'consequuntur',
+            "aut": 'protocol',
         },
         name='Contact',
         plural='Contacts',
@@ -343,7 +343,7 @@ req = operations.PutSchemaRequest(
             single_view=[],
             table_view=[],
         ),
-        version=94458,
+        version=784166,
     ),
     draft=False,
     slug='contact',

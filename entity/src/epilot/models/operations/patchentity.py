@@ -16,9 +16,9 @@ class PatchEntityRequest:
     r"""Entity Schema"""
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
     r"""Activity to include in event feed"""
-    async_: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
+    async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
     r"""Don't wait for the patch entity to become available in Search API. Useful for large migrations"""
-    dry_run: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'dry_run', 'style': 'form', 'explode': True }})
+    dry_run: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'dry_run', 'style': 'form', 'explode': True }})
     r"""Dry Run mode = returns the patch result but doesn't perform the patch."""
     
 

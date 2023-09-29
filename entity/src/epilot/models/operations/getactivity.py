@@ -12,9 +12,9 @@ from typing import Optional
 class GetActivityRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Activity Id"""
-    operations_from: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'operations_from', 'style': 'form', 'explode': True }})
+    operations_from: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'operations_from', 'style': 'form', 'explode': True }})
     r"""Pagination offset for operations"""
-    operations_size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'operations_size', 'style': 'form', 'explode': True }})
+    operations_size: Optional[int] = dataclasses.field(default=25, metadata={'query_param': { 'field_name': 'operations_size', 'style': 'form', 'explode': True }})
     r"""Maximum number of operations to include in response (default: 10)"""
     
 

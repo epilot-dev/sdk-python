@@ -16,15 +16,15 @@ class GetRelationsV2Request:
     r"""Entity Type"""
     fields_: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'fields', 'style': 'form', 'explode': True }})
     r"""List of entity fields to include in results"""
-    from_: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
     r"""Starting page number"""
-    hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
+    hydrate: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
     r"""When true, expand relation items with full blown entities."""
-    include_reverse: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
+    include_reverse: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
     r"""When true, includes reverse relations in response (other entities pointing to this entity)"""
     query: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
     r"""Input to filter search results"""
-    size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    size: Optional[int] = dataclasses.field(default=50, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     r"""Number of results to return per page"""
     
 

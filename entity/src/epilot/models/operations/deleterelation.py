@@ -19,7 +19,7 @@ class DeleteRelationRequest:
     r"""Entity Type"""
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
     r"""Activity to include in event feed"""
-    async_: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
+    async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
     r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
     
 

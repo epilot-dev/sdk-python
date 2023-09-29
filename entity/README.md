@@ -22,7 +22,7 @@ s = epilot.Epilot(
 
 req = operations.AttachActivityRequest(
     entities=[
-        'a05dfc2d-df7c-4c78-8a1b-a928fc816742',
+        'ee1dee63-2954-4671-8246-751c43fec091',
     ],
     id='01F130Q52Q6MWSNS8N2AVXV4JN',
 )

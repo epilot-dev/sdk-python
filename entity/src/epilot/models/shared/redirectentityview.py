@@ -3,12 +3,8 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
-from typing import Optional
-
-class RedirectEntityViewViewType(str, Enum):
-    REDIRECT = 'redirect'
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -16,6 +12,6 @@ class RedirectEntityViewViewType(str, Enum):
 @dataclasses.dataclass
 class RedirectEntityView:
     route: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('route'), 'exclude': lambda f: f is None }})
-    view_type: Optional[RedirectEntityViewViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
+    VIEW_TYPE: Final[Optional[str]] = dataclasses.field(default='redirect', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
 

@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -17,9 +16,6 @@ class EntityDefaultEditTableMenuOptions:
     
 
 
-class EntityDefaultEditViewType(str, Enum):
-    DEFAULT = 'default'
-
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -29,6 +25,6 @@ class EntityDefaultEdit:
     summary_attributes: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_attributes'), 'exclude': lambda f: f is None }})
     r"""List of attribute names that we show in the summary header"""
     table_menu_options: Optional[EntityDefaultEditTableMenuOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('table_menu_options'), 'exclude': lambda f: f is None }})
-    view_type: Optional[EntityDefaultEditViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
+    VIEW_TYPE: Final[Optional[str]] = dataclasses.field(default='default', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
 
