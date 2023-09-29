@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `token`            | *str*              | :heavy_check_mark: | Invite Token       |
+| `token`            | *Optional[str]*    | :heavy_check_mark: | Invite Token       |

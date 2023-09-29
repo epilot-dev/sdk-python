@@ -36,10 +36,10 @@ s = epilot.Epilot(
 req = operations.ActivatePartnerRequest(
     activate_partner_payload=shared.ActivatePartnerPayload(
         company_name='Company name',
-        organization_id='debitis',
-        signed_up_email='Vincenzo.Goldner@gmail.com',
+        organization_id='Future likewise San',
+        signed_up_email='Julius_Anderson66@gmail.com',
     ),
-    token='minus',
+    token='CLI',
 )
 
 res = s.partners.activate_partner(req)
@@ -117,8 +117,8 @@ s = epilot.Epilot(
 
 req = [
     operations.BatchGetAssignableRequestBody(
-        org_id='placeat',
-        user_id='voluptatum',
+        org_id='circuit',
+        user_id='yet methodology',
     ),
 ]
 
@@ -157,7 +157,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetPartnerByTokenRequest(
-    token='iusto',
+    token='Electric',
 )
 
 res = s.partners.get_partner_by_token(req)
@@ -275,7 +275,7 @@ s = epilot.Epilot(
 
 req = operations.ResendPartnerInvitationRequest(
     request_body=operations.ResendPartnerInvitationRequestBody(
-        language=operations.ResendPartnerInvitationRequestBodyLanguage.EN,
+        language=operations.ResendPartnerInvitationRequestBodyLanguage.DE,
     ),
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
@@ -321,12 +321,12 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchAssignableRequestBody(
-    from_=925597,
+    from_=495002,
     org_ids=[
         '123',
     ],
-    q='temporibus',
-    size=71036,
+    q='Accounts Infrastructure Boron',
+    size=118246,
     types=[
         operations.SearchAssignableRequestBodyTypes.PARTNER_USER,
     ],

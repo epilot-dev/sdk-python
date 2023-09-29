@@ -21,13 +21,13 @@ class SearchAssignableRequestBodyTypes(str, Enum):
 
 @dataclasses.dataclass
 class SearchAssignableRequestBody:
-    from_: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})
     r"""start results from an offset for pagination"""
     org_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_ids'), 'exclude': lambda f: f is None }})
     r"""filter results to specific organizations. defaults to all orgs"""
-    q: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('q'), 'exclude': lambda f: f is None }})
+    q: Optional[str] = dataclasses.field(default='', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('q'), 'exclude': lambda f: f is None }})
     r"""search query to filter results"""
-    size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
+    size: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
     r"""limit number of results to return"""
     types: Optional[list[SearchAssignableRequestBodyTypes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('types'), 'exclude': lambda f: f is None }})
     r"""filter results to specific types of assignables. defaults to all types"""

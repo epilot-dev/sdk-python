@@ -17,7 +17,7 @@ class PartnerInvitationPayloadLanguage(str, Enum):
 
 @dataclasses.dataclass
 class PartnerInvitationPayload:
-    language: Optional[PartnerInvitationPayloadLanguage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    language: Optional[PartnerInvitationPayloadLanguage] = dataclasses.field(default=PartnerInvitationPayloadLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language for partner invitation email"""
     
 
