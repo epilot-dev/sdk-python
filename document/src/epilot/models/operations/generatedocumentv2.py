@@ -45,7 +45,7 @@ class GenerateDocumentV2RequestBody:
     r"""Input template document"""
     context_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_entity_id'), 'exclude': lambda f: f is None }})
     r"""Entity to use for variable context"""
-    language: Optional[GenerateDocumentV2RequestBodyLanguage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    language: Optional[GenerateDocumentV2RequestBodyLanguage] = dataclasses.field(default=GenerateDocumentV2RequestBodyLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language to use"""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
     r"""User Id for variable context"""
@@ -68,7 +68,7 @@ class GenerateDocumentV2Mode(str, Enum):
 class GenerateDocumentV2Request:
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'job_id', 'style': 'form', 'explode': True }})
     r"""Job ID for tracking the status of document generation action"""
-    mode: Optional[GenerateDocumentV2Mode] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'mode', 'style': 'form', 'explode': True }})
+    mode: Optional[GenerateDocumentV2Mode] = dataclasses.field(default=GenerateDocumentV2Mode.undefined, metadata={'query_param': { 'field_name': 'mode', 'style': 'form', 'explode': True }})
     r"""Type of mode used for document generation flow.
     Partial - Will have a intermediate step for users to validate and replace the variable values before generating the final document.
     Full - Goes through all the steps for the full generation of final document
