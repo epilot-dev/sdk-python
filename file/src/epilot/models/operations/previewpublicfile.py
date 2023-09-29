@@ -14,7 +14,7 @@ class PreviewPublicFileRequest:
     r"""height"""
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
     r"""Org id"""
-    version: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
+    version: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
     r"""index of file version"""
     w: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'w', 'style': 'form', 'explode': True }})
     r"""width"""

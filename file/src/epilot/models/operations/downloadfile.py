@@ -12,9 +12,9 @@ from typing import Optional
 @dataclasses.dataclass
 class DownloadFileRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    attachment: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'attachment', 'style': 'form', 'explode': True }})
+    attachment: Optional[bool] = dataclasses.field(default=True, metadata={'query_param': { 'field_name': 'attachment', 'style': 'form', 'explode': True }})
     r"""Controls the Content-Disposition header to control browser behaviour. Set to true to trigger download."""
-    version: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
+    version: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
     r"""index of file version"""
     
 

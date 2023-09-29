@@ -12,7 +12,7 @@ class PreviewFileRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     h: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'h', 'style': 'form', 'explode': True }})
     r"""height"""
-    version: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
+    version: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
     r"""index of file version"""
     w: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'w', 'style': 'form', 'explode': True }})
     r"""width"""

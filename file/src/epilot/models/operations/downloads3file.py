@@ -13,7 +13,7 @@ from typing import Optional
 class DownloadS3FileRequest:
     s3_bucket: str = dataclasses.field(metadata={'query_param': { 'field_name': 's3_bucket', 'style': 'form', 'explode': True }})
     s3_key: str = dataclasses.field(metadata={'query_param': { 'field_name': 's3_key', 'style': 'form', 'explode': True }})
-    attachment: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'attachment', 'style': 'form', 'explode': True }})
+    attachment: Optional[bool] = dataclasses.field(default=True, metadata={'query_param': { 'field_name': 'attachment', 'style': 'form', 'explode': True }})
     r"""Controls the Content-Disposition header to control browser behaviour. Set to true to trigger download."""
     
 
