@@ -6,4 +6,4 @@ from .accesstokentype import *
 from .journeytokenparameters import *
 from .security import *
 
-__all__ = ["AccessTokenItem","AccessTokenParameters","AccessTokenParametersTokenType","AccessTokenType","JourneyTokenParameters","JourneyTokenParametersTokenType","Security"]
+__all__ = ["AccessTokenItem","AccessTokenParameters","AccessTokenType","JourneyTokenParameters","Security"]
