@@ -22,17 +22,17 @@ s = epilot.Epilot(
 
 req = shared.WorkflowExecutionCreateReq(
     assigned_to=[
-        'quo',
+        'wearily',
     ],
     contexts=[
         shared.WorkflowContext(
-            id='2ddf7cc7-8ca1-4ba9-a8fc-816742cb7392',
-            schema='perferendis',
-            title='Mrs.',
+            id='<ID>',
+            schema='Strontium',
+            title='teal 6th Bespoke',
         ),
     ],
-    trigger=shared.TriggerType.AUTOMATIC,
-    workflow_id='sed',
+    trigger=shared.TriggerType.MANUAL,
+    workflow_id='CLI Cadillac',
 )
 
 res = s.workflows.create_execution(req)
