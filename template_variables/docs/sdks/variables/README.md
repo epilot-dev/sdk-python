@@ -30,7 +30,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GenerateQRcodeRequest(
-    qrdata='accusantium',
+    qrdata='quantifying Crossing newton',
 )
 
 res = s.variables.generate_q_rcode(req)
@@ -120,9 +120,9 @@ req = operations.GetVariableContextRequestBody(
         ],
         language=shared.VariableParametersLanguage.EN,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_name='culpa',
+        template_name='Ruthenium quo',
         template_tags=[
-            'doloribus',
+            'Chevrolet',
         ],
         template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
@@ -185,9 +185,9 @@ req = operations.ReplaceTemplatesRequestBody(
         ],
         language=shared.VariableParametersLanguage.EN,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_name='mollitia',
+        template_name='invoice Rubber',
         template_tags=[
-            'dolorem',
+            'Northeast',
         ],
         template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
@@ -233,11 +233,11 @@ req = operations.SearchVariablesRequestBody(
     entity_schemas=[
         'contact',
     ],
-    from_=161309,
-    lang=operations.SearchVariablesRequestBodyLang.DE,
+    from_=968492,
+    lang=operations.SearchVariablesRequestBodyLang.EN,
     query='logo',
-    size=653108,
-    template_type=shared.TemplateType.DOCUMENT,
+    size=177431,
+    template_type=shared.TemplateType.EMAIL,
 )
 
 res = s.variables.search_variables(req)
