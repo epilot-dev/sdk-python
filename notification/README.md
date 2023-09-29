@@ -21,7 +21,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "distinctio": 'quibusdam',
+    "facere": 'Product',
 }
 
 res = s.notification.create_notification(req)
