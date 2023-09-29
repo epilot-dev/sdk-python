@@ -26,7 +26,7 @@ class RelationAttributeSourceFilter:
     r"""Filter by relation tag (label) on the main entity"""
     schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema'), 'exclude': lambda f: f is None }})
     r"""Filter by specific schema"""
-    self_: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is None }})
+    self_: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is None }})
     r"""Picks main entity as relation (overrides other filters)"""
     tag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag'), 'exclude': lambda f: f is None }})
     r"""Filter by a specific tag on the related entity"""
@@ -47,7 +47,7 @@ class RelationAttribute:
     r"""A filter to identify which source entities to pick as relations from main entity"""
     target_tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_tags'), 'exclude': lambda f: f is None }})
     r"""Relation tags (labels) to set for the stored relations"""
-    target_tags_include_source: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_tags_include_source'), 'exclude': lambda f: f is None }})
+    target_tags_include_source: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_tags_include_source'), 'exclude': lambda f: f is None }})
     r"""Include all relation tags (labels) present on the main entity relation"""
     
 

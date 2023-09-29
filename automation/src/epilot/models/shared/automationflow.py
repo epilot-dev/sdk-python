@@ -35,7 +35,7 @@ class AutomationFlow:
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     created_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_by'), 'exclude': lambda f: f is None }})
     r"""User / service who created automation flow"""
-    enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
+    enabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Whether the automation is enabled or not"""
     entity_schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schema'), 'exclude': lambda f: f is None }})
     r"""The triggering entity schema"""
@@ -59,7 +59,7 @@ class AutomationFlowInput:
     flow_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_name') }})
     r"""A descriptive name for the Automation"""
     triggers: list[Union[shared_frontendsubmittrigger.FrontendSubmitTrigger, shared_journeysubmittrigger.JourneySubmitTrigger, shared_apisubmissiontrigger.APISubmissionTrigger, shared_entityoperationtrigger.EntityOperationTrigger, shared_activitytrigger.ActivityTrigger, shared_entitymanualtrigger.EntityManualTrigger, shared_receivedemailtrigger.ReceivedEmailTrigger]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('triggers') }})
-    enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
+    enabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Whether the automation is enabled or not"""
     entity_schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schema'), 'exclude': lambda f: f is None }})
     r"""The triggering entity schema"""

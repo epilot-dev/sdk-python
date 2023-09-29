@@ -4,12 +4,8 @@ from __future__ import annotations
 import dataclasses
 from ..shared import sendemailconfig as shared_sendemailconfig
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
-from typing import Optional
-
-class SendEmailActionConfigType(str, Enum):
-    SEND_EMAIL = 'send-email'
+from typing import Any, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -24,6 +20,6 @@ class SendEmailActionConfig:
     flow_action_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_action_id'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-    type: Optional[SendEmailActionConfigType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

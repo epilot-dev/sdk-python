@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -16,15 +15,12 @@ class FrontendSubmitTriggerConfiguration:
     
 
 
-class FrontendSubmitTriggerType(str, Enum):
-    FRONTEND_SUBMISSION = 'frontend_submission'
-
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class FrontendSubmitTrigger:
     configuration: FrontendSubmitTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-    type: FrontendSubmitTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    TYPE: Final[str] = dataclasses.field(default='frontend_submission', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 

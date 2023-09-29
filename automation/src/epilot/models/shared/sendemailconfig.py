@@ -37,7 +37,7 @@ class SendEmailConfigAttachmentsSourceFilter:
     r"""Limit files to maximum number (default, all matched file relations)"""
     relation_tag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_tag'), 'exclude': lambda f: f is None }})
     r"""Filter by relation tag (label) on the main entity"""
-    self_: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is None }})
+    self_: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self'), 'exclude': lambda f: f is None }})
     r"""Picks main entity as file (only works if source entity is a file)"""
     tag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tag'), 'exclude': lambda f: f is None }})
     r"""Filter by a specific tag on the related file entity"""

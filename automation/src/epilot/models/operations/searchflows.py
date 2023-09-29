@@ -10,11 +10,11 @@ from typing import Optional
 
 @dataclasses.dataclass
 class SearchFlowsRequest:
-    from_: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
     r"""Pagination: starting for results"""
     schema: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'schema', 'style': 'form', 'explode': True }})
     r"""Entity Schema"""
-    size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    size: Optional[int] = dataclasses.field(default=25, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     r"""Pagination: max number of results to return"""
     trigger_source_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'trigger_source_id', 'style': 'form', 'explode': True }})
     r"""Trigger source identifier"""

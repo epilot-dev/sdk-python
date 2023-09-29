@@ -4,12 +4,8 @@ from __future__ import annotations
 import dataclasses
 from ..shared import entityoperation as shared_entityoperation
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
-from typing import Optional
-
-class TriggerEventEntityOperationType(str, Enum):
-    ENTITY_OPERATION = 'entity_operation'
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -20,6 +16,6 @@ class TriggerEventEntityOperation:
     entity_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id') }})
     operation_type: shared_entityoperation.EntityOperation = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation_type') }})
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
-    type: Optional[TriggerEventEntityOperationType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    TYPE: Final[Optional[str]] = dataclasses.field(default='entity_operation', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

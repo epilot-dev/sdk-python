@@ -36,8 +36,8 @@ req = shared.AutomationFlowInput(
     runs=7,
     trigger_conditions=[
         shared.TriggerCondition(
-            comparison=shared.Comparison.IS_EMPTY,
-            source='unde',
+            comparison=shared.Comparison.EQUALS,
+            source='aggregate',
             value=[],
         ),
     ],
@@ -164,8 +164,8 @@ req = operations.PutFlowRequest(
         runs=7,
         trigger_conditions=[
             shared.TriggerCondition(
-                comparison=shared.Comparison.IS_EMPTY,
-                source='corrupti',
+                comparison=shared.Comparison.NOT_EMPTY,
+                source='Chair',
                 value=[],
             ),
         ],
@@ -211,9 +211,9 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchFlowsRequest(
-    from_=847252,
+    from_=253836,
     schema='submission',
-    size=423655,
+    size=186991,
     trigger_source_id='600945fe-212e-4b97-acf7-391d64648384',
 )
 
