@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `epilot_auth`      | *str*              | :heavy_check_mark: | N/A                |                    |
+| `epilot_auth`      | *Optional[str]*    | :heavy_check_mark: | N/A                |                    |

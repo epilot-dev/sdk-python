@@ -38,7 +38,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.ConfigureDistributionRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.configure_distribution(req, operations.ConfigureDistributionSecurity(
@@ -80,7 +80,7 @@ req = operations.CreateSSOUserRequest(
         first_name='John',
         last_name='Doe',
     ),
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.create_sso_user(req, operations.CreateSSOUserSecurity(
@@ -117,7 +117,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.DeletePortalRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.delete_portal(req, operations.DeletePortalSecurity(
@@ -257,7 +257,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetEmailTemplatesRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_email_templates(req, operations.GetEmailTemplatesSecurity(
@@ -331,7 +331,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetOrgPortalConfigRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.get_org_portal_config(req, operations.GetOrgPortalConfigSecurity(
@@ -368,7 +368,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalConfigRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -515,7 +515,7 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
-                'recusandae',
+                'save',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -612,15 +612,15 @@ req = operations.UpsertPortalRequest(
             cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
             cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config='quis',
+        config='male Rancho',
         contact_identifiers=[
-            'veritatis',
+            'applications',
         ],
         contact_secondary_identifier='full_name',
         default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
             on_pending_user=[
                 {
-                    "deserunt": 'perferendis',
+                    "illum": 'plum',
                 },
             ],
         ),
@@ -637,10 +637,10 @@ req = operations.UpsertPortalRequest(
         entity_actions=[
             shared.UpsertPortalConfigEntityActions(
                 action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='ipsam',
-                    en='repellendus',
+                    de='Global katal',
+                    en='female New leverage',
                 ),
-                journey_id='sapiente',
+                journey_id='Loan',
                 slug=shared.EntitySlug.CONTACT,
             ),
         ],
@@ -650,7 +650,7 @@ req = operations.UpsertPortalRequest(
                 allowed_increment='10%',
                 attribute='first_name',
                 cadence_period=1,
-                cadence_period_type=shared.UpsertPortalConfigEntityEditRulesCadencePeriodType.MONTHS,
+                cadence_period_type=shared.UpsertPortalConfigEntityEditRulesCadencePeriodType.DAYS,
                 changes_allowed=1,
                 grace_period=1,
                 number_of_days_before_restriction=10,
@@ -672,7 +672,7 @@ req = operations.UpsertPortalRequest(
         grants=[
             shared.Grant(
                 action='entity-read',
-                effect=shared.GrantEffect.DENY,
+                effect=shared.GrantEffect.ALLOW,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
         ],
@@ -684,7 +684,7 @@ req = operations.UpsertPortalRequest(
         is_epilot_domain=False,
         name='Installer Portal',
         self_registration=False,
-        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.DENY,
+        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITH_CONTACT_CREATION,
     ),
     origin=shared.Origin.INSTALLER_PORTAL,
 )
@@ -728,7 +728,7 @@ req = operations.UpsertPortalWidgetRequest(
             [],
         ],
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.ecp_admin.upsert_portal_widget(req, operations.UpsertPortalWidgetSecurity(

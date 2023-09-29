@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `domain`           | *str*              | :heavy_check_mark: | N/A                | example.com        |
+| `domain`           | *Optional[str]*    | :heavy_check_mark: | N/A                | example.com        |

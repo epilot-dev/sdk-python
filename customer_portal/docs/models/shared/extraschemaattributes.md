@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `group`            | *str*              | :heavy_check_mark: | Attribute group    |
-| `label`            | *str*              | :heavy_check_mark: | Attribute label    |
-| `name`             | *str*              | :heavy_check_mark: | Attribute name     |
+| `group`            | *Optional[str]*    | :heavy_check_mark: | Attribute group    |
+| `label`            | *Optional[str]*    | :heavy_check_mark: | Attribute label    |
+| `name`             | *Optional[str]*    | :heavy_check_mark: | Attribute name     |

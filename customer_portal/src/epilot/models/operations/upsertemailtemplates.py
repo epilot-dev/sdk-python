@@ -7,9 +7,8 @@ from ..shared import emailtemplates as shared_emailtemplates
 from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import Final, Optional
 
 
 
@@ -30,9 +29,6 @@ class UpsertEmailTemplatesRequest:
     
 
 
-class UpsertEmailTemplates200ApplicationJSONMessage(str, Enum):
-    EMAIL_TEMPLATES_UPSERTED_SUCCESSFULLY = 'Email Templates upserted successfully'
-
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -41,7 +37,7 @@ class UpsertEmailTemplates200ApplicationJSON:
     r"""Upserted email templates of the portal successfully."""
     email_templates: shared_emailtemplates.EmailTemplates = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emailTemplates') }})
     r"""Email templates used for authentication and internal processes"""
-    message: UpsertEmailTemplates200ApplicationJSONMessage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
+    MESSAGE: Final[str] = dataclasses.field(default='Email Templates upserted successfully', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     
 
 

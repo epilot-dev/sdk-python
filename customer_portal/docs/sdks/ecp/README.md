@@ -88,7 +88,7 @@ req = operations.CreateCustomEntityActivityRequest(
     activity=shared.Activity(
         message='{{caller}} did something with {{entity payload.entity.id}}.',
         payload={
-            "corrupti": 'provident',
+            "ratione": 'incidentally',
         },
         title='My custom activity',
         type='MyCustomActivity',
@@ -245,7 +245,7 @@ s = epilot.Epilot()
 
 req = operations.GetAllFilesRequest(
     entity_ids=[
-        'distinctio',
+        'invoice',
     ],
     from_=0,
     size=0,
@@ -432,7 +432,7 @@ s = epilot.Epilot()
 
 req = operations.GetEntitiesByIdentifiersRequest(
     request_body={
-        "quibusdam": 'unde',
+        "facilis": 'News',
     },
     slug=shared.EntitySlug.CONTACT,
 )
@@ -648,7 +648,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalConfigRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp.get_portal_config(req, operations.GetPortalConfigSecurity(
@@ -718,7 +718,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot()
 
 req = operations.GetPortalWidgetsRequest(
-    origin=shared.Origin.INSTALLER_PORTAL,
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
@@ -793,7 +793,7 @@ req = shared.SaveEntityFile(
     files=[
         shared.SaveEntityFileFiles(
             tags=[
-                'illum',
+                'Mobility',
             ],
             access_control=shared.SaveEntityFileFilesAccessControl.PRIVATE,
             document_type='12345',
@@ -841,7 +841,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "error": 'deserunt',
+    "quia": 'Moroccan',
 }
 
 res = s.ecp.update_contact(req, operations.UpdateContactSecurity(
@@ -879,7 +879,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateContractRequest(
     request_body={
-        "suscipit": 'iure',
+        "sed": 'fatally',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -919,7 +919,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOpportunityRequest(
     request_body={
-        "magnam": 'debitis',
+        "animi": 'kilogram',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -959,7 +959,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOrderRequest(
     request_body={
-        "ipsa": 'delectus',
+        "recusandae": 'North',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -998,7 +998,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "tempora": 'suscipit',
+    "harum": 'Generic',
 }
 
 res = s.ecp.update_portal_user(req, operations.UpdatePortalUserSecurity(

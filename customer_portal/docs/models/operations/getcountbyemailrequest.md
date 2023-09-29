@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `email`            | *str*              | :heavy_check_mark: | N/A                | test@test.com      |
-| `org_id`           | *str*              | :heavy_check_mark: | N/A                | 123                |
+| `email`            | *Optional[str]*    | :heavy_check_mark: | N/A                | test@test.com      |
+| `org_id`           | *Optional[str]*    | :heavy_check_mark: | N/A                | 123                |

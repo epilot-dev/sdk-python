@@ -23,7 +23,7 @@ class ECPAdmin:
         headers = {}
         query_params = utils.get_query_params(operations.ConfigureDistributionRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -56,14 +56,14 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/sso/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "create_sso_user_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "create_sso_user_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.CreateSSOUserRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -98,7 +98,7 @@ class ECPAdmin:
         headers = {}
         query_params = utils.get_query_params(operations.DeletePortalRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -128,7 +128,7 @@ class ECPAdmin:
         url = base_url + '/v2/portal/extra-permission-attributes'
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -162,7 +162,7 @@ class ECPAdmin:
         url = base_url + '/v2/portal/configs'
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -197,7 +197,7 @@ class ECPAdmin:
         headers = {}
         query_params = utils.get_query_params(operations.GetECPContactRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -232,7 +232,7 @@ class ECPAdmin:
         headers = {}
         query_params = utils.get_query_params(operations.GetEmailTemplatesRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -266,7 +266,7 @@ class ECPAdmin:
         url = utils.generate_url(operations.GetEntityIdentifiersRequest, base_url, '/v2/portal/entity/identifiers/{slug}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -301,7 +301,7 @@ class ECPAdmin:
         headers = {}
         query_params = utils.get_query_params(operations.GetOrgPortalConfigRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -336,7 +336,7 @@ class ECPAdmin:
         headers = {}
         query_params = utils.get_query_params(operations.GetPortalConfigRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -371,7 +371,7 @@ class ECPAdmin:
         headers = {}
         query_params = utils.get_query_params(operations.GetPortalWidgetsRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -405,7 +405,7 @@ class ECPAdmin:
         url = base_url + '/v2/portal/contact/valid/secondary/attributes'
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -438,13 +438,13 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/replace-ecp-template-variables'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -477,13 +477,13 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/portal/files'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -516,14 +516,14 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/email-templates'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "email_templates", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "email_templates", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.UpsertEmailTemplatesRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -556,14 +556,14 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/portal'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "upsert_portal_config", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "upsert_portal_config", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.UpsertPortalRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -596,14 +596,14 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/widgets'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "upsert_portal_widget", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "upsert_portal_widget", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.UpsertPortalWidgetRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         

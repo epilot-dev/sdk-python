@@ -127,11 +127,11 @@ class UpsertPortalConfigFeatureSettings:
 @dataclasses.dataclass
 class UpsertPortalConfigImages:
     r"""Teaser & Banner Image web links"""
-    order_left_teaser: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderLeftTeaser'), 'exclude': lambda f: f is None }})
+    order_left_teaser: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderLeftTeaser') }})
     r"""URL of the order left teaser image"""
-    order_right_teaser: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderRightTeaser'), 'exclude': lambda f: f is None }})
+    order_right_teaser: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderRightTeaser') }})
     r"""URL of the order right teaser image"""
-    welcome_banner: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('welcomeBanner'), 'exclude': lambda f: f is None }})
+    welcome_banner: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('welcomeBanner') }})
     r"""URL of the welcome banner image"""
     
 

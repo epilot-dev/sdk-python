@@ -34,7 +34,7 @@ class SaveEntityFileFiles:
     s3ref: SaveEntityFileFilesS3ref = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
     tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""Array of file tags"""
-    access_control: Optional[SaveEntityFileFilesAccessControl] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_control'), 'exclude': lambda f: f is None }})
+    access_control: Optional[SaveEntityFileFilesAccessControl] = dataclasses.field(default=SaveEntityFileFilesAccessControl.PRIVATE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_control'), 'exclude': lambda f: f is None }})
     r"""Access control level for the file"""
     document_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type'), 'exclude': lambda f: f is None }})
     r"""Document type"""

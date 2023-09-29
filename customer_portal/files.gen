@@ -101,7 +101,6 @@ docs/models/operations/deleteentityfilesecurity.md
 docs/models/operations/deleteentityfile202applicationjson.md
 docs/models/operations/deleteentityfileresponse.md
 docs/models/operations/deleteportalusersecurity.md
-docs/models/operations/deleteportaluser200applicationjsonmessage.md
 docs/models/operations/deleteportaluser200applicationjson.md
 docs/models/operations/deleteportaluserresponse.md
 docs/models/operations/getallcontractssecurity.md
@@ -229,7 +228,6 @@ docs/models/operations/saveportalfiles201applicationjson.md
 docs/models/operations/saveportalfilesresponse.md
 docs/models/operations/upsertemailtemplatessecurity.md
 docs/models/operations/upsertemailtemplatesrequest.md
-docs/models/operations/upsertemailtemplates200applicationjsonmessage.md
 docs/models/operations/upsertemailtemplates200applicationjson.md
 docs/models/operations/upsertemailtemplatesresponse.md
 docs/models/operations/upsertportalsecurity.md
@@ -241,7 +239,6 @@ docs/models/operations/upsertportalwidgetresponse.md
 docs/models/operations/confirmuserrequest.md
 docs/models/operations/confirmuserresponse.md
 docs/models/operations/createuserrequest.md
-docs/models/operations/createuser201applicationjsonmessage.md
 docs/models/operations/createuser201applicationjson.md
 docs/models/operations/createuserresponse.md
 docs/models/operations/getcontactcountrequest.md

@@ -5,9 +5,8 @@ import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import Final, Optional
 
 
 
@@ -17,9 +16,6 @@ class DeletePortalUserSecurity:
     
 
 
-class DeletePortalUser200ApplicationJSONMessage(str, Enum):
-    USER_SUCCESFULLY_DELETED = 'User Succesfully Deleted'
-
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -28,7 +24,7 @@ class DeletePortalUser200ApplicationJSON:
     r"""Portal user deleted successfully."""
     data: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""Entity ID"""
-    message: Optional[DeletePortalUser200ApplicationJSONMessage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
+    MESSAGE: Final[Optional[str]] = dataclasses.field(default='User Succesfully Deleted', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 
 

@@ -20,8 +20,8 @@ class GetAllOpportunitiesSecurity:
 
 @dataclasses.dataclass
 class GetAllOpportunitiesRequest:
-    from_: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
-    size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    from_: Optional[float] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    size: Optional[float] = dataclasses.field(default=100, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     
 
 
