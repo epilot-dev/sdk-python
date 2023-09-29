@@ -11,9 +11,9 @@ from typing import Optional
 
 @dataclasses.dataclass
 class RoleSearchInput:
-    limit: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})
+    limit: Optional[float] = dataclasses.field(default=50, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})
     r"""The Number of roles to return"""
-    offset: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset'), 'exclude': lambda f: f is None }})
+    offset: Optional[float] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset'), 'exclude': lambda f: f is None }})
     r"""The number of roles to skip before starting to collect the result set"""
     org_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_ids'), 'exclude': lambda f: f is None }})
     r"""List of organization ids to filter by"""

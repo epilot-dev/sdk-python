@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `user_id`          | *str*              | :heavy_check_mark: | N/A                | 1                  |
+| `user_id`          | *Optional[str]*    | :heavy_check_mark: | N/A                | 1                  |

@@ -10,4 +10,4 @@ from .security import *
 from .sharerole import *
 from .userrole import *
 
-__all__ = ["Assignment","EqualsCondition","EqualsConditionOperation","Grant","GrantEffect","OrgRole","OrgRoleType","PartnerRole","PartnerRoleType","RoleSearchInput","Security","ShareRole","ShareRoleType","UserRole","UserRoleType"]
+__all__ = ["Assignment","EqualsCondition","Grant","GrantEffect","OrgRole","PartnerRole","RoleSearchInput","Security","ShareRole","UserRole"]
