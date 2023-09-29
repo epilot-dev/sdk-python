@@ -67,11 +67,11 @@ s = epilot.Epilot(
 req = operations.UpdateOrganizationRequest(
     organization=shared.Organization(
         address=shared.OrganizationAddress(
-            city='Laruecester',
-            country='Suriname',
-            postal_code='85846-6342',
-            street='092 Jasper Skyway',
-            street_number='placeat',
+            city='New Mollyville',
+            country='Guatemala',
+            postal_code='22468',
+            street='Dooley Row',
+            street_number='Savings DRAM laudantium',
         ),
         email='someone@epilot.cloud',
         free_user_limit=50,
@@ -84,7 +84,7 @@ req = operations.UpdateOrganizationRequest(
         pricing_tier='professional',
         signature='<p>Thanks</p>',
         style={
-            "voluptatum": 'iusto',
+            "molestias": 'wireless',
         },
         symbol='EPI',
         type=shared.OrganizationType.PARTNER,

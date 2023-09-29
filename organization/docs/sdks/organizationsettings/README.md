@@ -28,7 +28,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteSettingsValueRequest(
-    key='nisi',
+    key='<key>',
     org_id='739224',
 )
 
@@ -106,7 +106,7 @@ s = epilot.Epilot(
 
 req = operations.PutSettingsValueRequest(
     settings_value=[],
-    key='recusandae',
+    key='<key>',
     org_id='739224',
 )
 
