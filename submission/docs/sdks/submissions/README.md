@@ -24,11 +24,11 @@ s = epilot.Epilot()
 
 req = shared.SubmissionPayload(
     ivy_opportunity_ids=[
-        'deserunt',
+        'Automotive',
     ],
     entities=[
         {
-            "suscipit": 'iure',
+            "dolore": 'Future',
         },
     ],
     journey_submit_id='123',
@@ -36,7 +36,7 @@ req = shared.SubmissionPayload(
         shared.OptIn(
             identifier='example@email.com',
             meta={
-                "magnam": 'debitis',
+                "voluptatibus": 'Shoes',
             },
             topic='EMAIL_MARKETING',
         ),
