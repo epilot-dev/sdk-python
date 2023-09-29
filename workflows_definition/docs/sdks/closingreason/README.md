@@ -25,9 +25,9 @@ s = sdk.SDK(
 
 req = operations.ChangeReasonStatusRequest(
     change_reason_status_req=shared.ChangeReasonStatusReq(
-        status=shared.ClosingReasonsStatus.INACTIVE,
+        status=shared.ClosingReasonsStatus.ACTIVE,
     ),
-    reason_id='nulla',
+    reason_id='sky bluetooth',
 )
 
 res = s.closing_reason.change_reason_status(req)
@@ -65,11 +65,11 @@ s = sdk.SDK(
 )
 
 req = shared.ClosingReason(
-    creation_time='corrupti',
-    id='d69a674e-0f46-47cc-8796-ed151a05dfc2',
-    last_update_time='at',
-    status=shared.ClosingReasonsStatus.INACTIVE,
-    title='Dr.',
+    creation_time='unlined Versatile',
+    id='<ID>',
+    last_update_time='Club male Cheese',
+    status=shared.ClosingReasonsStatus.ACTIVE,
+    title='Electric not Northeast',
 )
 
 res = s.closing_reason.create_closing_reason(req)

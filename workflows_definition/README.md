@@ -22,9 +22,9 @@ s = sdk.SDK(
 
 req = operations.ChangeReasonStatusRequest(
     change_reason_status_req=shared.ChangeReasonStatusReq(
-        status=shared.ClosingReasonsStatus.INACTIVE,
+        status=shared.ClosingReasonsStatus.ACTIVE,
     ),
-    reason_id='quibusdam',
+    reason_id='sky bluetooth',
 )
 
 res = s.closing_reason.change_reason_status(req)

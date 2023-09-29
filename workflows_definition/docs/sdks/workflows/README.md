@@ -30,7 +30,7 @@ s = sdk.SDK(
 
 req = shared.WorkflowDefinition(
     assigned_to=[
-        'molestiae',
+        'Account',
     ],
     closing_reasons=[
         shared.ClosingReasonID(
@@ -38,24 +38,24 @@ req = shared.WorkflowDefinition(
         ),
     ],
     creation_time='2021-04-27T12:01:13.000Z',
-    description='quod',
+    description='Distributed analyzing synergy',
     due_date='2021-04-27T12:00:00.000Z',
     dynamic_due_date=shared.DynamicDueDate(
         action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-        number_of_units=4614.79,
-        step_id='totam',
-        time_period=shared.DynamicDueDateTimePeriod.MONTHS,
+        number_of_units=2650.8,
+        step_id='female Bahrain Nevada',
+        time_period=shared.DynamicDueDateTimePeriod.WEEKS,
     ),
     enable_ecp_workflow=False,
     flow=[
         [],
     ],
-    id='a1ba928f-c816-4742-8b73-9205929396fe',
+    id='<ID>',
     last_update_time='2021-04-27T12:01:13.000Z',
-    name='Harvey Hessel',
+    name='withdrawal Bahrain national',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.CURRENT_STEP,
+            source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
             target=shared.UpdateEntityAttributesTarget(
                 entity_attribute='my_status',
                 entity_schema='opportunity',
@@ -63,7 +63,7 @@ req = shared.WorkflowDefinition(
         ),
     ],
     user_ids=[
-        6976.31,
+        2732.95,
     ],
 )
 
@@ -102,7 +102,7 @@ s = sdk.SDK(
 )
 
 req = operations.DeleteDefinitionRequest(
-    definition_id='architecto',
+    definition_id='Expanded DNS Lead',
 )
 
 res = s.workflows.delete_definition(req)
@@ -140,7 +140,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetDefinitionRequest(
-    definition_id='ipsa',
+    definition_id='Pants Money Gorgeous',
 )
 
 res = s.workflows.get_definition(req)
@@ -236,7 +236,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetWorkflowClosingReasonsRequest(
-    definition_id='reiciendis',
+    definition_id='Bedfordshire Account Account',
 )
 
 res = s.workflows.get_workflow_closing_reasons(req)
@@ -281,7 +281,7 @@ req = operations.SetWorkflowClosingReasonsRequest(
             ),
         ],
     ),
-    definition_id='est',
+    definition_id='Tuna utilize',
 )
 
 res = s.workflows.set_workflow_closing_reasons(req)
@@ -321,7 +321,7 @@ s = sdk.SDK(
 req = operations.UpdateDefinitionRequest(
     workflow_definition=shared.WorkflowDefinition(
         assigned_to=[
-            'mollitia',
+            'Dollar',
         ],
         closing_reasons=[
             shared.ClosingReasonID(
@@ -329,24 +329,24 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         creation_time='2021-04-27T12:01:13.000Z',
-        description='laborum',
+        description='Digitized 5th generation methodology',
         due_date='2021-04-27T12:00:00.000Z',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-            number_of_units=2103.82,
-            step_id='corporis',
-            time_period=shared.DynamicDueDateTimePeriod.DAYS,
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
+            number_of_units=1623.12,
+            step_id='Creative 5th',
+            time_period=shared.DynamicDueDateTimePeriod.WEEKS,
         ),
         enable_ecp_workflow=False,
         flow=[
             [],
         ],
-        id='c5955907-aff1-4a3a-afa9-467739251aa5',
+        id='<ID>',
         last_update_time='2021-04-27T12:01:13.000Z',
-        name='Angelica Dietrich',
+        name='Trigender responsive',
         update_entity_attributes=[
             shared.UpdateEntityAttributes(
-                source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
+                source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
                 target=shared.UpdateEntityAttributesTarget(
                     entity_attribute='my_status',
                     entity_schema='opportunity',
@@ -354,10 +354,10 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         user_ids=[
-            8209.94,
+            8191.51,
         ],
     ),
-    definition_id='aut',
+    definition_id='farad',
 )
 
 res = s.workflows.update_definition(req)
