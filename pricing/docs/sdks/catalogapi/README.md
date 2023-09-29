@@ -32,20 +32,20 @@ req = operations.DollarSearchCatalogRequest(
         availability=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city='Briannetown',
-                country='Ghana',
-                postal_code='16263-9964',
-                street='6496 Andy Walks',
-                street_number='est',
+                city='Maricopa',
+                country='Maldives',
+                postal_code='89544-9761',
+                street='Considine Fords',
+                street_number='Cheese gah Cotton',
             ),
         ),
-        from_=6531.4,
+        from_=2931.87,
         hydrate=False,
-        q='laborum',
-        size=1709.09,
-        sort='dolorem',
+        q='Moroccan',
+        size=563.68,
+        sort='id',
     ),
-    x_ivy_org_id='corporis',
+    x_ivy_org_id='Generic Bedfordshire since',
 )
 
 res = s.catalog_api.dollar_search_catalog(req)

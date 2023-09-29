@@ -26,18 +26,18 @@ req = operations.DollarAvailabilityCheckRequest(
         filters=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city='Glenshire',
-                country='Sri Lanka',
-                postal_code='30603',
-                street='971 Strosin Wall',
-                street_number='molestiae',
+                city='Fort Roger',
+                country='Taiwan',
+                postal_code='59564-5421',
+                street='Glover Shore',
+                street_number='Usability synergize degree',
             ),
         ),
         products=[
-            'quod',
+            'International',
         ],
     ),
-    x_ivy_org_id='quod',
+    x_ivy_org_id='Transexual',
 )
 
 res = s.availability_api.dollar_availability_check(req)

@@ -17,18 +17,18 @@ req = operations.DollarAvailabilityCheckRequest(
         filters=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city='Laruecester',
-                country='Suriname',
-                postal_code='85846-6342',
-                street='092 Jasper Skyway',
-                street_number='placeat',
+                city='Fort Roger',
+                country='Taiwan',
+                postal_code='59564-5421',
+                street='Glover Shore',
+                street_number='Usability synergize degree',
             ),
         ),
         products=[
-            'voluptatum',
+            'International',
         ],
     ),
-    x_ivy_org_id='iusto',
+    x_ivy_org_id='Transexual',
 )
 
 res = s.availability_api.dollar_availability_check(req)

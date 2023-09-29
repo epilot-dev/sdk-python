@@ -32,18 +32,18 @@ req = operations.DollarAvailabilityCheckRequest(
         filters=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(
-                city='Jovanfort',
-                country='Palau',
-                postal_code='76515',
-                street='751 Jaren Ford',
-                street_number='qui',
+                city='Fort Roger',
+                country='Taiwan',
+                postal_code='59564-5421',
+                street='Glover Shore',
+                street_number='Usability synergize degree',
             ),
         ),
         products=[
-            'impedit',
+            'International',
         ],
     ),
-    x_ivy_org_id='cum',
+    x_ivy_org_id='Transexual',
 )
 
 res = s.availability_api.dollar_availability_check(req)

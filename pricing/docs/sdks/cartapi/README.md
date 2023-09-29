@@ -45,7 +45,7 @@ req = operations.DollarCheckoutCartRequest(
         cart=[],
         mode=shared.CheckoutMode.CREATE_INVOICE,
     ),
-    x_ivy_org_id='ipsum',
+    x_ivy_org_id='gold',
 )
 
 res = s.cart_api.dollar_checkout_cart(req)
