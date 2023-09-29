@@ -58,7 +58,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetUserRequest(
-    id='89bd9d8d-69a6-474e-8f46-7cc8796ed151',
+    id='<ID>',
 )
 
 res = s.user_v1.get_user(req)
@@ -96,7 +96,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetUserLoginParametersRequest(
-    username='Lydia_Aufderhar',
+    username='Matilda.Jenkins64',
 )
 
 res = s.user_v1.get_user_login_parameters(req)
@@ -134,12 +134,12 @@ s = epilot.Epilot(
 )
 
 req = operations.ListUsersRequest(
-    limit=9571.56,
-    offset=7781.57,
+    limit=5262.12,
+    offset=5400.61,
     org_ids=[
-        'odit',
+        'Kentucky',
     ],
-    query='at',
+    query='West exploit versus',
 )
 
 res = s.user_v1.list_users(req)

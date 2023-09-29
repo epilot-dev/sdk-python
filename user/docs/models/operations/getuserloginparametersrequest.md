@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `username`         | *str*              | :heavy_check_mark: | Username           |
+| `username`         | *Optional[str]*    | :heavy_check_mark: | Username           |

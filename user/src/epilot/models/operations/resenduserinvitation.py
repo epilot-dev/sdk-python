@@ -21,7 +21,7 @@ class ResendUserInvitationRequestBodyLanguage(str, Enum):
 class ResendUserInvitationRequestBody:
     email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
     r"""Email address of the address"""
-    language: Optional[ResendUserInvitationRequestBodyLanguage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    language: Optional[ResendUserInvitationRequestBodyLanguage] = dataclasses.field(default=ResendUserInvitationRequestBodyLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language for user invitation email"""
     
 
