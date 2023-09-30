@@ -15,6 +15,7 @@ APIs defined for a portal user
 * [get_all_files](#get_all_files) - getAllFiles
 * [get_all_opportunities](#get_all_opportunities) - getAllOpportunities
 * [get_all_orders](#get_all_orders) - getAllOrders
+* [get_billing_events](#get_billing_events) - getBillingEvents
 * [get_contact](#get_contact) - getContact
 * [get_contract](#get_contract) - getContract
 * [get_entities_by_identifiers](#get_entities_by_identifiers) - getEntitiesByIdentifiers
@@ -346,6 +347,52 @@ if res.get_all_orders_200_application_json_object is not None:
 ### Response
 
 **[operations.GetAllOrdersResponse](../../models/operations/getallordersresponse.md)**
+
+
+## get_billing_events
+
+Fetch billing events for a portal user
+
+### Example Usage
+
+```python
+import epilot
+import dateutil.parser
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+req = operations.GetBillingEventsRequest(
+    customer_id='International',
+    date_after=dateutil.parser.isoparse('2023-08-05T02:14:33.017Z'),
+    date_before=dateutil.parser.isoparse('2021-09-29T09:53:56.308Z'),
+    entity_id=[
+        'Sedan',
+    ],
+    event_type=[
+        operations.GetBillingEventsEventType.REIMBURSEMENT,
+    ],
+)
+
+res = s.ecp.get_billing_events(req, operations.GetBillingEventsSecurity(
+    portal_auth="",
+))
+
+if res.get_billing_events_200_application_json_object is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetBillingEventsRequest](../../models/operations/getbillingeventsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.GetBillingEventsSecurity](../../models/operations/getbillingeventssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+
+
+### Response
+
+**[operations.GetBillingEventsResponse](../../models/operations/getbillingeventsresponse.md)**
 
 
 ## get_contact

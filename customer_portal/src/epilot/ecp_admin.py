@@ -430,6 +430,41 @@ class ECPAdmin:
         return res
 
     
+    def login_to_portal_as_user(self, request: operations.LoginToPortalAsUserRequestBody, security: operations.LoginToPortalAsUserSecurity) -> operations.LoginToPortalAsUserResponse:
+        r"""loginToPortalAsUser
+        Generate a token to log in to a portal impersonating a users.
+
+        Token is valid for 5 minutes.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/portal/admin:login-as-user'
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        if data is None and form is None:
+            raise Exception('request body is required')
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.LoginToPortalAsUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.LoginToPortalAsUser200ApplicationJSON])
+                res.login_to_portal_as_user_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def replace_ecp_template_variables(self, request: operations.ReplaceECPTemplateVariablesRequestBody, security: operations.ReplaceECPTemplateVariablesSecurity) -> operations.ReplaceECPTemplateVariablesResponse:
         r"""replaceECPTemplateVariables
         Replaces the template variables of a portal

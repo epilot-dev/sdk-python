@@ -12,20 +12,19 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=custom
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot()
 
-req = operations.AddEndCustomerRelationToEntityRequest(
-    id='5da0a718-c822-403d-9f5d-20d4584e0528',
-    slug=shared.EntitySlug.CONTACT,
+req = operations.GetCustomerBalanceRequest(
+    customer_entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e',
 )
 
-res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
-    portal_auth="",
+res = s.balance.get_customer_balance(req, operations.GetCustomerBalanceSecurity(
+    epilot_auth="",
 ))
 
-if res.add_end_customer_relation_to_entity_200_application_json_object is not None:
+if res.balance is not None:
     # handle response
 ```
 <!-- End SDK Example Usage -->
@@ -33,6 +32,10 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
+
+### [balance](docs/sdks/balance/README.md)
+
+* [get_customer_balance](docs/sdks/balance/README.md#get_customer_balance) - getCustomerBalance
 
 ### [ecp](docs/sdks/ecp/README.md)
 
@@ -44,6 +47,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [get_all_files](docs/sdks/ecp/README.md#get_all_files) - getAllFiles
 * [get_all_opportunities](docs/sdks/ecp/README.md#get_all_opportunities) - getAllOpportunities
 * [get_all_orders](docs/sdks/ecp/README.md#get_all_orders) - getAllOrders
+* [get_billing_events](docs/sdks/ecp/README.md#get_billing_events) - getBillingEvents
 * [get_contact](docs/sdks/ecp/README.md#get_contact) - getContact
 * [get_contract](docs/sdks/ecp/README.md#get_contract) - getContract
 * [get_entities_by_identifiers](docs/sdks/ecp/README.md#get_entities_by_identifiers) - getEntitiesByIdentifiers
@@ -77,6 +81,7 @@ if res.add_end_customer_relation_to_entity_200_application_json_object is not No
 * [get_portal_config](docs/sdks/ecpadmin/README.md#get_portal_config) - getPortalConfig
 * [get_portal_widgets](docs/sdks/ecpadmin/README.md#get_portal_widgets) - getPortalWidgets
 * [get_valid_secondary_attributes](docs/sdks/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
+* [login_to_portal_as_user](docs/sdks/ecpadmin/README.md#login_to_portal_as_user) - loginToPortalAsUser
 * [replace_ecp_template_variables](docs/sdks/ecpadmin/README.md#replace_ecp_template_variables) - replaceECPTemplateVariables
 * [save_portal_files](docs/sdks/ecpadmin/README.md#save_portal_files) - savePortalFiles
 * [upsert_email_templates](docs/sdks/ecpadmin/README.md#upsert_email_templates) - upsertEmailTemplates

@@ -3,20 +3,19 @@
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot()
 
-req = operations.AddEndCustomerRelationToEntityRequest(
-    id='5da0a718-c822-403d-9f5d-20d4584e0528',
-    slug=shared.EntitySlug.CONTACT,
+req = operations.GetCustomerBalanceRequest(
+    customer_entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e',
 )
 
-res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
-    portal_auth="",
+res = s.balance.get_customer_balance(req, operations.GetCustomerBalanceSecurity(
+    epilot_auth="",
 ))
 
-if res.add_end_customer_relation_to_entity_200_application_json_object is not None:
+if res.balance is not None:
     # handle response
 ```
 <!-- End SDK Example Usage -->

@@ -19,6 +19,7 @@ APIs defined for a ECP Admin
 * [get_portal_config](#get_portal_config) - getPortalConfig
 * [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
 * [get_valid_secondary_attributes](#get_valid_secondary_attributes) - getValidSecondaryAttributes
+* [login_to_portal_as_user](#login_to_portal_as_user) - loginToPortalAsUser
 * [replace_ecp_template_variables](#replace_ecp_template_variables) - replaceECPTemplateVariables
 * [save_portal_files](#save_portal_files) - savePortalFiles
 * [upsert_email_templates](#upsert_email_templates) - upsertEmailTemplates
@@ -460,6 +461,47 @@ if res.get_valid_secondary_attributes_200_application_json_object is not None:
 ### Response
 
 **[operations.GetValidSecondaryAttributesResponse](../../models/operations/getvalidsecondaryattributesresponse.md)**
+
+
+## login_to_portal_as_user
+
+Generate a token to log in to a portal impersonating a users.
+
+Token is valid for 5 minutes.
+
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot()
+
+req = operations.LoginToPortalAsUserRequestBody(
+    email='portal-customer@email.com',
+    origin=shared.Origin.END_CUSTOMER_PORTAL,
+)
+
+res = s.ecp_admin.login_to_portal_as_user(req, operations.LoginToPortalAsUserSecurity(
+    epilot_auth="",
+))
+
+if res.login_to_portal_as_user_200_application_json_object is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.LoginToPortalAsUserRequestBody](../../models/operations/logintoportalasuserrequestbody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `security`                                                                                             | [operations.LoginToPortalAsUserSecurity](../../models/operations/logintoportalasusersecurity.md)       | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
+
+
+### Response
+
+**[operations.LoginToPortalAsUserResponse](../../models/operations/logintoportalasuserresponse.md)**
 
 
 ## replace_ecp_template_variables

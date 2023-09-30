@@ -1,4 +1,5 @@
 src/epilot/sdkconfiguration.py
+src/epilot/balance.py
 src/epilot/ecp.py
 src/epilot/ecp_admin.py
 src/epilot/public.py
@@ -11,6 +12,7 @@ src/epilot/models/errors/sdkerror.py
 src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
+src/epilot/models/operations/getcustomerbalance.py
 src/epilot/models/operations/addendcustomerrelationtoentity.py
 src/epilot/models/operations/createcustomentityactivity.py
 src/epilot/models/operations/deleteentityfile.py
@@ -19,6 +21,7 @@ src/epilot/models/operations/getallcontracts.py
 src/epilot/models/operations/getallfiles.py
 src/epilot/models/operations/getallopportunities.py
 src/epilot/models/operations/getallorders.py
+src/epilot/models/operations/getbillingevents.py
 src/epilot/models/operations/getcontact.py
 src/epilot/models/operations/getcontract.py
 src/epilot/models/operations/getentitiesbyidentifiers.py
@@ -47,6 +50,7 @@ src/epilot/models/operations/getemailtemplates.py
 src/epilot/models/operations/getentityidentifiers.py
 src/epilot/models/operations/getorgportalconfig.py
 src/epilot/models/operations/getvalidsecondaryattributes.py
+src/epilot/models/operations/logintoportalasuser.py
 src/epilot/models/operations/replaceecptemplatevariables.py
 src/epilot/models/operations/saveportalfiles.py
 src/epilot/models/operations/upsertemailtemplates.py
@@ -61,6 +65,7 @@ src/epilot/models/operations/getpublicportalconfig.py
 src/epilot/models/operations/getpublicportalwidgets.py
 src/epilot/models/operations/userexists.py
 src/epilot/models/operations/__init__.py
+src/epilot/models/shared/balance.py
 src/epilot/models/shared/errorresp.py
 src/epilot/models/shared/entityslug.py
 src/epilot/models/shared/activityitem.py
@@ -90,6 +95,9 @@ src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
 USAGE.md
+docs/models/operations/getcustomerbalancesecurity.md
+docs/models/operations/getcustomerbalancerequest.md
+docs/models/operations/getcustomerbalanceresponse.md
 docs/models/operations/addendcustomerrelationtoentitysecurity.md
 docs/models/operations/addendcustomerrelationtoentityrequest.md
 docs/models/operations/addendcustomerrelationtoentity200applicationjson.md
@@ -119,6 +127,11 @@ docs/models/operations/getallorderssecurity.md
 docs/models/operations/getallordersrequest.md
 docs/models/operations/getallorders200applicationjson.md
 docs/models/operations/getallordersresponse.md
+docs/models/operations/getbillingeventssecurity.md
+docs/models/operations/getbillingeventseventtype.md
+docs/models/operations/getbillingeventsrequest.md
+docs/models/operations/getbillingevents200applicationjson.md
+docs/models/operations/getbillingeventsresponse.md
 docs/models/operations/getcontactsecurity.md
 docs/models/operations/getcontact200applicationjson.md
 docs/models/operations/getcontactresponse.md
@@ -217,6 +230,10 @@ docs/models/operations/getvalidsecondaryattributessecurity.md
 docs/models/operations/getvalidsecondaryattributes200applicationjsondata.md
 docs/models/operations/getvalidsecondaryattributes200applicationjson.md
 docs/models/operations/getvalidsecondaryattributesresponse.md
+docs/models/operations/logintoportalasusersecurity.md
+docs/models/operations/logintoportalasuserrequestbody.md
+docs/models/operations/logintoportalasuser200applicationjson.md
+docs/models/operations/logintoportalasuserresponse.md
 docs/models/operations/replaceecptemplatevariablessecurity.md
 docs/models/operations/replaceecptemplatevariablesrequestbody.md
 docs/models/operations/replaceecptemplatevariables200applicationjsoncustomerportal.md
@@ -256,6 +273,7 @@ docs/models/operations/getpublicportalwidgetsresponse.md
 docs/models/operations/userexistsrequest.md
 docs/models/operations/userexists200applicationjson.md
 docs/models/operations/userexistsresponse.md
+docs/models/shared/balance.md
 docs/models/shared/errorresp.md
 docs/models/shared/entityslug.md
 docs/models/shared/activityitempayloadentity.md
@@ -357,6 +375,7 @@ docs/models/shared/createuserrequest.md
 docs/models/shared/contactcountrequest.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md
+docs/sdks/balance/README.md
 docs/sdks/ecp/README.md
 docs/sdks/ecpadmin/README.md
 docs/sdks/public/README.md
