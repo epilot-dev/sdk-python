@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Final, Optional
+from typing import Any, Final, Optional, Union
 
 
 
@@ -20,7 +20,7 @@ class CurrencyAttributeConstraints:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class CurrencyAttributeCurrency:
+class CurrencyAttributeCurrency1:
     r"""A currency configuration"""
     code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code') }})
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
@@ -28,6 +28,12 @@ class CurrencyAttributeCurrency:
     flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flag'), 'exclude': lambda f: f is None }})
     
 
+
+
+
+@dataclasses.dataclass
+class CurrencyAttributeCurrency:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -61,7 +67,7 @@ class CurrencyAttributeInfoHelpers:
 @dataclasses.dataclass
 class CurrencyAttribute:
     r"""Currency input"""
-    currency: list[CurrencyAttributeCurrency] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
+    currency: list[Union[CurrencyAttributeCurrency1]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
     r"""An array of currency configurations with a country code (ISO-4217)"""
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})

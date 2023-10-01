@@ -230,8 +230,6 @@ docs/models/shared/entityschemaitemuiconfigsingleview.md
 docs/models/shared/entityschemaitemuiconfigtableview.md
 docs/models/shared/entityschemaitemuiconfig.md
 docs/models/shared/entityschemaitem.md
-docs/models/shared/entitydefaulttabledropdownitems2.md
-docs/models/shared/entitydefaulttabledropdownitems1.md
 docs/models/shared/entitydefaulttabledropdownitems.md
 docs/models/shared/entitydefaulttablenavbaractionsoptionsparams.md
 docs/models/shared/entitydefaulttablenavbaractionsoptions.md
@@ -304,6 +302,7 @@ docs/models/shared/paymentmethodrelationattributeconstraints.md
 docs/models/shared/paymentmethodrelationattributeinfohelpers.md
 docs/models/shared/paymentmethodrelationattribute.md
 docs/models/shared/currencyattributeconstraints.md
+docs/models/shared/currencyattributecurrency1.md
 docs/models/shared/currencyattributecurrency.md
 docs/models/shared/currencyattributeinfohelpers.md
 docs/models/shared/currencyattribute.md
