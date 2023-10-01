@@ -9,28 +9,15 @@ from ..shared import paymentmethod as shared_paymentmethod
 from ..shared import priceitemdto as shared_priceitemdto
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class CartDtoMetadata:
-    r"""Key value pair entry"""
-    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key'), 'exclude': lambda f: f is None }})
-    r"""Item key"""
-    value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
-    r"""Item value"""
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class CartDtoInput:
+class CartDto:
     r"""A valid cart payload from a client."""
-    line_items: list[shared_priceitemdto.PriceItemDtoInput] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_items') }})
+    line_items: list[Union[shared_priceitemdto.PriceItemDtoInput]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_items') }})
     r"""A valid set of product prices, quantities, (discounts) and taxes from a client."""
     additional_addresses: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('additional_addresses'), 'exclude': lambda f: f is None }})
     billing_address: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_address'), 'exclude': lambda f: f is None }})
@@ -40,7 +27,7 @@ class CartDtoInput:
     files: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
     r"""An array of file IDs, already upload into the File API, that are related with this cart"""
     journey_data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_data'), 'exclude': lambda f: f is None }})
-    metadata: Optional[list[CartDtoMetadata]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[list[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     payment_method: Optional[shared_paymentmethod.PaymentMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method'), 'exclude': lambda f: f is None }})
     r"""A PaymentMethod represent your customer's payment instruments."""

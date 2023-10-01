@@ -11,7 +11,7 @@ from typing import Optional, Union
 
 
 @dataclasses.dataclass
-class CheckoutCartCartInput:
+class CheckoutCartCart:
     pass
 
 
@@ -20,7 +20,7 @@ class CheckoutCartCartInput:
 @dataclasses.dataclass
 class CheckoutCart:
     r"""The cart checkout request payload"""
-    cart: Optional[Union[str, shared_cartdto.CartDtoInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cart'), 'exclude': lambda f: f is None }})
+    cart: Optional[Union[str, shared_cartdto.CartDto]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cart'), 'exclude': lambda f: f is None }})
     mode: Optional[shared_checkoutmode.CheckoutMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode'), 'exclude': lambda f: f is None }})
     r"""The checkout mode for the cart checkout."""
     
