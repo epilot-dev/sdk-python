@@ -1,6 +1,6 @@
-# PartnerRole
+# RolePayload3
 
-A role that appears in another organization's role list that can be assigned but not modified by the partner organization.
+A role that can be assigned to users in other organizations for sharing purposes.
 
 
 ## Fields
@@ -12,6 +12,5 @@ A role that appears in another organization's role list that can be assigned but
 | `id`                                                                 | *Optional[str]*                                                      | :heavy_check_mark:                                                   | Format: <organization_id>:<slug>                                     | 123:owner                                                            |
 | `name`                                                               | *Optional[str]*                                                      | :heavy_check_mark:                                                   | Human-friendly name for the role                                     | Owner                                                                |
 | `organization_id`                                                    | *Optional[str]*                                                      | :heavy_check_mark:                                                   | Id of an organization                                                | 123                                                                  |
-| `partner_org_id`                                                     | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  | 123                                                                  |
 | `slug`                                                               | *Optional[str]*                                                      | :heavy_check_mark:                                                   | URL-friendly name for the role                                       | owner                                                                |
 | `type`                                                               | *Optional[str]*                                                      | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |

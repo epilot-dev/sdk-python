@@ -26,10 +26,10 @@ src/epilot/models/operations/__init__.py
 src/epilot/models/shared/assignment.py
 src/epilot/models/shared/userrole.py
 src/epilot/models/shared/grant.py
-src/epilot/models/shared/equalscondition.py
 src/epilot/models/shared/orgrole.py
 src/epilot/models/shared/sharerole.py
 src/epilot/models/shared/partnerrole.py
+src/epilot/models/shared/rolepayload.py
 src/epilot/models/shared/rolesearchinput.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
@@ -63,10 +63,14 @@ docs/models/shared/role.md
 docs/models/shared/userrole.md
 docs/models/shared/granteffect.md
 docs/models/shared/grant.md
-docs/models/shared/equalscondition.md
+docs/models/shared/grantcondition.md
 docs/models/shared/orgrole.md
 docs/models/shared/sharerole.md
 docs/models/shared/partnerrole.md
+docs/models/shared/rolepayload4.md
+docs/models/shared/rolepayload3.md
+docs/models/shared/rolepayload2.md
+docs/models/shared/rolepayload1.md
 docs/models/shared/rolepayload.md
 docs/models/shared/rolesearchinput.md
 docs/models/shared/security.md

@@ -157,6 +157,7 @@ Create or update role
 
 ```python
 import epilot
+import dateutil.parser
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
