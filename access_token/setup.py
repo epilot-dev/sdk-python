@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="epilot-access-token",
-    version="1.10.1",
+    version="1.10.2",
     author="epilot",
     description="Python Client SDK for Epilot",
     long_description=long_description,

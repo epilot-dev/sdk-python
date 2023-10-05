@@ -3,8 +3,12 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
+
+class AccessTokenParametersTokenType(str, Enum):
+    API = 'api'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -15,6 +19,6 @@ class AccessTokenParameters:
     r"""Human readable name for access token"""
     assignments: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
     r"""List of role ids attached to an user"""
-    TOKEN_TYPE: Final[Optional[str]] = dataclasses.field(default='api', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
+    token_type: Optional[AccessTokenParametersTokenType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
     
 
