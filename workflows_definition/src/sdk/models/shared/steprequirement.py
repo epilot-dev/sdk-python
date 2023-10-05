@@ -4,8 +4,11 @@ from __future__ import annotations
 import dataclasses
 from ..shared import itemtype as shared_itemtype
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from sdk import utils
-from typing import Final
+
+class StepRequirementCondition(str, Enum):
+    CLOSED = 'CLOSED'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -13,8 +16,8 @@ from typing import Final
 @dataclasses.dataclass
 class StepRequirement:
     r"""describe the requirement for step enablement"""
+    condition: StepRequirementCondition = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})
     definition_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId') }})
     type: shared_itemtype.ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    CONDITION: Final[str] = dataclasses.field(default='CLOSED', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})
     
 
