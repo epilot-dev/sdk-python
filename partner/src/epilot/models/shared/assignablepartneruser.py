@@ -3,8 +3,9 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -16,6 +17,9 @@ class AssignablePartnerUserImageURI:
     
 
 
+class AssignablePartnerUserType(str, Enum):
+    PARTNER_USER = 'partner_user'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -23,7 +27,7 @@ class AssignablePartnerUserImageURI:
 class AssignablePartnerUser:
     display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
-    TYPE: Final[str] = dataclasses.field(default='partner_user', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: AssignablePartnerUserType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     image_uri: Optional[AssignablePartnerUserImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri'), 'exclude': lambda f: f is None }})
     partner_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_id'), 'exclude': lambda f: f is None }})
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
