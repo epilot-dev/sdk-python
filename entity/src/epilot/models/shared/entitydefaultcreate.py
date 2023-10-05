@@ -3,8 +3,9 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -16,6 +17,9 @@ class EntityDefaultCreateTableMenuOptions:
     
 
 
+class EntityDefaultCreateViewType(str, Enum):
+    DEFAULT = 'default'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -23,6 +27,6 @@ class EntityDefaultCreateTableMenuOptions:
 class EntityDefaultCreate:
     search_params: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('search_params'), 'exclude': lambda f: f is None }})
     table_menu_options: Optional[EntityDefaultCreateTableMenuOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('table_menu_options'), 'exclude': lambda f: f is None }})
-    VIEW_TYPE: Final[Optional[str]] = dataclasses.field(default='default', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
+    view_type: Optional[EntityDefaultCreateViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
 

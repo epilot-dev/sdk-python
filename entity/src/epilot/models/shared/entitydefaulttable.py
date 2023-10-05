@@ -3,8 +3,12 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional, Union
+from typing import Optional, Union
+
+class EntityDefaultTableDropdownItems2Type(str, Enum):
+    LINK = 'link'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -16,10 +20,13 @@ class EntityDefaultTableDropdownItems2:
     legacy: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legacy'), 'exclude': lambda f: f is None }})
     r"""Only show item for legacy tenants (ivy)"""
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
-    TYPE: Final[Optional[str]] = dataclasses.field(default='link', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[EntityDefaultTableDropdownItems2Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uri'), 'exclude': lambda f: f is None }})
     
 
+
+class EntityDefaultTableDropdownItems1Type(str, Enum):
+    ENTITY = 'entity'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -32,7 +39,7 @@ class EntityDefaultTableDropdownItems1:
     r"""This dropdown item should only be active when the feature flag is enabled"""
     legacy: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legacy'), 'exclude': lambda f: f is None }})
     r"""Only show item for legacy tenants (ivy)"""
-    TYPE: Final[Optional[str]] = dataclasses.field(default='entity', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[EntityDefaultTableDropdownItems1Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
@@ -68,6 +75,9 @@ class EntityDefaultTableNavbarActions:
     
 
 
+class EntityDefaultTableViewType(str, Enum):
+    DEFAULT = 'default'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -79,6 +89,6 @@ class EntityDefaultTable:
     r"""Enable the thumbnail column"""
     navbar_actions: Optional[list[EntityDefaultTableNavbarActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('navbar_actions'), 'exclude': lambda f: f is None }})
     row_actions: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('row_actions'), 'exclude': lambda f: f is None }})
-    VIEW_TYPE: Final[Optional[str]] = dataclasses.field(default='default', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
+    view_type: Optional[EntityDefaultTableViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
 

@@ -3,14 +3,18 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
+
+class EntityViewDisabledViewType(str, Enum):
+    DISABLED = 'disabled'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class EntityViewDisabled:
-    VIEW_TYPE: Final[Optional[str]] = dataclasses.field(default='disabled', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
+    view_type: Optional[EntityViewDisabledViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
 

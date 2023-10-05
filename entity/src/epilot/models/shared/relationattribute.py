@@ -6,7 +6,7 @@ from ..shared import summaryfield as shared_summaryfield
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Final, Optional, Union
+from typing import Any, Optional, Union
 
 class RelationAttributeActionsActionType(str, Enum):
     r"""The action type. Currently supported actions:
@@ -62,6 +62,9 @@ class RelationAttributeDrawerSize(str, Enum):
     MEDIUM = 'medium'
     LARGE = 'large'
 
+class RelationAttributeEditMode(str, Enum):
+    LIST_VIEW = 'list-view'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -103,6 +106,9 @@ class RelationAttributeRelationType(str, Enum):
 class RelationAttributeSummaryFields:
     pass
 
+class RelationAttributeType(str, Enum):
+    RELATION = 'relation'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -125,7 +131,7 @@ class RelationAttribute:
     details_view_mode_enabled: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('details_view_mode_enabled'), 'exclude': lambda f: f is None }})
     r"""Enables the preview, edition, and creation of relation items on a Master-Details view mode."""
     drawer_size: Optional[RelationAttributeDrawerSize] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drawer_size'), 'exclude': lambda f: f is None }})
-    EDIT_MODE: Final[Optional[str]] = dataclasses.field(default='list-view', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('edit_mode'), 'exclude': lambda f: f is None }})
+    edit_mode: Optional[RelationAttributeEditMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('edit_mode'), 'exclude': lambda f: f is None }})
     enable_relation_picker: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_relation_picker'), 'exclude': lambda f: f is None }})
     r"""When enable_relation_picker is set to true the user will be able to pick existing relations as values. Otherwise, the user will need to create new relation to link."""
     enable_relation_tags: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_relation_tags'), 'exclude': lambda f: f is None }})
@@ -172,7 +178,7 @@ class RelationAttribute:
     sortable: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sortable'), 'exclude': lambda f: f is None }})
     r"""Allow sorting by this attribute in table views if `show_in_table` is true"""
     summary_fields: Optional[list[Union[str, shared_summaryfield.SummaryField]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_fields'), 'exclude': lambda f: f is None }})
-    TYPE: Final[Optional[str]] = dataclasses.field(default='relation', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[RelationAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     
 

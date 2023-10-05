@@ -3,8 +3,9 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Any, Final, Optional
+from typing import Any, Optional
 
 
 
@@ -41,6 +42,9 @@ class ComputedAttributeInfoHelpers:
     """
     
 
+
+class ComputedAttributeType(str, Enum):
+    COMPUTED = 'computed'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -93,7 +97,7 @@ class ComputedAttribute:
     r"""Render as a column in table views. When defined, overrides `hidden`"""
     sortable: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sortable'), 'exclude': lambda f: f is None }})
     r"""Allow sorting by this attribute in table views if `show_in_table` is true"""
-    TYPE: Final[Optional[str]] = dataclasses.field(default='computed', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[ComputedAttributeType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     value_formatter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value_formatter'), 'exclude': lambda f: f is None }})
     
 

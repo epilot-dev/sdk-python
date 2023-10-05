@@ -68,6 +68,34 @@ class Relations:
         return res
 
     
+    def get_related_entities_count(self, request: operations.GetRelatedEntitiesCountRequest) -> operations.GetRelatedEntitiesCountResponse:
+        r"""getRelatedEntitiesCount
+        Returns the amount of unique related entities for an entity - includes direct and reverse relations.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetRelatedEntitiesCountRequest, base_url, '/v2/entity/{slug}/{id}/relations/count', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetRelatedEntitiesCountResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.GetRelatedEntitiesCount])
+                res.get_related_entities_count = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def get_relations(self, request: operations.GetRelationsRequest) -> operations.GetRelationsResponse:
         r"""getRelations
         Returns 1st level direct relations for an entity.

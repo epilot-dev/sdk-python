@@ -9,6 +9,7 @@ Entity Relationships
 
 * [add_relations](#add_relations) - addRelations
 * [delete_relation](#delete_relation) - deleteRelation
+* [get_related_entities_count](#get_related_entities_count) - getRelatedEntitiesCount
 * [get_relations](#get_relations) - getRelations
 * [get_relations_v2](#get_relations_v2) - getRelationsV2
 * [update_relation](#update_relation) - updateRelation
@@ -105,6 +106,46 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteRelationResponse](../../models/operations/deleterelationresponse.md)**
+
+
+## get_related_entities_count
+
+Returns the amount of unique related entities for an entity - includes direct and reverse relations.
+
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = operations.GetRelatedEntitiesCountRequest(
+    id='3a515de5-fe13-46e4-ad0c-a57656a6a8af',
+    slug='contact',
+)
+
+res = s.relations.get_related_entities_count(req)
+
+if res.get_related_entities_count is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.GetRelatedEntitiesCountRequest](../../models/operations/getrelatedentitiescountrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+
+
+### Response
+
+**[operations.GetRelatedEntitiesCountResponse](../../models/operations/getrelatedentitiescountresponse.md)**
 
 
 ## get_relations

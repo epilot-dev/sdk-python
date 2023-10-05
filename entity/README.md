@@ -68,6 +68,7 @@ if res.activity_item is not None:
 
 * [add_relations](docs/sdks/relations/README.md#add_relations) - addRelations
 * [delete_relation](docs/sdks/relations/README.md#delete_relation) - deleteRelation
+* [get_related_entities_count](docs/sdks/relations/README.md#get_related_entities_count) - getRelatedEntitiesCount
 * [get_relations](docs/sdks/relations/README.md#get_relations) - getRelations
 * [get_relations_v2](docs/sdks/relations/README.md#get_relations_v2) - getRelationsV2
 * [update_relation](docs/sdks/relations/README.md#update_relation) - updateRelation
