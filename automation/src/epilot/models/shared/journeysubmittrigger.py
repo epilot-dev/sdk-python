@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -15,12 +15,15 @@ class JourneySubmitTriggerConfiguration:
     
 
 
+class JourneySubmitTriggerType(str, Enum):
+    JOURNEY_SUBMISSION = 'journey_submission'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class JourneySubmitTrigger:
     configuration: JourneySubmitTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-    TYPE: Final[str] = dataclasses.field(default='journey_submission', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: JourneySubmitTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 

@@ -4,8 +4,12 @@ from __future__ import annotations
 import dataclasses
 from ..shared import triggerworkflowconfig as shared_triggerworkflowconfig
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
+
+class TriggerWorkflowActionConfigType(str, Enum):
+    TRIGGER_WORKFLOW = 'trigger-workflow'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -20,6 +24,6 @@ class TriggerWorkflowActionConfig:
     flow_action_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_action_id'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-    TYPE: Final[Optional[str]] = dataclasses.field(default='trigger-workflow', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[TriggerWorkflowActionConfigType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

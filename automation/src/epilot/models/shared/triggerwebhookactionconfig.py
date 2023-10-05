@@ -4,8 +4,12 @@ from __future__ import annotations
 import dataclasses
 from ..shared import triggerwebhookconfig as shared_triggerwebhookconfig
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
+
+class TriggerWebhookActionConfigType(str, Enum):
+    TRIGGER_WEBHOOK = 'trigger-webhook'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -20,6 +24,6 @@ class TriggerWebhookActionConfig:
     flow_action_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_action_id'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
-    TYPE: Final[Optional[str]] = dataclasses.field(default='trigger-webhook', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[TriggerWebhookActionConfigType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

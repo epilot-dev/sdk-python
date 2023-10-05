@@ -5,7 +5,7 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
 
 class ActivityTriggerConfigurationTypes(str, Enum):
     CREATE_METER_READING = 'CreateMeterReading'
@@ -23,12 +23,15 @@ class ActivityTriggerConfiguration:
     
 
 
+class ActivityTriggerType(str, Enum):
+    ACTIVITY = 'activity'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class ActivityTrigger:
     configuration: ActivityTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-    TYPE: Final[str] = dataclasses.field(default='activity', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: ActivityTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 

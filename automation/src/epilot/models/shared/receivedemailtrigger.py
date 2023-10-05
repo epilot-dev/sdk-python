@@ -3,17 +3,24 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
+
+class ReceivedEmailTriggerConfigurationMessageType(str, Enum):
+    RECEIVED = 'RECEIVED'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class ReceivedEmailTriggerConfiguration:
-    MESSAGE_TYPE: Final[Optional[str]] = dataclasses.field(default='RECEIVED', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message_type'), 'exclude': lambda f: f is None }})
+    message_type: Optional[ReceivedEmailTriggerConfigurationMessageType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message_type'), 'exclude': lambda f: f is None }})
     
 
+
+class ReceivedEmailTriggerType(str, Enum):
+    RECEIVED_EMAIL = 'received_email'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -21,6 +28,6 @@ class ReceivedEmailTriggerConfiguration:
 @dataclasses.dataclass
 class ReceivedEmailTrigger:
     configuration: ReceivedEmailTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
-    TYPE: Final[str] = dataclasses.field(default='received_email', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: ReceivedEmailTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 
