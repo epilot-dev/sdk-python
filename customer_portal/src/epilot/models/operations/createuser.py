@@ -7,8 +7,9 @@ from ..shared import createuserrequest as shared_createuserrequest
 from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Any, Final, Optional
+from typing import Any, Optional
 
 
 
@@ -21,15 +22,18 @@ class CreateUserRequest:
     
 
 
+class CreateUser201ApplicationJSONMessage(str, Enum):
+    USER_CREATED_SUCCESSFULLY = 'User created successfully'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class CreateUser201ApplicationJSON:
     r"""User created successfully."""
+    message: CreateUser201ApplicationJSONMessage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     response: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('response') }})
     r"""The portal user entity"""
-    MESSAGE: Final[str] = dataclasses.field(default='User created successfully', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     
 
 

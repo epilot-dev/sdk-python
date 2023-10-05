@@ -29,6 +29,7 @@ APIs defined for a portal user
 * [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
 * [get_schemas](#get_schemas) - getSchemas
 * [save_entity_file](#save_entity_file) - saveEntityFile
+* [track_file_downloaded](#track_file_downloaded) - trackFileDownloaded
 * [update_contact](#update_contact) - updateContact
 * [update_contract](#update_contract) - updateContract
 * [update_opportunity](#update_opportunity) - updateOpportunity
@@ -873,6 +874,43 @@ if res.save_entity_file_201_application_json_object is not None:
 ### Response
 
 **[operations.SaveEntityFileResponse](../../models/operations/saveentityfileresponse.md)**
+
+
+## track_file_downloaded
+
+Track that user has downloaded a file
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+req = operations.TrackFileDownloadedRequest(
+    id='5da0a718-c822-403d-9f5d-20d4584e0528',
+)
+
+res = s.ecp.track_file_downloaded(req, operations.TrackFileDownloadedSecurity(
+    portal_auth="",
+))
+
+if res.track_file_downloaded_200_application_json_object is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.TrackFileDownloadedRequest](../../models/operations/trackfiledownloadedrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `security`                                                                                       | [operations.TrackFileDownloadedSecurity](../../models/operations/trackfiledownloadedsecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
+
+
+### Response
+
+**[operations.TrackFileDownloadedResponse](../../models/operations/trackfiledownloadedresponse.md)**
 
 
 ## update_contact

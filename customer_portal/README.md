@@ -61,6 +61,7 @@ if res.balance is not None:
 * [get_portal_widgets](docs/sdks/ecp/README.md#get_portal_widgets) - getPortalWidgets
 * [get_schemas](docs/sdks/ecp/README.md#get_schemas) - getSchemas
 * [save_entity_file](docs/sdks/ecp/README.md#save_entity_file) - saveEntityFile
+* [track_file_downloaded](docs/sdks/ecp/README.md#track_file_downloaded) - trackFileDownloaded
 * [update_contact](docs/sdks/ecp/README.md#update_contact) - updateContact
 * [update_contract](docs/sdks/ecp/README.md#update_contract) - updateContract
 * [update_opportunity](docs/sdks/ecp/README.md#update_opportunity) - updateOpportunity

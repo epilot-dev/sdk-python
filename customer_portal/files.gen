@@ -35,6 +35,7 @@ src/epilot/models/operations/getportaluser.py
 src/epilot/models/operations/getportalwidgets.py
 src/epilot/models/operations/getschemas.py
 src/epilot/models/operations/saveentityfile.py
+src/epilot/models/operations/trackfiledownloaded.py
 src/epilot/models/operations/updatecontact.py
 src/epilot/models/operations/updatecontract.py
 src/epilot/models/operations/updateopportunity.py
@@ -109,6 +110,7 @@ docs/models/operations/deleteentityfilesecurity.md
 docs/models/operations/deleteentityfile202applicationjson.md
 docs/models/operations/deleteentityfileresponse.md
 docs/models/operations/deleteportalusersecurity.md
+docs/models/operations/deleteportaluser200applicationjsonmessage.md
 docs/models/operations/deleteportaluser200applicationjson.md
 docs/models/operations/deleteportaluserresponse.md
 docs/models/operations/getallcontractssecurity.md
@@ -175,6 +177,10 @@ docs/models/operations/getschemasresponse.md
 docs/models/operations/saveentityfilesecurity.md
 docs/models/operations/saveentityfile201applicationjson.md
 docs/models/operations/saveentityfileresponse.md
+docs/models/operations/trackfiledownloadedsecurity.md
+docs/models/operations/trackfiledownloadedrequest.md
+docs/models/operations/trackfiledownloaded200applicationjson.md
+docs/models/operations/trackfiledownloadedresponse.md
 docs/models/operations/updatecontactsecurity.md
 docs/models/operations/updatecontact200applicationjson.md
 docs/models/operations/updatecontactresponse.md
@@ -245,6 +251,7 @@ docs/models/operations/saveportalfiles201applicationjson.md
 docs/models/operations/saveportalfilesresponse.md
 docs/models/operations/upsertemailtemplatessecurity.md
 docs/models/operations/upsertemailtemplatesrequest.md
+docs/models/operations/upsertemailtemplates200applicationjsonmessage.md
 docs/models/operations/upsertemailtemplates200applicationjson.md
 docs/models/operations/upsertemailtemplatesresponse.md
 docs/models/operations/upsertportalsecurity.md
@@ -256,6 +263,7 @@ docs/models/operations/upsertportalwidgetresponse.md
 docs/models/operations/confirmuserrequest.md
 docs/models/operations/confirmuserresponse.md
 docs/models/operations/createuserrequest.md
+docs/models/operations/createuser201applicationjsonmessage.md
 docs/models/operations/createuser201applicationjson.md
 docs/models/operations/createuserresponse.md
 docs/models/operations/getcontactcountrequest.md

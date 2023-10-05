@@ -5,46 +5,49 @@ import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import Any, Optional
 
 
 
 @dataclasses.dataclass
-class DeletePortalUserSecurity:
+class TrackFileDownloadedSecurity:
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
 
-class DeletePortalUser200ApplicationJSONMessage(str, Enum):
-    USER_SUCCESFULLY_DELETED = 'User Succesfully Deleted'
+
+
+@dataclasses.dataclass
+class TrackFileDownloadedRequest:
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    r"""The Id of a file"""
+    
+
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
-class DeletePortalUser200ApplicationJSON:
-    r"""Portal user deleted successfully."""
-    data: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
-    r"""Entity ID"""
-    message: Optional[DeletePortalUser200ApplicationJSONMessage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
+class TrackFileDownloaded200ApplicationJSON:
+    r"""File download tracked successfully."""
+    file: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file'), 'exclude': lambda f: f is None }})
     
 
 
 
 
 @dataclasses.dataclass
-class DeletePortalUserResponse:
+class TrackFileDownloadedResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    delete_portal_user_200_application_json_object: Optional[DeletePortalUser200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Portal user deleted successfully."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
+    track_file_downloaded_200_application_json_object: Optional[TrackFileDownloaded200ApplicationJSON] = dataclasses.field(default=None)
+    r"""File download tracked successfully."""
     
 

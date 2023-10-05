@@ -781,6 +781,40 @@ class Ecp:
         return res
 
     
+    def track_file_downloaded(self, request: operations.TrackFileDownloadedRequest, security: operations.TrackFileDownloadedSecurity) -> operations.TrackFileDownloadedResponse:
+        r"""trackFileDownloaded
+        Track that user has downloaded a file
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.TrackFileDownloadedRequest, base_url, '/v2/portal/user/file/{id}/downloaded', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('POST', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.TrackFileDownloadedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.TrackFileDownloaded200ApplicationJSON])
+                res.track_file_downloaded_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code in [401, 403, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def update_contact(self, request: dict[str, Any], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
         r"""updateContact
         Updates the contact details.
