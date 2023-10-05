@@ -93,6 +93,7 @@ docs/models/shared/section.md
 docs/models/shared/itemtype.md
 docs/models/shared/step.md
 docs/models/shared/stepstatus.md
+docs/models/shared/steprequirementcondition.md
 docs/models/shared/steprequirement.md
 docs/models/shared/steptype.md
 docs/models/shared/ecpdetails.md
