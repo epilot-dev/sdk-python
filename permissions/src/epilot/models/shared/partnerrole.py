@@ -6,8 +6,12 @@ import dateutil.parser
 from ..shared import grant as shared_grant
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
+from enum import Enum
 from epilot import utils
-from typing import Final, Optional
+from typing import Optional
+
+class PartnerRoleType(str, Enum):
+    PARTNER_ROLE = 'partner_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -25,7 +29,7 @@ class PartnerRole:
     r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly name for the role"""
-    TYPE: Final[str] = dataclasses.field(default='partner_role', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: PartnerRoleType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
     partner_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_org_id'), 'exclude': lambda f: f is None }})

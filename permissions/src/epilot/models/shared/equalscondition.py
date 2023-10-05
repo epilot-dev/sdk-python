@@ -3,8 +3,12 @@
 from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
-from typing import Any, Final
+from typing import Any
+
+class EqualsConditionOperation(str, Enum):
+    EQUALS = 'equals'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -13,7 +17,7 @@ from typing import Any, Final
 class EqualsCondition:
     r"""Check if attribute equals to any of the values"""
     attribute: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribute') }})
+    operation: EqualsConditionOperation = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
     values: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values') }})
-    OPERATION: Final[str] = dataclasses.field(default='equals', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
     
 
