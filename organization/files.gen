@@ -1,3 +1,4 @@
+src/epilot/sdkconfiguration.py
 src/epilot/organization.py
 src/epilot/organization_settings.py
 src/epilot/sdk.py
@@ -5,6 +6,7 @@ pylintrc
 setup.py
 src/epilot/__init__.py
 src/epilot/models/__init__.py
+src/epilot/models/errors/sdkerror.py
 src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
@@ -17,4 +19,24 @@ src/epilot/models/operations/__init__.py
 src/epilot/models/shared/organization.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
+src/epilot/models/errors/__init__.py
 USAGE.md
+docs/models/operations/getorganizationrequest.md
+docs/models/operations/getorganizationresponse.md
+docs/models/operations/updateorganizationrequest.md
+docs/models/operations/updateorganizationresponse.md
+docs/models/operations/deletesettingsvaluerequest.md
+docs/models/operations/deletesettingsvalueresponse.md
+docs/models/operations/getsettingsrequest.md
+docs/models/operations/getsettingsresponse.md
+docs/models/operations/putsettingsvaluerequest.md
+docs/models/operations/putsettingsvalueresponse.md
+docs/models/shared/organizationaddress.md
+docs/models/shared/organizationtype.md
+docs/models/shared/organization.md
+docs/models/shared/settingsvalue.md
+docs/models/shared/security.md
+docs/sdks/epilot/README.md
+docs/sdks/organization/README.md
+docs/sdks/organizationsettings/README.md
+.gitattributes

@@ -3,8 +3,10 @@
 import base64
 import json
 import re
+import sys
 from dataclasses import Field, dataclass, fields, is_dataclass, make_dataclass
 from datetime import date, datetime
+from decimal import Decimal
 from email.message import Message
 from enum import Enum
 from typing import Any, Callable, Optional, Tuple, Union, get_args, get_origin
@@ -112,7 +114,8 @@ def _parse_security_scheme_value(client: SecurityClient, scheme_metadata: dict, 
         client.client.headers[header_name] = value
     elif scheme_type == 'http':
         if sub_type == 'bearer':
-            client.client.headers[header_name] = value
+            client.client.headers[header_name] = value.lower().startswith(
+                'bearer ') and value or f'Bearer {value}'
         else:
             raise Exception('not supported')
     else:
@@ -141,7 +144,8 @@ def _parse_basic_auth_scheme(client: SecurityClient, scheme: dataclass):
     client.client.headers['Authorization'] = f'Basic {base64.b64encode(data).decode()}'
 
 
-def generate_url(clazz: type, server_url: str, path: str, path_params: dataclass, gbls: dict[str, dict[str, dict[str, Any]]] = None) -> str:
+def generate_url(clazz: type, server_url: str, path: str, path_params: dataclass,
+                 gbls: dict[str, dict[str, dict[str, Any]]] = None) -> str:
     path_param_fields: Tuple[Field, ...] = fields(clazz)
     for field in path_param_fields:
         request_metadata = field.metadata.get('request')
@@ -152,62 +156,71 @@ def generate_url(clazz: type, server_url: str, path: str, path_params: dataclass
         if param_metadata is None:
             continue
 
-        if param_metadata.get('style', 'simple') == 'simple':
-            param = getattr(
-                path_params, field.name) if path_params is not None else None
-            param = _populate_from_globals(
-                field.name, param, 'pathParam', gbls)
+        param = getattr(
+            path_params, field.name) if path_params is not None else None
+        param = _populate_from_globals(
+            field.name, param, 'pathParam', gbls)
 
-            if param is None:
-                continue
+        if param is None:
+            continue
 
-            if isinstance(param, list):
-                pp_vals: list[str] = []
-                for pp_val in param:
-                    if pp_val is None:
-                        continue
-                    pp_vals.append(_val_to_string(pp_val))
+        f_name = param_metadata.get("field_name", field.name)
+        serialization = param_metadata.get('serialization', '')
+        if serialization != '':
+            serialized_params = _get_serialized_params(
+                param_metadata, f_name, param)
+            for key, value in serialized_params.items():
                 path = path.replace(
-                    '{' + param_metadata.get('field_name', field.name) + '}', ",".join(pp_vals), 1)
-            elif isinstance(param, dict):
-                pp_vals: list[str] = []
-                for pp_key in param:
-                    if param[pp_key] is None:
-                        continue
-                    if param_metadata.get('explode'):
-                        pp_vals.append(
-                            f"{pp_key}={_val_to_string(param[pp_key])}")
-                    else:
-                        pp_vals.append(
-                            f"{pp_key},{_val_to_string(param[pp_key])}")
-                path = path.replace(
-                    '{' + param_metadata.get('field_name', field.name) + '}', ",".join(pp_vals), 1)
-            elif not isinstance(param, (str, int, float, complex, bool)):
-                pp_vals: list[str] = []
-                param_fields: Tuple[Field, ...] = fields(param)
-                for param_field in param_fields:
-                    param_value_metadata = param_field.metadata.get(
-                        'path_param')
-                    if not param_value_metadata:
-                        continue
+                    '{' + key + '}', value, 1)
+        else:
+            if param_metadata.get('style', 'simple') == 'simple':
+                if isinstance(param, list):
+                    pp_vals: list[str] = []
+                    for pp_val in param:
+                        if pp_val is None:
+                            continue
+                        pp_vals.append(_val_to_string(pp_val))
+                    path = path.replace(
+                        '{' + param_metadata.get('field_name', field.name) + '}', ",".join(pp_vals), 1)
+                elif isinstance(param, dict):
+                    pp_vals: list[str] = []
+                    for pp_key in param:
+                        if param[pp_key] is None:
+                            continue
+                        if param_metadata.get('explode'):
+                            pp_vals.append(
+                                f"{pp_key}={_val_to_string(param[pp_key])}")
+                        else:
+                            pp_vals.append(
+                                f"{pp_key},{_val_to_string(param[pp_key])}")
+                    path = path.replace(
+                        '{' + param_metadata.get('field_name', field.name) + '}', ",".join(pp_vals), 1)
+                elif not isinstance(param, (str, int, float, complex, bool, Decimal)):
+                    pp_vals: list[str] = []
+                    param_fields: Tuple[Field, ...] = fields(param)
+                    for param_field in param_fields:
+                        param_value_metadata = param_field.metadata.get(
+                            'path_param')
+                        if not param_value_metadata:
+                            continue
 
-                    parm_name = param_value_metadata.get(
-                        'field_name', field.name)
+                        parm_name = param_value_metadata.get(
+                            'field_name', field.name)
 
-                    param_field_val = getattr(param, param_field.name)
-                    if param_field_val is None:
-                        continue
-                    if param_metadata.get('explode'):
-                        pp_vals.append(
-                            f"{parm_name}={_val_to_string(param_field_val)}")
-                    else:
-                        pp_vals.append(
-                            f"{parm_name},{_val_to_string(param_field_val)}")
-                path = path.replace(
-                    '{' + param_metadata.get('field_name', field.name) + '}', ",".join(pp_vals), 1)
-            else:
-                path = path.replace(
-                    '{' + param_metadata.get('field_name', field.name) + '}', _val_to_string(param), 1)
+                        param_field_val = getattr(param, param_field.name)
+                        if param_field_val is None:
+                            continue
+                        if param_metadata.get('explode'):
+                            pp_vals.append(
+                                f"{parm_name}={_val_to_string(param_field_val)}")
+                        else:
+                            pp_vals.append(
+                                f"{parm_name},{_val_to_string(param_field_val)}")
+                    path = path.replace(
+                        '{' + param_metadata.get('field_name', field.name) + '}', ",".join(pp_vals), 1)
+                else:
+                    path = path.replace(
+                        '{' + param_metadata.get('field_name', field.name) + '}', _val_to_string(param), 1)
 
     return server_url.removesuffix("/") + path
 
@@ -224,7 +237,8 @@ def template_url(url_with_params: str, params: dict[str, str]) -> str:
     return url_with_params
 
 
-def get_query_params(clazz: type, query_params: dataclass, gbls: dict[str, dict[str, dict[str, Any]]] = None) -> dict[str, list[str]]:
+def get_query_params(clazz: type, query_params: dataclass, gbls: dict[str, dict[str, dict[str, Any]]] = None) -> dict[
+        str, list[str]]:
     params: dict[str, list[str]] = {}
 
     param_fields: Tuple[Field, ...] = fields(clazz)
@@ -246,16 +260,23 @@ def get_query_params(clazz: type, query_params: dataclass, gbls: dict[str, dict[
         f_name = metadata.get("field_name")
         serialization = metadata.get('serialization', '')
         if serialization != '':
-            params = params | _get_serialized_query_params(
-                metadata, f_name, value)
+            serialized_parms = _get_serialized_params(metadata, f_name, value)
+            for key, value in serialized_parms.items():
+                if key in params:
+                    params[key].extend(value)
+                else:
+                    params[key] = [value]
         else:
             style = metadata.get('style', 'form')
             if style == 'deepObject':
                 params = params | _get_deep_object_query_params(
                     metadata, f_name, value)
             elif style == 'form':
-                params = params | _get_form_query_params(
-                    metadata, f_name, value)
+                params = params | _get_delimited_query_params(
+                    metadata, f_name, value, ",")
+            elif style == 'pipeDelimited':
+                params = params | _get_delimited_query_params(
+                    metadata, f_name, value, "|")
             else:
                 raise Exception('not yet implemented')
     return params
@@ -282,8 +303,8 @@ def get_headers(headers_params: dataclass) -> dict[str, str]:
     return headers
 
 
-def _get_serialized_query_params(metadata: dict, field_name: str, obj: any) -> dict[str, list[str]]:
-    params: dict[str, list[str]] = {}
+def _get_serialized_params(metadata: dict, field_name: str, obj: any) -> dict[str, str]:
+    params: dict[str, str] = {}
 
     serialization = metadata.get('serialization', '')
     if serialization == 'json':
@@ -314,12 +335,15 @@ def _get_deep_object_query_params(metadata: dict, field_name: str, obj: any) -> 
                     if val is None:
                         continue
 
-                    if params.get(f'{metadata.get("field_name", field_name)}[{obj_param_metadata.get("field_name", obj_field.name)}]') is None:
-                        params[f'{metadata.get("field_name", field_name)}[{obj_param_metadata.get("field_name", obj_field.name)}]'] = [
+                    if params.get(
+                            f'{metadata.get("field_name", field_name)}[{obj_param_metadata.get("field_name", obj_field.name)}]') is None:
+                        params[
+                            f'{metadata.get("field_name", field_name)}[{obj_param_metadata.get("field_name", obj_field.name)}]'] = [
                         ]
 
                     params[
-                        f'{metadata.get("field_name", field_name)}[{obj_param_metadata.get("field_name", obj_field.name)}]'].append(_val_to_string(val))
+                        f'{metadata.get("field_name", field_name)}[{obj_param_metadata.get("field_name", obj_field.name)}]'].append(
+                        _val_to_string(val))
             else:
                 params[
                     f'{metadata.get("field_name", field_name)}[{obj_param_metadata.get("field_name", obj_field.name)}]'] = [
@@ -355,27 +379,35 @@ def _get_query_param_field_name(obj_field: Field) -> str:
     return obj_param_metadata.get("field_name", obj_field.name)
 
 
-def _get_form_query_params(metadata: dict, field_name: str, obj: any) -> dict[str, list[str]]:
-    return _populate_form(field_name, metadata.get("explode", True), obj, _get_query_param_field_name)
+def _get_delimited_query_params(metadata: dict, field_name: str, obj: any, delimiter: str) -> dict[
+        str, list[str]]:
+    return _populate_form(field_name, metadata.get("explode", True), obj, _get_query_param_field_name, delimiter)
 
 
 SERIALIZATION_METHOD_TO_CONTENT_TYPE = {
-    'json':      'application/json',
-    'form':      'application/x-www-form-urlencoded',
+    'json': 'application/json',
+    'form': 'application/x-www-form-urlencoded',
     'multipart': 'multipart/form-data',
-    'raw':       'application/octet-stream',
-    'string':    'text/plain',
+    'raw': 'application/octet-stream',
+    'string': 'text/plain',
 }
 
 
-def serialize_request_body(request: dataclass, request_field_name: str, serialization_method: str) -> Tuple[str, any, any]:
+def serialize_request_body(request: dataclass, request_field_name: str, nullable: bool, optional: bool, serialization_method: str, encoder=None) -> Tuple[
+        str, any, any]:
     if request is None:
-        return None, None, None, None
+        if not nullable and optional:
+            return None, None, None
 
     if not is_dataclass(request) or not hasattr(request, request_field_name):
-        return serialize_content_type(request_field_name, SERIALIZATION_METHOD_TO_CONTENT_TYPE[serialization_method], request)
+        return serialize_content_type(request_field_name, SERIALIZATION_METHOD_TO_CONTENT_TYPE[serialization_method],
+                                      request, encoder)
 
     request_val = getattr(request, request_field_name)
+
+    if request_val is None:
+        if not nullable and optional:
+            return None, None, None
 
     request_fields: Tuple[Field, ...] = fields(request)
     request_metadata = None
@@ -388,12 +420,13 @@ def serialize_request_body(request: dataclass, request_field_name: str, serializ
     if request_metadata is None:
         raise Exception('invalid request type')
 
-    return serialize_content_type(request_field_name, request_metadata.get('media_type', 'application/octet-stream'), request_val)
+    return serialize_content_type(request_field_name, request_metadata.get('media_type', 'application/octet-stream'),
+                                  request_val)
 
 
-def serialize_content_type(field_name: str, media_type: str, request: dataclass) -> Tuple[str, any, list[list[any]]]:
+def serialize_content_type(field_name: str, media_type: str, request: dataclass, encoder=None) -> Tuple[str, any, list[list[any]]]:
     if re.match(r'(application|text)\/.*?\+*json.*', media_type) is not None:
-        return media_type, marshal_json(request), None
+        return media_type, marshal_json(request, encoder), None
     if re.match(r'multipart\/.*', media_type) is not None:
         return serialize_multipart_form(media_type, request)
     if re.match(r'application\/x-www-form-urlencoded.*', media_type) is not None:
@@ -501,7 +534,7 @@ def serialize_form_data(field_name: str, data: dataclass) -> dict[str, any]:
             else:
                 if metadata.get('style', 'form') == 'form':
                     form = form | _populate_form(
-                        field_name, metadata.get('explode', True), val, _get_form_field_name)
+                        field_name, metadata.get('explode', True), val, _get_form_field_name, ",")
                 else:
                     raise Exception(
                         f'Invalid form style for field {field.name}')
@@ -523,7 +556,8 @@ def _get_form_field_name(obj_field: Field) -> str:
     return obj_param_metadata.get("field_name", obj_field.name)
 
 
-def _populate_form(field_name: str, explode: boolean, obj: any, get_field_name_func: Callable) -> dict[str, list[str]]:
+def _populate_form(field_name: str, explode: boolean, obj: any, get_field_name_func: Callable, delimiter: str) -> \
+        dict[str, list[str]]:
     params: dict[str, list[str]] = {}
 
     if obj is None:
@@ -546,10 +580,10 @@ def _populate_form(field_name: str, explode: boolean, obj: any, get_field_name_f
                 params[obj_field_name] = [_val_to_string(val)]
             else:
                 items.append(
-                    f'{obj_field_name},{_val_to_string(val)}')
+                    f'{obj_field_name}{delimiter}{_val_to_string(val)}')
 
         if len(items) > 0:
-            params[field_name] = [','.join(items)]
+            params[field_name] = [delimiter.join(items)]
     elif isinstance(obj, dict):
         items = []
         for key, value in obj.items():
@@ -559,10 +593,10 @@ def _populate_form(field_name: str, explode: boolean, obj: any, get_field_name_f
             if explode:
                 params[key] = _val_to_string(value)
             else:
-                items.append(f'{key},{_val_to_string(value)}')
+                items.append(f'{key}{delimiter}{_val_to_string(value)}')
 
         if len(items) > 0:
-            params[field_name] = [','.join(items)]
+            params[field_name] = [delimiter.join(items)]
     elif isinstance(obj, list):
         items = []
 
@@ -578,7 +612,8 @@ def _populate_form(field_name: str, explode: boolean, obj: any, get_field_name_f
                 items.append(_val_to_string(value))
 
         if len(items) > 0:
-            params[field_name] = [','.join([str(item) for item in items])]
+            params[field_name] = [delimiter.join(
+                [str(item) for item in items])]
     else:
         params[field_name] = [_val_to_string(obj)]
 
@@ -648,20 +683,28 @@ def _serialize_header(explode: bool, obj: any) -> str:
     return ''
 
 
-def unmarshal_json(data, typ):
-    unmarhsal = make_dataclass('Unmarhsal', [('res', typ)],
+def unmarshal_json(data, typ, decoder=None):
+    unmarshal = make_dataclass('Unmarshal', [('res', typ)],
                                bases=(DataClassJsonMixin,))
     json_dict = json.loads(data)
-    out = unmarhsal.from_dict({"res": json_dict})
-    return out.res
+    try:
+        out = unmarshal.from_dict({"res": json_dict})
+    except AttributeError as attr_err:
+        raise AttributeError(
+            f'unable to unmarshal {data} as {typ}') from attr_err
+
+    return out.res if decoder is None else decoder(out.res)
 
 
-def marshal_json(val):
+def marshal_json(val, encoder=None):
     marshal = make_dataclass('Marshal', [('res', type(val))],
                              bases=(DataClassJsonMixin,))
     marshaller = marshal(res=val)
     json_dict = marshaller.to_dict()
-    return json.dumps(json_dict["res"])
+
+    val = json_dict["res"] if encoder is None else encoder(json_dict["res"])
+
+    return json.dumps(val)
 
 
 def match_content_type(content_type: str, pattern: str) -> boolean:
@@ -705,6 +748,86 @@ def datefromisoformat(date_str: str):
     return dateutil.parser.parse(date_str).date()
 
 
+def bigintencoder(optional: bool):
+    def bigintencode(val: int):
+        if optional and val is None:
+            return None
+        return str(val)
+
+    return bigintencode
+
+
+def bigintdecoder(val):
+    return int(val)
+
+
+def decimalencoder(optional: bool, as_str: bool):
+    def decimalencode(val: Decimal):
+        if optional and val is None:
+            return None
+
+        if as_str:
+            return str(val)
+
+        return float(val)
+
+    return decimalencode
+
+
+def decimaldecoder(val):
+    return Decimal(str(val))
+
+
+def map_encoder(optional: bool, value_encoder: Callable):
+    def map_encode(val: dict):
+        if optional and val is None:
+            return None
+
+        encoded = {}
+        for key, value in val.items():
+            encoded[key] = value_encoder(value)
+
+        return encoded
+
+    return map_encode
+
+
+def map_decoder(value_decoder: Callable):
+    def map_decode(val: dict):
+        decoded = {}
+        for key, value in val.items():
+            decoded[key] = value_decoder(value)
+
+        return decoded
+
+    return map_decode
+
+
+def list_encoder(optional: bool, value_encoder: Callable):
+    def list_encode(val: list):
+        if optional and val is None:
+            return None
+
+        encoded = []
+        for value in val:
+            encoded.append(value_encoder(value))
+
+        return encoded
+
+    return list_encode
+
+
+def list_decoder(value_decoder: Callable):
+    def list_decode(val: list):
+        decoded = []
+        for value in val:
+            decoded.append(value_decoder(value))
+
+        return decoded
+
+    return list_decode
+
+
 def get_field_name(name):
     def override(_, _field_name=name):
         return _field_name
@@ -718,7 +841,7 @@ def _val_to_string(val):
     if isinstance(val, datetime):
         return val.isoformat().replace('+00:00', 'Z')
     if isinstance(val, Enum):
-        return val.value
+        return str(val.value)
 
     return str(val)
 
@@ -733,3 +856,10 @@ def _populate_from_globals(param_name: str, value: any, param_type: str, gbls: d
                         value = global_value
 
     return value
+
+
+def decoder_with_discriminator(field_name):
+    def decode_fx(obj):
+        kls = getattr(sys.modules['sdk.models.shared'], obj[field_name])
+        return unmarshal_json(json.dumps(obj), kls)
+    return decode_fx
