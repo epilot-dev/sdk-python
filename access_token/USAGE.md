@@ -11,7 +11,9 @@ s = epilot.Epilot(
     ),
 )
 
-req = []
+req = {
+    "SAS": 'Nissan',
+}
 
 res = s.access_tokens.create_access_token(req)
 

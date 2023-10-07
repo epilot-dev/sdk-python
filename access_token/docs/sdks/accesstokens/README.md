@@ -39,7 +39,9 @@ s = epilot.Epilot(
     ),
 )
 
-req = []
+req = {
+    "SAS": 'Nissan',
+}
 
 res = s.access_tokens.create_access_token(req)
 
@@ -49,9 +51,9 @@ if res.create_access_token_201_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [Union[shared.AccessTokenParameters, shared.JourneyTokenParameters]](../../models/shared/tokenparameters.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response

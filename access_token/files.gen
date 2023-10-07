@@ -19,8 +19,6 @@ src/epilot/models/operations/getpublictokenjwks.py
 src/epilot/models/operations/getpublictokenoidc.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/accesstokentype.py
-src/epilot/models/shared/accesstokenparameters.py
-src/epilot/models/shared/journeytokenparameters.py
 src/epilot/models/shared/accesstokenitem.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
@@ -43,11 +41,6 @@ docs/models/operations/getpublictokenjwksresponse.md
 docs/models/operations/getpublictokenoidc200applicationjson.md
 docs/models/operations/getpublictokenoidcresponse.md
 docs/models/shared/accesstokentype.md
-docs/models/shared/tokenparameters.md
-docs/models/shared/accesstokenparameterstokentype.md
-docs/models/shared/accesstokenparameters.md
-docs/models/shared/journeytokenparameterstokentype.md
-docs/models/shared/journeytokenparameters.md
 docs/models/shared/accesstokenitem.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md

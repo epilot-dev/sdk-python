@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Optional, Union
+from typing import Any, Optional
 
 class AccessTokens:
     r"""Create Access Tokens for epilot APIs"""
@@ -13,7 +13,7 @@ class AccessTokens:
         self.sdk_configuration = sdk_config
         
     
-    def create_access_token(self, request: Union[shared.AccessTokenParameters, shared.JourneyTokenParameters]) -> operations.CreateAccessTokenResponse:
+    def create_access_token(self, request: Any) -> operations.CreateAccessTokenResponse:
         r"""createAccessToken
         **Access Token type: `API`** (default if not specified):
 
