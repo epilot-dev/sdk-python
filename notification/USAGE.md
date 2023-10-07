@@ -12,7 +12,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "facere": 'Product',
+    "Gasoline": 'on',
 }
 
 res = s.notification.create_notification(req)

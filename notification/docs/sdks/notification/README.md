@@ -31,7 +31,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "facere": 'Product',
+    "Gasoline": 'on',
 }
 
 res = s.notification.create_notification(req)
@@ -106,10 +106,7 @@ s = epilot.Epilot(
     ),
 )
 
-req = operations.GetNotificationsRequest(
-    after_id=436719,
-    limit=707368,
-)
+req = operations.GetNotificationsRequest()
 
 res = s.notification.get_notifications(req)
 
