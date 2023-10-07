@@ -173,7 +173,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "sapiente": 'Avon',
+    "across": 'black',
 }
 
 res = s.epilot.get_token_v2(req)
