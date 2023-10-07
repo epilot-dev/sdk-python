@@ -3,7 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional, Union
+from ..shared import settingsvalue as shared_settingsvalue
+from typing import Optional, Union
 
 
 

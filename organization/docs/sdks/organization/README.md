@@ -66,13 +66,7 @@ s = epilot.Epilot(
 
 req = operations.UpdateOrganizationRequest(
     organization=shared.Organization(
-        address=shared.OrganizationAddress(
-            city='New Mollyville',
-            country='Guatemala',
-            postal_code='22468',
-            street='Dooley Row',
-            street_number='Savings DRAM laudantium',
-        ),
+        address=shared.OrganizationAddress(),
         email='someone@epilot.cloud',
         free_user_limit=50,
         id='739224',
@@ -84,10 +78,9 @@ req = operations.UpdateOrganizationRequest(
         pricing_tier='professional',
         signature='<p>Thanks</p>',
         style={
-            "molestias": 'wireless',
+            "Jersey": 'Aubree',
         },
         symbol='EPI',
-        type=shared.OrganizationType.PARTNER,
         website='https://epilot.cloud',
     ),
     org_id='739224',
