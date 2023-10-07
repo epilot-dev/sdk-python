@@ -38,11 +38,9 @@ req = operations.AddRelationsRequest(
             ],
             attribute='Swedish Hatchback Luxurious',
             entity_id='9248b564-99df-4660-9593-cfe3d006d87e',
-            reverse=False,
         ),
     ],
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    async_=False,
     id='69d98cd0-9bf6-4d30-b52c-36108777da47',
     slug='contact',
 )
@@ -83,7 +81,6 @@ s = epilot.Epilot(
 
 req = operations.DeleteRelationRequest(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    async_=False,
     attribute='whiteboard sandal',
     entity_id='quasi South Southeast',
     id='f5b77b85-5b9c-4585-b7ae-4d21f6044e25',
@@ -126,7 +123,10 @@ s = epilot.Epilot(
 )
 
 req = operations.GetRelatedEntitiesCountRequest(
-    id='3a515de5-fe13-46e4-ad0c-a57656a6a8af',
+    exclude_schemas=[
+        'Tuna',
+    ],
+    id='515de5fe-136e-44ad-8ca5-7656a6a8afba',
     slug='contact',
 )
 
@@ -170,9 +170,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetRelationsRequest(
-    hydrate=False,
     id='e642d6bf-f2f7-41f9-8aa4-db0ec78f30e6',
-    include_reverse=False,
     slug='contact',
 )
 
@@ -217,14 +215,11 @@ s = epilot.Epilot(
 
 req = operations.GetRelationsV2Request(
     fields_=[
-        'up',
+        '_id',
+        '_schema',
+        '_title',
     ],
-    from_=117939,
-    hydrate=False,
-    id='2f3e8dbd-dd40-4ecc-a3e0-01b2fb330d42',
-    include_reverse=False,
-    query='THX iterate',
-    size=534143,
+    id='80912f3e-8dbd-4dd4-8ecc-63e001b2fb33',
     slug='contact',
 )
 
@@ -269,7 +264,6 @@ req = operations.UpdateRelationRequest(
         ],
     ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    async_=False,
     attribute='imperturbable female during',
     entity_id='HDD Gasoline',
     id='3b01c385-4f8c-44b2-a614-3d8a0d332324',

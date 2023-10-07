@@ -35,8 +35,6 @@ s = epilot.Epilot(
 
 req = operations.AutocompleteRequest(
     attribute='_tags',
-    input='Borders Netherlands benchmark',
-    size=180546,
     slug='contact',
 )
 
@@ -101,10 +99,16 @@ s = epilot.Epilot(
 
 req = operations.CreateEntityRequest(
     request_body={
-        "qui": 'of',
+        "_updated_at": 'Industrial',
+        "_acl": 'Implementation',
+        "_id": 'Future',
+        "_org": 'Southeast',
+        "_owners": 'Tandem',
+        "_schema": 'male',
+        "_tags": 'North',
+        "_created_at": 'Beach',
     },
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    async_=False,
     slug='contact',
 )
 
@@ -251,7 +255,6 @@ s = epilot.Epilot(
 )
 
 req = operations.GetEntityRequest(
-    hydrate=False,
     id='73700929-3a3f-4c9a-8a39-e5abedf44929',
     slug='contact',
 )
@@ -319,12 +322,17 @@ s = epilot.Epilot(
 
 req = operations.PatchEntityRequest(
     request_body={
-        "quod": 'illiterate',
+        "_tags": 'fuchsia',
+        "_created_at": 'Account',
+        "_updated_at": 'engage',
+        "_acl": 'Cis',
+        "_id": 'solutions',
+        "_org": 'founder',
+        "_owners": 'Southeast',
+        "_schema": 'Cab',
     },
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    async_=False,
-    dry_run=False,
-    id='dc474991-54f5-419d-9806-e999b72319d9',
+    id='06e999b7-2319-4d9e-8290-d19da9e1f40d',
     slug='contact',
 )
 
@@ -430,13 +438,11 @@ s = epilot.Epilot(
 req = shared.EntitySearchParams(
     aggs=shared.EntitySearchParamsAggs(),
     fields_=[
-        'Web',
+        '_id',
+        '_title',
+        'first_name',
     ],
-    from_=696536,
-    hydrate=False,
-    include_scores=False,
     q='_schema:contact AND status:active',
-    size=358975,
     sort='_created_at:desc',
 )
 
@@ -501,11 +507,17 @@ s = epilot.Epilot(
 
 req = operations.UpdateEntityRequest(
     request_body={
-        "sed": 'Pickup',
+        "_updated_at": 'Hartmann',
+        "_acl": 'invoice',
+        "_id": 'fathom',
+        "_org": 'Nepal',
+        "_owners": 'indexing',
+        "_schema": 'male',
+        "_tags": 'Profound',
+        "_created_at": 'policy',
     },
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    async_=False,
-    id='17df5520-987b-4d5a-ab1d-12df74462a98',
+    id='1d12df74-462a-498e-a7ff-ce36a4e49616',
     slug='contact',
 )
 
@@ -555,15 +567,20 @@ s = epilot.Epilot(
 req = operations.UpsertEntityRequest(
     request_body=operations.UpsertEntityRequestBody(
         entity={
-            "et": 'optical',
+            "_created_at": 'West',
+            "_updated_at": 'close',
+            "_acl": 'Infrastructure',
+            "_id": 'music',
+            "_org": 'astride',
+            "_owners": 'Designer',
+            "_schema": 'strategic',
+            "_tags": 'along',
         },
         unique_key=[
-            'email.0.email',
+            '_id',
         ],
     ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    async_=False,
-    dry_run=False,
     slug='contact',
 )
 

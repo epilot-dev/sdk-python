@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `entity`           | dict[str, *Any*]   | :heavy_check_mark: | N/A                |
-| `unique_key`       | list[*str*]        | :heavy_check_mark: | N/A                |
+| Field              | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `entity`           | dict[str, *Any*]   | :heavy_check_mark: | N/A                | [object Object]    |
+| `unique_key`       | list[*str*]        | :heavy_check_mark: | N/A                | _id                |

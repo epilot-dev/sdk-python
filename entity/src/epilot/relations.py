@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Any, Optional, Union
+from typing import Optional, Union
 
 class Relations:
     r"""Entity Relationships"""
@@ -76,12 +76,13 @@ class Relations:
         
         url = utils.generate_url(operations.GetRelatedEntitiesCountRequest, base_url, '/v2/entity/{slug}/{id}/relations/count', request)
         headers = {}
+        query_params = utils.get_query_params(operations.GetRelatedEntitiesCountRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
-        http_res = client.request('GET', url, headers=headers)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetRelatedEntitiesCountResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

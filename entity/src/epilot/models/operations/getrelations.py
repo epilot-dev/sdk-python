@@ -3,8 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import getrelationsresp as shared_getrelationsresp
 from ..shared import relationitem as shared_relationitem
-from typing import Any, Optional, Union
+from typing import Optional, Union
 
 
 

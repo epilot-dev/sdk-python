@@ -140,9 +140,7 @@ s = epilot.Epilot(
 )
 
 req = operations.TaxonomyAutocompleteRequest(
-    query='Polarised optio Hybrid',
-    size=7186.02,
-    taxonomy_slug='Ball',
+    taxonomy_slug='Polarised optio Hybrid',
 )
 
 res = s.taxonomy.taxonomy_autocomplete(req)
@@ -184,31 +182,25 @@ req = operations.UpdateClassificationsForTaxonomyRequest(
     classifications_update=shared.ClassificationsUpdate(
         create=[
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2023-01-29T09:39:45.161Z'),
-                id='4e342f29-dee0-402b-8415-ef6fe03f06e9',
                 name='Wallbox PV',
                 parents=[
-                    '998bd322-c31e-42b7-b181-91a2c6ad60b4',
+                    'b4e342f2-9dee-4002-bc41-5ef6fe03f06e',
                 ],
-                updated_at=dateutil.parser.isoparse('2021-07-20T21:22:16.417Z'),
             ),
         ],
         delete=[
-            '062aff2d-f8b9-4512-81f6-8f95bbd35ce8',
+            '9998bd32-2c31-4e2b-b318-191a2c6ad60b',
         ],
         update=[
             shared.TaxonomyClassification(
-                created_at=dateutil.parser.isoparse('2023-06-17T13:37:21.887Z'),
-                id='b159c7e2-9866-4889-9ce5-7236fb33115f',
                 name='Wallbox PV',
                 parents=[
-                    'c5f1737e-932d-42ff-8b5b-7733cd73fa8c',
+                    '42062aff-2df8-4b95-9241-f68f95bbd35c',
                 ],
-                updated_at=dateutil.parser.isoparse('2021-03-21T21:08:25.425Z'),
             ),
         ],
     ),
-    taxonomy_slug='flexibility Cadillac North',
+    taxonomy_slug='transmitting female Polarised',
 )
 
 res = s.taxonomy.update_classifications_for_taxonomy(req)

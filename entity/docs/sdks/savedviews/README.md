@@ -31,7 +31,9 @@ s = epilot.Epilot(
 )
 
 req = shared.SavedView(
-    created_by=[],
+    shared.SavedViewCreatedBy1(
+        user_id='10598',
+    ),
     is_favorited_by=[
         '11701',
     ],
@@ -42,7 +44,8 @@ req = shared.SavedView(
         'contact',
     ],
     ui_config={
-        "eos": 'Cyclocross',
+        "filters": 'Cyclocross',
+        "table_layout": 'Plastic',
     },
 )
 
@@ -216,7 +219,9 @@ s = epilot.Epilot(
 
 req = operations.UpdateSavedViewRequest(
     saved_view=shared.SavedView(
-        created_by=[],
+        shared.SavedViewCreatedBy1(
+            user_id='10598',
+        ),
         is_favorited_by=[
             '11701',
         ],
@@ -227,10 +232,11 @@ req = operations.UpdateSavedViewRequest(
             'contact',
         ],
         ui_config={
-            "aut": 'red',
+            "filters": 'red',
+            "table_layout": 'Car',
         },
     ),
-    id='3092cd47-8166-44df-95b0-841d72e4e501',
+    id='92cd4781-664d-4f55-b084-1d72e4e501ca',
 )
 
 res = s.saved_views.update_saved_view(req)

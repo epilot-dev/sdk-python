@@ -77,13 +77,13 @@ req = operations.CreateActivityRequest(
     activity=shared.Activity(
         message='{{caller}} did something with {{entity payload.entity.id}}.',
         payload={
-            "quo": 'apud',
+            "entity": 'Tricycle',
         },
         title='My custom activity',
         type='MyCustomActivity',
     ),
     entities=[
-        '5acc1fe2-b8d1-4825-82f2-569c1faffc1b',
+        '25acc1fe-2b8d-4182-9c2f-2569c1faffc1',
     ],
 )
 
@@ -123,8 +123,6 @@ s = epilot.Epilot(
 
 req = operations.GetActivityRequest(
     id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    operations_from=826530,
-    operations_size=369963,
 )
 
 res = s.activity.get_activity(req)
@@ -164,12 +162,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetEntityActivityFeedRequest(
-    after=dateutil.parser.isoparse('2022-01-31T23:44:31.870Z'),
-    before=dateutil.parser.isoparse('2022-09-19T15:43:08.281Z'),
-    from_=105040,
-    id='b83a9db1-edf0-4cb9-9bca-afe81677fcf9',
-    include_relations=False,
-    size=41031,
+    id='591b83a9-db1e-4df0-8b99-bcaafe81677f',
     slug='contact',
     type='SyncActivity',
 )

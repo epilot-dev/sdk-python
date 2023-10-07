@@ -70,7 +70,6 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSchemaRequest(
-    id='3bcef047-7721-42cd-8bca-92e24545d526',
     slug='contact',
 )
 
@@ -109,11 +108,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetSchemaVersionsRequest(
-    drafts_from=8135.81,
-    drafts_size=8621.33,
     slug='contact',
-    versions_from=8101.78,
-    versions_size=8257.35,
 )
 
 res = s.schemas.get_schema_versions(req)
@@ -179,9 +174,7 @@ s = epilot.Epilot(
     ),
 )
 
-req = operations.ListSchemasRequest(
-    unpublished=False,
-)
+req = operations.ListSchemasRequest()
 
 res = s.schemas.list_schemas(req)
 
@@ -218,8 +211,6 @@ s = epilot.Epilot(
 )
 
 req = operations.ListTaxonomyClassificationsForSchemaRequest(
-    query='Gasoline Torrance tesla',
-    size=8668.67,
     slug='contact',
     taxonomy_slug='purpose',
 )
@@ -262,67 +253,206 @@ s = epilot.Epilot(
 req = operations.PutSchemaRequest(
     entity_schema=shared.EntitySchema(
         attributes=[
-            [],
+            shared.TextAttribute(
+                purpose=[
+                    'a93c7b74-037c-43b9-94a9-6166aa0e2336',
+                ],
+                constraints=shared.TextAttributeConstraints(),
+                feature_flag='FF_MY_FEATURE_FLAG',
+                info_helpers=shared.TextAttributeInfoHelpers(
+                    hint_tooltip_placement='top',
+                ),
+                label='Home',
+                layout='full_width',
+                name='Account parse Hybrid',
+                order=0,
+                setting_flag='MY_SETTING',
+            ),
+            shared.TextAttribute(
+                purpose=[
+                    '1de0f32d-6571-4521-8cf5-04680eaf6fd6',
+                ],
+                constraints=shared.TextAttributeConstraints(),
+                feature_flag='FF_MY_FEATURE_FLAG',
+                info_helpers=shared.TextAttributeInfoHelpers(
+                    hint_tooltip_placement='top',
+                ),
+                label='warmly green Rolls',
+                layout='full_width',
+                name='payment archive',
+                order=0,
+                setting_flag='MY_SETTING',
+            ),
+            shared.TextAttribute(
+                purpose=[
+                    '5b3e0e28-c6d1-4668-943e-4eb242b720a7',
+                ],
+                constraints=shared.TextAttributeConstraints(),
+                feature_flag='FF_MY_FEATURE_FLAG',
+                info_helpers=shared.TextAttributeInfoHelpers(
+                    hint_tooltip_placement='top',
+                ),
+                label='Martin Buckinghamshire second',
+                layout='full_width',
+                name='East',
+                order=0,
+                setting_flag='MY_SETTING',
+            ),
+            shared.TextAttribute(
+                purpose=[
+                    '66bc3807-5c84-437b-9710-c2601905e25f',
+                ],
+                constraints=shared.TextAttributeConstraints(),
+                feature_flag='FF_MY_FEATURE_FLAG',
+                info_helpers=shared.TextAttributeInfoHelpers(
+                    hint_tooltip_placement='top',
+                ),
+                label='female payment Gloves',
+                layout='full_width',
+                name='redundant grow',
+                order=0,
+                setting_flag='MY_SETTING',
+            ),
+            shared.TextAttribute(
+                purpose=[
+                    '647c7479-d9c5-460e-a796-9366d774fa49',
+                ],
+                constraints=shared.TextAttributeConstraints(),
+                feature_flag='FF_MY_FEATURE_FLAG',
+                info_helpers=shared.TextAttributeInfoHelpers(
+                    hint_tooltip_placement='top',
+                ),
+                label='voluptatem withdrawal Jersey',
+                layout='full_width',
+                name='Latin Massachusetts',
+                order=0,
+                setting_flag='MY_SETTING',
+            ),
+            shared.TextAttribute(
+                purpose=[
+                    '82a9ba9c-c095-4367-8af5-3c32a28a3faa',
+                ],
+                constraints=shared.TextAttributeConstraints(),
+                feature_flag='FF_MY_FEATURE_FLAG',
+                info_helpers=shared.TextAttributeInfoHelpers(
+                    hint_tooltip_placement='top',
+                ),
+                label='parse Legacy',
+                layout='full_width',
+                name='killer',
+                order=0,
+                setting_flag='MY_SETTING',
+            ),
+            shared.TextAttribute(
+                purpose=[
+                    '3c780e75-fefd-44fb-b09f-43acc8e6b933',
+                ],
+                constraints=shared.TextAttributeConstraints(),
+                feature_flag='FF_MY_FEATURE_FLAG',
+                info_helpers=shared.TextAttributeInfoHelpers(
+                    hint_tooltip_placement='top',
+                ),
+                label='likely Synchronised',
+                layout='full_width',
+                name='inundate invoice',
+                order=0,
+                setting_flag='MY_SETTING',
+            ),
         ],
-        blueprint='a93c7b74-037c-43b9-94a9-6166aa0e2336',
         capabilities=[
             shared.EntityCapability(
                 purpose=[
-                    '535d6bf8-fcc1-4de0-b32d-65715210cf50',
+                    '76391618-2360-49a0-98c5-8211d87549e8',
                 ],
                 attributes=[
-                    [],
+                    shared.CurrencyAttribute(
+                        purpose=[
+                            'e05451ea-976b-47aa-8556-cbb2f4955baf',
+                        ],
+                        constraints=shared.CurrencyAttributeConstraints(),
+                        currency=[
+                            shared.CurrencyAttributeCurrency1(
+                                code='Road',
+                                description='Operative bi-directional extranet',
+                                symbol='concerning',
+                            ),
+                        ],
+                        feature_flag='FF_MY_FEATURE_FLAG',
+                        info_helpers=shared.CurrencyAttributeInfoHelpers(
+                            hint_tooltip_placement='top',
+                        ),
+                        label='optimizing',
+                        layout='full_width',
+                        name='sievert',
+                        order=0,
+                        setting_flag='MY_SETTING',
+                        type=shared.CurrencyAttributeType.CURRENCY,
+                    ),
                 ],
                 feature_flag='FF_MY_FEATURE_FLAG',
-                legacy=False,
                 name='customer_messaging',
                 setting_flag='MY_SETTING',
                 title='Messaging',
                 ui_hooks=[
                     {
-                        "modi": 'Home',
+                        "Berkshire": 'Hybrid',
                     },
                 ],
             ),
         ],
         dialog_config={
-            "eveniet": 'Strategist',
+            "harden": 'Practical',
         },
         draft=False,
         enable_setting=[
-            '360_features',
+            '3',
+            '6',
+            '0',
+            '_',
+            'f',
+            'e',
+            'a',
+            't',
+            'u',
+            'r',
+            'e',
+            's',
         ],
         explicit_search_mappings={
-            "vel": shared.SearchMappings(
+            "image": shared.SearchMappings(
                 fields_={
-                    "distinctio": 'warmly',
+                    "Classical": 'Distributed',
                 },
-                index=False,
-                type=shared.SearchMappingsType.TEXT,
             ),
         },
         feature_flag='FF_MY_FEATURE_FLAG',
         group_settings=[
             shared.EntitySchemaGroupSettings(
                 purpose=[
-                    '0dd287b6-15b3-4e0e-a8c6-d1668543e4eb',
+                    '9a93bb27-212d-48fe-b517-f7f32d0d1a32',
                 ],
-                expanded=False,
                 feature_flag='FF_MY_FEATURE_FLAG',
                 id='<ID>',
-                info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(
-                    default='Wooden',
-                    key='<key>',
-                ),
-                label='deposit Pakistan XSS',
-                order=834474,
+                info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(),
+                label='Koruna Zimbabwe',
+                render_condition='_is_composite_price = "false"',
+                setting_flag='MY_SETTING',
+            ),
+            shared.EntitySchemaGroupSettings(
+                purpose=[
+                    '65b8f4f0-c08e-4211-8d68-3456c3d852ff',
+                ],
+                feature_flag='FF_MY_FEATURE_FLAG',
+                id='<ID>',
+                info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(),
+                label='mint 4th',
                 render_condition='_is_composite_price = "false"',
                 setting_flag='MY_SETTING',
             ),
         ],
         icon='person',
         layout_settings={
-            "aut": 'protocol',
+            "surmise": 'Direct',
         },
         name='Contact',
         plural='Contacts',
@@ -330,22 +460,26 @@ req = operations.PutSchemaRequest(
         slug='contact',
         title_template='{{first_name}} {{last_name}}',
         ui_config=shared.EntitySchemaUIConfig(
-            create_view=[],
-            edit_view=[],
+            shared.RedirectEntityView(
+                route='/app/pricing-hub/product/:entityId',
+            ),
+            shared.EntityViewDisabled(),
             list_item=shared.EntitySchemaUIConfigListItem(
                 summary_attributes=[
-                    [],
+                    'email',
                 ],
             ),
             sharing=shared.EntitySchemaUIConfigSharing(
                 show_sharing_button=True,
             ),
-            single_view=[],
-            table_view=[],
+            shared.RedirectEntityView(
+                route='/app/pricing-hub/product/:entityId',
+            ),
+            shared.RedirectEntityView(
+                route='/app/pricing-hub/product/:entityId',
+            ),
         ),
-        version=784166,
     ),
-    draft=False,
     slug='contact',
 )
 

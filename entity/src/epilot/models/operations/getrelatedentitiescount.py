@@ -14,6 +14,8 @@ class GetRelatedEntitiesCountRequest:
     r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""Entity Schema"""
+    exclude_schemas: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'exclude_schemas', 'style': 'form', 'explode': False }})
+    r"""To be excluded from the count by given schemas"""
     
 
 
