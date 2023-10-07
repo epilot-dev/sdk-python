@@ -46,8 +46,7 @@ req = shared.WorkflowExecutionCreateReq(
             title='teal 6th Bespoke',
         ),
     ],
-    trigger=shared.TriggerType.MANUAL,
-    workflow_id='CLI Cadillac',
+    workflow_id='connect',
 )
 
 res = s.workflows.create_execution(req)
@@ -87,17 +86,11 @@ s = epilot.Epilot(
 req = operations.CreateStepRequest(
     create_step_req=shared.CreateStepReq(
         automation_config=shared.AutomationConfig(
-            execution_id='Ferrari Cisgender',
-            execution_status='huzzah Northwest purple',
-            flow_id='Administrator',
+            flow_id='Ferrari Cisgender',
         ),
-        execution_type=shared.StepType.AUTOMATION,
-        insertion_index=9390.66,
-        name='hoarse',
-        section_id='visualize Metal',
-        status=shared.StepStatus.COMPLETED,
+        name='huzzah Northwest purple',
     ),
-    execution_id='Electronic orange regarding',
+    execution_id='Administrator',
 )
 
 res = s.workflows.create_step(req)
@@ -290,10 +283,7 @@ s = epilot.Epilot(
     ),
 )
 
-req = operations.GetExecutionsRequest(
-    context='Global capacitor East',
-    schema='sky',
-)
+req = operations.GetExecutionsRequest()
 
 res = s.workflows.get_executions(req)
 
@@ -330,15 +320,7 @@ s = epilot.Epilot(
 )
 
 req = shared.SearchExecutionsReq(
-    assigned_to='plum',
-    include_done_workflows=False,
-    name='SUV',
-    pagination=shared.ExecutionPaginationDynamo(
-        creation_time='Androgynous Beauty Soft',
-        org_id='Customer pristine',
-    ),
-    sorting=shared.SearchSorting.TRIGGER_DATE_DESC,
-    status=shared.WorkflowStatus.CLOSED,
+    pagination=shared.ExecutionPaginationDynamo(),
 )
 
 res = s.workflows.search_executions(req)
@@ -376,17 +358,7 @@ s = epilot.Epilot(
 )
 
 req = shared.SearchStepsReq(
-    assigned_to=7544.22,
-    execution_name='Manager Van',
-    include_done_workflows=False,
-    manually_created=False,
-    pagination=shared.SearchPagination(
-        from_=3481.37,
-        size=7799.84,
-    ),
-    sorting=shared.SearchSorting.DUE_DATE_DESC,
-    status=shared.SearchStepsReqStatus.COMPLETE,
-    step_name='enterprise',
+    pagination=shared.SearchPagination(),
 )
 
 res = s.workflows.search_steps(req)
@@ -428,32 +400,25 @@ req = operations.UpdateExecutionRequest(
         assigned_to=[
             'Toys',
         ],
-        closed_by='Buckinghamshire Virginia Implementation',
-        closing_reason_description='navigating Florida',
-        completed_time='female firewall Bedfordshire',
         contexts=[
             shared.WorkflowContext(
                 id='<ID>',
-                schema='protocol Island',
-                title='Concrete Movies',
+                schema='Buckinghamshire Virginia Implementation',
+                title='navigating Florida',
             ),
         ],
-        due_date='Chief Games',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-            number_of_units=3847,
-            step_id='Recycled Northwest',
+            number_of_units=7681.17,
             time_period=shared.DynamicDueDateTimePeriod.MONTHS,
         ),
         selected_closing_reasons=[
             shared.ClosingReason(
                 id='<ID>',
-                title='navigating',
+                title='firewall',
             ),
         ],
-        status=shared.WorkflowStatus.CLOSED,
     ),
-    execution_id='Mexico olive',
+    execution_id='maroon',
 )
 
 res = s.workflows.update_execution(req)
@@ -495,34 +460,21 @@ req = operations.UpdateStepRequest(
         assigned_to=[
             'India',
         ],
-        assigned_to_in_progress='regularly Omaha Folding',
         automation_config=shared.AutomationConfig(
-            execution_id='TLS',
-            execution_status='Southeast Tesla Bespoke',
-            flow_id='um fuchsia accusamus',
+            flow_id='regularly Omaha Folding',
         ),
-        completed_time='connecting',
-        due_date='obese',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-            number_of_units=7680.12,
-            step_id='exist synthesize',
+            number_of_units=1968.04,
             time_period=shared.DynamicDueDateTimePeriod.WEEKS,
         ),
-        entity_ref_id='Technician deposit',
-        name='Hybrid',
-        position=shared.StepPositionAt(
-            index=7029.22,
-            section_id='SDD',
-        ),
-        started_time='including if Vanadium',
-        status=shared.StepStatus.ASSIGNED,
+        entity_ref_id='yellow transmitter fairly',
+        position=shared.StepPositionAt(),
         user_ids=[
-            4499.44,
+            5550.61,
         ],
     ),
-    execution_id='Park',
-    step_id='mobile Northwest Blues',
+    execution_id='um fuchsia accusamus',
+    step_id='connecting',
 )
 
 res = s.workflows.update_step(req)

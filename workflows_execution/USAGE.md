@@ -22,8 +22,7 @@ req = shared.WorkflowExecutionCreateReq(
             title='teal 6th Bespoke',
         ),
     ],
-    trigger=shared.TriggerType.MANUAL,
-    workflow_id='CLI Cadillac',
+    workflow_id='connect',
 )
 
 res = s.workflows.create_execution(req)
