@@ -28,7 +28,13 @@ req = shared.SubmissionPayload(
     ],
     entities=[
         {
-            "dolore": 'Future',
+            "contact_last_name": 'Bike',
+            "contact_email": 'Shoes',
+            "request": 'Incredible',
+            "files": 'Borders',
+            "_schema": 'synergistic',
+            "description": 'versus',
+            "contact_first_name": 'blah',
         },
     ],
     journey_submit_id='123',
@@ -36,7 +42,7 @@ req = shared.SubmissionPayload(
         shared.OptIn(
             identifier='example@email.com',
             meta={
-                "voluptatibus": 'Shoes',
+                "Bicycle": 'Applications',
             },
             topic='EMAIL_MARKETING',
         ),
