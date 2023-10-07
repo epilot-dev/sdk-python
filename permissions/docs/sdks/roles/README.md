@@ -167,7 +167,41 @@ s = epilot.Epilot(
 )
 
 req = operations.PutRoleRequest(
-    role_payload=[],
+    shared.RolePayload1(
+        expires_at=dateutil.parser.isoparse('2028-07-21T17:32:28Z'),
+        grants=[
+            shared.Grant(
+                action='entity-read',
+                conditions=[
+                    shared.GrantConditionEqualsCondition(
+                        attribute='workflows.primary.task_name',
+                        operation=shared.GrantConditionEqualsConditionOperation.EQUALS,
+                        values=[
+                            'Sheboygan',
+                            'Copper',
+                            'connecting',
+                            'katal',
+                            'monitor',
+                            'quantifying',
+                            'magenta',
+                            'Investment',
+                            'Avon',
+                            'Plastic',
+                            'Electric',
+                            'Centralized',
+                            'when',
+                        ],
+                    ),
+                ],
+                resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
+            ),
+        ],
+        id='123:owner',
+        name='Owner',
+        organization_id='123',
+        slug='owner',
+        type=shared.RolePayload1Type.USER_ROLE,
+    ),
     role_id='123:owner',
 )
 
@@ -239,12 +273,15 @@ req = shared.RoleSearchInput(
     offset=1,
     org_ids=[
         '123',
+        '456',
     ],
     query='Administrator',
     role_ids=[
-        '123:owner',
+        '123:manager',
+        '456:owner',
     ],
     slugs=[
+        'manager',
         'owner',
     ],
 )

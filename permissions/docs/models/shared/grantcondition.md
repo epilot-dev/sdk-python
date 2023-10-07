@@ -3,9 +3,9 @@
 
 ## Supported Types
 
-### EqualsCondition
+### GrantConditionEqualsCondition
 
 ```python
-grantCondition: shared.EqualsCondition = /* values here */
+grantCondition: shared.GrantConditionEqualsCondition = /* values here */
 ```
 

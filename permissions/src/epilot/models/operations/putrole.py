@@ -5,10 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import orgrole as shared_orgrole
 from ..shared import partnerrole as shared_partnerrole
-from ..shared import rolepayload_1 as shared_rolepayload_1
-from ..shared import rolepayload_2 as shared_rolepayload_2
-from ..shared import rolepayload_3 as shared_rolepayload_3
-from ..shared import rolepayload_4 as shared_rolepayload_4
+from ..shared import rolepayload as shared_rolepayload
 from ..shared import sharerole as shared_sharerole
 from ..shared import userrole as shared_userrole
 from typing import Optional, Union
@@ -18,7 +15,7 @@ from typing import Optional, Union
 @dataclasses.dataclass
 class PutRoleRequest:
     role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})
-    role_payload: Optional[Union[shared_rolepayload_1.RolePayload1, shared_rolepayload_2.RolePayload2, shared_rolepayload_3.RolePayload3, shared_rolepayload_4.RolePayload4]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    role_payload: Optional[Union[shared_rolepayload.RolePayload1, shared_rolepayload.RolePayload2, shared_rolepayload.RolePayload3, shared_rolepayload.RolePayload4]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 

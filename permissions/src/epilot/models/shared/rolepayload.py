@@ -8,7 +8,7 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from epilot import utils
-from typing import Optional, Union
+from typing import Optional
 
 class RolePayload4Type(str, Enum):
     PARTNER_ROLE = 'partner_role'

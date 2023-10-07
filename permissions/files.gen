@@ -26,7 +26,7 @@ src/epilot/models/operations/__init__.py
 src/epilot/models/shared/assignment.py
 src/epilot/models/shared/userrole.py
 src/epilot/models/shared/grant.py
-src/epilot/models/shared/equalscondition.py
+src/epilot/models/shared/grantcondition.py
 src/epilot/models/shared/orgrole.py
 src/epilot/models/shared/sharerole.py
 src/epilot/models/shared/partnerrole.py
@@ -65,9 +65,9 @@ docs/models/shared/userroletype.md
 docs/models/shared/userrole.md
 docs/models/shared/granteffect.md
 docs/models/shared/grant.md
+docs/models/shared/grantconditionequalsconditionoperation.md
+docs/models/shared/grantconditionequalscondition.md
 docs/models/shared/grantcondition.md
-docs/models/shared/equalsconditionoperation.md
-docs/models/shared/equalscondition.md
 docs/models/shared/orgroletype.md
 docs/models/shared/orgrole.md
 docs/models/shared/shareroletype.md

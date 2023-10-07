@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import equalscondition as shared_equalscondition
+from ..shared import grantcondition as shared_grantcondition
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -18,7 +18,7 @@ class GrantEffect(str, Enum):
 @dataclasses.dataclass
 class Grant:
     action: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action') }})
-    conditions: Optional[list[Union[shared_equalscondition.EqualsCondition]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conditions'), 'exclude': lambda f: f is None }})
+    conditions: Optional[list[Union[shared_grantcondition.GrantConditionEqualsCondition]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conditions'), 'exclude': lambda f: f is None }})
     effect: Optional[GrantEffect] = dataclasses.field(default=GrantEffect.ALLOW, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('effect'), 'exclude': lambda f: f is None }})
     resource: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resource'), 'exclude': lambda f: f is None }})
     
