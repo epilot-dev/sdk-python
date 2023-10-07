@@ -38,24 +38,47 @@ req = shared.WorkflowDefinition(
         ),
     ],
     creation_time='2021-04-27T12:01:13.000Z',
-    description='Distributed analyzing synergy',
     due_date='2021-04-27T12:00:00.000Z',
     dynamic_due_date=shared.DynamicDueDate(
-        action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-        number_of_units=2650.8,
-        step_id='female Bahrain Nevada',
-        time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+        action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+        number_of_units=768.01,
+        time_period=shared.DynamicDueDateTimePeriod.MONTHS,
     ),
-    enable_ecp_workflow=False,
     flow=[
-        [],
+        shared.Step(
+            assigned_to=[
+                'Refined',
+            ],
+            automation_config=shared.StepAutomationConfig(
+                flow_id='Nevada',
+            ),
+            due_date='2021-04-27T12:00:00.000Z',
+            dynamic_due_date=shared.DynamicDueDate(
+                action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+                number_of_units=8226.37,
+                time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+            ),
+            ecp=shared.ECPDetails(),
+            name='Bahrain',
+            order=3600.06,
+            requirements=[
+                shared.StepRequirement(
+                    condition=shared.StepRequirementCondition.CLOSED,
+                    definition_id='Ball synthesize encryption',
+                    type=shared.ItemType.SECTION,
+                ),
+            ],
+            type=shared.ItemType.STEP,
+            user_ids=[
+                3002.07,
+            ],
+        ),
     ],
-    id='<ID>',
     last_update_time='2021-04-27T12:01:13.000Z',
-    name='withdrawal Bahrain national',
+    name='charming',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
+            source=shared.UpdateEntityAttributesSource.CURRENT_STEP,
             target=shared.UpdateEntityAttributesTarget(
                 entity_attribute='my_status',
                 entity_schema='opportunity',
@@ -63,7 +86,7 @@ req = shared.WorkflowDefinition(
         ),
     ],
     user_ids=[
-        2732.95,
+        3108.05,
     ],
 )
 
@@ -329,24 +352,47 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         creation_time='2021-04-27T12:01:13.000Z',
-        description='Digitized 5th generation methodology',
         due_date='2021-04-27T12:00:00.000Z',
         dynamic_due_date=shared.DynamicDueDate(
-            action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
-            number_of_units=1623.12,
-            step_id='Creative 5th',
+            action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+            number_of_units=452.1,
             time_period=shared.DynamicDueDateTimePeriod.WEEKS,
         ),
-        enable_ecp_workflow=False,
         flow=[
-            [],
+            shared.Step(
+                assigned_to=[
+                    'tan',
+                ],
+                automation_config=shared.StepAutomationConfig(
+                    flow_id='Honda Algeria',
+                ),
+                due_date='2021-04-27T12:00:00.000Z',
+                dynamic_due_date=shared.DynamicDueDate(
+                    action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+                    number_of_units=4510.87,
+                    time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+                ),
+                ecp=shared.ECPDetails(),
+                name='responsive gold users',
+                order=8109.76,
+                requirements=[
+                    shared.StepRequirement(
+                        condition=shared.StepRequirementCondition.CLOSED,
+                        definition_id='auxiliary West Response',
+                        type=shared.ItemType.STEP,
+                    ),
+                ],
+                type=shared.ItemType.SECTION,
+                user_ids=[
+                    3290.64,
+                ],
+            ),
         ],
-        id='<ID>',
         last_update_time='2021-04-27T12:01:13.000Z',
-        name='Trigender responsive',
+        name='Bicycle',
         update_entity_attributes=[
             shared.UpdateEntityAttributes(
-                source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
+                source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
                 target=shared.UpdateEntityAttributesTarget(
                     entity_attribute='my_status',
                     entity_schema='opportunity',
@@ -354,10 +400,10 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         user_ids=[
-            8191.51,
+            8236.45,
         ],
     ),
-    definition_id='farad',
+    definition_id='benchmark cyan zowie',
 )
 
 res = s.workflows.update_definition(req)

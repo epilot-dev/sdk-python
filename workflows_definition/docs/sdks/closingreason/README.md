@@ -65,11 +65,8 @@ s = sdk.SDK(
 )
 
 req = shared.ClosingReason(
-    creation_time='unlined Versatile',
-    id='<ID>',
-    last_update_time='Club male Cheese',
     status=shared.ClosingReasonsStatus.ACTIVE,
-    title='Electric not Northeast',
+    title='innocently pace Club',
 )
 
 res = s.closing_reason.create_closing_reason(req)
@@ -106,9 +103,7 @@ s = sdk.SDK(
     ),
 )
 
-req = operations.GetAllClosingReasonsRequest(
-    include_inactive=False,
-)
+req = operations.GetAllClosingReasonsRequest()
 
 res = s.closing_reason.get_all_closing_reasons(req)
 
