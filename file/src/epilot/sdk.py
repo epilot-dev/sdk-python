@@ -17,7 +17,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 security: shared.Security = None,
+                 cookie_auth: str,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -26,8 +26,8 @@ class Epilot:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
-        :param security: The security details required for authentication
-        :type security: shared.Security
+        :param cookie_auth: The cookie_auth required for authentication
+        :type cookie_auth: str
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -42,7 +42,9 @@ class Epilot:
         if client is None:
             client = requests_http.Session()
         
+        
         security_client = utils.configure_security_client(client, security)
+        
         
         if server_url is not None:
             if url_params is not None:

@@ -77,9 +77,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DownloadFileRequest(
-    attachment=False,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-    version=925360,
 )
 
 res = s.files.download_file(req)
@@ -158,7 +156,6 @@ s = epilot.Epilot(
 )
 
 req = operations.DownloadS3FileRequest(
-    attachment=False,
     s3_bucket='ad cyan',
     s3_key='South generate Southeast',
 )
@@ -198,10 +195,7 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewFileRequest(
-    h=427171,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-    version=171541,
-    w=89142,
 )
 
 res = s.files.preview_file(req)
@@ -239,11 +233,7 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewPublicFileRequest(
-    h=887797,
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-    org_id='Crew',
-    version=57408,
-    w=444427,
 )
 
 res = s.files.preview_public_file(req)
@@ -285,8 +275,6 @@ req = operations.PreviewS3FileRequest(
         bucket='epilot-files-prod',
         key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
-    h=240917,
-    w=724428,
 )
 
 res = s.files.preview_s3_file(req)
@@ -325,9 +313,7 @@ s = epilot.Epilot(
 
 req = operations.PreviewS3FileGetRequest(
     bucket='Southwest',
-    h=929488,
     key='<key>',
-    w=544902,
 )
 
 res = s.files.preview_s3_file_get(req)
@@ -370,7 +356,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "optio": 'doloremque',
+    "tesla": 'Dominica',
 }
 
 res = s.files.save_file(req)
