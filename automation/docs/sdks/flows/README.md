@@ -30,7 +30,6 @@ s = epilot.Epilot(
 )
 
 req = shared.AutomationFlowInput(
-    enabled=False,
     entity_schema='submission',
     flow_name='Handle contact form',
     runs=7,
@@ -38,11 +37,16 @@ req = shared.AutomationFlowInput(
         shared.TriggerCondition(
             comparison=shared.Comparison.EQUALS,
             source='aggregate',
-            value=[],
+            [
+                9671.8,
+            ],
         ),
     ],
     triggers=[
-        [],
+        shared.ReceivedEmailTrigger(
+            configuration=shared.ReceivedEmailTriggerConfiguration(),
+            type=shared.ReceivedEmailTriggerType.RECEIVED_EMAIL,
+        ),
     ],
 )
 
@@ -158,7 +162,6 @@ s = epilot.Epilot(
 
 req = operations.PutFlowRequest(
     automation_flow_input=shared.AutomationFlowInput(
-        enabled=False,
         entity_schema='submission',
         flow_name='Handle contact form',
         runs=7,
@@ -166,11 +169,14 @@ req = operations.PutFlowRequest(
             shared.TriggerCondition(
                 comparison=shared.Comparison.NOT_EMPTY,
                 source='Chair',
-                value=[],
+            'Analyst',
             ),
         ],
         triggers=[
-            [],
+            shared.ReceivedEmailTrigger(
+                configuration=shared.ReceivedEmailTriggerConfiguration(),
+                type=shared.ReceivedEmailTriggerType.RECEIVED_EMAIL,
+            ),
         ],
     ),
     flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f',
@@ -211,9 +217,7 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchFlowsRequest(
-    from_=253836,
     schema='submission',
-    size=186991,
     trigger_source_id='600945fe-212e-4b97-acf7-391d64648384',
 )
 

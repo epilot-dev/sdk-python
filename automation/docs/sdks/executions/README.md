@@ -107,8 +107,6 @@ s = epilot.Epilot(
 
 req = operations.GetExecutionsRequest(
     entity_id='e3d3ebac-baab-4395-abf4-50b5bf1f8b74',
-    from_=964899,
-    size=653722,
 )
 
 res = s.executions.get_executions(req)
@@ -146,9 +144,7 @@ s = epilot.Epilot(
 )
 
 req = operations.RetriggerActionRequest(
-    retry_req=shared.RetryReq(
-        retry_strategy=shared.RetryStrategy.RETRY_AND_STOP,
-    ),
+    retry_req=shared.RetryReq(),
     action_id='9ec3711b-db63-449c-b894-54d5bb622a8f',
     execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4',
 )

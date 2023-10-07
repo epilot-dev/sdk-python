@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import operationnode as shared_operationnode
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional, Union
+from typing import Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
