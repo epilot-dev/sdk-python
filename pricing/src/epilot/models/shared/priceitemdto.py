@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import metadata as shared_metadata
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -26,7 +27,7 @@ class PriceItemDtoInput:
     r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
     is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
     r"""The flag for prices that contain price components."""
-    metadata: Optional[list[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[list[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
     r"""The id of the price."""

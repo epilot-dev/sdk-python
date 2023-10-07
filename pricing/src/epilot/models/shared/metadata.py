@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional, Union
+from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

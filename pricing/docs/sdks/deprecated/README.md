@@ -29,9 +29,9 @@ s = epilot.Epilot(
 
 req = operations.DollarCreateOpportunityRequest(
     request_body={
-        "nam": 'Michigan',
+        "$ref": 'Sulfur',
     },
-    x_ivy_org_id='Berkelium',
+    x_ivy_org_id='Hybrid weak',
 )
 
 res = s.deprecated.dollar_create_opportunity(req)

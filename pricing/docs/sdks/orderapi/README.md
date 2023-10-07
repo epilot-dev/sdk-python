@@ -30,7 +30,7 @@ s = epilot.Epilot(
 )
 
 req = {
-    "laborum": 'Carmel',
+    "Marketing": 'program',
 }
 
 res = s.order_api.create_order(req)
@@ -69,7 +69,7 @@ s = epilot.Epilot(
 
 req = operations.PutOrderRequest(
     request_body={
-        "pariatur": 'Tools',
+        "disastrous": 'Credit',
     },
     id='<ID>',
 )

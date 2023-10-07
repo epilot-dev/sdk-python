@@ -42,10 +42,61 @@ s = epilot.Epilot(
 
 req = operations.DollarCheckoutCartRequest(
     checkout_cart=shared.CheckoutCart(
-        cart=[],
-        mode=shared.CheckoutMode.CREATE_INVOICE,
+        shared.CartDto(
+            additional_addresses=[
+                {
+                    "Florida": 'Diesel',
+                },
+            ],
+            billing_address={
+                "quantifying": 'ASCII',
+            },
+            consents={
+                "program": 'gold',
+            },
+            customer=shared.Customer(),
+            delivery_address={
+                "Towels": 'on',
+            },
+            files=[
+                'Shirt',
+            ],
+            journey_data={
+                "primary": 'Salad',
+            },
+            line_items=[
+                shared.PriceItemDtoInput(
+                    price={
+                        "$ref": 'up',
+                    },
+                    product={
+                        "$ref": 'before',
+                    },
+                    metadata=[
+                        shared.MetaData1(),
+                    ],
+                ),
+            ],
+            metadata=[
+                shared.MetaData1(),
+            ],
+            payment_method=shared.PaymentMethod(
+                details={
+                    "female": 'Mission',
+                },
+            ),
+            source=shared.OrderSource(
+                http='/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939',
+                title='Journey: PH Journey',
+            ),
+            source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
+            source_type='journey',
+            tags=[
+                'Kansas',
+            ],
+        ),
     ),
-    x_ivy_org_id='gold',
+    x_ivy_org_id='engage Borders',
 )
 
 res = s.cart_api.dollar_checkout_cart(req)

@@ -25,19 +25,13 @@ req = operations.DollarAvailabilityCheckRequest(
     availability_check_params=shared.AvailabilityCheckParams(
         filters=shared.AvailabilityFilters(
             available_date=dateutil.parser.parse('2017-07-21').date(),
-            location=shared.AvailabilityLocation(
-                city='Fort Roger',
-                country='Taiwan',
-                postal_code='59564-5421',
-                street='Glover Shore',
-                street_number='Usability synergize degree',
-            ),
+            location=shared.AvailabilityLocation(),
         ),
         products=[
-            'International',
+            'Visionary',
         ],
     ),
-    x_ivy_org_id='Transexual',
+    x_ivy_org_id='steep Rap synthesize',
 )
 
 res = s.availability_api.dollar_availability_check(req)
