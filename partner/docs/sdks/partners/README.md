@@ -117,8 +117,7 @@ s = epilot.Epilot(
 
 req = [
     operations.BatchGetAssignableRequestBody(
-        org_id='circuit',
-        user_id='yet methodology',
+        user_id='circuit',
     ),
 ]
 
@@ -195,9 +194,7 @@ s = epilot.Epilot(
 )
 
 req = operations.InvitePartnerRequest(
-    partner_invitation_payload=shared.PartnerInvitationPayload(
-        language=shared.PartnerInvitationPayloadLanguage.DE,
-    ),
+    partner_invitation_payload=shared.PartnerInvitationPayload(),
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
 
@@ -274,9 +271,7 @@ s = epilot.Epilot(
 )
 
 req = operations.ResendPartnerInvitationRequest(
-    request_body=operations.ResendPartnerInvitationRequestBody(
-        language=operations.ResendPartnerInvitationRequestBodyLanguage.DE,
-    ),
+    request_body=operations.ResendPartnerInvitationRequestBody(),
     id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc',
 )
 
@@ -321,12 +316,9 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchAssignableRequestBody(
-    from_=495002,
     org_ids=[
         '123',
     ],
-    q='Accounts Infrastructure Boron',
-    size=118246,
     types=[
         operations.SearchAssignableRequestBodyTypes.PARTNER_USER,
     ],
