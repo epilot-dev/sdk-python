@@ -29,9 +29,7 @@ s = epilot.Epilot(
     ),
 )
 
-req = operations.GenerateQRcodeRequest(
-    qrdata='quantifying Crossing newton',
-)
+req = operations.GenerateQRcodeRequest()
 
 res = s.variables.generate_q_rcode(req)
 
@@ -118,13 +116,11 @@ req = operations.GetVariableContextRequestBody(
                 variable='{{craftsmen.invitation_link}}',
             ),
         ],
-        language=shared.VariableParametersLanguage.EN,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_name='Ruthenium quo',
         template_tags=[
-            'Chevrolet',
+            'Account',
         ],
-        template_type=shared.TemplateType.DOCUMENT,
+        template_type=shared.TemplateType.EMAIL,
         user_id='50001',
         user_org_id='729224',
     ),
@@ -169,9 +165,62 @@ s = epilot.Epilot(
 
 req = operations.ReplaceTemplatesRequestBody(
     inputs=[
-        'Hello, {{contact.first_name}}!
-
-        {{{brand.signature}}}
+        'H',
+        'e',
+        'l',
+        'l',
+        'o',
+        ',',
+        ' ',
+        '{',
+        '{',
+        'c',
+        'o',
+        'n',
+        't',
+        'a',
+        'c',
+        't',
+        '.',
+        'f',
+        'i',
+        'r',
+        's',
+        't',
+        '_',
+        'n',
+        'a',
+        'm',
+        'e',
+        '}',
+        '}',
+        '!',
+        '
+        ',
+        '
+        ',
+        '{',
+        '{',
+        '{',
+        'b',
+        'r',
+        'a',
+        'n',
+        'd',
+        '.',
+        's',
+        'i',
+        'g',
+        'n',
+        'a',
+        't',
+        'u',
+        'r',
+        'e',
+        '}',
+        '}',
+        '}',
+        '
         ',
     ],
     parameters=shared.VariableParameters(
@@ -183,11 +232,9 @@ req = operations.ReplaceTemplatesRequestBody(
                 variable='{{craftsmen.invitation_link}}',
             ),
         ],
-        language=shared.VariableParametersLanguage.EN,
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_name='invoice Rubber',
         template_tags=[
-            'Northeast',
+            'Recycled',
         ],
         template_type=shared.TemplateType.DOCUMENT,
         user_id='50001',
@@ -231,13 +278,16 @@ s = epilot.Epilot(
 
 req = operations.SearchVariablesRequestBody(
     entity_schemas=[
-        'contact',
+        'c',
+        'o',
+        'n',
+        't',
+        'a',
+        'c',
+        't',
     ],
-    from_=968492,
-    lang=operations.SearchVariablesRequestBodyLang.EN,
     query='logo',
-    size=177431,
-    template_type=shared.TemplateType.EMAIL,
+    template_type=shared.TemplateType.DOCUMENT,
 )
 
 res = s.variables.search_variables(req)

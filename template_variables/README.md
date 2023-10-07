@@ -26,7 +26,8 @@ req = shared.CustomVariable(
     created_by='100042',
     helper_logic='return param1 * param2;',
     helper_params=[
-        'parse',
+        'param1',
+        'param2',
     ],
     id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
     key='my_custom_table',
@@ -138,7 +139,7 @@ req = shared.CustomVariable(
   </tbody>
 </table>
 ',
-    type=shared.CustomVariableType.ORDER_TABLE,
+    type=shared.CustomVariableType.CUSTOM,
     updated_at='2022-04-20T12:41:43.662Z',
     updated_by='100042',
 )
