@@ -134,12 +134,9 @@ s = epilot.Epilot(
 )
 
 req = operations.ListUsersRequest(
-    limit=5262.12,
-    offset=5400.61,
     org_ids=[
-        'Kentucky',
+        'firewall',
     ],
-    query='West exploit versus',
 )
 
 res = s.user_v1.list_users(req)

@@ -222,9 +222,16 @@ s = epilot.Epilot(
 
 req = shared.UserInvitationPayload(
     email='test@example.com',
-    language=shared.UserInvitationPayloadLanguage.EN,
     roles=[
-        '123:owner',
+        '1',
+        '2',
+        '3',
+        ':',
+        'o',
+        'w',
+        'n',
+        'e',
+        'r',
     ],
 )
 
@@ -262,11 +269,7 @@ s = epilot.Epilot(
     ),
 )
 
-req = operations.ListUsersV2Request(
-    limit=4589.67,
-    offset=7253.59,
-    query='Jazz',
-)
+req = operations.ListUsersV2Request()
 
 res = s.user_v2.list_users_v2(req)
 
@@ -304,7 +307,6 @@ s = epilot.Epilot(
 
 req = operations.ResendUserInvitationRequestBody(
     email='test@example.com',
-    language=operations.ResendUserInvitationRequestBodyLanguage.DE,
 )
 
 res = s.user_v2.resend_user_invitation(req)
@@ -343,9 +345,8 @@ s = epilot.Epilot(
 
 req = operations.SignUpUserRequest(
     signup_user_payload=shared.SignupUserPayload(
-        language=shared.SignupUserPayloadLanguage.DE,
         organization_detail={
-            "blanditiis": 'North',
+            "Optimization": 'North',
         },
         user_detail=shared.UserDetail(
             email='Rossie20@hotmail.com',
@@ -353,7 +354,6 @@ req = operations.SignUpUserRequest(
             password='AKjhdakjsdh@!34',
         ),
     ),
-    token='Porsche',
 )
 
 res = s.user_v2.sign_up_user(req)
@@ -395,18 +395,16 @@ req = operations.UpdateUserV2Request(
         created_at='2022-02-08T04:44:32.246Z',
         department='Sales',
         display_name='Example User',
-        draft_email='Chaya41@hotmail.com',
-        email='Vilma.Cummerata56@gmail.com',
         favorites={
-            "laborum": 'Cotton',
+            "entity_views": 'boohoo',
+            "dashboard": 'Functionality',
         },
-        id='<ID>',
         image_uri={
-            "doloribus": 'Southwest',
+            "original": 'Account',
+            "thumbnail_32": 'lime',
         },
         is_signature_enabled=True,
         mfa_enabled=False,
-        organization_id='Verde Fantastic',
         phone='1234567890',
         phone_verified=True,
         preferred_language='de',
@@ -417,7 +415,6 @@ req = operations.UpdateUserV2Request(
             ),
         ],
         signature='<p>Thanks</p>',
-        status=shared.UserV2Status.PENDING,
         token='65dc527f-cb2d-4158-8f2e-8978dbceb599',
     ),
     id='<ID>',
