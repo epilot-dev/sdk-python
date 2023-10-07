@@ -27,9 +27,9 @@ portalWidget: shared.ActionWidget = /* values here */
 portalWidget: shared.TeaserWidget = /* values here */
 ```
 
-### DocumentWidget
+### WidgetBase
 
 ```python
-portalWidget: shared.DocumentWidget = /* values here */
+portalWidget: shared.WidgetBase = /* values here */
 ```
 

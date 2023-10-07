@@ -84,7 +84,7 @@ src/epilot/models/shared/contentwidget.py
 src/epilot/models/shared/actionwidget.py
 src/epilot/models/shared/widgetaction.py
 src/epilot/models/shared/teaserwidget.py
-src/epilot/models/shared/documentwidget.py
+src/epilot/models/shared/widgetbase.py
 src/epilot/models/shared/saveentityfile.py
 src/epilot/models/shared/createssouserrequest.py
 src/epilot/models/shared/extraschemaattributes.py
@@ -353,10 +353,10 @@ docs/models/shared/teaserwidgetright.md
 docs/models/shared/teaserwidgetsubheadline.md
 docs/models/shared/teaserwidgettype.md
 docs/models/shared/teaserwidget.md
-docs/models/shared/documentwidgetheadline.md
-docs/models/shared/documentwidgetsubheadline.md
-docs/models/shared/documentwidgettype.md
-docs/models/shared/documentwidget.md
+docs/models/shared/widgetbaseheadline.md
+docs/models/shared/widgetbasesubheadline.md
+docs/models/shared/widgetbasetype.md
+docs/models/shared/widgetbase.md
 docs/models/shared/saveentityfilefilesaccesscontrol.md
 docs/models/shared/saveentityfilefiless3ref.md
 docs/models/shared/saveentityfilefiles.md

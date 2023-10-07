@@ -76,7 +76,7 @@ req = operations.CreateUserRequest(
     create_user_request=shared.CreateUserRequest(
         contact_id='123456',
         contact_identifiers={
-            "blanditiis": 'Account',
+            "navigating": 'Sausages',
         },
         email='testemail921@yopmail.com',
         first_name='John',
@@ -125,11 +125,11 @@ s = epilot.Epilot(
 req = operations.GetContactCountRequest(
     contact_count_request=shared.ContactCountRequest(
         contact_identifiers={
-            "ratione": 'Gourde',
+            "Grocery": 'convergence',
         },
         org_id='728',
     ),
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
+    origin=shared.Origin.INSTALLER_PORTAL,
 )
 
 res = s.public.get_contact_count(req)
@@ -324,7 +324,6 @@ s = epilot.Epilot(
 req = operations.UserExistsRequest(
     email='user@example.com',
     org_id='123',
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.public.user_exists(req)

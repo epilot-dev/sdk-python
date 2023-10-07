@@ -1,4 +1,4 @@
-# DocumentWidgetHeadline
+# WidgetBaseHeadline
 
 
 ## Fields

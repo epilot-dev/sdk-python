@@ -1,4 +1,4 @@
-# DocumentWidgetType
+# WidgetBaseType
 
 
 ## Values

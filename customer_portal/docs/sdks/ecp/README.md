@@ -90,7 +90,7 @@ req = operations.CreateCustomEntityActivityRequest(
     activity=shared.Activity(
         message='{{caller}} did something with {{entity payload.entity.id}}.',
         payload={
-            "ratione": 'incidentally',
+            "entity": 'Outdoors',
         },
         title='My custom activity',
         type='MyCustomActivity',
@@ -247,7 +247,8 @@ s = epilot.Epilot()
 
 req = operations.GetAllFilesRequest(
     entity_ids=[
-        'invoice',
+        '4910096f-000a-4504-bf5a-d3774ec3032a',
+        '7c9f8536-6266-42e8-a0de-c60b61aa81a7',
     ],
     from_=0,
     size=0,
@@ -365,10 +366,8 @@ s = epilot.Epilot()
 
 req = operations.GetBillingEventsRequest(
     customer_id='International',
-    date_after=dateutil.parser.isoparse('2023-08-05T02:14:33.017Z'),
-    date_before=dateutil.parser.isoparse('2021-09-29T09:53:56.308Z'),
     entity_id=[
-        'Sedan',
+        'evil',
     ],
     event_type=[
         operations.GetBillingEventsEventType.REIMBURSEMENT,
@@ -480,7 +479,7 @@ s = epilot.Epilot()
 
 req = operations.GetEntitiesByIdentifiersRequest(
     request_body={
-        "facilis": 'News',
+        "female": 'female',
     },
     slug=shared.EntitySlug.CONTACT,
 )
@@ -695,9 +694,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-req = operations.GetPortalConfigRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
-)
+req = operations.GetPortalConfigRequest()
 
 res = s.ecp.get_portal_config(req, operations.GetPortalConfigSecurity(
     epilot_auth="",
@@ -765,9 +762,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-req = operations.GetPortalWidgetsRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
-)
+req = operations.GetPortalWidgetsRequest()
 
 res = s.ecp.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
     epilot_auth="",
@@ -843,7 +838,6 @@ req = shared.SaveEntityFile(
             tags=[
                 'Mobility',
             ],
-            access_control=shared.SaveEntityFileFilesAccessControl.PRIVATE,
             document_type='12345',
             file_entity_id='12345',
             filename='12345',
@@ -926,7 +920,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "quia": 'Moroccan',
+    "Jewell": 'compress',
 }
 
 res = s.ecp.update_contact(req, operations.UpdateContactSecurity(
@@ -964,7 +958,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateContractRequest(
     request_body={
-        "sed": 'fatally',
+        "Path": 'linseed',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -1004,7 +998,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOpportunityRequest(
     request_body={
-        "animi": 'kilogram',
+        "Legacy": 'Pants',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -1044,7 +1038,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOrderRequest(
     request_body={
-        "recusandae": 'North',
+        "yuck": 'Berkshire',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -1083,7 +1077,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "harum": 'Generic',
+    "Manager": 'Product',
 }
 
 res = s.ecp.update_portal_user(req, operations.UpdatePortalUserSecurity(

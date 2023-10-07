@@ -4,9 +4,9 @@ from __future__ import annotations
 import dataclasses
 from ..shared import actionwidget as shared_actionwidget
 from ..shared import contentwidget as shared_contentwidget
-from ..shared import documentwidget as shared_documentwidget
 from ..shared import entitywidget as shared_entitywidget
 from ..shared import teaserwidget as shared_teaserwidget
+from ..shared import widgetbase as shared_widgetbase
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Union
@@ -16,6 +16,6 @@ from typing import Union
 
 @dataclasses.dataclass
 class UpsertPortalWidget:
-    widgets: list[Union[shared_entitywidget.EntityWidget, shared_contentwidget.ContentWidget, shared_actionwidget.ActionWidget, shared_teaserwidget.TeaserWidget, shared_documentwidget.DocumentWidget]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('widgets') }})
+    widgets: list[Union[shared_entitywidget.EntityWidget, shared_contentwidget.ContentWidget, shared_actionwidget.ActionWidget, shared_teaserwidget.TeaserWidget, shared_widgetbase.WidgetBase]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('widgets') }})
     
 

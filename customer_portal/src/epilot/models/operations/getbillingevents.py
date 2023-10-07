@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
-from datetime import datetime
+from datetime import date
 from enum import Enum
 from epilot import utils
 from typing import Any, Optional
@@ -27,8 +27,8 @@ class GetBillingEventsEventType(str, Enum):
 @dataclasses.dataclass
 class GetBillingEventsRequest:
     customer_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'customer_id', 'style': 'form', 'explode': True }})
-    date_after: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_after', 'style': 'form', 'explode': True }})
-    date_before: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_before', 'style': 'form', 'explode': True }})
+    date_after: Optional[date] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_after', 'style': 'form', 'explode': True }})
+    date_before: Optional[date] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_before', 'style': 'form', 'explode': True }})
     entity_id: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
     event_type: Optional[list[GetBillingEventsEventType]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'event_type', 'style': 'form', 'explode': True }})
     

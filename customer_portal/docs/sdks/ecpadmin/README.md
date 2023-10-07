@@ -368,9 +368,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-req = operations.GetPortalConfigRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
-)
+req = operations.GetPortalConfigRequest()
 
 res = s.ecp_admin.get_portal_config(req, operations.GetPortalConfigSecurity(
     epilot_auth="",
@@ -405,9 +403,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot()
 
-req = operations.GetPortalWidgetsRequest(
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
-)
+req = operations.GetPortalWidgetsRequest()
 
 res = s.ecp_admin.get_portal_widgets(req, operations.GetPortalWidgetsSecurity(
     epilot_auth="",
@@ -480,7 +476,6 @@ s = epilot.Epilot()
 
 req = operations.LoginToPortalAsUserRequestBody(
     email='portal-customer@email.com',
-    origin=shared.Origin.END_CUSTOMER_PORTAL,
 )
 
 res = s.ecp_admin.login_to_portal_as_user(req, operations.LoginToPortalAsUserSecurity(
@@ -654,15 +649,15 @@ req = operations.UpsertPortalRequest(
             cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
             cognito_user_pool_id='eu-central-1_CUEQRNbUb',
         ),
-        config='male Rancho',
         contact_identifiers=[
-            'applications',
+            'email',
+            'last_name',
         ],
         contact_secondary_identifier='full_name',
         default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
             on_pending_user=[
                 {
-                    "illum": 'plum',
+                    "up": 'array',
                 },
             ],
         ),
@@ -675,14 +670,9 @@ req = operations.UpsertPortalRequest(
             on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
             on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
         ),
-        enabled=False,
         entity_actions=[
             shared.UpsertPortalConfigEntityActions(
-                action_label=shared.UpsertPortalConfigEntityActionsActionLabel(
-                    de='Global katal',
-                    en='female New leverage',
-                ),
-                journey_id='Loan',
+                action_label=shared.UpsertPortalConfigEntityActionsActionLabel(),
                 slug=shared.EntitySlug.CONTACT,
             ),
         ],
@@ -692,29 +682,37 @@ req = operations.UpsertPortalRequest(
                 allowed_increment='10%',
                 attribute='first_name',
                 cadence_period=1,
-                cadence_period_type=shared.UpsertPortalConfigEntityEditRulesCadencePeriodType.DAYS,
                 changes_allowed=1,
                 grace_period=1,
                 number_of_days_before_restriction=10,
-                rule_type=shared.UpsertPortalConfigEntityEditRulesRuleType.CADENCE,
                 slug=shared.EntitySlug.CONTACT,
             ),
         ],
         entity_identifiers=shared.UpsertPortalConfigEntityIdentifiers(
             type=shared.UpsertPortalConfigEntityIdentifiersType(
                 attributes=[
-                    'contract_number',
+                    'c',
+                    'o',
+                    'n',
+                    't',
+                    'r',
+                    'a',
+                    'c',
+                    't',
+                    '_',
+                    'n',
+                    'u',
+                    'm',
+                    'b',
+                    'e',
+                    'r',
                 ],
-                is_enabled=False,
             ),
         ),
-        feature_settings=shared.UpsertPortalConfigFeatureSettings(
-            start_page=False,
-        ),
+        feature_settings=shared.UpsertPortalConfigFeatureSettings(),
         grants=[
             shared.Grant(
                 action='entity-read',
-                effect=shared.GrantEffect.ALLOW,
                 resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
             ),
         ],
@@ -723,10 +721,8 @@ req = operations.UpsertPortalRequest(
             order_right_teaser='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg',
             welcome_banner='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg',
         ),
-        is_epilot_domain=False,
         name='Installer Portal',
         self_registration=False,
-        self_registration_setting=shared.UpsertPortalConfigSelfRegistrationSetting.ALLOW_WITH_CONTACT_CREATION,
     ),
     origin=shared.Origin.INSTALLER_PORTAL,
 )
@@ -767,7 +763,13 @@ s = epilot.Epilot()
 req = operations.UpsertPortalWidgetRequest(
     upsert_portal_widget=shared.UpsertPortalWidget(
         widgets=[
-            [],
+            shared.WidgetBase(
+                headline=shared.WidgetBaseHeadline(),
+                id='<ID>',
+                list_index=393843,
+                sub_headline=shared.WidgetBaseSubHeadline(),
+                type=shared.WidgetBaseType.ACTION_WIDGET,
+            ),
         ],
     ),
     origin=shared.Origin.INSTALLER_PORTAL,
