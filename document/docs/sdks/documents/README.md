@@ -104,12 +104,8 @@ req = operations.GenerateDocumentV2Request(
             ),
         ),
         user_id='100321',
-        variable_payload=operations.GenerateDocumentV2RequestBodyVariablePayload(
-            additional_properties='Jewelery invoice',
-        ),
+        variable_payload=operations.GenerateDocumentV2RequestBodyVariablePayload(),
     ),
-    job_id='Toys',
-    mode=operations.GenerateDocumentV2Mode.PARTIAL_GENERATION,
 )
 
 res = s.documents.generate_document_v2(req)
