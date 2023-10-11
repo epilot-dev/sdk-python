@@ -12,6 +12,10 @@ from typing import Optional
 @dataclasses.dataclass
 class StepID:
     entity_ref_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityRefId'), 'exclude': lambda f: f is None }})
+    r"""This field is deprecated. It will be soon removed. Please use only id.
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     
 

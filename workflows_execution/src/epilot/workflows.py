@@ -298,6 +298,8 @@ class Workflows:
     def search_steps(self, request: shared.SearchStepsReq) -> operations.SearchStepsResponse:
         r"""searchSteps
         Search workflow execution steps by different filters.
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         

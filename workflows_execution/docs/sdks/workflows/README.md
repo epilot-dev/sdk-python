@@ -15,7 +15,7 @@ Interact with workflow executions - start / close / retrieve one or all / search
 * [get_execution](#get_execution) - getExecution
 * [get_executions](#get_executions) - getExecutions
 * [search_executions](#search_executions) - searchExecutions
-* [search_steps](#search_steps) - searchSteps
+* [~~search_steps~~](#search_steps) - searchSteps :warning: **Deprecated**
 * [update_execution](#update_execution) - updateExecution
 * [update_step](#update_step) - updateStep
 
@@ -341,9 +341,11 @@ if res.search_executions_resp is not None:
 **[operations.SearchExecutionsResponse](../../models/operations/searchexecutionsresponse.md)**
 
 
-## search_steps
+## ~~search_steps~~
 
 Search workflow execution steps by different filters.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -467,14 +469,13 @@ req = operations.UpdateStepRequest(
             number_of_units=1968.04,
             time_period=shared.DynamicDueDateTimePeriod.WEEKS,
         ),
-        entity_ref_id='yellow transmitter fairly',
         position=shared.StepPositionAt(),
         user_ids=[
-            5550.61,
+            8505.4,
         ],
     ),
-    execution_id='um fuchsia accusamus',
-    step_id='connecting',
+    execution_id='Southeast Tesla Bespoke',
+    step_id='um fuchsia accusamus',
 )
 
 res = s.workflows.update_step(req)

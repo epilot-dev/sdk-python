@@ -55,7 +55,7 @@ if res.workflow_execution is not None:
 * [get_execution](docs/sdks/workflows/README.md#get_execution) - getExecution
 * [get_executions](docs/sdks/workflows/README.md#get_executions) - getExecutions
 * [search_executions](docs/sdks/workflows/README.md#search_executions) - searchExecutions
-* [search_steps](docs/sdks/workflows/README.md#search_steps) - searchSteps
+* [~~search_steps~~](docs/sdks/workflows/README.md#search_steps) - searchSteps :warning: **Deprecated**
 * [update_execution](docs/sdks/workflows/README.md#update_execution) - updateExecution
 * [update_step](docs/sdks/workflows/README.md#update_step) - updateStep
 <!-- End SDK Available Operations -->

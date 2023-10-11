@@ -20,7 +20,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class StepExtended:
-    entity_ref_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityRefId') }})
     execution_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionId') }})
     execution_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionName') }})
     execution_status: shared_workflowstatus.WorkflowStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionStatus') }})
@@ -43,6 +42,11 @@ class StepExtended:
     r"""Details regarding ECP for the workflow step"""
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""enabled flag results from calculating the requirements"""
+    entity_ref_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityRefId'), 'exclude': lambda f: f is None }})
+    r"""This field is deprecated. It will be soon removed. Please use only id.
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     execution_type: Optional[shared_steptype.StepType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
     last_updated: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lastUpdated'), 'exclude': lambda f: f is None }})
     manually_created: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('manuallyCreated'), 'exclude': lambda f: f is None }})
