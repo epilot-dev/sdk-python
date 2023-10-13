@@ -33,6 +33,7 @@ res = s.user_v1.get_me()
 
 if res.user is not None:
     # handle response
+    pass
 ```
 
 
@@ -65,6 +66,7 @@ res = s.user_v1.get_user(req)
 
 if res.user is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -103,6 +105,7 @@ res = s.user_v1.get_user_login_parameters(req)
 
 if res.get_user_login_parameters_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -143,6 +146,7 @@ res = s.user_v1.list_users(req)
 
 if res.list_users_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
