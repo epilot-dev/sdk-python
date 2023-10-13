@@ -46,6 +46,7 @@ res = s.files.delete_file(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,6 +85,7 @@ res = s.files.download_file(req)
 
 if res.download_file_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -125,6 +127,7 @@ res = s.files.download_files(req)
 
 if res.download_files_200_application_json_objects is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -164,6 +167,7 @@ res = s.files.download_s3_file(req)
 
 if res.download_s3_file_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -202,6 +206,7 @@ res = s.files.preview_file(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -240,6 +245,7 @@ res = s.files.preview_public_file(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -281,6 +287,7 @@ res = s.files.preview_s3_file(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -320,6 +327,7 @@ res = s.files.preview_s3_file_get(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -363,6 +371,7 @@ res = s.files.save_file(req)
 
 if res.file_entity is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -408,6 +417,7 @@ res = s.files.upload_file(req)
 
 if res.upload_file_201_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -450,6 +460,7 @@ res = s.files.upload_file_public(req)
 
 if res.upload_file_public_201_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

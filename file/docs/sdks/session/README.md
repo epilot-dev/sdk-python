@@ -31,6 +31,7 @@ res = s.session.delete_session()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
@@ -63,6 +64,7 @@ res = s.session.get_session()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
