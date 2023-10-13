@@ -35,6 +35,7 @@ res = s.variables.generate_q_rcode(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -73,6 +74,7 @@ res = s.variables.get_categories(req)
 
 if res.category_results is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -130,6 +132,7 @@ res = s.variables.get_variable_context(req)
 
 if res.variable_context is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -246,6 +249,7 @@ res = s.variables.replace_templates(req)
 
 if res.replace_templates_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -294,6 +298,7 @@ res = s.variables.search_variables(req)
 
 if res.variable_results is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

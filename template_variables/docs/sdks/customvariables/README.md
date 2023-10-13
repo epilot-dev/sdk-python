@@ -154,6 +154,7 @@ res = s.custom_variables.create_custom_variable(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -192,6 +193,7 @@ res = s.custom_variables.delete_custom_variable(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -227,6 +229,7 @@ res = s.custom_variables.get_blue_print_table_config()
 
 if res.custom_variable is not None:
     # handle response
+    pass
 ```
 
 
@@ -259,6 +262,7 @@ res = s.custom_variables.get_custom_variable(req)
 
 if res.custom_variable is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -294,6 +298,7 @@ res = s.custom_variables.get_custom_variables()
 
 if res.custom_variables is not None:
     # handle response
+    pass
 ```
 
 
@@ -449,6 +454,7 @@ res = s.custom_variables.update_custom_variable(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

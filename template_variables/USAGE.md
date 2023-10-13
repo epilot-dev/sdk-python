@@ -139,5 +139,6 @@ res = s.custom_variables.create_custom_variable(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
