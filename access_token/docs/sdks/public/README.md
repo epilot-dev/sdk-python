@@ -33,6 +33,7 @@ res = s.public.get_access_token_jwks()
 
 if res.get_access_token_jwks_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -66,6 +67,7 @@ res = s.public.get_access_token_oidc()
 
 if res.get_access_token_oidc_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -95,6 +97,7 @@ res = s.public.get_public_token_jwks()
 
 if res.get_public_token_jwks_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -128,6 +131,7 @@ res = s.public.get_public_token_oidc()
 
 if res.get_public_token_oidc_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 

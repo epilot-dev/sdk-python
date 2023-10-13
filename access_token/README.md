@@ -20,14 +20,18 @@ s = epilot.Epilot(
     ),
 )
 
-req = {
-    "SAS": 'Nissan',
-}
+req = shared.AccessTokenParameters(
+    assignments=[
+        '123:owner',
+    ],
+    name='Postman Access Token',
+)
 
 res = s.access_tokens.create_access_token(req)
 
 if res.create_access_token_201_application_json_object is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 

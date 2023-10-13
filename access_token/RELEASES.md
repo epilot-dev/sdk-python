@@ -201,3 +201,11 @@ Based on:
 - Speakeasy CLI 1.96.1 (2.150.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.11.0] access_token
+
+## 2023-10-13 00:38:59
+### Changes
+Based on:
+- OpenAPI Doc 0.2.0 https://docs.api.epilot.io/access-token.yaml
+- Speakeasy CLI 1.99.1 (2.154.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.11.1] access_token

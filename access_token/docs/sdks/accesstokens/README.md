@@ -39,21 +39,25 @@ s = epilot.Epilot(
     ),
 )
 
-req = {
-    "SAS": 'Nissan',
-}
+req = shared.AccessTokenParameters(
+    assignments=[
+        '123:owner',
+    ],
+    name='Postman Access Token',
+)
 
 res = s.access_tokens.create_access_token(req)
 
 if res.create_access_token_201_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [Union[shared.AccessTokenParameters, shared.JourneyTokenParameters]](../../models/shared/tokenparameters.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
@@ -87,6 +91,7 @@ res = s.access_tokens.list_access_tokens(req)
 
 if res.access_token_items is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -125,6 +130,7 @@ res = s.access_tokens.revoke_access_token(req)
 
 if res.access_token_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
