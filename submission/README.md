@@ -22,13 +22,13 @@ req = shared.SubmissionPayload(
     ],
     entities=[
         {
-            "description": 'Bike',
-            "contact_first_name": 'Shoes',
-            "contact_last_name": 'Incredible',
-            "contact_email": 'Borders',
-            "request": 'synergistic',
-            "files": 'versus',
-            "_schema": 'blah',
+            "_schema": 'Bike',
+            "description": 'Shoes',
+            "contact_first_name": 'Incredible',
+            "contact_last_name": 'Borders',
+            "contact_email": 'synergistic',
+            "request": 'versus',
+            "files": 'blah',
         },
     ],
     journey_submit_id='123',
@@ -50,6 +50,7 @@ res = s.submissions.create_submission(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
