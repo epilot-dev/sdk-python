@@ -52,6 +52,7 @@ res = s.documents.generate_document(req)
 
 if res.generate_document_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -112,6 +113,7 @@ res = s.documents.generate_document_v2(req)
 
 if res.generate_document_v2_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

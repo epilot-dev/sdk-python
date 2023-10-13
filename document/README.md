@@ -37,6 +37,7 @@ res = s.documents.generate_document(req)
 
 if res.generate_document_200_application_json_object is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
