@@ -39,6 +39,7 @@ res = s.entity_import.import_entities(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

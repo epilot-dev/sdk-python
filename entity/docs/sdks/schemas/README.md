@@ -39,6 +39,7 @@ res = s.schemas.delete_schema(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -77,6 +78,7 @@ res = s.schemas.get_schema(req)
 
 if res.entity_schema_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -115,6 +117,7 @@ res = s.schemas.get_schema_versions(req)
 
 if res.get_schema_versions_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -150,6 +153,7 @@ res = s.schemas.list_schema_blueprints()
 
 if res.list_schema_blueprints_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -180,6 +184,7 @@ res = s.schemas.list_schemas(req)
 
 if res.list_schemas_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -219,6 +224,7 @@ res = s.schemas.list_taxonomy_classifications_for_schema(req)
 
 if res.list_taxonomy_classifications_for_schema_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -487,6 +493,7 @@ res = s.schemas.put_schema(req)
 
 if res.entity_schema_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

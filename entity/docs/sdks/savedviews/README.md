@@ -53,6 +53,7 @@ res = s.saved_views.create_saved_view(req)
 
 if res.saved_view_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -91,6 +92,7 @@ res = s.saved_views.delete_saved_view(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -129,6 +131,7 @@ res = s.saved_views.get_saved_view(req)
 
 if res.get_saved_view_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -164,6 +167,7 @@ res = s.saved_views.list_favorite_views_for_user()
 
 if res.list_favorite_views_for_user_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -193,6 +197,7 @@ res = s.saved_views.list_saved_views()
 
 if res.list_saved_views_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -243,6 +248,7 @@ res = s.saved_views.update_saved_view(req)
 
 if res.saved_view_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

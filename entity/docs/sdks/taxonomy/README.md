@@ -37,6 +37,7 @@ res = s.taxonomy.get_taxonomy(req)
 
 if res.taxonomy is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -72,6 +73,7 @@ res = s.taxonomy.list_taxonomies()
 
 if res.list_taxonomies_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -109,6 +111,7 @@ res = s.taxonomy.taxonomies_classifications_search(req)
 
 if res.taxonomies_classifications_search_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -147,6 +150,7 @@ res = s.taxonomy.taxonomy_autocomplete(req)
 
 if res.taxonomy_autocomplete_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -207,6 +211,7 @@ res = s.taxonomy.update_classifications_for_taxonomy(req)
 
 if res.update_classifications_for_taxonomy_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

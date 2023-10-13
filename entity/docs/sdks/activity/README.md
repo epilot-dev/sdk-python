@@ -39,6 +39,7 @@ res = s.activity.attach_activity(req)
 
 if res.activity_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -91,6 +92,7 @@ res = s.activity.create_activity(req)
 
 if res.activity_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -129,6 +131,7 @@ res = s.activity.get_activity(req)
 
 if res.activity_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -171,6 +174,7 @@ res = s.activity.get_entity_activity_feed(req)
 
 if res.get_entity_activity_feed_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

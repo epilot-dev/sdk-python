@@ -42,6 +42,7 @@ res = s.entities.autocomplete(req)
 
 if res.autocomplete_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -99,14 +100,14 @@ s = epilot.Epilot(
 
 req = operations.CreateEntityRequest(
     request_body={
-        "_updated_at": 'Industrial',
-        "_acl": 'Implementation',
-        "_id": 'Future',
-        "_org": 'Southeast',
-        "_owners": 'Tandem',
-        "_schema": 'male',
-        "_tags": 'North',
-        "_created_at": 'Beach',
+        "_created_at": 'Industrial',
+        "_updated_at": 'Implementation',
+        "_acl": 'Future',
+        "_id": 'Southeast',
+        "_org": 'Tandem',
+        "_owners": 'male',
+        "_schema": 'North',
+        "_tags": 'Beach',
     },
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     slug='contact',
@@ -116,6 +117,7 @@ res = s.entities.create_entity(req)
 
 if res.entity_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -161,6 +163,7 @@ res = s.entities.delete_entity(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -263,6 +266,7 @@ res = s.entities.get_entity(req)
 
 if res.get_entity_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -322,14 +326,14 @@ s = epilot.Epilot(
 
 req = operations.PatchEntityRequest(
     request_body={
-        "_tags": 'fuchsia',
-        "_created_at": 'Account',
-        "_updated_at": 'engage',
-        "_acl": 'Cis',
-        "_id": 'solutions',
-        "_org": 'founder',
-        "_owners": 'Southeast',
-        "_schema": 'Cab',
+        "_updated_at": 'fuchsia',
+        "_acl": 'Account',
+        "_id": 'engage',
+        "_org": 'Cis',
+        "_owners": 'solutions',
+        "_schema": 'founder',
+        "_tags": 'Southeast',
+        "_created_at": 'Cab',
     },
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     id='06e999b7-2319-4d9e-8290-d19da9e1f40d',
@@ -340,6 +344,7 @@ res = s.entities.patch_entity(req)
 
 if res.entity_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -450,6 +455,7 @@ res = s.entities.search_entities(req)
 
 if res.entity_search_results is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -507,14 +513,14 @@ s = epilot.Epilot(
 
 req = operations.UpdateEntityRequest(
     request_body={
-        "_updated_at": 'Hartmann',
-        "_acl": 'invoice',
-        "_id": 'fathom',
-        "_org": 'Nepal',
-        "_owners": 'indexing',
-        "_schema": 'male',
-        "_tags": 'Profound',
-        "_created_at": 'policy',
+        "_acl": 'Hartmann',
+        "_id": 'invoice',
+        "_org": 'fathom',
+        "_owners": 'Nepal',
+        "_schema": 'indexing',
+        "_tags": 'male',
+        "_created_at": 'Profound',
+        "_updated_at": 'policy',
     },
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     id='1d12df74-462a-498e-a7ff-ce36a4e49616',
@@ -525,6 +531,7 @@ res = s.entities.update_entity(req)
 
 if res.entity_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -588,6 +595,7 @@ res = s.entities.upsert_entity(req)
 
 if res.entity_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

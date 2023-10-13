@@ -22,5 +22,6 @@ res = s.activity.attach_activity(req)
 
 if res.activity_item is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

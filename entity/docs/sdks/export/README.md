@@ -43,6 +43,7 @@ res = s.export.export_entities(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

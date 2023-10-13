@@ -49,6 +49,7 @@ res = s.relations.add_relations(req)
 
 if res.relation_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -91,6 +92,7 @@ res = s.relations.delete_relation(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -134,6 +136,7 @@ res = s.relations.get_related_entities_count(req)
 
 if res.get_related_entities_count is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -178,6 +181,7 @@ res = s.relations.get_relations(req)
 
 if res.get_relations_resp is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -227,6 +231,7 @@ res = s.relations.get_relations_v2(req)
 
 if res.get_relations_resp_with_pagination is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -274,6 +279,7 @@ res = s.relations.update_relation(req)
 
 if res.relation_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
