@@ -36,6 +36,7 @@ res = s.epilot.get_jwks()
 
 if res.get_jwks_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -69,6 +70,7 @@ res = s.epilot.get_open_id_configuration()
 
 if res.get_open_id_configuration_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -122,6 +124,7 @@ res = s.epilot.get_token()
 
 if res.get_token_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -180,6 +183,7 @@ res = s.epilot.get_token_v2(req)
 
 if res.get_token_v2_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
