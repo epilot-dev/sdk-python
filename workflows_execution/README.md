@@ -38,6 +38,7 @@ res = s.workflows.create_execution(req)
 
 if res.workflow_execution is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 

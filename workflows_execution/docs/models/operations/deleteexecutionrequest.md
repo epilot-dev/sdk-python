@@ -5,4 +5,4 @@
 
 | Field                              | Type                               | Required                           | Description                        |
 | ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
-| `execution_id`                     | *Optional[str]*                    | :heavy_check_mark:                 | Id of the execution to de deleted. |
+| `execution_id`                     | *str*                              | :heavy_check_mark:                 | Id of the execution to de deleted. |
