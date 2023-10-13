@@ -46,6 +46,7 @@ res = s.partners.activate_partner(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,6 +85,7 @@ res = s.partners.approve_partner(req)
 
 if res.partner is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -125,6 +127,7 @@ res = s.partners.batch_get_assignable(req)
 
 if res.batch_get_assignable_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -163,6 +166,7 @@ res = s.partners.get_partner_by_token(req)
 
 if res.partner is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -202,6 +206,7 @@ res = s.partners.invite_partner(req)
 
 if res.partner is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -240,6 +245,7 @@ res = s.partners.reject_partner(req)
 
 if res.partner is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -279,6 +285,7 @@ res = s.partners.resend_partner_invitation(req)
 
 if res.partner is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -328,6 +335,7 @@ res = s.partners.search_assignable(req)
 
 if res.search_assignable_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -366,6 +374,7 @@ res = s.partners.search_geolocation_for_text(req)
 
 if res.geolocation is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

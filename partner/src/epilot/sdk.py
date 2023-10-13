@@ -14,7 +14,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 as_organization: str,
+                 security: shared.Security = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -23,8 +23,8 @@ class Epilot:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
-        :param as_organization: The as_organization required for authentication
-        :type as_organization: str
+        :param security: The security details required for authentication
+        :type security: shared.Security
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
