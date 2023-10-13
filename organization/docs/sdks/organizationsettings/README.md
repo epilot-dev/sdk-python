@@ -36,6 +36,7 @@ res = s.organization_settings.delete_settings_value(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -74,6 +75,7 @@ res = s.organization_settings.get_settings(req)
 
 if res.settings is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -116,6 +118,7 @@ res = s.organization_settings.put_settings_value(req)
 
 if res.settings_value is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -19,5 +19,6 @@ res = s.organization.get_organization(req)
 
 if res.organization is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
