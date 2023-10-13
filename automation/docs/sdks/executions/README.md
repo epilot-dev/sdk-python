@@ -37,6 +37,7 @@ res = s.executions.cancel_execution(req)
 
 if res.automation_execution is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ res = s.executions.get_execution(req)
 
 if res.automation_execution is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -113,6 +115,7 @@ res = s.executions.get_executions(req)
 
 if res.get_executions_resp is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -153,6 +156,7 @@ res = s.executions.retrigger_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -191,6 +195,7 @@ res = s.executions.start_execution(req)
 
 if res.automation_execution is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
