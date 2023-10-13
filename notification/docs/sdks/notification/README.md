@@ -38,6 +38,7 @@ res = s.notification.create_notification(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -76,6 +77,7 @@ res = s.notification.get_notification(req)
 
 if res.notification_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -112,6 +114,7 @@ res = s.notification.get_notifications(req)
 
 if res.get_notifications_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -147,6 +150,7 @@ res = s.notification.get_total_unread()
 
 if res.get_total_unread_200_text_plain_number is not None:
     # handle response
+    pass
 ```
 
 
@@ -176,6 +180,7 @@ res = s.notification.mark_all_as_read()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
@@ -208,6 +213,7 @@ res = s.notification.mark_as_read(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
