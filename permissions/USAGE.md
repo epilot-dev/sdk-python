@@ -20,5 +20,6 @@ res = s.assignments.add_assignment(req)
 
 if res.assignment is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

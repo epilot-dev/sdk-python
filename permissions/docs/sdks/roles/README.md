@@ -39,6 +39,7 @@ res = s.roles.delete_role(req)
 
 if res.role is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -77,6 +78,7 @@ res = s.roles.get_role(req)
 
 if res.role is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -112,6 +114,7 @@ res = s.roles.list_all_roles()
 
 if res.list_all_roles_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -141,6 +144,7 @@ res = s.roles.list_current_roles()
 
 if res.list_current_roles_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 
@@ -209,6 +213,7 @@ res = s.roles.put_role(req)
 
 if res.role is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -244,6 +249,7 @@ res = s.roles.refresh_permissions()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
@@ -290,6 +296,7 @@ res = s.roles.search_roles(req)
 
 if res.search_roles_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
