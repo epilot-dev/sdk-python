@@ -94,6 +94,7 @@ res = s.workflows.create_definition(req)
 
 if res.workflow_definition is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -132,6 +133,7 @@ res = s.workflows.delete_definition(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -170,6 +172,7 @@ res = s.workflows.get_definition(req)
 
 if res.workflow_definition is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -205,6 +208,7 @@ res = s.workflows.get_definitions()
 
 if res.workflow_definitions is not None:
     # handle response
+    pass
 ```
 
 
@@ -234,6 +238,7 @@ res = s.workflows.get_max_allowed_limit()
 
 if res.max_allowed_limit is not None:
     # handle response
+    pass
 ```
 
 
@@ -266,6 +271,7 @@ res = s.workflows.get_workflow_closing_reasons(req)
 
 if res.closing_reasons_ids is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -311,6 +317,7 @@ res = s.workflows.set_workflow_closing_reasons(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -410,6 +417,7 @@ res = s.workflows.update_definition(req)
 
 if res.workflow_definition is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

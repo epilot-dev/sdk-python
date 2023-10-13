@@ -34,6 +34,7 @@ res = s.closing_reason.change_reason_status(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -73,6 +74,7 @@ res = s.closing_reason.create_closing_reason(req)
 
 if res.closing_reason is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -109,6 +111,7 @@ res = s.closing_reason.get_all_closing_reasons(req)
 
 if res.closing_reasons is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
