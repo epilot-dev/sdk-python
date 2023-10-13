@@ -103,6 +103,7 @@ res = s.cart_api.dollar_checkout_cart(req)
 
 if res.checkout_cart_result is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

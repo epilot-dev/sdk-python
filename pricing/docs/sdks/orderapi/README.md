@@ -37,6 +37,7 @@ res = s.order_api.create_order(req)
 
 if res.order is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -78,6 +79,7 @@ res = s.order_api.put_order(req)
 
 if res.order is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

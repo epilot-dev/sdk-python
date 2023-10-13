@@ -38,6 +38,7 @@ res = s.deprecated.dollar_create_opportunity(req)
 
 if res.opportunity is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

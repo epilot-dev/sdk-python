@@ -42,6 +42,7 @@ res = s.catalog_api.dollar_search_catalog(req)
 
 if res.catalog_search_result is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

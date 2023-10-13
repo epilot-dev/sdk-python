@@ -29,5 +29,6 @@ res = s.availability_api.dollar_availability_check(req)
 
 if res.availability_result is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
