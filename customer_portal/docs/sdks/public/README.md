@@ -42,6 +42,7 @@ res = s.public.confirm_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -92,6 +93,7 @@ res = s.public.create_user(req)
 
 if res.create_user_201_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -136,6 +138,7 @@ res = s.public.get_contact_count(req)
 
 if res.get_contact_count_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -175,6 +178,7 @@ res = s.public.get_count_by_email(req)
 
 if res.get_count_by_email_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -213,6 +217,7 @@ res = s.public.get_portal_config_by_domain(req)
 
 if res.portal_config is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -252,6 +257,7 @@ res = s.public.get_public_portal_config(req)
 
 if res.portal_config is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -291,6 +297,7 @@ res = s.public.get_public_portal_widgets(req)
 
 if res.upsert_portal_widget is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -330,6 +337,7 @@ res = s.public.user_exists(req)
 
 if res.user_exists_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

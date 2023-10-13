@@ -26,6 +26,7 @@ res = s.balance.get_customer_balance(req, operations.GetCustomerBalanceSecurity(
 
 if res.balance is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 

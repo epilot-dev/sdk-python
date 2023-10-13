@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `bucket`           | *Optional[str]*    | :heavy_check_mark: | S3 bucket name     | 12345              |
-| `key`              | *Optional[str]*    | :heavy_check_mark: | S3 key             | 12345              |
+| `bucket`           | *str*              | :heavy_check_mark: | S3 bucket name     | 12345              |
+| `key`              | *str*              | :heavy_check_mark: | S3 key             | 12345              |
