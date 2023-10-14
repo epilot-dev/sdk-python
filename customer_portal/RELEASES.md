@@ -35,3 +35,605 @@ Based on:
 Based on:
 - OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
 - Speakeasy CLI 1.19.2 (2.16.5) https://github.com/speakeasy-api/speakeasy
+
+## 2023-03-31 00:34:45
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.19.2 (2.16.5) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-01 00:35:12
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.19.3 (2.16.7) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-06 00:31:19
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.19.6 (2.17.8) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-08 00:30:17
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.19.6 (2.17.8) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-12 00:32:10
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.19.7 (2.17.9) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-14 00:31:27
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.20.0 (2.18.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-18 00:31:22
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.20.1 (2.18.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-19 00:34:00
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.20.2 (2.18.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-21 00:31:53
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.21.4 (2.19.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-22 00:32:03
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.22.1 (2.20.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-26 00:33:29
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.23.1 (2.21.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-27 00:35:09
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.25.1 (2.22.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-28 00:33:46
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.26.2 (2.23.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-04-29 00:31:45
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.26.4 (2.23.4) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-02 00:32:31
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.26.5 (2.23.6) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-03 00:32:00
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.27.0 (2.24.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-05 00:30:31
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.29.0 (2.26.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-06 00:29:40
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.29.1 (2.26.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-10 00:31:42
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.29.2 (2.26.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-11 00:32:10
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.30.0 (2.26.3) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-12 00:32:02
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.30.1 (2.26.4) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-13 00:30:22
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.31.1 (2.27.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-16 00:32:32
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.32.0 (2.28.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-17 00:35:49
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.33.2 (2.29.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-18 00:32:33
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.34.0 (2.30.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-19 00:32:54
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.35.0 (2.31.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-23 00:34:05
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.37.5 (2.32.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-05-27 00:34:31
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.39.0 (2.32.7) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-01 00:46:34
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.40.2 (2.34.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-02 00:37:42
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.40.3 (2.34.7) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-03 00:36:28
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.43.0 (2.35.3) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-06 00:38:43
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.44.0 (2.35.3) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-07 00:39:38
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.44.2 (2.35.9) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-08 00:37:57
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.45.0 (2.37.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-09 00:40:31
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.45.2 (2.37.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-10 00:35:50
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.47.0 (2.39.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-11 00:42:01
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.47.1 (2.39.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-13 00:37:47
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.47.1 (2.39.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-14 00:36:10
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.47.3 (2.40.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-16 00:38:15
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.48.0 (2.41.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-20 00:35:26
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.49.0 (2.41.4) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-21 00:37:12
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.49.1 (2.41.5) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-23 00:41:04
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.50.1 (2.43.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-27 00:41:12
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.51.1 (2.50.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-06-29 00:40:51
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.51.3 (2.52.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-01 00:45:49
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.52.0 (2.55.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-06 00:42:49
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.52.2 (2.57.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-07 00:42:22
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.53.0 (2.58.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-08 00:42:12
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.53.1 (2.58.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-11 00:37:34
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.56.0 (2.61.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-12 00:43:25
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.56.3 (2.61.4) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-13 00:42:15
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.57.0 (2.62.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-14 00:42:35
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.59.0 (2.65.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-18 01:00:38
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.61.0 (2.70.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-19 01:05:05
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.62.1 (2.70.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-22 00:37:30
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.64.0 (2.71.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-26 00:35:53
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.65.0 (2.73.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-27 00:34:38
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.65.1 (2.73.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-07-28 00:34:30
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.65.2 (2.75.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-08-01 00:40:25
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.66.1 (2.75.2) https://github.com/speakeasy-api/speakeasy
+
+## 2023-08-03 00:36:23
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.68.1 (2.77.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-08-04 00:35:47
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.68.3 (2.81.1) https://github.com/speakeasy-api/speakeasy
+
+## 2023-08-08 00:34:07
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.69.1 (2.82.0) https://github.com/speakeasy-api/speakeasy
+
+## 2023-08-11 00:28:03
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.71.0 (2.83.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.39.1] customer_portal
+
+## 2023-08-15 00:28:35
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.72.0 (2.84.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.40.0] customer_portal
+
+## 2023-08-17 00:28:07
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.73.1 (2.84.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.40.1] customer_portal
+
+## 2023-08-18 00:28:23
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.73.1 (2.84.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.40.2] customer_portal
+
+## 2023-08-19 00:27:08
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.74.3 (2.86.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.40.3] customer_portal
+
+## 2023-08-26 00:27:39
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.74.15 (2.88.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.41.0] customer_portal
+
+## 2023-08-29 00:29:23
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.74.17 (2.88.5) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.41.1] customer_portal
+
+## 2023-08-31 00:29:29
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.76.0 (2.89.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.42.0] customer_portal
+
+## 2023-09-01 00:31:37
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.77.0 (2.91.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.43.0] customer_portal
+
+## 2023-09-02 00:28:07
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.77.2 (2.93.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.43.1] customer_portal
+
+## 2023-09-05 00:28:50
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.78.3 (2.96.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.43.2] customer_portal
+
+## 2023-09-06 00:29:27
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.78.8 (2.96.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.43.3] customer_portal
+
+## 2023-09-12 00:28:11
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.82.5 (2.108.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.43.4] customer_portal
+
+## 2023-09-16 00:28:39
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.86.0 (2.115.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.43.5] customer_portal
+
+## 2023-09-20 00:29:41
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.88.0 (2.118.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.43.6] customer_portal
+
+## 2023-09-21 00:29:39
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.88.1 (2.122.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.43.7] customer_portal
+
+## 2023-09-22 00:30:01
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.89.0 (2.125.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.44.0] customer_portal
+
+## 2023-09-23 00:28:35
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.90.0 (2.125.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.44.1] customer_portal
+
+## 2023-09-26 00:30:29
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.91.0 (2.129.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.45.0] customer_portal
+
+## 2023-09-27 00:30:26
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.91.2 (2.131.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.45.1] customer_portal
+
+## 2023-09-29 00:30:13
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.91.3 (2.139.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.46.0] customer_portal
+
+## 2023-09-30 00:29:04
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.91.4 (2.139.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.46.1] customer_portal
+
+## 2023-10-01 00:35:05
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.92.2 (2.142.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.47.0] customer_portal
+
+## 2023-10-02 00:30:39
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.92.3 (2.143.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.47.1] customer_portal
+
+## 2023-10-05 00:30:19
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.94.0 (2.147.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.47.2] customer_portal
+
+## 2023-10-07 00:29:36
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.96.1 (2.150.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.48.0] customer_portal
+
+## 2023-10-13 00:31:05
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.99.0 (2.154.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.48.1] customer_portal
+
+## 2023-10-14 00:29:17
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.99.2 (2.155.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.48.2] customer_portal

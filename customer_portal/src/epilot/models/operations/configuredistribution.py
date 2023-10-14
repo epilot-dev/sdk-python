@@ -3,39 +3,53 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import origin_enum as shared_origin_enum
+from ..shared import errorresp as shared_errorresp
+from ..shared import origin as shared_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ConfigureDistributionSecurity:
+    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
+
 
 @dataclasses.dataclass
 class ConfigureDistributionRequest:
-    
-    origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""  
+    origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Origin of the portal"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ConfigureDistribution200ApplicationJSON:
-    r"""The returned configured distribution id"""
+    r"""The cloudfront distribution has been configure successfully for the custom domain."""
+    domain_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domainName'), 'exclude': lambda f: f is None }})
+    r"""The domain name of the configured distribution"""
     
-    domain_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domainName'), 'exclude': lambda f: f is None }})  
-    
+
+
+
 
 @dataclasses.dataclass
 class ConfigureDistributionResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     configure_distribution_200_application_json_object: Optional[ConfigureDistribution200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned configured distribution id"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""The cloudfront distribution has been configure successfully for the custom domain."""
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+

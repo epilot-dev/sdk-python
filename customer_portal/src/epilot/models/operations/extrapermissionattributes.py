@@ -3,42 +3,57 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
 from ..shared import extraschemaattributes as shared_extraschemaattributes
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ExtraPermissionAttributesSecurity:
-    
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ExtraPermissionAttributes200ApplicationJSONData:
-    
-    contact: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact'), 'exclude': lambda f: f is None }})  
-    contract: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract'), 'exclude': lambda f: f is None }})  
-    opportunity: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('opportunity'), 'exclude': lambda f: f is None }})  
-    order: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})  
+    contact: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact'), 'exclude': lambda f: f is None }})
+    contract: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract'), 'exclude': lambda f: f is None }})
+    meter: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meter'), 'exclude': lambda f: f is None }})
+    meter_counter: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meter_counter'), 'exclude': lambda f: f is None }})
+    opportunity: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('opportunity'), 'exclude': lambda f: f is None }})
+    order: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ExtraPermissionAttributes200ApplicationJSON:
-    r"""Success"""
+    r"""Retrieved extra permission attributes successfully."""
+    data: Optional[ExtraPermissionAttributes200ApplicationJSONData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-    data: Optional[ExtraPermissionAttributes200ApplicationJSONData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})  
-    
+
+
+
 
 @dataclasses.dataclass
 class ExtraPermissionAttributesResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Internal Server Error"""
     extra_permission_attributes_200_application_json_object: Optional[ExtraPermissionAttributes200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Retrieved extra permission attributes successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+

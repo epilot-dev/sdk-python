@@ -116,20 +116,15 @@ argument-naming-style=snake_case
 #argument-rgx=
 
 # Naming style matching correct attribute names.
-attr-naming-style=snake_case
+#attr-naming-style=snake_case
 
 # Regular expression matching correct attribute names. Overrides attr-naming-
 # style. If left empty, attribute names will be checked with the set naming
 # style.
-#attr-rgx=
+attr-rgx=[^\W\d][^\W]*|__.*__$
 
 # Bad variable names which should always be refused, separated by a comma.
-bad-names=foo,
-          bar,
-          baz,
-          toto,
-          tutu,
-          tata
+bad-names=
 
 # Bad variable names regexes, separated by a comma. If names match any regex,
 # they will always be refused
@@ -441,7 +436,13 @@ disable=raw-checker-failed,
         trailing-newlines,
         too-many-public-methods,
         too-many-locals,
-        too-many-lines
+        too-many-lines,
+        using-constant-test,
+        too-many-statements,
+        cyclic-import,
+        too-many-nested-blocks,
+        too-many-boolean-expressions,
+        no-else-raise
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -622,7 +623,7 @@ additional-builtins=
 allow-global-unused-variables=yes
 
 # List of names allowed to shadow builtins
-allowed-redefined-builtins=
+allowed-redefined-builtins=id,object
 
 # List of strings which can identify a callback function by name. A callback
 # name must start or end with one of those strings.

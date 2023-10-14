@@ -3,40 +3,54 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Optional
 
 
+
 @dataclasses.dataclass
 class UpdateOpportunitySecurity:
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
+
 
 @dataclasses.dataclass
 class UpdateOpportunityRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The Id of opportunities"""  
+    r"""The ID of opportunity"""
     request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Updated opportunity body"""  
+    r"""Requested opportunity body to update"""
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateOpportunity200ApplicationJSON:
-    r"""The returned opportunity"""
+    r"""Updated the opportunity successfully."""
+    data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    r"""The opportunity entity"""
     
-    data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})  
-    
+
+
+
 
 @dataclasses.dataclass
 class UpdateOpportunityResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     update_opportunity_200_application_json_object: Optional[UpdateOpportunity200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned opportunity"""  
+    r"""Updated the opportunity successfully."""
     
+

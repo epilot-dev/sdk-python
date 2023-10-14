@@ -12,80 +12,116 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=custom
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot()
 
-
-req = operations.AddEndCustomerRelationToEntityRequest(
-    id="unde",
-    slug="contact",
+req = operations.GetCustomerBalanceRequest(
+    customer_entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e',
 )
-    
-res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
-    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+
+res = s.balance.get_customer_balance(req, operations.GetCustomerBalanceSecurity(
+    epilot_auth="",
 ))
 
-if res.add_end_customer_relation_to_entity_200_application_json_object is not None:
+if res.balance is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
-### ecp
+### [balance](docs/sdks/balance/README.md)
 
-* `add_end_customer_relation_to_entity` - addEndCustomerRelationToEntity
-* `delete_entity_file` - Delete files from an entity
-* `delete_portal_user` - deletePortalUser
-* `get_all_contracts` - getAllContracts
-* `get_all_opportunities` - getAllOpportunities
-* `get_all_orders` - getAllOrders
-* `get_contact` - getContact
-* `get_contract` - get contract based on id
-* `get_entities_by_identifiers` - getEntitiesByIdentifiers
-* `get_opportunity` - getOpportunity
-* `get_order` - getOrder
-* `get_organization_settings` - getOrganizationSettings
-* `get_portal_config` - getPortalConfig
-* `get_portal_config_by_domain` - getPortalConfigByDomain
-* `get_portal_user` - getPortalUser
-* `get_schemas` - getSchemas
-* `save_entity_file` - Add files to an entity
-* `test_auth` - testAuth
-* `update_contact` - updateContact
-* `update_contract` - Update contract based on id
-* `update_opportunity` - Update an opportunity based on id
-* `update_order` - updateOrder
-* `update_portal_user` - updatePortalUser
+* [get_customer_balance](docs/sdks/balance/README.md#get_customer_balance) - getCustomerBalance
 
-### ecp_admin
+### [ecp](docs/sdks/ecp/README.md)
 
-* `configure_distribution` - configureDistribution
-* `delete_portal` - deletePortal
-* `extra_permission_attributes` - extraPermissionAttributes
-* `get_all_portal_configs` - getAllPortalConfigs
-* `get_ecp_contact` - getECPContact
-* `get_email_templates` - getEmailTemplates
-* `get_entity_identifiers` - getEntityIdentifiers
-* `get_org_portal_config` - getOrgPortalConfig
-* `get_portal_config` - getPortalConfig
-* `get_public_portal_config` - getPublicPortalConfig
-* `get_valid_secondary_attributes` - getValidSecondaryAttributes
-* `replace_ecp_template_variables` - replaceECPTemplateVariables
-* `save_portal_files` - Add files to portal
-* `upsert_email_templates` - upsertEmailTemplates
-* `upsert_portal` - upserts a portal
+* [add_end_customer_relation_to_entity](docs/sdks/ecp/README.md#add_end_customer_relation_to_entity) - addEndCustomerRelationToEntity
+* [create_custom_entity_activity](docs/sdks/ecp/README.md#create_custom_entity_activity) - createCustomEntityActivity
+* [delete_entity_file](docs/sdks/ecp/README.md#delete_entity_file) - deleteEntityFile
+* [delete_portal_user](docs/sdks/ecp/README.md#delete_portal_user) - deletePortalUser
+* [get_all_contracts](docs/sdks/ecp/README.md#get_all_contracts) - getAllContracts
+* [get_all_files](docs/sdks/ecp/README.md#get_all_files) - getAllFiles
+* [get_all_opportunities](docs/sdks/ecp/README.md#get_all_opportunities) - getAllOpportunities
+* [get_all_orders](docs/sdks/ecp/README.md#get_all_orders) - getAllOrders
+* [get_billing_events](docs/sdks/ecp/README.md#get_billing_events) - getBillingEvents
+* [get_contact](docs/sdks/ecp/README.md#get_contact) - getContact
+* [get_contract](docs/sdks/ecp/README.md#get_contract) - getContract
+* [get_entities_by_identifiers](docs/sdks/ecp/README.md#get_entities_by_identifiers) - getEntitiesByIdentifiers
+* [get_file_by_id](docs/sdks/ecp/README.md#get_file_by_id) - getFileById
+* [get_files_count_by_entity](docs/sdks/ecp/README.md#get_files_count_by_entity) - getFileCountByEntity
+* [get_opportunity](docs/sdks/ecp/README.md#get_opportunity) - getOpportunity
+* [get_order](docs/sdks/ecp/README.md#get_order) - getOrder
+* [get_organization_settings](docs/sdks/ecp/README.md#get_organization_settings) - getOrganizationSettings
+* [get_portal_config](docs/sdks/ecp/README.md#get_portal_config) - getPortalConfig
+* [get_portal_user](docs/sdks/ecp/README.md#get_portal_user) - getPortalUser
+* [get_portal_widgets](docs/sdks/ecp/README.md#get_portal_widgets) - getPortalWidgets
+* [get_schemas](docs/sdks/ecp/README.md#get_schemas) - getSchemas
+* [save_entity_file](docs/sdks/ecp/README.md#save_entity_file) - saveEntityFile
+* [track_file_downloaded](docs/sdks/ecp/README.md#track_file_downloaded) - trackFileDownloaded
+* [update_contact](docs/sdks/ecp/README.md#update_contact) - updateContact
+* [update_contract](docs/sdks/ecp/README.md#update_contract) - updateContract
+* [update_opportunity](docs/sdks/ecp/README.md#update_opportunity) - updateOpportunity
+* [update_order](docs/sdks/ecp/README.md#update_order) - updateOrder
+* [update_portal_user](docs/sdks/ecp/README.md#update_portal_user) - updatePortalUser
 
-### public
+### [ecp_admin](docs/sdks/ecpadmin/README.md)
 
-* `activate_user` - activateUser
-* `confirm_user` - confirmUser
-* `create_user` - creates a user
-* `get_count_by_email` - getCountByEmail
-* `user_exists` - userExists
+* [configure_distribution](docs/sdks/ecpadmin/README.md#configure_distribution) - configureDistribution
+* [create_sso_user](docs/sdks/ecpadmin/README.md#create_sso_user) - createSSOUser
+* [delete_portal](docs/sdks/ecpadmin/README.md#delete_portal) - deletePortal
+* [extra_permission_attributes](docs/sdks/ecpadmin/README.md#extra_permission_attributes) - extraPermissionAttributes
+* [get_all_portal_configs](docs/sdks/ecpadmin/README.md#get_all_portal_configs) - getAllPortalConfigs
+* [get_ecp_contact](docs/sdks/ecpadmin/README.md#get_ecp_contact) - getECPContact
+* [get_email_templates](docs/sdks/ecpadmin/README.md#get_email_templates) - getEmailTemplates
+* [get_entity_identifiers](docs/sdks/ecpadmin/README.md#get_entity_identifiers) - getEntityIdentifiers
+* [get_org_portal_config](docs/sdks/ecpadmin/README.md#get_org_portal_config) - getOrgPortalConfig
+* [get_portal_config](docs/sdks/ecpadmin/README.md#get_portal_config) - getPortalConfig
+* [get_portal_widgets](docs/sdks/ecpadmin/README.md#get_portal_widgets) - getPortalWidgets
+* [get_valid_secondary_attributes](docs/sdks/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
+* [login_to_portal_as_user](docs/sdks/ecpadmin/README.md#login_to_portal_as_user) - loginToPortalAsUser
+* [replace_ecp_template_variables](docs/sdks/ecpadmin/README.md#replace_ecp_template_variables) - replaceECPTemplateVariables
+* [save_portal_files](docs/sdks/ecpadmin/README.md#save_portal_files) - savePortalFiles
+* [upsert_email_templates](docs/sdks/ecpadmin/README.md#upsert_email_templates) - upsertEmailTemplates
+* [upsert_portal](docs/sdks/ecpadmin/README.md#upsert_portal) - upsertPortal
+* [upsert_portal_widget](docs/sdks/ecpadmin/README.md#upsert_portal_widget) - upsertPortalWidget
+
+### [public](docs/sdks/public/README.md)
+
+* [confirm_user](docs/sdks/public/README.md#confirm_user) - confirmUser
+* [create_user](docs/sdks/public/README.md#create_user) - createUser
+* [get_contact_count](docs/sdks/public/README.md#get_contact_count) - getContactCount
+* [get_count_by_email](docs/sdks/public/README.md#get_count_by_email) - getCountByEmail
+* [get_portal_config_by_domain](docs/sdks/public/README.md#get_portal_config_by_domain) - getPortalConfigByDomain
+* [get_public_portal_config](docs/sdks/public/README.md#get_public_portal_config) - getPublicPortalConfig
+* [get_public_portal_widgets](docs/sdks/public/README.md#get_public_portal_widgets) - getPublicPortalWidgets
+* [user_exists](docs/sdks/public/README.md#user_exists) - userExists
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
