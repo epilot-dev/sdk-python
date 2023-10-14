@@ -10,6 +10,7 @@ from typing import Optional
 class ActivityTriggerConfigurationTypes(str, Enum):
     CREATE_METER_READING = 'CreateMeterReading'
     UPDATE_METER_READING = 'UpdateMeterReading'
+    DOC_DOWNLOADED_FROM_PORTAL = 'DocDownloadedFromPortal'
     MESSAGE_ACTIVITY = 'MessageActivity'
     SYNC_ACTIVITY = 'SyncActivity'
 
