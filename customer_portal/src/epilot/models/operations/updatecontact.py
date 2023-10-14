@@ -4,15 +4,24 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
+from ..shared import failedruleerrorresp as shared_failedruleerrorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 
 @dataclasses.dataclass
 class UpdateContactSecurity:
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+    
+
+
+
+
+@dataclasses.dataclass
+class UpdateContact403ApplicationJSON:
+    r"""The user is not allowed to access this resource"""
     
 
 
@@ -41,5 +50,7 @@ class UpdateContactResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     update_contact_200_application_json_object: Optional[UpdateContact200ApplicationJSON] = dataclasses.field(default=None)
     r"""Updated the contact details successfully."""
+    update_contact_403_application_json_one_of: Optional[Union[shared_errorresp.ErrorResp, shared_failedruleerrorresp.FailedRuleErrorResp]] = dataclasses.field(default=None)
+    r"""The user is not allowed to access this resource"""
     
 

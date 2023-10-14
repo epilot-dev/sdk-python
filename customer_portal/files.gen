@@ -86,6 +86,7 @@ src/epilot/models/shared/widgetaction.py
 src/epilot/models/shared/teaserwidget.py
 src/epilot/models/shared/widgetbase.py
 src/epilot/models/shared/saveentityfile.py
+src/epilot/models/shared/failedruleerrorresp.py
 src/epilot/models/shared/createssouserrequest.py
 src/epilot/models/shared/extraschemaattributes.py
 src/epilot/models/shared/saveportalfile.py
@@ -182,10 +183,12 @@ docs/models/operations/trackfiledownloadedrequest.md
 docs/models/operations/trackfiledownloaded200applicationjson.md
 docs/models/operations/trackfiledownloadedresponse.md
 docs/models/operations/updatecontactsecurity.md
+docs/models/operations/updatecontact403applicationjson.md
 docs/models/operations/updatecontact200applicationjson.md
 docs/models/operations/updatecontactresponse.md
 docs/models/operations/updatecontractsecurity.md
 docs/models/operations/updatecontractrequest.md
+docs/models/operations/updatecontract403applicationjson.md
 docs/models/operations/updatecontract200applicationjson.md
 docs/models/operations/updatecontractresponse.md
 docs/models/operations/updateopportunitysecurity.md
@@ -361,6 +364,8 @@ docs/models/shared/saveentityfilefilesaccesscontrol.md
 docs/models/shared/saveentityfilefiless3ref.md
 docs/models/shared/saveentityfilefiles.md
 docs/models/shared/saveentityfile.md
+docs/models/shared/failedruleerrorrespfailedrule.md
+docs/models/shared/failedruleerrorresp.md
 docs/models/shared/createssouserrequest.md
 docs/models/shared/extraschemaattributes.md
 docs/models/shared/saveportalfilefiless3ref.md

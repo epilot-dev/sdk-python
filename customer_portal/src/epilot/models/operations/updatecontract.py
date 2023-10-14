@@ -4,9 +4,10 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
+from ..shared import failedruleerrorresp as shared_failedruleerrorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Optional, Union
 
 
 
@@ -24,6 +25,14 @@ class UpdateContractRequest:
     r"""The ID of the contract"""
     request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Requested contract body to update"""
+    
+
+
+
+
+@dataclasses.dataclass
+class UpdateContract403ApplicationJSON:
+    r"""The user is not allowed to access this resource"""
     
 
 
@@ -52,5 +61,7 @@ class UpdateContractResponse:
     r"""Raw HTTP response; suitable for custom response parsing"""
     update_contract_200_application_json_object: Optional[UpdateContract200ApplicationJSON] = dataclasses.field(default=None)
     r"""Updated the contract successfully."""
+    update_contract_403_application_json_one_of: Optional[Union[shared_errorresp.ErrorResp, shared_failedruleerrorresp.FailedRuleErrorResp]] = dataclasses.field(default=None)
+    r"""The user is not allowed to access this resource"""
     
 
