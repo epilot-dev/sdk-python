@@ -4,10 +4,10 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
+from ..shared import fileitem as shared_fileitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -17,27 +17,24 @@ class GetAllFilesSecurity:
 
 
 
-
 @dataclasses.dataclass
 class GetAllFilesRequest:
     from_: float = dataclasses.field(metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
     size: float = dataclasses.field(metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
-    entity_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_ids', 'style': 'form', 'explode': True }})
+    entity_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_ids', 'style': 'form', 'explode': True }})
     r"""List of entity ids to filter the results"""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllFiles200ApplicationJSON:
     r"""The files have been fetched successfully."""
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     r"""Total number of files for pagination"""
-    results: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[shared_fileitem.FileItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-
 
 
 

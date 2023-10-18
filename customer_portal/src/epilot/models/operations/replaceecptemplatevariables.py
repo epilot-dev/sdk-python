@@ -9,7 +9,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ReplaceECPTemplateVariablesSecurity:
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
@@ -18,7 +17,6 @@ class ReplaceECPTemplateVariablesSecurity:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReplaceECPTemplateVariablesRequestBody:
     r"""ECPVariables payload"""
@@ -29,7 +27,6 @@ class ReplaceECPTemplateVariablesRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReplaceECPTemplateVariables200ApplicationJSONCustomerPortal:
     invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
@@ -38,7 +35,6 @@ class ReplaceECPTemplateVariables200ApplicationJSONCustomerPortal:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReplaceECPTemplateVariables200ApplicationJSONInstallerPortal:
     invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
@@ -47,14 +43,12 @@ class ReplaceECPTemplateVariables200ApplicationJSONInstallerPortal:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ReplaceECPTemplateVariables200ApplicationJSON:
     r"""Replaced portal template variables successfully."""
     customer_portal: Optional[ReplaceECPTemplateVariables200ApplicationJSONCustomerPortal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customerPortal'), 'exclude': lambda f: f is None }})
     installer_portal: Optional[ReplaceECPTemplateVariables200ApplicationJSONInstallerPortal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installerPortal'), 'exclude': lambda f: f is None }})
     
-
 
 
 

@@ -9,7 +9,6 @@ from ..shared import upsertportalwidget as shared_upsertportalwidget
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetPortalWidgetsSecurity:
     epilot_auth: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
@@ -18,13 +17,11 @@ class GetPortalWidgetsSecurity:
 
 
 
-
 @dataclasses.dataclass
 class GetPortalWidgetsRequest:
     origin: Optional[shared_origin.Origin] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
-
 
 
 

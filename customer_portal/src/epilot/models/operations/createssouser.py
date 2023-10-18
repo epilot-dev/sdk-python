@@ -6,17 +6,16 @@ import requests as requests_http
 from ..shared import createssouserrequest as shared_createssouserrequest
 from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
+from ..shared import portaluser as shared_portaluser
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import Optional
 
 
 @dataclasses.dataclass
 class CreateSSOUserSecurity:
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-
 
 
 
@@ -31,14 +30,12 @@ class CreateSSOUserRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateSSOUser201ApplicationJSON:
     r"""SSO User created successfully."""
-    data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    data: Optional[shared_portaluser.PortalUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The portal user entity"""
     
-
 
 
 

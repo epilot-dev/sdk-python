@@ -4,10 +4,10 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
+from ..shared import order as shared_order
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import Any, Dict, Optional
 
 
 @dataclasses.dataclass
@@ -17,25 +17,22 @@ class UpdateOrderSecurity:
 
 
 
-
 @dataclasses.dataclass
 class UpdateOrderRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The ID of order"""
-    request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    request_body: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateOrder200ApplicationJSON:
     r"""Updated the order details successfully."""
-    data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    data: Optional[shared_order.Order] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The order entity"""
     
-
 
 
 

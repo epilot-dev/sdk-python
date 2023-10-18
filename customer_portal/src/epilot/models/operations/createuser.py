@@ -6,11 +6,11 @@ import requests as requests_http
 from ..shared import createuserrequest as shared_createuserrequest
 from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
+from ..shared import portaluser as shared_portaluser
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
-
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -27,15 +27,13 @@ class CreateUser201ApplicationJSONMessage(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateUser201ApplicationJSON:
     r"""User created successfully."""
     message: CreateUser201ApplicationJSONMessage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    response: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('response') }})
+    response: shared_portaluser.PortalUser = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('response') }})
     r"""The portal user entity"""
     
-
 
 
 

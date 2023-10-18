@@ -3,18 +3,17 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import contract as shared_contract
 from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetAllContractsSecurity:
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-
 
 
 
@@ -27,13 +26,11 @@ class GetAllContractsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllContracts200ApplicationJSON:
     r"""Contracts have been retrieved successfully."""
-    data: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    data: Optional[List[shared_contract.Contract]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-
 
 
 

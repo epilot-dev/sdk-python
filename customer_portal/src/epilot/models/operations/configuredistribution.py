@@ -10,12 +10,10 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ConfigureDistributionSecurity:
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-
 
 
 
@@ -28,14 +26,12 @@ class ConfigureDistributionRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConfigureDistribution200ApplicationJSON:
     r"""The cloudfront distribution has been configure successfully for the custom domain."""
     domain_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domainName'), 'exclude': lambda f: f is None }})
     r"""The domain name of the configured distribution"""
     
-
 
 
 

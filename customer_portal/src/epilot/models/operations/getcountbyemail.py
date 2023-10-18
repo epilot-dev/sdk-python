@@ -9,7 +9,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetCountByEmailRequest:
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
@@ -19,14 +18,12 @@ class GetCountByEmailRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetCountByEmail200ApplicationJSON:
     r"""Contact count for the requested email successfully."""
     count: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""Count of Contact"""
     
-
 
 
 

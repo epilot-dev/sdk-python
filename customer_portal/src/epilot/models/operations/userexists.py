@@ -5,10 +5,10 @@ import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
 from ..shared import origin as shared_origin
+from ..shared import portaluser as shared_portaluser
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -22,16 +22,14 @@ class UserExistsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UserExists200ApplicationJSON:
     r"""Returned whether the user exists in the portal or not successfully."""
     exists: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists') }})
     r"""Whether the user exists in the portal"""
-    user: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
+    user: Optional[shared_portaluser.PortalUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
     r"""The portal user entity"""
     
-
 
 
 

@@ -3,12 +3,12 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import contract as shared_contract
 from ..shared import errorresp as shared_errorresp
 from ..shared import failedruleerrorresp as shared_failedruleerrorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional, Union
-
+from typing import Any, Dict, Optional, Union
 
 
 @dataclasses.dataclass
@@ -18,15 +18,13 @@ class UpdateContractSecurity:
 
 
 
-
 @dataclasses.dataclass
 class UpdateContractRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The ID of the contract"""
-    request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    request_body: Dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Requested contract body to update"""
     
-
 
 
 
@@ -38,14 +36,12 @@ class UpdateContract403ApplicationJSON:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateContract200ApplicationJSON:
     r"""Updated the contract successfully."""
-    data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    data: Optional[shared_contract.Contract] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     r"""The contract entity"""
     
-
 
 
 

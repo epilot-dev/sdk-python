@@ -10,7 +10,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeletePortalUserSecurity:
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
@@ -22,7 +21,6 @@ class DeletePortalUser200ApplicationJSONMessage(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeletePortalUser200ApplicationJSON:
     r"""Portal user deleted successfully."""
@@ -30,7 +28,6 @@ class DeletePortalUser200ApplicationJSON:
     r"""Entity ID"""
     message: Optional[DeletePortalUser200ApplicationJSONMessage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-
 
 
 

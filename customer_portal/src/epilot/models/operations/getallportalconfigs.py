@@ -7,8 +7,7 @@ from ..shared import errorresp as shared_errorresp
 from ..shared import portalconfig as shared_portalconfig
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -19,13 +18,11 @@ class GetAllPortalConfigsSecurity:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAllPortalConfigs200ApplicationJSON:
     r"""All portal configs retrieved successfully."""
-    data: Optional[list[shared_portalconfig.PortalConfig]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    data: Optional[List[shared_portalconfig.PortalConfig]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-
 
 
 

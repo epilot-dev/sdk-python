@@ -8,12 +8,10 @@ from ..shared import origin as shared_origin
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeletePortalSecurity:
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-
 
 
 
@@ -22,7 +20,6 @@ class DeletePortalRequest:
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
-
 
 
 

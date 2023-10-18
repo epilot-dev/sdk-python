@@ -373,9 +373,9 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = operations.GetBillingEventsRequest(
-    customer_id='International',
+    customer_id='Generic',
     entity_id=[
-        'evil',
+        'Facilitator',
     ],
     event_type=[
         operations.GetBillingEventsEventType.REIMBURSEMENT,
@@ -959,7 +959,7 @@ if res.update_contact_200_application_json_object is not None:
 
 | Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [dict[str, Any]](../../models//.md)                                                  | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `request`                                                                            | [Dict[str, Any]](../../models//.md)                                                  | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 | `security`                                                                           | [operations.UpdateContactSecurity](../../models/operations/updatecontactsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
 
 
@@ -1120,7 +1120,7 @@ if res.update_portal_user_200_application_json_object is not None:
 
 | Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [dict[str, Any]](../../models//.md)                                                        | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `request`                                                                                  | [Dict[str, Any]](../../models//.md)                                                        | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 | `security`                                                                                 | [operations.UpdatePortalUserSecurity](../../models/operations/updateportalusersecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
 
 

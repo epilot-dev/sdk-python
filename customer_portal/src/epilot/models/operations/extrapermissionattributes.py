@@ -7,8 +7,7 @@ from ..shared import errorresp as shared_errorresp
 from ..shared import extraschemaattributes as shared_extraschemaattributes
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -19,27 +18,24 @@ class ExtraPermissionAttributesSecurity:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ExtraPermissionAttributes200ApplicationJSONData:
-    contact: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact'), 'exclude': lambda f: f is None }})
-    contract: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract'), 'exclude': lambda f: f is None }})
-    meter: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meter'), 'exclude': lambda f: f is None }})
-    meter_counter: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meter_counter'), 'exclude': lambda f: f is None }})
-    opportunity: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('opportunity'), 'exclude': lambda f: f is None }})
-    order: Optional[list[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})
+    contact: Optional[List[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact'), 'exclude': lambda f: f is None }})
+    contract: Optional[List[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract'), 'exclude': lambda f: f is None }})
+    meter: Optional[List[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meter'), 'exclude': lambda f: f is None }})
+    meter_counter: Optional[List[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('meter_counter'), 'exclude': lambda f: f is None }})
+    opportunity: Optional[List[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('opportunity'), 'exclude': lambda f: f is None }})
+    order: Optional[List[shared_extraschemaattributes.ExtraSchemaAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ExtraPermissionAttributes200ApplicationJSON:
     r"""Retrieved extra permission attributes successfully."""
     data: Optional[ExtraPermissionAttributes200ApplicationJSONData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-
 
 
 

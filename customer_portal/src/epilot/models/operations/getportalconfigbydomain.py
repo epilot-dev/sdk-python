@@ -8,12 +8,10 @@ from ..shared import portalconfig as shared_portalconfig
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetPortalConfigByDomainRequest:
     domain: str = dataclasses.field(metadata={'query_param': { 'field_name': 'domain', 'style': 'form', 'explode': True }})
     
-
 
 
 

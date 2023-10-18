@@ -11,7 +11,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetContactCountRequest:
     contact_count_request: shared_contactcountrequest.ContactCountRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -23,14 +22,12 @@ class GetContactCountRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetContactCount200ApplicationJSON:
     r"""Contact count for the request successfully."""
     count: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""Count of Contact"""
     
-
 
 
 

@@ -672,9 +672,23 @@ req = operations.UpsertPortalRequest(
         contact_secondary_identifier='full_name',
         default_user_to_notify=shared.UpsertPortalConfigDefaultUserToNotify(
             on_pending_user=[
-                {
-                    "up": 'array',
-                },
+                shared.AdminUser(
+                    additional_properties={
+                        "up": 'array',
+                    },
+                    display_name='John',
+                    email='j.doe@epilot.cloud',
+                    image_uri=shared.AdminUserImageURI(
+                        key='fuafjvoHKsudhfagweucjasdvga',
+                        original='https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original',
+                        thumbnail_32='https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original?w=32&h=32',
+                        thumbnail_64='https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original?w=64&h=64',
+                    ),
+                    org_id='123',
+                    phone='12345 67890',
+                    type='user',
+                    user_id='123456',
+                ),
             ],
         ),
         design_id='9ba94f20-b872-4217-a259-2a90a8ee1a29',

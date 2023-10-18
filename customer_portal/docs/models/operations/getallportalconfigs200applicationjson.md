@@ -7,4 +7,4 @@ All portal configs retrieved successfully.
 
 | Field                                                            | Type                                                             | Required                                                         | Description                                                      |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `data`                                                           | list[[shared.PortalConfig](../../models/shared/portalconfig.md)] | :heavy_minus_sign:                                               | N/A                                                              |
+| `data`                                                           | List[[shared.PortalConfig](../../models/shared/portalconfig.md)] | :heavy_minus_sign:                                               | N/A                                                              |

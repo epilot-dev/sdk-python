@@ -6,8 +6,7 @@ import requests as requests_http
 from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -18,13 +17,11 @@ class DeleteEntityFileSecurity:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DeleteEntityFile202ApplicationJSON:
     r"""The files are removed from the requested entity successfully."""
-    deleted_files: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedFiles'), 'exclude': lambda f: f is None }})
+    deleted_files: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedFiles'), 'exclude': lambda f: f is None }})
     
-
 
 
 

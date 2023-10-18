@@ -4,10 +4,10 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
+from ..shared import file as shared_file
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -18,13 +18,11 @@ class SavePortalFilesSecurity:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SavePortalFiles201ApplicationJSON:
     r"""The files have been saved to the portal successfully."""
-    created_files: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdFiles'), 'exclude': lambda f: f is None }})
+    created_files: Optional[List[shared_file.File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdFiles'), 'exclude': lambda f: f is None }})
     
-
 
 
 

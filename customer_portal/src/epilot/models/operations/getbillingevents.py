@@ -3,12 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import billingevent as shared_billingevent
+from ..shared import installmentevent as shared_installmentevent
 from dataclasses_json import Undefined, dataclass_json
 from datetime import date
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
-
+from typing import List, Optional, Union
 
 
 @dataclasses.dataclass
@@ -23,28 +24,25 @@ class GetBillingEventsEventType(str, Enum):
     REIMBURSEMENT = 'reimbursement'
 
 
-
 @dataclasses.dataclass
 class GetBillingEventsRequest:
     customer_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'customer_id', 'style': 'form', 'explode': True }})
     date_after: Optional[date] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_after', 'style': 'form', 'explode': True }})
     date_before: Optional[date] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_before', 'style': 'form', 'explode': True }})
-    entity_id: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
-    event_type: Optional[list[GetBillingEventsEventType]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'event_type', 'style': 'form', 'explode': True }})
+    entity_id: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
+    event_type: Optional[List[GetBillingEventsEventType]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'event_type', 'style': 'form', 'explode': True }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetBillingEvents200ApplicationJSON:
     r"""List billing events for all contracts/orders of specific customer"""
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     r"""Total number of billing events for pagination"""
-    results: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[Union[shared_installmentevent.InstallmentEvent, shared_billingevent.BillingEventReimbursementEvent]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-
 
 
 

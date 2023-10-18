@@ -10,12 +10,10 @@ from ..shared import upsertportalconfig as shared_upsertportalconfig
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpsertPortalSecurity:
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-
 
 
 
@@ -26,7 +24,6 @@ class UpsertPortalRequest:
     upsert_portal_config: shared_upsertportalconfig.UpsertPortalConfig = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Portal payload"""
     
-
 
 
 

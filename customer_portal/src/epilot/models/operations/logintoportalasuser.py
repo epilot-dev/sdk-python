@@ -9,7 +9,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class LoginToPortalAsUserSecurity:
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
@@ -18,7 +17,6 @@ class LoginToPortalAsUserSecurity:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class LoginToPortalAsUserRequestBody:
     r"""The request body to log in to a portal impersonating a user"""
@@ -31,14 +29,12 @@ class LoginToPortalAsUserRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class LoginToPortalAsUser200ApplicationJSON:
     r"""The token has been generated successfully."""
     login_as_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login_as_token'), 'exclude': lambda f: f is None }})
     r"""A generated login_as_token to log in to a portal impersonating a user."""
     
-
 
 
 

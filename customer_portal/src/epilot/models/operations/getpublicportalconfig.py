@@ -9,14 +9,12 @@ from ..shared import portalconfig as shared_portalconfig
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetPublicPortalConfigRequest:
     org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
-
 
 
 

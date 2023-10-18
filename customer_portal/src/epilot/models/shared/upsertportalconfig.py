@@ -2,17 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import adminuser as shared_adminuser
 from ..shared import emailtemplates as shared_emailtemplates
 from ..shared import entityslug as shared_entityslug
 from ..shared import grant as shared_grant
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigCognitoDetails:
     r"""AWS Cognito Pool details for the portal"""
@@ -27,18 +27,16 @@ class UpsertPortalConfigCognitoDetails:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigDefaultUserToNotify:
     r"""Default 360 user to notify upon an internal notification"""
-    on_pending_user: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onPendingUser'), 'exclude': lambda f: f is None }})
+    on_pending_user: Optional[List[shared_adminuser.AdminUser]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onPendingUser'), 'exclude': lambda f: f is None }})
     r"""Default admin users for pending user notification to notify"""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigEntityActionsActionLabel:
     de: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('de'), 'exclude': lambda f: f is None }})
@@ -48,7 +46,6 @@ class UpsertPortalConfigEntityActionsActionLabel:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigEntityActions:
     action_label: Optional[UpsertPortalConfigEntityActionsActionLabel] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action_Label'), 'exclude': lambda f: f is None }})
@@ -71,7 +68,6 @@ class UpsertPortalConfigEntityEditRulesRuleType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigEntityEditRules:
     allowed_decrement: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowed_decrement'), 'exclude': lambda f: f is None }})
@@ -90,10 +86,9 @@ class UpsertPortalConfigEntityEditRules:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigEntityIdentifiersType:
-    attributes: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
+    attributes: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
     r"""Attributes used to identify an entity"""
     is_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isEnabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable the entity identifier"""
@@ -102,7 +97,6 @@ class UpsertPortalConfigEntityIdentifiersType:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigEntityIdentifiers:
     r"""Identifiers used to identify an entity by a portal user"""
@@ -112,7 +106,6 @@ class UpsertPortalConfigEntityIdentifiers:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigFeatureSettings:
     r"""Feature settings for the portal"""
@@ -123,7 +116,6 @@ class UpsertPortalConfigFeatureSettings:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfigImages:
     r"""Teaser & Banner Image web links"""
@@ -143,7 +135,6 @@ class UpsertPortalConfigSelfRegistrationSetting(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertPortalConfig:
     design_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('design_id') }})
@@ -152,7 +143,7 @@ class UpsertPortalConfig:
     r"""AWS Cognito Pool details for the portal"""
     config: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
     r"""Stringified object with configuration details"""
-    contact_identifiers: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_identifiers'), 'exclude': lambda f: f is None }})
+    contact_identifiers: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_identifiers'), 'exclude': lambda f: f is None }})
     r"""Identifiers to identify a contact."""
     contact_secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_secondary_identifier'), 'exclude': lambda f: f is None }})
     r"""Secondary identifier to identify a contact other than the email
@@ -167,15 +158,15 @@ class UpsertPortalConfig:
     r"""Email templates used for authentication and internal processes"""
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Enable/Disable the portal access"""
-    entity_actions: Optional[list[UpsertPortalConfigEntityActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_actions'), 'exclude': lambda f: f is None }})
+    entity_actions: Optional[List[UpsertPortalConfigEntityActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_actions'), 'exclude': lambda f: f is None }})
     r"""Journey actions allowed on an entity by a portal user"""
-    entity_edit_rules: Optional[list[UpsertPortalConfigEntityEditRules]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_edit_rules'), 'exclude': lambda f: f is None }})
+    entity_edit_rules: Optional[List[UpsertPortalConfigEntityEditRules]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_edit_rules'), 'exclude': lambda f: f is None }})
     r"""Rules for editing an entity by a portal user"""
     entity_identifiers: Optional[UpsertPortalConfigEntityIdentifiers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_identifiers'), 'exclude': lambda f: f is None }})
     r"""Identifiers used to identify an entity by a portal user"""
     feature_settings: Optional[UpsertPortalConfigFeatureSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_settings'), 'exclude': lambda f: f is None }})
     r"""Feature settings for the portal"""
-    grants: Optional[list[shared_grant.Grant]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants'), 'exclude': lambda f: f is None }})
+    grants: Optional[List[shared_grant.Grant]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants'), 'exclude': lambda f: f is None }})
     r"""Permissions granted to a portal user while accessing entities"""
     images: Optional[UpsertPortalConfigImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('images'), 'exclude': lambda f: f is None }})
     r"""Teaser & Banner Image web links"""

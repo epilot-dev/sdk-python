@@ -5,6 +5,6 @@ SSO User created successfully.
 
 ## Fields
 
-| Field                  | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `data`                 | dict[str, *Any*]       | :heavy_minus_sign:     | The portal user entity |
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `data`                                                           | [Optional[shared.PortalUser]](../../models/shared/portaluser.md) | :heavy_minus_sign:                                               | The portal user entity                                           |

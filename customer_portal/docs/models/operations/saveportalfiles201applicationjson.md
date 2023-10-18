@@ -5,6 +5,6 @@ The files have been saved to the portal successfully.
 
 ## Fields
 
-| Field                  | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `created_files`        | list[dict[str, *Any*]] | :heavy_minus_sign:     | N/A                    |
+| Field                                            | Type                                             | Required                                         | Description                                      |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| `created_files`                                  | List[[shared.File](../../models/shared/file.md)] | :heavy_minus_sign:                               | N/A                                              |

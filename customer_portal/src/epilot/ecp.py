@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Any, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 class Ecp:
     r"""APIs defined for a portal user"""
@@ -488,7 +488,7 @@ class Ecp:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.EntityFileCount]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.EntityFileCount]])
                 res.entity_file_counts = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -815,7 +815,7 @@ class Ecp:
         return res
 
     
-    def update_contact(self, request: dict[str, Any], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
+    def update_contact(self, request: Dict[str, Any], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
         r"""updateContact
         Updates the contact details.
         """
@@ -979,7 +979,7 @@ class Ecp:
         return res
 
     
-    def update_portal_user(self, request: dict[str, Any], security: operations.UpdatePortalUserSecurity) -> operations.UpdatePortalUserResponse:
+    def update_portal_user(self, request: Dict[str, Any], security: operations.UpdatePortalUserSecurity) -> operations.UpdatePortalUserResponse:
         r"""updatePortalUser
         Update the portal user details
         """

@@ -5,6 +5,6 @@ The orders for the portal user returned successfully.
 
 ## Fields
 
-| Field                  | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `data`                 | list[dict[str, *Any*]] | :heavy_minus_sign:     | N/A                    |
+| Field                                              | Type                                               | Required                                           | Description                                        |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| `data`                                             | List[[shared.Order](../../models/shared/order.md)] | :heavy_minus_sign:                                 | N/A                                                |

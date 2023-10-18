@@ -7,12 +7,10 @@ from ..shared import balance as shared_balance
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetCustomerBalanceSecurity:
     epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-
 
 
 
@@ -21,7 +19,6 @@ class GetCustomerBalanceRequest:
     customer_entity_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customer_entity_id', 'style': 'simple', 'explode': False }})
     r"""Customer entity ID (contact or account)"""
     
-
 
 
 

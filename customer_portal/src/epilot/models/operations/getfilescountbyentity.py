@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import entityfilecount as shared_entityfilecount
 from ..shared import errorresp as shared_errorresp
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -16,14 +15,13 @@ class GetFilesCountByEntitySecurity:
 
 
 
-
 @dataclasses.dataclass
 class GetFilesCountByEntityResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    entity_file_counts: Optional[list[shared_entityfilecount.EntityFileCount]] = dataclasses.field(default=None)
+    entity_file_counts: Optional[List[shared_entityfilecount.EntityFileCount]] = dataclasses.field(default=None)
     r"""The file counts have been fetched successfully."""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
     r"""Could not authenticate the user"""

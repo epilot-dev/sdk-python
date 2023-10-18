@@ -8,7 +8,6 @@ from ..shared import origin as shared_origin
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ConfirmUserRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -18,7 +17,6 @@ class ConfirmUserRequest:
     origin: shared_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""
     
-
 
 
 

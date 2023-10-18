@@ -3,12 +3,12 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import entityitem as shared_entityitem
 from ..shared import entityslug as shared_entityslug
 from ..shared import errorresp as shared_errorresp
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import Any, Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -18,10 +18,9 @@ class GetEntitiesByIdentifiersSecurity:
 
 
 
-
 @dataclasses.dataclass
 class GetEntitiesByIdentifiersRequest:
-    request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    request_body: Dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""The entities are retrieved successfully."""
     slug: shared_entityslug.EntitySlug = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""The slug of an entity"""
@@ -30,13 +29,11 @@ class GetEntitiesByIdentifiersRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetEntitiesByIdentifiers200ApplicationJSON:
     r"""The returned Entities"""
-    data: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    data: Optional[List[shared_entityitem.EntityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-
 
 
 
