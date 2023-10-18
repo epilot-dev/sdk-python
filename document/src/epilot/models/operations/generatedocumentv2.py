@@ -16,7 +16,6 @@ class GenerateDocumentV2RequestBodyLanguage(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2RequestBodyTemplateDocument:
     r"""Input template document"""
@@ -28,7 +27,6 @@ class GenerateDocumentV2RequestBodyTemplateDocument:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2RequestBodyVariablePayload:
     r"""Custom values for variables in the template. Takes the higher precedence than others."""
@@ -38,7 +36,6 @@ class GenerateDocumentV2RequestBodyVariablePayload:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2RequestBody:
     template_document: GenerateDocumentV2RequestBodyTemplateDocument = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_document') }})
@@ -63,7 +60,6 @@ class GenerateDocumentV2Mode(str, Enum):
     FULL_GENERATION = 'full_generation'
 
 
-
 @dataclasses.dataclass
 class GenerateDocumentV2Request:
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'job_id', 'style': 'form', 'explode': True }})
@@ -79,7 +75,6 @@ class GenerateDocumentV2Request:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2200ApplicationJSONDocxOutputOutputDocument:
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
@@ -90,7 +85,6 @@ class GenerateDocumentV2200ApplicationJSONDocxOutputOutputDocument:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2200ApplicationJSONDocxOutput:
     output_document: Optional[GenerateDocumentV2200ApplicationJSONDocxOutputOutputDocument] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('output_document'), 'exclude': lambda f: f is None }})
@@ -108,7 +102,6 @@ class GenerateDocumentV2200ApplicationJSONJobStatus(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2200ApplicationJSONPdfOutputOutputDocument:
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
@@ -119,7 +112,6 @@ class GenerateDocumentV2200ApplicationJSONPdfOutputOutputDocument:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2200ApplicationJSONPdfOutput:
     output_document: Optional[GenerateDocumentV2200ApplicationJSONPdfOutputOutputDocument] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('output_document'), 'exclude': lambda f: f is None }})
@@ -130,7 +122,6 @@ class GenerateDocumentV2200ApplicationJSONPdfOutput:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2200ApplicationJSONVariablePayload:
     r"""List of variables and its corresponding replaced values from the document template"""
@@ -140,7 +131,6 @@ class GenerateDocumentV2200ApplicationJSONVariablePayload:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentV2200ApplicationJSON:
     r"""Generated document output"""
@@ -154,7 +144,6 @@ class GenerateDocumentV2200ApplicationJSON:
     variable_payload: Optional[GenerateDocumentV2200ApplicationJSONVariablePayload] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('variable_payload'), 'exclude': lambda f: f is None }})
     r"""List of variables and its corresponding replaced values from the document template"""
     
-
 
 
 

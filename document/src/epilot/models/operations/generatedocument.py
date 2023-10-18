@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentRequestBodyTemplateDocument:
     r"""Input template document"""
@@ -22,7 +21,6 @@ class GenerateDocumentRequestBodyTemplateDocument:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocumentRequestBody:
     template_document: GenerateDocumentRequestBodyTemplateDocument = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_document') }})
@@ -38,7 +36,6 @@ class GenerateDocumentRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocument200ApplicationJSONOutputDocument:
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
@@ -49,7 +46,6 @@ class GenerateDocument200ApplicationJSONOutputDocument:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GenerateDocument200ApplicationJSON:
     r"""Generated document output"""
@@ -57,7 +53,6 @@ class GenerateDocument200ApplicationJSON:
     preview_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preview_url'), 'exclude': lambda f: f is None }})
     r"""Pre-signed S3 GET URL for preview"""
     
-
 
 
 
