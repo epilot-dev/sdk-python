@@ -7,7 +7,6 @@ from ..shared import customvariable as shared_customvariable
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetBluePrintTableConfigResponse:
     content_type: str = dataclasses.field()

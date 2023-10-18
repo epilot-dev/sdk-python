@@ -8,7 +8,7 @@ from ..shared import variableresult as shared_variableresult
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 class SearchVariablesRequestBodyLang(str, Enum):
     EN = 'en'
@@ -16,18 +16,16 @@ class SearchVariablesRequestBodyLang(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SearchVariablesRequestBody:
     query: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query') }})
     r"""Search string"""
     template_type: shared_templatetype.TemplateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})
-    entity_schemas: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schemas'), 'exclude': lambda f: f is None }})
+    entity_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schemas'), 'exclude': lambda f: f is None }})
     from_: Optional[int] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})
     lang: Optional[SearchVariablesRequestBodyLang] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lang'), 'exclude': lambda f: f is None }})
     size: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -39,7 +37,7 @@ class SearchVariablesResponse:
     r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    variable_results: Optional[list[shared_variableresult.VariableResult]] = dataclasses.field(default=None)
+    variable_results: Optional[List[shared_variableresult.VariableResult]] = dataclasses.field(default=None)
     r"""ok"""
     
 

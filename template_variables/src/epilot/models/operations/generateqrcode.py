@@ -6,13 +6,11 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GenerateQRcodeRequest:
     qrdata: Optional[str] = dataclasses.field(default='{{table_order_items}}', metadata={'query_param': { 'field_name': 'qrdata', 'style': 'form', 'explode': True }})
     r"""Payload of the QR code"""
     
-
 
 
 

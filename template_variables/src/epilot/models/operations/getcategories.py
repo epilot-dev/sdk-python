@@ -5,13 +5,12 @@ import dataclasses
 import requests as requests_http
 from ..shared import categoryresult as shared_categoryresult
 from enum import Enum
-from typing import Optional
+from typing import List, Optional
 
 class GetCategoriesLang(str, Enum):
     r"""Language"""
     EN = 'en'
     DE = 'de'
-
 
 
 @dataclasses.dataclass
@@ -22,14 +21,13 @@ class GetCategoriesRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetCategoriesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    category_results: Optional[list[shared_categoryresult.CategoryResult]] = dataclasses.field(default=None)
+    category_results: Optional[List[shared_categoryresult.CategoryResult]] = dataclasses.field(default=None)
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

@@ -7,13 +7,11 @@ from ..shared import customvariable as shared_customvariable
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetCustomVariableRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Custom vairable ID"""
     
-
 
 
 

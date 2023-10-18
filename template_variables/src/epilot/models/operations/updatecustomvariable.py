@@ -7,14 +7,12 @@ from ..shared import customvariable as shared_customvariable
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateCustomVariableRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Custom variable ID"""
     custom_variable: Optional[shared_customvariable.CustomVariable] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 
