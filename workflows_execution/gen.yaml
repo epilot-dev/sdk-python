@@ -1,21 +1,21 @@
 configVersion: 1.0.0
 management:
-  docChecksum: e637b2c8c0c6b9dfb5326fcb9a2f88a8
+  docChecksum: 4111adf1684fd3890f128a4a6df2a55c
   docVersion: 1.0.0
-  speakeasyVersion: 1.99.1
-  generationVersion: 2.154.1
+  speakeasyVersion: 1.101.0
+  generationVersion: 2.161.0
 generation:
   sdkClassName: epilot
   singleTagPerOp: false
   telemetryEnabled: false
 features:
   python:
-    core: 2.88.6
+    core: 3.0.2
     deprecations: 2.81.1
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 python:
-  version: 1.48.2
+  version: 2.0.0
   author: epilot
   description: Python Client SDK for Epilot
   flattenGlobalSecurity: false

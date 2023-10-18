@@ -18,7 +18,6 @@ class DynamicDueDateTimePeriod(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DynamicDueDate:
     r"""set a Duedate for a step then a specific"""

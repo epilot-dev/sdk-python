@@ -9,7 +9,6 @@ from ..shared import updatestepreq as shared_updatestepreq
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateStepRequest:
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
@@ -19,7 +18,6 @@ class UpdateStepRequest:
     update_step_req: shared_updatestepreq.UpdateStepReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Workflow Execution Step payload"""
     
-
 
 
 

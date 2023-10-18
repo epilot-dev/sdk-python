@@ -8,7 +8,6 @@ from ..shared import workflowexecution as shared_workflowexecution
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateExecutionResponse:
     content_type: str = dataclasses.field()

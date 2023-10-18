@@ -5,4 +5,4 @@
 
 | Field                                                       | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `reasons`                                                   | list[[ClosingReason](../../models/shared/closingreason.md)] | :heavy_minus_sign:                                          | N/A                                                         |
+| `reasons`                                                   | List[[ClosingReason](../../models/shared/closingreason.md)] | :heavy_minus_sign:                                          | N/A                                                         |

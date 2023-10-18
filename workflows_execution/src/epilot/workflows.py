@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Optional
+from typing import List, Optional
 
 class Workflows:
     r"""Interact with workflow executions - start / close / retrieve one or all / search / delete"""
@@ -242,7 +242,7 @@ class Workflows:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.WorkflowExecutionSlim]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.WorkflowExecutionSlim]])
                 res.workflow_execution_slims = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

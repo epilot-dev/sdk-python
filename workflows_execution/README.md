@@ -27,11 +27,11 @@ req = shared.WorkflowExecutionCreateReq(
     contexts=[
         shared.WorkflowContext(
             id='<ID>',
-            schema='Strontium',
-            title='teal 6th Bespoke',
+            schema='Shoes',
+            title='schemas',
         ),
     ],
-    workflow_id='connect',
+    workflow_id='teal',
 )
 
 res = s.workflows.create_execution(req)

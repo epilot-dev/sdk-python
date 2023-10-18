@@ -9,7 +9,6 @@ from ..shared import step as shared_step
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateStepRequest:
     create_step_req: shared_createstepreq.CreateStepReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -17,7 +16,6 @@ class CreateStepRequest:
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
     r"""Id of the execution"""
     
-
 
 
 

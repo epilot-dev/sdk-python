@@ -7,7 +7,6 @@ from ..shared import errorresp as shared_errorresp
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteStepRequest:
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
@@ -15,7 +14,6 @@ class DeleteStepRequest:
     step_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'stepId', 'style': 'simple', 'explode': False }})
     r"""Short uuid (length 6) to identify the Workflow Execution Step."""
     
-
 
 
 

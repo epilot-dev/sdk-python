@@ -8,7 +8,6 @@ from ..shared import workflowexecutionupdatereq as shared_workflowexecutionupdat
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateExecutionRequest:
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class UpdateExecutionRequest:
     workflow_execution_update_req: shared_workflowexecutionupdatereq.WorkflowExecutionUpdateReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Patch Updates for Workflow Execution payload."""
     
-
 
 
 

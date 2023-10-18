@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from ..shared import errorresp as shared_errorresp
 from ..shared import workflowexecutionslim as shared_workflowexecutionslim
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -16,7 +15,6 @@ class GetExecutionsRequest:
     schema: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'schema', 'style': 'form', 'explode': True }})
     r"""Schema of an Entity"""
     
-
 
 
 
@@ -30,7 +28,7 @@ class GetExecutionsResponse:
     r"""Other errors"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    workflow_execution_slims: Optional[list[shared_workflowexecutionslim.WorkflowExecutionSlim]] = dataclasses.field(default=None)
+    workflow_execution_slims: Optional[List[shared_workflowexecutionslim.WorkflowExecutionSlim]] = dataclasses.field(default=None)
     r"""Success - executions loaded with success. Empty array if org has no executions."""
     
 

@@ -13,7 +13,6 @@ class UpdateEntityAttributesSource(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateEntityAttributesTarget:
     entity_attribute: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityAttribute') }})
@@ -23,7 +22,6 @@ class UpdateEntityAttributesTarget:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateEntityAttributes:
     source: UpdateEntityAttributesSource = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})

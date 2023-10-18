@@ -13,8 +13,7 @@ from ..shared import workflowcontext as shared_workflowcontext
 from ..shared import workflowstatus as shared_workflowstatus
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional, Union
-
+from typing import List, Optional, Union
 
 
 @dataclasses.dataclass
@@ -23,16 +22,15 @@ class WorkflowExecutionFlow:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class WorkflowExecution:
-    flow: list[Union[shared_section.Section, shared_step.Step]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow') }})
-    assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
+    flow: List[Union[shared_section.Section, shared_step.Step]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow') }})
+    assigned_to: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     closing_reason_description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closingReasonDescription'), 'exclude': lambda f: f is None }})
     completed_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedTime'), 'exclude': lambda f: f is None }})
     r"""Completed time of the workflow execution"""
-    configured_closing_reason_snapshot: Optional[list[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuredClosingReasonSnapshot'), 'exclude': lambda f: f is None }})
-    contexts: Optional[list[shared_workflowcontext.WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
+    configured_closing_reason_snapshot: Optional[List[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuredClosingReasonSnapshot'), 'exclude': lambda f: f is None }})
+    contexts: Optional[List[shared_workflowcontext.WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
     creation_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creationTime'), 'exclude': lambda f: f is None }})
     r"""Creation timestamp which will double as started time as well"""
     definition_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId'), 'exclude': lambda f: f is None }})
@@ -50,10 +48,10 @@ class WorkflowExecution:
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     next_open_step: Optional[shared_stepid.StepID] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextOpenStep'), 'exclude': lambda f: f is None }})
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId'), 'exclude': lambda f: f is None }})
-    selected_closing_reasons: Optional[list[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('selectedClosingReasons'), 'exclude': lambda f: f is None }})
+    selected_closing_reasons: Optional[List[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('selectedClosingReasons'), 'exclude': lambda f: f is None }})
     status: Optional[shared_workflowstatus.WorkflowStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     trigger: Optional[shared_triggertype.TriggerType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger'), 'exclude': lambda f: f is None }})
-    update_entity_attributes: Optional[list[shared_updateentityattributes.UpdateEntityAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateEntityAttributes'), 'exclude': lambda f: f is None }})
+    update_entity_attributes: Optional[List[shared_updateentityattributes.UpdateEntityAttributes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updateEntityAttributes'), 'exclude': lambda f: f is None }})
     version: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version'), 'exclude': lambda f: f is None }})
     r"""Version of the workflow execution"""
     

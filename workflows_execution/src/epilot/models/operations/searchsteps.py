@@ -8,7 +8,6 @@ from ..shared import searchstepsresp as shared_searchstepsresp
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class SearchStepsResponse:
     content_type: str = dataclasses.field()

@@ -8,11 +8,10 @@ from ..shared import steprequirement as shared_steprequirement
 from ..shared import steptype as shared_steptype
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class StepSimplified:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -28,6 +27,8 @@ class StepSimplified:
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
     execution_type: Optional[shared_steptype.StepType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
-    requirements: Optional[list[shared_steprequirement.StepRequirement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements'), 'exclude': lambda f: f is None }})
+    installer: Optional[shared_ecpdetails.ECPDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installer'), 'exclude': lambda f: f is None }})
+    r"""Details regarding ECP for the workflow step"""
+    requirements: Optional[List[shared_steprequirement.StepRequirement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements'), 'exclude': lambda f: f is None }})
     
 

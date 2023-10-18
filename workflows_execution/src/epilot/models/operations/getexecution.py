@@ -8,13 +8,11 @@ from ..shared import workflowexecution as shared_workflowexecution
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetExecutionRequest:
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
     r"""Id of the execution"""
     
-
 
 
 
