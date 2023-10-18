@@ -7,4 +7,4 @@ List of organization users
 
 | Field                                                | Type                                                 | Required                                             | Description                                          |
 | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `results`                                            | list[[shared.UserV2](../../models/shared/userv2.md)] | :heavy_minus_sign:                                   | N/A                                                  |
+| `results`                                            | List[[shared.UserV2](../../models/shared/userv2.md)] | :heavy_minus_sign:                                   | N/A                                                  |

@@ -40,7 +40,7 @@ req = operations.ActivateUserRequest(
         display_name='Example User',
         password='AKjhdakjsdh@!34',
     ),
-    token='Intersex',
+    token='Soap',
 )
 
 res = s.user_v2.activate_user(req)
@@ -353,11 +353,19 @@ s = epilot.Epilot(
 
 req = operations.SignUpUserRequest(
     signup_user_payload=shared.SignupUserPayload(
-        organization_detail={
-            "Optimization": 'North',
-        },
-        user_detail=shared.UserDetail(
+        organization_detail=shared.OrganizationDetail(
+            additional_properties={
+                "Optimization": 'North',
+            },
             email='Rossie20@hotmail.com',
+            is_privacy_policy_checked=False,
+            is_terms_and_conditions_checked=False,
+            name='Epilot',
+            pricing_tier='professional',
+            type=shared.OrganizationDetailType.VENDOR,
+        ),
+        user_detail=shared.UserDetail(
+            email='Phyllis.Gleason@hotmail.com',
             full_name='Example user',
             password='AKjhdakjsdh@!34',
         ),
@@ -408,10 +416,12 @@ req = operations.UpdateUserV2Request(
             "entity_views": 'boohoo',
             "dashboard": 'Functionality',
         },
-        image_uri={
-            "original": 'Account',
-            "thumbnail_32": 'lime',
-        },
+        image_uri=shared.UserV2ImageURI(
+            additional_properties={
+                "original": 'Account',
+                "thumbnail_32": 'lime',
+            },
+        ),
         is_signature_enabled=True,
         mfa_enabled=False,
         phone='1234567890',
@@ -468,7 +478,7 @@ req = operations.VerifyEmailWithTokenRequest(
     user_verification_payload=shared.UserVerificationPayload(
         password='AKjhdakjsdh@!34',
     ),
-    token='Diesel',
+    token='Jewelery',
 )
 
 res = s.user_v2.verify_email_with_token(req)

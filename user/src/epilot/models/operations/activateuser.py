@@ -7,14 +7,12 @@ from ..shared import useractivationpayload as shared_useractivationpayload
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ActivateUserRequest:
     token: str = dataclasses.field(metadata={'query_param': { 'field_name': 'token', 'style': 'form', 'explode': True }})
     r"""Invite Token"""
     user_activation_payload: Optional[shared_useractivationpayload.UserActivationPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

@@ -34,6 +34,7 @@ src/epilot/models/shared/userinvitationpayload.py
 src/epilot/models/shared/organization.py
 src/epilot/models/shared/signupuserpayload.py
 src/epilot/models/shared/userdetail.py
+src/epilot/models/shared/organizationdetail.py
 src/epilot/models/shared/userverificationpayload.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
@@ -72,11 +73,13 @@ docs/models/operations/updateuserv2request.md
 docs/models/operations/updateuserv2response.md
 docs/models/operations/verifyemailwithtokenrequest.md
 docs/models/operations/verifyemailwithtokenresponse.md
+docs/models/shared/userimageuri.md
 docs/models/shared/userproperties.md
 docs/models/shared/user.md
 docs/models/shared/loginparametersoauthresponsetype.md
 docs/models/shared/loginparameters.md
 docs/models/shared/useractivationpayload.md
+docs/models/shared/userv2imageuri.md
 docs/models/shared/userv2properties.md
 docs/models/shared/userv2status.md
 docs/models/shared/userv2.md
@@ -88,6 +91,8 @@ docs/models/shared/organization.md
 docs/models/shared/signupuserpayloadlanguage.md
 docs/models/shared/signupuserpayload.md
 docs/models/shared/userdetail.md
+docs/models/shared/organizationdetailtype.md
+docs/models/shared/organizationdetail.md
 docs/models/shared/userverificationpayload.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md

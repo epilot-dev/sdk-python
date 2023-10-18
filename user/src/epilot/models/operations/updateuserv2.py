@@ -7,14 +7,12 @@ from ..shared import userv2 as shared_userv2
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateUserV2Request:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The Id of user"""
     user_v2: Optional[shared_userv2.UserV2] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

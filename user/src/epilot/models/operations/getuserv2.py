@@ -7,13 +7,11 @@ from ..shared import userv2 as shared_userv2
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetUserV2Request:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The Id of user"""
     
-
 
 
 

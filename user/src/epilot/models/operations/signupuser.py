@@ -11,7 +11,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class SignUpUserRequest:
     signup_user_payload: Optional[shared_signupuserpayload.SignupUserPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
@@ -22,14 +21,12 @@ class SignUpUserRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SignUpUser200ApplicationJSON:
     r"""The created user and organization"""
     organization: Optional[shared_organization.Organization] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization'), 'exclude': lambda f: f is None }})
     user: Optional[shared_user.User] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
     
-
 
 
 

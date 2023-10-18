@@ -7,14 +7,12 @@ from ..shared import userverificationpayload as shared_userverificationpayload
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class VerifyEmailWithTokenRequest:
     token: str = dataclasses.field(metadata={'query_param': { 'field_name': 'token', 'style': 'form', 'explode': True }})
     r"""Verification Token"""
     user_verification_payload: Optional[shared_userverificationpayload.UserVerificationPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

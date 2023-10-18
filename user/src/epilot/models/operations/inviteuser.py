@@ -7,7 +7,6 @@ from ..shared import userv2 as shared_userv2
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class InviteUserResponse:
     content_type: str = dataclasses.field()

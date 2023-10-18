@@ -6,8 +6,7 @@ import requests as requests_http
 from ..shared import loginparameters as shared_loginparameters
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -19,13 +18,11 @@ class GetUserLoginParametersRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetUserLoginParameters200ApplicationJSON:
     r"""User"""
-    login_parameters: Optional[list[shared_loginparameters.LoginParameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login_parameters'), 'exclude': lambda f: f is None }})
+    login_parameters: Optional[List[shared_loginparameters.LoginParameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login_parameters'), 'exclude': lambda f: f is None }})
     
-
 
 
 
