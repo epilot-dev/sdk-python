@@ -7,7 +7,6 @@ from ..shared import entitysearchparams as shared_entitysearchparams
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ExportEntitiesRequest:
     entity_search_params: Optional[shared_entitysearchparams.EntitySearchParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
@@ -18,7 +17,6 @@ class ExportEntitiesRequest:
     language: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'language', 'style': 'form', 'explode': True }})
     r"""Export headers translation language"""
     
-
 
 
 

@@ -7,4 +7,4 @@ Returns list of taxonomies in an organisation
 
 | Field                                                    | Type                                                     | Required                                                 | Description                                              |
 | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `results`                                                | list[[shared.Taxonomy](../../models/shared/taxonomy.md)] | :heavy_minus_sign:                                       | N/A                                                      |
+| `results`                                                | List[[shared.Taxonomy](../../models/shared/taxonomy.md)] | :heavy_minus_sign:                                       | N/A                                                      |

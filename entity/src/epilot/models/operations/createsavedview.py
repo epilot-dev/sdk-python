@@ -7,7 +7,6 @@ from ..shared import savedviewitem as shared_savedviewitem
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateSavedViewResponse:
     content_type: str = dataclasses.field()

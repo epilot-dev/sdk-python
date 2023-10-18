@@ -32,18 +32,57 @@ from ..shared import textattribute as shared_textattribute
 from ..shared import userrelationattribute as shared_userrelationattribute
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class EntityCapabilityUIHooksRequiredPermission:
+    r"""Require a permission to display UI hook"""
+    action: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action') }})
+    resource: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resource'), 'exclude': lambda f: f is None }})
+    
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class EntityCapabilityUIHooks:
+    hook: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hook') }})
+    r"""name of the hook to use"""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    component: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('component'), 'exclude': lambda f: f is None }})
+    r"""the component to be dynamically loaded"""
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    r"""Whether capability should be disabled"""
+    group_expanded: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group_expanded'), 'exclude': lambda f: f is None }})
+    r"""Sets the group expand/collapse default state"""
+    header: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('header'), 'exclude': lambda f: f is None }})
+    r"""Specific to Activity pilot"""
+    icon: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon'), 'exclude': lambda f: f is None }})
+    r"""Preview icon name(As in Base elements) for the capability"""
+    import_: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('import'), 'exclude': lambda f: f is None }})
+    r"""package to be imported"""
+    order: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order'), 'exclude': lambda f: f is None }})
+    r"""render order (ascending)"""
+    render_condition: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('render_condition'), 'exclude': lambda f: f is None }})
+    required_permission: Optional[EntityCapabilityUIHooksRequiredPermission] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requiredPermission'), 'exclude': lambda f: f is None }})
+    r"""Require a permission to display UI hook"""
+    route: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('route'), 'exclude': lambda f: f is None }})
+    r"""route for specified capability"""
+    title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntityCapability:
     r"""Capabilities the Entity has. Turn features on/off for entities."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Unique name for the capability"""
-    purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
-    attributes: Optional[list[Union[shared_textattribute.TextAttribute, shared_linkattribute.LinkAttribute, shared_dateattribute.DateAttribute, shared_countryattribute.CountryAttribute, shared_booleanattribute.BooleanAttribute, shared_selectattribute.SelectAttribute, shared_multiselectattribute.MultiSelectAttribute, shared_statusattribute.StatusAttribute, shared_sequenceattribute.SequenceAttribute, shared_relationattribute.RelationAttribute, shared_userrelationattribute.UserRelationAttribute, shared_addressrelationattribute.AddressRelationAttribute, shared_paymentmethodrelationattribute.PaymentMethodRelationAttribute, shared_currencyattribute.CurrencyAttribute, shared_repeatableattribute.RepeatableAttribute, shared_tagsattribute.TagsAttribute, shared_numberattribute.NumberAttribute, shared_consentattribute.ConsentAttribute, shared_internalattribute.InternalAttribute, shared_orderedlistattribute.OrderedListAttribute, shared_fileattribute.FileAttribute, shared_computedattribute.ComputedAttribute, shared_partnerstatusattribute.PartnerStatusAttribute, shared_invitationemailattribute.InvitationEmailAttribute, shared_automationattribute.AutomationAttribute, shared_internaluserattribute.InternalUserAttribute, shared_purposeattribute.PurposeAttribute, shared_partnerorganisationattribute.PartnerOrganisationAttribute]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
+    purpose: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
+    attributes: Optional[List[Union[shared_textattribute.TextAttribute, shared_linkattribute.LinkAttribute, shared_dateattribute.DateAttribute, shared_countryattribute.CountryAttribute, shared_booleanattribute.BooleanAttribute, shared_selectattribute.SelectAttribute, shared_multiselectattribute.MultiSelectAttribute, shared_statusattribute.StatusAttribute, shared_sequenceattribute.SequenceAttribute, shared_relationattribute.RelationAttribute, shared_userrelationattribute.UserRelationAttribute, shared_addressrelationattribute.AddressRelationAttribute, shared_paymentmethodrelationattribute.PaymentMethodRelationAttribute, shared_currencyattribute.CurrencyAttribute, shared_repeatableattribute.RepeatableAttribute, shared_tagsattribute.TagsAttribute, shared_numberattribute.NumberAttribute, shared_consentattribute.ConsentAttribute, shared_internalattribute.InternalAttribute, shared_orderedlistattribute.OrderedListAttribute, shared_fileattribute.FileAttribute, shared_computedattribute.ComputedAttribute, shared_partnerstatusattribute.PartnerStatusAttribute, shared_invitationemailattribute.InvitationEmailAttribute, shared_automationattribute.AutomationAttribute, shared_internaluserattribute.InternalUserAttribute, shared_purposeattribute.PurposeAttribute, shared_partnerorganisationattribute.PartnerOrganisationAttribute]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes'), 'exclude': lambda f: f is None }})
     feature_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_flag'), 'exclude': lambda f: f is None }})
     r"""This capability should only be active when the feature flag is enabled"""
     legacy: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('legacy'), 'exclude': lambda f: f is None }})
@@ -52,6 +91,6 @@ class EntityCapability:
     r"""This capability should only be active when the setting is enabled"""
     title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
     r"""Human readable title of the capability"""
-    ui_hooks: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ui_hooks'), 'exclude': lambda f: f is None }})
+    ui_hooks: Optional[List[EntityCapabilityUIHooks]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ui_hooks'), 'exclude': lambda f: f is None }})
     
 

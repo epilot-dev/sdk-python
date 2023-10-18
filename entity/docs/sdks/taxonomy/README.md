@@ -104,7 +104,7 @@ req = operations.TaxonomiesClassificationsSearchRequest(
             '140d9b86-5e3a-4ede-b609-1ca17c7aaeae',
         ],
     ),
-    taxonomy_slug='Oklahoma azure illum',
+    taxonomy_slug='Bicycle',
 )
 
 res = s.taxonomy.taxonomies_classifications_search(req)
@@ -143,7 +143,7 @@ s = epilot.Epilot(
 )
 
 req = operations.TaxonomyAutocompleteRequest(
-    taxonomy_slug='Polarised optio Hybrid',
+    taxonomy_slug='Planner',
 )
 
 res = s.taxonomy.taxonomy_autocomplete(req)
@@ -204,7 +204,7 @@ req = operations.UpdateClassificationsForTaxonomyRequest(
             ),
         ],
     ),
-    taxonomy_slug='transmitting female Polarised',
+    taxonomy_slug='or',
 )
 
 res = s.taxonomy.update_classifications_for_taxonomy(req)

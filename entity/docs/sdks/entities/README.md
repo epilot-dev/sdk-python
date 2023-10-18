@@ -90,6 +90,7 @@ The items in `$relation` support two properties:
 
 ```python
 import epilot
+import dateutil.parser
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -99,16 +100,60 @@ s = epilot.Epilot(
 )
 
 req = operations.CreateEntityRequest(
-    request_body={
-        "_created_at": 'Industrial',
-        "_updated_at": 'Implementation',
-        "_acl": 'Future',
-        "_id": 'Southeast',
-        "_org": 'Tandem',
-        "_owners": 'male',
-        "_schema": 'North',
-        "_tags": 'Beach',
-    },
+    entity=shared.Entity(
+        additional_properties={
+            "_owners": 'Industrial',
+            "_schema": 'Implementation',
+            "_tags": 'Future',
+            "_created_at": 'Southeast',
+            "_updated_at": 'Tandem',
+            "_acl": 'male',
+            "_id": 'North',
+            "_org": 'Beach',
+        },
+        acl=shared.EntityACL(
+            additional_properties={
+                "Fresh": 'lavender',
+            },
+            delete=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+            edit=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+            view=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+        ),
+        owners=[
+            shared.EntityOwner(
+                org_id='123',
+                user_id='123',
+            ),
+        ],
+        schema='contact',
+        tags=[
+            'than',
+        ],
+    ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
     slug='contact',
 )
@@ -316,6 +361,7 @@ The items in `$relation` support two properties:
 
 ```python
 import epilot
+import dateutil.parser
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -325,18 +371,62 @@ s = epilot.Epilot(
 )
 
 req = operations.PatchEntityRequest(
-    request_body={
-        "_updated_at": 'fuchsia',
-        "_acl": 'Account',
-        "_id": 'engage',
-        "_org": 'Cis',
-        "_owners": 'solutions',
-        "_schema": 'founder',
-        "_tags": 'Southeast',
-        "_created_at": 'Cab',
-    },
+    entity=shared.Entity(
+        additional_properties={
+            "_tags": 'fuchsia',
+            "_created_at": 'Account',
+            "_updated_at": 'engage',
+            "_acl": 'Cis',
+            "_id": 'solutions',
+            "_org": 'founder',
+            "_owners": 'Southeast',
+            "_schema": 'Cab',
+        },
+        acl=shared.EntityACL(
+            additional_properties={
+                "Italy": 'potentially',
+            },
+            delete=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+            edit=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+            view=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+        ),
+        owners=[
+            shared.EntityOwner(
+                org_id='123',
+                user_id='123',
+            ),
+        ],
+        schema='contact',
+        tags=[
+            'Multigender',
+        ],
+    ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='06e999b7-2319-4d9e-8290-d19da9e1f40d',
+    id='b72319d9-e429-40d1-9da9-e1f40d7c71a7',
     slug='contact',
 )
 
@@ -503,6 +593,7 @@ The items in `$relation` support two properties:
 
 ```python
 import epilot
+import dateutil.parser
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -512,18 +603,62 @@ s = epilot.Epilot(
 )
 
 req = operations.UpdateEntityRequest(
-    request_body={
-        "_acl": 'Hartmann',
-        "_id": 'invoice',
-        "_org": 'fathom',
-        "_owners": 'Nepal',
-        "_schema": 'indexing',
-        "_tags": 'male',
-        "_created_at": 'Profound',
-        "_updated_at": 'policy',
-    },
+    entity=shared.Entity(
+        additional_properties={
+            "_id": 'Hartmann',
+            "_org": 'invoice',
+            "_owners": 'fathom',
+            "_schema": 'Nepal',
+            "_tags": 'indexing',
+            "_created_at": 'male',
+            "_updated_at": 'Profound',
+            "_acl": 'policy',
+        },
+        acl=shared.EntityACL(
+            additional_properties={
+                "Southwest": 'Avon',
+            },
+            delete=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+            edit=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+            view=[
+                'o',
+                'r',
+                'g',
+                ':',
+                '4',
+                '5',
+                '6',
+            ],
+        ),
+        owners=[
+            shared.EntityOwner(
+                org_id='123',
+                user_id='123',
+            ),
+        ],
+        schema='contact',
+        tags=[
+            'Volvo',
+        ],
+    ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='1d12df74-462a-498e-a7ff-ce36a4e49616',
+    id='74462a98-e27f-4fce-b6a4-e496163b217a',
     slug='contact',
 )
 
@@ -563,6 +698,7 @@ If no `activity_id` query parameter is provided, implicitly creates Activity of 
 
 ```python
 import epilot
+import dateutil.parser
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -573,16 +709,60 @@ s = epilot.Epilot(
 
 req = operations.UpsertEntityRequest(
     request_body=operations.UpsertEntityRequestBody(
-        entity={
-            "_created_at": 'West',
-            "_updated_at": 'close',
-            "_acl": 'Infrastructure',
-            "_id": 'music',
-            "_org": 'astride',
-            "_owners": 'Designer',
-            "_schema": 'strategic',
-            "_tags": 'along',
-        },
+        entity=shared.Entity(
+            additional_properties={
+                "_schema": 'West',
+                "_tags": 'close',
+                "_created_at": 'Infrastructure',
+                "_updated_at": 'music',
+                "_acl": 'astride',
+                "_id": 'Designer',
+                "_org": 'strategic',
+                "_owners": 'along',
+            },
+            acl=shared.EntityACL(
+                additional_properties={
+                    "Rap": 'Virtual',
+                },
+                delete=[
+                    'o',
+                    'r',
+                    'g',
+                    ':',
+                    '4',
+                    '5',
+                    '6',
+                ],
+                edit=[
+                    'o',
+                    'r',
+                    'g',
+                    ':',
+                    '4',
+                    '5',
+                    '6',
+                ],
+                view=[
+                    'o',
+                    'r',
+                    'g',
+                    ':',
+                    '4',
+                    '5',
+                    '6',
+                ],
+            ),
+            owners=[
+                shared.EntityOwner(
+                    org_id='123',
+                    user_id='123',
+                ),
+            ],
+            schema='contact',
+            tags=[
+                'Home',
+            ],
+        ),
         unique_key=[
             '_id',
         ],

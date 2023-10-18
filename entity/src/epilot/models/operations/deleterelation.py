@@ -6,7 +6,6 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteRelationRequest:
     attribute: str = dataclasses.field(metadata={'path_param': { 'field_name': 'attribute', 'style': 'simple', 'explode': False }})
@@ -22,7 +21,6 @@ class DeleteRelationRequest:
     async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
     r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
     
-
 
 
 

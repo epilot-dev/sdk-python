@@ -9,7 +9,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetSavedViewRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -19,13 +18,11 @@ class GetSavedViewRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetSavedView200ApplicationJSON:
     r"""Success"""
     view: Optional[shared_savedviewitem.SavedViewItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view'), 'exclude': lambda f: f is None }})
     
-
 
 
 

@@ -3,19 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import entity as shared_entity
+from ..shared import entityitem as shared_entityitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpsertEntityRequestBody:
-    entity: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity') }})
-    unique_key: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unique_key') }})
+    entity: shared_entity.Entity = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity') }})
+    unique_key: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unique_key') }})
     
-
 
 
 
@@ -34,14 +34,13 @@ class UpsertEntityRequest:
 
 
 
-
 @dataclasses.dataclass
 class UpsertEntityResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    entity_item: Optional[shared_entityitem.EntityItem] = dataclasses.field(default=None)
     r"""Entity was updated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

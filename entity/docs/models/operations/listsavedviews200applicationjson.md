@@ -7,4 +7,4 @@ Success
 
 | Field                                                              | Type                                                               | Required                                                           | Description                                                        |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `results`                                                          | list[[shared.SavedViewItem](../../models/shared/savedviewitem.md)] | :heavy_minus_sign:                                                 | N/A                                                                |
+| `results`                                                          | List[[shared.SavedViewItem](../../models/shared/savedviewitem.md)] | :heavy_minus_sign:                                                 | N/A                                                                |

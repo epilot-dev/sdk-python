@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SummaryAttribute:
     r"""Represents an expanded version of an attribute to be displayed in the list item summary.

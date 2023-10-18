@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 class Relations:
     r"""Entity Relationships"""
@@ -122,7 +122,7 @@ class Relations:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[Union[shared.RelationItem, dict[str, Any]]]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[Union[shared.RelationItem, shared.RelationEntity]]])
                 res.get_relations_resp = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

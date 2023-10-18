@@ -237,8 +237,8 @@ req = operations.UpdateSavedViewRequest(
             'contact',
         ],
         ui_config={
-            "filters": 'red',
-            "table_layout": 'Car',
+            "table_layout": 'red',
+            "filters": 'Car',
         },
     ),
     id='92cd4781-664d-4f55-b084-1d72e4e501ca',

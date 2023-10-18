@@ -5,8 +5,7 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
-
+from typing import Any, List, Optional
 
 
 @dataclasses.dataclass
@@ -19,7 +18,6 @@ class ConsentAttributeConstraints:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConsentAttributeInfoHelpers:
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
@@ -48,7 +46,6 @@ class ConsentAttributeType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConsentAttribute:
     r"""Consent Management"""
@@ -56,7 +53,7 @@ class ConsentAttribute:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     topic: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('topic') }})
     type: ConsentAttributeType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
+    purpose: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
     constraints: Optional[ConsentAttributeConstraints] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.
@@ -77,7 +74,7 @@ class ConsentAttribute:
     r"""Code name of the icon to used to represent this attribute.
     The value must be a valid @epilot/base-elements Icon name
     """
-    identifiers: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifiers'), 'exclude': lambda f: f is None }})
+    identifiers: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('identifiers'), 'exclude': lambda f: f is None }})
     info_helpers: Optional[ConsentAttributeInfoHelpers] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('info_helpers'), 'exclude': lambda f: f is None }})
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
     layout: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('layout'), 'exclude': lambda f: f is None }})

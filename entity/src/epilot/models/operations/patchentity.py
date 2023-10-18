@@ -3,15 +3,16 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
-
+from ..shared import entity as shared_entity
+from ..shared import entityitem as shared_entityitem
+from typing import Optional
 
 
 @dataclasses.dataclass
 class PatchEntityRequest:
+    entity: shared_entity.Entity = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Entity Id"""
-    request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""Entity Schema"""
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
@@ -24,14 +25,13 @@ class PatchEntityRequest:
 
 
 
-
 @dataclasses.dataclass
 class PatchEntityResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    entity_item: Optional[shared_entityitem.EntityItem] = dataclasses.field(default=None)
     r"""Entity was updated"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

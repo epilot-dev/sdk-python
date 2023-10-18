@@ -36,12 +36,12 @@ req = operations.AddRelationsRequest(
             tags=[
                 'Forward',
             ],
-            attribute='Swedish Hatchback Luxurious',
-            entity_id='9248b564-99df-4660-9593-cfe3d006d87e',
+            attribute='Pickup',
+            entity_id='1d83d924-8b56-4499-9f66-0d593cfe3d00',
         ),
     ],
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='69d98cd0-9bf6-4d30-b52c-36108777da47',
+    id='6d87e69d-98cd-409b-b6d3-0b52c3610877',
     slug='contact',
 )
 
@@ -82,9 +82,9 @@ s = epilot.Epilot(
 
 req = operations.DeleteRelationRequest(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    attribute='whiteboard sandal',
-    entity_id='quasi South Southeast',
-    id='f5b77b85-5b9c-4585-b7ae-4d21f6044e25',
+    attribute='compressing',
+    entity_id='Representative',
+    id='cd911519-f5b7-47b8-95b9-c58577ae4d21',
     slug='contact',
 )
 
@@ -269,9 +269,9 @@ req = operations.UpdateRelationRequest(
         ],
     ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    attribute='imperturbable female during',
-    entity_id='HDD Gasoline',
-    id='3b01c385-4f8c-44b2-a614-3d8a0d332324',
+    attribute='male',
+    entity_id='Account',
+    id='ff6a74da-3b01-4c38-94f8-c4b226143d8a',
     slug='contact',
 )
 

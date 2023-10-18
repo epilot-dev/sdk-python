@@ -3,10 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getrelationsresp as shared_getrelationsresp
+from ..shared import relationentity as shared_relationentity
 from ..shared import relationitem as shared_relationitem
-from typing import Optional, Union
-
+from typing import List, Optional, Union
 
 
 @dataclasses.dataclass
@@ -23,14 +22,13 @@ class GetRelationsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetRelationsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_relations_resp: Optional[list[Union[shared_relationitem.RelationItem, dict[str, Any]]]] = dataclasses.field(default=None)
+    get_relations_resp: Optional[List[Union[shared_relationitem.RelationItem, shared_relationentity.RelationEntity]]] = dataclasses.field(default=None)
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

@@ -3,10 +3,10 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import entityitem as shared_entityitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -22,14 +22,12 @@ class GetEntityRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetEntity200ApplicationJSON:
     r"""Success"""
-    entity: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
-    relations: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
+    entity: Optional[shared_entityitem.EntityItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
+    relations: Optional[List[shared_entityitem.EntityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
     
-
 
 
 

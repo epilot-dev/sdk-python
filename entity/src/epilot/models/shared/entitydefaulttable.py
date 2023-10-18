@@ -5,14 +5,13 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 class EntityDefaultTableDropdownItems2Type(str, Enum):
     LINK = 'link'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntityDefaultTableDropdownItems2:
     feature_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_flag'), 'exclude': lambda f: f is None }})
@@ -30,7 +29,6 @@ class EntityDefaultTableDropdownItems1Type(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntityDefaultTableDropdownItems1:
     entity: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
@@ -44,11 +42,9 @@ class EntityDefaultTableDropdownItems1:
 
 
 
-
 @dataclasses.dataclass
 class EntityDefaultTableDropdownItems:
     pass
-
 
 
 @dataclasses.dataclass
@@ -57,7 +53,6 @@ class EntityDefaultTableNavbarActionsOptionsParams:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntityDefaultTableNavbarActionsOptions:
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
@@ -67,11 +62,10 @@ class EntityDefaultTableNavbarActionsOptions:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntityDefaultTableNavbarActions:
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    options: Optional[list[EntityDefaultTableNavbarActionsOptions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options'), 'exclude': lambda f: f is None }})
+    options: Optional[List[EntityDefaultTableNavbarActionsOptions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options'), 'exclude': lambda f: f is None }})
     
 
 
@@ -80,15 +74,14 @@ class EntityDefaultTableViewType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntityDefaultTable:
     classic_view: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classic_view'), 'exclude': lambda f: f is None }})
-    dropdown_items: Optional[list[Union[EntityDefaultTableDropdownItems1, EntityDefaultTableDropdownItems2]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dropdown_items'), 'exclude': lambda f: f is None }})
+    dropdown_items: Optional[List[Union[EntityDefaultTableDropdownItems1, EntityDefaultTableDropdownItems2]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dropdown_items'), 'exclude': lambda f: f is None }})
     enable_thumbnails: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_thumbnails'), 'exclude': lambda f: f is None }})
     r"""Enable the thumbnail column"""
-    navbar_actions: Optional[list[EntityDefaultTableNavbarActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('navbar_actions'), 'exclude': lambda f: f is None }})
-    row_actions: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('row_actions'), 'exclude': lambda f: f is None }})
+    navbar_actions: Optional[List[EntityDefaultTableNavbarActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('navbar_actions'), 'exclude': lambda f: f is None }})
+    row_actions: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('row_actions'), 'exclude': lambda f: f is None }})
     view_type: Optional[EntityDefaultTableViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
 

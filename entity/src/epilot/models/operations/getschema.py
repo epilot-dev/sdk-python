@@ -7,13 +7,11 @@ from ..shared import entityschemaitem as shared_entityschemaitem
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetSchemaRequest:
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'id', 'style': 'form', 'explode': True }})
     
-
 
 
 

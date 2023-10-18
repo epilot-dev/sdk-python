@@ -7,7 +7,6 @@ from ..shared import entitysearchresults as shared_entitysearchresults
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class SearchEntitiesResponse:
     content_type: str = dataclasses.field()

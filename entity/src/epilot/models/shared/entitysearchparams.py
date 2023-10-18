@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -16,14 +15,13 @@ class EntitySearchParamsAggs:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntitySearchParams:
     q: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('q') }})
     r"""Lucene queries supported with ElasticSearch"""
     aggs: Optional[EntitySearchParamsAggs] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aggs'), 'exclude': lambda f: f is None }})
     r"""Aggregation supported by ElasticSearch allows summarizing data as metrics, statistics, or other analytics."""
-    fields_: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
+    fields_: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
     r"""List of entity fields to include in search results"""
     from_: Optional[int] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})
     hydrate: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hydrate'), 'exclude': lambda f: f is None }})

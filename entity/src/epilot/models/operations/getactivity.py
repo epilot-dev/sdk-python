@@ -7,7 +7,6 @@ from ..shared import activityitem as shared_activityitem
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetActivityRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -17,7 +16,6 @@ class GetActivityRequest:
     operations_size: Optional[int] = dataclasses.field(default=25, metadata={'query_param': { 'field_name': 'operations_size', 'style': 'form', 'explode': True }})
     r"""Maximum number of operations to include in response (default: 10)"""
     
-
 
 
 

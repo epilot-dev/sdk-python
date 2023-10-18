@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional, Union
-
+from typing import Any, Dict, List, Optional, Union
 
 
 @dataclasses.dataclass
@@ -23,21 +22,18 @@ class AutocompleteRequest:
 
 
 
-
 @dataclasses.dataclass
 class Autocomplete200ApplicationJSONResults:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Autocomplete200ApplicationJSON:
     r"""Success"""
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
-    results: Optional[list[Union[str, bool, dict[str, Any]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[Union[str, bool, Dict[str, Any]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-
 
 
 

@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SummaryField:
     r"""Summary Fields are displayed inside list view as a resume of the relation entity."""

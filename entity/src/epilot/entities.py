@@ -4,7 +4,7 @@ from .sdkconfiguration import SDKConfiguration
 from enum import Enum
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class SearchEntitiesAcceptEnum(str, Enum):
     APPLICATION_JSON = "application/json"
@@ -79,7 +79,7 @@ class Entities:
         
         url = utils.generate_url(operations.CreateEntityRequest, base_url, '/v1/entity/{slug}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "entity", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.CreateEntityRequest, request)
@@ -95,7 +95,7 @@ class Entities:
         
         if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.EntityItem])
                 res.entity_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -255,7 +255,7 @@ class Entities:
         
         url = utils.generate_url(operations.PatchEntityRequest, base_url, '/v1/entity/{slug}/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "entity", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -273,7 +273,7 @@ class Entities:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.EntityItem])
                 res.entity_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -415,7 +415,7 @@ class Entities:
         
         url = utils.generate_url(operations.UpdateEntityRequest, base_url, '/v1/entity/{slug}/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "entity", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.UpdateEntityRequest, request)
@@ -431,7 +431,7 @@ class Entities:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.EntityItem])
                 res.entity_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -471,7 +471,7 @@ class Entities:
         
         if http_res.status_code in [200, 201]:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.EntityItem])
                 res.entity_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

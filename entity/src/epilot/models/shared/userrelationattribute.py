@@ -5,8 +5,7 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
-
+from typing import Any, List, Optional
 
 
 @dataclasses.dataclass
@@ -19,7 +18,6 @@ class UserRelationAttributeConstraints:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UserRelationAttributeInfoHelpers:
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
@@ -48,13 +46,12 @@ class UserRelationAttributeType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UserRelationAttribute:
     r"""User Relationship"""
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
+    purpose: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
     constraints: Optional[UserRelationAttributeConstraints] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.

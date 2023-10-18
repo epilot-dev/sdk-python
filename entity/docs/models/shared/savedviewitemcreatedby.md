@@ -9,9 +9,9 @@
 savedViewItemCreatedBy: shared.SavedViewItemCreatedBy1 = /* values here */
 ```
 
-### 
+### SavedViewItemCreatedBy2
 
 ```python
-savedViewItemCreatedBy: dict[str, Any] = /* values here */
+savedViewItemCreatedBy: shared.SavedViewItemCreatedBy2 = /* values here */
 ```
 

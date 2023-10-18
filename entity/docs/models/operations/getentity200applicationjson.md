@@ -5,7 +5,7 @@ Success
 
 ## Fields
 
-| Field                  | Type                   | Required               | Description            | Example                |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `entity`               | dict[str, *Any*]       | :heavy_minus_sign:     | N/A                    | [object Object]        |
-| `relations`            | list[dict[str, *Any*]] | :heavy_minus_sign:     | N/A                    |                        |
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `entity`                                                         | [Optional[shared.EntityItem]](../../models/shared/entityitem.md) | :heavy_minus_sign:                                               | N/A                                                              |
+| `relations`                                                      | List[[shared.EntityItem](../../models/shared/entityitem.md)]     | :heavy_minus_sign:                                               | N/A                                                              |

@@ -9,9 +9,9 @@
 getRelationsResp: shared.RelationItem = /* values here */
 ```
 
-### 
+### RelationEntity
 
 ```python
-getRelationsResp: dict[str, Any] = /* values here */
+getRelationsResp: shared.RelationEntity = /* values here */
 ```
 

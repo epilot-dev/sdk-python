@@ -6,16 +6,14 @@ import requests as requests_http
 from ..shared import taxonomyclassification as shared_taxonomyclassification
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaxonomiesClassificationsSearchRequestBody:
-    classification_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classificationIds'), 'exclude': lambda f: f is None }})
+    classification_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classificationIds'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -29,13 +27,11 @@ class TaxonomiesClassificationsSearchRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TaxonomiesClassificationsSearch200ApplicationJSON:
     r"""Returns list of taxonomy classifications"""
-    results: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-
 
 
 

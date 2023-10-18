@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import relationitem as shared_relationitem
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -18,9 +17,8 @@ class AddRelationsRequest:
     r"""Activity to include in event feed"""
     async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
     r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
-    request_body: Optional[list[shared_relationitem.RelationItem]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    request_body: Optional[List[shared_relationitem.RelationItem]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

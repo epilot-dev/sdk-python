@@ -18,6 +18,6 @@ autocomplete200ApplicationJSONResults: bool = /* values here */
 ### 
 
 ```python
-autocomplete200ApplicationJSONResults: dict[str, Any] = /* values here */
+autocomplete200ApplicationJSONResults: Dict[str, Any] = /* values here */
 ```
 

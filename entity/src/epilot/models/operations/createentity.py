@@ -3,8 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
-
+from ..shared import entity as shared_entity
+from ..shared import entityitem as shared_entityitem
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -15,9 +16,8 @@ class CreateEntityRequest:
     r"""Activity to include in event feed"""
     async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
     r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
-    request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    entity: Optional[shared_entity.Entity] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 
@@ -27,7 +27,7 @@ class CreateEntityResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    entity_item: Optional[shared_entityitem.EntityItem] = dataclasses.field(default=None)
     r"""Success"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

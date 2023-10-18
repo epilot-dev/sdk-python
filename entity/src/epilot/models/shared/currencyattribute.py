@@ -5,8 +5,7 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional, Union
-
+from typing import Any, List, Optional, Union
 
 
 @dataclasses.dataclass
@@ -19,7 +18,6 @@ class CurrencyAttributeConstraints:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CurrencyAttributeCurrency1:
     r"""A currency configuration"""
@@ -31,14 +29,12 @@ class CurrencyAttributeCurrency1:
 
 
 
-
 @dataclasses.dataclass
 class CurrencyAttributeCurrency:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CurrencyAttributeInfoHelpers:
     r"""A set of configurations meant to document and assist the user in filling the attribute."""
@@ -67,16 +63,15 @@ class CurrencyAttributeType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CurrencyAttribute:
     r"""Currency input"""
-    currency: list[Union[CurrencyAttributeCurrency1]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
+    currency: List[Union[CurrencyAttributeCurrency1]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency') }})
     r"""An array of currency configurations with a country code (ISO-4217)"""
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     type: CurrencyAttributeType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
+    purpose: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
     constraints: Optional[CurrencyAttributeConstraints] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('constraints'), 'exclude': lambda f: f is None }})
     r"""A set of constraints applicable to the attribute.
     These constraints should and will be enforced by the attribute renderer.

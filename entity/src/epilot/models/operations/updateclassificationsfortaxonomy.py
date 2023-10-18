@@ -7,8 +7,7 @@ from ..shared import classificationsupdate as shared_classificationsupdate
 from ..shared import taxonomyclassification as shared_taxonomyclassification
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -20,22 +19,19 @@ class UpdateClassificationsForTaxonomyRequest:
 
 
 
-
 @dataclasses.dataclass
 class UpdateClassificationsForTaxonomy200ApplicationJSONDeleted:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateClassificationsForTaxonomy200ApplicationJSON:
     r"""Taxonomies classifications"""
-    created: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'exclude': lambda f: f is None }})
+    created: Optional[List[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'exclude': lambda f: f is None }})
     deleted: Optional[UpdateClassificationsForTaxonomy200ApplicationJSONDeleted] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
-    updated: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
+    updated: Optional[List[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
     
-
 
 
 

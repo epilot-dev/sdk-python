@@ -5,17 +5,15 @@ import dataclasses
 import requests as requests_http
 from ..shared import activity as shared_activity
 from ..shared import activityitem as shared_activityitem
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class CreateActivityRequest:
     activity: Optional[shared_activity.Activity] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-    entities: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entities', 'style': 'form', 'explode': False }})
+    entities: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entities', 'style': 'form', 'explode': False }})
     r"""Comma-separated list of entities which the activity primarily concerns"""
     
-
 
 
 

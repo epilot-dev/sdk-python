@@ -7,7 +7,6 @@ from epilot import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntityImportParamsS3Reference:
     r"""The S3 bucket and key where the JSON file for import is located."""
@@ -20,7 +19,6 @@ class EntityImportParamsS3Reference:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntityImportParams:
     r"""The parameters for importing entities."""

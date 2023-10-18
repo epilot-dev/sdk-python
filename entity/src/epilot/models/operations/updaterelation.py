@@ -6,16 +6,14 @@ import requests as requests_http
 from ..shared import relationitem as shared_relationitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpdateRelationRequestBody:
-    tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
+    tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -35,7 +33,6 @@ class UpdateRelationRequest:
     r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
     request_body: Optional[UpdateRelationRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

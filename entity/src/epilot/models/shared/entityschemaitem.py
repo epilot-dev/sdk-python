@@ -40,11 +40,10 @@ from ..shared import textattribute as shared_textattribute
 from ..shared import userrelationattribute as shared_userrelationattribute
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntitySchemaItemGroupSettingsInfoTooltipTitle:
     default: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('default'), 'exclude': lambda f: f is None }})
@@ -54,12 +53,11 @@ class EntitySchemaItemGroupSettingsInfoTooltipTitle:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntitySchemaItemGroupSettings:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
-    purpose: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
+    purpose: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_purpose'), 'exclude': lambda f: f is None }})
     expanded: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expanded'), 'exclude': lambda f: f is None }})
     feature_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_flag'), 'exclude': lambda f: f is None }})
     r"""This group should only be active when the feature flag is enabled"""
@@ -74,7 +72,22 @@ class EntitySchemaItemGroupSettings:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class EntitySchemaItemLayoutSettings:
+    r"""Custom grid definitions for the layout. These settings are composed by managed and un-managed properties:
+    - Managed Properties: are interpreted and transformed into layout styles
+    - Un-managed Properties: are appended as styles into the attribute mounting node
+    """
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    grid_gap: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grid_gap'), 'exclude': lambda f: f is None }})
+    r"""Defines the grid gap for the mounting node of the attribute."""
+    grid_template_columns: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grid_template_columns'), 'exclude': lambda f: f is None }})
+    r"""Defines the grid column template for the mounting node of the attribute."""
+    
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntitySchemaItemSource:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
@@ -83,17 +96,14 @@ class EntitySchemaItemSource:
 
 
 
-
 @dataclasses.dataclass
 class EntitySchemaItemUIConfigCreateView:
     pass
 
 
-
 @dataclasses.dataclass
 class EntitySchemaItemUIConfigEditView:
     pass
-
 
 
 @dataclasses.dataclass
@@ -102,16 +112,14 @@ class EntitySchemaItemUIConfigListItemSummaryAttributes:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntitySchemaItemUIConfigListItem:
-    summary_attributes: Optional[list[Union[shared_summaryattribute.SummaryAttribute, str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_attributes'), 'exclude': lambda f: f is None }})
+    summary_attributes: Optional[List[Union[shared_summaryattribute.SummaryAttribute, str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_attributes'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntitySchemaItemUIConfigSharing:
     show_sharing_button: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('show_sharing_button'), 'exclude': lambda f: f is None }})
@@ -120,11 +128,9 @@ class EntitySchemaItemUIConfigSharing:
 
 
 
-
 @dataclasses.dataclass
 class EntitySchemaItemUIConfigSingleView:
     pass
-
 
 
 @dataclasses.dataclass
@@ -133,7 +139,6 @@ class EntitySchemaItemUIConfigTableView:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntitySchemaItemUIConfig:
     create_view: Optional[Union[shared_entitydefaultcreate.EntityDefaultCreate, shared_redirectentityview.RedirectEntityView, shared_entityviewdisabled.EntityViewDisabled]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('create_view'), 'exclude': lambda f: f is None }})
@@ -147,13 +152,12 @@ class EntitySchemaItemUIConfig:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EntitySchemaItem:
     r"""The \\"type\\" of an Entity. Describes the shape. Includes Entity Attributes, Relations and Capabilities."""
-    attributes: list[Union[shared_textattribute.TextAttribute, shared_linkattribute.LinkAttribute, shared_dateattribute.DateAttribute, shared_countryattribute.CountryAttribute, shared_booleanattribute.BooleanAttribute, shared_selectattribute.SelectAttribute, shared_multiselectattribute.MultiSelectAttribute, shared_statusattribute.StatusAttribute, shared_sequenceattribute.SequenceAttribute, shared_relationattribute.RelationAttribute, shared_userrelationattribute.UserRelationAttribute, shared_addressrelationattribute.AddressRelationAttribute, shared_paymentmethodrelationattribute.PaymentMethodRelationAttribute, shared_currencyattribute.CurrencyAttribute, shared_repeatableattribute.RepeatableAttribute, shared_tagsattribute.TagsAttribute, shared_numberattribute.NumberAttribute, shared_consentattribute.ConsentAttribute, shared_internalattribute.InternalAttribute, shared_orderedlistattribute.OrderedListAttribute, shared_fileattribute.FileAttribute, shared_computedattribute.ComputedAttribute, shared_partnerstatusattribute.PartnerStatusAttribute, shared_invitationemailattribute.InvitationEmailAttribute, shared_automationattribute.AutomationAttribute, shared_internaluserattribute.InternalUserAttribute, shared_purposeattribute.PurposeAttribute, shared_partnerorganisationattribute.PartnerOrganisationAttribute]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
+    attributes: List[Union[shared_textattribute.TextAttribute, shared_linkattribute.LinkAttribute, shared_dateattribute.DateAttribute, shared_countryattribute.CountryAttribute, shared_booleanattribute.BooleanAttribute, shared_selectattribute.SelectAttribute, shared_multiselectattribute.MultiSelectAttribute, shared_statusattribute.StatusAttribute, shared_sequenceattribute.SequenceAttribute, shared_relationattribute.RelationAttribute, shared_userrelationattribute.UserRelationAttribute, shared_addressrelationattribute.AddressRelationAttribute, shared_paymentmethodrelationattribute.PaymentMethodRelationAttribute, shared_currencyattribute.CurrencyAttribute, shared_repeatableattribute.RepeatableAttribute, shared_tagsattribute.TagsAttribute, shared_numberattribute.NumberAttribute, shared_consentattribute.ConsentAttribute, shared_internalattribute.InternalAttribute, shared_orderedlistattribute.OrderedListAttribute, shared_fileattribute.FileAttribute, shared_computedattribute.ComputedAttribute, shared_partnerstatusattribute.PartnerStatusAttribute, shared_invitationemailattribute.InvitationEmailAttribute, shared_automationattribute.AutomationAttribute, shared_internaluserattribute.InternalUserAttribute, shared_purposeattribute.PurposeAttribute, shared_partnerorganisationattribute.PartnerOrganisationAttribute]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attributes') }})
     r"""An ordered list of attributes the entity contains"""
-    capabilities: list[shared_entitycapability.EntityCapability] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capabilities') }})
+    capabilities: List[shared_entitycapability.EntityCapability] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capabilities') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""User-friendly identifier for the entity schema"""
     plural: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('plural') }})
@@ -163,20 +167,20 @@ class EntitySchemaItem:
     r"""Reference to blueprint"""
     comment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comment'), 'exclude': lambda f: f is None }})
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'exclude': lambda f: f is None }})
-    dialog_config: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dialog_config'), 'exclude': lambda f: f is None }})
+    dialog_config: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dialog_config'), 'exclude': lambda f: f is None }})
     draft: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('draft'), 'exclude': lambda f: f is None }})
-    enable_setting: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_setting'), 'exclude': lambda f: f is None }})
+    enable_setting: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_setting'), 'exclude': lambda f: f is None }})
     r"""This schema should only be active when one of the organization settings is enabled"""
-    explicit_search_mappings: Optional[dict[str, shared_searchmappings.SearchMappings]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('explicit_search_mappings'), 'exclude': lambda f: f is None }})
+    explicit_search_mappings: Optional[Dict[str, shared_searchmappings.SearchMappings]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('explicit_search_mappings'), 'exclude': lambda f: f is None }})
     r"""Advanced: explicit Elasticsearch index mapping definitions for entity data"""
     feature_flag: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature_flag'), 'exclude': lambda f: f is None }})
     r"""This schema should only be active when the feature flag is enabled"""
-    group_settings: Optional[list[EntitySchemaItemGroupSettings]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group_settings'), 'exclude': lambda f: f is None }})
+    group_settings: Optional[List[EntitySchemaItemGroupSettings]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group_settings'), 'exclude': lambda f: f is None }})
     r"""A dictionary of Group Titles and associated settings if present."""
     icon: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('icon'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Generated uuid for schema"""
-    layout_settings: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('layout_settings'), 'exclude': lambda f: f is None }})
+    layout_settings: Optional[EntitySchemaItemLayoutSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('layout_settings'), 'exclude': lambda f: f is None }})
     r"""Custom grid definitions for the layout. These settings are composed by managed and un-managed properties:
     - Managed Properties: are interpreted and transformed into layout styles
     - Un-managed Properties: are appended as styles into the attribute mounting node
