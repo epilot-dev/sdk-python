@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Dict, Optional
 
 class Epilot:
     r"""Internal Auth API: Auth API to provide JWT tokens for internal API access that work with the epilot custom authorizer.
@@ -18,7 +18,7 @@ class Epilot:
                  security: shared.Security = None,
                  server_idx: int = None,
                  server_url: str = None,
-                 url_params: dict[str, str] = None,
+                 url_params: Dict[str, str] = None,
                  client: requests_http.Session = None,
                  retry_config: utils.RetryConfig = None
                  ) -> None:
@@ -31,7 +31,7 @@ class Epilot:
         :param server_url: The server URL to use for all operations
         :type server_url: str
         :param url_params: Parameters to optionally template the server URL with
-        :type url_params: dict[str, str]
+        :type url_params: Dict[str, str]
         :param client: The requests.Session HTTP client to use for all operations
         :type client: requests_http.Session
         :param retry_config: The utils.RetryConfig to use globally
@@ -164,7 +164,7 @@ class Epilot:
         return res
 
     
-    def get_token_v2(self, request: dict[str, Any]) -> operations.GetTokenV2Response:
+    def get_token_v2(self, request: shared.AuthRequest) -> operations.GetTokenV2Response:
         r"""getTokenV2
         Generates token for internal API access with internal roles
 

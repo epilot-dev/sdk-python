@@ -13,6 +13,7 @@ src/epilot/models/operations/getopenidconfiguration.py
 src/epilot/models/operations/gettoken.py
 src/epilot/models/operations/gettokenv2.py
 src/epilot/models/operations/__init__.py
+src/epilot/models/shared/authrequest.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
 src/epilot/models/errors/__init__.py
@@ -26,6 +27,7 @@ docs/models/operations/gettoken200applicationjson.md
 docs/models/operations/gettokenresponse.md
 docs/models/operations/gettokenv2200applicationjson.md
 docs/models/operations/gettokenv2response.md
+docs/models/shared/authrequest.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md
 .gitattributes

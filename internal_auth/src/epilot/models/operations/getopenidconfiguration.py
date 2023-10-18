@@ -9,14 +9,12 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetOpenIDConfiguration200ApplicationJSON:
     r"""OpenID Configuration"""
     issuer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issuer'), 'exclude': lambda f: f is None }})
     jwks_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jwks_uri'), 'exclude': lambda f: f is None }})
     
-
 
 
 

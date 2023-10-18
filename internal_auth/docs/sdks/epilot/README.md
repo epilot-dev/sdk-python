@@ -175,9 +175,25 @@ s = epilot.Epilot(
     ),
 )
 
-req = {
-    "across": 'black',
-}
+req = shared.AuthRequest(
+    additional_properties={
+        "across": 'black',
+    },
+    assume_roles=[
+        'o',
+        'r',
+        'g',
+        '_',
+        'i',
+        'd',
+        ':',
+        'r',
+        'o',
+        'o',
+        't',
+    ],
+    org_id='12345',
+)
 
 res = s.epilot.get_token_v2(req)
 
@@ -188,9 +204,9 @@ if res.get_token_v2_200_application_json_object is not None:
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `request`                                                | [shared.AuthRequest](../../models/shared/authrequest.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
 
 
 ### Response
