@@ -9,17 +9,15 @@ from ..shared import sharerole as shared_sharerole
 from ..shared import userrole as shared_userrole
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ListCurrentRoles200ApplicationJSON:
     r"""ok"""
-    roles: Optional[list[Union[shared_userrole.UserRole, shared_orgrole.OrgRole, shared_sharerole.ShareRole, shared_partnerrole.PartnerRole]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles'), 'exclude': lambda f: f is None }})
+    roles: Optional[List[Union[shared_userrole.UserRole, shared_orgrole.OrgRole, shared_sharerole.ShareRole, shared_partnerrole.PartnerRole]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles'), 'exclude': lambda f: f is None }})
     
-
 
 
 

@@ -7,13 +7,11 @@ from ..shared import assignment as shared_assignment
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class AddAssignmentRequest:
     role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})
     user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})
     
-
 
 
 

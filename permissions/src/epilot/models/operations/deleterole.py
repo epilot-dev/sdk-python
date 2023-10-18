@@ -10,12 +10,10 @@ from ..shared import userrole as shared_userrole
 from typing import Optional, Union
 
 
-
 @dataclasses.dataclass
 class DeleteRoleRequest:
     role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})
     
-
 
 
 

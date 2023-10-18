@@ -11,13 +11,11 @@ from ..shared import userrole as shared_userrole
 from typing import Optional, Union
 
 
-
 @dataclasses.dataclass
 class PutRoleRequest:
     role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})
     role_payload: Optional[Union[shared_rolepayload.RolePayload1, shared_rolepayload.RolePayload2, shared_rolepayload.RolePayload3, shared_rolepayload.RolePayload4]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

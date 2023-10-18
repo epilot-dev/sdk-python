@@ -8,18 +8,17 @@ from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 class OrgRoleType(str, Enum):
     ORG_ROLE = 'org_role'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class OrgRole:
     r"""A role automatically applied to all users in an organization."""
-    grants: list[shared_grant.Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
+    grants: List[shared_grant.Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
     r"""List of grants (permissions) applied to the role"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Format: <organization_id>:<slug>"""

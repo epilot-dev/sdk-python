@@ -7,4 +7,4 @@ ok
 
 | Field                                                        | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `assignments`                                                | list[[shared.Assignment](../../models/shared/assignment.md)] | :heavy_minus_sign:                                           | N/A                                                          |
+| `assignments`                                                | List[[shared.Assignment](../../models/shared/assignment.md)] | :heavy_minus_sign:                                           | N/A                                                          |

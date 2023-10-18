@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Optional
+from typing import List, Optional
 
 class Assignments:
     r"""Assign roles to users"""
@@ -66,7 +66,7 @@ class Assignments:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[str]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[str]])
                 res.assignments = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -94,7 +94,7 @@ class Assignments:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[str]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[str]])
                 res.assignments = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

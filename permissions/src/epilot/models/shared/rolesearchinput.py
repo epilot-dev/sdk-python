@@ -4,24 +4,23 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class RoleSearchInput:
     limit: Optional[float] = dataclasses.field(default=50, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})
     r"""The Number of roles to return"""
     offset: Optional[float] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('offset'), 'exclude': lambda f: f is None }})
     r"""The number of roles to skip before starting to collect the result set"""
-    org_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_ids'), 'exclude': lambda f: f is None }})
+    org_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_ids'), 'exclude': lambda f: f is None }})
     r"""List of organization ids to filter by"""
     query: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query'), 'exclude': lambda f: f is None }})
     r"""Input to search across fields"""
-    role_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role_ids'), 'exclude': lambda f: f is None }})
+    role_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role_ids'), 'exclude': lambda f: f is None }})
     r"""List of role ids to filter by"""
-    slugs: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slugs'), 'exclude': lambda f: f is None }})
+    slugs: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slugs'), 'exclude': lambda f: f is None }})
     r"""List of role slugs to filter by"""
     
 
