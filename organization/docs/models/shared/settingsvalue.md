@@ -24,12 +24,12 @@ settingsValue: bool = /* values here */
 ### 
 
 ```python
-settingsValue: list[dict[str, Any]] = /* values here */
+settingsValue: List[Dict[str, Any]] = /* values here */
 ```
 
 ### 
 
 ```python
-settingsValue: dict[str, Any] = /* values here */
+settingsValue: Dict[str, Any] = /* values here */
 ```
 

@@ -6,7 +6,6 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteSettingsValueRequest:
     key: str = dataclasses.field(metadata={'path_param': { 'field_name': 'key', 'style': 'simple', 'explode': False }})
@@ -14,7 +13,6 @@ class DeleteSettingsValueRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""The Id of the organization."""
     
-
 
 
 

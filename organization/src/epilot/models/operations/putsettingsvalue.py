@@ -7,17 +7,15 @@ from ..shared import settingsvalue as shared_settingsvalue
 from typing import Optional, Union
 
 
-
 @dataclasses.dataclass
 class PutSettingsValueRequest:
     key: str = dataclasses.field(metadata={'path_param': { 'field_name': 'key', 'style': 'simple', 'explode': False }})
     r"""Organization setting key"""
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""The Id of the organization."""
-    settings_value: Optional[Union[str, float, bool, list[dict[str, Any]], dict[str, Any]]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    settings_value: Optional[Union[str, float, bool, List[Dict[str, Any]], Dict[str, Any]]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""Value to set"""
     
-
 
 
 
@@ -29,7 +27,7 @@ class PutSettingsValueResponse:
     r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    settings_value: Optional[Union[str, float, bool, list[dict[str, Any]], dict[str, Any]]] = dataclasses.field(default=None)
+    settings_value: Optional[Union[str, float, bool, List[Dict[str, Any]], Dict[str, Any]]] = dataclasses.field(default=None)
     r"""Returns the value of the setting"""
     
 

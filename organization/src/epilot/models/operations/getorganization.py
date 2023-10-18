@@ -7,13 +7,11 @@ from ..shared import organization as shared_organization
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetOrganizationRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""The Id of the organization."""
     
-
 
 
 

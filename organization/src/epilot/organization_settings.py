@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations
-from typing import Any, Optional, Union
+from typing import Any, Dict, Optional, Union
 
 class OrganizationSettings:
     r"""Organisation Settings"""
@@ -55,7 +55,7 @@ class OrganizationSettings:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[Dict[str, Any]])
                 res.settings = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -86,7 +86,7 @@ class OrganizationSettings:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[Union[str, float, bool, list[dict[str, Any]], dict[str, Any]]])
+                out = utils.unmarshal_json(http_res.text, Optional[Union[str, float, bool, List[Dict[str, Any]], Dict[str, Any]]])
                 res.settings_value = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
