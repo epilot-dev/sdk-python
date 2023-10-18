@@ -8,7 +8,6 @@ from ..shared import workflowdefinition as shared_workflowdefinition
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateDefinitionResponse:
     content_type: str = dataclasses.field()

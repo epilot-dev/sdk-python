@@ -12,7 +12,6 @@ class StepRequirementCondition(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class StepRequirement:
     r"""describe the requirement for step enablement"""

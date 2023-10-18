@@ -7,13 +7,11 @@ from ..shared import closingreasons as shared_closingreasons
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAllClosingReasonsRequest:
     include_inactive: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'includeInactive', 'style': 'form', 'explode': True }})
     r"""Filter Closing Reasons by status like active inactiv"""
     
-
 
 
 

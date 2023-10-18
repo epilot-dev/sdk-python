@@ -8,7 +8,6 @@ from ..shared import workflowdefinition as shared_workflowdefinition
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateDefinitionRequest:
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class UpdateDefinitionRequest:
     workflow_definition: shared_workflowdefinition.WorkflowDefinition = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Workflow Definition payload"""
     
-
 
 
 

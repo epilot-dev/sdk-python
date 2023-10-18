@@ -7,13 +7,11 @@ from ..shared import errorresp as shared_errorresp
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteDefinitionRequest:
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
     r"""Id of the definition to de deleted."""
     
-
 
 
 

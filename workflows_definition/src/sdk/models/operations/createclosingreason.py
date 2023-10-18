@@ -7,7 +7,6 @@ from ..shared import closingreason as shared_closingreason
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateClosingReasonResponse:
     content_type: str = dataclasses.field()

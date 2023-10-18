@@ -7,13 +7,11 @@ from ..shared import closingreasonsids as shared_closingreasonsids
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetWorkflowClosingReasonsRequest:
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
     r"""ID of a workflow definition"""
     
-
 
 
 

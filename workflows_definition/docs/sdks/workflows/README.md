@@ -50,35 +50,41 @@ req = shared.WorkflowDefinition(
                 'Refined',
             ],
             automation_config=shared.StepAutomationConfig(
-                flow_id='Nevada',
+                flow_id='Avon',
             ),
             due_date='2021-04-27T12:00:00.000Z',
             dynamic_due_date=shared.DynamicDueDate(
-                action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-                number_of_units=8226.37,
-                time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+                action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
+                number_of_units=4748.99,
+                time_period=shared.DynamicDueDateTimePeriod.MONTHS,
             ),
-            ecp=shared.ECPDetails(),
-            name='Bahrain',
-            order=3600.06,
+            ecp=shared.ECPDetails(
+                journey=shared.StepJourney(),
+            ),
+            installer=shared.ECPDetails(
+                journey=shared.StepJourney(),
+            ),
+            journey=shared.StepJourney(),
+            name='withdrawal',
+            order=485.63,
             requirements=[
                 shared.StepRequirement(
                     condition=shared.StepRequirementCondition.CLOSED,
-                    definition_id='Ball synthesize encryption',
+                    definition_id='Berkshire',
                     type=shared.ItemType.SECTION,
                 ),
             ],
             type=shared.ItemType.STEP,
             user_ids=[
-                3002.07,
+                2732.95,
             ],
         ),
     ],
     last_update_time='2021-04-27T12:01:13.000Z',
-    name='charming',
+    name='synthesize',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.CURRENT_STEP,
+            source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
             target=shared.UpdateEntityAttributesTarget(
                 entity_attribute='my_status',
                 entity_schema='opportunity',
@@ -86,7 +92,7 @@ req = shared.WorkflowDefinition(
         ),
     ],
     user_ids=[
-        3108.05,
+        3000.21,
     ],
 )
 
@@ -126,7 +132,7 @@ s = sdk.SDK(
 )
 
 req = operations.DeleteDefinitionRequest(
-    definition_id='Expanded DNS Lead',
+    definition_id='filch',
 )
 
 res = s.workflows.delete_definition(req)
@@ -165,7 +171,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetDefinitionRequest(
-    definition_id='Pants Money Gorgeous',
+    definition_id='Dodge',
 )
 
 res = s.workflows.get_definition(req)
@@ -264,7 +270,7 @@ s = sdk.SDK(
 )
 
 req = operations.GetWorkflowClosingReasonsRequest(
-    definition_id='Bedfordshire Account Account',
+    definition_id='blue',
 )
 
 res = s.workflows.get_workflow_closing_reasons(req)
@@ -310,7 +316,7 @@ req = operations.SetWorkflowClosingReasonsRequest(
             ),
         ],
     ),
-    definition_id='Tuna utilize',
+    definition_id='deposit',
 )
 
 res = s.workflows.set_workflow_closing_reasons(req)
@@ -371,35 +377,41 @@ req = operations.UpdateDefinitionRequest(
                     'tan',
                 ],
                 automation_config=shared.StepAutomationConfig(
-                    flow_id='Honda Algeria',
+                    flow_id='Creative',
                 ),
                 due_date='2021-04-27T12:00:00.000Z',
                 dynamic_due_date=shared.DynamicDueDate(
                     action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
-                    number_of_units=4510.87,
-                    time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+                    number_of_units=471.4,
+                    time_period=shared.DynamicDueDateTimePeriod.DAYS,
                 ),
-                ecp=shared.ECPDetails(),
-                name='responsive gold users',
-                order=8109.76,
+                ecp=shared.ECPDetails(
+                    journey=shared.StepJourney(),
+                ),
+                installer=shared.ECPDetails(
+                    journey=shared.StepJourney(),
+                ),
+                journey=shared.StepJourney(),
+                name='Trigender',
+                order=3712.03,
                 requirements=[
                     shared.StepRequirement(
                         condition=shared.StepRequirementCondition.CLOSED,
-                        definition_id='auxiliary West Response',
+                        definition_id='green',
                         type=shared.ItemType.STEP,
                     ),
                 ],
                 type=shared.ItemType.SECTION,
                 user_ids=[
-                    3290.64,
+                    8109.76,
                 ],
             ),
         ],
         last_update_time='2021-04-27T12:01:13.000Z',
-        name='Bicycle',
+        name='jiffy',
         update_entity_attributes=[
             shared.UpdateEntityAttributes(
-                source=shared.UpdateEntityAttributesSource.CURRENT_SECTION,
+                source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
                 target=shared.UpdateEntityAttributesTarget(
                     entity_attribute='my_status',
                     entity_schema='opportunity',
@@ -407,10 +419,10 @@ req = operations.UpdateDefinitionRequest(
             ),
         ],
         user_ids=[
-            8236.45,
+            916.32,
         ],
     ),
-    definition_id='benchmark cyan zowie',
+    definition_id='Credit',
 )
 
 res = s.workflows.update_definition(req)

@@ -8,7 +8,6 @@ from sdk import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ChangeReasonStatusReq:
     status: shared_closingreasonsstatus.ClosingReasonsStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})

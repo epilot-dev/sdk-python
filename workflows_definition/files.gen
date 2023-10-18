@@ -33,8 +33,9 @@ src/sdk/models/shared/section.py
 src/sdk/models/shared/itemtype.py
 src/sdk/models/shared/step.py
 src/sdk/models/shared/steprequirement.py
-src/sdk/models/shared/steptype.py
+src/sdk/models/shared/stepjourney.py
 src/sdk/models/shared/ecpdetails.py
+src/sdk/models/shared/steptype.py
 src/sdk/models/shared/dynamicduedate.py
 src/sdk/models/shared/closingreasonid.py
 src/sdk/models/shared/definitionnotfoundresp.py
@@ -78,8 +79,9 @@ docs/models/shared/stepautomationconfig.md
 docs/models/shared/step.md
 docs/models/shared/steprequirementcondition.md
 docs/models/shared/steprequirement.md
-docs/models/shared/steptype.md
+docs/models/shared/stepjourney.md
 docs/models/shared/ecpdetails.md
+docs/models/shared/steptype.md
 docs/models/shared/dynamicduedateactiontypecondition.md
 docs/models/shared/dynamicduedatetimeperiod.md
 docs/models/shared/dynamicduedate.md

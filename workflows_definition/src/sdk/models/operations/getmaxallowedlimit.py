@@ -8,7 +8,6 @@ from ..shared import maxallowedlimit as shared_maxallowedlimit
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetMaxAllowedLimitResponse:
     content_type: str = dataclasses.field()

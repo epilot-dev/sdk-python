@@ -8,14 +8,12 @@ from ..shared import errorresp as shared_errorresp
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ChangeReasonStatusRequest:
     reason_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'reasonId', 'style': 'simple', 'explode': False }})
     change_reason_status_req: Optional[shared_changereasonstatusreq.ChangeReasonStatusReq] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""change the status of a closing reason"""
     
-
 
 
 

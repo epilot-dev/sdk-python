@@ -5,4 +5,4 @@
 
 | Field                                                       | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `reasons`                                                   | list[[ClosingReason](../../models/shared/closingreason.md)] | :heavy_check_mark:                                          | N/A                                                         |
+| `reasons`                                                   | List[[ClosingReason](../../models/shared/closingreason.md)] | :heavy_check_mark:                                          | N/A                                                         |
