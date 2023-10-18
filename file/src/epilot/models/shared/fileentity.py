@@ -6,7 +6,7 @@ from ..shared import s3reference as shared_s3reference
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 class FileEntityAccessControl(str, Enum):
     PRIVATE = 'private'
@@ -29,7 +29,6 @@ class FileEntityType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class FileEntityVersions:
     s3ref: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
@@ -38,7 +37,6 @@ class FileEntityVersions:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class FileEntity:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
@@ -52,6 +50,6 @@ class FileEntity:
     r"""File size in bytes"""
     type: Optional[FileEntityType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Human readable type for file"""
-    versions: Optional[list[FileEntityVersions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})
+    versions: Optional[List[FileEntityVersions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})
     
 

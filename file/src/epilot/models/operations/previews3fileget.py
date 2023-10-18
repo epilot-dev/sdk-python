@@ -6,7 +6,6 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PreviewS3FileGetRequest:
     bucket: str = dataclasses.field(metadata={'query_param': { 'field_name': 'bucket', 'style': 'form', 'explode': True }})
@@ -18,7 +17,6 @@ class PreviewS3FileGetRequest:
     w: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'w', 'style': 'form', 'explode': True }})
     r"""width"""
     
-
 
 
 

@@ -28,6 +28,9 @@ src/epilot/models/shared/deletefilepayload.py
 src/epilot/models/shared/s3reference.py
 src/epilot/models/shared/downloadfilespayload.py
 src/epilot/models/shared/fileentity.py
+src/epilot/models/shared/saves3filepayload.py
+src/epilot/models/shared/filerelationitem.py
+src/epilot/models/shared/savecustomfilepayload.py
 src/epilot/models/shared/uploadfilepayload.py
 src/epilot/models/shared/security.py
 src/epilot/models/shared/__init__.py
@@ -67,6 +70,14 @@ docs/models/shared/fileentityaccesscontrol.md
 docs/models/shared/fileentitytype.md
 docs/models/shared/fileentityversions.md
 docs/models/shared/fileentity.md
+docs/models/shared/savefilepayload.md
+docs/models/shared/saves3filepayloadaccesscontrol.md
+docs/models/shared/saves3filepayloaddocumenttype.md
+docs/models/shared/saves3filepayload.md
+docs/models/shared/filerelationitem.md
+docs/models/shared/savecustomfilepayloadaccesscontrol.md
+docs/models/shared/savecustomfilepayloaddocumenttype.md
+docs/models/shared/savecustomfilepayload.md
 docs/models/shared/uploadfilepayload.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md

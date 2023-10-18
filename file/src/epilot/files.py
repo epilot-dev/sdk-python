@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Any, Optional
+from typing import List, Optional, Union
 
 class Files:
     r"""Files API"""
@@ -67,7 +67,7 @@ class Files:
         return res
 
     
-    def download_files(self, request: list[shared.DownloadFilesPayload]) -> operations.DownloadFilesResponse:
+    def download_files(self, request: List[shared.DownloadFilesPayload]) -> operations.DownloadFilesResponse:
         r"""downloadFiles
         Generate pre-signed download S3 urls for multiple files
         """
@@ -90,7 +90,7 @@ class Files:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[operations.DownloadFiles200ApplicationJSON]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[operations.DownloadFiles200ApplicationJSON]])
                 res.download_files_200_application_json_objects = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -222,7 +222,7 @@ class Files:
         return res
 
     
-    def save_file(self, request: Any) -> operations.SaveFileResponse:
+    def save_file(self, request: Union[shared.SaveS3FilePayload, shared.SaveCustomFilePayload]) -> operations.SaveFileResponse:
         r"""saveFile
         Create / Update a permanent File entity
 

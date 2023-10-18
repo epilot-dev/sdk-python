@@ -5,7 +5,6 @@ import dataclasses
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class Security:
     cookie_auth: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'cookie', 'field_name': 'token' }})

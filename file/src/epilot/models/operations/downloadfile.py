@@ -8,7 +8,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DownloadFileRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -21,13 +20,11 @@ class DownloadFileRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DownloadFile200ApplicationJSON:
     r"""Generated thumbnail image"""
     download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('download_url'), 'exclude': lambda f: f is None }})
     
-
 
 
 

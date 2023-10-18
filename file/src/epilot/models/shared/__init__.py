@@ -3,8 +3,11 @@
 from .deletefilepayload import *
 from .downloadfilespayload import *
 from .fileentity import *
+from .filerelationitem import *
 from .s3reference import *
+from .savecustomfilepayload import *
+from .saves3filepayload import *
 from .security import *
 from .uploadfilepayload import *
 
-__all__ = ["DeleteFilePayload","DownloadFilesPayload","FileEntity","FileEntityAccessControl","FileEntityType","FileEntityVersions","S3Reference","Security","UploadFilePayload"]
+__all__ = ["DeleteFilePayload","DownloadFilesPayload","FileEntity","FileEntityAccessControl","FileEntityType","FileEntityVersions","FileRelationItem","S3Reference","SaveCustomFilePayload","SaveCustomFilePayloadAccessControl","SaveCustomFilePayloadDocumentType","SaveS3FilePayload","SaveS3FilePayloadAccessControl","SaveS3FilePayloadDocumentType","Security","UploadFilePayload"]

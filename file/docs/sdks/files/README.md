@@ -134,7 +134,7 @@ if res.download_files_200_application_json_objects is not None:
 
 | Parameter                                              | Type                                                   | Required                                               | Description                                            |
 | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| `request`                                              | [list[shared.DownloadFilesPayload]](../../models//.md) | :heavy_check_mark:                                     | The request object to use for the request.             |
+| `request`                                              | [List[shared.DownloadFilesPayload]](../../models//.md) | :heavy_check_mark:                                     | The request object to use for the request.             |
 
 
 ### Response
@@ -159,8 +159,8 @@ s = epilot.Epilot(
 )
 
 req = operations.DownloadS3FileRequest(
-    s3_bucket='ad cyan',
-    s3_key='South generate Southeast',
+    s3_bucket='local',
+    s3_key='cyan',
 )
 
 res = s.files.download_s3_file(req)
@@ -319,7 +319,7 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewS3FileGetRequest(
-    bucket='Southwest',
+    bucket='Brazil',
     key='<key>',
 )
 
@@ -363,9 +363,28 @@ s = epilot.Epilot(
     ),
 )
 
-req = {
-    "tesla": 'Dominica',
-}
+req = shared.SaveS3FilePayload(
+    additional_properties={
+        "tesla": 'Dominica',
+    },
+    tags=[
+        'Hutchinson',
+    ],
+    filename='document.pdf',
+    relations=[
+        shared.FileRelationItem(
+            schema='contact',
+            tags=[
+                'ha',
+            ],
+            entity_id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
+        ),
+    ],
+    s3ref=shared.S3Reference(
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+    ),
+)
 
 res = s.files.save_file(req)
 
@@ -376,9 +395,9 @@ if res.file_entity is not None:
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                               | [Union[shared.SaveS3FilePayload, shared.SaveCustomFilePayload]](../../models/shared/savefilepayload.md) | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
 
 
 ### Response

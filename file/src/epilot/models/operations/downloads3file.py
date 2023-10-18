@@ -8,7 +8,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DownloadS3FileRequest:
     s3_bucket: str = dataclasses.field(metadata={'query_param': { 'field_name': 's3_bucket', 'style': 'form', 'explode': True }})
@@ -20,13 +19,11 @@ class DownloadS3FileRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DownloadS3File200ApplicationJSON:
     r"""Generated thumbnail image"""
     download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('download_url'), 'exclude': lambda f: f is None }})
     
-
 
 
 

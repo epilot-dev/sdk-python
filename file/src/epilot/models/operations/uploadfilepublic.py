@@ -9,7 +9,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadFilePublic201ApplicationJSONS3ref:
     bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})
@@ -19,14 +18,12 @@ class UploadFilePublic201ApplicationJSONS3ref:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadFilePublic201ApplicationJSON:
     r"""Pre-signed URL for POST / PUT upload"""
     s3ref: Optional[UploadFilePublic201ApplicationJSONS3ref] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
     upload_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upload_url'), 'exclude': lambda f: f is None }})
     
-
 
 
 

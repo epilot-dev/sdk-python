@@ -9,7 +9,6 @@ from epilot import utils
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UploadFileRequest:
     file_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'file_entity_id', 'style': 'form', 'explode': True }})
@@ -20,7 +19,6 @@ class UploadFileRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadFile201ApplicationJSONS3ref:
     bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})
@@ -30,7 +28,6 @@ class UploadFile201ApplicationJSONS3ref:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UploadFile201ApplicationJSON:
     r"""Pre-signed URL for POST / PUT upload"""
@@ -39,7 +36,6 @@ class UploadFile201ApplicationJSON:
     s3ref: Optional[UploadFile201ApplicationJSONS3ref] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
     upload_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upload_url'), 'exclude': lambda f: f is None }})
     
-
 
 
 

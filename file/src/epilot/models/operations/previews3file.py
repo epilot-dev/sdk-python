@@ -7,7 +7,6 @@ from ..shared import s3reference as shared_s3reference
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PreviewS3FileRequest:
     h: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'h', 'style': 'form', 'explode': True }})
@@ -16,7 +15,6 @@ class PreviewS3FileRequest:
     w: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'w', 'style': 'form', 'explode': True }})
     r"""width"""
     
-
 
 
 

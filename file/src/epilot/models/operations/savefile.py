@@ -7,7 +7,6 @@ from ..shared import fileentity as shared_fileentity
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class SaveFileResponse:
     content_type: str = dataclasses.field()
