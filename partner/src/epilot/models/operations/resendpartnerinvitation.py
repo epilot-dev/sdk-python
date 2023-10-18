@@ -16,13 +16,11 @@ class ResendPartnerInvitationRequestBodyLanguage(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ResendPartnerInvitationRequestBody:
     language: Optional[ResendPartnerInvitationRequestBodyLanguage] = dataclasses.field(default=ResendPartnerInvitationRequestBodyLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language for partner invitation email"""
     
-
 
 
 
@@ -32,7 +30,6 @@ class ResendPartnerInvitationRequest:
     r"""The Id of partner"""
     request_body: Optional[ResendPartnerInvitationRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

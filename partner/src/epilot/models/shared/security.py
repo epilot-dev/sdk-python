@@ -5,7 +5,6 @@ import dataclasses
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class Security:
     as_organization: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'x-ivy-org-id' }})

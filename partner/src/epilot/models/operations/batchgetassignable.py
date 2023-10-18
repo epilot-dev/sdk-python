@@ -8,11 +8,10 @@ from ..shared import assignablepartneruser as shared_assignablepartneruser
 from ..shared import assignableuser as shared_assignableuser
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional, Union
+from typing import List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class BatchGetAssignableRequestBody:
     user_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id') }})
@@ -24,15 +23,13 @@ class BatchGetAssignableRequestBody:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class BatchGetAssignable200ApplicationJSON:
     r"""List of assignable results"""
     hits: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     r"""total number of search results"""
-    results: Optional[list[Union[shared_assignableuser.AssignableUser, shared_assignablepartneruser.AssignablePartnerUser, shared_assignableorganization.AssignableOrganization]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[Union[shared_assignableuser.AssignableUser, shared_assignablepartneruser.AssignablePartnerUser, shared_assignableorganization.AssignableOrganization]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-
 
 
 

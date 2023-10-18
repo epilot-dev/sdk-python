@@ -7,7 +7,6 @@ from ..shared import geolocation as shared_geolocation
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class SearchGeolocationForTextResponse:
     content_type: str = dataclasses.field()

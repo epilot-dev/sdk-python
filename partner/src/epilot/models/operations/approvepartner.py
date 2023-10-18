@@ -7,13 +7,11 @@ from ..shared import partner as shared_partner
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ApprovePartnerRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The Id of partner"""
     
-
 
 
 

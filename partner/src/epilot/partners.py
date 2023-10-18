@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Optional
+from typing import List, Optional
 
 class Partners:
     r"""Partners"""
@@ -69,7 +69,7 @@ class Partners:
         return res
 
     
-    def batch_get_assignable(self, request: list[operations.BatchGetAssignableRequestBody]) -> operations.BatchGetAssignableResponse:
+    def batch_get_assignable(self, request: List[operations.BatchGetAssignableRequestBody]) -> operations.BatchGetAssignableResponse:
         r"""batchGet
         Search for assignable users from this organization by its ids
         """

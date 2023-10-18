@@ -36,10 +36,10 @@ s = epilot.Epilot(
 req = operations.ActivatePartnerRequest(
     activate_partner_payload=shared.ActivatePartnerPayload(
         company_name='Company name',
-        organization_id='Future likewise San',
-        signed_up_email='Julius_Anderson66@gmail.com',
+        organization_id='bah',
+        signed_up_email='Taylor78@gmail.com',
     ),
-    token='CLI',
+    token='Advanced',
 )
 
 res = s.partners.activate_partner(req)
@@ -119,7 +119,7 @@ s = epilot.Epilot(
 
 req = [
     operations.BatchGetAssignableRequestBody(
-        user_id='circuit',
+        user_id='South',
     ),
 ]
 
@@ -134,7 +134,7 @@ if res.batch_get_assignable_200_application_json_object is not None:
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [list[operations.BatchGetAssignableRequestBody]](../../models//.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `request`                                                           | [List[operations.BatchGetAssignableRequestBody]](../../models//.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 
 ### Response
@@ -159,7 +159,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetPartnerByTokenRequest(
-    token='Electric',
+    token='Singapore',
 )
 
 res = s.partners.get_partner_by_token(req)

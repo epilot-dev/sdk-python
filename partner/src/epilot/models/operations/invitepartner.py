@@ -8,14 +8,12 @@ from ..shared import partnerinvitationpayload as shared_partnerinvitationpayload
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class InvitePartnerRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The Id of partner"""
     partner_invitation_payload: Optional[shared_partnerinvitationpayload.PartnerInvitationPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 
