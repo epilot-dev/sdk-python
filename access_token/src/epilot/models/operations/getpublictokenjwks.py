@@ -5,11 +5,10 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetPublicTokenJwks200ApplicationJSONKeys:
     alg: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alg'), 'exclude': lambda f: f is None }})
@@ -23,13 +22,11 @@ class GetPublicTokenJwks200ApplicationJSONKeys:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetPublicTokenJwks200ApplicationJSON:
     r"""Set of jwks"""
-    keys: Optional[list[GetPublicTokenJwks200ApplicationJSONKeys]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keys'), 'exclude': lambda f: f is None }})
+    keys: Optional[List[GetPublicTokenJwks200ApplicationJSONKeys]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keys'), 'exclude': lambda f: f is None }})
     
-
 
 
 

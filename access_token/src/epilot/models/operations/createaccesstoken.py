@@ -8,11 +8,10 @@ from ..shared import accesstokentype as shared_accesstokentype
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateAccessToken201ApplicationJSON:
     r"""The new generated Access Token"""
@@ -20,7 +19,7 @@ class CreateAccessToken201ApplicationJSON:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Human readable name for access token"""
-    assignments: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
+    assignments: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
     r"""List of role ids attached to an user"""
     journey_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_id'), 'exclude': lambda f: f is None }})
     r"""Journey ID for access token type \\"journey\\" """
@@ -29,7 +28,6 @@ class CreateAccessToken201ApplicationJSON:
     token_type: Optional[shared_accesstokentype.AccessTokenType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
     r"""Access token type"""
     
-
 
 
 

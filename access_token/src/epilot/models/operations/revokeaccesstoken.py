@@ -7,12 +7,10 @@ from ..shared import accesstokenitem as shared_accesstokenitem
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class RevokeAccessTokenRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     
-
 
 
 
