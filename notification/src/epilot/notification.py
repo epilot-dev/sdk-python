@@ -2,8 +2,8 @@
 
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
-from epilot.models import errors, operations
-from typing import Any, Optional
+from epilot.models import errors, operations, shared
+from typing import Optional
 
 class Notification:
     r"""Notification"""
@@ -13,7 +13,7 @@ class Notification:
         self.sdk_configuration = sdk_config
         
     
-    def create_notification(self, request: dict[str, Any]) -> operations.CreateNotificationResponse:
+    def create_notification(self, request: shared.Notification) -> operations.CreateNotificationResponse:
         r"""createNotification
         Create a message that can be displayed in the notification panel.
         """
@@ -58,7 +58,7 @@ class Notification:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.NotificationItem])
                 res.notification_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

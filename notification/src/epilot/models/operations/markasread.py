@@ -6,13 +6,11 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class MarkAsReadRequest:
     id: int = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Numeric ID of the notification to mark as read"""
     
-
 
 
 

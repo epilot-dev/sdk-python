@@ -88,7 +88,7 @@ persistent=yes
 
 # Minimum Python version to use for version dependent checks. Will default to
 # the version used to run pylint.
-py-version=3.9
+py-version=3.8
 
 # Discover python modules and packages in the file system subtree.
 recursive=no
@@ -180,7 +180,9 @@ good-names=i,
            ex,
            Run,
            _,
-           id
+           id,
+           de,
+           en
 
 # Good variable names regexes, separated by a comma. If names match any regex,
 # they will always be accepted

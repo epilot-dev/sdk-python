@@ -3,10 +3,10 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import notificationitem as shared_notificationitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -19,15 +19,13 @@ class GetNotificationsRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetNotifications200ApplicationJSON:
     r"""Success"""
-    results: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[shared_notificationitem.NotificationItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})
     total_unread: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total_unread'), 'exclude': lambda f: f is None }})
     
-
 
 
 
