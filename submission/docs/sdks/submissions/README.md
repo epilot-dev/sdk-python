@@ -27,22 +27,42 @@ req = shared.SubmissionPayload(
         'Automotive',
     ],
     entities=[
-        {
-            "contact_last_name": 'Bike',
-            "contact_email": 'Shoes',
-            "request": 'Incredible',
-            "files": 'Borders',
-            "_schema": 'synergistic',
-            "description": 'versus',
-            "contact_first_name": 'blah',
-        },
+        shared.SubmissionEntity(
+            additional_properties={
+                "request": 'Bike',
+                "files": 'Shoes',
+                "_schema": 'Incredible',
+                "description": 'Borders',
+                "contact_first_name": 'synergistic',
+                "contact_last_name": 'versus',
+                "contact_email": 'blah',
+            },
+            schema=shared.SubmissionEntitySchema.SUBMISSION,
+            files=[
+                shared.SubmissionEntityFiles(
+                    additional_properties={
+                        "Bicycle": 'Applications',
+                    },
+                    tags=[
+                        'Southeast',
+                    ],
+                    relation_tags=[
+                        'interactive',
+                    ],
+                    s3ref=shared.S3Reference(
+                        bucket='epilot-user-content',
+                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+                    ),
+                ),
+            ],
+        ),
     ],
     journey_submit_id='123',
     opt_ins=[
         shared.OptIn(
             identifier='example@email.com',
             meta={
-                "Bicycle": 'Applications',
+                "Marketing": 'mesh',
             },
             topic='EMAIL_MARKETING',
         ),
