@@ -4,17 +4,17 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import error as shared_error
-from typing import Any, Optional
-
+from ..shared import order as shared_order
+from ..shared import orderpayload as shared_orderpayload
+from typing import Optional
 
 
 @dataclasses.dataclass
 class PutOrderRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Order entity ID"""
-    request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    order_payload_input: shared_orderpayload.OrderPayloadInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 
@@ -26,7 +26,7 @@ class PutOrderResponse:
     r"""HTTP response status code for this operation"""
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""Invalid payload"""
-    order: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    order: Optional[shared_order.Order] = dataclasses.field(default=None)
     r"""Order result"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

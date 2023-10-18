@@ -2,18 +2,24 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import price as shared_price
+from ..shared import product as shared_product
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional, Union
+
+
+@dataclasses.dataclass
+class CatalogSearchResultResults:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CatalogSearchResult:
     r"""The query result payload"""
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     r"""The number os results returned."""
-    results: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[Union[shared_product.Product, shared_price.Price]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
 

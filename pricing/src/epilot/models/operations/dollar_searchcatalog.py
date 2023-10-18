@@ -9,14 +9,12 @@ from ..shared import error as shared_error
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DollarSearchCatalogRequest:
     catalog_search: shared_catalogsearch.CatalogSearch = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
     r"""The target Organization Id represented by the caller"""
     
-
 
 
 

@@ -4,8 +4,8 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import error as shared_error
-from typing import Any, Optional
-
+from ..shared import order as shared_order
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -16,7 +16,7 @@ class CreateOrderResponse:
     r"""HTTP response status code for this operation"""
     error: Optional[shared_error.Error] = dataclasses.field(default=None)
     r"""Invalid payload"""
-    order: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    order: Optional[shared_order.Order] = dataclasses.field(default=None)
     r"""Order result"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

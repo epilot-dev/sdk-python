@@ -5,6 +5,6 @@ The cart checkout result
 
 ## Fields
 
-| Field              | Type               | Required           | Description        | Example            |
-| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `order`            | dict[str, *Any*]   | :heavy_minus_sign: | The order entity   | [object Object]    |
+| Field                                           | Type                                            | Required                                        | Description                                     |
+| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `order`                                         | [Optional[Order]](../../models/shared/order.md) | :heavy_minus_sign:                              | The order entity                                |

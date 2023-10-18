@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class OrderAPI:
     r"""This api enables the management of orders in epilot 360, providing features such as:
@@ -16,7 +16,7 @@ class OrderAPI:
         self.sdk_configuration = sdk_config
         
     
-    def create_order(self, request: dict[str, Any]) -> operations.CreateOrderResponse:
+    def create_order(self, request: shared.OrderPayloadInput) -> operations.CreateOrderResponse:
         r"""createOrder
         Create an order
         """
@@ -41,7 +41,7 @@ class OrderAPI:
         
         if http_res.status_code == 201:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Order])
                 res.order = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -63,7 +63,7 @@ class OrderAPI:
         
         url = utils.generate_url(operations.PutOrderRequest, base_url, '/v1/order/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "order_payload_input", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -80,7 +80,7 @@ class OrderAPI:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Order])
                 res.order = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

@@ -9,14 +9,12 @@ from epilot import utils
 from typing import Optional, Union
 
 
-
 @dataclasses.dataclass
 class CheckoutCartCart:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CheckoutCart:
     r"""The cart checkout request payload"""

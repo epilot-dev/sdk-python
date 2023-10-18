@@ -3,10 +3,12 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import metadata as shared_metadata
+from ..shared import price as shared_price
+from ..shared import product as shared_product
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional, Union
+from typing import List, Optional, Union
 
 class PriceItemDtoType(str, Enum):
     r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
@@ -15,19 +17,18 @@ class PriceItemDtoType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PriceItemDtoInput:
     r"""Represents a valid base price item from a client."""
-    price: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
+    price: Optional[shared_price.Price] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
     r"""The snapshot of the price linked to the price item."""
-    product: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_product'), 'exclude': lambda f: f is None }})
+    product: Optional[shared_product.ProductInput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_product'), 'exclude': lambda f: f is None }})
     r"""The snapshot of the product."""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
     is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
     r"""The flag for prices that contain price components."""
-    metadata: Optional[list[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[List[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
     r"""The id of the price."""

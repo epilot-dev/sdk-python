@@ -9,14 +9,12 @@ from ..shared import error as shared_error
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DollarAvailabilityCheckRequest:
     availability_check_params: shared_availabilitycheckparams.AvailabilityCheckParams = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
     r"""The target Organization Id represented by the caller"""
     
-
 
 
 

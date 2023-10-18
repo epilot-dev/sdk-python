@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MetaData1:
     r"""Key value pair entry"""
@@ -17,7 +16,6 @@ class MetaData1:
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     r"""Item value"""
     
-
 
 
 

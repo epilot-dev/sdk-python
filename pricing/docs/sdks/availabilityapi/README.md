@@ -37,7 +37,7 @@ req = operations.DollarAvailabilityCheckRequest(
             'Visionary',
         ],
     ),
-    x_ivy_org_id='steep Rap synthesize',
+    x_ivy_org_id='Smart',
 )
 
 res = s.availability_api.dollar_availability_check(req)

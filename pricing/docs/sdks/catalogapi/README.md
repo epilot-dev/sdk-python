@@ -33,9 +33,9 @@ req = operations.DollarSearchCatalogRequest(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(),
         ),
-        q='firewall trusty outvote',
+        q='Hatchback',
     ),
-    x_ivy_org_id='Account woman',
+    x_ivy_org_id='circuit',
 )
 
 res = s.catalog_api.dollar_search_catalog(req)

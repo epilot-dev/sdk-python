@@ -32,6 +32,7 @@ If the checkout `mode` is omitted, the `mode` will default to `create_order`.
 
 ```python
 import epilot
+import dateutil.parser
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -44,20 +45,35 @@ req = operations.DollarCheckoutCartRequest(
     checkout_cart=shared.CheckoutCart(
         shared.CartDto(
             additional_addresses=[
-                {
-                    "Florida": 'Diesel',
-                },
+                shared.Address(
+                    additional_properties={
+                        "Florida": 'Diesel',
+                    },
+                    tags=[
+                        'billing',
+                    ],
+                ),
             ],
-            billing_address={
-                "quantifying": 'ASCII',
-            },
+            billing_address=shared.Address(
+                additional_properties={
+                    "quantifying": 'ASCII',
+                },
+                tags=[
+                    'billing',
+                ],
+            ),
             consents={
                 "program": 'gold',
             },
             customer=shared.Customer(),
-            delivery_address={
-                "Towels": 'on',
-            },
+            delivery_address=shared.Address(
+                additional_properties={
+                    "Towels": 'on',
+                },
+                tags=[
+                    'billing',
+                ],
+            ),
             files=[
                 'Shirt',
             ],
@@ -66,12 +82,123 @@ req = operations.DollarCheckoutCartRequest(
             },
             line_items=[
                 shared.PriceItemDtoInput(
-                    price={
-                        "$ref": 'up',
-                    },
-                    product={
-                        "$ref": 'before',
-                    },
+                    price=shared.Price(
+                        additional_properties={
+                            "$ref": 'up',
+                        },
+                        tags=[
+                            'before',
+                        ],
+                    shared.BillingPeriod.YEARLY,
+                    shared.SalesTax.NONTAXABLE,
+                        shared.PriceTax1(
+                            dollar_relation=[
+                                shared.EntityRelation(
+                                    additional_properties={
+                                        "minima": 'Kansas',
+                                    },
+                                    tags=[
+                                        'copy',
+                                    ],
+                                ),
+                            ],
+                        ),
+                    'Borders',
+                        unit_amount_currency='EUR',
+                    ),
+                    product=shared.ProductInput(
+                        additional_properties={
+                            "$ref": 'scarcely',
+                        },
+                        availability_files=[
+                            shared.File(
+                                dollar_relation=shared.EntityRelation(
+                                    additional_properties={
+                                        "Washington": 'Queenie',
+                                    },
+                                    tags=[
+                                        'Dollar',
+                                    ],
+                                ),
+                                additional_properties={
+                                    "Newton": 'male',
+                                },
+                                created_at=dateutil.parser.isoparse('2022-04-24T12:21:58.835Z'),
+                                id='<ID>',
+                                org='deposit',
+                                schema='Concrete',
+                                updated_at=dateutil.parser.isoparse('2021-02-20T21:09:38.652Z'),
+                                filename='southwest.wav',
+                                mime_type='backing',
+                                versions=[
+                                    shared.FileVersions(
+                                        additional_properties={
+                                            "Saint": 'FTP',
+                                        },
+                                        s3ref=shared.FileVersionsS3ref(
+                                            bucket='ionise',
+                                            key='<key>',
+                                        ),
+                                    ),
+                                ],
+                            ),
+                        ],
+                        cross_sellable_products=shared.ProductCrossSellableProducts(
+                            dollar_relation=[
+                                shared.EntityRelation(
+                                    additional_properties={
+                                        "port": 'illustrious',
+                                    },
+                                    tags=[
+                                        'Baht',
+                                    ],
+                                ),
+                            ],
+                        ),
+                        feature=[
+                            shared.ProductFeature(
+                                tags=[
+                                    'male',
+                                ],
+                            ),
+                        ],
+                        price_options=shared.ProductPriceOptions(
+                            dollar_relation=[
+                                shared.EntityRelation(
+                                    additional_properties={
+                                        "Fiat": 'synergize',
+                                    },
+                                    tags=[
+                                        'black',
+                                    ],
+                                ),
+                            ],
+                        ),
+                        product_downloads=shared.ProductProductDownloads(
+                            dollar_relation=[
+                                shared.EntityRelation(
+                                    additional_properties={
+                                        "withdrawal": 'XSS',
+                                    },
+                                    tags=[
+                                        'Cambridgeshire',
+                                    ],
+                                ),
+                            ],
+                        ),
+                        product_images=shared.ProductProductImages(
+                            dollar_relation=[
+                                shared.EntityRelation(
+                                    additional_properties={
+                                        "because": 'Luettgen',
+                                    },
+                                    tags=[
+                                        'Buckinghamshire',
+                                    ],
+                                ),
+                            ],
+                        ),
+                    ),
                     metadata=[
                         shared.MetaData1(),
                     ],
@@ -82,7 +209,7 @@ req = operations.DollarCheckoutCartRequest(
             ],
             payment_method=shared.PaymentMethod(
                 details={
-                    "female": 'Mission',
+                    "Automotive": 'upgrade',
                 },
             ),
             source=shared.OrderSource(
@@ -92,11 +219,11 @@ req = operations.DollarCheckoutCartRequest(
             source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
             source_type='journey',
             tags=[
-                'Kansas',
+                'maximize',
             ],
         ),
     ),
-    x_ivy_org_id='engage Borders',
+    x_ivy_org_id='invoice',
 )
 
 res = s.cart_api.dollar_checkout_cart(req)
