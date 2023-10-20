@@ -42,5 +42,7 @@ class VariableParameters:
     r"""User ID"""
     user_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_org_id') }})
     r"""Organization ID of the user"""
+    variables_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('variables_version'), 'exclude': lambda f: f is None }})
+    r"""The version of the variables syntax supported. Default is 1.0"""
     
 
