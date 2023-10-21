@@ -78,13 +78,13 @@ req = operations.CreateActivityRequest(
     activity=shared.Activity(
         message='{{caller}} did something with {{entity payload.entity.id}}.',
         payload={
-            "entity": 'Tricycle',
+            "entity": 'string',
         },
         title='My custom activity',
         type='MyCustomActivity',
     ),
     entities=[
-        '25acc1fe-2b8d-4182-9c2f-2569c1faffc1',
+        'cf25acc1-fe2b-48d1-825c-2f2569c1faff',
     ],
 )
 

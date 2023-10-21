@@ -102,18 +102,18 @@ s = epilot.Epilot(
 req = operations.CreateEntityRequest(
     entity=shared.Entity(
         additional_properties={
-            "_owners": 'Industrial',
-            "_schema": 'Implementation',
-            "_tags": 'Future',
-            "_created_at": 'Southeast',
-            "_updated_at": 'Tandem',
-            "_acl": 'male',
-            "_id": 'North',
-            "_org": 'Beach',
+            "_schema": 'string',
+            "_tags": 'string',
+            "_created_at": 'string',
+            "_updated_at": 'string',
+            "_acl": 'string',
+            "_id": 'string',
+            "_org": 'string',
+            "_owners": 'string',
         },
         acl=shared.EntityACL(
             additional_properties={
-                "Fresh": 'lavender',
+                "key": 'string',
             },
             delete=[
                 'o',
@@ -151,7 +151,7 @@ req = operations.CreateEntityRequest(
         ],
         schema='contact',
         tags=[
-            'than',
+            'string',
         ],
     ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
@@ -373,18 +373,18 @@ s = epilot.Epilot(
 req = operations.PatchEntityRequest(
     entity=shared.Entity(
         additional_properties={
-            "_tags": 'fuchsia',
-            "_created_at": 'Account',
-            "_updated_at": 'engage',
-            "_acl": 'Cis',
-            "_id": 'solutions',
-            "_org": 'founder',
-            "_owners": 'Southeast',
-            "_schema": 'Cab',
+            "_created_at": 'string',
+            "_updated_at": 'string',
+            "_acl": 'string',
+            "_id": 'string',
+            "_org": 'string',
+            "_owners": 'string',
+            "_schema": 'string',
+            "_tags": 'string',
         },
         acl=shared.EntityACL(
             additional_properties={
-                "Italy": 'potentially',
+                "key": 'string',
             },
             delete=[
                 'o',
@@ -422,11 +422,11 @@ req = operations.PatchEntityRequest(
         ],
         schema='contact',
         tags=[
-            'Multigender',
+            'string',
         ],
     ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='b72319d9-e429-40d1-9da9-e1f40d7c71a7',
+    id='cd6dc474-9915-44f5-99d5-806e999b7231',
     slug='contact',
 )
 
@@ -605,18 +605,18 @@ s = epilot.Epilot(
 req = operations.UpdateEntityRequest(
     entity=shared.Entity(
         additional_properties={
-            "_id": 'Hartmann',
-            "_org": 'invoice',
-            "_owners": 'fathom',
-            "_schema": 'Nepal',
-            "_tags": 'indexing',
-            "_created_at": 'male',
-            "_updated_at": 'Profound',
-            "_acl": 'policy',
+            "_schema": 'string',
+            "_tags": 'string',
+            "_created_at": 'string',
+            "_updated_at": 'string',
+            "_acl": 'string',
+            "_id": 'string',
+            "_org": 'string',
+            "_owners": 'string',
         },
         acl=shared.EntityACL(
             additional_properties={
-                "Southwest": 'Avon',
+                "key": 'string',
             },
             delete=[
                 'o',
@@ -654,11 +654,11 @@ req = operations.UpdateEntityRequest(
         ],
         schema='contact',
         tags=[
-            'Volvo',
+            'string',
         ],
     ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='74462a98-e27f-4fce-b6a4-e496163b217a',
+    id='2d5d17df-5520-4987-bd5a-6b1d12df7446',
     slug='contact',
 )
 
@@ -711,18 +711,18 @@ req = operations.UpsertEntityRequest(
     request_body=operations.UpsertEntityRequestBody(
         entity=shared.Entity(
             additional_properties={
-                "_schema": 'West',
-                "_tags": 'close',
-                "_created_at": 'Infrastructure',
-                "_updated_at": 'music',
-                "_acl": 'astride',
-                "_id": 'Designer',
-                "_org": 'strategic',
-                "_owners": 'along',
+                "_acl": 'string',
+                "_id": 'string',
+                "_org": 'string',
+                "_owners": 'string',
+                "_schema": 'string',
+                "_tags": 'string',
+                "_created_at": 'string',
+                "_updated_at": 'string',
             },
             acl=shared.EntityACL(
                 additional_properties={
-                    "Rap": 'Virtual',
+                    "key": 'string',
                 },
                 delete=[
                     'o',
@@ -760,7 +760,7 @@ req = operations.UpsertEntityRequest(
             ],
             schema='contact',
             tags=[
-                'Home',
+                'string',
             ],
         ),
         unique_key=[

@@ -14,10 +14,18 @@ class GetRelationsRequest:
     r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""Entity Type"""
+    exclude_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'exclude_schemas', 'style': 'form', 'explode': False }})
+    r"""Filter results to exclude schemas"""
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    r"""Starting page number"""
     hydrate: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
     r"""When true, expand relation items with full blown entities."""
     include_reverse: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
     r"""When true, includes reverse relations in response (other entities pointing to this entity)"""
+    include_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_schemas', 'style': 'form', 'explode': False }})
+    r"""Filter results to only include schemas"""
+    size: Optional[int] = dataclasses.field(default=100, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    r"""Number of results to return per page"""
     
 
 

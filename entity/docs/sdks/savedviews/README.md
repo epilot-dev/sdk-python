@@ -44,8 +44,8 @@ req = shared.SavedView(
         'contact',
     ],
     ui_config={
-        "filters": 'Cyclocross',
-        "table_layout": 'Plastic',
+        "filters": 'string',
+        "table_layout": 'string',
     },
 )
 
@@ -237,11 +237,11 @@ req = operations.UpdateSavedViewRequest(
             'contact',
         ],
         ui_config={
-            "table_layout": 'red',
-            "filters": 'Car',
+            "filters": 'string',
+            "table_layout": 'string',
         },
     ),
-    id='92cd4781-664d-4f55-b084-1d72e4e501ca',
+    id='203092cd-4781-4664-9f55-b0841d72e4e5',
 )
 
 res = s.saved_views.update_saved_view(req)

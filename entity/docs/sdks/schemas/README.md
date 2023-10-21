@@ -268,99 +268,99 @@ req = operations.PutSchemaRequest(
                 info_helpers=shared.TextAttributeInfoHelpers(
                     hint_tooltip_placement='top',
                 ),
-                label='channels',
+                label='string',
                 layout='full_width',
-                name='exploit',
+                name='string',
                 order=0,
                 setting_flag='MY_SETTING',
             ),
             shared.TextAttribute(
                 purpose=[
-                    '6bf8fcc1-de0f-432d-a571-5210cf504680',
+                    '535d6bf8-fcc1-4de0-b32d-65715210cf50',
                 ],
                 constraints=shared.TextAttributeConstraints(),
                 feature_flag='FF_MY_FEATURE_FLAG',
                 info_helpers=shared.TextAttributeInfoHelpers(
                     hint_tooltip_placement='top',
                 ),
-                label='till',
+                label='string',
                 layout='full_width',
-                name='grill',
+                name='string',
                 order=0,
                 setting_flag='MY_SETTING',
             ),
             shared.TextAttribute(
                 purpose=[
-                    'fd6bef20-dd28-47b6-95b3-e0e28c6d1668',
+                    '4680eaf6-fd6b-4ef2-8dd2-87b615b3e0e2',
                 ],
                 constraints=shared.TextAttributeConstraints(),
                 feature_flag='FF_MY_FEATURE_FLAG',
                 info_helpers=shared.TextAttributeInfoHelpers(
                     hint_tooltip_placement='top',
                 ),
-                label='discrete',
+                label='string',
                 layout='full_width',
-                name='Unbranded',
+                name='string',
                 order=0,
                 setting_flag='MY_SETTING',
             ),
             shared.TextAttribute(
                 purpose=[
-                    '4eb242b7-20a7-4fd0-81cb-030766bc3807',
+                    '8c6d1668-543e-44eb-a42b-720a7fd081cb',
                 ],
                 constraints=shared.TextAttributeConstraints(),
                 feature_flag='FF_MY_FEATURE_FLAG',
                 info_helpers=shared.TextAttributeInfoHelpers(
                     hint_tooltip_placement='top',
                 ),
-                label='radical',
+                label='string',
                 layout='full_width',
-                name='compressing',
+                name='string',
                 order=0,
                 setting_flag='MY_SETTING',
             ),
             shared.TextAttribute(
                 purpose=[
-                    '37b1710c-2601-4905-a25f-bb37949e5c67',
+                    '030766bc-3807-45c8-837b-1710c2601905',
                 ],
                 constraints=shared.TextAttributeConstraints(),
                 feature_flag='FF_MY_FEATURE_FLAG',
                 info_helpers=shared.TextAttributeInfoHelpers(
                     hint_tooltip_placement='top',
                 ),
-                label='firmware',
+                label='string',
                 layout='full_width',
-                name='IP',
+                name='string',
                 order=0,
                 setting_flag='MY_SETTING',
             ),
             shared.TextAttribute(
                 purpose=[
-                    '47c7479d-9c56-40ea-b969-366d774fa49a',
+                    'e25fbb37-949e-45c6-b657-647c7479d9c5',
                 ],
                 constraints=shared.TextAttributeConstraints(),
                 feature_flag='FF_MY_FEATURE_FLAG',
                 info_helpers=shared.TextAttributeInfoHelpers(
                     hint_tooltip_placement='top',
                 ),
-                label='voluptatem',
+                label='string',
                 layout='full_width',
-                name='withdrawal',
+                name='string',
                 order=0,
                 setting_flag='MY_SETTING',
             ),
             shared.TextAttribute(
                 purpose=[
-                    '19da9b26-82a9-4ba9-8c09-53674af53c32',
+                    '60ea7969-366d-4774-ba49-a55907519da9',
                 ],
                 constraints=shared.TextAttributeConstraints(),
                 feature_flag='FF_MY_FEATURE_FLAG',
                 info_helpers=shared.TextAttributeInfoHelpers(
                     hint_tooltip_placement='top',
                 ),
-                label='Corporate',
+                label='string',
                 layout='full_width',
-                name='synthesize',
+                name='string',
                 order=0,
                 setting_flag='MY_SETTING',
             ),
@@ -368,24 +368,21 @@ req = operations.PutSchemaRequest(
         capabilities=[
             shared.EntityCapability(
                 purpose=[
-                    '3faa88fa-b246-43c7-80e7-5fefd4fb709f',
+                    'b2682a9b-a9cc-4095-b674-af53c32a28a3',
                 ],
                 attributes=[
-                    shared.StatusAttribute(
+                    shared.PartnerOrganisationAttribute(
                         purpose=[
-                            '3acc8e6b-9335-4e75-97f7-7f7639161823',
+                            'aa88fab2-463c-4780-a75f-efd4fb709f43',
                         ],
-                        constraints=shared.StatusAttributeConstraints(),
+                        constraints=shared.PartnerOrganisationAttributeConstraints(),
                         feature_flag='FF_MY_FEATURE_FLAG',
-                        info_helpers=shared.StatusAttributeInfoHelpers(
+                        info_helpers=shared.PartnerOrganisationAttributeInfoHelpers(
                             hint_tooltip_placement='top',
                         ),
-                        label='analyzer',
+                        label='string',
                         layout='full_width',
-                        name='Classical',
-                        options=[
-                            'Lamborghini',
-                        ],
+                        name='string',
                         order=0,
                         setting_flag='MY_SETTING',
                     ),
@@ -397,7 +394,7 @@ req = operations.PutSchemaRequest(
                 ui_hooks=[
                     shared.EntityCapabilityUIHooks(
                         additional_properties={
-                            "newton": 'hacking',
+                            "key": 'string',
                         },
                         component='PricingItems',
                         hook='EntityDetailsV2:Tab',
@@ -416,7 +413,7 @@ req = operations.PutSchemaRequest(
             ),
         ],
         dialog_config={
-            "North": 'Kia',
+            "key": 'string',
         },
         draft=False,
         enable_setting=[
@@ -436,7 +433,7 @@ req = operations.PutSchemaRequest(
         explicit_search_mappings={
             "image": shared.SearchMappings(
                 fields_={
-                    "HDD": 'engage',
+                    "key": 'string',
                 },
             ),
         },
@@ -444,23 +441,23 @@ req = operations.PutSchemaRequest(
         group_settings=[
             shared.EntitySchemaGroupSettings(
                 purpose=[
-                    'e87e0545-1ea9-476b-baa4-556cbb2f4955',
+                    'acc8e6b9-335e-475d-bf77-f76391618236',
                 ],
                 feature_flag='FF_MY_FEATURE_FLAG',
                 id='<ID>',
                 info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(),
-                label='Orchestrator',
+                label='string',
                 render_condition='_is_composite_price = "false"',
                 setting_flag='MY_SETTING',
             ),
             shared.EntitySchemaGroupSettings(
                 purpose=[
-                    'f0c06824-2f55-46b2-8c16-cff63699539a',
+                    '09a0d8c5-8211-4d87-949e-87e05451ea97',
                 ],
                 feature_flag='FF_MY_FEATURE_FLAG',
                 id='<ID>',
                 info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(),
-                label='Folk',
+                label='string',
                 render_condition='_is_composite_price = "false"',
                 setting_flag='MY_SETTING',
             ),
@@ -468,7 +465,7 @@ req = operations.PutSchemaRequest(
         icon='person',
         layout_settings=shared.EntitySchemaLayoutSettings(
             additional_properties={
-                "male": 'Health',
+                "key": 'string',
             },
         ),
         name='Contact',
@@ -477,16 +474,16 @@ req = operations.PutSchemaRequest(
         slug='contact',
         title_template='{{first_name}} {{last_name}}',
         ui_config=shared.EntitySchemaUIConfig(
-            shared.EntityDefaultCreate(
-                search_params={
-                    "Avon": 'marvelous',
-                },
-                table_menu_options=shared.EntityDefaultCreateTableMenuOptions(),
+            shared.RedirectEntityView(
+                route='/app/pricing-hub/product/:entityId',
             ),
             shared.EntityViewDisabled(),
             list_item=shared.EntitySchemaUIConfigListItem(
                 summary_attributes=[
-                    'email',
+                    shared.SummaryAttribute(
+                        label='string',
+                        value='string',
+                    ),
                 ],
             ),
             sharing=shared.EntitySchemaUIConfigSharing(
@@ -495,27 +492,8 @@ req = operations.PutSchemaRequest(
             shared.RedirectEntityView(
                 route='/app/pricing-hub/product/:entityId',
             ),
-            shared.EntityDefaultTable(
-                dropdown_items=[
-                    shared.EntityDefaultTableDropdownItems1(
-                        entity='contact',
-                        feature_flag='FF_MY_FEATURE_FLAG',
-                    ),
-                ],
-                navbar_actions=[
-                    shared.EntityDefaultTableNavbarActions(
-                        options=[
-                            shared.EntityDefaultTableNavbarActionsOptions(
-                                label='invoice',
-                                params=shared.EntityDefaultTableNavbarActionsOptionsParams(),
-                            ),
-                        ],
-                        type='XML',
-                    ),
-                ],
-                row_actions=[
-                    'Mouse',
-                ],
+            shared.RedirectEntityView(
+                route='/app/pricing-hub/product/:entityId',
             ),
         ),
     ),

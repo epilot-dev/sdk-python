@@ -34,14 +34,14 @@ req = operations.AddRelationsRequest(
     request_body=[
         shared.RelationItem(
             tags=[
-                'Forward',
+                'string',
             ],
-            attribute='Pickup',
-            entity_id='1d83d924-8b56-4499-9f66-0d593cfe3d00',
+            attribute='string',
+            entity_id='acd6b1d8-3d92-448b-9649-9df660d593cf',
         ),
     ],
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='6d87e69d-98cd-409b-b6d3-0b52c3610877',
+    id='e3d006d8-7e69-4d98-8d09-bf6d30b52c36',
     slug='contact',
 )
 
@@ -82,9 +82,9 @@ s = epilot.Epilot(
 
 req = operations.DeleteRelationRequest(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    attribute='compressing',
-    entity_id='Representative',
-    id='cd911519-f5b7-47b8-95b9-c58577ae4d21',
+    attribute='string',
+    entity_id='string',
+    id='84afcd91-1519-4f5b-b7b8-55b9c58577ae',
     slug='contact',
 )
 
@@ -126,9 +126,9 @@ s = epilot.Epilot(
 
 req = operations.GetRelatedEntitiesCountRequest(
     exclude_schemas=[
-        'Tuna',
+        'string',
     ],
-    id='515de5fe-136e-44ad-8ca5-7656a6a8afba',
+    id='3a515de5-fe13-46e4-ad0c-a57656a6a8af',
     slug='contact',
 )
 
@@ -173,7 +173,13 @@ s = epilot.Epilot(
 )
 
 req = operations.GetRelationsRequest(
+    exclude_schemas=[
+        'contact',
+    ],
     id='e642d6bf-f2f7-41f9-8aa4-db0ec78f30e6',
+    include_schemas=[
+        'contact',
+    ],
     slug='contact',
 )
 
@@ -265,13 +271,13 @@ s = epilot.Epilot(
 req = operations.UpdateRelationRequest(
     request_body=operations.UpdateRelationRequestBody(
         tags=[
-            'Androgyne',
+            'string',
         ],
     ),
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    attribute='male',
-    entity_id='Account',
-    id='ff6a74da-3b01-4c38-94f8-c4b226143d8a',
+    attribute='string',
+    entity_id='string',
+    id='90bd69bf-f6a7-44da-bb01-c3854f8c4b22',
     slug='contact',
 )
 
