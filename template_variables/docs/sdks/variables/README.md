@@ -120,7 +120,7 @@ req = operations.GetVariableContextRequestBody(
         ],
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
         template_tags=[
-            'Account',
+            'string',
         ],
         template_type=shared.TemplateType.EMAIL,
         user_id='50001',
@@ -238,9 +238,9 @@ req = operations.ReplaceTemplatesRequestBody(
         ],
         main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
         template_tags=[
-            'Recycled',
+            'string',
         ],
-        template_type=shared.TemplateType.DOCUMENT,
+        template_type=shared.TemplateType.EMAIL,
         user_id='50001',
         user_org_id='729224',
         variables_version='2',
