@@ -138,7 +138,7 @@ s = epilot.Epilot(
 
 req = operations.ListUsersRequest(
     org_ids=[
-        'firewall',
+        'string',
     ],
 )
 

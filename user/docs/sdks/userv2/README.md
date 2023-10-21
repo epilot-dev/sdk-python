@@ -40,7 +40,7 @@ req = operations.ActivateUserRequest(
         display_name='Example User',
         password='AKjhdakjsdh@!34',
     ),
-    token='Soap',
+    token='string',
 )
 
 res = s.user_v2.activate_user(req)
@@ -355,17 +355,17 @@ req = operations.SignUpUserRequest(
     signup_user_payload=shared.SignupUserPayload(
         organization_detail=shared.OrganizationDetail(
             additional_properties={
-                "Optimization": 'North',
+                "key": 'string',
             },
-            email='Rossie20@hotmail.com',
+            email='Jettie71@yahoo.com',
             is_privacy_policy_checked=False,
             is_terms_and_conditions_checked=False,
             name='Epilot',
             pricing_tier='professional',
-            type=shared.OrganizationDetailType.VENDOR,
+            type=shared.OrganizationDetailType.PARTNER,
         ),
         user_detail=shared.UserDetail(
-            email='Phyllis.Gleason@hotmail.com',
+            email='Caden82@hotmail.com',
             full_name='Example user',
             password='AKjhdakjsdh@!34',
         ),
@@ -413,13 +413,13 @@ req = operations.UpdateUserV2Request(
         department='Sales',
         display_name='Example User',
         favorites={
-            "entity_views": 'boohoo',
-            "dashboard": 'Functionality',
+            "entity_views": 'string',
+            "dashboard": 'string',
         },
         image_uri=shared.UserV2ImageURI(
             additional_properties={
-                "original": 'Account',
-                "thumbnail_32": 'lime',
+                "original": 'string',
+                "thumbnail_32": 'string',
             },
         ),
         is_signature_enabled=True,
@@ -478,7 +478,7 @@ req = operations.VerifyEmailWithTokenRequest(
     user_verification_payload=shared.UserVerificationPayload(
         password='AKjhdakjsdh@!34',
     ),
-    token='Jewelery',
+    token='string',
 )
 
 res = s.user_v2.verify_email_with_token(req)
