@@ -30,10 +30,10 @@ s = epilot.Epilot(
 req = operations.DollarCreateOpportunityRequest(
     opportunity_input=shared.OpportunityInput(
         additional_properties={
-            "$ref": 'Sulfur',
+            "$ref": 'string',
         },
         tags=[
-            'Lari',
+            'string',
         ],
         address=shared.OpportunityAddress(
             dollar_relation_ref=[
@@ -54,10 +54,10 @@ req = operations.DollarCreateOpportunityRequest(
             dollar_relation=[
                 shared.EntityRelation(
                     additional_properties={
-                        "Berkelium": 'under',
+                        "key": 'string',
                     },
                     tags=[
-                        'color',
+                        'string',
                     ],
                 ),
             ],
@@ -65,7 +65,7 @@ req = operations.DollarCreateOpportunityRequest(
         dates=[
             shared.OpportunityDates1(
                 tags=[
-                    'Hybrid',
+                    'string',
                 ],
             ),
         ],
@@ -78,7 +78,7 @@ req = operations.DollarCreateOpportunityRequest(
             dollar_relation=[
                 shared.OrderRelation(
                     tags=[
-                        'South',
+                        'string',
                     ],
                 ),
             ],
@@ -90,7 +90,7 @@ req = operations.DollarCreateOpportunityRequest(
         source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
         source_type='journey',
     ),
-    x_ivy_org_id='West',
+    x_ivy_org_id='string',
 )
 
 res = s.deprecated.dollar_create_opportunity(req)

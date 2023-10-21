@@ -28,10 +28,10 @@ req = operations.DollarAvailabilityCheckRequest(
             location=shared.AvailabilityLocation(),
         ),
         products=[
-            'Visionary',
+            'string',
         ],
     ),
-    x_ivy_org_id='Smart',
+    x_ivy_org_id='string',
 )
 
 res = s.availability_api.dollar_availability_check(req)

@@ -47,7 +47,7 @@ req = operations.DollarCheckoutCartRequest(
             additional_addresses=[
                 shared.Address(
                     additional_properties={
-                        "Florida": 'Diesel',
+                        "key": 'string',
                     },
                     tags=[
                         'billing',
@@ -56,87 +56,105 @@ req = operations.DollarCheckoutCartRequest(
             ],
             billing_address=shared.Address(
                 additional_properties={
-                    "quantifying": 'ASCII',
+                    "key": 'string',
                 },
                 tags=[
                     'billing',
                 ],
             ),
             consents={
-                "program": 'gold',
+                "key": 'string',
             },
             customer=shared.Customer(),
             delivery_address=shared.Address(
                 additional_properties={
-                    "Towels": 'on',
+                    "key": 'string',
                 },
                 tags=[
                     'billing',
                 ],
             ),
             files=[
-                'Shirt',
+                'string',
             ],
             journey_data={
-                "primary": 'Salad',
+                "key": 'string',
             },
             line_items=[
                 shared.PriceItemDtoInput(
                     price=shared.Price(
                         additional_properties={
-                            "$ref": 'up',
+                            "$ref": 'string',
                         },
                         tags=[
-                            'before',
+                            'string',
                         ],
-                    shared.BillingPeriod.YEARLY,
+                    shared.BillingPeriod.WEEKLY,
                     shared.SalesTax.NONTAXABLE,
-                        shared.PriceTax1(
-                            dollar_relation=[
-                                shared.EntityRelation(
-                                    additional_properties={
-                                        "minima": 'Kansas',
-                                    },
-                                    tags=[
-                                        'copy',
-                                    ],
-                                ),
-                            ],
-                        ),
-                    'Borders',
+                        [
+                            shared.Tax(
+                                additional_properties={
+                                    "behavior": 'string',
+                                    "region": 'string',
+                                    "_schema": 'string',
+                                    "_updated_at": 'string',
+                                    "_id": 'string',
+                                    "description": 'string',
+                                    "region_label": 'string',
+                                    "_org": 'string',
+                                    "_tags": 'string',
+                                    "_created_at": 'string',
+                                    "type": 'string',
+                                    "active": 'string',
+                                },
+                                created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
+                                id='8a718dcd-4d08-4ffa-b671-3e809e1b5095',
+                                org='string',
+                                schema='string',
+                                tags=[
+                                    'string',
+                                ],
+                                title='string',
+                                updated_at=dateutil.parser.isoparse('2023-04-18T02:54:24.080Z'),
+                                behavior=shared.TaxBehavior.INCLUSIVE_MIXED,
+                                rate=1343.96,
+                                type=shared.TaxType.VAT,
+                            ),
+                        ],
+                    'string',
                         unit_amount_currency='EUR',
                     ),
                     product=shared.ProductInput(
                         additional_properties={
-                            "$ref": 'scarcely',
+                            "$ref": 'string',
                         },
                         availability_files=[
                             shared.File(
                                 dollar_relation=shared.EntityRelation(
                                     additional_properties={
-                                        "Washington": 'Queenie',
+                                        "key": 'string',
                                     },
                                     tags=[
-                                        'Dollar',
+                                        'string',
                                     ],
                                 ),
                                 additional_properties={
-                                    "Newton": 'male',
+                                    "key": 'string',
                                 },
-                                created_at=dateutil.parser.isoparse('2022-04-24T12:21:58.835Z'),
+                                created_at=dateutil.parser.isoparse('2021-12-13T21:52:33.452Z'),
                                 id='<ID>',
-                                org='deposit',
-                                schema='Concrete',
-                                updated_at=dateutil.parser.isoparse('2021-02-20T21:09:38.652Z'),
-                                filename='southwest.wav',
-                                mime_type='backing',
+                                org='string',
+                                schema='string',
+                                updated_at=dateutil.parser.isoparse('2022-10-07T05:49:24.603Z'),
+                                filename='specialist.m3a',
+                                mime_type='string',
                                 versions=[
                                     shared.FileVersions(
                                         additional_properties={
-                                            "Saint": 'FTP',
+                                            "key": 'string',
                                         },
                                         s3ref=shared.FileVersionsS3ref(
-                                            bucket='ionise',
+                                            bucket='string',
                                             key='<key>',
                                         ),
                                     ),
@@ -147,10 +165,10 @@ req = operations.DollarCheckoutCartRequest(
                             dollar_relation=[
                                 shared.EntityRelation(
                                     additional_properties={
-                                        "port": 'illustrious',
+                                        "key": 'string',
                                     },
                                     tags=[
-                                        'Baht',
+                                        'string',
                                     ],
                                 ),
                             ],
@@ -158,7 +176,7 @@ req = operations.DollarCheckoutCartRequest(
                         feature=[
                             shared.ProductFeature(
                                 tags=[
-                                    'male',
+                                    'string',
                                 ],
                             ),
                         ],
@@ -166,10 +184,10 @@ req = operations.DollarCheckoutCartRequest(
                             dollar_relation=[
                                 shared.EntityRelation(
                                     additional_properties={
-                                        "Fiat": 'synergize',
+                                        "key": 'string',
                                     },
                                     tags=[
-                                        'black',
+                                        'string',
                                     ],
                                 ),
                             ],
@@ -178,10 +196,10 @@ req = operations.DollarCheckoutCartRequest(
                             dollar_relation=[
                                 shared.EntityRelation(
                                     additional_properties={
-                                        "withdrawal": 'XSS',
+                                        "key": 'string',
                                     },
                                     tags=[
-                                        'Cambridgeshire',
+                                        'string',
                                     ],
                                 ),
                             ],
@@ -190,10 +208,10 @@ req = operations.DollarCheckoutCartRequest(
                             dollar_relation=[
                                 shared.EntityRelation(
                                     additional_properties={
-                                        "because": 'Luettgen',
+                                        "key": 'string',
                                     },
                                     tags=[
-                                        'Buckinghamshire',
+                                        'string',
                                     ],
                                 ),
                             ],
@@ -209,7 +227,7 @@ req = operations.DollarCheckoutCartRequest(
             ],
             payment_method=shared.PaymentMethod(
                 details={
-                    "Automotive": 'upgrade',
+                    "key": 'string',
                 },
             ),
             source=shared.OrderSource(
@@ -219,11 +237,11 @@ req = operations.DollarCheckoutCartRequest(
             source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
             source_type='journey',
             tags=[
-                'maximize',
+                'string',
             ],
         ),
     ),
-    x_ivy_org_id='invoice',
+    x_ivy_org_id='string',
 )
 
 res = s.cart_api.dollar_checkout_cart(req)

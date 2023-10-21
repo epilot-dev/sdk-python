@@ -33,9 +33,9 @@ req = operations.DollarSearchCatalogRequest(
             available_date=dateutil.parser.parse('2017-07-21').date(),
             location=shared.AvailabilityLocation(),
         ),
-        q='Hatchback',
+        q='string',
     ),
-    x_ivy_org_id='circuit',
+    x_ivy_org_id='string',
 )
 
 res = s.catalog_api.dollar_search_catalog(req)

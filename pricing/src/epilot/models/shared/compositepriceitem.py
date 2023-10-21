@@ -33,7 +33,7 @@ class CompositePriceItemInput:
     r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
     is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
     r"""The flag for prices that contain price components."""
-    item_components: Optional[List[shared_priceitem.PriceItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_components'), 'exclude': lambda f: f is None }})
+    item_components: Optional[List[shared_priceitem.PriceItemInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_components'), 'exclude': lambda f: f is None }})
     r"""Contains price item configurations, per price component, when the main price item is a [composite price](/api/pricing#tag/dynamic_price_schema)."""
     metadata: Optional[List[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""

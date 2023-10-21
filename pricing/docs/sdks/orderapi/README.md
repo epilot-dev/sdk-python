@@ -32,15 +32,15 @@ s = epilot.Epilot(
 
 req = shared.OrderPayloadInput(
     additional_properties={
-        "Marketing": 'program',
+        "key": 'string',
     },
     tags=[
-        'Caesium',
+        'string',
     ],
     billing_address=[
         shared.Address(
             additional_properties={
-                "male": 'overload',
+                "key": 'string',
             },
             tags=[
                 'billing',
@@ -51,7 +51,7 @@ req = shared.OrderPayloadInput(
     delivery_address=[
         shared.Address(
             additional_properties={
-                "Lawrencium": 'blue',
+                "key": 'string',
             },
             tags=[
                 'billing',
@@ -62,31 +62,78 @@ req = shared.OrderPayloadInput(
         shared.CompositePriceItemInput(
             shared.Price(
                 additional_properties={
-                    "$ref": 'choke',
+                    "$ref": 'string',
                 },
                 tags=[
-                    'juvenile',
+                    'string',
                 ],
             shared.BillingPeriod.WEEKLY,
             shared.SalesTax.NONTAXABLE,
-                shared.PriceTax1(
-                    dollar_relation=[
-                        shared.EntityRelation(
-                            additional_properties={
-                                "Kenya": 'Bronze',
-                            },
-                            tags=[
-                                'synthesize',
-                            ],
-                        ),
-                    ],
-                ),
-            shared.PriceUnit1.M2,
+                [
+                    shared.Tax(
+                        additional_properties={
+                            "type": 'string',
+                            "active": 'string',
+                            "region_label": 'string',
+                            "_org": 'string',
+                            "_tags": 'string',
+                            "_created_at": 'string',
+                            "_id": 'string',
+                            "description": 'string',
+                            "behavior": 'string',
+                            "region": 'string',
+                            "_schema": 'string',
+                            "_updated_at": 'string',
+                        },
+                        created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
+                        id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
+                        org='string',
+                        schema='string',
+                        tags=[
+                            'string',
+                        ],
+                        title='string',
+                        updated_at=dateutil.parser.isoparse('2022-08-04T04:36:14.538Z'),
+                        behavior=shared.TaxBehavior.INCLUSIVE_LOWER,
+                        rate=5305.72,
+                        type=shared.TaxType.GST,
+                    ),
+                ],
+            'string',
                 unit_amount_currency='EUR',
             ),
             currency='EUR',
             item_components=[
-                shared.PriceItem(),
+                shared.PriceItemInput(
+                    shared.Price(
+                        additional_properties={
+                            "$ref": 'string',
+                        },
+                        tags=[
+                            'string',
+                        ],
+                    shared.BillingPeriod.MONTHLY,
+                    shared.SalesTax.STANDARD,
+                        shared.PriceTax1(
+                            dollar_relation=[
+                                shared.EntityRelation(
+                                    additional_properties={
+                                        "key": 'string',
+                                    },
+                                    tags=[
+                                        'string',
+                                    ],
+                                ),
+                            ],
+                        ),
+                    shared.PriceUnit1.L,
+                        unit_amount_currency='EUR',
+                    ),
+                    currency='EUR',
+                    metadata=[
+                        shared.MetaData1(),
+                    ],
+                ),
             ],
             metadata=[
                 shared.MetaData1(),
@@ -96,7 +143,7 @@ req = shared.OrderPayloadInput(
     payment_method=[
         shared.PaymentMethod(
             details={
-                "SAS": 'blue',
+                "key": 'string',
             },
         ),
     ],
@@ -142,15 +189,15 @@ s = epilot.Epilot(
 req = operations.PutOrderRequest(
     order_payload_input=shared.OrderPayloadInput(
         additional_properties={
-            "disastrous": 'Credit',
+            "key": 'string',
         },
         tags=[
-            'Avon',
+            'string',
         ],
         billing_address=[
             shared.Address(
                 additional_properties={
-                    "East": 'commodi',
+                    "key": 'string',
                 },
                 tags=[
                     'billing',
@@ -161,7 +208,7 @@ req = operations.PutOrderRequest(
         delivery_address=[
             shared.Address(
                 additional_properties={
-                    "Wooden": 'mariachi',
+                    "key": 'string',
                 },
                 tags=[
                     'billing',
@@ -170,27 +217,62 @@ req = operations.PutOrderRequest(
         ],
         line_items=[
             shared.CompositePriceItemInput(
-                shared.CompositePrice(
+                shared.Price(
                     additional_properties={
-                        "$ref": 'beyond',
+                        "$ref": 'string',
                     },
                     tags=[
-                        'instantly',
+                        'string',
                     ],
-                    shared.CompositePricePriceComponents2(
+                shared.BillingPeriod.EVERY_QUARTER,
+                shared.SalesTax.STANDARD,
+                    shared.PriceTax1(
                         dollar_relation=[
-                            shared.PriceComponentRelation(
+                            shared.EntityRelation(
+                                additional_properties={
+                                    "key": 'string',
+                                },
                                 tags=[
-                                    'Croatia',
+                                    'string',
                                 ],
                             ),
                         ],
                     ),
+                shared.PriceUnit1.KW,
                     unit_amount_currency='EUR',
                 ),
                 currency='EUR',
                 item_components=[
-                    shared.PriceItem(),
+                    shared.PriceItemInput(
+                        shared.Price(
+                            additional_properties={
+                                "$ref": 'string',
+                            },
+                            tags=[
+                                'string',
+                            ],
+                        shared.BillingPeriod.MONTHLY,
+                        shared.SalesTax.REDUCED,
+                            shared.PriceTax1(
+                                dollar_relation=[
+                                    shared.EntityRelation(
+                                        additional_properties={
+                                            "key": 'string',
+                                        },
+                                        tags=[
+                                            'string',
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        shared.PriceUnit1.KWH,
+                            unit_amount_currency='EUR',
+                        ),
+                        currency='EUR',
+                        metadata=[
+                            shared.MetaData1(),
+                        ],
+                    ),
                 ],
                 metadata=[
                     shared.MetaData1(),
@@ -200,7 +282,7 @@ req = operations.PutOrderRequest(
         payment_method=[
             shared.PaymentMethod(
                 details={
-                    "beseech": 'Litas',
+                    "key": 'string',
                 },
             ),
         ],
