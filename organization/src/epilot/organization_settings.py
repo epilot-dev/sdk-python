@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations
-from typing import Any, Dict, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 class OrganizationSettings:
     r"""Organisation Settings"""

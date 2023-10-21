@@ -79,7 +79,7 @@ req = operations.UpdateOrganizationRequest(
         pricing_tier='professional',
         signature='<p>Thanks</p>',
         style={
-            "Jersey": 'Aubree',
+            "key": 'string',
         },
         symbol='EPI',
         website='https://epilot.cloud',

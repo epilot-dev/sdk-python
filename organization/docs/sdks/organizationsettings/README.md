@@ -108,7 +108,7 @@ s = epilot.Epilot(
 
 req = operations.PutSettingsValueRequest(
     {
-        "enabled": 'Solutions',
+        "enabled": 'string',
     },
     key='<key>',
     org_id='739224',
