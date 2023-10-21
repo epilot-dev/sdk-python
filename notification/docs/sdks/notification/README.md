@@ -32,11 +32,11 @@ s = epilot.Epilot(
 
 req = shared.Notification(
     additional_properties={
-        "Gasoline": 'on',
+        "key": 'string',
     },
     caller=shared.NotificationCallerContext(
         additional_properties={
-            "synergies": 'Wagon',
+            "key": 'string',
         },
         epilot_auth=shared.NotificationCallerContextEpilotAuth(
             token=shared.NotificationCallerContextEpilotAuthToken(
@@ -48,7 +48,7 @@ req = shared.Notification(
         ),
     ),
     force_notify_users={
-        "12345": 'Chicken',
+        "12345": 'string',
     },
     message=shared.NotificationMessage(
         de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
@@ -56,21 +56,21 @@ req = shared.Notification(
     ),
     operations=[
         shared.EntityOperation(
-            entity='77db4d78-29e5-4cd1-839c-d99d857a1007',
+            entity='d9fa50df-3a77-4db4-9782-9e5cd1039cd9',
             operation='updateEntity',
             params=shared.EntityOperationParams(
                 slug='contact',
             ),
             payload={
-                "status": 'operating',
-                "_schema": 'variant',
-                "_org": 'lisp',
+                "_org": 'string',
+                "status": 'string',
+                "_schema": 'string',
             },
         ),
     ],
     organization_id='206801',
     payload={
-        "entity": 'program',
+        "entity": 'string',
     },
     redirect_url='https://epilot.cloud',
     title=shared.NotificationTitle(
