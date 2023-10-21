@@ -159,8 +159,8 @@ s = epilot.Epilot(
 )
 
 req = operations.DownloadS3FileRequest(
-    s3_bucket='local',
-    s3_key='cyan',
+    s3_bucket='string',
+    s3_key='string',
 )
 
 res = s.files.download_s3_file(req)
@@ -319,7 +319,7 @@ s = epilot.Epilot(
 )
 
 req = operations.PreviewS3FileGetRequest(
-    bucket='Brazil',
+    bucket='string',
     key='<key>',
 )
 
@@ -365,17 +365,17 @@ s = epilot.Epilot(
 
 req = shared.SaveS3FilePayload(
     additional_properties={
-        "tesla": 'Dominica',
+        "key": 'string',
     },
     tags=[
-        'Hutchinson',
+        'string',
     ],
     filename='document.pdf',
     relations=[
         shared.FileRelationItem(
             schema='contact',
             tags=[
-                'ha',
+                'string',
             ],
             entity_id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
         ),
