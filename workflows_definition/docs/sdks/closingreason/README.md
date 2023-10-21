@@ -27,7 +27,7 @@ req = operations.ChangeReasonStatusRequest(
     change_reason_status_req=shared.ChangeReasonStatusReq(
         status=shared.ClosingReasonsStatus.ACTIVE,
     ),
-    reason_id='regional',
+    reason_id='string',
 )
 
 res = s.closing_reason.change_reason_status(req)
@@ -67,7 +67,7 @@ s = sdk.SDK(
 
 req = shared.ClosingReason(
     status=shared.ClosingReasonsStatus.ACTIVE,
-    title='unlined',
+    title='string',
 )
 
 res = s.closing_reason.create_closing_reason(req)
