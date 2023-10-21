@@ -24,30 +24,30 @@ s = epilot.Epilot()
 
 req = shared.SubmissionPayload(
     ivy_opportunity_ids=[
-        'Automotive',
+        'string',
     ],
     entities=[
         shared.SubmissionEntity(
             additional_properties={
-                "request": 'Bike',
-                "files": 'Shoes',
-                "_schema": 'Incredible',
-                "description": 'Borders',
-                "contact_first_name": 'synergistic',
-                "contact_last_name": 'versus',
-                "contact_email": 'blah',
+                "contact_first_name": 'string',
+                "contact_last_name": 'string',
+                "contact_email": 'string',
+                "request": 'string',
+                "files": 'string',
+                "_schema": 'string',
+                "description": 'string',
             },
             schema=shared.SubmissionEntitySchema.SUBMISSION,
             files=[
                 shared.SubmissionEntityFiles(
                     additional_properties={
-                        "Bicycle": 'Applications',
+                        "key": 'string',
                     },
                     tags=[
-                        'Southeast',
+                        'string',
                     ],
                     relation_tags=[
-                        'interactive',
+                        'string',
                     ],
                     s3ref=shared.S3Reference(
                         bucket='epilot-user-content',
@@ -62,7 +62,7 @@ req = shared.SubmissionPayload(
         shared.OptIn(
             identifier='example@email.com',
             meta={
-                "Marketing": 'mesh',
+                "key": 'string',
             },
             topic='EMAIL_MARKETING',
         ),
