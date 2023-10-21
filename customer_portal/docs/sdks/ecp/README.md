@@ -91,7 +91,7 @@ req = operations.CreateCustomEntityActivityRequest(
     activity=shared.Activity(
         message='{{caller}} did something with {{entity payload.entity.id}}.',
         payload={
-            "entity": 'Outdoors',
+            "entity": 'string',
         },
         title='My custom activity',
         type='MyCustomActivity',
@@ -373,12 +373,12 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = operations.GetBillingEventsRequest(
-    customer_id='Generic',
+    customer_id='string',
     entity_id=[
-        'Facilitator',
+        'string',
     ],
     event_type=[
-        operations.GetBillingEventsEventType.REIMBURSEMENT,
+        operations.GetBillingEventsEventType.INSTALLMENT,
     ],
 )
 
@@ -490,7 +490,7 @@ s = epilot.Epilot()
 
 req = operations.GetEntitiesByIdentifiersRequest(
     request_body={
-        "female": 'female',
+        "key": 'string',
     },
     slug=shared.EntitySlug.CONTACT,
 )
@@ -857,7 +857,7 @@ req = shared.SaveEntityFile(
     files=[
         shared.SaveEntityFileFiles(
             tags=[
-                'Mobility',
+                'string',
             ],
             document_type='12345',
             file_entity_id='12345',
@@ -943,7 +943,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "Jewell": 'compress',
+    "key": 'string',
 }
 
 res = s.ecp.update_contact(req, operations.UpdateContactSecurity(
@@ -982,7 +982,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateContractRequest(
     request_body={
-        "Path": 'linseed',
+        "key": 'string',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -1023,7 +1023,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOpportunityRequest(
     request_body={
-        "Legacy": 'Pants',
+        "key": 'string',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -1064,7 +1064,7 @@ s = epilot.Epilot()
 
 req = operations.UpdateOrderRequest(
     request_body={
-        "yuck": 'Berkshire',
+        "key": 'string',
     },
     id='5da0a718-c822-403d-9f5d-20d4584e0528',
 )
@@ -1104,7 +1104,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "Manager": 'Product',
+    "key": 'string',
 }
 
 res = s.ecp.update_portal_user(req, operations.UpdatePortalUserSecurity(

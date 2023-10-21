@@ -566,7 +566,7 @@ req = shared.SavePortalFile(
     files=[
         shared.SavePortalFileFiles(
             tags=[
-                'save',
+                'string',
             ],
             file_type='orderRightTeaser',
             filename='12345',
@@ -674,7 +674,7 @@ req = operations.UpsertPortalRequest(
             on_pending_user=[
                 shared.AdminUser(
                     additional_properties={
-                        "up": 'array',
+                        "key": 'string',
                     },
                     display_name='John',
                     email='j.doe@epilot.cloud',
