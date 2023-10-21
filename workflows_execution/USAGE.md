@@ -13,16 +13,16 @@ s = epilot.Epilot(
 
 req = shared.WorkflowExecutionCreateReq(
     assigned_to=[
-        'wearily',
+        'string',
     ],
     contexts=[
         shared.WorkflowContext(
             id='<ID>',
-            schema='Shoes',
-            title='schemas',
+            schema='string',
+            title='string',
         ),
     ],
-    workflow_id='teal',
+    workflow_id='string',
 )
 
 res = s.workflows.create_execution(req)

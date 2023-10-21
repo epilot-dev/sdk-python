@@ -37,16 +37,16 @@ s = epilot.Epilot(
 
 req = shared.WorkflowExecutionCreateReq(
     assigned_to=[
-        'wearily',
+        'string',
     ],
     contexts=[
         shared.WorkflowContext(
             id='<ID>',
-            schema='Shoes',
-            title='schemas',
+            schema='string',
+            title='string',
         ),
     ],
-    workflow_id='teal',
+    workflow_id='string',
 )
 
 res = s.workflows.create_execution(req)
@@ -87,11 +87,11 @@ s = epilot.Epilot(
 req = operations.CreateStepRequest(
     create_step_req=shared.CreateStepReq(
         automation_config=shared.AutomationConfig(
-            flow_id='deposit',
+            flow_id='string',
         ),
-        name='Mazda',
+        name='string',
     ),
-    execution_id='Transexual',
+    execution_id='string',
 )
 
 res = s.workflows.create_step(req)
@@ -130,7 +130,7 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteExecutionRequest(
-    execution_id='Industrial',
+    execution_id='string',
 )
 
 res = s.workflows.delete_execution(req)
@@ -169,8 +169,8 @@ s = epilot.Epilot(
 )
 
 req = operations.DeleteStepRequest(
-    execution_id='Gender',
-    step_id='Hat',
+    execution_id='string',
+    step_id='string',
 )
 
 res = s.workflows.delete_step(req)
@@ -212,7 +212,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetClosingReasonExecutionRequest(
-    execution_id='generate',
+    execution_id='string',
 )
 
 res = s.workflows.get_closing_reason_execution(req)
@@ -251,7 +251,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetExecutionRequest(
-    execution_id='Genderflux',
+    execution_id='string',
 )
 
 res = s.workflows.get_execution(req)
@@ -409,27 +409,27 @@ s = epilot.Epilot(
 req = operations.UpdateExecutionRequest(
     workflow_execution_update_req=shared.WorkflowExecutionUpdateReq(
         assigned_to=[
-            'Toys',
+            'string',
         ],
         contexts=[
             shared.WorkflowContext(
                 id='<ID>',
-                schema='boldly',
-                title='purple',
+                schema='string',
+                title='string',
             ),
         ],
         dynamic_due_date=shared.DynamicDueDate(
-            number_of_units=9427.59,
-            time_period=shared.DynamicDueDateTimePeriod.MONTHS,
+            number_of_units=1932.48,
+            time_period=shared.DynamicDueDateTimePeriod.WEEKS,
         ),
         selected_closing_reasons=[
             shared.ClosingReason(
                 id='<ID>',
-                title='Implementation',
+                title='string',
             ),
         ],
     ),
-    execution_id='Loan',
+    execution_id='string',
 )
 
 res = s.workflows.update_execution(req)
@@ -470,22 +470,22 @@ s = epilot.Epilot(
 req = operations.UpdateStepRequest(
     update_step_req=shared.UpdateStepReq(
         assigned_to=[
-            'India',
+            'string',
         ],
         automation_config=shared.AutomationConfig(
-            flow_id='sympathy',
+            flow_id='string',
         ),
         dynamic_due_date=shared.DynamicDueDate(
-            number_of_units=6596.78,
-            time_period=shared.DynamicDueDateTimePeriod.DAYS,
+            number_of_units=444.49,
+            time_period=shared.DynamicDueDateTimePeriod.WEEKS,
         ),
         position=shared.StepPositionAt(),
         user_ids=[
-            6418.65,
+            9439.44,
         ],
     ),
-    execution_id='Folding',
-    step_id='Health',
+    execution_id='string',
+    step_id='string',
 )
 
 res = s.workflows.update_step(req)
