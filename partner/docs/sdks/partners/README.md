@@ -36,10 +36,10 @@ s = epilot.Epilot(
 req = operations.ActivatePartnerRequest(
     activate_partner_payload=shared.ActivatePartnerPayload(
         company_name='Company name',
-        organization_id='bah',
-        signed_up_email='Taylor78@gmail.com',
+        organization_id='string',
+        signed_up_email='Lupe.Graham2@hotmail.com',
     ),
-    token='Advanced',
+    token='string',
 )
 
 res = s.partners.activate_partner(req)
@@ -119,7 +119,7 @@ s = epilot.Epilot(
 
 req = [
     operations.BatchGetAssignableRequestBody(
-        user_id='South',
+        user_id='string',
     ),
 ]
 
@@ -159,7 +159,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetPartnerByTokenRequest(
-    token='Singapore',
+    token='string',
 )
 
 res = s.partners.get_partner_by_token(req)
