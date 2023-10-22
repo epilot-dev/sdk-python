@@ -3,54 +3,66 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
+from ..shared import activitytrigger as shared_activitytrigger
+from ..shared import apisubmissiontrigger as shared_apisubmissiontrigger
+from ..shared import automationactionconfig as shared_automationactionconfig
+from ..shared import cartcheckoutactionconfig as shared_cartcheckoutactionconfig
+from ..shared import createdocumentactionconfig as shared_createdocumentactionconfig
+from ..shared import entitymanualtrigger as shared_entitymanualtrigger
+from ..shared import entityoperationtrigger as shared_entityoperationtrigger
+from ..shared import frontendsubmittrigger as shared_frontendsubmittrigger
+from ..shared import journeysubmittrigger as shared_journeysubmittrigger
+from ..shared import mapentityactionconfig as shared_mapentityactionconfig
+from ..shared import receivedemailtrigger as shared_receivedemailtrigger
+from ..shared import sendemailactionconfig as shared_sendemailactionconfig
 from ..shared import triggercondition as shared_triggercondition
+from ..shared import triggerwebhookactionconfig as shared_triggerwebhookactionconfig
+from ..shared import triggerworkflowactionconfig as shared_triggerworkflowactionconfig
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
-from marshmallow import fields
-from typing import Any, Optional
+from typing import List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AutomationFlow:
-    r"""The created automation flow"""
-    
-    actions: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions') }})  
+    actions: List[Union[shared_mapentityactionconfig.MapEntityActionConfig, shared_triggerworkflowactionconfig.TriggerWorkflowActionConfig, shared_triggerwebhookactionconfig.TriggerWebhookActionConfig, shared_createdocumentactionconfig.CreateDocumentActionConfig, shared_sendemailactionconfig.SendEmailActionConfig, shared_cartcheckoutactionconfig.CartCheckoutActionConfig, shared_automationactionconfig.AutomationActionConfig]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions') }})
     flow_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_name') }})
-    r"""A descriptive name for the Automation"""  
-    triggers: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('triggers') }})  
-    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})  
+    r"""A descriptive name for the Automation"""
+    triggers: List[Union[shared_frontendsubmittrigger.FrontendSubmitTrigger, shared_journeysubmittrigger.JourneySubmitTrigger, shared_apisubmissiontrigger.APISubmissionTrigger, shared_entityoperationtrigger.EntityOperationTrigger, shared_activitytrigger.ActivityTrigger, shared_entitymanualtrigger.EntityManualTrigger, shared_receivedemailtrigger.ReceivedEmailTrigger]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('triggers') }})
+    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     created_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_by'), 'exclude': lambda f: f is None }})
-    r"""User / service who created automation flow"""  
-    enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
-    r"""Whether the automation is enabled or not"""  
+    r"""User / service who created automation flow"""
+    enabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
+    r"""Whether the automation is enabled or not"""
     entity_schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schema'), 'exclude': lambda f: f is None }})
-    r"""The triggering entity schema"""  
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})  
+    r"""The triggering entity schema"""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     last_updated_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_updated_by'), 'exclude': lambda f: f is None }})
-    r"""User / service who last updated automation flow"""  
+    r"""User / service who last updated automation flow"""
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id'), 'exclude': lambda f: f is None }})
-    r"""Organization the automation flow belongs to"""  
+    r"""Organization the automation flow belongs to"""
     runs: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('runs'), 'exclude': lambda f: f is None }})
-    r"""Number of automation executions that ran"""  
-    trigger_conditions: Optional[list[shared_triggercondition.TriggerCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger_conditions'), 'exclude': lambda f: f is None }})  
-    updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})  
+    r"""Number of automation executions that ran"""
+    trigger_conditions: Optional[List[shared_triggercondition.TriggerCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger_conditions'), 'exclude': lambda f: f is None }})
+    updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AutomationFlowInput:
-    r"""Automation flow to create"""
-    
     flow_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_name') }})
-    r"""A descriptive name for the Automation"""  
-    triggers: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('triggers') }})  
-    enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
-    r"""Whether the automation is enabled or not"""  
+    r"""A descriptive name for the Automation"""
+    triggers: List[Union[shared_frontendsubmittrigger.FrontendSubmitTrigger, shared_journeysubmittrigger.JourneySubmitTrigger, shared_apisubmissiontrigger.APISubmissionTrigger, shared_entityoperationtrigger.EntityOperationTrigger, shared_activitytrigger.ActivityTrigger, shared_entitymanualtrigger.EntityManualTrigger, shared_receivedemailtrigger.ReceivedEmailTrigger]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('triggers') }})
+    enabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
+    r"""Whether the automation is enabled or not"""
     entity_schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schema'), 'exclude': lambda f: f is None }})
-    r"""The triggering entity schema"""  
+    r"""The triggering entity schema"""
     runs: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('runs'), 'exclude': lambda f: f is None }})
-    r"""Number of automation executions that ran"""  
-    trigger_conditions: Optional[list[shared_triggercondition.TriggerCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger_conditions'), 'exclude': lambda f: f is None }})  
+    r"""Number of automation executions that ran"""
+    trigger_conditions: Optional[List[shared_triggercondition.TriggerCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger_conditions'), 'exclude': lambda f: f is None }})
     
+
