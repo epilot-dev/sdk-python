@@ -72,6 +72,7 @@ if res.activity_item is not None:
 * [get_related_entities_count](docs/sdks/relations/README.md#get_related_entities_count) - getRelatedEntitiesCount
 * [get_relations](docs/sdks/relations/README.md#get_relations) - getRelations
 * [get_relations_v2](docs/sdks/relations/README.md#get_relations_v2) - getRelationsV2
+* [get_relations_v3](docs/sdks/relations/README.md#get_relations_v3) - getRelationsV3
 * [update_relation](docs/sdks/relations/README.md#update_relation) - updateRelation
 
 ### [saved_views](docs/sdks/savedviews/README.md)

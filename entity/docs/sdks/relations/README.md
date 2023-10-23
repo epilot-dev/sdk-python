@@ -12,6 +12,7 @@ Entity Relationships
 * [get_related_entities_count](#get_related_entities_count) - getRelatedEntitiesCount
 * [get_relations](#get_relations) - getRelations
 * [get_relations_v2](#get_relations_v2) - getRelationsV2
+* [get_relations_v3](#get_relations_v3) - getRelationsV3
 * [update_relation](#update_relation) - updateRelation
 
 ## add_relations
@@ -250,6 +251,57 @@ if res.get_relations_resp_with_pagination is not None:
 ### Response
 
 **[operations.GetRelationsV2Response](../../models/operations/getrelationsv2response.md)**
+
+
+## get_relations_v3
+
+Returns 1st level direct relations for an entity with pagination.
+
+You can control whether to return the full entity or just the relation item with the `?hydrate` query param.
+
+Reverse relations i.e. entities referring to this entity are included with the `?include_reverse` query param.
+
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = operations.GetRelationsV3Request(
+    exclude_schemas=[
+        'contact',
+    ],
+    id='6e35e8b4-d75d-4f84-a79c-6a8b45571a04',
+    include_schemas=[
+        'contact',
+    ],
+    slug='contact',
+)
+
+res = s.relations.get_relations_v3(req)
+
+if res.get_relations_resp_with_pagination is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetRelationsV3Request](../../models/operations/getrelationsv3request.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+
+
+### Response
+
+**[operations.GetRelationsV3Response](../../models/operations/getrelationsv3response.md)**
 
 
 ## update_relation

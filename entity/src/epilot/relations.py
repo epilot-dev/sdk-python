@@ -163,6 +163,39 @@ class Relations:
         return res
 
     
+    def get_relations_v3(self, request: operations.GetRelationsV3Request) -> operations.GetRelationsV3Response:
+        r"""getRelationsV3
+        Returns 1st level direct relations for an entity with pagination.
+
+        You can control whether to return the full entity or just the relation item with the `?hydrate` query param.
+
+        Reverse relations i.e. entities referring to this entity are included with the `?include_reverse` query param.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetRelationsV3Request, base_url, '/v3/entity/{slug}/{id}/relations', request)
+        headers = {}
+        query_params = utils.get_query_params(operations.GetRelationsV3Request, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetRelationsV3Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.GetRelationsRespWithPagination])
+                res.get_relations_resp_with_pagination = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def update_relation(self, request: operations.UpdateRelationRequest) -> operations.UpdateRelationResponse:
         r"""updateRelation
         Updates an existing relation between two entities.

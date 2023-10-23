@@ -35,6 +35,7 @@ src/epilot/models/operations/deleterelation.py
 src/epilot/models/operations/getrelatedentitiescount.py
 src/epilot/models/operations/getrelations.py
 src/epilot/models/operations/getrelationsv2.py
+src/epilot/models/operations/getrelationsv3.py
 src/epilot/models/operations/updaterelation.py
 src/epilot/models/operations/createsavedview.py
 src/epilot/models/operations/deletesavedview.py
@@ -160,6 +161,8 @@ docs/models/operations/getrelationsrequest.md
 docs/models/operations/getrelationsresponse.md
 docs/models/operations/getrelationsv2request.md
 docs/models/operations/getrelationsv2response.md
+docs/models/operations/getrelationsv3request.md
+docs/models/operations/getrelationsv3response.md
 docs/models/operations/updaterelationrequestbody.md
 docs/models/operations/updaterelationrequest.md
 docs/models/operations/updaterelationresponse.md
