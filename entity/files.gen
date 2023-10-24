@@ -75,6 +75,7 @@ src/epilot/models/shared/savedviewitem.py
 src/epilot/models/shared/savedview.py
 src/epilot/models/shared/entityschemaitem.py
 src/epilot/models/shared/entitydefaulttable.py
+src/epilot/models/shared/entityaction.py
 src/epilot/models/shared/redirectentityview.py
 src/epilot/models/shared/entityviewdisabled.py
 src/epilot/models/shared/entitydefaultedit.py
@@ -266,17 +267,17 @@ docs/models/shared/entitydefaulttabledropdownitems.md
 docs/models/shared/entitydefaulttablenavbaractionsoptionsparams.md
 docs/models/shared/entitydefaulttablenavbaractionsoptions.md
 docs/models/shared/entitydefaulttablenavbaractions.md
+docs/models/shared/entitydefaulttablerowactions.md
 docs/models/shared/entitydefaulttableviewtype.md
 docs/models/shared/entitydefaulttable.md
+docs/models/shared/entityaction.md
 docs/models/shared/redirectentityviewviewtype.md
 docs/models/shared/redirectentityview.md
 docs/models/shared/entityviewdisabledviewtype.md
 docs/models/shared/entityviewdisabled.md
-docs/models/shared/entitydefaultedittablemenuoptions.md
 docs/models/shared/entitydefaulteditviewtype.md
 docs/models/shared/entitydefaultedit.md
 docs/models/shared/summaryattribute.md
-docs/models/shared/entitydefaultcreatetablemenuoptions.md
 docs/models/shared/entitydefaultcreateviewtype.md
 docs/models/shared/entitydefaultcreate.md
 docs/models/shared/searchmappingstype.md

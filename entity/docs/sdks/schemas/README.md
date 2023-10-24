@@ -479,6 +479,14 @@ req = operations.PutSchemaRequest(
             ),
             shared.EntityViewDisabled(),
             list_item=shared.EntitySchemaUIConfigListItem(
+                quick_actions=[
+                    shared.EntityAction(
+                        action='preview_file',
+                        icon='visibility',
+                        label='Preview File',
+                        permission='entity:edit',
+                    ),
+                ],
                 summary_attributes=[
                     shared.SummaryAttribute(
                         label='string',

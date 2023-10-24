@@ -10,6 +10,7 @@ from ..shared import consentattribute as shared_consentattribute
 from ..shared import countryattribute as shared_countryattribute
 from ..shared import currencyattribute as shared_currencyattribute
 from ..shared import dateattribute as shared_dateattribute
+from ..shared import entityaction as shared_entityaction
 from ..shared import entitycapability as shared_entitycapability
 from ..shared import entitydefaultcreate as shared_entitydefaultcreate
 from ..shared import entitydefaultedit as shared_entitydefaultedit
@@ -114,6 +115,7 @@ class EntitySchemaItemUIConfigListItemSummaryAttributes:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntitySchemaItemUIConfigListItem:
+    quick_actions: Optional[List[shared_entityaction.EntityAction]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quick_actions'), 'exclude': lambda f: f is None }})
     summary_attributes: Optional[List[Union[shared_summaryattribute.SummaryAttribute, str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('summary_attributes'), 'exclude': lambda f: f is None }})
     
 

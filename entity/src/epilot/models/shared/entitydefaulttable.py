@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import entityaction as shared_entityaction
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -69,6 +70,11 @@ class EntityDefaultTableNavbarActions:
     
 
 
+
+@dataclasses.dataclass
+class EntityDefaultTableRowActions:
+    pass
+
 class EntityDefaultTableViewType(str, Enum):
     DEFAULT = 'default'
 
@@ -81,7 +87,7 @@ class EntityDefaultTable:
     enable_thumbnails: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable_thumbnails'), 'exclude': lambda f: f is None }})
     r"""Enable the thumbnail column"""
     navbar_actions: Optional[List[EntityDefaultTableNavbarActions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('navbar_actions'), 'exclude': lambda f: f is None }})
-    row_actions: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('row_actions'), 'exclude': lambda f: f is None }})
+    row_actions: Optional[List[Union[str, shared_entityaction.EntityAction]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('row_actions'), 'exclude': lambda f: f is None }})
     view_type: Optional[EntityDefaultTableViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
 
