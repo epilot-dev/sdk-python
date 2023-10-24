@@ -12,19 +12,24 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=custom
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import operations
+import dateutil.parser
+from epilot.models import operations, shared
 
-s = epilot.Epilot()
-
-req = operations.GetCustomerBalanceRequest(
-    customer_entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e',
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
-res = s.balance.get_customer_balance(req, operations.GetCustomerBalanceSecurity(
-    epilot_auth="",
-))
+req = operations.GetEntityActivityFeedRequest(
+    id='5da0a718-c822-403d-9f5d-20d4584e0528',
+    slug=shared.EntitySlug.CONTACT,
+    type='SyncActivity',
+)
 
-if res.balance is not None:
+res = s.activity.get_entity_activity_feed(req)
+
+if res.get_entity_activity_feed_200_application_json_object is not None:
     # handle response
     pass
 ```
@@ -33,6 +38,10 @@ if res.balance is not None:
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
+
+### [activity](docs/sdks/activity/README.md)
+
+* [get_entity_activity_feed](docs/sdks/activity/README.md#get_entity_activity_feed) - getEntityActivityFeed
 
 ### [balance](docs/sdks/balance/README.md)
 
