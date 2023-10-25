@@ -1,0 +1,11 @@
+# TriggerWorkflowConfig
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `assign_steps`                                                                    | List[[AssignUsersToStep](../../models/shared/assignuserstostep.md)]               | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `assignees`                                                                       | List[*str*]                                                                       | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `conditions`                                                                      | List[[TriggerWorkflowCondition](../../models/shared/triggerworkflowcondition.md)] | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `target_workflow`                                                                 | *Optional[str]*                                                                   | :heavy_minus_sign:                                                                | N/A                                                                               |
