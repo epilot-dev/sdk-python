@@ -109,6 +109,8 @@ class UpsertPortalConfigEntityIdentifiers:
 @dataclasses.dataclass
 class UpsertPortalConfigFeatureSettings:
     r"""Feature settings for the portal"""
+    billing: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing'), 'exclude': lambda f: f is None }})
+    r"""Billing feature flag"""
     start_page: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_page'), 'exclude': lambda f: f is None }})
     r"""Start page feature flag"""
     

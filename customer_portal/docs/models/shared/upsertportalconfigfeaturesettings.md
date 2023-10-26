@@ -7,4 +7,5 @@ Feature settings for the portal
 
 | Field                   | Type                    | Required                | Description             |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+| `billing`               | *Optional[bool]*        | :heavy_minus_sign:      | Billing feature flag    |
 | `start_page`            | *Optional[bool]*        | :heavy_minus_sign:      | Start page feature flag |
