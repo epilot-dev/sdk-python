@@ -10,17 +10,18 @@ from epilot import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class JourneySubmitTriggerConfiguration:
+    source_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id') }})
     
-    source_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id') }})  
-    
-class JourneySubmitTriggerTypeEnum(str, Enum):
-    JOURNEY_SUBMISSION = "journey_submission"
+
+
+class JourneySubmitTriggerType(str, Enum):
+    JOURNEY_SUBMISSION = 'journey_submission'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class JourneySubmitTrigger:
+    configuration: JourneySubmitTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
+    type: JourneySubmitTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
-    configuration: JourneySubmitTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})  
-    type: JourneySubmitTriggerTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})  
-    
+
