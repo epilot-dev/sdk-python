@@ -8,20 +8,24 @@ from typing import Optional
 
 @dataclasses.dataclass
 class PreviewFileRequest:
-    
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})  
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     h: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'h', 'style': 'form', 'explode': True }})
-    r"""height"""  
-    version: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
-    r"""index of file version"""  
+    r"""height"""
+    version: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
+    r"""index of file version"""
     w: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'w', 'style': 'form', 'explode': True }})
-    r"""width"""  
+    r"""width"""
     
+
+
 
 @dataclasses.dataclass
 class PreviewFileResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
