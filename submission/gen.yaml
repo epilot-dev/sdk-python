@@ -1,16 +1,26 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 89cb5b3bf127d6ae2e1c29fa5742affa
+  docChecksum: 3e73a0b032d576778d71b4b1bce49714
   docVersion: 1.0.0
-  speakeasyVersion: 1.19.2
-  generationVersion: 2.16.5
+  speakeasyVersion: 1.109.0
+  generationVersion: 2.173.0
 generation:
-  telemetryEnabled: false
+  repoURL: https://github.com/epilot-dev/sdk-python.git
   sdkClassName: epilot
-  sdkFlattening: true
   singleTagPerOp: false
+  telemetryEnabled: false
+features:
+  python:
+    additionalProperties: 0.1.0
+    core: 3.3.1
+    deprecations: 2.81.1
+    globalServerURLs: 2.82.0
 python:
-  version: 1.2.2
+  version: 2.1.1
   author: epilot
   description: Python Client SDK for Epilot
+  flattenGlobalSecurity: true
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=submission
+  maxMethodParams: 0
   packageName: epilot-submission
+  repoSubDirectory: submission
