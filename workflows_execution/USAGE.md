@@ -1,45 +1,34 @@
 <!-- Start SDK Example Usage -->
+
+
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+        bearer_auth="",
     ),
 )
 
-
 req = shared.WorkflowExecutionCreateReq(
     assigned_to=[
-        "deserunt",
-        "porro",
-        "nulla",
+        'string',
     ],
     contexts=[
         shared.WorkflowContext(
-            id="vero",
-            schema="perspiciatis",
-            title="Internal Group Orchestrator",
-        ),
-        shared.WorkflowContext(
-            id="facilis",
-            schema="eum",
-            title="District Paradigm Agent",
-        ),
-        shared.WorkflowContext(
-            id="inventore",
-            schema="sapiente",
-            title="Future Markets Architect",
+            id='<ID>',
+            schema='string',
+            title='string',
         ),
     ],
-    trigger="AUTOMATIC",
-    workflow_id="vel",
+    workflow_id='string',
 )
-    
+
 res = s.workflows.create_execution(req)
 
 if res.workflow_execution is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

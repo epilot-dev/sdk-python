@@ -2,20 +2,19 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import triggertype_enum as shared_triggertype_enum
+from ..shared import triggertype as shared_triggertype
 from ..shared import workflowcontext as shared_workflowcontext
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class WorkflowExecutionCreateReq:
-    r"""Workflow Execution payload"""
+    workflow_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workflowId') }})
+    assigned_to: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
+    contexts: Optional[List[shared_workflowcontext.WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
+    trigger: Optional[shared_triggertype.TriggerType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger'), 'exclude': lambda f: f is None }})
     
-    workflow_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workflowId') }})  
-    assigned_to: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})  
-    contexts: Optional[list[shared_workflowcontext.WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})  
-    trigger: Optional[shared_triggertype_enum.TriggerTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger'), 'exclude': lambda f: f is None }})  
-    
+

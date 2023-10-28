@@ -3,6 +3,6 @@
 from __future__ import annotations
 from enum import Enum
 
-class TriggerTypeEnum(str, Enum):
-    MANUAL = "MANUAL"
-    AUTOMATIC = "AUTOMATIC"
+class TriggerType(str, Enum):
+    MANUAL = 'MANUAL'
+    AUTOMATIC = 'AUTOMATIC'
