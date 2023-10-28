@@ -4,39 +4,42 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import accesstokentype_enum as shared_accesstokentype_enum
+from ..shared import accesstokentype as shared_accesstokentype
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
-from marshmallow import fields
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateAccessToken201ApplicationJSON:
     r"""The new generated Access Token"""
-    
-    created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})  
-    id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})  
+    created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
+    id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    r"""Human readable name for access token"""  
-    assignments: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
-    r"""List of role ids attached to an user"""  
+    r"""Human readable name for access token"""
+    assignments: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
+    r"""List of role ids attached to an user"""
     journey_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_id'), 'exclude': lambda f: f is None }})
-    r"""Journey ID for access token type \"journey\""""  
+    r"""Journey ID for access token type \\"journey\\" """
     token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})
-    r"""A JWT Access Token"""  
-    token_type: Optional[shared_accesstokentype_enum.AccessTokenTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
-    r"""Access token type"""  
+    r"""A JWT Access Token"""
+    token_type: Optional[shared_accesstokentype.AccessTokenType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
+    r"""Access token type"""
     
+
+
 
 @dataclasses.dataclass
 class CreateAccessTokenResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_access_token_201_application_json_object: Optional[CreateAccessToken201ApplicationJSON] = dataclasses.field(default=None)
-    r"""The new generated Access Token"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""The new generated Access Token"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
