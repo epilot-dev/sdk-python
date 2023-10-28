@@ -3,22 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ..shared import notificationitem as shared_notificationitem
+from typing import Optional
 
 
 @dataclasses.dataclass
 class GetNotificationRequest:
-    
     id: float = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Notification Id"""  
+    r"""Notification Id"""
     
+
+
 
 @dataclasses.dataclass
 class GetNotificationResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    notification_item: Optional[shared_notificationitem.NotificationItem] = dataclasses.field(default=None)
+    r"""Success"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    notification_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
