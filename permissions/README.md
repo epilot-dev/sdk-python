@@ -16,44 +16,167 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
 
-
 req = operations.AddAssignmentRequest(
-    role_id="123:owner",
-    user_id="1",
+    role_id='123:owner',
+    user_id='1',
 )
-    
+
 res = s.assignments.add_assignment(req)
 
 if res.assignment is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-## SDK Available Operations
+## Available Resources and Operations
 
 
-### assignments
+### [assignments](docs/sdks/assignments/README.md)
 
-* `add_assignment` - addAssignment
-* `assign_roles` - assignRoles
-* `get_assigned_roles_for_user` - getAssignedRolesForUser
-* `list_all_assignments` - listAllAssignments
-* `remove_assignment` - removeAssignment
+* [add_assignment](docs/sdks/assignments/README.md#add_assignment) - addAssignment
+* [assign_roles](docs/sdks/assignments/README.md#assign_roles) - assignRoles
+* [get_assigned_roles_for_user](docs/sdks/assignments/README.md#get_assigned_roles_for_user) - getAssignedRolesForUser
+* [list_all_assignments](docs/sdks/assignments/README.md#list_all_assignments) - listAllAssignments
+* [remove_assignment](docs/sdks/assignments/README.md#remove_assignment) - removeAssignment
 
-### roles
+### [roles](docs/sdks/roles/README.md)
 
-* `delete_role` - deleteRole
-* `get_role` - getRole
-* `list_all_roles` - listAllRoles
-* `list_current_roles` - listCurrentRoles
-* `put_role` - putRole
-* `refresh_permissions` - refreshPermissions
-* `search_roles` - searchRoles
+* [delete_role](docs/sdks/roles/README.md#delete_role) - deleteRole
+* [get_role](docs/sdks/roles/README.md#get_role) - getRole
+* [list_all_roles](docs/sdks/roles/README.md#list_all_roles) - listAllRoles
+* [list_current_roles](docs/sdks/roles/README.md#list_current_roles) - listCurrentRoles
+* [put_role](docs/sdks/roles/README.md#put_role) - putRole
+* [refresh_permissions](docs/sdks/roles/README.md#refresh_permissions) - refreshPermissions
+* [search_roles](docs/sdks/roles/README.md#search_roles) - searchRoles
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `Next` method that can be called to pull down the next group of results. If the
+return value of `Next` is `None`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+<!-- End Pagination -->
+
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://permissions.sls.epilot.io` | None |
+
+For example:
+
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+    server_idx=0
+)
+
+req = operations.AddAssignmentRequest(
+    role_id='123:owner',
+    user_id='1',
+)
+
+res = s.assignments.add_assignment(req)
+
+if res.assignment is not None:
+    # handle response
+    pass
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+    server_url="https://permissions.sls.epilot.io"
+)
+
+req = operations.AddAssignmentRequest(
+    role_id='123:owner',
+    user_id='1',
+)
+
+res = s.assignments.add_assignment(req)
+
+if res.assignment is not None:
+    # handle response
+    pass
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```python
+import epilot
+import requests
+
+http_client = requests.Session()
+http_client.headers.update({'x-custom-header': 'someValue'})
+s = epilot.Epilot(client: http_client)
+```
+
+
+<!-- End Custom HTTP Client -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)

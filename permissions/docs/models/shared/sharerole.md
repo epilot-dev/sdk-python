@@ -1,0 +1,16 @@
+# ShareRole
+
+A role that can be assigned to users in other organizations for sharing purposes.
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `expires_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_minus_sign:                                                   | date and time then the role will expire                              | 2028-07-21T17:32:28Z                                                 |
+| `grants`                                                             | List[[Grant](../../models/shared/grant.md)]                          | :heavy_check_mark:                                                   | List of grants (permissions) applied to the role                     |                                                                      |
+| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | Format: <organization_id>:<slug>                                     | 123:owner                                                            |
+| `name`                                                               | *str*                                                                | :heavy_check_mark:                                                   | Human-friendly name for the role                                     | Owner                                                                |
+| `organization_id`                                                    | *str*                                                                | :heavy_check_mark:                                                   | Id of an organization                                                | 123                                                                  |
+| `slug`                                                               | *str*                                                                | :heavy_check_mark:                                                   | URL-friendly name for the role                                       | owner                                                                |
+| `type`                                                               | [ShareRoleType](../../models/shared/shareroletype.md)                | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
