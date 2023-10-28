@@ -1,39 +1,34 @@
 <!-- Start SDK Example Usage -->
+
+
 ```python
 import epilot
+import dateutil.parser
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+        epilot_auth="",
     ),
 )
-
 
 req = operations.DollarAvailabilityCheckRequest(
     availability_check_params=shared.AvailabilityCheckParams(
         filters=shared.AvailabilityFilters(
-            available_date="2017-07-21",
-            location=shared.AvailabilityLocation(
-                city="Larrychester",
-                country="Suriname",
-                postal_code="85846-6342",
-                street="092 Schiller Junction",
-                street_number="vel",
-            ),
+            available_date=dateutil.parser.parse('2017-07-21').date(),
+            location=shared.AvailabilityLocation(),
         ),
         products=[
-            "deleniti",
-            "similique",
-            "reprehenderit",
+            'string',
         ],
     ),
-    x_ivy_org_id="molestiae",
+    x_ivy_org_id='string',
 )
-    
+
 res = s.availability_api.dollar_availability_check(req)
 
 if res.availability_result is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

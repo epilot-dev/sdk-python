@@ -1,0 +1,18 @@
+# File
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `dollar_relation`                                                    | [Optional[EntityRelation]](../../models/shared/entityrelation.md)    | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `additional_properties`                                              | Dict[str, *Any*]                                                     | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `created_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `org`                                                                | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `schema`                                                             | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `title`                                                              | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `updated_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `filename`                                                           | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `mime_type`                                                          | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `versions`                                                           | List[[FileVersions](../../models/shared/fileversions.md)]            | :heavy_check_mark:                                                   | N/A                                                                  |

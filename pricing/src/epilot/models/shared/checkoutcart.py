@@ -2,18 +2,24 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import checkoutmode_enum as shared_checkoutmode_enum
+from ..shared import cartdto as shared_cartdto
+from ..shared import checkoutmode as shared_checkoutmode
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional, Union
+
+
+@dataclasses.dataclass
+class CheckoutCartCart:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CheckoutCart:
     r"""The cart checkout request payload"""
+    cart: Optional[Union[str, shared_cartdto.CartDto]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cart'), 'exclude': lambda f: f is None }})
+    mode: Optional[shared_checkoutmode.CheckoutMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode'), 'exclude': lambda f: f is None }})
+    r"""The checkout mode for the cart checkout."""
     
-    cart: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cart'), 'exclude': lambda f: f is None }})  
-    mode: Optional[shared_checkoutmode_enum.CheckoutModeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode'), 'exclude': lambda f: f is None }})
-    r"""The checkout mode for the cart checkout."""  
-    
+
