@@ -2,30 +2,37 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import addressgeolocation as shared_addressgeolocation
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AssignableOrganizationImageURI:
+    original: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original') }})
+    thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})
     
-    original: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original') }})  
-    thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})  
-    
-class AssignableOrganizationTypeEnum(str, Enum):
-    PARTNER_ORGANIZATION = "partner_organization"
+
+
+class AssignableOrganizationType(str, Enum):
+    PARTNER_ORGANIZATION = 'partner_organization'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AssignableOrganization:
+    display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})
+    org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
+    partner_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_id') }})
+    type: AssignableOrganizationType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    activity_radius: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_radius'), 'exclude': lambda f: f is None }})
+    r"""Activity radius, in km, the partner is operating in"""
+    email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
+    geolocations: Optional[List[shared_addressgeolocation.AddressGeolocation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('geolocations'), 'exclude': lambda f: f is None }})
+    image_uri: Optional[AssignableOrganizationImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri'), 'exclude': lambda f: f is None }})
+    phone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone'), 'exclude': lambda f: f is None }})
     
-    display_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name') }})  
-    org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})  
-    type: AssignableOrganizationTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})  
-    image_uri: Optional[AssignableOrganizationImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri'), 'exclude': lambda f: f is None }})  
-    partner_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_id'), 'exclude': lambda f: f is None }})  
-    
+

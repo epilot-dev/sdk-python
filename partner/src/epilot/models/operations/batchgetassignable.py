@@ -3,37 +3,45 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import assignableorganization as shared_assignableorganization
+from ..shared import assignablepartneruser as shared_assignablepartneruser
+from ..shared import assignableuser as shared_assignableuser
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class BatchGetAssignableRequestBody:
-    
-    org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id') }})
-    r"""start results from an offset for pagination"""  
     user_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id') }})
-    r"""search query to filter results"""  
+    r"""user id of assignable"""
+    org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id'), 'exclude': lambda f: f is None }})
+    r"""organization id of assignable (optional, defaults to caller org)"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class BatchGetAssignable200ApplicationJSON:
     r"""List of assignable results"""
-    
     hits: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
-    r"""total number of search results"""  
-    results: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
+    r"""total number of search results"""
+    results: Optional[List[Union[shared_assignableuser.AssignableUser, shared_assignablepartneruser.AssignablePartnerUser, shared_assignableorganization.AssignableOrganization]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
+
+
 
 @dataclasses.dataclass
 class BatchGetAssignableResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     batch_get_assignable_200_application_json_object: Optional[BatchGetAssignable200ApplicationJSON] = dataclasses.field(default=None)
-    r"""List of assignable results"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""List of assignable results"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
