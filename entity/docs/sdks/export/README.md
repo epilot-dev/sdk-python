@@ -28,7 +28,7 @@ s = epilot.Epilot(
 req = operations.ExportEntitiesRequest(
     entity_search_params=shared.EntitySearchParams(
         aggs=shared.EntitySearchParamsAggs(),
-        fields_=[
+        fields=[
             '_id',
             '_title',
             'first_name',

@@ -19,7 +19,7 @@ class GetRelationsRequest:
     from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
     r"""Starting page number"""
     hydrate: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
-    r"""When true, expand relation items with full blown entities."""
+    r"""When true, enables entity hydration to resolve nested $relation & $relation_ref references in-place."""
     include_reverse: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
     r"""When true, includes reverse relations in response (other entities pointing to this entity)"""
     include_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_schemas', 'style': 'form', 'explode': False }})

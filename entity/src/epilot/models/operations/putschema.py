@@ -11,6 +11,7 @@ from typing import Optional
 @dataclasses.dataclass
 class PutSchemaRequest:
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    r"""Entity Type"""
     draft: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'draft', 'style': 'form', 'explode': True }})
     entity_schema: Optional[shared_entityschema.EntitySchema] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     

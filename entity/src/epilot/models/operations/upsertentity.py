@@ -22,13 +22,13 @@ class UpsertEntityRequestBody:
 @dataclasses.dataclass
 class UpsertEntityRequest:
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Schema"""
+    r"""Entity Type"""
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
     r"""Activity to include in event feed"""
     async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
     r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
     dry_run: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'dry_run', 'style': 'form', 'explode': True }})
-    r"""Dry Run mode = return matched entities but don't update them."""
+    r"""Dry Run mode = return results but does not perform the operation."""
     request_body: Optional[UpsertEntityRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 

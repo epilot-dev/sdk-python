@@ -9,6 +9,7 @@ from typing import Optional
 @dataclasses.dataclass
 class DeleteSchemaRequest:
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    r"""Entity Type"""
     
 
 

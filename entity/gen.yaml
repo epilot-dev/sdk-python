@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 2ba039db69a6d628e2f24b9441071f07
+  docChecksum: 550354d0dee9f8f9cab62872a5a6becf
   docVersion: 1.0.0
-  speakeasyVersion: 1.107.0
-  generationVersion: 2.171.0
+  speakeasyVersion: 1.109.0
+  generationVersion: 2.173.0
 generation:
   repoURL: https://github.com/epilot-dev/sdk-python.git
   sdkClassName: epilot
@@ -13,11 +13,11 @@ generation:
 features:
   python:
     additionalProperties: 0.1.0
-    core: 3.3.0
+    core: 3.3.1
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 python:
-  version: 2.1.3
+  version: 2.1.4
   author: epilot
   description: Python Client SDK for Epilot
   flattenGlobalSecurity: false

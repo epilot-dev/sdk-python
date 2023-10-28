@@ -127,7 +127,7 @@ s = epilot.Epilot(
 
 req = operations.GetRelatedEntitiesCountRequest(
     exclude_schemas=[
-        'string',
+        'contact',
     ],
     id='3a515de5-fe13-46e4-ad0c-a57656a6a8af',
     slug='contact',
@@ -225,7 +225,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetRelationsV2Request(
-    fields_=[
+    fields=[
         '_id',
         '_schema',
         '_title',

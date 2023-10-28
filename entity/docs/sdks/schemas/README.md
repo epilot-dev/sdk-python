@@ -217,7 +217,7 @@ s = epilot.Epilot(
 
 req = operations.ListTaxonomyClassificationsForSchemaRequest(
     slug='contact',
-    taxonomy_slug='purpose',
+    taxonomy_slug='string',
 )
 
 res = s.schemas.list_taxonomy_classifications_for_schema(req)
@@ -432,7 +432,7 @@ req = operations.PutSchemaRequest(
         ],
         explicit_search_mappings={
             "image": shared.SearchMappings(
-                fields_={
+                fields={
                     "key": 'string',
                 },
             ),

@@ -12,7 +12,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class TaxonomyAutocompleteRequest:
     taxonomy_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taxonomySlug', 'style': 'simple', 'explode': False }})
-    r"""Limit results to slug"""
+    r"""Taxonomy slug"""
     query: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
     r"""Input to autocomplete"""
     size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})

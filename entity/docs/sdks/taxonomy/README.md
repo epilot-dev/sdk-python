@@ -30,7 +30,7 @@ s = epilot.Epilot(
 )
 
 req = operations.GetTaxonomyRequest(
-    taxonomy_slug='purpose',
+    taxonomy_slug='string',
 )
 
 res = s.taxonomy.get_taxonomy(req)

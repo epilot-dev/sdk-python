@@ -21,7 +21,7 @@ class GetEntityActivityFeedRequest:
     before: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'before', 'style': 'form', 'explode': True }})
     r"""get activities before this timestamp"""
     from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
-    r"""start from page"""
+    r"""Starting page number"""
     include_relations: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'include_relations', 'style': 'form', 'explode': True }})
     r"""Include activities from related entities"""
     size: Optional[int] = dataclasses.field(default=25, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
