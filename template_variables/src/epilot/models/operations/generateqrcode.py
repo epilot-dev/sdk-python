@@ -8,15 +8,19 @@ from typing import Optional
 
 @dataclasses.dataclass
 class GenerateQRcodeRequest:
+    qrdata: Optional[str] = dataclasses.field(default='{{table_order_items}}', metadata={'query_param': { 'field_name': 'qrdata', 'style': 'form', 'explode': True }})
+    r"""Payload of the QR code"""
     
-    qrdata: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'qrdata', 'style': 'form', 'explode': True }})
-    r"""Payload of the QR code"""  
-    
+
+
 
 @dataclasses.dataclass
 class GenerateQRcodeResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

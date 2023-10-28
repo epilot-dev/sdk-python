@@ -5,27 +5,31 @@ import dataclasses
 import requests as requests_http
 from ..shared import categoryresult as shared_categoryresult
 from enum import Enum
-from typing import Optional
+from typing import List, Optional
 
-class GetCategoriesLangEnum(str, Enum):
+class GetCategoriesLang(str, Enum):
     r"""Language"""
-    EN = "en"
-    DE = "de"
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclasses.dataclass
 class GetCategoriesRequest:
+    lang: Optional[GetCategoriesLang] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
+    r"""Language"""
     
-    lang: Optional[GetCategoriesLangEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
-    r"""Language"""  
-    
+
+
 
 @dataclasses.dataclass
 class GetCategoriesResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    category_results: Optional[List[shared_categoryresult.CategoryResult]] = dataclasses.field(default=None)
+    r"""ok"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    category_results: Optional[list[shared_categoryresult.CategoryResult]] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
