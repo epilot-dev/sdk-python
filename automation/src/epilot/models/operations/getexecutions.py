@@ -9,20 +9,24 @@ from typing import Optional
 
 @dataclasses.dataclass
 class GetExecutionsRequest:
+    entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    r"""Pagination: starting for results"""
+    size: Optional[int] = dataclasses.field(default=25, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    r"""Pagination: max number of results to return"""
     
-    entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})  
-    from_: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
-    r"""Pagination: starting for results"""  
-    size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
-    r"""Pagination: max number of results to return"""  
-    
+
+
 
 @dataclasses.dataclass
 class GetExecutionsResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_executions_resp: Optional[shared_getexecutionsresp.GetExecutionsResp] = dataclasses.field(default=None)
-    r"""List of automation executions"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""List of automation executions"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
