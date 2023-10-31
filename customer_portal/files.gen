@@ -38,6 +38,7 @@ src/epilot/models/operations/getportalwidgets.py
 src/epilot/models/operations/getschemas.py
 src/epilot/models/operations/saveentityfile.py
 src/epilot/models/operations/trackfiledownloaded.py
+src/epilot/models/operations/triggerentityaccess.py
 src/epilot/models/operations/updatecontact.py
 src/epilot/models/operations/updatecontract.py
 src/epilot/models/operations/updateopportunity.py
@@ -201,6 +202,10 @@ docs/models/operations/trackfiledownloadedsecurity.md
 docs/models/operations/trackfiledownloadedrequest.md
 docs/models/operations/trackfiledownloaded200applicationjson.md
 docs/models/operations/trackfiledownloadedresponse.md
+docs/models/operations/triggerentityaccesssecurity.md
+docs/models/operations/triggerentityaccessrequest.md
+docs/models/operations/triggerentityaccess200applicationjson.md
+docs/models/operations/triggerentityaccessresponse.md
 docs/models/operations/updatecontactsecurity.md
 docs/models/operations/updatecontact403applicationjson.md
 docs/models/operations/updatecontact200applicationjson.md
@@ -315,7 +320,11 @@ docs/models/shared/entityitem.md
 docs/models/shared/errorresp.md
 docs/models/shared/activity.md
 docs/models/shared/deleteentityfile.md
-docs/models/shared/contractschema.md
+docs/models/shared/contractbillingperiod.md
+docs/models/shared/contractbranch.md
+docs/models/shared/contractnoticetimeunit.md
+docs/models/shared/contractrenewaldurationunit.md
+docs/models/shared/contractstatus.md
 docs/models/shared/contract.md
 docs/models/shared/fileitemrelations.md
 docs/models/shared/fileitemschema.md

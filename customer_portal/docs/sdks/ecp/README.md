@@ -30,6 +30,7 @@ APIs defined for a portal user
 * [get_schemas](#get_schemas) - getSchemas
 * [save_entity_file](#save_entity_file) - saveEntityFile
 * [track_file_downloaded](#track_file_downloaded) - trackFileDownloaded
+* [trigger_entity_access](#trigger_entity_access) - triggerEntityAccess
 * [update_contact](#update_contact) - updateContact
 * [update_contract](#update_contract) - updateContract
 * [update_opportunity](#update_opportunity) - updateOpportunity
@@ -928,6 +929,45 @@ if res.track_file_downloaded_200_application_json_object is not None:
 ### Response
 
 **[operations.TrackFileDownloadedResponse](../../models/operations/trackfiledownloadedresponse.md)**
+
+
+## trigger_entity_access
+
+Trigger entity access event for a portal user
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+req = operations.TriggerEntityAccessRequest(
+    entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e',
+    schema='contract',
+)
+
+res = s.ecp.trigger_entity_access(req, operations.TriggerEntityAccessSecurity(
+    portal_auth="",
+))
+
+if res.trigger_entity_access_200_application_json_object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.TriggerEntityAccessRequest](../../models/operations/triggerentityaccessrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `security`                                                                                       | [operations.TriggerEntityAccessSecurity](../../models/operations/triggerentityaccesssecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
+
+
+### Response
+
+**[operations.TriggerEntityAccessResponse](../../models/operations/triggerentityaccessresponse.md)**
 
 
 ## update_contact

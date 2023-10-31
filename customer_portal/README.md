@@ -72,6 +72,7 @@ if res.get_entity_activity_feed_200_application_json_object is not None:
 * [get_schemas](docs/sdks/ecp/README.md#get_schemas) - getSchemas
 * [save_entity_file](docs/sdks/ecp/README.md#save_entity_file) - saveEntityFile
 * [track_file_downloaded](docs/sdks/ecp/README.md#track_file_downloaded) - trackFileDownloaded
+* [trigger_entity_access](docs/sdks/ecp/README.md#trigger_entity_access) - triggerEntityAccess
 * [update_contact](docs/sdks/ecp/README.md#update_contact) - updateContact
 * [update_contract](docs/sdks/ecp/README.md#update_contract) - updateContract
 * [update_opportunity](docs/sdks/ecp/README.md#update_opportunity) - updateOpportunity
@@ -135,8 +136,6 @@ Here's an example of one such pagination call:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -230,8 +229,6 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

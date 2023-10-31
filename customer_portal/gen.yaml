@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 13b78f9eab03bbd672b68e7f67672e3a
+  docChecksum: 3e40005f645b4a6819b69696968d7ecd
   docVersion: 1.0.0
   speakeasyVersion: 1.109.0
   generationVersion: 2.173.0
@@ -18,7 +18,7 @@ features:
     globalServerURLs: 2.82.0
     methodSecurity: 2.82.0
 python:
-  version: 2.1.3
+  version: 2.1.4
   author: epilot
   description: Python Client SDK for Epilot
   flattenGlobalSecurity: false

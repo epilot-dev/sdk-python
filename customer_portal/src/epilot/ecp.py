@@ -815,6 +815,35 @@ class Ecp:
         return res
 
     
+    def trigger_entity_access(self, request: operations.TriggerEntityAccessRequest, security: operations.TriggerEntityAccessSecurity) -> operations.TriggerEntityAccessResponse:
+        r"""triggerEntityAccess
+        Trigger entity access event for a portal user
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/portal/entity/access'
+        headers = {}
+        query_params = utils.get_query_params(operations.TriggerEntityAccessRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('POST', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.TriggerEntityAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.TriggerEntityAccess200ApplicationJSON])
+                res.trigger_entity_access_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def update_contact(self, request: Dict[str, Any], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
         r"""updateContact
         Updates the contact details.
