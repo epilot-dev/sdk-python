@@ -7,13 +7,13 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class EntityViewDisabledViewTypeEnum(str, Enum):
-    DISABLED = "disabled"
+class EntityViewDisabledViewType(str, Enum):
+    DISABLED = 'disabled'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntityViewDisabled:
+    view_type: Optional[EntityViewDisabledViewType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})
     
-    view_type: Optional[EntityViewDisabledViewTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view_type'), 'exclude': lambda f: f is None }})  
-    
+

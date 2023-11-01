@@ -9,15 +9,22 @@ from epilot import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntityImportParamsS3Reference:
+    r"""The S3 bucket and key where the JSON file for import is located."""
+    bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})
+    r"""The name of the S3 bucket where the JSON file for import is stored."""
+    key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
+    r"""The key or path to the JSON file within the S3 bucket."""
     
-    bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})  
-    key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})  
-    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntityImportParams:
+    r"""The parameters for importing entities."""
+    s3_reference: EntityImportParamsS3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('S3Reference') }})
+    r"""The S3 bucket and key where the JSON file for import is located."""
+    schema: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema') }})
+    r"""The schema of the entities being imported. This must match the schema of the entities on the platform."""
     
-    s3_reference: EntityImportParamsS3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('S3Reference') }})  
-    schema: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema') }})  
-    
+

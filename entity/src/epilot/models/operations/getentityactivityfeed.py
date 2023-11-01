@@ -7,43 +7,50 @@ from ..shared import activityitem as shared_activityitem
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetEntityActivityFeedRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Entity id"""  
+    r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Type"""  
+    r"""Entity Type"""
     after: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after', 'style': 'form', 'explode': True }})
-    r"""Get activities after this timestamp"""  
+    r"""Get activities after this timestamp"""
     before: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'before', 'style': 'form', 'explode': True }})
-    r"""get activities before this timestamp"""  
-    from_: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
-    r"""start from page"""  
-    size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
-    r"""max number of results to return"""  
+    r"""get activities before this timestamp"""
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    r"""Starting page number"""
+    include_relations: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'include_relations', 'style': 'form', 'explode': True }})
+    r"""Include activities from related entities"""
+    size: Optional[int] = dataclasses.field(default=25, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    r"""max number of results to return"""
     type: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'type', 'style': 'form', 'explode': True }})
-    r"""Activity type"""  
+    r"""Filter by activity type"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetEntityActivityFeed200ApplicationJSON:
     r"""Success"""
+    results: Optional[List[shared_activityitem.ActivityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})
     
-    results: Optional[list[shared_activityitem.ActivityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
-    total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetEntityActivityFeedResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_entity_activity_feed_200_application_json_object: Optional[GetEntityActivityFeed200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Success"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
