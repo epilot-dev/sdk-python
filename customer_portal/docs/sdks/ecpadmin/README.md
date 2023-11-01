@@ -11,6 +11,7 @@ APIs defined for a ECP Admin
 * [create_sso_user](#create_sso_user) - createSSOUser
 * [delete_portal](#delete_portal) - deletePortal
 * [extra_permission_attributes](#extra_permission_attributes) - extraPermissionAttributes
+* [fetch_portal_users_by_related_entity](#fetch_portal_users_by_related_entity) - fetchPortalUsersByRelatedEntity
 * [get_all_portal_configs](#get_all_portal_configs) - getAllPortalConfigs
 * [get_ecp_contact](#get_ecp_contact) - getECPContact
 * [get_email_templates](#get_email_templates) - getEmailTemplates
@@ -177,6 +178,45 @@ if res.extra_permission_attributes_200_application_json_object is not None:
 ### Response
 
 **[operations.ExtraPermissionAttributesResponse](../../models/operations/extrapermissionattributesresponse.md)**
+
+
+## fetch_portal_users_by_related_entity
+
+Get all users for a given entity
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot()
+
+req = operations.FetchPortalUsersByRelatedEntityRequest(
+    entity_id='5da0a718-c822-403d-9f5d-20d4584e0528',
+    slug=shared.EntitySlug.CONTACT,
+)
+
+res = s.ecp_admin.fetch_portal_users_by_related_entity(req, operations.FetchPortalUsersByRelatedEntitySecurity(
+    epilot_auth="",
+))
+
+if res.fetch_portal_users_by_related_entity_200_application_json_object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                | [operations.FetchPortalUsersByRelatedEntityRequest](../../models/operations/fetchportalusersbyrelatedentityrequest.md)   | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+| `security`                                                                                                               | [operations.FetchPortalUsersByRelatedEntitySecurity](../../models/operations/fetchportalusersbyrelatedentitysecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |
+
+
+### Response
+
+**[operations.FetchPortalUsersByRelatedEntityResponse](../../models/operations/fetchportalusersbyrelatedentityresponse.md)**
 
 
 ## get_all_portal_configs

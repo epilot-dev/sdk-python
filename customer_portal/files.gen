@@ -48,6 +48,7 @@ src/epilot/models/operations/configuredistribution.py
 src/epilot/models/operations/createssouser.py
 src/epilot/models/operations/deleteportal.py
 src/epilot/models/operations/extrapermissionattributes.py
+src/epilot/models/operations/fetchportalusersbyrelatedentity.py
 src/epilot/models/operations/getallportalconfigs.py
 src/epilot/models/operations/getecpcontact.py
 src/epilot/models/operations/getemailtemplates.py
@@ -241,6 +242,10 @@ docs/models/operations/extrapermissionattributessecurity.md
 docs/models/operations/extrapermissionattributes200applicationjsondata.md
 docs/models/operations/extrapermissionattributes200applicationjson.md
 docs/models/operations/extrapermissionattributesresponse.md
+docs/models/operations/fetchportalusersbyrelatedentitysecurity.md
+docs/models/operations/fetchportalusersbyrelatedentityrequest.md
+docs/models/operations/fetchportalusersbyrelatedentity200applicationjson.md
+docs/models/operations/fetchportalusersbyrelatedentityresponse.md
 docs/models/operations/getallportalconfigssecurity.md
 docs/models/operations/getallportalconfigs200applicationjson.md
 docs/models/operations/getallportalconfigsresponse.md

@@ -153,6 +153,41 @@ class ECPAdmin:
         return res
 
     
+    def fetch_portal_users_by_related_entity(self, request: operations.FetchPortalUsersByRelatedEntityRequest, security: operations.FetchPortalUsersByRelatedEntitySecurity) -> operations.FetchPortalUsersByRelatedEntityResponse:
+        r"""fetchPortalUsersByRelatedEntity
+        Get all users for a given entity
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/porta/users/by-related-entity'
+        headers = {}
+        query_params = utils.get_query_params(operations.FetchPortalUsersByRelatedEntityRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.FetchPortalUsersByRelatedEntityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.FetchPortalUsersByRelatedEntity200ApplicationJSON])
+                res.fetch_portal_users_by_related_entity_200_application_json_object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ErrorResp])
+                res.error_resp = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def get_all_portal_configs(self, security: operations.GetAllPortalConfigsSecurity) -> operations.GetAllPortalConfigsResponse:
         r"""getAllPortalConfigs
         Retrieves all portal configurations.
