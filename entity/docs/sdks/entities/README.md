@@ -102,6 +102,7 @@ s = epilot.Epilot(
 req = operations.CreateEntityRequest(
     entity=shared.Entity(
         additional_properties={
+            "_acl": 'string',
             "_id": 'string',
             "_org": 'string',
             "_owners": 'string',
@@ -109,7 +110,6 @@ req = operations.CreateEntityRequest(
             "_tags": 'string',
             "_created_at": 'string',
             "_updated_at": 'string',
-            "_acl": 'string',
         },
         acl=shared.EntityACL(
             additional_properties={
@@ -373,14 +373,14 @@ s = epilot.Epilot(
 req = operations.PatchEntityRequest(
     entity=shared.Entity(
         additional_properties={
-            "_owners": 'string',
-            "_schema": 'string',
-            "_tags": 'string',
-            "_created_at": 'string',
             "_updated_at": 'string',
             "_acl": 'string',
             "_id": 'string',
             "_org": 'string',
+            "_owners": 'string',
+            "_schema": 'string',
+            "_tags": 'string',
+            "_created_at": 'string',
         },
         acl=shared.EntityACL(
             additional_properties={
@@ -605,7 +605,6 @@ s = epilot.Epilot(
 req = operations.UpdateEntityRequest(
     entity=shared.Entity(
         additional_properties={
-            "_owners": 'string',
             "_schema": 'string',
             "_tags": 'string',
             "_created_at": 'string',
@@ -613,6 +612,7 @@ req = operations.UpdateEntityRequest(
             "_acl": 'string',
             "_id": 'string',
             "_org": 'string',
+            "_owners": 'string',
         },
         acl=shared.EntityACL(
             additional_properties={
