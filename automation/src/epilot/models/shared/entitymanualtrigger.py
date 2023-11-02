@@ -11,18 +11,19 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntityManualTriggerConfiguration:
-    
     schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema'), 'exclude': lambda f: f is None }})
-    r"""Which entity type can this automation be triggered from"""  
+    r"""Which entity type can this automation be triggered from"""
     
-class EntityManualTriggerTypeEnum(str, Enum):
-    ENTITY_MANUAL = "entity_manual"
+
+
+class EntityManualTriggerType(str, Enum):
+    ENTITY_MANUAL = 'entity_manual'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntityManualTrigger:
+    configuration: EntityManualTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})
+    type: EntityManualTriggerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
-    configuration: EntityManualTriggerConfiguration = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configuration') }})  
-    type: EntityManualTriggerTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})  
-    
+
