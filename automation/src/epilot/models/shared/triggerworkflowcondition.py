@@ -2,18 +2,23 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import comparison_enum as shared_comparison_enum
+from ..shared import comparison as shared_comparison
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional, Union
+
+
+@dataclasses.dataclass
+class TriggerWorkflowConditionValue:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class TriggerWorkflowCondition:
+    comparison: shared_comparison.Comparison = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comparison') }})
+    schema: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema') }})
+    source: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})
+    value: Optional[Union[str, float, List[str], List[float]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
     
-    comparison: shared_comparison_enum.ComparisonEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comparison') }})  
-    schema: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema') }})  
-    source: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})  
-    value: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})  
-    
+
