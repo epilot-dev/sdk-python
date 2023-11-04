@@ -1,0 +1,9 @@
+# FrontendSubmitTrigger
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `configuration`                                                                                 | [FrontendSubmitTriggerConfiguration](../../models/shared/frontendsubmittriggerconfiguration.md) | :heavy_check_mark:                                                                              | N/A                                                                                             |
+| `type`                                                                                          | [FrontendSubmitTriggerType](../../models/shared/frontendsubmittriggertype.md)                   | :heavy_check_mark:                                                                              | N/A                                                                                             |
