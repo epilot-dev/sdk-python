@@ -8,27 +8,25 @@ from epilot import utils
 from typing import Optional
 
 
-@dataclasses.dataclass
-class GetTokenSecurity:
-    
-    sigv4: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'Authorization' }})  
-    
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetToken200ApplicationJSON:
     r"""JWT Token"""
-    
     token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})
-    r"""JWT Token"""  
+    r"""JWT Token"""
     
+
+
 
 @dataclasses.dataclass
 class GetTokenResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_token_200_application_json_object: Optional[GetToken200ApplicationJSON] = dataclasses.field(default=None)
-    r"""JWT Token"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""JWT Token"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
