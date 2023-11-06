@@ -6,21 +6,19 @@ import dateutil.parser
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
-from marshmallow import fields
 from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Taxonomy:
-    r"""Taxonomy"""
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    r"""A human friendly name of a Taxonomy e.g. Purpose, Product Category, Folder, Tag"""  
+    r"""A human friendly name of a Taxonomy e.g. Purpose, Product Category, Folder, Tag"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
-    r"""URL-friendly name for taxonomy"""  
-    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})  
+    r"""URL-friendly name for taxonomy"""
+    created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     plural: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('plural'), 'exclude': lambda f: f is None }})
-    r"""Plural name of a Taxonomy e.g. Purposes, Product Categories, Folders, Tags"""  
-    updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso'), 'exclude': lambda f: f is None }})  
+    r"""Plural name of a Taxonomy e.g. Purposes, Product Categories, Folders, Tags"""
+    updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     
+

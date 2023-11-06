@@ -6,34 +6,39 @@ import requests as requests_http
 from ..shared import taxonomyclassification as shared_taxonomyclassification
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class TaxonomyAutocompleteRequest:
-    
     taxonomy_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taxonomySlug', 'style': 'simple', 'explode': False }})
-    r"""Limit results to slug"""  
+    r"""Taxonomy slug"""
     query: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
-    r"""Input to autocomplete"""  
+    r"""Input to autocomplete"""
     size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
-    r"""Minimum number of results to return"""  
+    r"""Minimum number of results to return"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class TaxonomyAutocomplete200ApplicationJSON:
     r"""Taxonomy classifications"""
+    results: Optional[List[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-    results: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class TaxonomyAutocompleteResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     taxonomy_autocomplete_200_application_json_object: Optional[TaxonomyAutocomplete200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Taxonomy classifications"""  
+    r"""Taxonomy classifications"""
     
+

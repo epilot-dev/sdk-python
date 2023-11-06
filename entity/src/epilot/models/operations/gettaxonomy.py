@@ -9,17 +9,21 @@ from typing import Optional
 
 @dataclasses.dataclass
 class GetTaxonomyRequest:
-    
     taxonomy_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taxonomySlug', 'style': 'simple', 'explode': False }})
-    r"""Taxonomy slug to return taxonomy for"""  
+    r"""Taxonomy slug"""
     
+
+
 
 @dataclasses.dataclass
 class GetTaxonomyResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     taxonomy: Optional[shared_taxonomy.Taxonomy] = dataclasses.field(default=None)
-    r"""Taxonomy"""  
+    r"""Taxonomy"""
     
+
