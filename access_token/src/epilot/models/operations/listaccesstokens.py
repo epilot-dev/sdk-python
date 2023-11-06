@@ -4,23 +4,27 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import accesstokenitem as shared_accesstokenitem
-from ..shared import accesstokentype_enum as shared_accesstokentype_enum
-from typing import Optional
+from ..shared import accesstokentype as shared_accesstokentype
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class ListAccessTokensRequest:
+    token_type: Optional[List[shared_accesstokentype.AccessTokenType]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'token_type', 'style': 'form', 'explode': True }})
+    r"""Filter by token types"""
     
-    token_type: Optional[list[shared_accesstokentype_enum.AccessTokenTypeEnum]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'token_type', 'style': 'form', 'explode': True }})
-    r"""Filter by token types"""  
-    
+
+
 
 @dataclasses.dataclass
 class ListAccessTokensResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    access_token_items: Optional[List[shared_accesstokenitem.AccessTokenItem]] = dataclasses.field(default=None)
+    r"""List of Access Tokens"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    access_token_items: Optional[list[shared_accesstokenitem.AccessTokenItem]] = dataclasses.field(default=None)
-    r"""List of Access Tokens"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
