@@ -7,16 +7,16 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class PartnerInvitationPayloadLanguageEnum(str, Enum):
+class PartnerInvitationPayloadLanguage(str, Enum):
     r"""Language for partner invitation email"""
-    EN = "en"
-    DE = "de"
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PartnerInvitationPayload:
+    language: Optional[PartnerInvitationPayloadLanguage] = dataclasses.field(default=PartnerInvitationPayloadLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    r"""Language for partner invitation email"""
     
-    language: Optional[PartnerInvitationPayloadLanguageEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
-    r"""Language for partner invitation email"""  
-    
+
