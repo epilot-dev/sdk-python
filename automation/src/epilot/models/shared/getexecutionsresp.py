@@ -5,13 +5,13 @@ import dataclasses
 from ..shared import automationexecution as shared_automationexecution
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
+from typing import List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetExecutionsResp:
-    r"""List of automation executions"""
+    results: List[shared_automationexecution.AutomationExecution] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})
+    total: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total') }})
     
-    results: list[shared_automationexecution.AutomationExecution] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results') }})  
-    total: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total') }})  
-    
+
