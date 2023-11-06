@@ -3,21 +3,51 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ..shared import contact as shared_contact
+from ..shared import errorresp as shared_errorresp
+from ..shared import failedruleerrorresp as shared_failedruleerrorresp
+from dataclasses_json import Undefined, dataclass_json
+from epilot import utils
+from typing import Optional, Union
 
 
 @dataclasses.dataclass
 class UpdateContactSecurity:
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+
+
+
+@dataclasses.dataclass
+class UpdateContact403ApplicationJSON:
+    r"""The user is not allowed to access this resource"""
     
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class UpdateContact200ApplicationJSON:
+    r"""Updated the contact details successfully."""
+    data: Optional[shared_contact.Contact] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    r"""The mapped contact of the portal user"""
+    
+
+
 
 @dataclasses.dataclass
 class UpdateContactResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    update_contact_200_application_json_object: Optional[UpdateContact200ApplicationJSON] = dataclasses.field(default=None)
+    r"""Updated the contact details successfully."""
+    update_contact_403_application_json_one_of: Optional[Union[shared_errorresp.ErrorResp, shared_failedruleerrorresp.FailedRuleErrorResp]] = dataclasses.field(default=None)
+    r"""The user is not allowed to access this resource"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The returned contact"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

@@ -3,21 +3,41 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ..shared import errorresp as shared_errorresp
+from ..shared import portaluser as shared_portaluser
+from dataclasses_json import Undefined, dataclass_json
+from epilot import utils
+from typing import Optional
 
 
 @dataclasses.dataclass
 class UpdatePortalUserSecurity:
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class UpdatePortalUser200ApplicationJSON:
+    r"""The portal user updated successfully."""
+    data: Optional[shared_portaluser.PortalUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    r"""The portal user entity"""
     
+
+
 
 @dataclasses.dataclass
 class UpdatePortalUserResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
+    r"""Could not authenticate the user"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    update_portal_user_200_application_json_object: Optional[UpdatePortalUser200ApplicationJSON] = dataclasses.field(default=None)
+    r"""The portal user updated successfully."""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The returned portal user"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
