@@ -1,0 +1,15 @@
+# CatalogSearch
+
+A catalog search payload
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `availability`                                                                       | [Optional[AvailabilityFilters]](../../models/shared/availabilityfilters.md)          | :heavy_minus_sign:                                                                   | Availability filters dimensions                                                      |
+| `from_`                                                                              | *Optional[float]*                                                                    | :heavy_minus_sign:                                                                   | The index from which to query, used for pagination purposes. Defaults to 0           |
+| `hydrate`                                                                            | *Optional[bool]*                                                                     | :heavy_minus_sign:                                                                   | When true, enables entity hydration to resolve nested $relation references in-place. |
+| `q`                                                                                  | *str*                                                                                | :heavy_check_mark:                                                                   | The query to perform using lucene query syntax.                                      |
+| `size`                                                                               | *Optional[float]*                                                                    | :heavy_minus_sign:                                                                   | The max size of the response, defaults to 2000.                                      |
+| `sort`                                                                               | *Optional[str]*                                                                      | :heavy_minus_sign:                                                                   | The sort expression to sort the results.                                             |
