@@ -9,7 +9,7 @@ from enum import Enum
 from epilot import utils
 from typing import Any, Dict, List, Optional
 
-class TaxBehavior(str, Enum):
+class Behavior(str, Enum):
     EXCLUSIVE_MIXED = 'Exclusive'
     INCLUSIVE_MIXED = 'Inclusive'
     EXCLUSIVE_LOWER = 'exclusive'
@@ -33,7 +33,7 @@ class Tax:
     title: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_title') }})
     r"""Title of entity"""
     updated_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
-    behavior: TaxBehavior = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('behavior') }})
+    behavior: Behavior = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('behavior') }})
     rate: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rate') }})
     type: TaxType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})

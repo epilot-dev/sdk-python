@@ -2,16 +2,16 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import billingperiod as shared_billingperiod
-from ..shared import entityrelation as shared_entityrelation
-from ..shared import salestax as shared_salestax
-from ..shared import tax as shared_tax
+from .billingperiod import BillingPeriod
+from .entityrelation import EntityRelation
+from .salestax import SalesTax
+from .tax import Tax
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 from typing import Any, Dict, List, Optional, Union
 
-class PriceBillingDurationUnit(str, Enum):
+class BillingDurationUnit(str, Enum):
     r"""The billing period duration unit"""
     WEEKS = 'weeks'
     MONTHS = 'months'
@@ -22,7 +22,7 @@ class PriceBillingDurationUnit(str, Enum):
 class PriceBillingPeriod:
     pass
 
-class PriceBillingScheme(str, Enum):
+class BillingScheme(str, Enum):
     r"""Describes how to compute the price per period. Either `per_unit` or `tiered`.
     - `per_unit` indicates that the fixed amount (specified in unit_amount or unit_amount_decimal) will be charged per unit in quantity
     - `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the tiers and tiers_mode attributes.
@@ -31,19 +31,19 @@ class PriceBillingScheme(str, Enum):
     """
     PER_UNIT = 'per_unit'
 
-class PriceNoticeTimeUnit(str, Enum):
+class NoticeTimeUnit(str, Enum):
     r"""The notice period duration unit"""
     WEEKS = 'weeks'
     MONTHS = 'months'
     YEARS = 'years'
 
-class PricePriceDisplayInJourneys(str, Enum):
+class PriceDisplayInJourneys(str, Enum):
     r"""Defines the way the price amount is display in epilot journeys."""
     SHOW_PRICE = 'show_price'
     SHOW_AS_STARTING_PRICE = 'show_as_starting_price'
     SHOW_AS_ON_REQUEST = 'show_as_on_request'
 
-class PriceRenewalDurationUnit(str, Enum):
+class RenewalDurationUnit(str, Enum):
     r"""The renewal period duration unit"""
     WEEKS = 'weeks'
     MONTHS = 'months'
@@ -57,9 +57,9 @@ class PriceSalesTax:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class PriceTax1:
+class Price1:
     r"""The default tax rate applied to the price"""
-    dollar_relation: Optional[List[shared_entityrelation.EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
@@ -68,29 +68,29 @@ class PriceTax1:
 class PriceTax:
     pass
 
-class PriceTaxBehavior(str, Enum):
+class TaxBehavior(str, Enum):
     r"""Specifies whether the price is considered `inclusive` of taxes or `exclusive` of taxes.
     One of `inclusive`, `exclusive`, or `unspecified`.
     """
     INCLUSIVE = 'inclusive'
     EXCLUSIVE = 'exclusive'
 
-class PriceTerminationTimeUnit(str, Enum):
+class TerminationTimeUnit(str, Enum):
     r"""The termination period duration unit"""
     WEEKS = 'weeks'
     MONTHS = 'months'
     YEARS = 'years'
 
-class PriceTiersMode(str, Enum):
+class TiersMode(str, Enum):
     r"""Defines the tiered pricing type of the price."""
     STANDARD = 'standard'
 
-class PriceType(str, Enum):
+class Type(str, Enum):
     r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
     ONE_TIME = 'one_time'
     RECURRING = 'recurring'
 
-class PriceUnit1(str, Enum):
+class PriceSchemas1(str, Enum):
     r"""built-in units"""
     KW = 'kw'
     KWH = 'kwh'
@@ -100,7 +100,7 @@ class PriceUnit1(str, Enum):
 
 
 @dataclasses.dataclass
-class PriceUnit:
+class Unit:
     pass
 
 
@@ -125,11 +125,11 @@ class Price:
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     billing_duration_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_duration_amount'), 'exclude': lambda f: f is None }})
     r"""The billing period duration"""
-    billing_duration_unit: Optional[PriceBillingDurationUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_duration_unit'), 'exclude': lambda f: f is None }})
+    billing_duration_unit: Optional[BillingDurationUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_duration_unit'), 'exclude': lambda f: f is None }})
     r"""The billing period duration unit"""
-    billing_period: Optional[Union[shared_billingperiod.BillingPeriod]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_period'), 'exclude': lambda f: f is None }})
+    billing_period: Optional[Union[BillingPeriod]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_period'), 'exclude': lambda f: f is None }})
     r"""For recurring prices `billing_period` defines the default extent of the recurrence."""
-    billing_scheme: Optional[PriceBillingScheme] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_scheme'), 'exclude': lambda f: f is None }})
+    billing_scheme: Optional[BillingScheme] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_scheme'), 'exclude': lambda f: f is None }})
     r"""Describes how to compute the price per period. Either `per_unit` or `tiered`.
     - `per_unit` indicates that the fixed amount (specified in unit_amount or unit_amount_decimal) will be charged per unit in quantity
     - `tiered` indicates that the unit pricing will be computed using a tiering strategy as defined using the tiers and tiers_mode attributes.
@@ -142,35 +142,35 @@ class Price:
     r"""The flag for prices that contain price components."""
     notice_time_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notice_time_amount'), 'exclude': lambda f: f is None }})
     r"""The notice period duration"""
-    notice_time_unit: Optional[PriceNoticeTimeUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notice_time_unit'), 'exclude': lambda f: f is None }})
+    notice_time_unit: Optional[NoticeTimeUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notice_time_unit'), 'exclude': lambda f: f is None }})
     r"""The notice period duration unit"""
-    price_display_in_journeys: Optional[PricePriceDisplayInJourneys] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_display_in_journeys'), 'exclude': lambda f: f is None }})
+    price_display_in_journeys: Optional[PriceDisplayInJourneys] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_display_in_journeys'), 'exclude': lambda f: f is None }})
     r"""Defines the way the price amount is display in epilot journeys."""
     renewal_duration_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renewal_duration_amount'), 'exclude': lambda f: f is None }})
     r"""The renewal period duration"""
-    renewal_duration_unit: Optional[PriceRenewalDurationUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renewal_duration_unit'), 'exclude': lambda f: f is None }})
+    renewal_duration_unit: Optional[RenewalDurationUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renewal_duration_unit'), 'exclude': lambda f: f is None }})
     r"""The renewal period duration unit"""
-    sales_tax: Optional[Union[shared_salestax.SalesTax]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sales_tax'), 'exclude': lambda f: f is None }})
+    sales_tax: Optional[Union[SalesTax]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sales_tax'), 'exclude': lambda f: f is None }})
     r"""The default tax rate applicable to the product.
     This field is deprecated, use the new `tax` attribute.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    tax: Optional[Union[PriceTax1, List[shared_tax.Tax]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax'), 'exclude': lambda f: f is None }})
+    tax: Optional[Union[Price1, List[Tax]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax'), 'exclude': lambda f: f is None }})
     r"""The default tax rate applied to the price"""
-    tax_behavior: Optional[PriceTaxBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_behavior'), 'exclude': lambda f: f is None }})
+    tax_behavior: Optional[TaxBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax_behavior'), 'exclude': lambda f: f is None }})
     r"""Specifies whether the price is considered `inclusive` of taxes or `exclusive` of taxes.
     One of `inclusive`, `exclusive`, or `unspecified`.
     """
     termination_time_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination_time_amount'), 'exclude': lambda f: f is None }})
     r"""The termination period duration"""
-    termination_time_unit: Optional[PriceTerminationTimeUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination_time_unit'), 'exclude': lambda f: f is None }})
+    termination_time_unit: Optional[TerminationTimeUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('termination_time_unit'), 'exclude': lambda f: f is None }})
     r"""The termination period duration unit"""
-    tiers_mode: Optional[PriceTiersMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tiers_mode'), 'exclude': lambda f: f is None }})
+    tiers_mode: Optional[TiersMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tiers_mode'), 'exclude': lambda f: f is None }})
     r"""Defines the tiered pricing type of the price."""
-    type: Optional[PriceType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
-    unit: Optional[Union[PriceUnit1, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit'), 'exclude': lambda f: f is None }})
+    unit: Optional[Union[PriceSchemas1, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit'), 'exclude': lambda f: f is None }})
     r"""The unit of measurement used for display purposes and possibly for calculations when the price is variable."""
     unit_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount'), 'exclude': lambda f: f is None }})
     r"""The unit amount in cents to be charged, represented as a whole integer if possible."""

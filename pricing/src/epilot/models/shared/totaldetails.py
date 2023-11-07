@@ -2,30 +2,30 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import recurrenceamount as shared_recurrenceamount
-from ..shared import taxamountbreakdown as shared_taxamountbreakdown
+from .recurrenceamount import RecurrenceAmount
+from .taxamountbreakdown import TaxAmountBreakdown
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List, Optional, Union
 
 
 @dataclasses.dataclass
-class TotalDetailsBreakdownRecurrences:
+class TotalDetailsRecurrences:
     pass
 
 
 @dataclasses.dataclass
-class TotalDetailsBreakdownTaxes:
+class TotalDetailsTaxes:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class TotalDetailsBreakdown:
+class Breakdown:
     r"""Breakdown of individual tax (and discount) amounts that add up to the totals."""
-    recurrences: Optional[List[Union[shared_recurrenceamount.RecurrenceAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurrences'), 'exclude': lambda f: f is None }})
+    recurrences: Optional[List[Union[RecurrenceAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurrences'), 'exclude': lambda f: f is None }})
     r"""The aggregated price items tax amount per rate."""
-    taxes: Optional[List[Union[shared_taxamountbreakdown.TaxAmountBreakdown]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taxes'), 'exclude': lambda f: f is None }})
+    taxes: Optional[List[Union[TaxAmountBreakdown]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taxes'), 'exclude': lambda f: f is None }})
     r"""The aggregated price items tax amount per rate."""
     
 
@@ -39,7 +39,7 @@ class TotalDetails:
     r"""This is the sum of all the price item shipping amounts."""
     amount_tax: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_tax'), 'exclude': lambda f: f is None }})
     r"""This is the sum of all the price item tax amounts."""
-    breakdown: Optional[TotalDetailsBreakdown] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('breakdown'), 'exclude': lambda f: f is None }})
+    breakdown: Optional[Breakdown] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('breakdown'), 'exclude': lambda f: f is None }})
     r"""Breakdown of individual tax (and discount) amounts that add up to the totals."""
     
 

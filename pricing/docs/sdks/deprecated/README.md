@@ -1,5 +1,5 @@
 # Deprecated
-(*deprecated*)
+(*.deprecated*)
 
 ### Available Operations
 
@@ -26,7 +26,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.deprecated.dollar_create_opportunity(opportunity_input=shared.OpportunityInput(
+res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput(
     additional_properties={
         "$ref": 'string',
     },
@@ -35,17 +35,17 @@ res = s.deprecated.dollar_create_opportunity(opportunity_input=shared.Opportunit
     ],
     address=shared.OpportunityAddress(
         dollar_relation_ref=[
-            shared.OpportunityAddressDollarRelationRef1(),
+            shared.Opportunity1(),
         ],
     ),
     assignee=[
-        shared.OpportunityAssignee(
-            email_notification_settings=shared.OpportunityAssigneeEmailNotificationSettings(),
+        shared.Assignee(
+            email_notification_settings=shared.EmailNotificationSettings(),
         ),
     ],
-    billing_address=shared.OpportunityBillingAddress(
+    billing_address=shared.BillingAddress(
         dollar_relation_ref=[
-            shared.OpportunityBillingAddressDollarRelationRef1(),
+            shared.OpportunitySchemas1(),
         ],
     ),
     customer=shared.OpportunityCustomer(
@@ -61,18 +61,18 @@ res = s.deprecated.dollar_create_opportunity(opportunity_input=shared.Opportunit
         ],
     ),
     dates=[
-        shared.OpportunityDates1(
+        shared.One(
             tags=[
                 'string',
             ],
         ),
     ],
-    delivery_address=shared.OpportunityDeliveryAddress(
+    delivery_address=shared.DeliveryAddress(
         dollar_relation_ref=[
-            shared.OpportunityDeliveryAddressDollarRelationRef1(),
+            shared.OpportunitySchemasDeliveryAddress1(),
         ],
     ),
-    items=shared.OpportunityItems(
+    items=shared.Items(
         dollar_relation=[
             shared.OrderRelation(
                 tags=[
@@ -98,7 +98,7 @@ if res.opportunity is not None:
 
 | Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `opportunity_input`                                                | [shared.OpportunityInput](../../models/shared/opportunityinput.md) | :heavy_check_mark:                                                 | N/A                                                                |
+| `opportunity`                                                      | [shared.OpportunityInput](../../models/shared/opportunityinput.md) | :heavy_check_mark:                                                 | N/A                                                                |
 | `x_ivy_org_id`                                                     | *str*                                                              | :heavy_check_mark:                                                 | The target Organization Id represented by the caller               |
 
 

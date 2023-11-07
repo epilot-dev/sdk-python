@@ -3,14 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import error as shared_error
-from ..shared import opportunity as shared_opportunity
+from ...models.shared import opportunity as shared_opportunity
 from typing import Optional
 
 
 @dataclasses.dataclass
 class DollarCreateOpportunityRequest:
-    opportunity_input: shared_opportunity.OpportunityInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    opportunity: shared_opportunity.OpportunityInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
     r"""The target Organization Id represented by the caller"""
     
@@ -23,8 +22,6 @@ class DollarCreateOpportunityResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    error: Optional[shared_error.Error] = dataclasses.field(default=None)
-    r"""Invalid payload"""
     opportunity: Optional[shared_opportunity.Opportunity] = dataclasses.field(default=None)
     r"""The new Opportunity."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)

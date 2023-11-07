@@ -1,5 +1,5 @@
 # AvailabilityAPI
-(*availability_api*)
+(*.availability_api*)
 
 ## Overview
 
@@ -17,8 +17,8 @@ The availability check endpoint
 ### Example Usage
 
 ```python
-import epilot
 import dateutil.parser
+import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(

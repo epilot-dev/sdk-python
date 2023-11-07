@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import taxbreakdowninfo as shared_taxbreakdowninfo
+from .taxbreakdowninfo import TaxBreakdownInfo
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -24,6 +24,6 @@ class TaxAmountBreakdown:
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    tax: Optional[shared_taxbreakdowninfo.TaxBreakdownInfo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax'), 'exclude': lambda f: f is None }})
+    tax: Optional[TaxBreakdownInfo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tax'), 'exclude': lambda f: f is None }})
     
 

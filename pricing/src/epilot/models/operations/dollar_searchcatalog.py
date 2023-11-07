@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import catalogsearch as shared_catalogsearch
-from ..shared import catalogsearchresult as shared_catalogsearchresult
-from ..shared import error as shared_error
+from ...models.shared import catalogsearch as shared_catalogsearch
+from ...models.shared import catalogsearchresult as shared_catalogsearchresult
 from typing import Optional
 
 
@@ -26,8 +25,6 @@ class DollarSearchCatalogResponse:
     r"""HTTP response status code for this operation"""
     catalog_search_result: Optional[shared_catalogsearchresult.CatalogSearchResult] = dataclasses.field(default=None)
     r"""The search result"""
-    error: Optional[shared_error.Error] = dataclasses.field(default=None)
-    r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

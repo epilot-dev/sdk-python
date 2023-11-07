@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import availabilitycheckparams as shared_availabilitycheckparams
-from ..shared import availabilityresult as shared_availabilityresult
-from ..shared import error as shared_error
+from ...models.shared import availabilitycheckparams as shared_availabilitycheckparams
+from ...models.shared import availabilityresult as shared_availabilityresult
 from typing import Optional
 
 
@@ -26,8 +25,6 @@ class DollarAvailabilityCheckResponse:
     r"""HTTP response status code for this operation"""
     availability_result: Optional[shared_availabilityresult.AvailabilityResult] = dataclasses.field(default=None)
     r"""The availability check result"""
-    error: Optional[shared_error.Error] = dataclasses.field(default=None)
-    r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

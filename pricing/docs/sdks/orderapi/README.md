@@ -1,5 +1,5 @@
 # OrderAPI
-(*order_api*)
+(*.order_api*)
 
 ## Overview
 
@@ -20,15 +20,15 @@ Create an order
 ### Example Usage
 
 ```python
-import epilot
 import dateutil.parser
+import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="",
 )
 
-req = shared.OrderPayloadInput(
+req = shared.OrderPayload(
     additional_properties={
         "key": 'string',
     },
@@ -70,18 +70,18 @@ req = shared.OrderPayloadInput(
                 [
                     shared.Tax(
                         additional_properties={
-                            "_updated_at": 'string',
-                            "type": 'string',
-                            "behavior": 'string',
-                            "active": 'string',
-                            "_org": 'string',
-                            "_tags": 'string',
-                            "_created_at": 'string',
                             "_id": 'string',
                             "description": 'string',
+                            "behavior": 'string',
                             "region": 'string',
-                            "region_label": 'string',
                             "_schema": 'string',
+                            "_tags": 'string',
+                            "type": 'string',
+                            "active": 'string',
+                            "region_label": 'string',
+                            "_org": 'string',
+                            "_created_at": 'string',
+                            "_updated_at": 'string',
                         },
                         created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                         id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
@@ -92,7 +92,7 @@ req = shared.OrderPayloadInput(
                         ],
                         title='string',
                         updated_at=dateutil.parser.isoparse('2022-08-04T04:36:14.538Z'),
-                        behavior=shared.TaxBehavior.INCLUSIVE_LOWER,
+                        behavior=shared.Behavior.INCLUSIVE_LOWER,
                         rate=5305.72,
                         type=shared.TaxType.GST,
                     ),
@@ -112,7 +112,7 @@ req = shared.OrderPayloadInput(
                         ],
                     shared.BillingPeriod.MONTHLY,
                     shared.SalesTax.STANDARD,
-                        shared.PriceTax1(
+                        shared.Price1(
                             dollar_relation=[
                                 shared.EntityRelation(
                                     additional_properties={
@@ -124,7 +124,7 @@ req = shared.OrderPayloadInput(
                                 ),
                             ],
                         ),
-                    shared.PriceUnit1.L,
+                    shared.PriceSchemas1.L,
                         unit_amount_currency='EUR',
                     ),
                     currency='EUR',
@@ -157,9 +157,9 @@ if res.order is not None:
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `request`                                                            | [shared.OrderPayloadInput](../../models/shared/orderpayloadinput.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+| Parameter                                                  | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `request`                                                  | [shared.OrderPayload](../../models/shared/orderpayload.md) | :heavy_check_mark:                                         | The request object to use for the request.                 |
 
 
 ### Response
@@ -174,8 +174,8 @@ Update an existing Order
 ### Example Usage
 
 ```python
-import epilot
 import dateutil.parser
+import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -183,7 +183,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.order_api.put_order(order_payload_input=shared.OrderPayloadInput(
+res = s.order_api.put_order(order_payload=shared.OrderPayload(
     additional_properties={
         "key": 'string',
     },
@@ -222,7 +222,7 @@ res = s.order_api.put_order(order_payload_input=shared.OrderPayloadInput(
                 ],
             shared.BillingPeriod.EVERY_QUARTER,
             shared.SalesTax.STANDARD,
-                shared.PriceTax1(
+                shared.Price1(
                     dollar_relation=[
                         shared.EntityRelation(
                             additional_properties={
@@ -234,7 +234,7 @@ res = s.order_api.put_order(order_payload_input=shared.OrderPayloadInput(
                         ),
                     ],
                 ),
-            shared.PriceUnit1.KW,
+            shared.PriceSchemas1.KW,
                 unit_amount_currency='EUR',
             ),
             currency='EUR',
@@ -249,7 +249,7 @@ res = s.order_api.put_order(order_payload_input=shared.OrderPayloadInput(
                         ],
                     shared.BillingPeriod.MONTHLY,
                     shared.SalesTax.REDUCED,
-                        shared.PriceTax1(
+                        shared.Price1(
                             dollar_relation=[
                                 shared.EntityRelation(
                                     additional_properties={
@@ -261,7 +261,7 @@ res = s.order_api.put_order(order_payload_input=shared.OrderPayloadInput(
                                 ),
                             ],
                         ),
-                    shared.PriceUnit1.KWH,
+                    shared.PriceSchemas1.KWH,
                         unit_amount_currency='EUR',
                     ),
                     currency='EUR',
@@ -292,10 +292,10 @@ if res.order is not None:
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `order_payload_input`                                                | [shared.OrderPayloadInput](../../models/shared/orderpayloadinput.md) | :heavy_check_mark:                                                   | N/A                                                                  |
-| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | Order entity ID                                                      |
+| Parameter                                                  | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `order_payload`                                            | [shared.OrderPayload](../../models/shared/orderpayload.md) | :heavy_check_mark:                                         | N/A                                                        |
+| `id`                                                       | *str*                                                      | :heavy_check_mark:                                         | Order entity ID                                            |
 
 
 ### Response

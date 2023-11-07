@@ -2,15 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import address as shared_address
-from ..shared import compositepriceitem as shared_compositepriceitem
-from ..shared import entityrelation as shared_entityrelation
-from ..shared import metadata as shared_metadata
-from ..shared import ordersource as shared_ordersource
-from ..shared import orderstatus as shared_orderstatus
-from ..shared import paymentmethod as shared_paymentmethod
-from ..shared import priceitem as shared_priceitem
-from ..shared import totaldetails as shared_totaldetails
+from .address import Address
+from .compositepriceitem import CompositePriceItem
+from .entityrelation import EntityRelation
+from .metadata import MetaData
+from .ordersource import OrderSource
+from .orderstatus import OrderStatus
+from .paymentmethod import PaymentMethod
+from .priceitem import PriceItem
+from .totaldetails import TotalDetails
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Dict, List, Optional, Union
@@ -20,25 +20,25 @@ from typing import Any, Dict, List, Optional, Union
 @dataclasses.dataclass
 class OrderCustomer:
     r"""A list of customers related with the opportunity"""
-    dollar_relation: Optional[List[shared_entityrelation.EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class OrderPrices:
+class Prices:
     r"""The price entities referenced from within `line_items`"""
-    dollar_relation: Optional[List[shared_entityrelation.EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class OrderProducts:
+class Products:
     r"""The product entities referenced from within `line_items`"""
-    dollar_relation: Optional[List[shared_entityrelation.EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
@@ -62,7 +62,7 @@ class Order:
     r"""Total of all items before (discounts or) taxes are applied."""
     amount_total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_total'), 'exclude': lambda f: f is None }})
     r"""Total of all items after (discounts and) taxes are applied."""
-    billing_address: Optional[List[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_address'), 'exclude': lambda f: f is None }})
+    billing_address: Optional[List[Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_address'), 'exclude': lambda f: f is None }})
     r"""The billing address"""
     billing_company_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_company_name'), 'exclude': lambda f: f is None }})
     r"""The billing account name"""
@@ -82,27 +82,27 @@ class Order:
     r"""The order main currency"""
     customer: Optional[OrderCustomer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customer'), 'exclude': lambda f: f is None }})
     r"""A list of customers related with the opportunity"""
-    delivery_address: Optional[List[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delivery_address'), 'exclude': lambda f: f is None }})
+    delivery_address: Optional[List[Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delivery_address'), 'exclude': lambda f: f is None }})
     r"""The delivery address"""
-    line_items: Optional[List[Union[shared_priceitem.PriceItem, shared_compositepriceitem.CompositePriceItem]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_items'), 'exclude': lambda f: f is None }})
+    line_items: Optional[List[Union[PriceItem, CompositePriceItem]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_items'), 'exclude': lambda f: f is None }})
     r"""Tracks a set of product prices, quantities, (discounts) and taxes."""
-    metadata: Optional[List[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     order_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order_number'), 'exclude': lambda f: f is None }})
     r"""The order number (customer facing)"""
-    payment_method: Optional[List[shared_paymentmethod.PaymentMethod]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method'), 'exclude': lambda f: f is None }})
+    payment_method: Optional[List[PaymentMethod]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method'), 'exclude': lambda f: f is None }})
     r"""The payment method details for the order"""
-    prices: Optional[OrderPrices] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prices'), 'exclude': lambda f: f is None }})
+    prices: Optional[Prices] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prices'), 'exclude': lambda f: f is None }})
     r"""The price entities referenced from within `line_items`"""
-    products: Optional[OrderProducts] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products'), 'exclude': lambda f: f is None }})
+    products: Optional[Products] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products'), 'exclude': lambda f: f is None }})
     r"""The product entities referenced from within `line_items`"""
-    source: Optional[shared_ordersource.OrderSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
+    source: Optional[OrderSource] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source'), 'exclude': lambda f: f is None }})
     r"""The order generation source"""
     source_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_id'), 'exclude': lambda f: f is None }})
     r"""Identifier for source e.g. journey ID"""
     source_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_type'), 'exclude': lambda f: f is None }})
     r"""Type of source, e.g. journey or manual"""
-    status: Optional[shared_orderstatus.OrderStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[OrderStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""| status      | description |
     |-------------|-------|
     | `draft`     | \u200B\u200BStarting state for all orders, at this point we can still edit the order |
@@ -111,7 +111,7 @@ class Order:
     | `cancelled` | The order has been cancelled |
     | `completed` | The order is now closed and finalized |
     """
-    total_details: Optional[shared_totaldetails.TotalDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total_details'), 'exclude': lambda f: f is None }})
+    total_details: Optional[TotalDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total_details'), 'exclude': lambda f: f is None }})
     r"""The total details with tax (and discount) aggregated totals."""
     
 

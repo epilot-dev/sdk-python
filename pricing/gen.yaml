@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 0c38c5e4341d7eb39afb394a855c5a8a
   docVersion: 1.0.0
-  speakeasyVersion: 1.112.1
-  generationVersion: 2.173.0
+  speakeasyVersion: 1.114.1
+  generationVersion: 2.181.1
 generation:
   comments: {}
   sdkClassName: epilot
@@ -11,17 +11,26 @@ generation:
 features:
   python:
     additionalProperties: 0.1.0
-    core: 3.3.1
+    core: 4.1.0
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     inputOutputModels: 2.81.1
 python:
-  version: 1.2.0
+  version: 2.0.0
   author: epilot
+  clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot
   flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/shared
+      webhooks: models/webhooks
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=pricing
   maxMethodParams: 4
   packageName: epilot-pricing

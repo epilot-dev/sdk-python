@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import checkoutcart as shared_checkoutcart
-from ..shared import checkoutcartresult as shared_checkoutcartresult
-from ..shared import error as shared_error
+from ...models.shared import checkoutcart as shared_checkoutcart
+from ...models.shared import checkoutcartresult as shared_checkoutcartresult
 from typing import Optional
 
 
@@ -26,8 +25,6 @@ class DollarCheckoutCartResponse:
     r"""HTTP response status code for this operation"""
     checkout_cart_result: Optional[shared_checkoutcartresult.CheckoutCartResult] = dataclasses.field(default=None)
     r"""The checkout result"""
-    error: Optional[shared_error.Error] = dataclasses.field(default=None)
-    r"""Invalid payload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     

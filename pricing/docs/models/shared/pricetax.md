@@ -3,10 +3,10 @@
 
 ## Supported Types
 
-### PriceTax1
+### Price1
 
 ```python
-priceTax: shared.PriceTax1 = /* values here */
+priceTax: shared.Price1 = /* values here */
 ```
 
 ### 

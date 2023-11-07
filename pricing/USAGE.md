@@ -2,26 +2,137 @@
 
 
 ```python
-import epilot
 import dateutil.parser
-from epilot.models import operations, shared
+import epilot
+from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="",
 )
 
-
-res = s.availability_api.dollar_availability_check(availability_check_params=shared.AvailabilityCheckParams(
-    filters=shared.AvailabilityFilters(
-        available_date=dateutil.parser.parse('2017-07-21').date(),
-        location=shared.AvailabilityLocation(),
-    ),
-    products=[
+req = shared.OrderPayload(
+    additional_properties={
+        "key": 'string',
+    },
+    tags=[
         'string',
     ],
-), x_ivy_org_id='string')
+    billing_address=[
+        shared.Address(
+            additional_properties={
+                "key": 'string',
+            },
+            tags=[
+                'billing',
+            ],
+        ),
+    ],
+    currency='EUR',
+    delivery_address=[
+        shared.Address(
+            additional_properties={
+                "key": 'string',
+            },
+            tags=[
+                'billing',
+            ],
+        ),
+    ],
+    line_items=[
+        shared.CompositePriceItemInput(
+            shared.Price(
+                additional_properties={
+                    "$ref": 'string',
+                },
+                tags=[
+                    'string',
+                ],
+            shared.BillingPeriod.WEEKLY,
+            shared.SalesTax.NONTAXABLE,
+                [
+                    shared.Tax(
+                        additional_properties={
+                            "type": 'string',
+                            "active": 'string',
+                            "region_label": 'string',
+                            "_org": 'string',
+                            "_created_at": 'string',
+                            "_updated_at": 'string',
+                            "_id": 'string',
+                            "description": 'string',
+                            "behavior": 'string',
+                            "region": 'string',
+                            "_schema": 'string',
+                            "_tags": 'string',
+                        },
+                        created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
+                        id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
+                        org='string',
+                        schema='string',
+                        tags=[
+                            'string',
+                        ],
+                        title='string',
+                        updated_at=dateutil.parser.isoparse('2022-08-04T04:36:14.538Z'),
+                        behavior=shared.Behavior.INCLUSIVE_LOWER,
+                        rate=5305.72,
+                        type=shared.TaxType.GST,
+                    ),
+                ],
+            'string',
+                unit_amount_currency='EUR',
+            ),
+            currency='EUR',
+            item_components=[
+                shared.PriceItemInput(
+                    shared.Price(
+                        additional_properties={
+                            "$ref": 'string',
+                        },
+                        tags=[
+                            'string',
+                        ],
+                    shared.BillingPeriod.MONTHLY,
+                    shared.SalesTax.STANDARD,
+                        shared.Price1(
+                            dollar_relation=[
+                                shared.EntityRelation(
+                                    additional_properties={
+                                        "key": 'string',
+                                    },
+                                    tags=[
+                                        'string',
+                                    ],
+                                ),
+                            ],
+                        ),
+                    shared.PriceSchemas1.L,
+                        unit_amount_currency='EUR',
+                    ),
+                    currency='EUR',
+                    metadata=[
+                        shared.MetaData1(),
+                    ],
+                ),
+            ],
+            metadata=[
+                shared.MetaData1(),
+            ],
+        ),
+    ],
+    payment_method=[
+        shared.PaymentMethod(
+            details={
+                "key": 'string',
+            },
+        ),
+    ],
+    source_type='journey',
+)
 
-if res.availability_result is not None:
+res = s.order_api.create_order(req)
+
+if res.order is not None:
     # handle response
     pass
 ```

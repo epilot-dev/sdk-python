@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import entityrelation as shared_entityrelation
-from ..shared import file as shared_file
+from .entityrelation import EntityRelation
+from .file import File
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -12,16 +12,16 @@ from typing import Any, Dict, List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ProductCrossSellableProducts:
+class CrossSellableProducts:
     r"""Stores references to products that can be cross sold with the current product."""
-    dollar_relation: Optional[List[shared_entityrelation.EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ProductFeature:
+class Feature:
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""An arbitrary set of tags attached to a feature"""
     feature: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature'), 'exclude': lambda f: f is None }})
@@ -31,29 +31,29 @@ class ProductFeature:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ProductPriceOptions:
+class PriceOptions:
     r"""A set of [prices](/api/pricing#tag/simple_price_schema) or [composite prices](/api/pricing#tag/dynamic_price_schema) for the current product."""
-    dollar_relation: Optional[List[shared_entityrelation.EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ProductProductDownloads:
+class ProductDownloads:
     r"""Stores references to a set of files downloadable from the product.
     e.g: tech specifications, quality control sheets, privacy policy agreements
     """
-    dollar_relation: Optional[List[shared_entityrelation.EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ProductProductImages:
+class ProductImages:
     r"""Stores references to a set of file images of the product"""
-    dollar_relation: Optional[List[shared_entityrelation.EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
@@ -73,7 +73,7 @@ class ProductType(str, Enum):
 @dataclasses.dataclass
 class Product:
     r"""The product entity"""
-    availability_files: Optional[List[shared_file.File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_availability_files'), 'exclude': lambda f: f is None }})
+    availability_files: Optional[List[File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_availability_files'), 'exclude': lambda f: f is None }})
     r"""Stores references to the availability files that define where this product is available.
     These files are used when interacting with products via epilot Journeys, thought the AvailabilityCheck block.
     """
@@ -90,18 +90,18 @@ class Product:
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""The product code"""
-    cross_sellable_products: Optional[ProductCrossSellableProducts] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cross_sellable_products'), 'exclude': lambda f: f is None }})
+    cross_sellable_products: Optional[CrossSellableProducts] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cross_sellable_products'), 'exclude': lambda f: f is None }})
     r"""Stores references to products that can be cross sold with the current product."""
-    feature: Optional[List[ProductFeature]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature'), 'exclude': lambda f: f is None }})
+    feature: Optional[List[Feature]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""The product main name"""
-    price_options: Optional[ProductPriceOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_options'), 'exclude': lambda f: f is None }})
+    price_options: Optional[PriceOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_options'), 'exclude': lambda f: f is None }})
     r"""A set of [prices](/api/pricing#tag/simple_price_schema) or [composite prices](/api/pricing#tag/dynamic_price_schema) for the current product."""
-    product_downloads: Optional[ProductProductDownloads] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_downloads'), 'exclude': lambda f: f is None }})
+    product_downloads: Optional[ProductDownloads] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_downloads'), 'exclude': lambda f: f is None }})
     r"""Stores references to a set of files downloadable from the product.
     e.g: tech specifications, quality control sheets, privacy policy agreements
     """
-    product_images: Optional[ProductProductImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_images'), 'exclude': lambda f: f is None }})
+    product_images: Optional[ProductImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_images'), 'exclude': lambda f: f is None }})
     r"""Stores references to a set of file images of the product"""
     type: Optional[ProductType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""The type of Product:
@@ -119,7 +119,7 @@ class Product:
 @dataclasses.dataclass
 class ProductInput:
     r"""The product entity"""
-    availability_files: Optional[List[shared_file.File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_availability_files'), 'exclude': lambda f: f is None }})
+    availability_files: Optional[List[File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_availability_files'), 'exclude': lambda f: f is None }})
     r"""Stores references to the availability files that define where this product is available.
     These files are used when interacting with products via epilot Journeys, thought the AvailabilityCheck block.
     """
@@ -132,18 +132,18 @@ class ProductInput:
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     code: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('code'), 'exclude': lambda f: f is None }})
     r"""The product code"""
-    cross_sellable_products: Optional[ProductCrossSellableProducts] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cross_sellable_products'), 'exclude': lambda f: f is None }})
+    cross_sellable_products: Optional[CrossSellableProducts] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cross_sellable_products'), 'exclude': lambda f: f is None }})
     r"""Stores references to products that can be cross sold with the current product."""
-    feature: Optional[List[ProductFeature]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature'), 'exclude': lambda f: f is None }})
+    feature: Optional[List[Feature]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('feature'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""The product main name"""
-    price_options: Optional[ProductPriceOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_options'), 'exclude': lambda f: f is None }})
+    price_options: Optional[PriceOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_options'), 'exclude': lambda f: f is None }})
     r"""A set of [prices](/api/pricing#tag/simple_price_schema) or [composite prices](/api/pricing#tag/dynamic_price_schema) for the current product."""
-    product_downloads: Optional[ProductProductDownloads] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_downloads'), 'exclude': lambda f: f is None }})
+    product_downloads: Optional[ProductDownloads] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_downloads'), 'exclude': lambda f: f is None }})
     r"""Stores references to a set of files downloadable from the product.
     e.g: tech specifications, quality control sheets, privacy policy agreements
     """
-    product_images: Optional[ProductProductImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_images'), 'exclude': lambda f: f is None }})
+    product_images: Optional[ProductImages] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_images'), 'exclude': lambda f: f is None }})
     r"""Stores references to a set of file images of the product"""
     type: Optional[ProductType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""The type of Product:

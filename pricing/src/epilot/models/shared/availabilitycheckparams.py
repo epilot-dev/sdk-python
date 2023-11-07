@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import availabilityfilters as shared_availabilityfilters
+from .availabilityfilters import AvailabilityFilters
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List
@@ -12,7 +12,7 @@ from typing import List
 @dataclasses.dataclass
 class AvailabilityCheckParams:
     r"""Availability check request payload"""
-    filters: shared_availabilityfilters.AvailabilityFilters = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filters') }})
+    filters: AvailabilityFilters = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filters') }})
     r"""Availability filters dimensions"""
     products: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products') }})
     r"""Products to check availability"""

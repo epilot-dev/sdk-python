@@ -1,5 +1,5 @@
 # CartAPI
-(*cart_api*)
+(*.cart_api*)
 
 ## Overview
 
@@ -31,8 +31,8 @@ If the checkout `mode` is omitted, the `mode` will default to `create_order`.
 ### Example Usage
 
 ```python
-import epilot
 import dateutil.parser
+import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -79,7 +79,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
             "key": 'string',
         },
         line_items=[
-            shared.PriceItemDtoInput(
+            shared.PriceItemDto(
                 price=shared.Price(
                     additional_properties={
                         "$ref": 'string',
@@ -92,18 +92,18 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                     [
                         shared.Tax(
                             additional_properties={
-                                "type": 'string',
-                                "behavior": 'string',
-                                "active": 'string',
-                                "_org": 'string',
+                                "_schema": 'string',
                                 "_tags": 'string',
-                                "_created_at": 'string',
-                                "_updated_at": 'string',
                                 "_id": 'string',
                                 "description": 'string',
+                                "behavior": 'string',
                                 "region": 'string',
+                                "_created_at": 'string',
+                                "_updated_at": 'string',
+                                "type": 'string',
+                                "active": 'string',
                                 "region_label": 'string',
-                                "_schema": 'string',
+                                "_org": 'string',
                             },
                             created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
                             id='8a718dcd-4d08-4ffa-b671-3e809e1b5095',
@@ -114,7 +114,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                             ],
                             title='string',
                             updated_at=dateutil.parser.isoparse('2023-04-18T02:54:24.080Z'),
-                            behavior=shared.TaxBehavior.INCLUSIVE_MIXED,
+                            behavior=shared.Behavior.INCLUSIVE_MIXED,
                             rate=1343.96,
                             type=shared.TaxType.VAT,
                         ),
@@ -147,11 +147,11 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                             filename='specialist.m3a',
                             mime_type='string',
                             versions=[
-                                shared.FileVersions(
+                                shared.Versions(
                                     additional_properties={
                                         "key": 'string',
                                     },
-                                    s3ref=shared.FileVersionsS3ref(
+                                    s3ref=shared.S3ref(
                                         bucket='string',
                                         key='<key>',
                                     ),
@@ -159,7 +159,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                             ],
                         ),
                     ],
-                    cross_sellable_products=shared.ProductCrossSellableProducts(
+                    cross_sellable_products=shared.CrossSellableProducts(
                         dollar_relation=[
                             shared.EntityRelation(
                                 additional_properties={
@@ -172,13 +172,13 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                         ],
                     ),
                     feature=[
-                        shared.ProductFeature(
+                        shared.Feature(
                             tags=[
                                 'string',
                             ],
                         ),
                     ],
-                    price_options=shared.ProductPriceOptions(
+                    price_options=shared.PriceOptions(
                         dollar_relation=[
                             shared.EntityRelation(
                                 additional_properties={
@@ -190,7 +190,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                             ),
                         ],
                     ),
-                    product_downloads=shared.ProductProductDownloads(
+                    product_downloads=shared.ProductDownloads(
                         dollar_relation=[
                             shared.EntityRelation(
                                 additional_properties={
@@ -202,7 +202,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                             ),
                         ],
                     ),
-                    product_images=shared.ProductProductImages(
+                    product_images=shared.ProductImages(
                         dollar_relation=[
                             shared.EntityRelation(
                                 additional_properties={

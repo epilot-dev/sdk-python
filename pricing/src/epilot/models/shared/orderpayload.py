@@ -2,11 +2,11 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import address as shared_address
-from ..shared import compositepriceitem as shared_compositepriceitem
-from ..shared import orderstatus as shared_orderstatus
-from ..shared import paymentmethod as shared_paymentmethod
-from ..shared import priceitem as shared_priceitem
+from .address import Address
+from .compositepriceitem import CompositePriceItemInput
+from .orderstatus import OrderStatus
+from .paymentmethod import PaymentMethod
+from .priceitem import PriceItemInput
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Dict, List, Optional, Union
@@ -14,11 +14,11 @@ from typing import Any, Dict, List, Optional, Union
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class OrderPayloadInput:
+class OrderPayload:
     r"""Order Entity Payload"""
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    billing_address: Optional[List[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_address'), 'exclude': lambda f: f is None }})
+    billing_address: Optional[List[Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_address'), 'exclude': lambda f: f is None }})
     billing_company_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_company_name'), 'exclude': lambda f: f is None }})
     billing_email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_email'), 'exclude': lambda f: f is None }})
     billing_first_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_first_name'), 'exclude': lambda f: f is None }})
@@ -29,13 +29,13 @@ class OrderPayloadInput:
     r"""Three-letter ISO currency code, in lowercase. Must be a supported currency.
     ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
     """
-    delivery_address: Optional[List[shared_address.Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delivery_address'), 'exclude': lambda f: f is None }})
-    line_items: Optional[List[Union[shared_priceitem.PriceItemInput, shared_compositepriceitem.CompositePriceItemInput]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_items'), 'exclude': lambda f: f is None }})
+    delivery_address: Optional[List[Address]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delivery_address'), 'exclude': lambda f: f is None }})
+    line_items: Optional[List[Union[PriceItemInput, CompositePriceItemInput]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_items'), 'exclude': lambda f: f is None }})
     r"""Tracks a set of product prices, quantities, (discounts) and taxes."""
-    payment_method: Optional[List[shared_paymentmethod.PaymentMethod]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method'), 'exclude': lambda f: f is None }})
+    payment_method: Optional[List[PaymentMethod]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method'), 'exclude': lambda f: f is None }})
     source_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source_type'), 'exclude': lambda f: f is None }})
     r"""type of source, e.g. journey or manual"""
-    status: Optional[shared_orderstatus.OrderStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[OrderStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     r"""| status      | description |
     |-------------|-------|
     | `draft`     | \u200B\u200BStarting state for all orders, at this point we can still edit the order |

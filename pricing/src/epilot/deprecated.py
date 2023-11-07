@@ -12,7 +12,7 @@ class Deprecated:
         self.sdk_configuration = sdk_config
         
     
-    def dollar_create_opportunity(self, opportunity_input: shared.OpportunityInput, x_ivy_org_id: str) -> operations.DollarCreateOpportunityResponse:
+    def dollar_create_opportunity(self, opportunity: shared.OpportunityInput, x_ivy_org_id: str) -> operations.DollarCreateOpportunityResponse:
         r"""createOpportunity
         This API is Deprecated. Please use the Entity API or Submission API to create opportunities.
 
@@ -22,7 +22,7 @@ class Deprecated:
         Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
         request = operations.DollarCreateOpportunityRequest(
-            opportunity_input=opportunity_input,
+            opportunity=opportunity,
             x_ivy_org_id=x_ivy_org_id,
         )
         
@@ -30,7 +30,7 @@ class Deprecated:
         
         url = base_url + '/v1/public/opportunity'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "opportunity_input", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "opportunity", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -53,10 +53,13 @@ class Deprecated:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Error])
-                res.error = out
+                out = utils.unmarshal_json(http_res.text, errors.Error)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

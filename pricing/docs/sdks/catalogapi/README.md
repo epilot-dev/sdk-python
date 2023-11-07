@@ -1,5 +1,5 @@
 # CatalogAPI
-(*catalog_api*)
+(*.catalog_api*)
 
 ## Overview
 
@@ -17,8 +17,8 @@ Provides a querying functionalities over products and prices of the Catalog for 
 ### Example Usage
 
 ```python
-import epilot
 import dateutil.parser
+import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(

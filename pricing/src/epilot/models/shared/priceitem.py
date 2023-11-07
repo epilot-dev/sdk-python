@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import compositeprice as shared_compositeprice
-from ..shared import metadata as shared_metadata
-from ..shared import price as shared_price
-from ..shared import product as shared_product
-from ..shared import recurrenceamount as shared_recurrenceamount
-from ..shared import taxamount as shared_taxamount
+from .compositeprice import CompositePrice
+from .metadata import MetaData
+from .price import Price
+from .product import Product
+from .recurrenceamount import RecurrenceAmount
+from .taxamount import TaxAmount
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -17,43 +17,6 @@ from typing import List, Optional, Union
 @dataclasses.dataclass
 class PriceItemPrice:
     pass
-
-class PriceItemType(str, Enum):
-    r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
-    ONE_TIME = 'one_time'
-    RECURRING = 'recurring'
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class PriceItemInput:
-    r"""Represents a price item"""
-    price: Optional[Union[shared_price.Price, shared_compositeprice.CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
-    r"""The price snapshot data."""
-    currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency'), 'exclude': lambda f: f is None }})
-    r"""Three-letter ISO currency code, in lowercase. Must be a supported currency.
-    ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
-    """
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
-    is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
-    r"""The flag for prices that contain price components."""
-    metadata: Optional[List[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
-    r"""A set of key-value pairs used to store meta data information about an entity."""
-    on_request_approved: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('on_request_approved'), 'exclude': lambda f: f is None }})
-    r"""When set to true on a `_price` displayed as OnRequest (`show_as_on_request: 'on_request'`) this flag means the price has been approved and can now be displayed to the customer. This flag is only valid for prices shown as 'on_request'."""
-    price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
-    r"""The id of the price."""
-    product_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_id'), 'exclude': lambda f: f is None }})
-    r"""The id of the product."""
-    quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }})
-    r"""The quantity of products being purchased."""
-    type: Optional[PriceItemType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
-    r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
-    unit_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount_decimal'), 'exclude': lambda f: f is None }})
-    r"""The unit amount in cents to be charged, represented as a decimal string with at most 12 decimal places."""
-    
-
 
 
 @dataclasses.dataclass
@@ -65,14 +28,19 @@ class PriceItemRecurrences:
 class PriceItemTaxes:
     pass
 
+class PriceItemType(str, Enum):
+    r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
+    ONE_TIME = 'one_time'
+    RECURRING = 'recurring'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PriceItem:
     r"""Represents a price item"""
-    price: Optional[Union[shared_price.Price, shared_compositeprice.CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
+    price: Optional[Union[Price, CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
     r"""The price snapshot data."""
-    product: Optional[shared_product.Product] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_product'), 'exclude': lambda f: f is None }})
+    product: Optional[Product] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_product'), 'exclude': lambda f: f is None }})
     r"""The product entity"""
     amount_subtotal: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_subtotal'), 'exclude': lambda f: f is None }})
     r"""Total before any (discounts or) taxes are applied."""
@@ -88,7 +56,7 @@ class PriceItem:
     r"""price item id"""
     is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
     r"""The flag for prices that contain price components."""
-    metadata: Optional[List[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     on_request_approved: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('on_request_approved'), 'exclude': lambda f: f is None }})
     r"""When set to true on a `_price` displayed as OnRequest (`show_as_on_request: 'on_request'`) this flag means the price has been approved and can now be displayed to the customer. This flag is only valid for prices shown as 'on_request'."""
@@ -98,9 +66,9 @@ class PriceItem:
     r"""The id of the product."""
     quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }})
     r"""The quantity of products being purchased."""
-    recurrences: Optional[List[Union[shared_recurrenceamount.RecurrenceAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurrences'), 'exclude': lambda f: f is None }})
+    recurrences: Optional[List[Union[RecurrenceAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurrences'), 'exclude': lambda f: f is None }})
     r"""The sum of amounts of the price items by recurrence."""
-    taxes: Optional[List[Union[shared_taxamount.TaxAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taxes'), 'exclude': lambda f: f is None }})
+    taxes: Optional[List[Union[TaxAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taxes'), 'exclude': lambda f: f is None }})
     r"""The taxes applied to the price item."""
     type: Optional[PriceItemType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
@@ -110,5 +78,37 @@ class PriceItem:
     r"""The unit amount in cents to be charged, represented as a decimal string with at most 12 decimal places."""
     unit_amount_net: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount_net'), 'exclude': lambda f: f is None }})
     r"""Net unit amount without taxes or discounts."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class PriceItemInput:
+    r"""Represents a price item"""
+    price: Optional[Union[Price, CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
+    r"""The price snapshot data."""
+    currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency'), 'exclude': lambda f: f is None }})
+    r"""Three-letter ISO currency code, in lowercase. Must be a supported currency.
+    ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
+    """
+    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
+    is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
+    r"""The flag for prices that contain price components."""
+    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    r"""A set of key-value pairs used to store meta data information about an entity."""
+    on_request_approved: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('on_request_approved'), 'exclude': lambda f: f is None }})
+    r"""When set to true on a `_price` displayed as OnRequest (`show_as_on_request: 'on_request'`) this flag means the price has been approved and can now be displayed to the customer. This flag is only valid for prices shown as 'on_request'."""
+    price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
+    r"""The id of the price."""
+    product_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_id'), 'exclude': lambda f: f is None }})
+    r"""The id of the product."""
+    quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }})
+    r"""The quantity of products being purchased."""
+    type: Optional[PriceItemType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
+    unit_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount_decimal'), 'exclude': lambda f: f is None }})
+    r"""The unit amount in cents to be charged, represented as a decimal string with at most 12 decimal places."""
     
 

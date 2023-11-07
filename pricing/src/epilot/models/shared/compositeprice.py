@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import price as shared_price
-from ..shared import pricecomponentrelation as shared_pricecomponentrelation
+from .price import Price
+from .pricecomponentrelation import PriceComponentRelation
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Dict, List, Optional, Union
@@ -11,15 +11,15 @@ from typing import Any, Dict, List, Optional, Union
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CompositePricePriceComponents2:
+class Two:
     r"""A set of [price](/api/pricing#tag/simple_price_schema) components that define the composite price."""
-    dollar_relation: Optional[List[shared_pricecomponentrelation.PriceComponentRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[PriceComponentRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclasses.dataclass
-class CompositePricePriceComponents:
+class PriceComponents:
     pass
 
 
@@ -46,7 +46,7 @@ class CompositePrice:
     r"""A brief description of the price."""
     is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
     r"""The flag for prices that contain price components."""
-    price_components: Optional[Union[List[shared_price.Price], CompositePricePriceComponents2]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_components'), 'exclude': lambda f: f is None }})
+    price_components: Optional[Union[List[Price], Two]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_components'), 'exclude': lambda f: f is None }})
     r"""A set of [price](/api/pricing#tag/simple_price_schema) components that define the composite price."""
     unit_amount_currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount_currency'), 'exclude': lambda f: f is None }})
     r"""Three-letter ISO currency code, in lowercase."""

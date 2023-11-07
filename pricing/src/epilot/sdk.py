@@ -31,6 +31,11 @@ class Epilot:
     ### Availability API
     Provides endpoints for querying products availability by a set of predefined dimensions.
     """
+    order_api: OrderAPI
+    r"""This api enables the management of orders in epilot 360, providing features such as:
+     - Automatic calculation of totals and price breakdowns for taxes on the Order entity
+     - Product and pricing data validation
+    """
     availability_api: AvailabilityAPI
     r"""Provides endpoints for querying products availability by a set of predefined dimensions."""
     cart_api: CartAPI
@@ -42,11 +47,6 @@ class Epilot:
     catalog_api: CatalogAPI
     r"""Provides a way to query the entire catalog of products and prices."""
     deprecated: Deprecated
-    order_api: OrderAPI
-    r"""This api enables the management of orders in epilot 360, providing features such as:
-     - Automatic calculation of totals and price breakdowns for taxes on the Order entity
-     - Product and pricing data validation
-    """
 
     sdk_configuration: SDKConfiguration
 
@@ -89,9 +89,9 @@ class Epilot:
         self._init_sdks()
     
     def _init_sdks(self):
+        self.order_api = OrderAPI(self.sdk_configuration)
         self.availability_api = AvailabilityAPI(self.sdk_configuration)
         self.cart_api = CartAPI(self.sdk_configuration)
         self.catalog_api = CatalogAPI(self.sdk_configuration)
         self.deprecated = Deprecated(self.sdk_configuration)
-        self.order_api = OrderAPI(self.sdk_configuration)
     

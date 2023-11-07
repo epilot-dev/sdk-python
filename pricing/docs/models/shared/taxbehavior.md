@@ -1,11 +1,13 @@
 # TaxBehavior
 
+Specifies whether the price is considered `inclusive` of taxes or `exclusive` of taxes.
+One of `inclusive`, `exclusive`, or `unspecified`.
+
+
 
 ## Values
 
-| Name              | Value             |
-| ----------------- | ----------------- |
-| `EXCLUSIVE_MIXED` | Exclusive         |
-| `INCLUSIVE_MIXED` | Inclusive         |
-| `EXCLUSIVE_LOWER` | exclusive         |
-| `INCLUSIVE_LOWER` | inclusive         |
+| Name        | Value       |
+| ----------- | ----------- |
+| `INCLUSIVE` | inclusive   |
+| `EXCLUSIVE` | exclusive   |

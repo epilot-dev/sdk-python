@@ -16,7 +16,7 @@ class OrderAPI:
         self.sdk_configuration = sdk_config
         
     
-    def create_order(self, request: shared.OrderPayloadInput) -> operations.CreateOrderResponse:
+    def create_order(self, request: shared.OrderPayload) -> operations.CreateOrderResponse:
         r"""createOrder
         Create an order
         """
@@ -47,20 +47,23 @@ class OrderAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Error])
-                res.error = out
+                out = utils.unmarshal_json(http_res.text, errors.Error)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def put_order(self, order_payload_input: shared.OrderPayloadInput, id: str) -> operations.PutOrderResponse:
+    def put_order(self, order_payload: shared.OrderPayload, id: str) -> operations.PutOrderResponse:
         r"""putOrder
         Update an existing Order
         """
         request = operations.PutOrderRequest(
-            order_payload_input=order_payload_input,
+            order_payload=order_payload,
             id=id,
         )
         
@@ -68,7 +71,7 @@ class OrderAPI:
         
         url = utils.generate_url(operations.PutOrderRequest, base_url, '/v1/order/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "order_payload_input", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "order_payload", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -91,10 +94,13 @@ class OrderAPI:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Error])
-                res.error = out
+                out = utils.unmarshal_json(http_res.text, errors.Error)
+                out.raw_response = http_res
+                raise out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

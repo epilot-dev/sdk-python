@@ -2,13 +2,13 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import compositeprice as shared_compositeprice
-from ..shared import metadata as shared_metadata
-from ..shared import price as shared_price
-from ..shared import priceitem as shared_priceitem
-from ..shared import product as shared_product
-from ..shared import recurrenceamount as shared_recurrenceamount
-from ..shared import taxamount as shared_taxamount
+from .compositeprice import CompositePrice
+from .metadata import MetaData
+from .price import Price
+from .priceitem import PriceItem, PriceItemInput
+from .product import Product
+from .recurrenceamount import RecurrenceAmount
+from .taxamount import TaxAmount
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List, Optional, Union
@@ -19,43 +19,13 @@ class CompositePriceItemPrice:
     pass
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CompositePriceItemInput:
-    r"""Represents a price item"""
-    price: Optional[Union[shared_price.Price, shared_compositeprice.CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
-    r"""The price snapshot data."""
-    currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency'), 'exclude': lambda f: f is None }})
-    r"""Three-letter ISO currency code, in lowercase. Must be a supported currency.
-    ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
-    """
-    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
-    is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
-    r"""The flag for prices that contain price components."""
-    item_components: Optional[List[shared_priceitem.PriceItemInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_components'), 'exclude': lambda f: f is None }})
-    r"""Contains price item configurations, per price component, when the main price item is a [composite price](/api/pricing#tag/dynamic_price_schema)."""
-    metadata: Optional[List[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
-    r"""A set of key-value pairs used to store meta data information about an entity."""
-    price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
-    r"""The id of the price."""
-    product_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_id'), 'exclude': lambda f: f is None }})
-    r"""The id of the product."""
-    quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }})
-    r"""The quantity of products being purchased."""
-    unit_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount_decimal'), 'exclude': lambda f: f is None }})
-    r"""The unit amount in cents to be charged, represented as a decimal string with at most 12 decimal places."""
-    
-
-
-
-@dataclasses.dataclass
-class CompositePriceItemRecurrences:
+class Recurrences:
     pass
 
 
 @dataclasses.dataclass
-class CompositePriceItemTaxes:
+class Taxes:
     pass
 
 
@@ -63,9 +33,9 @@ class CompositePriceItemTaxes:
 @dataclasses.dataclass
 class CompositePriceItem:
     r"""Represents a price item"""
-    price: Optional[Union[shared_price.Price, shared_compositeprice.CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
+    price: Optional[Union[Price, CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
     r"""The price snapshot data."""
-    product: Optional[shared_product.Product] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_product'), 'exclude': lambda f: f is None }})
+    product: Optional[Product] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_product'), 'exclude': lambda f: f is None }})
     r"""The product entity"""
     amount_subtotal: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_subtotal'), 'exclude': lambda f: f is None }})
     r"""Total before any (discounts or) taxes are applied."""
@@ -81,9 +51,9 @@ class CompositePriceItem:
     r"""price item id"""
     is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
     r"""The flag for prices that contain price components."""
-    item_components: Optional[List[shared_priceitem.PriceItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_components'), 'exclude': lambda f: f is None }})
+    item_components: Optional[List[PriceItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_components'), 'exclude': lambda f: f is None }})
     r"""Contains price item configurations, per price component, when the main price item is a [composite price](/api/pricing#tag/dynamic_price_schema)."""
-    metadata: Optional[List[Union[shared_metadata.MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
     r"""The id of the price."""
@@ -91,9 +61,9 @@ class CompositePriceItem:
     r"""The id of the product."""
     quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }})
     r"""The quantity of products being purchased."""
-    recurrences: Optional[List[Union[shared_recurrenceamount.RecurrenceAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurrences'), 'exclude': lambda f: f is None }})
+    recurrences: Optional[List[Union[RecurrenceAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('recurrences'), 'exclude': lambda f: f is None }})
     r"""The sum of amounts of the price items by recurrence."""
-    taxes: Optional[List[Union[shared_taxamount.TaxAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taxes'), 'exclude': lambda f: f is None }})
+    taxes: Optional[List[Union[TaxAmount]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('taxes'), 'exclude': lambda f: f is None }})
     r"""The taxes applied to the price item."""
     unit_amount: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount'), 'exclude': lambda f: f is None }})
     r"""The unit amount value"""
@@ -101,5 +71,35 @@ class CompositePriceItem:
     r"""The unit amount in cents to be charged, represented as a decimal string with at most 12 decimal places."""
     unit_amount_net: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount_net'), 'exclude': lambda f: f is None }})
     r"""Net unit amount without taxes or discounts."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class CompositePriceItemInput:
+    r"""Represents a price item"""
+    price: Optional[Union[Price, CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
+    r"""The price snapshot data."""
+    currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency'), 'exclude': lambda f: f is None }})
+    r"""Three-letter ISO currency code, in lowercase. Must be a supported currency.
+    ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
+    """
+    description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
+    is_composite_price: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_composite_price'), 'exclude': lambda f: f is None }})
+    r"""The flag for prices that contain price components."""
+    item_components: Optional[List[PriceItemInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_components'), 'exclude': lambda f: f is None }})
+    r"""Contains price item configurations, per price component, when the main price item is a [composite price](/api/pricing#tag/dynamic_price_schema)."""
+    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    r"""A set of key-value pairs used to store meta data information about an entity."""
+    price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
+    r"""The id of the price."""
+    product_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_id'), 'exclude': lambda f: f is None }})
+    r"""The id of the product."""
+    quantity: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quantity'), 'exclude': lambda f: f is None }})
+    r"""The quantity of products being purchased."""
+    unit_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unit_amount_decimal'), 'exclude': lambda f: f is None }})
+    r"""The unit amount in cents to be charged, represented as a decimal string with at most 12 decimal places."""
     
 

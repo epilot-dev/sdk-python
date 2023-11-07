@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class AvailabilityResultCheckResults:
+class CheckResults:
     product_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product_id') }})
     matching_error: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('matching_error'), 'exclude': lambda f: f is None }})
     r"""A set of matching errors when checking availability"""
@@ -24,7 +24,7 @@ class AvailabilityResultCheckResults:
 class AvailabilityResult:
     r"""The availability check result payload"""
     available_products: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('available_products') }})
-    check_results: Optional[List[AvailabilityResultCheckResults]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_results'), 'exclude': lambda f: f is None }})
+    check_results: Optional[List[CheckResults]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('check_results'), 'exclude': lambda f: f is None }})
     r"""The check result details"""
     
 

@@ -2,15 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import cartdto as shared_cartdto
-from ..shared import checkoutmode as shared_checkoutmode
+from .cartdto import CartDto
+from .checkoutmode import CheckoutMode
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional, Union
 
 
 @dataclasses.dataclass
-class CheckoutCartCart:
+class Cart:
     pass
 
 
@@ -18,8 +18,8 @@ class CheckoutCartCart:
 @dataclasses.dataclass
 class CheckoutCart:
     r"""The cart checkout request payload"""
-    cart: Optional[Union[str, shared_cartdto.CartDto]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cart'), 'exclude': lambda f: f is None }})
-    mode: Optional[shared_checkoutmode.CheckoutMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode'), 'exclude': lambda f: f is None }})
+    cart: Optional[Union[str, CartDto]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cart'), 'exclude': lambda f: f is None }})
+    mode: Optional[CheckoutMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode'), 'exclude': lambda f: f is None }})
     r"""The checkout mode for the cart checkout."""
     
 
