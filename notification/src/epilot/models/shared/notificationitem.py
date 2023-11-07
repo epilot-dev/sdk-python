@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import entityoperation as shared_entityoperation
-from ..shared import notificationcallercontext as shared_notificationcallercontext
+from .entityoperation import EntityOperation
+from .notificationcallercontext import NotificationCallerContext
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
@@ -41,11 +41,11 @@ class NotificationItem:
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of notification"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    caller: Optional[shared_notificationcallercontext.NotificationCallerContext] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caller'), 'exclude': lambda f: f is None }})
+    caller: Optional[NotificationCallerContext] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caller'), 'exclude': lambda f: f is None }})
     force_notify_users: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('force_notify_users'), 'exclude': lambda f: f is None }})
     id: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     notification_id: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notification_id'), 'exclude': lambda f: f is None }})
-    operations: Optional[List[shared_entityoperation.EntityOperation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operations'), 'exclude': lambda f: f is None }})
+    operations: Optional[List[EntityOperation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operations'), 'exclude': lambda f: f is None }})
     organization_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id'), 'exclude': lambda f: f is None }})
     r"""Organization Id"""
     payload: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})

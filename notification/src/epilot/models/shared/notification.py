@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import entityoperation as shared_entityoperation
-from ..shared import notificationcallercontext as shared_notificationcallercontext
+from .entityoperation import EntityOperation
+from .notificationcallercontext import NotificationCallerContext
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Any, Dict, List, Optional
@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NotificationMessage:
+class Message:
     de: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('de'), 'exclude': lambda f: f is None }})
     r"""Message for notification. Supports handlebars syntax."""
     en: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('en'), 'exclude': lambda f: f is None }})
@@ -22,7 +22,7 @@ class NotificationMessage:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NotificationTitle:
+class Title:
     de: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('de'), 'exclude': lambda f: f is None }})
     r"""Title for notification. Supports handlebars syntax."""
     en: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('en'), 'exclude': lambda f: f is None }})
@@ -34,14 +34,14 @@ class NotificationTitle:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Notification:
-    message: NotificationMessage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
-    title: NotificationTitle = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
+    message: Message = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
+    title: Title = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of notification"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    caller: Optional[shared_notificationcallercontext.NotificationCallerContext] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caller'), 'exclude': lambda f: f is None }})
+    caller: Optional[NotificationCallerContext] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('caller'), 'exclude': lambda f: f is None }})
     force_notify_users: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('force_notify_users'), 'exclude': lambda f: f is None }})
-    operations: Optional[List[shared_entityoperation.EntityOperation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operations'), 'exclude': lambda f: f is None }})
+    operations: Optional[List[EntityOperation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operations'), 'exclude': lambda f: f is None }})
     organization_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id'), 'exclude': lambda f: f is None }})
     r"""Organization Id"""
     payload: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})

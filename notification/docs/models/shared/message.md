@@ -1,4 +1,4 @@
-# NotificationMessage
+# Message
 
 
 ## Fields

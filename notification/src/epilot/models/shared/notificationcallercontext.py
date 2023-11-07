@@ -9,7 +9,7 @@ from typing import Any, Dict, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NotificationCallerContextEpilotAuthToken:
+class Token:
     cognito_username: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito:username'), 'exclude': lambda f: f is None }})
     custom_ivy_user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom:ivy_user_id'), 'exclude': lambda f: f is None }})
     email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
@@ -20,8 +20,8 @@ class NotificationCallerContextEpilotAuthToken:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class NotificationCallerContextEpilotAuth:
-    token: Optional[NotificationCallerContextEpilotAuthToken] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})
+class EpilotAuth:
+    token: Optional[Token] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})
     
 
 
@@ -30,6 +30,6 @@ class NotificationCallerContextEpilotAuth:
 @dataclasses.dataclass
 class NotificationCallerContext:
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    epilot_auth: Optional[NotificationCallerContextEpilotAuth] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('EpilotAuth'), 'exclude': lambda f: f is None }})
+    epilot_auth: Optional[EpilotAuth] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('EpilotAuth'), 'exclude': lambda f: f is None }})
     
 

@@ -1,4 +1,4 @@
-# GetNotifications200ApplicationJSON
+# GetNotificationsResponseBody
 
 Success
 

@@ -17,8 +17,8 @@ req = shared.Notification(
         additional_properties={
             "key": 'string',
         },
-        epilot_auth=shared.NotificationCallerContextEpilotAuth(
-            token=shared.NotificationCallerContextEpilotAuthToken(
+        epilot_auth=shared.EpilotAuth(
+            token=shared.Token(
                 cognito_username='example@epilot.cloud',
                 custom_ivy_user_id='10006129',
                 email='example@epilot.cloud',
@@ -29,7 +29,7 @@ req = shared.Notification(
     force_notify_users={
         "12345": 'string',
     },
-    message=shared.NotificationMessage(
+    message=shared.Message(
         de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
         en='{{caller}} did something with {{contact.entity.id}} {{branch.name}}.',
     ),
@@ -37,13 +37,13 @@ req = shared.Notification(
         shared.EntityOperation(
             entity='d9fa50df-3a77-4db4-9782-9e5cd1039cd9',
             operation='updateEntity',
-            params=shared.EntityOperationParams(
+            params=shared.Params(
                 slug='contact',
             ),
             payload={
-                "_schema": 'string',
                 "_org": 'string',
                 "status": 'string',
+                "_schema": 'string',
             },
         ),
     ],
@@ -52,7 +52,7 @@ req = shared.Notification(
         "entity": 'string',
     },
     redirect_url='https://epilot.cloud',
-    title=shared.NotificationTitle(
+    title=shared.Title(
         de='Meine benutzerdefinierte Aktivität',
         en='My custom notification',
     ),

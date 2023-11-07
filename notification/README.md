@@ -26,8 +26,8 @@ req = shared.Notification(
         additional_properties={
             "key": 'string',
         },
-        epilot_auth=shared.NotificationCallerContextEpilotAuth(
-            token=shared.NotificationCallerContextEpilotAuthToken(
+        epilot_auth=shared.EpilotAuth(
+            token=shared.Token(
                 cognito_username='example@epilot.cloud',
                 custom_ivy_user_id='10006129',
                 email='example@epilot.cloud',
@@ -38,7 +38,7 @@ req = shared.Notification(
     force_notify_users={
         "12345": 'string',
     },
-    message=shared.NotificationMessage(
+    message=shared.Message(
         de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
         en='{{caller}} did something with {{contact.entity.id}} {{branch.name}}.',
     ),
@@ -46,13 +46,13 @@ req = shared.Notification(
         shared.EntityOperation(
             entity='d9fa50df-3a77-4db4-9782-9e5cd1039cd9',
             operation='updateEntity',
-            params=shared.EntityOperationParams(
+            params=shared.Params(
                 slug='contact',
             ),
             payload={
-                "status": 'string',
                 "_schema": 'string',
                 "_org": 'string',
+                "status": 'string',
             },
         ),
     ],
@@ -61,7 +61,7 @@ req = shared.Notification(
         "entity": 'string',
     },
     redirect_url='https://epilot.cloud',
-    title=shared.NotificationTitle(
+    title=shared.Title(
         de='Meine benutzerdefinierte Aktivität',
         en='My custom notification',
     ),
@@ -87,7 +87,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [notification](docs/sdks/notification/README.md)
+### [.notification](docs/sdks/notification/README.md)
 
 * [create_notification](docs/sdks/notification/README.md#create_notification) - createNotification
 * [get_notification](docs/sdks/notification/README.md#get_notification) - getNotification
@@ -101,8 +101,6 @@ if res.status_code == 200:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -111,8 +109,6 @@ if res.status_code == 200:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -130,14 +126,13 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
+    server_idx=0,
     epilot_auth="",
-    server_idx=0
 )
 
 req = shared.Notification(
@@ -148,8 +143,8 @@ req = shared.Notification(
         additional_properties={
             "key": 'string',
         },
-        epilot_auth=shared.NotificationCallerContextEpilotAuth(
-            token=shared.NotificationCallerContextEpilotAuthToken(
+        epilot_auth=shared.EpilotAuth(
+            token=shared.Token(
                 cognito_username='example@epilot.cloud',
                 custom_ivy_user_id='10006129',
                 email='example@epilot.cloud',
@@ -160,7 +155,7 @@ req = shared.Notification(
     force_notify_users={
         "12345": 'string',
     },
-    message=shared.NotificationMessage(
+    message=shared.Message(
         de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
         en='{{caller}} did something with {{contact.entity.id}} {{branch.name}}.',
     ),
@@ -168,7 +163,7 @@ req = shared.Notification(
         shared.EntityOperation(
             entity='d9fa50df-3a77-4db4-9782-9e5cd1039cd9',
             operation='updateEntity',
-            params=shared.EntityOperationParams(
+            params=shared.Params(
                 slug='contact',
             ),
             payload={
@@ -183,7 +178,7 @@ req = shared.Notification(
         "entity": 'string',
     },
     redirect_url='https://epilot.cloud',
-    title=shared.NotificationTitle(
+    title=shared.Title(
         de='Meine benutzerdefinierte Aktivität',
         en='My custom notification',
     ),
@@ -209,14 +204,13 @@ if res.status_code == 200:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
+    server_url="https://notification.sls.epilot.io",
     epilot_auth="",
-    server_url="https://notification.sls.epilot.io"
 )
 
 req = shared.Notification(
@@ -227,8 +221,8 @@ req = shared.Notification(
         additional_properties={
             "key": 'string',
         },
-        epilot_auth=shared.NotificationCallerContextEpilotAuth(
-            token=shared.NotificationCallerContextEpilotAuthToken(
+        epilot_auth=shared.EpilotAuth(
+            token=shared.Token(
                 cognito_username='example@epilot.cloud',
                 custom_ivy_user_id='10006129',
                 email='example@epilot.cloud',
@@ -239,7 +233,7 @@ req = shared.Notification(
     force_notify_users={
         "12345": 'string',
     },
-    message=shared.NotificationMessage(
+    message=shared.Message(
         de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
         en='{{caller}} did something with {{contact.entity.id}} {{branch.name}}.',
     ),
@@ -247,7 +241,7 @@ req = shared.Notification(
         shared.EntityOperation(
             entity='d9fa50df-3a77-4db4-9782-9e5cd1039cd9',
             operation='updateEntity',
-            params=shared.EntityOperationParams(
+            params=shared.Params(
                 slug='contact',
             ),
             payload={
@@ -262,7 +256,7 @@ req = shared.Notification(
         "entity": 'string',
     },
     redirect_url='https://epilot.cloud',
-    title=shared.NotificationTitle(
+    title=shared.Title(
         de='Meine benutzerdefinierte Aktivität',
         en='My custom notification',
     ),
@@ -302,9 +296,96 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name          | Type          | Scheme        |
+| ------------- | ------------- | ------------- |
+| `epilot_auth` | http          | HTTP Bearer   |
+
+To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    epilot_auth="",
+)
+
+req = shared.Notification(
+    additional_properties={
+        "key": 'string',
+    },
+    caller=shared.NotificationCallerContext(
+        additional_properties={
+            "key": 'string',
+        },
+        epilot_auth=shared.EpilotAuth(
+            token=shared.Token(
+                cognito_username='example@epilot.cloud',
+                custom_ivy_user_id='10006129',
+                email='example@epilot.cloud',
+                sub='476e9b48-42f4-4234-a2b0-4668b34626ce',
+            ),
+        ),
+    ),
+    force_notify_users={
+        "12345": 'string',
+    },
+    message=shared.Message(
+        de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
+        en='{{caller}} did something with {{contact.entity.id}} {{branch.name}}.',
+    ),
+    operations=[
+        shared.EntityOperation(
+            entity='d9fa50df-3a77-4db4-9782-9e5cd1039cd9',
+            operation='updateEntity',
+            params=shared.Params(
+                slug='contact',
+            ),
+            payload={
+                "_org": 'string',
+                "status": 'string',
+                "_schema": 'string',
+            },
+        ),
+    ],
+    organization_id='206801',
+    payload={
+        "entity": 'string',
+    },
+    redirect_url='https://epilot.cloud',
+    title=shared.Title(
+        de='Meine benutzerdefinierte Aktivität',
+        en='My custom notification',
+    ),
+    type='workflow',
+    visibility_user_ids=[
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+    ],
+)
+
+res = s.notification.create_notification(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

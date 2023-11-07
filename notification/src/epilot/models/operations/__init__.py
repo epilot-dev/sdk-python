@@ -7,4 +7,4 @@ from .gettotalunread import *
 from .markallasread import *
 from .markasread import *
 
-__all__ = ["CreateNotificationResponse","GetNotificationRequest","GetNotificationResponse","GetNotifications200ApplicationJSON","GetNotificationsRequest","GetNotificationsResponse","GetTotalUnreadResponse","MarkAllAsReadResponse","MarkAsReadRequest","MarkAsReadResponse"]
+__all__ = ["CreateNotificationResponse","GetNotificationRequest","GetNotificationResponse","GetNotificationsRequest","GetNotificationsResponse","GetNotificationsResponseBody","GetTotalUnreadResponse","MarkAllAsReadResponse","MarkAsReadRequest","MarkAsReadResponse"]
