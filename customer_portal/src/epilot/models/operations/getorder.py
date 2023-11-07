@@ -3,39 +3,59 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import entityitem as components_entityitem
+from ...models.components import file as components_file
+from ...models.components import order as components_order
+from ...models.components import product as components_product
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclasses.dataclass
 class GetOrderSecurity:
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetOrderRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The Id of order"""  
+    r"""The ID of order"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetOrder200ApplicationJSON:
-    r"""The returned order"""
+class GetOrderResponseBody:
+    r"""The requested order has been retrieved successfully."""
+    cross_sellable_products: Optional[List[components_product.Product]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('crossSellableProducts'), 'exclude': lambda f: f is None }})
+    r"""The related cross sellable products of the requested order"""
+    entity: Optional[components_order.Order] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
+    r"""The order entity"""
+    files: Optional[List[components_file.File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
+    r"""The related files of the requested order"""
+    products: Optional[List[components_product.Product]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('products'), 'exclude': lambda f: f is None }})
+    r"""The related products of the requested order"""
+    relations: Optional[List[components_entityitem.EntityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
+    r"""The related entities of the requested order"""
+    workflow: Optional[List[Dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workflow'), 'exclude': lambda f: f is None }})
+    r"""The related workflows of the requested order"""
     
-    entity: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})  
-    relations: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetOrderResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[GetOrderResponseBody] = dataclasses.field(default=None)
+    r"""The requested order has been retrieved successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_order_200_application_json_object: Optional[GetOrder200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned order"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

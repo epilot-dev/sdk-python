@@ -3,21 +3,37 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ...models.components import file as components_file
+from dataclasses_json import Undefined, dataclass_json
+from epilot import utils
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class SavePortalFilesSecurity:
+    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class SavePortalFilesResponseBody:
+    r"""The files have been saved to the portal successfully."""
+    created_files: Optional[List[components_file.File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdFiles'), 'exclude': lambda f: f is None }})
     
+
+
 
 @dataclasses.dataclass
 class SavePortalFilesResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[SavePortalFilesResponseBody] = dataclasses.field(default=None)
+    r"""The files have been saved to the portal successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The returned portal files"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

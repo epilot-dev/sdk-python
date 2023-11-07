@@ -1,16 +1,37 @@
 configVersion: 1.0.0
 management:
-  docChecksum: aebbe5e41777158f7dace2edf678a45a
+  docChecksum: 13bc0e62c6f3ba3e803220b4ae845dd1
   docVersion: 1.0.0
-  speakeasyVersion: 1.19.2
-  generationVersion: 2.16.5
+  speakeasyVersion: 1.114.1
+  generationVersion: 2.181.1
 generation:
-  telemetryEnabled: false
+  comments: {}
   sdkClassName: epilot
-  sdkFlattening: true
-  singleTagPerOp: false
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+features:
+  python:
+    additionalProperties: 0.1.0
+    core: 4.1.0
+    deprecations: 2.81.1
+    flattening: 2.81.1
+    globalSecurity: 2.82.0
+    globalServerURLs: 2.82.0
+    methodSecurity: 2.82.0
 python:
-  version: 1.2.2
+  version: 1.3.0
   author: epilot
+  clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot
+  flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/components
+      webhooks: models/webhooks
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
+  maxMethodParams: 4
   packageName: epilot-customer-portal
+  repoSubDirectory: customer_portal
