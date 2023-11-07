@@ -3,14 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import templatetype as shared_templatetype
-from ..shared import variableresult as shared_variableresult
+from ...models.shared import templatetype as shared_templatetype
+from ...models.shared import variableresult as shared_variableresult
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 from typing import List, Optional
 
-class SearchVariablesRequestBodyLang(str, Enum):
+class Lang(str, Enum):
     EN = 'en'
     DE = 'de'
 
@@ -23,7 +23,7 @@ class SearchVariablesRequestBody:
     template_type: shared_templatetype.TemplateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})
     entity_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schemas'), 'exclude': lambda f: f is None }})
     from_: Optional[int] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})
-    lang: Optional[SearchVariablesRequestBodyLang] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lang'), 'exclude': lambda f: f is None }})
+    lang: Optional[Lang] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lang'), 'exclude': lambda f: f is None }})
     size: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
     
 
@@ -35,9 +35,9 @@ class SearchVariablesResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    classes: Optional[List[shared_variableresult.VariableResult]] = dataclasses.field(default=None)
+    r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    variable_results: Optional[List[shared_variableresult.VariableResult]] = dataclasses.field(default=None)
-    r"""ok"""
     
 

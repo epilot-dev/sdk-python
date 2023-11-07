@@ -1,5 +1,5 @@
 # CustomVariables
-(*custom_variables*)
+(*.custom_variables*)
 
 ### Available Operations
 
@@ -25,7 +25,7 @@ s = epilot.Epilot(
 )
 
 req = shared.CustomVariable(
-    config=shared.CustomVariableConfig(),
+    config=shared.Config(),
     created_at='2022-04-19T12:41:43.662Z',
     created_by='100042',
     helper_logic='return param1 * param2;',
@@ -143,7 +143,7 @@ req = shared.CustomVariable(
   </tbody>
 </table>
 ',
-    type=shared.CustomVariableType.CUSTOM,
+    type=shared.Type.CUSTOM,
     updated_at='2022-04-20T12:41:43.662Z',
     updated_by='100042',
 )
@@ -175,7 +175,7 @@ Immediately and permanently deletes a custom variable
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -209,7 +209,6 @@ Get default table config
 
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -237,7 +236,7 @@ Get custom variable
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -271,7 +270,6 @@ Get all custom variables of organization
 
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -280,7 +278,7 @@ s = epilot.Epilot(
 
 res = s.custom_variables.get_custom_variables()
 
-if res.custom_variables is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -307,7 +305,7 @@ s = epilot.Epilot(
 
 
 res = s.custom_variables.update_custom_variable(id='string', custom_variable=shared.CustomVariable(
-    config=shared.CustomVariableConfig(),
+    config=shared.Config(),
     created_at='2022-04-19T12:41:43.662Z',
     created_by='100042',
     helper_logic='return param1 * param2;',
@@ -425,7 +423,7 @@ res = s.custom_variables.update_custom_variable(id='string', custom_variable=sha
   </tbody>
 </table>
 ',
-    type=shared.CustomVariableType.CUSTOM,
+    type=shared.Type.CUSTOM,
     updated_at='2022-04-20T12:41:43.662Z',
     updated_by='100042',
 ))

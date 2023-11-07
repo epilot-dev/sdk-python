@@ -1,4 +1,4 @@
-# ReplaceTemplates200ApplicationJSON
+# ReplaceTemplatesResponseBody
 
 ok
 

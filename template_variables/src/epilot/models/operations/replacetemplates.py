@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import variableparameters as shared_variableparameters
+from ...models.shared import variableparameters as shared_variableparameters
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List, Optional
@@ -20,7 +20,7 @@ class ReplaceTemplatesRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ReplaceTemplates200ApplicationJSON:
+class ReplaceTemplatesResponseBody:
     r"""ok"""
     outputs: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('outputs'), 'exclude': lambda f: f is None }})
     
@@ -33,9 +33,9 @@ class ReplaceTemplatesResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    object: Optional[ReplaceTemplatesResponseBody] = dataclasses.field(default=None)
+    r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    replace_templates_200_application_json_object: Optional[ReplaceTemplates200ApplicationJSON] = dataclasses.field(default=None)
-    r"""ok"""
     
 

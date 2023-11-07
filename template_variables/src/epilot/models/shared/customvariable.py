@@ -9,12 +9,12 @@ from typing import List, Optional
 
 
 @dataclasses.dataclass
-class CustomVariableConfig:
+class Config:
     r"""Variable configuration"""
     
 
 
-class CustomVariableType(str, Enum):
+class Type(str, Enum):
     r"""Custom variable type"""
     ORDER_TABLE = 'order_table'
     CUSTOM = 'custom'
@@ -23,7 +23,7 @@ class CustomVariableType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CustomVariable:
-    config: Optional[CustomVariableConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
+    config: Optional[Config] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
     r"""Variable configuration"""
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'exclude': lambda f: f is None }})
     r"""Creation time"""
@@ -41,7 +41,7 @@ class CustomVariable:
     r"""Custom variable name"""
     template: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template'), 'exclude': lambda f: f is None }})
     r"""Handlebar template that used to generate the variable content"""
-    type: Optional[CustomVariableType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Custom variable type"""
     updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'exclude': lambda f: f is None }})
     r"""Last update time"""

@@ -1,5 +1,5 @@
 # Variables
-(*variables*)
+(*.variables*)
 
 ## Overview
 
@@ -21,7 +21,7 @@ Generate QR Code for the given payload
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -55,25 +55,25 @@ Get all template variable categories
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
 )
 
 
-res = s.variables.get_categories(lang=operations.GetCategoriesLang.DE)
+res = s.variables.get_categories(lang=operations.QueryParamLang.DE)
 
-if res.category_results is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            | Example                                                                                |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `lang`                                                                                 | [Optional[operations.GetCategoriesLang]](../../models/operations/getcategorieslang.md) | :heavy_minus_sign:                                                                     | Language                                                                               | de                                                                                     |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `lang`                                                                           | [Optional[operations.QueryParamLang]](../../models/operations/queryparamlang.md) | :heavy_minus_sign:                                                               | Language                                                                         | de                                                                               |
 
 
 ### Response
@@ -101,7 +101,7 @@ s = epilot.Epilot(
 req = operations.GetVariableContextRequestBody(
     parameters=shared.VariableParameters(
         brand_id=123451,
-        context_data=shared.VariableParametersContextData(),
+        context_data=shared.ContextData(),
         custom_variables=[
             shared.ExternalCustomVariable(
                 value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
@@ -217,7 +217,7 @@ req = operations.ReplaceTemplatesRequestBody(
     ],
     parameters=shared.VariableParameters(
         brand_id=123451,
-        context_data=shared.VariableParametersContextData(),
+        context_data=shared.ContextData(),
         custom_variables=[
             shared.ExternalCustomVariable(
                 value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
@@ -237,7 +237,7 @@ req = operations.ReplaceTemplatesRequestBody(
 
 res = s.variables.replace_templates(req)
 
-if res.replace_templates_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -284,7 +284,7 @@ req = operations.SearchVariablesRequestBody(
 
 res = s.variables.search_variables(req)
 
-if res.variable_results is not None:
+if res.classes is not None:
     # handle response
     pass
 ```

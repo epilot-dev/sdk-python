@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import variablecontext as shared_variablecontext
-from ..shared import variableparameters as shared_variableparameters
+from ...models.shared import variablecontext as shared_variablecontext
+from ...models.shared import variableparameters as shared_variableparameters
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional

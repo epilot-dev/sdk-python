@@ -3,11 +3,11 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import categoryresult as shared_categoryresult
+from ...models.shared import categoryresult as shared_categoryresult
 from enum import Enum
 from typing import List, Optional
 
-class GetCategoriesLang(str, Enum):
+class QueryParamLang(str, Enum):
     r"""Language"""
     EN = 'en'
     DE = 'de'
@@ -15,7 +15,7 @@ class GetCategoriesLang(str, Enum):
 
 @dataclasses.dataclass
 class GetCategoriesRequest:
-    lang: Optional[GetCategoriesLang] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
+    lang: Optional[QueryParamLang] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
     r"""Language"""
     
 
@@ -27,7 +27,7 @@ class GetCategoriesResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    category_results: Optional[List[shared_categoryresult.CategoryResult]] = dataclasses.field(default=None)
+    classes: Optional[List[shared_categoryresult.CategoryResult]] = dataclasses.field(default=None)
     r"""ok"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

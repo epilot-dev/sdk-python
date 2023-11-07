@@ -1,4 +1,4 @@
-# CustomVariableType
+# Type
 
 Custom variable type
 

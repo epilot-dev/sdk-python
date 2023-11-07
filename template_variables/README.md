@@ -19,7 +19,7 @@ s = epilot.Epilot(
 )
 
 req = shared.CustomVariable(
-    config=shared.CustomVariableConfig(),
+    config=shared.Config(),
     created_at='2022-04-19T12:41:43.662Z',
     created_by='100042',
     helper_logic='return param1 * param2;',
@@ -137,7 +137,7 @@ req = shared.CustomVariable(
   </tbody>
 </table>
 ',
-    type=shared.CustomVariableType.CUSTOM,
+    type=shared.Type.CUSTOM,
     updated_at='2022-04-20T12:41:43.662Z',
     updated_by='100042',
 )
@@ -154,7 +154,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [custom_variables](docs/sdks/customvariables/README.md)
+### [.custom_variables](docs/sdks/customvariables/README.md)
 
 * [create_custom_variable](docs/sdks/customvariables/README.md#create_custom_variable) - Create custom variable
 * [delete_custom_variable](docs/sdks/customvariables/README.md#delete_custom_variable) - Delete custom variable
@@ -163,7 +163,7 @@ if res.status_code == 200:
 * [get_custom_variables](docs/sdks/customvariables/README.md#get_custom_variables) - Get custom variables
 * [update_custom_variable](docs/sdks/customvariables/README.md#update_custom_variable) - Update custom variable
 
-### [variables](docs/sdks/variables/README.md)
+### [.variables](docs/sdks/variables/README.md)
 
 * [generate_q_rcode](docs/sdks/variables/README.md#generate_q_rcode) - generateQRcode
 * [get_categories](docs/sdks/variables/README.md#get_categories) - getCategories
@@ -176,8 +176,6 @@ if res.status_code == 200:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -186,8 +184,6 @@ if res.status_code == 200:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -205,18 +201,17 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
+    server_idx=0,
     epilot_auth="",
-    server_idx=0
 )
 
 req = shared.CustomVariable(
-    config=shared.CustomVariableConfig(),
+    config=shared.Config(),
     created_at='2022-04-19T12:41:43.662Z',
     created_by='100042',
     helper_logic='return param1 * param2;',
@@ -334,7 +329,7 @@ req = shared.CustomVariable(
   </tbody>
 </table>
 ',
-    type=shared.CustomVariableType.CUSTOM,
+    type=shared.Type.CUSTOM,
     updated_at='2022-04-20T12:41:43.662Z',
     updated_by='100042',
 )
@@ -351,18 +346,17 @@ if res.status_code == 200:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
+    server_url="https://template-variables-api.sls.epilot.io",
     epilot_auth="",
-    server_url="https://template-variables-api.sls.epilot.io"
 )
 
 req = shared.CustomVariable(
-    config=shared.CustomVariableConfig(),
+    config=shared.Config(),
     created_at='2022-04-19T12:41:43.662Z',
     created_by='100042',
     helper_logic='return param1 * param2;',
@@ -480,7 +474,7 @@ req = shared.CustomVariable(
   </tbody>
 </table>
 ',
-    type=shared.CustomVariableType.CUSTOM,
+    type=shared.Type.CUSTOM,
     updated_at='2022-04-20T12:41:43.662Z',
     updated_by='100042',
 )
@@ -511,9 +505,163 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name          | Type          | Scheme        |
+| ------------- | ------------- | ------------- |
+| `epilot_auth` | http          | HTTP Bearer   |
+
+To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    epilot_auth="",
+)
+
+req = shared.CustomVariable(
+    config=shared.Config(),
+    created_at='2022-04-19T12:41:43.662Z',
+    created_by='100042',
+    helper_logic='return param1 * param2;',
+    helper_params=[
+        'param1',
+        'param2',
+    ],
+    id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
+    key='my_custom_table',
+    name='My Custom table',
+    template='<table style="table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;">
+  <thead>
+    <tr style="height: 48px;border-bottom: 1px solid #D5E1ED;">
+      {{#each table_config.header.columns as |column|}}
+        {{#if column.enable}}
+          <th style="{{makeStyle @root.table_config.header.style}};{{makeStyle column.style}};">{{column._label}}</th>
+        {{/if}}
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody style="vertical-align: baseline  !important;font-weight: 400;font-size: 12px;position: relative;">
+    <!-- Start rendering products -->
+    {{#each order.products as |product|}}
+      {{#if @last}}
+        <tr style="height: 48px;;font-size:14px;border-bottom: 1px solid #D5E1ED;">
+      {{else}}
+        <tr style="height: 48px;;font-size:14px;">
+      {{/if}}
+        {{#each @root.table_config.header.columns as |column|}}
+          {{#if column.enable}}
+            {{#if (eq column.id \'item\')}}
+              <!-- Item -->
+              <td style="{{makeStyle @root.table_config.body.product_name.style}}">
+                {{#if @root.table_config.body.product_name.enable}}
+                  {{product.name}}
+                {{/if}}
+                {{#if @root.table_config.body.price_description.enable}}
+                  <br>
+                  <span style="{{makeStyle @root.table_config.body.price_description.style}}">{{product.price.description}}</span>
+                {{/if}}
+                {{#if @root.table_config.body.product_description.enable}}
+                  <br>
+                  <span style="{{makeStyle @root.table_config.body.product_description.style}}">{{product.description}}</span>
+                {{/if}}
+              </td>
+            {{/if}}
+            {{#if (eq column.id \'quantity\')}}
+              <!-- Quantity -->
+              <td style="{{makeStyle @root.table_config.body.quantity.style}}">{{product.price.quantity}}
+              </td>
+            {{/if}}
+            {{#if (eq column.id \'tax\')}}
+              <!-- Tax -->
+              <td style="{{makeStyle @root.table_config.body.tax.style}}">
+                {{product.price.tax_rate}}
+              </td>
+            {{/if}}
+            {{#if (eq column.id \'unit_amount\')}}
+              <!-- Unit amount -->
+              <td style="{{makeStyle @root.table_config.body.unit_amount.style}}">
+                {{product.price.unit_amount_net}}
+              </td>
+            {{/if}}
+            {{#if (eq column.id \'net_total\')}}
+              <!-- Amount Subtotal -->
+              <td style="{{makeStyle @root.table_config.body.net_total.style}}">
+                {{product.price.amount_subtotal}}
+              </td>
+            {{/if}}
+            {{#if (eq column.id \'amount_tax\')}}
+              <!-- Tax amount-->
+              <td style="{{makeStyle @root.table_config.body.amount_tax.style}}">
+                {{product.price.amount_tax}}
+              </td>
+            {{/if}}
+            {{#if (eq column.id \'gross_total\')}}
+              <!-- Gross total -->
+              <td style="{{makeStyle @root.table_config.body.gross_total.style}}">
+                {{product.price.amount_total}}
+                {{#if @root.table_config.body.payment_type.enable}}
+                  {{#if (eq product.price.type \'recurring\')}}
+                    <br>
+                    <span style="{{makeStyle @root.table_config.body.payment_type.style}}">{{product.price.billing_period}}</span>
+                  {{/if}}
+                {{/if}}
+              </td>
+            {{/if}}
+          {{/if}}
+        {{/each}}
+        </tr>
+    {{/each}}
+    <!-- Finish rendering products -->
+    {{#if table_config.footer.gross_total.enable}}
+      {{#each order.total_details.recurrences as |item|}}
+        <tr style="height: 48px;font-size: 14px;">
+          <td style="padding-top: 16px; padding-bottom: 8px; border: none !important; vertical-align: top;" colspan="{{calculate_colspan @root.table_config}}"></td>
+          {{#if @root.table_config.footer.payment_type.enable}}
+            <td style="{{makeStyle @root.table_config.footer.payment_type.style}}" colspan="2">{{item.billing_period}}</td>
+          {{/if}}
+          {{#if (isColumnEnabled @root.table_config \'net_total\')}}
+            {{#if @root.table_config.footer.net_total.enable}}
+              <td style="{{makeStyle @root.table_config.footer.net_total.style}}">{{item.amount_subtotal}}</td>
+            {{/if}}
+          {{/if}}
+          <td style="{{makeStyle @root.table_config.footer.gross_total.style}}">{{item.amount_total}}
+            {{#if @root.table_config.footer.amount_tax.enable}}
+              <br>
+              <span style="{{makeStyle @root.table_config.footer.amount_tax.style}}">{{item.full_amount_tax}}</span>
+            {{/if}}
+          </td>
+        </tr>
+      {{/each}}
+    {{/if}}
+    <tr style="height:16px !important;"></tr>
+  </tbody>
+</table>
+',
+    type=shared.Type.CUSTOM,
+    updated_at='2022-04-20T12:41:43.662Z',
+    updated_by='100042',
+)
+
+res = s.custom_variables.create_custom_variable(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

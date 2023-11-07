@@ -10,7 +10,7 @@ s = epilot.Epilot(
 )
 
 req = shared.CustomVariable(
-    config=shared.CustomVariableConfig(),
+    config=shared.Config(),
     created_at='2022-04-19T12:41:43.662Z',
     created_by='100042',
     helper_logic='return param1 * param2;',
@@ -128,7 +128,7 @@ req = shared.CustomVariable(
   </tbody>
 </table>
 ',
-    type=shared.CustomVariableType.CUSTOM,
+    type=shared.Type.CUSTOM,
     updated_at='2022-04-20T12:41:43.662Z',
     updated_by='100042',
 )

@@ -2,23 +2,32 @@ configVersion: 1.0.0
 management:
   docChecksum: 99fb691be183dc477e82f74876feafbf
   docVersion: 1.0.0
-  speakeasyVersion: 1.112.1
-  generationVersion: 2.173.0
+  speakeasyVersion: 1.114.1
+  generationVersion: 2.181.1
 generation:
   comments: {}
   sdkClassName: epilot
   repoURL: https://github.com/epilot-dev/sdk-python.git
 features:
   python:
-    core: 3.3.1
+    core: 4.1.0
     flattening: 2.81.1
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 python:
-  version: 1.3.0
+  version: 2.0.0
   author: epilot
+  clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot
   flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/shared
+      webhooks: models/webhooks
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
   maxMethodParams: 4
   packageName: epilot-template-variables

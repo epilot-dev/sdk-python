@@ -1,6 +1,4 @@
-# GetCategoriesLang
-
-Language
+# Lang
 
 
 ## Values

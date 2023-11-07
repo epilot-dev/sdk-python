@@ -1,6 +1,6 @@
-# CustomVariableConfig
+# ContextData
 
-Variable configuration
+If context data is avaialble, this data will be used for variable replace.
 
 
 ## Fields
