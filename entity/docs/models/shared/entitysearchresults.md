@@ -1,0 +1,10 @@
+# EntitySearchResults
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `aggregations`                                                           | [Optional[components.Aggregations]](../../models/shared/aggregations.md) | :heavy_minus_sign:                                                       | N/A                                                                      |                                                                          |
+| `hits`                                                                   | *Optional[float]*                                                        | :heavy_minus_sign:                                                       | N/A                                                                      | 1                                                                        |
+| `results`                                                                | List[[components.EntityItem](../../models/shared/entityitem.md)]         | :heavy_minus_sign:                                                       | N/A                                                                      |                                                                          |

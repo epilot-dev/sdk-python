@@ -3,23 +3,28 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import entityschemaitem as shared_entityschemaitem
+from ...models.components import entityschemaitem as components_entityschemaitem
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetSchemaRequest:
+    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    r"""Entity Type"""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'id', 'style': 'form', 'explode': True }})
     
-    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})  
-    id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'id', 'style': 'form', 'explode': True }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetSchemaResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    entity_schema_item: Optional[components_entityschemaitem.EntitySchemaItem] = dataclasses.field(default=None)
+    r"""Success"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    entity_schema_item: Optional[shared_entityschemaitem.EntitySchemaItem] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

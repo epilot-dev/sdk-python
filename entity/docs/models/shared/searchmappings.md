@@ -1,0 +1,10 @@
+# SearchMappings
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `fields`                                                                             | Dict[str, *Any*]                                                                     | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `index`                                                                              | *Optional[bool]*                                                                     | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `type`                                                                               | [Optional[components.SearchMappingsType]](../../models/shared/searchmappingstype.md) | :heavy_minus_sign:                                                                   | N/A                                                                                  |

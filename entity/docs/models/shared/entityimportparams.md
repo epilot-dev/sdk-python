@@ -1,0 +1,11 @@
+# EntityImportParams
+
+The parameters for importing entities.
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            | Example                                                                                                |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `s3_reference`                                                                                         | [components.S3Reference](../../models/shared/s3reference.md)                                           | :heavy_check_mark:                                                                                     | The S3 bucket and key where the JSON file for import is located.                                       |                                                                                                        |
+| `schema`                                                                                               | *str*                                                                                                  | :heavy_check_mark:                                                                                     | The schema of the entities being imported. This must match the schema of the entities on the platform. | contact                                                                                                |
