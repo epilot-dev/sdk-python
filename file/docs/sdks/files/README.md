@@ -1,5 +1,5 @@
 # Files
-(*files*)
+(*.files*)
 
 ## Overview
 
@@ -80,7 +80,7 @@ s = epilot.Epilot(
 
 res = s.files.download_file(id='ef7d985c-2385-44f4-9c71-ae06a52264f8', attachment=False, version=925360)
 
-if res.download_file_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -124,7 +124,7 @@ req = [
 
 res = s.files.download_files(req)
 
-if res.download_files_200_application_json_objects is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -160,7 +160,7 @@ s = epilot.Epilot(
 
 res = s.files.download_s3_file(s3_bucket='string', s3_key='string', attachment=False)
 
-if res.download_s3_file_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -425,7 +425,7 @@ res = s.files.upload_file(upload_file_payload=shared.UploadFilePayload(
     mime_type='application/pdf',
 ), file_entity_id='ef7d985c-2385-44f4-9c71-ae06a52264f8')
 
-if res.upload_file_201_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -469,7 +469,7 @@ req = shared.UploadFilePayload(
 
 res = s.files.upload_file_public(req)
 
-if res.upload_file_public_201_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

@@ -39,7 +39,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [files](docs/sdks/files/README.md)
+### [.files](docs/sdks/files/README.md)
 
 * [delete_file](docs/sdks/files/README.md#delete_file) - deleteFile
 * [download_file](docs/sdks/files/README.md#download_file) - downloadFile
@@ -53,7 +53,7 @@ if res.status_code == 200:
 * [upload_file](docs/sdks/files/README.md#upload_file) - uploadFile
 * [upload_file_public](docs/sdks/files/README.md#upload_file_public) - uploadFilePublic
 
-### [session](docs/sdks/session/README.md)
+### [.session](docs/sdks/session/README.md)
 
 * [delete_session](docs/sdks/session/README.md#delete_session) - deleteSession
 * [get_session](docs/sdks/session/README.md#get_session) - getSession
@@ -63,8 +63,6 @@ if res.status_code == 200:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -73,8 +71,6 @@ if res.status_code == 200:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -92,16 +88,15 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
+    server_idx=0,
     security=shared.Security(
         cookie_auth="",
     ),
-    server_idx=0
 )
 
 req = shared.DeleteFilePayload(
@@ -123,16 +118,15 @@ if res.status_code == 200:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
+    server_url="https://file.sls.epilot.io",
     security=shared.Security(
         cookie_auth="",
     ),
-    server_url="https://file.sls.epilot.io"
 )
 
 req = shared.DeleteFilePayload(
@@ -168,9 +162,49 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security schemes globally:
+
+| Name          | Type          | Scheme        |
+| ------------- | ------------- | ------------- |
+| `cookie_auth` | apiKey        | API key       |
+| `epilot_auth` | http          | HTTP Bearer   |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="",
+    ),
+)
+
+req = shared.DeleteFilePayload(
+    s3ref=shared.S3Reference(
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+    ),
+)
+
+res = s.files.delete_file(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

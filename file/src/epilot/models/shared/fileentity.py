@@ -2,17 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import s3reference as shared_s3reference
+from .s3reference import S3Reference
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 from typing import List, Optional
 
-class FileEntityAccessControl(str, Enum):
+class AccessControl(str, Enum):
     PRIVATE = 'private'
     PUBLIC_READ = 'public-read'
 
-class FileEntityType(str, Enum):
+class Type(str, Enum):
     r"""Human readable type for file"""
     DOCUMENT = 'document'
     DOCUMENT_TEMPLATE = 'document_template'
@@ -30,8 +30,8 @@ class FileEntityType(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class FileEntityVersions:
-    s3ref: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
+class Versions:
+    s3ref: Optional[S3Reference] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
     
 
 
@@ -40,7 +40,7 @@ class FileEntityVersions:
 @dataclasses.dataclass
 class FileEntity:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
-    access_control: Optional[FileEntityAccessControl] = dataclasses.field(default=FileEntityAccessControl.PRIVATE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_control'), 'exclude': lambda f: f is None }})
+    access_control: Optional[AccessControl] = dataclasses.field(default=AccessControl.PRIVATE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_control'), 'exclude': lambda f: f is None }})
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
     mime_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mime_type'), 'exclude': lambda f: f is None }})
     r"""MIME type of the file"""
@@ -48,8 +48,8 @@ class FileEntity:
     r"""Direct URL for file (public only if file access control is public-read)"""
     size_bytes: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size_bytes'), 'exclude': lambda f: f is None }})
     r"""File size in bytes"""
-    type: Optional[FileEntityType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[Type] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Human readable type for file"""
-    versions: Optional[List[FileEntityVersions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})
+    versions: Optional[List[Versions]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})
     
 

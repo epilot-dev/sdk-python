@@ -21,7 +21,7 @@ class DownloadFileRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DownloadFile200ApplicationJSON:
+class DownloadFileResponseBody:
     r"""Generated thumbnail image"""
     download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('download_url'), 'exclude': lambda f: f is None }})
     
@@ -34,7 +34,7 @@ class DownloadFileResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    download_file_200_application_json_object: Optional[DownloadFile200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[DownloadFileResponseBody] = dataclasses.field(default=None)
     r"""Generated thumbnail image"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

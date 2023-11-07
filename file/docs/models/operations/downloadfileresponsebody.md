@@ -1,4 +1,4 @@
-# DownloadS3File200ApplicationJSON
+# DownloadFileResponseBody
 
 Generated thumbnail image
 

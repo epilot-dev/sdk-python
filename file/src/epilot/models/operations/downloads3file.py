@@ -20,7 +20,7 @@ class DownloadS3FileRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DownloadS3File200ApplicationJSON:
+class DownloadS3FileResponseBody:
     r"""Generated thumbnail image"""
     download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('download_url'), 'exclude': lambda f: f is None }})
     
@@ -33,7 +33,7 @@ class DownloadS3FileResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    download_s3_file_200_application_json_object: Optional[DownloadS3File200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[DownloadS3FileResponseBody] = dataclasses.field(default=None)
     r"""Generated thumbnail image"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

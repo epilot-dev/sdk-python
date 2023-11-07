@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import s3reference as shared_s3reference
+from .s3reference import S3Reference
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 
@@ -10,6 +10,6 @@ from epilot import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DeleteFilePayload:
-    s3ref: shared_s3reference.S3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
+    s3ref: S3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
     
 

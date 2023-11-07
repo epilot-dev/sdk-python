@@ -10,7 +10,7 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadFilePublic201ApplicationJSONS3ref:
+class UploadFilePublicS3ref:
     bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})
     key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
     
@@ -19,9 +19,9 @@ class UploadFilePublic201ApplicationJSONS3ref:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadFilePublic201ApplicationJSON:
+class UploadFilePublicResponseBody:
     r"""Pre-signed URL for POST / PUT upload"""
-    s3ref: Optional[UploadFilePublic201ApplicationJSONS3ref] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
+    s3ref: Optional[UploadFilePublicS3ref] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
     upload_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upload_url'), 'exclude': lambda f: f is None }})
     
 
@@ -33,9 +33,9 @@ class UploadFilePublicResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    object: Optional[UploadFilePublicResponseBody] = dataclasses.field(default=None)
+    r"""Pre-signed URL for POST / PUT upload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    upload_file_public_201_application_json_object: Optional[UploadFilePublic201ApplicationJSON] = dataclasses.field(default=None)
-    r"""Pre-signed URL for POST / PUT upload"""
     
 

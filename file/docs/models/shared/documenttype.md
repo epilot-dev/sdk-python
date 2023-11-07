@@ -1,6 +1,4 @@
-# FileEntityType
-
-Human readable type for file
+# DocumentType
 
 
 ## Values

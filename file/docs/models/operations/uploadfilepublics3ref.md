@@ -1,4 +1,4 @@
-# UploadFile201ApplicationJSONS3ref
+# UploadFilePublicS3ref
 
 
 ## Fields

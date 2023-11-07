@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import uploadfilepayload as shared_uploadfilepayload
+from ...models.shared import uploadfilepayload as shared_uploadfilepayload
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -20,7 +20,7 @@ class UploadFileRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadFile201ApplicationJSONS3ref:
+class S3ref:
     bucket: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bucket') }})
     key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
     
@@ -29,11 +29,11 @@ class UploadFile201ApplicationJSONS3ref:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UploadFile201ApplicationJSON:
+class UploadFileResponseBody:
     r"""Pre-signed URL for POST / PUT upload"""
     public_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('public_url'), 'exclude': lambda f: f is None }})
     r"""Returned only if file is permanent i.e. file_entity_id is passed"""
-    s3ref: Optional[UploadFile201ApplicationJSONS3ref] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
+    s3ref: Optional[S3ref] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref'), 'exclude': lambda f: f is None }})
     upload_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upload_url'), 'exclude': lambda f: f is None }})
     
 
@@ -45,9 +45,9 @@ class UploadFileResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    object: Optional[UploadFileResponseBody] = dataclasses.field(default=None)
+    r"""Pre-signed URL for POST / PUT upload"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    upload_file_201_application_json_object: Optional[UploadFile201ApplicationJSON] = dataclasses.field(default=None)
-    r"""Pre-signed URL for POST / PUT upload"""
     
 

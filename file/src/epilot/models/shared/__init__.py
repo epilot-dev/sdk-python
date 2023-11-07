@@ -10,4 +10,4 @@ from .saves3filepayload import *
 from .security import *
 from .uploadfilepayload import *
 
-__all__ = ["DeleteFilePayload","DownloadFilesPayload","FileEntity","FileEntityAccessControl","FileEntityType","FileEntityVersions","FileRelationItem","S3Reference","SaveCustomFilePayload","SaveCustomFilePayloadAccessControl","SaveCustomFilePayloadDocumentType","SaveS3FilePayload","SaveS3FilePayloadAccessControl","SaveS3FilePayloadDocumentType","Security","UploadFilePayload"]
+__all__ = ["AccessControl","DeleteFilePayload","DocumentType","DownloadFilesPayload","FileEntity","FileRelationItem","S3Reference","SaveCustomFilePayload","SaveCustomFilePayloadAccessControl","SaveS3FilePayload","SaveS3FilePayloadAccessControl","SaveS3FilePayloadDocumentType","Security","Type","UploadFilePayload","Versions"]

@@ -1,4 +1,4 @@
-# DownloadFiles200ApplicationJSON
+# ResponseBody
 
 
 ## Fields

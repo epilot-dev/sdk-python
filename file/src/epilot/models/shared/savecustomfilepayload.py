@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import filerelationitem as shared_filerelationitem
+from .filerelationitem import FileRelationItem
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -12,7 +12,7 @@ class SaveCustomFilePayloadAccessControl(str, Enum):
     PRIVATE = 'private'
     PUBLIC_READ = 'public-read'
 
-class SaveCustomFilePayloadDocumentType(str, Enum):
+class DocumentType(str, Enum):
     DOCUMENT = 'document'
     DOCUMENT_TEMPLATE = 'document_template'
     TEXT = 'text'
@@ -35,11 +35,11 @@ class SaveCustomFilePayload:
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     access_control: Optional[SaveCustomFilePayloadAccessControl] = dataclasses.field(default=SaveCustomFilePayloadAccessControl.PRIVATE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_control'), 'exclude': lambda f: f is None }})
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    document_type: Optional[SaveCustomFilePayloadDocumentType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type'), 'exclude': lambda f: f is None }})
+    document_type: Optional[DocumentType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type'), 'exclude': lambda f: f is None }})
     file_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file_entity_id'), 'exclude': lambda f: f is None }})
     r"""if passed, adds a new version to existing file entity"""
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
-    relations: Optional[List[shared_filerelationitem.FileRelationItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
+    relations: Optional[List[FileRelationItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
     r"""List of entities to relate the file to"""
     
 

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import fileentity as shared_fileentity
+from ...models.shared import fileentity as shared_fileentity
 from typing import Optional
 
 

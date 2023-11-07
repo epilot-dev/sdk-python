@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import s3reference as shared_s3reference
+from ...models.shared import s3reference as shared_s3reference
 from typing import Optional
 
 

@@ -1,4 +1,6 @@
-# SaveCustomFilePayloadDocumentType
+# Type
+
+Human readable type for file
 
 
 ## Values
