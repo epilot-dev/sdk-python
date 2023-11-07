@@ -33,7 +33,7 @@ if res.assignment is not None:
 ## Available Resources and Operations
 
 
-### [assignments](docs/sdks/assignments/README.md)
+### [.assignments](docs/sdks/assignments/README.md)
 
 * [add_assignment](docs/sdks/assignments/README.md#add_assignment) - addAssignment
 * [assign_roles](docs/sdks/assignments/README.md#assign_roles) - assignRoles
@@ -41,7 +41,7 @@ if res.assignment is not None:
 * [list_all_assignments](docs/sdks/assignments/README.md#list_all_assignments) - listAllAssignments
 * [remove_assignment](docs/sdks/assignments/README.md#remove_assignment) - removeAssignment
 
-### [roles](docs/sdks/roles/README.md)
+### [.roles](docs/sdks/roles/README.md)
 
 * [delete_role](docs/sdks/roles/README.md#delete_role) - deleteRole
 * [get_role](docs/sdks/roles/README.md#get_role) - getRole
@@ -56,8 +56,6 @@ if res.assignment is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -66,8 +64,6 @@ if res.assignment is not None:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -85,16 +81,15 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
+    server_idx=0,
     security=shared.Security(
         epilot_auth="",
     ),
-    server_idx=0
 )
 
 
@@ -110,16 +105,15 @@ if res.assignment is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
+    server_url="https://permissions.sls.epilot.io",
     security=shared.Security(
         epilot_auth="",
     ),
-    server_url="https://permissions.sls.epilot.io"
 )
 
 
@@ -149,9 +143,43 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security schemes globally:
+
+| Name          | Type          | Scheme        |
+| ------------- | ------------- | ------------- |
+| `epilot_auth` | http          | HTTP Bearer   |
+| `epilot_org`  | apiKey        | API key       |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+
+res = s.assignments.add_assignment(role_id='123:owner', user_id='1')
+
+if res.assignment is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

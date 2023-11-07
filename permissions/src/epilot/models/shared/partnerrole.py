@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import grant as shared_grant
+from .grant import Grant
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
@@ -18,7 +18,7 @@ class PartnerRoleType(str, Enum):
 @dataclasses.dataclass
 class PartnerRole:
     r"""A role that appears in another organization's role list that can be assigned but not modified by the partner organization."""
-    grants: List[shared_grant.Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
+    grants: List[Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
     r"""List of grants (permissions) applied to the role"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Format: <organization_id>:<slug>"""

@@ -1,4 +1,4 @@
-# RolePayload1Type
+# RolePayloadType
 
 
 ## Values

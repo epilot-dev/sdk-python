@@ -3,14 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import grant as shared_grant
+from .grant import Grant
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from epilot import utils
 from typing import List, Optional
 
-class OrgRoleType(str, Enum):
+class Type(str, Enum):
     ORG_ROLE = 'org_role'
 
 
@@ -18,7 +18,7 @@ class OrgRoleType(str, Enum):
 @dataclasses.dataclass
 class OrgRole:
     r"""A role automatically applied to all users in an organization."""
-    grants: List[shared_grant.Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
+    grants: List[Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
     r"""List of grants (permissions) applied to the role"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Format: <organization_id>:<slug>"""
@@ -28,7 +28,7 @@ class OrgRole:
     r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly name for the role"""
-    type: OrgRoleType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
     

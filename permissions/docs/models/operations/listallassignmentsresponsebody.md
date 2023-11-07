@@ -1,4 +1,4 @@
-# ListAllAssignments200ApplicationJSON
+# ListAllAssignmentsResponseBody
 
 ok
 

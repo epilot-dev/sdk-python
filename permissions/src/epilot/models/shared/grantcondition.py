@@ -7,16 +7,16 @@ from enum import Enum
 from epilot import utils
 from typing import Any, List
 
-class GrantConditionEqualsConditionOperation(str, Enum):
+class Operation(str, Enum):
     EQUALS = 'equals'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GrantConditionEqualsCondition:
+class Schemas:
     r"""Check if attribute equals to any of the values"""
     attribute: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribute') }})
-    operation: GrantConditionEqualsConditionOperation = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
+    operation: Operation = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})
     values: List[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('values') }})
     
 

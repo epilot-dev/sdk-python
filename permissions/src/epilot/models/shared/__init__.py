@@ -11,4 +11,4 @@ from .security import *
 from .sharerole import *
 from .userrole import *
 
-__all__ = ["Assignment","Grant","GrantCondition","GrantConditionEqualsCondition","GrantConditionEqualsConditionOperation","GrantEffect","OrgRole","OrgRoleType","PartnerRole","PartnerRoleType","RolePayload","RolePayload1","RolePayload1Type","RolePayload2","RolePayload2Type","RolePayload3","RolePayload3Type","RolePayload4","RolePayload4Type","RoleSearchInput","Security","ShareRole","ShareRoleType","UserRole","UserRoleType"]
+__all__ = ["Assignment","Effect","Four","Grant","GrantCondition","One","Operation","OrgRole","PartnerRole","PartnerRoleType","RolePayload","RolePayloadSchemasTrueRolePayloadType","RolePayloadSchemasTrueType","RolePayloadSchemasType","RolePayloadType","RoleSearchInput","Schemas","Security","ShareRole","ShareRoleType","Three","Two","Type","UserRole","UserRoleType"]

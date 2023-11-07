@@ -1,5 +1,5 @@
 # Roles
-(*roles*)
+(*.roles*)
 
 ## Overview
 
@@ -106,7 +106,7 @@ s = epilot.Epilot(
 
 res = s.roles.list_all_roles()
 
-if res.list_all_roles_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -136,7 +136,7 @@ s = epilot.Epilot(
 
 res = s.roles.list_current_roles()
 
-if res.list_current_roles_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -154,8 +154,8 @@ Create or update role
 ### Example Usage
 
 ```python
-import epilot
 import dateutil.parser
+import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
@@ -165,15 +165,15 @@ s = epilot.Epilot(
 )
 
 
-res = s.roles.put_role(role_id='123:owner', role_payload=shared.RolePayload1(
+res = s.roles.put_role(role_id='123:owner', role_payload=shared.One(
     expires_at=dateutil.parser.isoparse('2028-07-21T17:32:28Z'),
     grants=[
         shared.Grant(
             action='entity-read',
             conditions=[
-                shared.GrantConditionEqualsCondition(
+                shared.Schemas(
                     attribute='workflows.primary.task_name',
-                    operation=shared.GrantConditionEqualsConditionOperation.EQUALS,
+                    operation=shared.Operation.EQUALS,
                     values=[
                         'string',
                         'string',
@@ -198,7 +198,7 @@ res = s.roles.put_role(role_id='123:owner', role_payload=shared.RolePayload1(
     name='Owner',
     organization_id='123',
     slug='owner',
-    type=shared.RolePayload1Type.USER_ROLE,
+    type=shared.RolePayloadType.USER_ROLE,
 ))
 
 if res.role is not None:
@@ -208,10 +208,10 @@ if res.role is not None:
 
 ### Parameters
 
-| Parameter                                                                                                                                 | Type                                                                                                                                      | Required                                                                                                                                  | Description                                                                                                                               | Example                                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `role_id`                                                                                                                                 | *str*                                                                                                                                     | :heavy_check_mark:                                                                                                                        | N/A                                                                                                                                       | 123:owner                                                                                                                                 |
-| `role_payload`                                                                                                                            | [Optional[Union[shared.RolePayload1, shared.RolePayload2, shared.RolePayload3, shared.RolePayload4]]](../../models/shared/rolepayload.md) | :heavy_minus_sign:                                                                                                                        | N/A                                                                                                                                       |                                                                                                                                           |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              | Example                                                                                                  |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `role_id`                                                                                                | *str*                                                                                                    | :heavy_check_mark:                                                                                       | N/A                                                                                                      | 123:owner                                                                                                |
+| `role_payload`                                                                                           | [Optional[Union[shared.One, shared.Two, shared.Three, shared.Four]]](../../models/shared/rolepayload.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |                                                                                                          |
 
 
 ### Response
@@ -285,7 +285,7 @@ req = shared.RoleSearchInput(
 
 res = s.roles.search_roles(req)
 
-if res.search_roles_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

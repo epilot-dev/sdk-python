@@ -3,9 +3,9 @@
 
 ## Supported Types
 
-### GrantConditionEqualsCondition
+### Schemas
 
 ```python
-grantCondition: shared.GrantConditionEqualsCondition = /* values here */
+grantCondition: shared.Schemas = /* values here */
 ```
 

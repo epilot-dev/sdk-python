@@ -1,4 +1,4 @@
-# OrgRoleType
+# Type
 
 
 ## Values

@@ -1,4 +1,4 @@
-# GrantEffect
+# Effect
 
 
 ## Values

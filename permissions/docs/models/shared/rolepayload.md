@@ -3,27 +3,27 @@
 
 ## Supported Types
 
-### RolePayload1
+### One
 
 ```python
-rolePayload: shared.RolePayload1 = /* values here */
+rolePayload: shared.One = /* values here */
 ```
 
-### RolePayload2
+### Two
 
 ```python
-rolePayload: shared.RolePayload2 = /* values here */
+rolePayload: shared.Two = /* values here */
 ```
 
-### RolePayload3
+### Three
 
 ```python
-rolePayload: shared.RolePayload3 = /* values here */
+rolePayload: shared.Three = /* values here */
 ```
 
-### RolePayload4
+### Four
 
 ```python
-rolePayload: shared.RolePayload4 = /* values here */
+rolePayload: shared.Four = /* values here */
 ```
 

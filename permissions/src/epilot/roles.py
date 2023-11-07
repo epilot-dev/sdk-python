@@ -41,6 +41,8 @@ class Roles:
                 res.role = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -73,6 +75,8 @@ class Roles:
                 res.role = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -97,10 +101,12 @@ class Roles:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.ListAllRoles200ApplicationJSON])
-                res.list_all_roles_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.ListAllRolesResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -125,15 +131,17 @@ class Roles:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.ListCurrentRoles200ApplicationJSON])
-                res.list_current_roles_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.ListCurrentRolesResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def put_role(self, role_id: str, role_payload: Optional[Union[shared.RolePayload1, shared.RolePayload2, shared.RolePayload3, shared.RolePayload4]] = None) -> operations.PutRoleResponse:
+    def put_role(self, role_id: str, role_payload: Optional[Union[shared.One, shared.Two, shared.Three, shared.Four]] = None) -> operations.PutRoleResponse:
         r"""putRole
         Create or update role
         """
@@ -165,6 +173,8 @@ class Roles:
                 res.role = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -187,6 +197,10 @@ class Roles:
 
         res = operations.RefreshPermissionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
+        if http_res.status_code == 200:
+            pass
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -214,10 +228,12 @@ class Roles:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.SearchRoles200ApplicationJSON])
-                res.search_roles_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.SearchRolesResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
 
         return res
 

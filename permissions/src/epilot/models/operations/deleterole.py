@@ -3,10 +3,10 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import orgrole as shared_orgrole
-from ..shared import partnerrole as shared_partnerrole
-from ..shared import sharerole as shared_sharerole
-from ..shared import userrole as shared_userrole
+from ...models.shared import orgrole as shared_orgrole
+from ...models.shared import partnerrole as shared_partnerrole
+from ...models.shared import sharerole as shared_sharerole
+from ...models.shared import userrole as shared_userrole
 from typing import Optional, Union
 
 
