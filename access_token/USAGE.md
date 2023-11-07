@@ -20,7 +20,7 @@ req = shared.AccessTokenParameters(
 
 res = s.access_tokens.create_access_token(req)
 
-if res.create_access_token_201_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

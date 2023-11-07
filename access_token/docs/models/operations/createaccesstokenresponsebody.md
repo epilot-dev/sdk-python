@@ -1,4 +1,4 @@
-# CreateAccessToken201ApplicationJSON
+# CreateAccessTokenResponseBody
 
 The new generated Access Token
 

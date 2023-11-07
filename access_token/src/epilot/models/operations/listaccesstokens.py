@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import accesstokenitem as shared_accesstokenitem
-from ..shared import accesstokentype as shared_accesstokentype
+from ...models.shared import accesstokenitem as shared_accesstokenitem
+from ...models.shared import accesstokentype as shared_accesstokentype
 from typing import List, Optional
 
 
@@ -22,7 +22,7 @@ class ListAccessTokensResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    access_token_items: Optional[List[shared_accesstokenitem.AccessTokenItem]] = dataclasses.field(default=None)
+    classes: Optional[List[shared_accesstokenitem.AccessTokenItem]] = dataclasses.field(default=None)
     r"""List of Access Tokens"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

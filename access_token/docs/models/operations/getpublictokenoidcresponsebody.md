@@ -1,4 +1,4 @@
-# GetPublicTokenOIDC200ApplicationJSON
+# GetPublicTokenOIDCResponseBody
 
 OpenID Configuration
 

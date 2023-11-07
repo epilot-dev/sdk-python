@@ -1,5 +1,5 @@
 # AccessTokens
-(*access_tokens*)
+(*.access_tokens*)
 
 ## Overview
 
@@ -48,7 +48,7 @@ req = shared.AccessTokenParameters(
 
 res = s.access_tokens.create_access_token(req)
 
-if res.create_access_token_201_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -86,7 +86,7 @@ res = s.access_tokens.list_access_tokens(token_type=[
     shared.AccessTokenType.API,
 ])
 
-if res.access_token_items is not None:
+if res.classes is not None:
     # handle response
     pass
 ```

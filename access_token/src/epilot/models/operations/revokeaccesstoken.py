@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import accesstokenitem as shared_accesstokenitem
+from ...models.shared import accesstokenitem as shared_accesstokenitem
 from typing import Optional
 
 

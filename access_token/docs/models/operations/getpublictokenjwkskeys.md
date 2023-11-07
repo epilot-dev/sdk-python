@@ -1,4 +1,4 @@
-# GetPublicTokenJwks200ApplicationJSONKeys
+# GetPublicTokenJwksKeys
 
 
 ## Fields

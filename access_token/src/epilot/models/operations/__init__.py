@@ -8,4 +8,4 @@ from .getpublictokenoidc import *
 from .listaccesstokens import *
 from .revokeaccesstoken import *
 
-__all__ = ["CreateAccessToken201ApplicationJSON","CreateAccessTokenResponse","GetAccessTokenJwks200ApplicationJSON","GetAccessTokenJwks200ApplicationJSONKeys","GetAccessTokenJwksResponse","GetAccessTokenOIDC200ApplicationJSON","GetAccessTokenOIDCResponse","GetPublicTokenJwks200ApplicationJSON","GetPublicTokenJwks200ApplicationJSONKeys","GetPublicTokenJwksResponse","GetPublicTokenOIDC200ApplicationJSON","GetPublicTokenOIDCResponse","ListAccessTokensRequest","ListAccessTokensResponse","RevokeAccessTokenRequest","RevokeAccessTokenResponse"]
+__all__ = ["CreateAccessTokenResponse","CreateAccessTokenResponseBody","GetAccessTokenJwksResponse","GetAccessTokenJwksResponseBody","GetAccessTokenOIDCResponse","GetAccessTokenOIDCResponseBody","GetPublicTokenJwksKeys","GetPublicTokenJwksResponse","GetPublicTokenJwksResponseBody","GetPublicTokenOIDCResponse","GetPublicTokenOIDCResponseBody","Keys","ListAccessTokensRequest","ListAccessTokensResponse","RevokeAccessTokenRequest","RevokeAccessTokenResponse"]

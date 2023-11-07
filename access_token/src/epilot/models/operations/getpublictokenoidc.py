@@ -10,7 +10,7 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetPublicTokenOIDC200ApplicationJSON:
+class GetPublicTokenOIDCResponseBody:
     r"""OpenID Configuration"""
     issuer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issuer'), 'exclude': lambda f: f is None }})
     jwks_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jwks_uri'), 'exclude': lambda f: f is None }})
@@ -24,7 +24,7 @@ class GetPublicTokenOIDCResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_public_token_oidc_200_application_json_object: Optional[GetPublicTokenOIDC200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetPublicTokenOIDCResponseBody] = dataclasses.field(default=None)
     r"""OpenID Configuration"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

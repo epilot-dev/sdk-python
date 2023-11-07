@@ -1,4 +1,4 @@
-# GetAccessTokenOIDC200ApplicationJSON
+# GetAccessTokenOIDCResponseBody
 
 OpenID Configuration
 

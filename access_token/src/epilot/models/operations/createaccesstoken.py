@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 import requests as requests_http
-from ..shared import accesstokentype as shared_accesstokentype
+from ...models.shared import accesstokentype as shared_accesstokentype
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from epilot import utils
@@ -13,7 +13,7 @@ from typing import List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class CreateAccessToken201ApplicationJSON:
+class CreateAccessTokenResponseBody:
     r"""The new generated Access Token"""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -37,7 +37,7 @@ class CreateAccessTokenResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    create_access_token_201_application_json_object: Optional[CreateAccessToken201ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[CreateAccessTokenResponseBody] = dataclasses.field(default=None)
     r"""The new generated Access Token"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
