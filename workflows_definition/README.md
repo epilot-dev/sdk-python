@@ -33,13 +33,13 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [closing_reason](docs/sdks/closingreason/README.md)
+### [.closing_reason](docs/sdks/closingreason/README.md)
 
 * [change_reason_status](docs/sdks/closingreason/README.md#change_reason_status) - changeReasonStatus
 * [create_closing_reason](docs/sdks/closingreason/README.md#create_closing_reason) - createClosingReason
 * [get_all_closing_reasons](docs/sdks/closingreason/README.md#get_all_closing_reasons) - getAllClosingReasons
 
-### [workflows](docs/sdks/workflows/README.md)
+### [.workflows](docs/sdks/workflows/README.md)
 
 * [create_definition](docs/sdks/workflows/README.md#create_definition) - createDefinition
 * [delete_definition](docs/sdks/workflows/README.md#delete_definition) - deleteDefinition
@@ -55,8 +55,6 @@ if res.status_code == 200:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -67,6 +65,31 @@ if res.status_code == 200:
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
 
+## Example
+
+```python
+import sdk
+from sdk.models import operations, shared
+
+s = sdk.SDK(
+    bearer_auth="",
+)
+
+
+res = None
+try:
+    res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
+    status=shared.ClosingReasonsStatus.ACTIVE,
+))
+
+except (ErrorResp) as e:
+    print(e) # handle exception
+
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -84,14 +107,13 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
+    server_idx=0,
     bearer_auth="",
-    server_idx=0
 )
 
 
@@ -109,14 +131,13 @@ if res.status_code == 200:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
+    server_url="https://workflows-definition.sls.epilot.io",
     bearer_auth="",
-    server_url="https://workflows-definition.sls.epilot.io"
 )
 
 
@@ -148,9 +169,42 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = sdk.SDK(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name          | Type          | Scheme        |
+| ------------- | ------------- | ------------- |
+| `bearer_auth` | http          | HTTP Bearer   |
+
+To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
+
+```python
+import sdk
+from sdk.models import operations, shared
+
+s = sdk.SDK(
+    bearer_auth="",
+)
+
+
+res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
+    status=shared.ClosingReasonsStatus.ACTIVE,
+))
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

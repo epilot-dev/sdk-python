@@ -1,5 +1,5 @@
 # Workflows
-(*workflows*)
+(*.workflows*)
 
 ### Available Operations
 
@@ -38,9 +38,9 @@ req = shared.WorkflowDefinition(
     creation_time='2021-04-27T12:01:13.000Z',
     due_date='2021-04-27T12:00:00.000Z',
     dynamic_due_date=shared.DynamicDueDate(
-        action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+        action_type_condition=shared.ActionTypeCondition.WORKFLOW_STARTED,
         number_of_units=1581.6,
-        time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+        time_period=shared.TimePeriod.WEEKS,
     ),
     flow=[
         shared.Section(
@@ -51,14 +51,14 @@ req = shared.WorkflowDefinition(
                     assigned_to=[
                         'string',
                     ],
-                    automation_config=shared.StepAutomationConfig(
+                    automation_config=shared.AutomationConfig(
                         flow_id='string',
                     ),
                     due_date='2021-04-27T12:00:00.000Z',
                     dynamic_due_date=shared.DynamicDueDate(
-                        action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
+                        action_type_condition=shared.ActionTypeCondition.STEP_CLOSED,
                         number_of_units=8711.4,
-                        time_period=shared.DynamicDueDateTimePeriod.DAYS,
+                        time_period=shared.TimePeriod.DAYS,
                     ),
                     ecp=shared.ECPDetails(
                         journey=shared.StepJourney(),
@@ -71,7 +71,7 @@ req = shared.WorkflowDefinition(
                     order=8841.45,
                     requirements=[
                         shared.StepRequirement(
-                            condition=shared.StepRequirementCondition.CLOSED,
+                            condition=shared.Condition.CLOSED,
                             definition_id='string',
                             type=shared.ItemType.SECTION,
                         ),
@@ -89,8 +89,8 @@ req = shared.WorkflowDefinition(
     name='string',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
-            target=shared.UpdateEntityAttributesTarget(
+            source=shared.Source.WORKFLOW_STATUS,
+            target=shared.Target(
                 entity_attribute='my_status',
                 entity_schema='opportunity',
             ),
@@ -128,7 +128,7 @@ Delete Workflow Definition.
 
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import operations
 
 s = sdk.SDK(
     bearer_auth="",
@@ -162,7 +162,7 @@ Get specific Definition by id from the Organization.
 
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import operations
 
 s = sdk.SDK(
     bearer_auth="",
@@ -196,7 +196,6 @@ Retrieve all Workflow Definitions from an Organization
 
 ```python
 import sdk
-from sdk.models import shared
 
 s = sdk.SDK(
     bearer_auth="",
@@ -205,7 +204,7 @@ s = sdk.SDK(
 
 res = s.workflows.get_definitions()
 
-if res.workflow_definitions is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -224,7 +223,6 @@ Get limits and number of created executions for an Organization.
 
 ```python
 import sdk
-from sdk.models import shared
 
 s = sdk.SDK(
     bearer_auth="",
@@ -252,7 +250,7 @@ Returns all closing reasons defined for the workflow.
 
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import operations
 
 s = sdk.SDK(
     bearer_auth="",
@@ -346,9 +344,9 @@ res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinitio
     creation_time='2021-04-27T12:01:13.000Z',
     due_date='2021-04-27T12:00:00.000Z',
     dynamic_due_date=shared.DynamicDueDate(
-        action_type_condition=shared.DynamicDueDateActionTypeCondition.WORKFLOW_STARTED,
+        action_type_condition=shared.ActionTypeCondition.WORKFLOW_STARTED,
         number_of_units=8376.64,
-        time_period=shared.DynamicDueDateTimePeriod.MONTHS,
+        time_period=shared.TimePeriod.MONTHS,
     ),
     flow=[
         shared.Section(
@@ -359,14 +357,14 @@ res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinitio
                     assigned_to=[
                         'string',
                     ],
-                    automation_config=shared.StepAutomationConfig(
+                    automation_config=shared.AutomationConfig(
                         flow_id='string',
                     ),
                     due_date='2021-04-27T12:00:00.000Z',
                     dynamic_due_date=shared.DynamicDueDate(
-                        action_type_condition=shared.DynamicDueDateActionTypeCondition.STEP_CLOSED,
+                        action_type_condition=shared.ActionTypeCondition.STEP_CLOSED,
                         number_of_units=9991.65,
-                        time_period=shared.DynamicDueDateTimePeriod.DAYS,
+                        time_period=shared.TimePeriod.DAYS,
                     ),
                     ecp=shared.ECPDetails(
                         journey=shared.StepJourney(),
@@ -379,7 +377,7 @@ res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinitio
                     order=4890.23,
                     requirements=[
                         shared.StepRequirement(
-                            condition=shared.StepRequirementCondition.CLOSED,
+                            condition=shared.Condition.CLOSED,
                             definition_id='string',
                             type=shared.ItemType.SECTION,
                         ),
@@ -397,8 +395,8 @@ res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinitio
     name='string',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
-            source=shared.UpdateEntityAttributesSource.WORKFLOW_STATUS,
-            target=shared.UpdateEntityAttributesTarget(
+            source=shared.Source.WORKFLOW_STATUS,
+            target=shared.Target(
                 entity_attribute='my_status',
                 entity_schema='opportunity',
             ),

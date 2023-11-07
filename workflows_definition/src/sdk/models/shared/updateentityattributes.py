@@ -6,7 +6,7 @@ from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from sdk import utils
 
-class UpdateEntityAttributesSource(str, Enum):
+class Source(str, Enum):
     WORKFLOW_STATUS = 'workflow_status'
     CURRENT_SECTION = 'current_section'
     CURRENT_STEP = 'current_step'
@@ -14,7 +14,7 @@ class UpdateEntityAttributesSource(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UpdateEntityAttributesTarget:
+class Target:
     entity_attribute: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityAttribute') }})
     entity_schema: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entitySchema') }})
     
@@ -24,7 +24,7 @@ class UpdateEntityAttributesTarget:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class UpdateEntityAttributes:
-    source: UpdateEntityAttributesSource = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})
-    target: UpdateEntityAttributesTarget = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
+    source: Source = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('source') }})
+    target: Target = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target') }})
     
 

@@ -1,5 +1,5 @@
 # ClosingReason
-(*closing_reason*)
+(*.closing_reason*)
 
 ### Available Operations
 
@@ -90,7 +90,7 @@ Get all Closing Reasons defined in the organization by default all Active.
 
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import operations
 
 s = sdk.SDK(
     bearer_auth="",

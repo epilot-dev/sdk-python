@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import closingreasonsids as shared_closingreasonsids
+from ...models.shared import closingreasonsids as shared_closingreasonsids
 from typing import Optional
 
 

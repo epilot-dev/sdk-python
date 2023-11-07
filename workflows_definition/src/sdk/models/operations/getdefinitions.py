@@ -3,8 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import workflowdefinition as shared_workflowdefinition
+from ...models.shared import workflowdefinition as shared_workflowdefinition
 from typing import List, Optional
 
 
@@ -14,11 +13,9 @@ class GetDefinitionsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""
+    classes: Optional[List[shared_workflowdefinition.WorkflowDefinition]] = dataclasses.field(default=None)
+    r"""Success - definitions loaded with success. Empty array if org has no definitions."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    workflow_definitions: Optional[List[shared_workflowdefinition.WorkflowDefinition]] = dataclasses.field(default=None)
-    r"""Success - definitions loaded with success. Empty array if org has no definitions."""
     
 

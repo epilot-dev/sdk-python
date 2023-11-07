@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import closingreasonid as shared_closingreasonid
+from .closingreasonid import ClosingReasonID
 from dataclasses_json import Undefined, dataclass_json
 from sdk import utils
 from typing import List
@@ -11,6 +11,6 @@ from typing import List
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ClosingReasonsIds:
-    reasons: List[shared_closingreasonid.ClosingReasonID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reasons') }})
+    reasons: List[ClosingReasonID] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reasons') }})
     
 

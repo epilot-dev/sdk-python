@@ -1,4 +1,4 @@
-# StepAutomationConfig
+# AutomationConfig
 
 
 ## Fields
