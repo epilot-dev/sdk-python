@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import activatepartnerpayload as shared_activatepartnerpayload
+from ...models.shared import activatepartnerpayload as shared_activatepartnerpayload
 from typing import Optional
 
 

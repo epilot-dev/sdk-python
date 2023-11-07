@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import partner as shared_partner
+from ...models.shared import partner as shared_partner
 from typing import Optional
 
 

@@ -1,5 +1,5 @@
 # Partners
-(*partners*)
+(*.partners*)
 
 ## Overview
 
@@ -112,23 +112,23 @@ s = epilot.Epilot(
 )
 
 req = [
-    operations.BatchGetAssignableRequestBody(
+    operations.RequestBody(
         user_id='string',
     ),
 ]
 
 res = s.partners.batch_get_assignable(req)
 
-if res.batch_get_assignable_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [List[operations.BatchGetAssignableRequestBody]](../../models//.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| Parameter                                         | Type                                              | Required                                          | Description                                       |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `request`                                         | [List[operations.RequestBody]](../../models//.md) | :heavy_check_mark:                                | The request object to use for the request.        |
 
 
 ### Response
@@ -309,13 +309,13 @@ req = operations.SearchAssignableRequestBody(
         '123',
     ],
     types=[
-        operations.SearchAssignableRequestBodyTypes.PARTNER_USER,
+        operations.Types.PARTNER_USER,
     ],
 )
 
 res = s.partners.search_assignable(req)
 
-if res.search_assignable_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

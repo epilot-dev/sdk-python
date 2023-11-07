@@ -1,4 +1,4 @@
-# AssignableOrganizationType
+# Type
 
 
 ## Values

@@ -1,4 +1,4 @@
-# PartnerStatus
+# Status
 
 
 ## Values

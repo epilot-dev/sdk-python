@@ -12,4 +12,4 @@ from .partnerinvitationpayload import *
 from .searchgeolocation import *
 from .security import *
 
-__all__ = ["ActivatePartnerPayload","Address","AddressGeolocation","AssignableOrganization","AssignableOrganizationImageURI","AssignableOrganizationType","AssignablePartnerUser","AssignablePartnerUserImageURI","AssignablePartnerUserType","AssignableUser","AssignableUserImageURI","AssignableUserType","Geolocation","Partner","PartnerInvitationPayload","PartnerInvitationPayloadLanguage","PartnerStatus","SearchGeolocation","Security"]
+__all__ = ["ActivatePartnerPayload","Address","AddressGeolocation","AssignableOrganization","AssignablePartnerUser","AssignablePartnerUserImageURI","AssignablePartnerUserType","AssignableUser","AssignableUserImageURI","AssignableUserType","Geolocation","ImageURI","Language","Partner","PartnerInvitationPayload","SearchGeolocation","Security","Status","Type"]

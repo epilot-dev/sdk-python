@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import geolocation as shared_geolocation
+from ...models.shared import geolocation as shared_geolocation
 from typing import Optional
 
 

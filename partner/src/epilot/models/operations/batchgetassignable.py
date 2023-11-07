@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import assignableorganization as shared_assignableorganization
-from ..shared import assignablepartneruser as shared_assignablepartneruser
-from ..shared import assignableuser as shared_assignableuser
+from ...models.shared import assignableorganization as shared_assignableorganization
+from ...models.shared import assignablepartneruser as shared_assignablepartneruser
+from ...models.shared import assignableuser as shared_assignableuser
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List, Optional, Union
@@ -13,7 +13,7 @@ from typing import List, Optional, Union
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class BatchGetAssignableRequestBody:
+class RequestBody:
     user_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id') }})
     r"""user id of assignable"""
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id'), 'exclude': lambda f: f is None }})
@@ -24,7 +24,7 @@ class BatchGetAssignableRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class BatchGetAssignable200ApplicationJSON:
+class BatchGetAssignableResponseBody:
     r"""List of assignable results"""
     hits: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     r"""total number of search results"""
@@ -39,7 +39,7 @@ class BatchGetAssignableResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    batch_get_assignable_200_application_json_object: Optional[BatchGetAssignable200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[BatchGetAssignableResponseBody] = dataclasses.field(default=None)
     r"""List of assignable results"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

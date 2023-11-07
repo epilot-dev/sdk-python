@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import partner as shared_partner
-from ..shared import partnerinvitationpayload as shared_partnerinvitationpayload
+from ...models.shared import partner as shared_partner
+from ...models.shared import partnerinvitationpayload as shared_partnerinvitationpayload
 from typing import Optional
 
 

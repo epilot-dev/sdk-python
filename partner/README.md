@@ -37,7 +37,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [partners](docs/sdks/partners/README.md)
+### [.partners](docs/sdks/partners/README.md)
 
 * [activate_partner](docs/sdks/partners/README.md#activate_partner) - activatePartner
 * [approve_partner](docs/sdks/partners/README.md#approve_partner) - approvePartner
@@ -54,8 +54,6 @@ if res.status_code == 200:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -64,8 +62,6 @@ if res.status_code == 200:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -83,16 +79,15 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
+    server_idx=0,
     security=shared.Security(
         as_organization="",
     ),
-    server_idx=0
 )
 
 
@@ -112,16 +107,15 @@ if res.status_code == 200:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
+    server_url="https://partner-directory-api.sls.epilot.io",
     security=shared.Security(
         as_organization="",
     ),
-    server_url="https://partner-directory-api.sls.epilot.io"
 )
 
 
@@ -155,9 +149,47 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security schemes globally:
+
+| Name              | Type              | Scheme            |
+| ----------------- | ----------------- | ----------------- |
+| `as_organization` | apiKey            | API key           |
+| `epilot_auth`     | http              | HTTP Bearer       |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        as_organization="",
+    ),
+)
+
+
+res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
+    company_name='Company name',
+    organization_id='string',
+    signed_up_email='Lupe.Graham2@hotmail.com',
+))
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

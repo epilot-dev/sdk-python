@@ -1,4 +1,4 @@
-# BatchGetAssignableRequestBody
+# RequestBody
 
 
 ## Fields

@@ -3,15 +3,15 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import assignableorganization as shared_assignableorganization
-from ..shared import assignablepartneruser as shared_assignablepartneruser
-from ..shared import assignableuser as shared_assignableuser
+from ...models.shared import assignableorganization as shared_assignableorganization
+from ...models.shared import assignablepartneruser as shared_assignablepartneruser
+from ...models.shared import assignableuser as shared_assignableuser
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 from typing import List, Optional, Union
 
-class SearchAssignableRequestBodyTypes(str, Enum):
+class Types(str, Enum):
     USER = 'user'
     PARTNER_USER = 'partner_user'
     PARTNER_ORGANIZATION = 'partner_organization'
@@ -28,7 +28,7 @@ class SearchAssignableRequestBody:
     r"""search query to filter results"""
     size: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
     r"""limit number of results to return"""
-    types: Optional[List[SearchAssignableRequestBodyTypes]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('types'), 'exclude': lambda f: f is None }})
+    types: Optional[List[Types]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('types'), 'exclude': lambda f: f is None }})
     r"""filter results to specific types of assignables. defaults to all types"""
     
 
@@ -36,7 +36,7 @@ class SearchAssignableRequestBody:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SearchAssignable200ApplicationJSON:
+class SearchAssignableResponseBody:
     r"""List of assignable results"""
     hits: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     r"""total number of search results"""
@@ -51,9 +51,9 @@ class SearchAssignableResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    object: Optional[SearchAssignableResponseBody] = dataclasses.field(default=None)
+    r"""List of assignable results"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    search_assignable_200_application_json_object: Optional[SearchAssignable200ApplicationJSON] = dataclasses.field(default=None)
-    r"""List of assignable results"""
     
 

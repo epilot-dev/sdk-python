@@ -1,4 +1,4 @@
-# AssignableOrganizationImageURI
+# ImageURI
 
 
 ## Fields

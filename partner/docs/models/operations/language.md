@@ -1,4 +1,4 @@
-# ResendPartnerInvitationRequestBodyLanguage
+# Language
 
 Language for partner invitation email
 

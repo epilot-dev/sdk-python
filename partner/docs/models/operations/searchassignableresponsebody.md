@@ -1,4 +1,4 @@
-# SearchAssignable200ApplicationJSON
+# SearchAssignableResponseBody
 
 List of assignable results
 

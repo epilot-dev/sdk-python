@@ -1,4 +1,4 @@
-# BatchGetAssignable200ApplicationJSON
+# BatchGetAssignableResponseBody
 
 List of assignable results
 

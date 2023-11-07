@@ -7,7 +7,7 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class PartnerStatus(str, Enum):
+class Status(str, Enum):
     PENDING = 'Pending'
     REQUEST = 'Request'
     DELETED = 'Deleted'
@@ -33,6 +33,6 @@ class Partner:
     r"""Target Organization"""
     signed_up_email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signed_up_email'), 'exclude': lambda f: f is None }})
     r"""Email using to sign up"""
-    status: Optional[PartnerStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[Status] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
 
