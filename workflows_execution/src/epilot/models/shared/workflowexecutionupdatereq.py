@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import closingreason as shared_closingreason
-from ..shared import dynamicduedate as shared_dynamicduedate
-from ..shared import workflowcontext as shared_workflowcontext
-from ..shared import workflowstatus as shared_workflowstatus
+from .closingreason import ClosingReason
+from .dynamicduedate import DynamicDueDate
+from .workflowcontext import WorkflowContext
+from .workflowstatus import WorkflowStatus
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List, Optional
@@ -20,11 +20,11 @@ class WorkflowExecutionUpdateReq:
     closing_reason_description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('closingReasonDescription'), 'exclude': lambda f: f is None }})
     completed_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('completedTime'), 'exclude': lambda f: f is None }})
     r"""Completed time of the workflow execution"""
-    contexts: Optional[List[shared_workflowcontext.WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
+    contexts: Optional[List[WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
     due_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dueDate'), 'exclude': lambda f: f is None }})
-    dynamic_due_date: Optional[shared_dynamicduedate.DynamicDueDate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dynamicDueDate'), 'exclude': lambda f: f is None }})
+    dynamic_due_date: Optional[DynamicDueDate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dynamicDueDate'), 'exclude': lambda f: f is None }})
     r"""set a Duedate for a step then a specific"""
-    selected_closing_reasons: Optional[List[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('selectedClosingReasons'), 'exclude': lambda f: f is None }})
-    status: Optional[shared_workflowstatus.WorkflowStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    selected_closing_reasons: Optional[List[ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('selectedClosingReasons'), 'exclude': lambda f: f is None }})
+    status: Optional[WorkflowStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
 

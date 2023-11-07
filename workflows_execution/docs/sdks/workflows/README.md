@@ -1,5 +1,5 @@
 # Workflows
-(*workflows*)
+(*.workflows*)
 
 ## Overview
 
@@ -114,7 +114,7 @@ Delete workflow execution by id. Workflow contexts will NOT be deleted.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="",
@@ -148,7 +148,7 @@ Deletes a step from a workflow execution.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="",
@@ -186,7 +186,7 @@ from the state of the Definition when the instance was created.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="",
@@ -220,7 +220,7 @@ Get a full workflow execution, included steps information, by execution id.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="",
@@ -254,7 +254,7 @@ Retrieve Workflow Executions. Optionally, you can filter them by context & schem
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="",
@@ -263,7 +263,7 @@ s = epilot.Epilot(
 
 res = s.workflows.get_executions(context='string', schema='string')
 
-if res.workflow_execution_slims is not None:
+if res.classes is not None:
     # handle response
     pass
 ```
@@ -385,7 +385,7 @@ res = s.workflows.update_execution(workflow_execution_update_req=shared.Workflow
     ],
     dynamic_due_date=shared.DynamicDueDate(
         number_of_units=1932.48,
-        time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+        time_period=shared.TimePeriod.WEEKS,
     ),
     selected_closing_reasons=[
         shared.ClosingReason(
@@ -437,7 +437,7 @@ res = s.workflows.update_step(update_step_req=shared.UpdateStepReq(
     ),
     dynamic_due_date=shared.DynamicDueDate(
         number_of_units=444.49,
-        time_period=shared.DynamicDueDateTimePeriod.WEEKS,
+        time_period=shared.TimePeriod.WEEKS,
     ),
     position=shared.StepPositionAt(),
     user_ids=[

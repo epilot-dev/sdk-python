@@ -7,11 +7,11 @@ from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class DynamicDueDateActionTypeCondition(str, Enum):
+class ActionTypeCondition(str, Enum):
     WORKFLOW_STARTED = 'WORKFLOW_STARTED'
     STEP_CLOSED = 'STEP_CLOSED'
 
-class DynamicDueDateTimePeriod(str, Enum):
+class TimePeriod(str, Enum):
     DAYS = 'days'
     WEEKS = 'weeks'
     MONTHS = 'months'
@@ -22,8 +22,8 @@ class DynamicDueDateTimePeriod(str, Enum):
 class DynamicDueDate:
     r"""set a Duedate for a step then a specific"""
     number_of_units: float = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numberOfUnits') }})
-    time_period: DynamicDueDateTimePeriod = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timePeriod') }})
-    action_type_condition: Optional[DynamicDueDateActionTypeCondition] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actionTypeCondition'), 'exclude': lambda f: f is None }})
+    time_period: TimePeriod = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timePeriod') }})
+    action_type_condition: Optional[ActionTypeCondition] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actionTypeCondition'), 'exclude': lambda f: f is None }})
     step_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stepId'), 'exclude': lambda f: f is None }})
     
 

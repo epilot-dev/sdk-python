@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import step as shared_step
-from ..shared import updatestepreq as shared_updatestepreq
+from ...models.shared import step as shared_step
+from ...models.shared import updatestepreq as shared_updatestepreq
 from typing import Optional
 
 
@@ -27,8 +26,6 @@ class UpdateStepResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     step: Optional[shared_step.Step] = dataclasses.field(default=None)

@@ -44,7 +44,7 @@ if res.workflow_execution is not None:
 ## Available Resources and Operations
 
 
-### [workflows](docs/sdks/workflows/README.md)
+### [.workflows](docs/sdks/workflows/README.md)
 
 * [create_execution](docs/sdks/workflows/README.md#create_execution) - createExecution
 * [create_step](docs/sdks/workflows/README.md#create_step) - createStep
@@ -63,8 +63,6 @@ if res.workflow_execution is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -75,6 +73,42 @@ if res.workflow_execution is not None:
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
 
+## Example
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    bearer_auth="",
+)
+
+req = shared.WorkflowExecutionCreateReq(
+    assigned_to=[
+        'string',
+    ],
+    contexts=[
+        shared.WorkflowContext(
+            id='<ID>',
+            schema='string',
+            title='string',
+        ),
+    ],
+    workflow_id='string',
+)
+
+res = None
+try:
+    res = s.workflows.create_execution(req)
+
+except (ErrorResp) as e:
+    print(e) # handle exception
+
+
+if res.workflow_execution is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -92,14 +126,13 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
+    server_idx=0,
     bearer_auth="",
-    server_idx=0
 )
 
 req = shared.WorkflowExecutionCreateReq(
@@ -128,14 +161,13 @@ if res.workflow_execution is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
+    server_url="https://workflows-execution.sls.epilot.io",
     bearer_auth="",
-    server_url="https://workflows-execution.sls.epilot.io"
 )
 
 req = shared.WorkflowExecutionCreateReq(
@@ -178,9 +210,53 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name          | Type          | Scheme        |
+| ------------- | ------------- | ------------- |
+| `bearer_auth` | http          | HTTP Bearer   |
+
+To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    bearer_auth="",
+)
+
+req = shared.WorkflowExecutionCreateReq(
+    assigned_to=[
+        'string',
+    ],
+    contexts=[
+        shared.WorkflowContext(
+            id='<ID>',
+            schema='string',
+            title='string',
+        ),
+    ],
+    workflow_id='string',
+)
+
+res = s.workflows.create_execution(req)
+
+if res.workflow_execution is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

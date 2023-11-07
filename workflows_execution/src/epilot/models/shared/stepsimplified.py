@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import ecpdetails as shared_ecpdetails
-from ..shared import itemtype as shared_itemtype
-from ..shared import steprequirement as shared_steprequirement
-from ..shared import steptype as shared_steptype
+from .ecpdetails import ECPDetails
+from .itemtype import ItemType
+from .steprequirement import StepRequirement
+from .steptype import StepType
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List, Optional
@@ -16,9 +16,9 @@ from typing import List, Optional
 class StepSimplified:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    type: shared_itemtype.ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     definition_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId'), 'exclude': lambda f: f is None }})
-    ecp: Optional[shared_ecpdetails.ECPDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ecp'), 'exclude': lambda f: f is None }})
+    ecp: Optional[ECPDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ecp'), 'exclude': lambda f: f is None }})
     r"""Details regarding ECP for the workflow step"""
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     entity_ref_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityRefId'), 'exclude': lambda f: f is None }})
@@ -26,9 +26,9 @@ class StepSimplified:
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
-    execution_type: Optional[shared_steptype.StepType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
-    installer: Optional[shared_ecpdetails.ECPDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installer'), 'exclude': lambda f: f is None }})
+    execution_type: Optional[StepType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
+    installer: Optional[ECPDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installer'), 'exclude': lambda f: f is None }})
     r"""Details regarding ECP for the workflow step"""
-    requirements: Optional[List[shared_steprequirement.StepRequirement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements'), 'exclude': lambda f: f is None }})
+    requirements: Optional[List[StepRequirement]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requirements'), 'exclude': lambda f: f is None }})
     
 

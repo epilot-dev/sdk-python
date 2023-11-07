@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import automationconfig as shared_automationconfig
-from ..shared import stepstatus as shared_stepstatus
-from ..shared import steptype as shared_steptype
+from .automationconfig import AutomationConfig
+from .stepstatus import StepStatus
+from .steptype import StepType
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -14,11 +14,11 @@ from typing import Optional
 @dataclasses.dataclass
 class CreateStepReq:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    automation_config: Optional[shared_automationconfig.AutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})
+    automation_config: Optional[AutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})
     r"""Configuration for automation execution to run"""
-    execution_type: Optional[shared_steptype.StepType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
+    execution_type: Optional[StepType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('executionType'), 'exclude': lambda f: f is None }})
     insertion_index: Optional[float] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('insertionIndex'), 'exclude': lambda f: f is None }})
     section_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sectionId'), 'exclude': lambda f: f is None }})
-    status: Optional[shared_stepstatus.StepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[StepStatus] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     
 

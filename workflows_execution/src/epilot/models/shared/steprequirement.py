@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import itemtype as shared_itemtype
+from .itemtype import ItemType
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 
-class StepRequirementCondition(str, Enum):
+class Condition(str, Enum):
     CLOSED = 'CLOSED'
 
 
@@ -15,8 +15,8 @@ class StepRequirementCondition(str, Enum):
 @dataclasses.dataclass
 class StepRequirement:
     r"""describe the requirement for step enablement"""
-    condition: StepRequirementCondition = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})
+    condition: Condition = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})
     definition_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId') }})
-    type: shared_itemtype.ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 

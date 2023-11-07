@@ -3,8 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import closingreasonresp as shared_closingreasonresp
-from ..shared import errorresp as shared_errorresp
+from ...models.shared import closingreasonresp as shared_closingreasonresp
 from typing import Optional
 
 
@@ -24,8 +23,6 @@ class GetClosingReasonExecutionResponse:
     r"""HTTP response status code for this operation"""
     closing_reason_resp: Optional[shared_closingreasonresp.ClosingReasonResp] = dataclasses.field(default=None)
     r"""returns all Closing Reasons for this Execution"""
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Internal Issues"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
     
