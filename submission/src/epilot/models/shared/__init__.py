@@ -5,4 +5,4 @@ from .s3reference import *
 from .submissionentity import *
 from .submissionpayload import *
 
-__all__ = ["OptIn","S3Reference","SubmissionEntity","SubmissionEntityFiles","SubmissionEntitySchema","SubmissionPayload"]
+__all__ = ["Files","OptIn","S3Reference","Schema","SubmissionEntity","SubmissionPayload"]

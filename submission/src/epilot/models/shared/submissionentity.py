@@ -2,20 +2,20 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import s3reference as shared_s3reference
+from .s3reference import S3Reference
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 from typing import Any, Dict, List, Optional
 
-class SubmissionEntitySchema(str, Enum):
+class Schema(str, Enum):
     SUBMISSION = 'submission'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SubmissionEntityFiles:
-    s3ref: shared_s3reference.S3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
+class Files:
+    s3ref: S3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
     r"""S3 Reference from File API"""
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""List of tags for File entities"""
@@ -32,11 +32,11 @@ class SubmissionEntityFiles:
 @dataclasses.dataclass
 class SubmissionEntity:
     r"""The submission entity to create"""
-    schema: SubmissionEntitySchema = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_schema') }})
+    schema: Schema = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_schema') }})
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""Readable description of the submission. Will be used as the title if passed"""
-    files: Optional[List[SubmissionEntityFiles]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
+    files: Optional[List[Files]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
     r"""Files to attach to Submission Entity as a relation (s3refs from File API)"""
     
 

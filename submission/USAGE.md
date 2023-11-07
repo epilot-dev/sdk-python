@@ -22,9 +22,9 @@ req = shared.SubmissionPayload(
                 "contact_email": 'string',
                 "request": 'string',
             },
-            schema=shared.SubmissionEntitySchema.SUBMISSION,
+            schema=shared.Schema.SUBMISSION,
             files=[
-                shared.SubmissionEntityFiles(
+                shared.Files(
                     additional_properties={
                         "key": 'string',
                     },

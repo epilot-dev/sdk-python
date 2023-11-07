@@ -1,5 +1,5 @@
 # Submissions
-(*submissions*)
+(*.submissions*)
 
 ## Overview
 
@@ -29,17 +29,17 @@ req = shared.SubmissionPayload(
     entities=[
         shared.SubmissionEntity(
             additional_properties={
+                "description": 'string',
+                "contact_first_name": 'string',
+                "contact_last_name": 'string',
                 "contact_email": 'string',
                 "request": 'string',
                 "files": 'string',
                 "_schema": 'string',
-                "description": 'string',
-                "contact_first_name": 'string',
-                "contact_last_name": 'string',
             },
-            schema=shared.SubmissionEntitySchema.SUBMISSION,
+            schema=shared.Schema.SUBMISSION,
             files=[
-                shared.SubmissionEntityFiles(
+                shared.Files(
                     additional_properties={
                         "key": 'string',
                     },

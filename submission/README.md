@@ -23,17 +23,17 @@ req = shared.SubmissionPayload(
     entities=[
         shared.SubmissionEntity(
             additional_properties={
-                "contact_email": 'string',
-                "request": 'string',
-                "files": 'string',
                 "_schema": 'string',
                 "description": 'string',
                 "contact_first_name": 'string',
                 "contact_last_name": 'string',
+                "contact_email": 'string',
+                "request": 'string',
+                "files": 'string',
             },
-            schema=shared.SubmissionEntitySchema.SUBMISSION,
+            schema=shared.Schema.SUBMISSION,
             files=[
-                shared.SubmissionEntityFiles(
+                shared.Files(
                     additional_properties={
                         "key": 'string',
                     },
@@ -78,7 +78,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [submissions](docs/sdks/submissions/README.md)
+### [.submissions](docs/sdks/submissions/README.md)
 
 * [create_submission](docs/sdks/submissions/README.md#create_submission) - createSubmission
 <!-- End SDK Available Operations -->
@@ -86,8 +86,6 @@ if res.status_code == 200:
 
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 
@@ -97,8 +95,6 @@ if res.status_code == 200:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -116,13 +112,12 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    server_idx=0
+    server_idx=0,
 )
 
 req = shared.SubmissionPayload(
@@ -132,17 +127,17 @@ req = shared.SubmissionPayload(
     entities=[
         shared.SubmissionEntity(
             additional_properties={
+                "description": 'string',
+                "contact_first_name": 'string',
                 "contact_last_name": 'string',
                 "contact_email": 'string',
                 "request": 'string',
                 "files": 'string',
                 "_schema": 'string',
-                "description": 'string',
-                "contact_first_name": 'string',
             },
-            schema=shared.SubmissionEntitySchema.SUBMISSION,
+            schema=shared.Schema.SUBMISSION,
             files=[
-                shared.SubmissionEntityFiles(
+                shared.Files(
                     additional_properties={
                         "key": 'string',
                     },
@@ -187,13 +182,12 @@ if res.status_code == 200:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    server_url="https://submission.sls.epilot.io"
+    server_url="https://submission.sls.epilot.io",
 )
 
 req = shared.SubmissionPayload(
@@ -203,17 +197,17 @@ req = shared.SubmissionPayload(
     entities=[
         shared.SubmissionEntity(
             additional_properties={
-                "_schema": 'string',
-                "description": 'string',
-                "contact_first_name": 'string',
                 "contact_last_name": 'string',
                 "contact_email": 'string',
                 "request": 'string',
                 "files": 'string',
+                "_schema": 'string',
+                "description": 'string',
+                "contact_first_name": 'string',
             },
-            schema=shared.SubmissionEntitySchema.SUBMISSION,
+            schema=shared.Schema.SUBMISSION,
             files=[
-                shared.SubmissionEntityFiles(
+                shared.Files(
                     additional_properties={
                         "key": 'string',
                     },
@@ -272,8 +266,6 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

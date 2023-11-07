@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import optin as shared_optin
-from ..shared import submissionentity as shared_submissionentity
+from .optin import OptIn
+from .submissionentity import SubmissionEntity
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List, Optional
@@ -13,7 +13,7 @@ from typing import List, Optional
 @dataclasses.dataclass
 class SubmissionPayload:
     r"""Holds content and meta information"""
-    entities: List[shared_submissionentity.SubmissionEntity] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entities') }})
+    entities: List[SubmissionEntity] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entities') }})
     r"""Entities to create from submission"""
     organization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id') }})
     r"""organization id"""
@@ -28,7 +28,7 @@ class SubmissionPayload:
     """
     journey_submit_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_submit_id'), 'exclude': lambda f: f is None }})
     r"""journey submit uid"""
-    opt_ins: Optional[List[shared_optin.OptIn]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('opt_ins'), 'exclude': lambda f: f is None }})
+    opt_ins: Optional[List[OptIn]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('opt_ins'), 'exclude': lambda f: f is None }})
     r"""Opt-ins to create from submission"""
     
 
