@@ -1,4 +1,4 @@
-# OrganizationType
+# Type
 
 
 ## Values

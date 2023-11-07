@@ -3,13 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import userv2 as shared_userv2
+from ...models.shared import userv2 as shared_userv2
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 from typing import Optional
 
-class ResendUserInvitationRequestBodyLanguage(str, Enum):
+class Language(str, Enum):
     r"""Language for user invitation email"""
     EN = 'en'
     DE = 'de'
@@ -20,7 +20,7 @@ class ResendUserInvitationRequestBodyLanguage(str, Enum):
 class ResendUserInvitationRequestBody:
     email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
     r"""Email address of the address"""
-    language: Optional[ResendUserInvitationRequestBodyLanguage] = dataclasses.field(default=ResendUserInvitationRequestBodyLanguage.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
+    language: Optional[Language] = dataclasses.field(default=Language.EN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     r"""Language for user invitation email"""
     
 

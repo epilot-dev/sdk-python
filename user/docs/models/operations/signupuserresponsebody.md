@@ -1,4 +1,4 @@
-# SignUpUser200ApplicationJSON
+# SignUpUserResponseBody
 
 The created user and organization
 

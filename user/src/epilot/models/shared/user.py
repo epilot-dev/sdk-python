@@ -9,7 +9,7 @@ from typing import Any, Dict, List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UserImageURI:
+class ImageURI:
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     original: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('original'), 'exclude': lambda f: f is None }})
     thumbnail_32: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('thumbnail_32'), 'exclude': lambda f: f is None }})
@@ -19,7 +19,7 @@ class UserImageURI:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UserProperties:
+class Properties:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     
@@ -35,7 +35,7 @@ class User:
     r"""Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible."""
     organization_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id') }})
     preferred_language: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preferred_language') }})
-    properties: List[UserProperties] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('properties') }})
+    properties: List[Properties] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('properties') }})
     roles: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles') }})
     r"""Deprecated! Please use Permissions API instead
 
@@ -43,7 +43,7 @@ class User:
     """
     display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('display_name'), 'exclude': lambda f: f is None }})
     r"""Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible."""
-    image_uri: Optional[UserImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri') }})
+    image_uri: Optional[ImageURI] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('image_uri') }})
     signature: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signature'), 'exclude': lambda f: f is None }})
     
 

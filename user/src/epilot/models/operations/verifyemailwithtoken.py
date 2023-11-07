@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import userverificationpayload as shared_userverificationpayload
+from ...models.shared import userverificationpayload as shared_userverificationpayload
 from typing import Optional
 
 

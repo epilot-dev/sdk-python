@@ -1,5 +1,5 @@
 # UserV2
-(*user_v2*)
+(*.user_v2*)
 
 ## Overview
 
@@ -65,7 +65,7 @@ Delete user by user id
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -99,7 +99,6 @@ Get currently logged in user
 
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -127,7 +126,7 @@ Get user organization login parameters by username
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -136,7 +135,7 @@ s = epilot.Epilot(
 
 res = s.user_v2.get_user_login_parameters_v2(username='string')
 
-if res.get_user_login_parameters_v2_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -161,7 +160,7 @@ Get user details by user id
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -243,7 +242,7 @@ Get the list of organization users
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -252,7 +251,7 @@ s = epilot.Epilot(
 
 res = s.user_v2.list_users_v2(limit=4589.67, offset=7253.59, query='string')
 
-if res.list_users_v2_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -279,7 +278,7 @@ Resend user invitation email
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -342,7 +341,7 @@ res = s.user_v2.sign_up_user(signup_user_payload=shared.SignupUserPayload(
     ),
 ), token='string')
 
-if res.sign_up_user_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

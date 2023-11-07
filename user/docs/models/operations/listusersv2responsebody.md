@@ -1,4 +1,4 @@
-# ListUsersV2200ApplicationJSON
+# ListUsersV2ResponseBody
 
 List of organization users
 

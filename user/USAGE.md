@@ -3,7 +3,6 @@
 
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="",

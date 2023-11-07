@@ -1,4 +1,4 @@
-# LoginParametersOauthResponseType
+# OauthResponseType
 
 
 ## Values

@@ -1,4 +1,4 @@
-# ListUsers200ApplicationJSON
+# ListUsersResponseBody
 
 List of users
 

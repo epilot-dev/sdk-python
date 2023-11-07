@@ -26,7 +26,7 @@ class UserV2Properties:
     
 
 
-class UserV2Status(str, Enum):
+class Status(str, Enum):
     ACTIVE = 'Active'
     PENDING = 'Pending'
     DEACTIVATED = 'Deactivated'
@@ -54,7 +54,7 @@ class UserV2:
     preferred_language: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preferred_language'), 'exclude': lambda f: f is None }})
     properties: Optional[List[UserV2Properties]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('properties'), 'exclude': lambda f: f is None }})
     signature: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signature') }})
-    status: Optional[UserV2Status] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
+    status: Optional[Status] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})
     
 

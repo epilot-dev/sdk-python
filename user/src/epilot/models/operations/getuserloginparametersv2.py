@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import loginparameters as shared_loginparameters
+from ...models.shared import loginparameters as shared_loginparameters
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import List, Optional
@@ -19,7 +19,7 @@ class GetUserLoginParametersV2Request:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetUserLoginParametersV2200ApplicationJSON:
+class GetUserLoginParametersV2ResponseBody:
     r"""User"""
     login_parameters: Optional[List[shared_loginparameters.LoginParameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login_parameters'), 'exclude': lambda f: f is None }})
     
@@ -32,7 +32,7 @@ class GetUserLoginParametersV2Response:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_user_login_parameters_v2_200_application_json_object: Optional[GetUserLoginParametersV2200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetUserLoginParametersV2ResponseBody] = dataclasses.field(default=None)
     r"""User"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

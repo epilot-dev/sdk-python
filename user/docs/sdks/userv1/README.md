@@ -1,5 +1,5 @@
 # UserV1
-(*user_v1*)
+(*.user_v1*)
 
 ## Overview
 
@@ -20,7 +20,6 @@ Get currently logged in user
 
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -48,7 +47,7 @@ Get user by id
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -82,7 +81,7 @@ Get user organization login parameters by username
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -91,7 +90,7 @@ s = epilot.Epilot(
 
 res = s.user_v1.get_user_login_parameters(username='string')
 
-if res.get_user_login_parameters_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```
@@ -116,7 +115,7 @@ Lists users in organizations you have access to
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -127,7 +126,7 @@ res = s.user_v1.list_users(limit=5262.12, offset=5400.61, org_ids=[
     'string',
 ], query='string')
 
-if res.list_users_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

@@ -12,7 +12,6 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=user
 <!-- Start SDK Example Usage -->
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="",
@@ -31,14 +30,14 @@ if res.user is not None:
 ## Available Resources and Operations
 
 
-### [user_v1](docs/sdks/userv1/README.md)
+### [.user_v1](docs/sdks/userv1/README.md)
 
 * [get_me](docs/sdks/userv1/README.md#get_me) - getMe
 * [get_user](docs/sdks/userv1/README.md#get_user) - getUser
 * [get_user_login_parameters](docs/sdks/userv1/README.md#get_user_login_parameters) - getUserLoginParameters
 * [list_users](docs/sdks/userv1/README.md#list_users) - listUsers
 
-### [user_v2](docs/sdks/userv2/README.md)
+### [.user_v2](docs/sdks/userv2/README.md)
 
 * [activate_user](docs/sdks/userv2/README.md#activate_user) - activateUser
 * [delete_user_v2](docs/sdks/userv2/README.md#delete_user_v2) - deleteUserV2
@@ -57,8 +56,6 @@ if res.user is not None:
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 
@@ -67,8 +64,6 @@ if res.user is not None:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -86,14 +81,12 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
+    server_idx=0,
     epilot_auth="",
-    server_idx=0
 )
 
 
@@ -109,14 +102,12 @@ if res.user is not None:
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
+    server_url="https://user.sls.epilot.io",
     epilot_auth="",
-    server_url="https://user.sls.epilot.io"
 )
 
 
@@ -146,9 +137,39 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name          | Type          | Scheme        |
+| ------------- | ------------- | ------------- |
+| `epilot_auth` | http          | HTTP Bearer   |
+
+To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
+
+```python
+import epilot
+
+s = epilot.Epilot(
+    epilot_auth="",
+)
+
+
+res = s.user_v1.get_me()
+
+if res.user is not None:
+    # handle response
+    pass
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

@@ -1,4 +1,4 @@
-# GetUserLoginParametersV2200ApplicationJSON
+# GetUserLoginParametersResponseBody
 
 User
 

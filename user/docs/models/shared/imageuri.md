@@ -1,4 +1,4 @@
-# UserImageURI
+# ImageURI
 
 
 ## Fields

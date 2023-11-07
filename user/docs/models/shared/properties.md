@@ -1,4 +1,4 @@
-# UserProperties
+# Properties
 
 
 ## Fields
