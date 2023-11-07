@@ -3,16 +3,15 @@
 
 ```python
 import epilot
-from epilot.models import shared
 
 s = epilot.Epilot(
     sigv4="",
 )
 
 
-res = s.epilot.get_jwks()
+res = s.get_jwks()
 
-if res.get_jwks_200_application_json_object is not None:
+if res.object is not None:
     # handle response
     pass
 ```

@@ -10,7 +10,7 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetToken200ApplicationJSON:
+class GetTokenResponseBody:
     r"""JWT Token"""
     token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})
     r"""JWT Token"""
@@ -24,7 +24,7 @@ class GetTokenResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_token_200_application_json_object: Optional[GetToken200ApplicationJSON] = dataclasses.field(default=None)
+    object: Optional[GetTokenResponseBody] = dataclasses.field(default=None)
     r"""JWT Token"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

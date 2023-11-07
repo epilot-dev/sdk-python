@@ -1,4 +1,4 @@
-# GetToken200ApplicationJSON
+# GetTokenResponseBody
 
 JWT Token
 

@@ -1,4 +1,4 @@
-# GetJwks200ApplicationJSONKeys
+# Keys
 
 
 ## Fields

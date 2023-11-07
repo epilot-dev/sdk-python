@@ -1,4 +1,4 @@
-# GetOpenIDConfiguration200ApplicationJSON
+# GetOpenIDConfigurationResponseBody
 
 OpenID Configuration
 

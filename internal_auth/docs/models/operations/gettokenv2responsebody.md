@@ -1,4 +1,4 @@
-# GetTokenV2200ApplicationJSON
+# GetTokenV2ResponseBody
 
 JWT Token
 
