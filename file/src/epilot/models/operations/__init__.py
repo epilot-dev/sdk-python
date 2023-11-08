@@ -13,5 +13,6 @@ from .previews3fileget import *
 from .savefile import *
 from .uploadfile import *
 from .uploadfilepublic import *
+from .verifycustomdownloadurl import *
 
-__all__ = ["DeleteFileResponse","DeleteSessionResponse","DownloadFileRequest","DownloadFileResponse","DownloadFileResponseBody","DownloadFilesResponse","DownloadS3FileRequest","DownloadS3FileResponse","DownloadS3FileResponseBody","GetSessionResponse","PreviewFileRequest","PreviewFileResponse","PreviewPublicFileRequest","PreviewPublicFileResponse","PreviewS3FileGetRequest","PreviewS3FileGetResponse","PreviewS3FileRequest","PreviewS3FileResponse","ResponseBody","S3ref","SaveFileResponse","UploadFilePublicResponse","UploadFilePublicResponseBody","UploadFilePublicS3ref","UploadFileRequest","UploadFileResponse","UploadFileResponseBody"]
+__all__ = ["DeleteFileResponse","DeleteSessionResponse","DownloadFileRequest","DownloadFileResponse","DownloadFileResponseBody","DownloadFilesResponse","DownloadS3FileRequest","DownloadS3FileResponse","DownloadS3FileResponseBody","GetSessionResponse","PreviewFileRequest","PreviewFileResponse","PreviewPublicFileRequest","PreviewPublicFileResponse","PreviewS3FileGetRequest","PreviewS3FileGetResponse","PreviewS3FileRequest","PreviewS3FileResponse","ResponseBody","S3ref","SaveFileResponse","UploadFilePublicResponse","UploadFilePublicResponseBody","UploadFilePublicS3ref","UploadFileRequest","UploadFileResponse","UploadFileResponseBody","VerifyCustomDownloadURLResponse","VerifyCustomDownloadURLResponseBody"]

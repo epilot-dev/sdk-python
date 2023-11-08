@@ -38,7 +38,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteSessionResponse](../../models/operations/deletesessionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_session
 
@@ -71,4 +75,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetSessionResponse](../../models/operations/getsessionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

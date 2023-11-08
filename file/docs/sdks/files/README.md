@@ -18,6 +18,7 @@ Files API
 * [save_file](#save_file) - saveFile
 * [upload_file](#upload_file) - uploadFile
 * [upload_file_public](#upload_file_public) - uploadFilePublic
+* [verify_custom_download_url](#verify_custom_download_url) - verifyCustomDownloadUrl
 
 ## delete_file
 
@@ -59,7 +60,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteFileResponse](../../models/operations/deletefileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## download_file
 
@@ -97,7 +102,11 @@ if res.object is not None:
 ### Response
 
 **[operations.DownloadFileResponse](../../models/operations/downloadfileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## download_files
 
@@ -139,7 +148,11 @@ if res.classes is not None:
 ### Response
 
 **[operations.DownloadFilesResponse](../../models/operations/downloadfilesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## download_s3_file
 
@@ -177,7 +190,11 @@ if res.object is not None:
 ### Response
 
 **[operations.DownloadS3FileResponse](../../models/operations/downloads3fileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## preview_file
 
@@ -216,7 +233,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PreviewFileResponse](../../models/operations/previewfileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## preview_public_file
 
@@ -255,7 +276,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PreviewPublicFileResponse](../../models/operations/previewpublicfileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## preview_s3_file
 
@@ -296,7 +321,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PreviewS3FileResponse](../../models/operations/previews3fileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## preview_s3_file_get
 
@@ -335,7 +364,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PreviewS3FileGetResponse](../../models/operations/previews3filegetresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## save_file
 
@@ -398,7 +431,11 @@ if res.file_entity is not None:
 ### Response
 
 **[operations.SaveFileResponse](../../models/operations/savefileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## upload_file
 
@@ -441,7 +478,11 @@ if res.object is not None:
 ### Response
 
 **[operations.UploadFileResponse](../../models/operations/uploadfileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## upload_file_public
 
@@ -484,4 +525,51 @@ if res.object is not None:
 ### Response
 
 **[operations.UploadFilePublicResponse](../../models/operations/uploadfilepublicresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## verify_custom_download_url
+
+Verify a pre-signed custom download url for a file
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="",
+    ),
+)
+
+req = shared.VerifyCustomDownloadURLPayload(
+    custom_download_url='https://some-api-url.com?file_id=123&expires_at=1699273500029&signature=abcdefg',
+)
+
+res = s.files.verify_custom_download_url(req)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [shared.VerifyCustomDownloadURLPayload](../../models/shared/verifycustomdownloadurlpayload.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+
+
+### Response
+
+**[operations.VerifyCustomDownloadURLResponse](../../models/operations/verifycustomdownloadurlresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

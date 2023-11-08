@@ -52,6 +52,7 @@ if res.status_code == 200:
 * [save_file](docs/sdks/files/README.md#save_file) - saveFile
 * [upload_file](docs/sdks/files/README.md#upload_file) - uploadFile
 * [upload_file_public](docs/sdks/files/README.md#upload_file_public) - uploadFilePublic
+* [verify_custom_download_url](docs/sdks/files/README.md#verify_custom_download_url) - verifyCustomDownloadUrl
 
 ### [.session](docs/sdks/session/README.md)
 
@@ -71,6 +72,43 @@ if res.status_code == 200:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="",
+    ),
+)
+
+req = shared.DeleteFilePayload(
+    s3ref=shared.S3Reference(
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+    ),
+)
+
+res = None
+try:
+    res = s.files.delete_file(req)
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -167,7 +205,6 @@ s = epilot.Epilot(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes

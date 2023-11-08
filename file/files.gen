@@ -20,6 +20,7 @@ src/epilot/models/operations/previews3fileget.py
 src/epilot/models/operations/savefile.py
 src/epilot/models/operations/uploadfile.py
 src/epilot/models/operations/uploadfilepublic.py
+src/epilot/models/operations/verifycustomdownloadurl.py
 src/epilot/models/operations/deletesession.py
 src/epilot/models/operations/getsession.py
 src/epilot/models/shared/deletefilepayload.py
@@ -30,6 +31,7 @@ src/epilot/models/shared/saves3filepayload.py
 src/epilot/models/shared/filerelationitem.py
 src/epilot/models/shared/savecustomfilepayload.py
 src/epilot/models/shared/uploadfilepayload.py
+src/epilot/models/shared/verifycustomdownloadurlpayload.py
 src/epilot/models/shared/security.py
 src/epilot/models/__init__.py
 src/epilot/models/errors/__init__.py
@@ -61,6 +63,8 @@ docs/models/operations/uploadfileresponse.md
 docs/models/operations/uploadfilepublics3ref.md
 docs/models/operations/uploadfilepublicresponsebody.md
 docs/models/operations/uploadfilepublicresponse.md
+docs/models/operations/verifycustomdownloadurlresponsebody.md
+docs/models/operations/verifycustomdownloadurlresponse.md
 docs/models/operations/deletesessionresponse.md
 docs/models/operations/getsessionresponse.md
 docs/models/shared/deletefilepayload.md
@@ -79,6 +83,7 @@ docs/models/shared/savecustomfilepayloadaccesscontrol.md
 docs/models/shared/documenttype.md
 docs/models/shared/savecustomfilepayload.md
 docs/models/shared/uploadfilepayload.md
+docs/models/shared/verifycustomdownloadurlpayload.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md
 docs/sdks/files/README.md
