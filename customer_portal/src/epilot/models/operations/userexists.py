@@ -3,43 +3,44 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import origin as components_origin
+from ...models.components import portaluser as components_portaluser
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
 class UserExistsRequest:
+    email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
+    org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
+    origin: Optional[components_origin.Origin] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Checkes if user exists in the given portal origin. If not provided, checks in all origins."""
     
-    email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})  
-    org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})  
-    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UserExists404ApplicationJSON:
-    r"""User does not exist in the portal"""
-    
-    exists: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists'), 'exclude': lambda f: f is None }})  
+class UserExistsResponseBody:
+    r"""Returned whether the user exists in the portal or not successfully."""
+    exists: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists') }})
+    r"""Whether the user exists in the portal"""
+    user: Optional[components_portaluser.PortalUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
+    r"""The portal user entity"""
     
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class UserExists200ApplicationJSON:
-    r"""User exists in the portal"""
-    
-    exists: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exists'), 'exclude': lambda f: f is None }})  
-    user: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})  
-    
+
 
 @dataclasses.dataclass
 class UserExistsResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[UserExistsResponseBody] = dataclasses.field(default=None)
+    r"""Returned whether the user exists in the portal or not successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    user_exists_200_application_json_object: Optional[UserExists200ApplicationJSON] = dataclasses.field(default=None)
-    r"""User exists in the portal"""  
-    user_exists_404_application_json_object: Optional[UserExists404ApplicationJSON] = dataclasses.field(default=None)
-    r"""User does not exist in the portal"""  
-    
+

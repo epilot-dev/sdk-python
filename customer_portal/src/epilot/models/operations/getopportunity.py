@@ -3,39 +3,57 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import entityitem as components_entityitem
+from ...models.components import file as components_file
+from ...models.components import opportunity as components_opportunity
+from ...models.components import order as components_order
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclasses.dataclass
 class GetOpportunitySecurity:
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetOpportunityRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The Id of opportunities"""  
+    r"""The ID of opportunity"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetOpportunity200ApplicationJSON:
+class GetOpportunityResponseBody:
     r"""The returned opportunities"""
+    entity: Optional[components_opportunity.Opportunity] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
+    r"""The opportunity entity"""
+    files: Optional[List[components_file.File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
+    r"""The related files of the requested opportunity"""
+    orders: Optional[List[components_order.Order]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orders'), 'exclude': lambda f: f is None }})
+    r"""The related orders of the requested opportunity"""
+    relations: Optional[List[components_entityitem.EntityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
+    r"""The related entities of the requested opportunity"""
+    workflow: Optional[List[Dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workflow'), 'exclude': lambda f: f is None }})
+    r"""The related workflows of the requested opportunity"""
     
-    entity: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})  
-    relations: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetOpportunityResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[GetOpportunityResponseBody] = dataclasses.field(default=None)
+    r"""The returned opportunities"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_opportunity_200_application_json_object: Optional[GetOpportunity200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned opportunities"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

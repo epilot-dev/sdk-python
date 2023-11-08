@@ -1,0 +1,10 @@
+# Relations
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `schema`                                                             | [Optional[components.EntitySlug]](../../models/shared/entityslug.md) | :heavy_minus_sign:                                                   | URL-friendly identifier for the entity schema                        | contact                                                              |
+| `title`                                                              | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | The title of the parent entity                                       | Opportunity ABC                                                      |
+| `entity_id`                                                          | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | The ID of the parent entity                                          | d8dffa9a-6c90-4c4e-b8d1-032194b25526                                 |

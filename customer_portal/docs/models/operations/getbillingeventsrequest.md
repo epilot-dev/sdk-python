@@ -1,0 +1,12 @@
+# GetBillingEventsRequest
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `customer_id`                                                                | *str*                                                                        | :heavy_check_mark:                                                           | N/A                                                                          |
+| `date_after`                                                                 | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects) | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `date_before`                                                                | [datetime](https://docs.python.org/3/library/datetime.html#datetime-objects) | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `entity_id`                                                                  | List[*str*]                                                                  | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `event_type`                                                                 | List[[operations.EventType](../../models/operations/eventtype.md)]           | :heavy_minus_sign:                                                           | N/A                                                                          |
