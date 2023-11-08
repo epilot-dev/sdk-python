@@ -1,0 +1,9 @@
+# EntityManualTrigger
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `configuration`                                                                                        | [components.EntityManualTriggerConfiguration](../../models/shared/entitymanualtriggerconfiguration.md) | :heavy_check_mark:                                                                                     | N/A                                                                                                    |
+| `type`                                                                                                 | [components.EntityManualTriggerType](../../models/shared/entitymanualtriggertype.md)                   | :heavy_check_mark:                                                                                     | N/A                                                                                                    |

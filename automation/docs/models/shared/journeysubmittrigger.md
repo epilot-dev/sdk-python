@@ -1,0 +1,9 @@
+# JourneySubmitTrigger
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `configuration`                                                                                          | [components.JourneySubmitTriggerConfiguration](../../models/shared/journeysubmittriggerconfiguration.md) | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `type`                                                                                                   | [components.JourneySubmitTriggerType](../../models/shared/journeysubmittriggertype.md)                   | :heavy_check_mark:                                                                                       | N/A                                                                                                      |

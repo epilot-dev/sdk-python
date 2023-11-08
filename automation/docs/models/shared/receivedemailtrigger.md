@@ -1,0 +1,9 @@
+# ReceivedEmailTrigger
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `configuration`                                                                                          | [components.ReceivedEmailTriggerConfiguration](../../models/shared/receivedemailtriggerconfiguration.md) | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `type`                                                                                                   | [components.ReceivedEmailTriggerType](../../models/shared/receivedemailtriggertype.md)                   | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
