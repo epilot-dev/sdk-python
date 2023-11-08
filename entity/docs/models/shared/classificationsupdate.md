@@ -1,0 +1,10 @@
+# ClassificationsUpdate
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `create`                                                                                 | List[[components.TaxonomyClassification](../../models/shared/taxonomyclassification.md)] | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `delete`                                                                                 | List[*str*]                                                                              | :heavy_minus_sign:                                                                       | N/A                                                                                      |
+| `update`                                                                                 | List[[components.TaxonomyClassification](../../models/shared/taxonomyclassification.md)] | :heavy_minus_sign:                                                                       | N/A                                                                                      |
