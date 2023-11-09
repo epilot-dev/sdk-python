@@ -1,5 +1,5 @@
 # Public
-(*.public*)
+(*public*)
 
 ## Overview
 
@@ -40,7 +40,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetAccessTokenJwksResponse](../../models/operations/getaccesstokenjwksresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_access_token_oidc
 
@@ -74,7 +78,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetAccessTokenOIDCResponse](../../models/operations/getaccesstokenoidcresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_public_token_jwks
 
@@ -104,7 +112,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetPublicTokenJwksResponse](../../models/operations/getpublictokenjwksresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_public_token_oidc
 
@@ -138,4 +150,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetPublicTokenOIDCResponse](../../models/operations/getpublictokenoidcresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

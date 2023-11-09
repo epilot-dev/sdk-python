@@ -13,6 +13,7 @@ class AccessTokens:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_access_token(self, request: Union[shared.AccessTokenParameters, shared.JourneyTokenParameters]) -> operations.CreateAccessTokenResponse:
         r"""createAccessToken
         **Access Token type: `API`** (default if not specified):
@@ -38,7 +39,10 @@ class AccessTokens:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -57,6 +61,7 @@ class AccessTokens:
         return res
 
     
+    
     def list_access_tokens(self, token_type: Optional[List[shared.AccessTokenType]] = None) -> operations.ListAccessTokensResponse:
         r"""listAccessTokens
         Lists all Access Tokens for current user (by default excludes system generated tokens)
@@ -73,7 +78,10 @@ class AccessTokens:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -92,6 +100,7 @@ class AccessTokens:
         return res
 
     
+    
     def revoke_access_token(self, id: str) -> operations.RevokeAccessTokenResponse:
         r"""revokeAccessToken
         Revokes an Access Token so it can't be used anymore.
@@ -107,7 +116,10 @@ class AccessTokens:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

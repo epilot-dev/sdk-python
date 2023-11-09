@@ -1,5 +1,5 @@
 # AccessTokens
-(*.access_tokens*)
+(*access_tokens*)
 
 ## Overview
 
@@ -63,7 +63,11 @@ if res.object is not None:
 ### Response
 
 **[operations.CreateAccessTokenResponse](../../models/operations/createaccesstokenresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_access_tokens
 
@@ -101,7 +105,11 @@ if res.classes is not None:
 ### Response
 
 **[operations.ListAccessTokensResponse](../../models/operations/listaccesstokensresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## revoke_access_token
 
@@ -137,4 +145,8 @@ if res.access_token_item is not None:
 ### Response
 
 **[operations.RevokeAccessTokenResponse](../../models/operations/revokeaccesstokenresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

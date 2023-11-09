@@ -39,13 +39,13 @@ if res.object is not None:
 ## Available Resources and Operations
 
 
-### [.access_tokens](docs/sdks/accesstokens/README.md)
+### [access_tokens](docs/sdks/accesstokens/README.md)
 
 * [create_access_token](docs/sdks/accesstokens/README.md#create_access_token) - createAccessToken
 * [list_access_tokens](docs/sdks/accesstokens/README.md#list_access_tokens) - listAccessTokens
 * [revoke_access_token](docs/sdks/accesstokens/README.md#revoke_access_token) - revokeAccessToken
 
-### [.public](docs/sdks/public/README.md)
+### [public](docs/sdks/public/README.md)
 
 * [get_access_token_jwks](docs/sdks/public/README.md#get_access_token_jwks) - getAccessTokenJwks
 * [get_access_token_oidc](docs/sdks/public/README.md#get_access_token_oidc) - getAccessTokenOIDC
@@ -64,7 +64,44 @@ if res.object is not None:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        epilot_auth="",
+    ),
+)
+
+req = shared.AccessTokenParameters(
+    assignments=[
+        '123:owner',
+    ],
+    name='Postman Access Token',
+)
+
+res = None
+try:
+    res = s.access_tokens.create_access_token(req)
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.object is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -146,7 +183,7 @@ if res.object is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import epilot
@@ -161,12 +198,11 @@ s = epilot.Epilot(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |
