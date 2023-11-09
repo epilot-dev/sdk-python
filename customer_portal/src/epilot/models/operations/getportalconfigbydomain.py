@@ -3,22 +3,26 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import portalconfig as shared_portalconfig
+from ...models.components import portalconfig as components_portalconfig
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetPortalConfigByDomainRequest:
+    domain: str = dataclasses.field(metadata={'query_param': { 'field_name': 'domain', 'style': 'form', 'explode': True }})
     
-    domain: str = dataclasses.field(metadata={'query_param': { 'field_name': 'domain', 'style': 'form', 'explode': True }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetPortalConfigByDomainResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    portal_config: Optional[components_portalconfig.PortalConfig] = dataclasses.field(default=None)
+    r"""Portal config retrieved successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    portal_config: Optional[shared_portalconfig.PortalConfig] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

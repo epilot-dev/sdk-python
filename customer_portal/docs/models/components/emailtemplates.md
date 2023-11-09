@@ -1,0 +1,14 @@
+# EmailTemplates
+
+Email templates used for authentication and internal processes
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               | Example                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `confirm_account`                                                         | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | ID of the confirmation email template upon registration                   | 701f089d-6953-48b5-ac35-442de7c59cd3                                      |
+| `forgot_password`                                                         | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | ID of the email template for forgot password                              | 6538fddb-f0e9-4f0f-af51-6e57891ff20a                                      |
+| `invitation`                                                              | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | ID of the email template for invitation                                   | 14ae65fb-0dc1-4863-8743-6bc01da469f6                                      |
+| `on_map_a_pending_user`                                                   | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | ID of the email template for mapping a pending portal user with a contact | 940134fa-50f2-4204-a08a-fd3afddbf39a                                      |
+| `on_new_quote`                                                            | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | ID of the email template for new quote                                    | b03e2b88-8f3f-4a93-8118-1fb07e9198a1                                      |

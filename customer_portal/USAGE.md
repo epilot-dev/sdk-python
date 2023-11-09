@@ -1,21 +1,17 @@
 <!-- Start SDK Example Usage -->
+
+
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import components, operations
 
 s = epilot.Epilot()
 
 
-req = operations.AddEndCustomerRelationToEntityRequest(
-    id="unde",
-    slug="contact",
-)
-    
-res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
-    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-))
+res = s.ecp_admin.configure_distribution("", origin=components.Origin.INSTALLER_PORTAL)
 
-if res.add_end_customer_relation_to_entity_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->

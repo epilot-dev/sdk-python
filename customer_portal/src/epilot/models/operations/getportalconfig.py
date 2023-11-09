@@ -3,31 +3,36 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import origin_enum as shared_origin_enum
-from ..shared import portalconfig as shared_portalconfig
+from ...models.components import origin as components_origin
+from ...models.components import portalconfig as components_portalconfig
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetPortalConfigSecurity:
+    epilot_auth: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
+    portal_auth: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    epilot_auth: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    portal_auth: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetPortalConfigRequest:
+    origin: Optional[components_origin.Origin] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Origin of the portal"""
     
-    origin: Optional[shared_origin_enum.OriginEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""  
-    
+
+
 
 @dataclasses.dataclass
 class GetPortalConfigResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    portal_config: Optional[components_portalconfig.PortalConfig] = dataclasses.field(default=None)
+    r"""Portal config retrieved successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    portal_config: Optional[shared_portalconfig.PortalConfig] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

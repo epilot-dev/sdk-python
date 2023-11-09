@@ -5,29 +5,34 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class DeleteEntityFileSecurity:
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeleteEntityFile200ApplicationJSON:
-    r"""The returned File Entities"""
+class DeleteEntityFileResponseBody:
+    r"""The files are removed from the requested entity successfully."""
+    deleted_files: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedFiles'), 'exclude': lambda f: f is None }})
     
-    deleted_files: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deletedFiles'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class DeleteEntityFileResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[DeleteEntityFileResponseBody] = dataclasses.field(default=None)
+    r"""The files are removed from the requested entity successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    delete_entity_file_200_application_json_object: Optional[DeleteEntityFile200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned File Entities"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

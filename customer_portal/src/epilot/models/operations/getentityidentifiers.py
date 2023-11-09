@@ -3,46 +3,56 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import entityslug as components_entityslug
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetEntityIdentifiersSecurity:
+    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetEntityIdentifiersRequest:
+    slug: components_entityslug.EntitySlug = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    r"""The slug of an entity"""
     
-    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""The slug of an entity"""  
-    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetEntityIdentifiers200ApplicationJSONData:
+class GetEntityIdentifiersData:
+    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
+    r"""The name of the identifier"""
+    type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    r"""The type of the identifier"""
     
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})  
-    type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetEntityIdentifiers200ApplicationJSON:
-    r"""The returned identifiers of an entity"""
+class GetEntityIdentifiersResponseBody:
+    r"""The identifiers of the requested entity returned successfully."""
+    data: Optional[List[GetEntityIdentifiersData]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-    data: Optional[list[GetEntityIdentifiers200ApplicationJSONData]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetEntityIdentifiersResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[GetEntityIdentifiersResponseBody] = dataclasses.field(default=None)
+    r"""The identifiers of the requested entity returned successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_entity_identifiers_200_application_json_object: Optional[GetEntityIdentifiers200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned identifiers of an entity"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

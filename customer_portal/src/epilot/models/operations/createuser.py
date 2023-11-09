@@ -3,43 +3,48 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import addportalresp as shared_addportalresp
-from ..shared import errorresp as shared_errorresp
-from ..shared import origin_enum as shared_origin_enum
+from ...models.components import createuserrequest as components_createuserrequest
+from ...models.components import origin as components_origin
+from ...models.components import portaluser as components_portaluser
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
 from typing import Optional
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
-class CreateUserRequestBody:
-    r"""Portal payload"""
-    
-    contact_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contactId'), 'exclude': lambda f: f is None }})  
-    email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})  
-    org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId'), 'exclude': lambda f: f is None }})  
-    password: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('password'), 'exclude': lambda f: f is None }})  
-    secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondaryIdentifier'), 'exclude': lambda f: f is None }})  
-    
-
 @dataclasses.dataclass
 class CreateUserRequest:
+    create_user_request: components_createuserrequest.CreateUserRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    r"""Portal user payload"""
+    origin: components_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Origin of the portal"""
     
-    origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""  
-    request_body: CreateUserRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Portal payload"""  
+
+
+class CreateUserMessage(str, Enum):
+    USER_CREATED_SUCCESSFULLY = 'User created successfully'
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class CreateUserResponseBody:
+    r"""User created successfully."""
+    message: CreateUserMessage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
+    response: components_portaluser.PortalUser = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('response') }})
+    r"""The portal user entity"""
     
+
+
 
 @dataclasses.dataclass
 class CreateUserResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[CreateUserResponseBody] = dataclasses.field(default=None)
+    r"""User created successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    add_portal_resp: Optional[shared_addportalresp.AddPortalResp] = dataclasses.field(default=None)
-    r"""Success - user created with success."""  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

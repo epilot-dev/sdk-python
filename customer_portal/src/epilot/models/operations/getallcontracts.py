@@ -3,31 +3,45 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import contract as components_contract
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetAllContractsSecurity:
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+
+
+
+@dataclasses.dataclass
+class GetAllContractsRequest:
+    from_: Optional[float] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    size: Optional[float] = dataclasses.field(default=100, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetAllContracts200ApplicationJSON:
-    r"""The returned contracts"""
+class GetAllContractsResponseBody:
+    r"""Contracts have been retrieved successfully."""
+    data: Optional[List[components_contract.Contract]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-    data: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetAllContractsResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[GetAllContractsResponseBody] = dataclasses.field(default=None)
+    r"""Contracts have been retrieved successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_all_contracts_200_application_json_object: Optional[GetAllContracts200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The returned contracts"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
