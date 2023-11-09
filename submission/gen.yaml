@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 3e73a0b032d576778d71b4b1bce49714
   docVersion: 1.0.0
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: epilot
@@ -11,11 +11,11 @@ generation:
 features:
   python:
     additionalProperties: 0.1.0
-    core: 4.1.0
+    core: 4.1.2
     deprecations: 2.81.1
     globalServerURLs: 2.82.0
 python:
-  version: 2.0.0
+  version: 2.0.1
   author: epilot
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot
@@ -28,7 +28,9 @@ python:
       operations: models/operations
       shared: models/shared
       webhooks: models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=submission
   maxMethodParams: 4
+  outputModelSuffix: output
   packageName: epilot-submission
   repoSubDirectory: submission

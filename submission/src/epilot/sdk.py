@@ -36,13 +36,11 @@ class Epilot:
         if client is None:
             client = requests_http.Session()
         
-        security_client = client
-        
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, None, server_url, server_idx, retry_config=retry_config)
        
         self._init_sdks()
     

@@ -12,6 +12,7 @@ class Submissions:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_submission(self, request: shared.SubmissionPayload) -> operations.CreateSubmissionResponse:
         r"""createSubmission
         Creates a submission from a public facing Journey
