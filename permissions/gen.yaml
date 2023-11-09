@@ -1,21 +1,21 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 2e01724bb1e55ab32f2eaf23de0044cf
+  docChecksum: fd3533e8895a23f103b2cdb2493ea1fd
   docVersion: 1.0.0
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: epilot
   repoURL: https://github.com/epilot-dev/sdk-python.git
 features:
   python:
-    core: 4.1.0
+    core: 4.1.2
     flattening: 2.81.1
-    globalSecurity: 2.82.0
+    globalSecurity: 2.83.0
     globalServerURLs: 2.82.0
 python:
-  version: 2.0.0
+  version: 2.1.0
   author: epilot
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot
@@ -28,7 +28,9 @@ python:
       operations: models/operations
       shared: models/shared
       webhooks: models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=permissions
   maxMethodParams: 4
+  outputModelSuffix: output
   packageName: epilot-permissions
   repoSubDirectory: permissions

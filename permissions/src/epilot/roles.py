@@ -13,6 +13,7 @@ class Roles:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_role(self, role_id: str) -> operations.DeleteRoleResponse:
         r"""deleteRole
         Delete role by id
@@ -28,7 +29,10 @@ class Roles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Roles:
         return res
 
     
+    
     def get_role(self, role_id: str) -> operations.GetRoleResponse:
         r"""getRole
         Get role by id
@@ -62,7 +67,10 @@ class Roles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -81,6 +89,7 @@ class Roles:
         return res
 
     
+    
     def list_all_roles(self) -> operations.ListAllRolesResponse:
         r"""listAllRoles
         Returns list of all roles in organization
@@ -92,7 +101,10 @@ class Roles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -111,6 +123,7 @@ class Roles:
         return res
 
     
+    
     def list_current_roles(self) -> operations.ListCurrentRolesResponse:
         r"""listCurrentRoles
         Returns roles and grants assigned to current user
@@ -122,7 +135,10 @@ class Roles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -140,6 +156,7 @@ class Roles:
 
         return res
 
+    
     
     def put_role(self, role_id: str, role_payload: Optional[Union[shared.One, shared.Two, shared.Three, shared.Four]] = None) -> operations.PutRoleResponse:
         r"""putRole
@@ -160,7 +177,10 @@ class Roles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -179,6 +199,7 @@ class Roles:
         return res
 
     
+    
     def refresh_permissions(self) -> operations.RefreshPermissionsResponse:
         r"""refreshPermissions
         Makes sure the user has a role in the organization
@@ -190,7 +211,10 @@ class Roles:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -204,6 +228,7 @@ class Roles:
 
         return res
 
+    
     
     def search_roles(self, request: shared.RoleSearchInput) -> operations.SearchRolesResponse:
         r"""searchRoles
@@ -219,7 +244,10 @@ class Roles:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

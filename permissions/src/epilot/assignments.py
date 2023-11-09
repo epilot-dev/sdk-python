@@ -13,6 +13,7 @@ class Assignments:
         self.sdk_configuration = sdk_config
         
     
+    
     def add_assignment(self, role_id: str, user_id: str) -> operations.AddAssignmentResponse:
         r"""addAssignment
         Assign a user to a role.
@@ -31,7 +32,10 @@ class Assignments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -49,6 +53,7 @@ class Assignments:
 
         return res
 
+    
     
     def assign_roles(self, user_id: str, request_body: Optional[List[str]] = None) -> operations.AssignRolesResponse:
         r"""assignRoles
@@ -69,7 +74,10 @@ class Assignments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -88,6 +96,7 @@ class Assignments:
         return res
 
     
+    
     def get_assigned_roles_for_user(self, user_id: str) -> operations.GetAssignedRolesForUserResponse:
         r"""getAssignedRolesForUser
         Get list of assigned roles by user id
@@ -103,7 +112,10 @@ class Assignments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -122,6 +134,7 @@ class Assignments:
         return res
 
     
+    
     def list_all_assignments(self) -> operations.ListAllAssignmentsResponse:
         r"""listAllAssignments
         Returns list of all assignments in organization
@@ -133,7 +146,10 @@ class Assignments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -152,6 +168,7 @@ class Assignments:
         return res
 
     
+    
     def remove_assignment(self, role_id: str, user_id: str) -> operations.RemoveAssignmentResponse:
         r"""removeAssignment
         Remove role assignment from user
@@ -168,7 +185,10 @@ class Assignments:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

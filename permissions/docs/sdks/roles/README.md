@@ -1,5 +1,5 @@
 # Roles
-(*.roles*)
+(*roles*)
 
 ## Overview
 
@@ -49,7 +49,11 @@ if res.role is not None:
 ### Response
 
 **[operations.DeleteRoleResponse](../../models/operations/deleteroleresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_role
 
@@ -85,7 +89,11 @@ if res.role is not None:
 ### Response
 
 **[operations.GetRoleResponse](../../models/operations/getroleresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_all_roles
 
@@ -115,7 +123,11 @@ if res.object is not None:
 ### Response
 
 **[operations.ListAllRolesResponse](../../models/operations/listallrolesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_current_roles
 
@@ -145,7 +157,11 @@ if res.object is not None:
 ### Response
 
 **[operations.ListCurrentRolesResponse](../../models/operations/listcurrentrolesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_role
 
@@ -217,7 +233,11 @@ if res.role is not None:
 ### Response
 
 **[operations.PutRoleResponse](../../models/operations/putroleresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## refresh_permissions
 
@@ -247,7 +267,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.RefreshPermissionsResponse](../../models/operations/refreshpermissionsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## search_roles
 
@@ -300,4 +324,8 @@ if res.object is not None:
 ### Response
 
 **[operations.SearchRolesResponse](../../models/operations/searchrolesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # Assignments
-(*.assignments*)
+(*assignments*)
 
 ## Overview
 
@@ -51,7 +51,11 @@ if res.assignment is not None:
 ### Response
 
 **[operations.AddAssignmentResponse](../../models/operations/addassignmentresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## assign_roles
 
@@ -90,7 +94,11 @@ if res.assignments is not None:
 ### Response
 
 **[operations.AssignRolesResponse](../../models/operations/assignrolesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_assigned_roles_for_user
 
@@ -126,7 +134,11 @@ if res.assignments is not None:
 ### Response
 
 **[operations.GetAssignedRolesForUserResponse](../../models/operations/getassignedrolesforuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_all_assignments
 
@@ -156,7 +168,11 @@ if res.object is not None:
 ### Response
 
 **[operations.ListAllAssignmentsResponse](../../models/operations/listallassignmentsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove_assignment
 
@@ -193,4 +209,8 @@ if res.assignment is not None:
 ### Response
 
 **[operations.RemoveAssignmentResponse](../../models/operations/removeassignmentresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -80,6 +80,8 @@ class Two:
     type: RolePayloadSchemasType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
+    pricing_tier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pricing_tier'), 'exclude': lambda f: f is None }})
+    r"""The pricing tier of the organization this root role is based on"""
     
 
 
@@ -106,8 +108,3 @@ class One:
     r"""date and time then the role will expire"""
     
 
-
-
-@dataclasses.dataclass
-class RolePayload:
-    pass
