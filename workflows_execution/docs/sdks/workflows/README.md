@@ -1,5 +1,5 @@
 # Workflows
-(*.workflows*)
+(*workflows*)
 
 ## Overview
 
@@ -64,7 +64,12 @@ if res.workflow_execution is not None:
 ### Response
 
 **[operations.CreateExecutionResponse](../../models/operations/createexecutionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,401,500      | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## create_step
 
@@ -104,7 +109,12 @@ if res.step is not None:
 ### Response
 
 **[operations.CreateStepResponse](../../models/operations/createstepresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,401,500      | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## delete_execution
 
@@ -138,7 +148,12 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteExecutionResponse](../../models/operations/deleteexecutionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 401              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## delete_step
 
@@ -173,7 +188,12 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteStepResponse](../../models/operations/deletestepresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_closing_reason_execution
 
@@ -210,7 +230,12 @@ if res.closing_reason_resp is not None:
 ### Response
 
 **[operations.GetClosingReasonExecutionResponse](../../models/operations/getclosingreasonexecutionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_execution
 
@@ -244,7 +269,12 @@ if res.workflow_execution is not None:
 ### Response
 
 **[operations.GetExecutionResponse](../../models/operations/getexecutionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_executions
 
@@ -279,7 +309,12 @@ if res.classes is not None:
 ### Response
 
 **[operations.GetExecutionsResponse](../../models/operations/getexecutionsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## search_executions
 
@@ -316,7 +351,12 @@ if res.search_executions_resp is not None:
 ### Response
 
 **[operations.SearchExecutionsResponse](../../models/operations/searchexecutionsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,401,500      | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## ~~search_steps~~
 
@@ -355,7 +395,12 @@ if res.search_steps_resp is not None:
 ### Response
 
 **[operations.SearchStepsResponse](../../models/operations/searchstepsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,401,500      | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## update_execution
 
@@ -411,7 +456,12 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateExecutionResponse](../../models/operations/updateexecutionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## update_step
 
@@ -462,4 +512,9 @@ if res.step is not None:
 ### Response
 
 **[operations.UpdateStepResponse](../../models/operations/updatestepresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,401,500      | application/json |
+| errors.SDKError  | 400-600          | */*              |

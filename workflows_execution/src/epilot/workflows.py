@@ -13,6 +13,7 @@ class Workflows:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_execution(self, request: shared.WorkflowExecutionCreateReq) -> operations.CreateExecutionResponse:
         r"""createExecution
         Create a Workflow Execution. Start a new workflow execution, based on a workflow definition (template).
@@ -29,7 +30,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -55,6 +59,7 @@ class Workflows:
         return res
 
     
+    
     def create_step(self, create_step_req: shared.CreateStepReq, execution_id: str) -> operations.CreateStepResponse:
         r"""createStep
         Create a new step in current workflow execution.
@@ -76,7 +81,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -102,6 +110,7 @@ class Workflows:
         return res
 
     
+    
     def delete_execution(self, execution_id: str) -> operations.DeleteExecutionResponse:
         r"""deleteExecution
         Delete workflow execution by id. Workflow contexts will NOT be deleted.
@@ -117,7 +126,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -139,6 +151,7 @@ class Workflows:
         return res
 
     
+    
     def delete_step(self, execution_id: str, step_id: str) -> operations.DeleteStepResponse:
         r"""deleteStep
         Deletes a step from a workflow execution.
@@ -155,7 +168,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -177,6 +193,7 @@ class Workflows:
         return res
 
     
+    
     def get_closing_reason_execution(self, execution_id: str) -> operations.GetClosingReasonExecutionResponse:
         r"""getClosingReasonExecution
         Shows all Closing Reasons defined at the moment of starting the Workflow Execution.
@@ -194,7 +211,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -220,6 +240,7 @@ class Workflows:
         return res
 
     
+    
     def get_execution(self, execution_id: str) -> operations.GetExecutionResponse:
         r"""getExecution
         Get a full workflow execution, included steps information, by execution id.
@@ -235,7 +256,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -261,6 +285,7 @@ class Workflows:
         return res
 
     
+    
     def get_executions(self, context: Optional[str] = None, schema: Optional[str] = None) -> operations.GetExecutionsResponse:
         r"""getExecutions
         Retrieve Workflow Executions. Optionally, you can filter them by context & schema. Please be aware, these executions are more light weight - steps are not loaded with all information.
@@ -278,7 +303,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -304,6 +332,7 @@ class Workflows:
         return res
 
     
+    
     def search_executions(self, request: shared.SearchExecutionsReq) -> operations.SearchExecutionsResponse:
         r"""searchExecutions
         Search Workflow Executions by different filters.
@@ -320,7 +349,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -346,6 +378,7 @@ class Workflows:
         return res
 
     
+    
     def search_steps(self, request: shared.SearchStepsReq) -> operations.SearchStepsResponse:
         r"""searchSteps
         Search workflow execution steps by different filters.
@@ -364,7 +397,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -390,6 +426,7 @@ class Workflows:
         return res
 
     
+    
     def update_execution(self, workflow_execution_update_req: shared.WorkflowExecutionUpdateReq, execution_id: str) -> operations.UpdateExecutionResponse:
         r"""updateExecution
         Patches updates like assignees, status, closingReason for a single Workflow Execution.
@@ -411,7 +448,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -432,6 +472,7 @@ class Workflows:
 
         return res
 
+    
     
     def update_step(self, update_step_req: shared.UpdateStepReq, execution_id: str, step_id: str) -> operations.UpdateStepResponse:
         r"""updateStep
@@ -455,7 +496,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
