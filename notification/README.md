@@ -87,7 +87,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [.notification](docs/sdks/notification/README.md)
+### [notification](docs/sdks/notification/README.md)
 
 * [create_notification](docs/sdks/notification/README.md#create_notification) - createNotification
 * [get_notification](docs/sdks/notification/README.md#get_notification) - getNotification
@@ -108,7 +108,92 @@ if res.status_code == 200:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    epilot_auth="",
+)
+
+req = shared.Notification(
+    additional_properties={
+        "key": 'string',
+    },
+    caller=shared.NotificationCallerContext(
+        additional_properties={
+            "key": 'string',
+        },
+        epilot_auth=shared.EpilotAuth(
+            token=shared.Token(
+                cognito_username='example@epilot.cloud',
+                custom_ivy_user_id='10006129',
+                email='example@epilot.cloud',
+                sub='476e9b48-42f4-4234-a2b0-4668b34626ce',
+            ),
+        ),
+    ),
+    force_notify_users={
+        "12345": 'string',
+    },
+    message=shared.Message(
+        de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
+        en='{{caller}} did something with {{contact.entity.id}} {{branch.name}}.',
+    ),
+    operations=[
+        shared.EntityOperation(
+            entity='d9fa50df-3a77-4db4-9782-9e5cd1039cd9',
+            operation='updateEntity',
+            params=shared.Params(
+                slug='contact',
+            ),
+            payload={
+                "_schema": 'string',
+                "_org": 'string',
+                "status": 'string',
+            },
+        ),
+    ],
+    organization_id='206801',
+    payload={
+        "entity": 'string',
+    },
+    redirect_url='https://epilot.cloud',
+    title=shared.Title(
+        de='Meine benutzerdefinierte Aktivität',
+        en='My custom notification',
+    ),
+    type='workflow',
+    visibility_user_ids=[
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+    ],
+)
+
+res = None
+try:
+    res = s.notification.create_notification(req)
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -167,9 +252,9 @@ req = shared.Notification(
                 slug='contact',
             ),
             payload={
-                "_schema": 'string',
                 "_org": 'string',
                 "status": 'string',
+                "_schema": 'string',
             },
         ),
     ],
@@ -286,7 +371,7 @@ if res.status_code == 200:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import epilot
@@ -301,12 +386,11 @@ s = epilot.Epilot(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |
@@ -354,9 +438,9 @@ req = shared.Notification(
                 slug='contact',
             ),
             payload={
-                "_org": 'string',
                 "status": 'string',
                 "_schema": 'string',
+                "_org": 'string',
             },
         ),
     ],

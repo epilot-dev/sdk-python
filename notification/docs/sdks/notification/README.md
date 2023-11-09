@@ -1,5 +1,5 @@
 # Notification
-(*.notification*)
+(*notification*)
 
 ## Overview
 
@@ -60,9 +60,9 @@ req = shared.Notification(
                 slug='contact',
             ),
             payload={
-                "_schema": 'string',
                 "_org": 'string',
                 "status": 'string',
+                "_schema": 'string',
             },
         ),
     ],
@@ -102,7 +102,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateNotificationResponse](../../models/operations/createnotificationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_notification
 
@@ -136,7 +140,11 @@ if res.notification_item is not None:
 ### Response
 
 **[operations.GetNotificationResponse](../../models/operations/getnotificationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_notifications
 
@@ -171,7 +179,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetNotificationsResponse](../../models/operations/getnotificationsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_total_unread
 
@@ -198,7 +210,11 @@ if res.res is not None:
 ### Response
 
 **[operations.GetTotalUnreadResponse](../../models/operations/gettotalunreadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## mark_all_as_read
 
@@ -225,7 +241,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.MarkAllAsReadResponse](../../models/operations/markallasreadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## mark_as_read
 
@@ -259,4 +279,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.MarkAsReadResponse](../../models/operations/markasreadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

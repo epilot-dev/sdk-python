@@ -13,6 +13,7 @@ class Notification:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_notification(self, request: shared.Notification) -> operations.CreateNotificationResponse:
         r"""createNotification
         Create a message that can be displayed in the notification panel.
@@ -27,7 +28,10 @@ class Notification:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -41,6 +45,7 @@ class Notification:
 
         return res
 
+    
     
     def get_notification(self, id: float) -> operations.GetNotificationResponse:
         r"""getNotification
@@ -57,7 +62,10 @@ class Notification:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -76,6 +84,7 @@ class Notification:
         return res
 
     
+    
     def get_notifications(self, after_id: Optional[int] = None, limit: Optional[int] = None) -> operations.GetNotificationsResponse:
         r"""getNotifications
         Get notifications
@@ -93,7 +102,10 @@ class Notification:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -112,6 +124,7 @@ class Notification:
         return res
 
     
+    
     def get_total_unread(self) -> operations.GetTotalUnreadResponse:
         r"""getTotalUnread
         Get total unread
@@ -123,7 +136,10 @@ class Notification:
         headers['Accept'] = 'text/plain'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -141,6 +157,7 @@ class Notification:
         return res
 
     
+    
     def mark_all_as_read(self) -> operations.MarkAllAsReadResponse:
         r"""markAllAsRead
         Mark all as read
@@ -152,7 +169,10 @@ class Notification:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -166,6 +186,7 @@ class Notification:
 
         return res
 
+    
     
     def mark_as_read(self, id: int) -> operations.MarkAsReadResponse:
         r"""markAsRead
@@ -182,7 +203,10 @@ class Notification:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
