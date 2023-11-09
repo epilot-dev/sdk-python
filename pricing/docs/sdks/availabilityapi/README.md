@@ -1,5 +1,5 @@
 # AvailabilityAPI
-(*.availability_api*)
+(*availability_api*)
 
 ## Overview
 
@@ -52,4 +52,9 @@ if res.availability_result is not None:
 ### Response
 
 **[operations.DollarAvailabilityCheckResponse](../../models/operations/dollaravailabilitycheckresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400              | application/json |
+| errors.SDKError  | 400-600          | */*              |

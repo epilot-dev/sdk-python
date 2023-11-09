@@ -17,8 +17,3 @@ class MetaData1:
     r"""Item value"""
     
 
-
-
-@dataclasses.dataclass
-class MetaData:
-    pass

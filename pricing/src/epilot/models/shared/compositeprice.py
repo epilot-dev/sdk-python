@@ -18,11 +18,6 @@ class Two:
 
 
 
-@dataclasses.dataclass
-class PriceComponents:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CompositePrice:

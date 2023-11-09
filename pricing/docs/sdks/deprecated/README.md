@@ -1,5 +1,5 @@
 # Deprecated
-(*.deprecated*)
+(*deprecated*)
 
 ### Available Operations
 
@@ -105,4 +105,9 @@ if res.opportunity is not None:
 ### Response
 
 **[operations.DollarCreateOpportunityResponse](../../models/operations/dollarcreateopportunityresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400              | application/json |
+| errors.SDKError  | 400-600          | */*              |

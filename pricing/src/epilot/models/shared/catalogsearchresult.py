@@ -9,11 +9,6 @@ from epilot import utils
 from typing import List, Optional, Union
 
 
-@dataclasses.dataclass
-class Results:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CatalogSearchResult:

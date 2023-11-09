@@ -13,21 +13,6 @@ from enum import Enum
 from epilot import utils
 from typing import List, Optional, Union
 
-
-@dataclasses.dataclass
-class PriceItemPrice:
-    pass
-
-
-@dataclasses.dataclass
-class PriceItemRecurrences:
-    pass
-
-
-@dataclasses.dataclass
-class PriceItemTaxes:
-    pass
-
 class PriceItemType(str, Enum):
     r"""One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase."""
     ONE_TIME = 'one_time'

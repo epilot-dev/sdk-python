@@ -14,21 +14,6 @@ from epilot import utils
 from typing import List, Optional, Union
 
 
-@dataclasses.dataclass
-class CompositePriceItemPrice:
-    pass
-
-
-@dataclasses.dataclass
-class Recurrences:
-    pass
-
-
-@dataclasses.dataclass
-class Taxes:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CompositePriceItem:

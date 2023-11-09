@@ -12,6 +12,7 @@ class Deprecated:
         self.sdk_configuration = sdk_config
         
     
+    
     def dollar_create_opportunity(self, opportunity: shared.OpportunityInput, x_ivy_org_id: str) -> operations.DollarCreateOpportunityResponse:
         r"""createOpportunity
         This API is Deprecated. Please use the Entity API or Submission API to create opportunities.
@@ -38,7 +39,10 @@ class Deprecated:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

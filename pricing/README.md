@@ -61,18 +61,18 @@ req = shared.OrderPayload(
                 [
                     shared.Tax(
                         additional_properties={
+                            "_tags": 'string',
+                            "_created_at": 'string',
                             "type": 'string',
+                            "description": 'string',
+                            "behavior": 'string',
                             "active": 'string',
                             "region_label": 'string',
                             "_org": 'string',
-                            "_created_at": 'string',
                             "_updated_at": 'string',
                             "_id": 'string',
-                            "description": 'string',
-                            "behavior": 'string',
                             "region": 'string',
                             "_schema": 'string',
-                            "_tags": 'string',
                         },
                         created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                         id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
@@ -151,24 +151,24 @@ if res.order is not None:
 ## Available Resources and Operations
 
 
-### [.order_api](docs/sdks/orderapi/README.md)
+### [order_api](docs/sdks/orderapi/README.md)
 
 * [create_order](docs/sdks/orderapi/README.md#create_order) - createOrder
 * [put_order](docs/sdks/orderapi/README.md#put_order) - putOrder
 
-### [.availability_api](docs/sdks/availabilityapi/README.md)
+### [availability_api](docs/sdks/availabilityapi/README.md)
 
 * [dollar_availability_check](docs/sdks/availabilityapi/README.md#dollar_availability_check) - availabilityCheck
 
-### [.cart_api](docs/sdks/cartapi/README.md)
+### [cart_api](docs/sdks/cartapi/README.md)
 
 * [dollar_checkout_cart](docs/sdks/cartapi/README.md#dollar_checkout_cart) - checkoutCart
 
-### [.catalog_api](docs/sdks/catalogapi/README.md)
+### [catalog_api](docs/sdks/catalogapi/README.md)
 
 * [dollar_search_catalog](docs/sdks/catalogapi/README.md#dollar_search_catalog) - searchCatalog
 
-### [.deprecated](docs/sdks/deprecated/README.md)
+### [deprecated](docs/sdks/deprecated/README.md)
 
 * [~~dollar_create_opportunity~~](docs/sdks/deprecated/README.md#dollar_create_opportunity) - createOpportunity :warning: **Deprecated**
 <!-- End SDK Available Operations -->
@@ -184,7 +184,12 @@ if res.order is not None:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 
 ## Example
@@ -240,18 +245,18 @@ req = shared.OrderPayload(
                 [
                     shared.Tax(
                         additional_properties={
-                            "_org": 'string',
-                            "_created_at": 'string',
-                            "_updated_at": 'string',
-                            "type": 'string',
-                            "active": 'string',
                             "region_label": 'string',
-                            "region": 'string',
-                            "_schema": 'string',
+                            "_org": 'string',
                             "_tags": 'string',
-                            "_id": 'string',
+                            "_created_at": 'string',
+                            "type": 'string',
                             "description": 'string',
                             "behavior": 'string',
+                            "active": 'string',
+                            "_updated_at": 'string',
+                            "_id": 'string',
+                            "region": 'string',
+                            "_schema": 'string',
                         },
                         created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                         id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
@@ -321,8 +326,10 @@ req = shared.OrderPayload(
 res = None
 try:
     res = s.order_api.create_order(req)
+except (errors.Error) as e:
+    print(e) # handle exception
 
-except (Error) as e:
+except (errors.SDKError) as e:
     print(e) # handle exception
 
 
@@ -400,18 +407,18 @@ req = shared.OrderPayload(
                 [
                     shared.Tax(
                         additional_properties={
-                            "_updated_at": 'string',
-                            "type": 'string',
+                            "description": 'string',
+                            "behavior": 'string',
                             "active": 'string',
                             "region_label": 'string',
                             "_org": 'string',
-                            "_created_at": 'string',
                             "_tags": 'string',
-                            "_id": 'string',
-                            "description": 'string',
-                            "behavior": 'string',
+                            "_created_at": 'string',
+                            "type": 'string',
+                            "_updated_at": 'string',
                             "region": 'string',
                             "_schema": 'string',
+                            "_id": 'string',
                         },
                         created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                         id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
@@ -542,18 +549,18 @@ req = shared.OrderPayload(
                 [
                     shared.Tax(
                         additional_properties={
+                            "_schema": 'string',
+                            "_id": 'string',
+                            "region": 'string',
+                            "behavior": 'string',
                             "active": 'string',
                             "region_label": 'string',
                             "_org": 'string',
+                            "_tags": 'string',
                             "_created_at": 'string',
-                            "_updated_at": 'string',
                             "type": 'string',
                             "description": 'string',
-                            "behavior": 'string',
-                            "region": 'string',
-                            "_schema": 'string',
-                            "_tags": 'string',
-                            "_id": 'string',
+                            "_updated_at": 'string',
                         },
                         created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                         id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
@@ -636,7 +643,7 @@ if res.order is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import epilot
@@ -651,12 +658,11 @@ s = epilot.Epilot(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |
@@ -715,18 +721,18 @@ req = shared.OrderPayload(
                 [
                     shared.Tax(
                         additional_properties={
-                            "_created_at": 'string',
-                            "_updated_at": 'string',
-                            "type": 'string',
+                            "description": 'string',
+                            "behavior": 'string',
                             "active": 'string',
                             "region_label": 'string',
                             "_org": 'string',
-                            "_schema": 'string',
                             "_tags": 'string',
-                            "_id": 'string',
-                            "description": 'string',
-                            "behavior": 'string',
+                            "_created_at": 'string',
+                            "type": 'string',
+                            "_updated_at": 'string',
                             "region": 'string',
+                            "_schema": 'string',
+                            "_id": 'string',
                         },
                         created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                         id='db7b9f9b-d21b-44f2-9723-407318b6c79c',

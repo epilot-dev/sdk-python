@@ -21,11 +21,6 @@ class Opportunity1:
 
 
 
-@dataclasses.dataclass
-class DollarRelationRef:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OpportunityAddress:
@@ -72,11 +67,6 @@ class OpportunitySchemas1:
 
 
 
-@dataclasses.dataclass
-class OpportunityDollarRelationRef:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class BillingAddress:
@@ -107,11 +97,6 @@ class One:
 
 
 
-@dataclasses.dataclass
-class Dates:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OpportunitySchemasDeliveryAddress1:
@@ -121,11 +106,6 @@ class OpportunitySchemasDeliveryAddress1:
     r"""The path to the target attribute being referenced"""
     
 
-
-
-@dataclasses.dataclass
-class OpportunitySchemasDollarRelationRef:
-    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -149,12 +129,18 @@ class Items:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class OpportunityInput:
+class Opportunity:
     r"""The opportunity entity"""
+    created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'exclude': lambda f: f is None }})
+    r"""The opportunity creation date"""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
+    r"""The opportunity id"""
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_org_id'), 'exclude': lambda f: f is None }})
     r"""Organization Id the order belongs to"""
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""An arbitrary set of tags attached to the opportunity"""
+    updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'exclude': lambda f: f is None }})
+    r"""The opportunity last update date"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     address: Optional[OpportunityAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is None }})
     r"""A list of additional addresses"""
@@ -192,18 +178,12 @@ class OpportunityInput:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class Opportunity:
+class OpportunityInput:
     r"""The opportunity entity"""
-    created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'exclude': lambda f: f is None }})
-    r"""The opportunity creation date"""
-    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
-    r"""The opportunity id"""
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_org_id'), 'exclude': lambda f: f is None }})
     r"""Organization Id the order belongs to"""
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""An arbitrary set of tags attached to the opportunity"""
-    updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'exclude': lambda f: f is None }})
-    r"""The opportunity last update date"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     address: Optional[OpportunityAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is None }})
     r"""A list of additional addresses"""

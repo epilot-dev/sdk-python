@@ -1,5 +1,5 @@
 # OrderAPI
-(*.order_api*)
+(*order_api*)
 
 ## Overview
 
@@ -70,18 +70,18 @@ req = shared.OrderPayload(
                 [
                     shared.Tax(
                         additional_properties={
-                            "_id": 'string',
+                            "_tags": 'string',
+                            "_created_at": 'string',
+                            "type": 'string',
                             "description": 'string',
                             "behavior": 'string',
-                            "region": 'string',
-                            "_schema": 'string',
-                            "_tags": 'string',
-                            "type": 'string',
                             "active": 'string',
                             "region_label": 'string',
                             "_org": 'string',
-                            "_created_at": 'string',
                             "_updated_at": 'string',
+                            "_id": 'string',
+                            "region": 'string',
+                            "_schema": 'string',
                         },
                         created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                         id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
@@ -165,7 +165,12 @@ if res.order is not None:
 ### Response
 
 **[operations.CreateOrderResponse](../../models/operations/createorderresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## put_order
 
@@ -301,4 +306,9 @@ if res.order is not None:
 ### Response
 
 **[operations.PutOrderResponse](../../models/operations/putorderresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400              | application/json |
+| errors.SDKError  | 400-600          | */*              |

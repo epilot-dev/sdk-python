@@ -17,11 +17,6 @@ class BillingDurationUnit(str, Enum):
     MONTHS = 'months'
     YEARS = 'years'
 
-
-@dataclasses.dataclass
-class PriceBillingPeriod:
-    pass
-
 class BillingScheme(str, Enum):
     r"""Describes how to compute the price per period. Either `per_unit` or `tiered`.
     - `per_unit` indicates that the fixed amount (specified in unit_amount or unit_amount_decimal) will be charged per unit in quantity
@@ -50,11 +45,6 @@ class RenewalDurationUnit(str, Enum):
     YEARS = 'years'
 
 
-@dataclasses.dataclass
-class PriceSalesTax:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Price1:
@@ -62,11 +52,6 @@ class Price1:
     dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
-
-
-@dataclasses.dataclass
-class PriceTax:
-    pass
 
 class TaxBehavior(str, Enum):
     r"""Specifies whether the price is considered `inclusive` of taxes or `exclusive` of taxes.
@@ -97,11 +82,6 @@ class PriceSchemas1(str, Enum):
     M = 'm'
     M2 = 'm2'
     L = 'l'
-
-
-@dataclasses.dataclass
-class Unit:
-    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)

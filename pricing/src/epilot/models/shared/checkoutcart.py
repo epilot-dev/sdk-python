@@ -9,11 +9,6 @@ from epilot import utils
 from typing import Optional, Union
 
 
-@dataclasses.dataclass
-class Cart:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CheckoutCart:

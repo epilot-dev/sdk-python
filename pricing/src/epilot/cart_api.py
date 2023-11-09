@@ -17,6 +17,7 @@ class CartAPI:
         self.sdk_configuration = sdk_config
         
     
+    
     def dollar_checkout_cart(self, checkout_cart: shared.CheckoutCart, x_ivy_org_id: str) -> operations.DollarCheckoutCartResponse:
         r"""checkoutCart
         Checkouts a cart and executes the specified checkout `mode` process.
@@ -48,7 +49,10 @@ class CartAPI:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

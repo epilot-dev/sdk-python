@@ -28,10 +28,8 @@ src/epilot/models/shared/ordersource.py
 src/epilot/models/shared/entityrelation.py
 src/epilot/models/shared/paymentmethod.py
 src/epilot/models/shared/metadata.py
-src/epilot/models/shared/priceitem.py
 src/epilot/models/shared/taxamount.py
 src/epilot/models/shared/tax.py
-src/epilot/models/shared/product.py
 src/epilot/models/shared/file.py
 src/epilot/models/shared/price.py
 src/epilot/models/shared/salestax.py
@@ -41,6 +39,7 @@ src/epilot/models/shared/pricecomponentrelation.py
 src/epilot/models/shared/compositepriceitem.py
 src/epilot/models/shared/address.py
 src/epilot/models/shared/orderpayload.py
+src/epilot/models/shared/priceitem.py
 src/epilot/models/shared/availabilityresult.py
 src/epilot/models/shared/availabilitycheckparams.py
 src/epilot/models/shared/availabilityfilters.py
@@ -50,12 +49,13 @@ src/epilot/models/shared/checkoutcart.py
 src/epilot/models/shared/checkoutmode.py
 src/epilot/models/shared/cartdto.py
 src/epilot/models/shared/priceitemdto.py
+src/epilot/models/shared/product.py
 src/epilot/models/shared/customer.py
 src/epilot/models/shared/catalogsearchresult.py
 src/epilot/models/shared/catalogsearch.py
-src/epilot/models/shared/opportunity.py
 src/epilot/models/shared/opportunitysource.py
 src/epilot/models/shared/orderrelation.py
+src/epilot/models/shared/opportunity.py
 src/epilot/models/shared/security.py
 src/epilot/models/errors/error.py
 src/epilot/models/__init__.py
@@ -98,7 +98,6 @@ docs/models/shared/priceitemrecurrences.md
 docs/models/shared/priceitemtaxes.md
 docs/models/shared/priceitemtype.md
 docs/models/shared/priceitem.md
-docs/models/shared/priceiteminput.md
 docs/models/shared/taxamounttax.md
 docs/models/shared/taxamount.md
 docs/models/shared/behavior.md
@@ -111,7 +110,6 @@ docs/models/shared/productdownloads.md
 docs/models/shared/productimages.md
 docs/models/shared/producttype.md
 docs/models/shared/product.md
-docs/models/shared/productinput.md
 docs/models/shared/s3ref.md
 docs/models/shared/versions.md
 docs/models/shared/file.md
@@ -141,10 +139,11 @@ docs/models/shared/compositepriceitemprice.md
 docs/models/shared/recurrences.md
 docs/models/shared/taxes.md
 docs/models/shared/compositepriceitem.md
-docs/models/shared/compositepriceiteminput.md
 docs/models/shared/address.md
 docs/models/shared/orderpayload.md
 docs/models/shared/priceitemsinput.md
+docs/models/shared/priceiteminput.md
+docs/models/shared/compositepriceiteminput.md
 docs/models/shared/checkresults.md
 docs/models/shared/availabilityresult.md
 docs/models/shared/availabilitycheckparams.md
@@ -158,6 +157,7 @@ docs/models/shared/cartdto.md
 docs/models/shared/priceitemsdto.md
 docs/models/shared/priceitemdtotype.md
 docs/models/shared/priceitemdto.md
+docs/models/shared/productinput.md
 docs/models/shared/customer.md
 docs/models/shared/results.md
 docs/models/shared/catalogsearchresult.md
@@ -177,10 +177,10 @@ docs/models/shared/opportunityschemasdeliveryaddress1.md
 docs/models/shared/opportunityschemasdollarrelationref.md
 docs/models/shared/deliveryaddress.md
 docs/models/shared/items.md
-docs/models/shared/opportunityinput.md
 docs/models/shared/opportunity.md
 docs/models/shared/opportunitysource.md
 docs/models/shared/orderrelation.md
+docs/models/shared/opportunityinput.md
 docs/models/shared/security.md
 docs/models/errors/error.md
 docs/sdks/epilot/README.md

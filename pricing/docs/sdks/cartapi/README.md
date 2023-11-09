@@ -1,5 +1,5 @@
 # CartAPI
-(*.cart_api*)
+(*cart_api*)
 
 ## Overview
 
@@ -92,18 +92,18 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                     [
                         shared.Tax(
                             additional_properties={
-                                "_schema": 'string',
-                                "_tags": 'string',
-                                "_id": 'string',
-                                "description": 'string',
-                                "behavior": 'string',
-                                "region": 'string',
-                                "_created_at": 'string',
-                                "_updated_at": 'string',
-                                "type": 'string',
                                 "active": 'string',
                                 "region_label": 'string',
                                 "_org": 'string',
+                                "_tags": 'string',
+                                "_created_at": 'string',
+                                "type": 'string',
+                                "description": 'string',
+                                "behavior": 'string',
+                                "_updated_at": 'string',
+                                "_id": 'string',
+                                "region": 'string',
+                                "_schema": 'string',
                             },
                             created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
                             id='8a718dcd-4d08-4ffa-b671-3e809e1b5095',
@@ -256,4 +256,9 @@ if res.checkout_cart_result is not None:
 ### Response
 
 **[operations.DollarCheckoutCartResponse](../../models/operations/dollarcheckoutcartresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400              | application/json |
+| errors.SDKError  | 400-600          | */*              |
