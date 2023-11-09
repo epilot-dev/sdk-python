@@ -13,6 +13,7 @@ class Variables:
         self.sdk_configuration = sdk_config
         
     
+    
     def generate_q_rcode(self, qrdata: Optional[str] = None) -> operations.GenerateQRcodeResponse:
         r"""generateQRcode
         Generate QR Code for the given payload
@@ -29,7 +30,10 @@ class Variables:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -43,6 +47,7 @@ class Variables:
 
         return res
 
+    
     
     def get_categories(self, lang: Optional[operations.QueryParamLang] = None) -> operations.GetCategoriesResponse:
         r"""getCategories
@@ -60,7 +65,10 @@ class Variables:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -79,6 +87,7 @@ class Variables:
         return res
 
     
+    
     def get_variable_context(self, request: operations.GetVariableContextRequestBody) -> operations.GetVariableContextResponse:
         r"""getVariableContext
         Get full variable context
@@ -95,7 +104,10 @@ class Variables:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -114,6 +126,7 @@ class Variables:
         return res
 
     
+    
     def replace_templates(self, request: operations.ReplaceTemplatesRequestBody) -> operations.ReplaceTemplatesResponse:
         r"""replaceTemplates
         Replace variables in handlebars templates
@@ -130,7 +143,10 @@ class Variables:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -149,6 +165,7 @@ class Variables:
         return res
 
     
+    
     def search_variables(self, request: operations.SearchVariablesRequestBody) -> operations.SearchVariablesResponse:
         r"""searchVariables
         Search variables
@@ -163,7 +180,10 @@ class Variables:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

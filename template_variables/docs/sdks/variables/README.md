@@ -1,5 +1,5 @@
 # Variables
-(*.variables*)
+(*variables*)
 
 ## Overview
 
@@ -45,7 +45,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GenerateQRcodeResponse](../../models/operations/generateqrcoderesponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_categories
 
@@ -79,7 +83,11 @@ if res.classes is not None:
 ### Response
 
 **[operations.GetCategoriesResponse](../../models/operations/getcategoriesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_variable_context
 
@@ -136,7 +144,11 @@ if res.variable_context is not None:
 ### Response
 
 **[operations.GetVariableContextResponse](../../models/operations/getvariablecontextresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## replace_templates
 
@@ -252,7 +264,11 @@ if res.object is not None:
 ### Response
 
 **[operations.ReplaceTemplatesResponse](../../models/operations/replacetemplatesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## search_variables
 
@@ -299,4 +315,8 @@ if res.classes is not None:
 ### Response
 
 **[operations.SearchVariablesResponse](../../models/operations/searchvariablesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

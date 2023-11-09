@@ -12,6 +12,7 @@ class CustomVariables:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_custom_variable(self, request: shared.CustomVariable) -> operations.CreateCustomVariableResponse:
         r"""Create custom variable
         Create custom variable
@@ -26,7 +27,10 @@ class CustomVariables:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -40,6 +44,7 @@ class CustomVariables:
 
         return res
 
+    
     
     def delete_custom_variable(self, id: str) -> operations.DeleteCustomVariableResponse:
         r"""Delete custom variable
@@ -56,7 +61,10 @@ class CustomVariables:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -71,6 +79,7 @@ class CustomVariables:
         return res
 
     
+    
     def get_blue_print_table_config(self) -> operations.GetBluePrintTableConfigResponse:
         r"""Get default table config
         Get default table config
@@ -82,7 +91,10 @@ class CustomVariables:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -101,6 +113,7 @@ class CustomVariables:
         return res
 
     
+    
     def get_custom_variable(self, id: str) -> operations.GetCustomVariableResponse:
         r"""Get custom variable
         Get custom variable
@@ -116,7 +129,10 @@ class CustomVariables:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -135,6 +151,7 @@ class CustomVariables:
         return res
 
     
+    
     def get_custom_variables(self) -> operations.GetCustomVariablesResponse:
         r"""Get custom variables
         Get all custom variables of organization
@@ -146,7 +163,10 @@ class CustomVariables:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -164,6 +184,7 @@ class CustomVariables:
 
         return res
 
+    
     
     def update_custom_variable(self, id: str, custom_variable: Optional[shared.CustomVariable] = None) -> operations.UpdateCustomVariableResponse:
         r"""Update custom variable
@@ -184,7 +205,10 @@ class CustomVariables:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

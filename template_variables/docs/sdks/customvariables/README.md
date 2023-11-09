@@ -1,5 +1,5 @@
 # CustomVariables
-(*.custom_variables*)
+(*custom_variables*)
 
 ### Available Operations
 
@@ -165,7 +165,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateCustomVariableResponse](../../models/operations/createcustomvariableresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_custom_variable
 
@@ -199,7 +203,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteCustomVariableResponse](../../models/operations/deletecustomvariableresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_blue_print_table_config
 
@@ -226,7 +234,11 @@ if res.custom_variable is not None:
 ### Response
 
 **[operations.GetBluePrintTableConfigResponse](../../models/operations/getblueprinttableconfigresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_custom_variable
 
@@ -260,7 +272,11 @@ if res.custom_variable is not None:
 ### Response
 
 **[operations.GetCustomVariableResponse](../../models/operations/getcustomvariableresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_custom_variables
 
@@ -287,7 +303,11 @@ if res.classes is not None:
 ### Response
 
 **[operations.GetCustomVariablesResponse](../../models/operations/getcustomvariablesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_custom_variable
 
@@ -444,4 +464,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateCustomVariableResponse](../../models/operations/updatecustomvariableresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
