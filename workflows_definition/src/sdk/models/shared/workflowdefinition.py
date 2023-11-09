@@ -12,11 +12,6 @@ from sdk import utils
 from typing import List, Optional, Union
 
 
-@dataclasses.dataclass
-class Flow:
-    pass
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class WorkflowDefinition:

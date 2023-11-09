@@ -12,6 +12,7 @@ class Workflows:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_definition(self, request: shared.WorkflowDefinition) -> operations.CreateDefinitionResponse:
         r"""createDefinition
         Create a Workflow Definition.
@@ -28,7 +29,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -54,6 +58,7 @@ class Workflows:
         return res
 
     
+    
     def delete_definition(self, definition_id: str) -> operations.DeleteDefinitionResponse:
         r"""deleteDefinition
         Delete Workflow Definition.
@@ -69,7 +74,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -91,6 +99,7 @@ class Workflows:
         return res
 
     
+    
     def get_definition(self, definition_id: str) -> operations.GetDefinitionResponse:
         r"""getDefinition
         Get specific Definition by id from the Organization.
@@ -106,7 +115,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -139,6 +151,7 @@ class Workflows:
         return res
 
     
+    
     def get_definitions(self) -> operations.GetDefinitionsResponse:
         r"""getDefinitions
         Retrieve all Workflow Definitions from an Organization
@@ -150,7 +163,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -176,6 +192,7 @@ class Workflows:
         return res
 
     
+    
     def get_max_allowed_limit(self) -> operations.GetMaxAllowedLimitResponse:
         r"""getMaxAllowedLimit
         Get limits and number of created executions for an Organization.
@@ -187,7 +204,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -213,6 +233,7 @@ class Workflows:
         return res
 
     
+    
     def get_workflow_closing_reasons(self, definition_id: str) -> operations.GetWorkflowClosingReasonsResponse:
         r"""getWorkflowClosingReasons
         Returns all closing reasons defined for the workflow.
@@ -228,7 +249,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -246,6 +270,7 @@ class Workflows:
 
         return res
 
+    
     
     def set_workflow_closing_reasons(self, closing_reasons_ids: shared.ClosingReasonsIds, definition_id: str) -> operations.SetWorkflowClosingReasonsResponse:
         r"""setWorkflowClosingReasons
@@ -268,7 +293,10 @@ class Workflows:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -282,6 +310,7 @@ class Workflows:
 
         return res
 
+    
     
     def update_definition(self, workflow_definition: shared.WorkflowDefinition, definition_id: str) -> operations.UpdateDefinitionResponse:
         r"""updateDefinition
@@ -304,7 +333,10 @@ class Workflows:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

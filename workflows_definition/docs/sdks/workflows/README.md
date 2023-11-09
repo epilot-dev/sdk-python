@@ -1,5 +1,5 @@
 # Workflows
-(*.workflows*)
+(*workflows*)
 
 ### Available Operations
 
@@ -118,7 +118,12 @@ if res.workflow_definition is not None:
 ### Response
 
 **[operations.CreateDefinitionResponse](../../models/operations/createdefinitionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,401,500      | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## delete_definition
 
@@ -152,7 +157,12 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteDefinitionResponse](../../models/operations/deletedefinitionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 401              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_definition
 
@@ -186,7 +196,13 @@ if res.workflow_definition is not None:
 ### Response
 
 **[operations.GetDefinitionResponse](../../models/operations/getdefinitionresponse.md)**
+### Errors
 
+| Error Object                  | Status Code                   | Content Type                  |
+| ----------------------------- | ----------------------------- | ----------------------------- |
+| errors.ErrorResp              | 400,401,500                   | application/json              |
+| errors.DefinitionNotFoundResp | 404                           | application/json              |
+| errors.SDKError               | 400-600                       | */*                           |
 
 ## get_definitions
 
@@ -213,7 +229,12 @@ if res.classes is not None:
 ### Response
 
 **[operations.GetDefinitionsResponse](../../models/operations/getdefinitionsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_max_allowed_limit
 
@@ -240,7 +261,12 @@ if res.max_allowed_limit is not None:
 ### Response
 
 **[operations.GetMaxAllowedLimitResponse](../../models/operations/getmaxallowedlimitresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get_workflow_closing_reasons
 
@@ -274,7 +300,11 @@ if res.closing_reasons_ids is not None:
 ### Response
 
 **[operations.GetWorkflowClosingReasonsResponse](../../models/operations/getworkflowclosingreasonsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## set_workflow_closing_reasons
 
@@ -315,7 +345,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.SetWorkflowClosingReasonsResponse](../../models/operations/setworkflowclosingreasonsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_definition
 
@@ -423,4 +457,9 @@ if res.workflow_definition is not None:
 ### Response
 
 **[operations.UpdateDefinitionResponse](../../models/operations/updatedefinitionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,401,500      | application/json |
+| errors.SDKError  | 400-600          | */*              |

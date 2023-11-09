@@ -1,5 +1,5 @@
 # ClosingReason
-(*.closing_reason*)
+(*closing_reason*)
 
 ### Available Operations
 
@@ -42,7 +42,12 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ChangeReasonStatusResponse](../../models/operations/changereasonstatusresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## create_closing_reason
 
@@ -80,7 +85,11 @@ if res.closing_reason is not None:
 ### Response
 
 **[operations.CreateClosingReasonResponse](../../models/operations/createclosingreasonresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_all_closing_reasons
 
@@ -114,4 +123,8 @@ if res.closing_reasons is not None:
 ### Response
 
 **[operations.GetAllClosingReasonsResponse](../../models/operations/getallclosingreasonsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

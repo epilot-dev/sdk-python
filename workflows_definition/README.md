@@ -33,13 +33,13 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [.closing_reason](docs/sdks/closingreason/README.md)
+### [closing_reason](docs/sdks/closingreason/README.md)
 
 * [change_reason_status](docs/sdks/closingreason/README.md#change_reason_status) - changeReasonStatus
 * [create_closing_reason](docs/sdks/closingreason/README.md#create_closing_reason) - createClosingReason
 * [get_all_closing_reasons](docs/sdks/closingreason/README.md#get_all_closing_reasons) - getAllClosingReasons
 
-### [.workflows](docs/sdks/workflows/README.md)
+### [workflows](docs/sdks/workflows/README.md)
 
 * [create_definition](docs/sdks/workflows/README.md#create_definition) - createDefinition
 * [delete_definition](docs/sdks/workflows/README.md#delete_definition) - deleteDefinition
@@ -62,7 +62,12 @@ if res.status_code == 200:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 
 ## Example
@@ -81,8 +86,10 @@ try:
     res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
+except (errors.ErrorResp) as e:
+    print(e) # handle exception
 
-except (ErrorResp) as e:
+except (errors.SDKError) as e:
     print(e) # handle exception
 
 
@@ -159,7 +166,7 @@ if res.status_code == 200:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import sdk
@@ -174,12 +181,11 @@ s = sdk.SDK(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |

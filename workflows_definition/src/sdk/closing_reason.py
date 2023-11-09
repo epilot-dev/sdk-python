@@ -12,6 +12,7 @@ class ClosingReason:
         self.sdk_configuration = sdk_config
         
     
+    
     def change_reason_status(self, reason_id: str, change_reason_status_req: Optional[shared.ChangeReasonStatusReq] = None) -> operations.ChangeReasonStatusResponse:
         r"""changeReasonStatus
         Change the status of a Closing Reason (eg. ACTIVE to INACTIVE).
@@ -31,7 +32,10 @@ class ClosingReason:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -53,6 +57,7 @@ class ClosingReason:
         return res
 
     
+    
     def create_closing_reason(self, request: shared.ClosingReason) -> operations.CreateClosingReasonResponse:
         r"""createClosingReason
         A created Closing Reason is stored for the organization and will be displayed in the library of reasons.
@@ -69,7 +74,10 @@ class ClosingReason:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -88,6 +96,7 @@ class ClosingReason:
         return res
 
     
+    
     def get_all_closing_reasons(self, include_inactive: Optional[bool] = None) -> operations.GetAllClosingReasonsResponse:
         r"""getAllClosingReasons
         Get all Closing Reasons defined in the organization by default all Active.
@@ -104,7 +113,10 @@ class ClosingReason:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
