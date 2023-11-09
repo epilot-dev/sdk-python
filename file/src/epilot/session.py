@@ -12,6 +12,7 @@ class Session:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_session(self) -> operations.DeleteSessionResponse:
         r"""deleteSession
         End browser session by deleting token cookie
@@ -23,7 +24,10 @@ class Session:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -38,6 +42,7 @@ class Session:
         return res
 
     
+    
     def get_session(self) -> operations.GetSessionResponse:
         r"""getSession
         Start a browser session by setting passed Authorization token in a server side cookie.
@@ -51,7 +56,10 @@ class Session:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

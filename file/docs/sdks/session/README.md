@@ -1,5 +1,5 @@
 # Session
-(*.session*)
+(*session*)
 
 ## Overview
 

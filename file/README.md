@@ -39,7 +39,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [.files](docs/sdks/files/README.md)
+### [files](docs/sdks/files/README.md)
 
 * [delete_file](docs/sdks/files/README.md#delete_file) - deleteFile
 * [download_file](docs/sdks/files/README.md#download_file) - downloadFile
@@ -54,7 +54,7 @@ if res.status_code == 200:
 * [upload_file_public](docs/sdks/files/README.md#upload_file_public) - uploadFilePublic
 * [verify_custom_download_url](docs/sdks/files/README.md#verify_custom_download_url) - verifyCustomDownloadUrl
 
-### [.session](docs/sdks/session/README.md)
+### [session](docs/sdks/session/README.md)
 
 * [delete_session](docs/sdks/session/README.md#delete_session) - deleteSession
 * [get_session](docs/sdks/session/README.md#get_session) - getSession
@@ -71,7 +71,7 @@ if res.status_code == 200:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
@@ -190,7 +190,7 @@ if res.status_code == 200:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import epilot
@@ -209,7 +209,7 @@ s = epilot.Epilot(client: http_client)
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |

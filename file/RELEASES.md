@@ -59,3 +59,11 @@ Based on:
 - Speakeasy CLI 1.115.0 (2.183.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v2.0.1] file
+
+## 2023-11-09 00:56:39
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 https://docs.api.epilot.io/file.yaml
+- Speakeasy CLI 1.116.0 (2.185.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v2.1.0] file

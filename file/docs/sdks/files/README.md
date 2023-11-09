@@ -1,5 +1,5 @@
 # Files
-(*.files*)
+(*files*)
 
 ## Overview
 
@@ -140,9 +140,9 @@ if res.classes is not None:
 
 ### Parameters
 
-| Parameter                                              | Type                                                   | Required                                               | Description                                            |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| `request`                                              | [List[shared.DownloadFilesPayload]](../../models//.md) | :heavy_check_mark:                                     | The request object to use for the request.             |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `request`                                             | [List[shared.DownloadFilesPayload]](../../models/.md) | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response

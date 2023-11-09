@@ -13,6 +13,7 @@ class Files:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete_file(self, request: shared.DeleteFilePayload) -> operations.DeleteFileResponse:
         r"""deleteFile
         Delete file entity
@@ -27,7 +28,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -41,6 +45,7 @@ class Files:
 
         return res
 
+    
     
     def download_file(self, id: str, attachment: Optional[bool] = None, version: Optional[int] = None) -> operations.DownloadFileResponse:
         r"""downloadFile
@@ -60,7 +65,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -79,6 +87,7 @@ class Files:
         return res
 
     
+    
     def download_files(self, request: List[shared.DownloadFilesPayload]) -> operations.DownloadFilesResponse:
         r"""downloadFiles
         Generate pre-signed download S3 urls for multiple files
@@ -93,7 +102,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -111,6 +123,7 @@ class Files:
 
         return res
 
+    
     
     def download_s3_file(self, s3_bucket: str, s3_key: str, attachment: Optional[bool] = None) -> operations.DownloadS3FileResponse:
         r"""downloadS3File
@@ -130,7 +143,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -148,6 +164,7 @@ class Files:
 
         return res
 
+    
     
     def preview_file(self, id: str, h: Optional[int] = None, version: Optional[int] = None, w: Optional[int] = None) -> operations.PreviewFileResponse:
         r"""previewFile
@@ -168,7 +185,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -183,6 +203,7 @@ class Files:
         return res
 
     
+    
     def preview_public_file(self, request: operations.PreviewPublicFileRequest) -> operations.PreviewPublicFileResponse:
         r"""previewPublicFile
         Generate thumbnail preview for a public file entity
@@ -195,7 +216,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -209,6 +233,7 @@ class Files:
 
         return res
 
+    
     
     def preview_s3_file(self, s3_reference: Optional[shared.S3Reference] = None, h: Optional[int] = None, w: Optional[int] = None) -> operations.PreviewS3FileResponse:
         r"""previewS3File
@@ -231,7 +256,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -245,6 +273,7 @@ class Files:
 
         return res
 
+    
     
     def preview_s3_file_get(self, bucket: str, key: str, h: Optional[int] = None, w: Optional[int] = None) -> operations.PreviewS3FileGetResponse:
         r"""previewS3FileGet
@@ -265,7 +294,10 @@ class Files:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -279,6 +311,7 @@ class Files:
 
         return res
 
+    
     
     def save_file(self, request: Union[shared.SaveS3FilePayload, shared.SaveCustomFilePayload]) -> operations.SaveFileResponse:
         r"""saveFile
@@ -298,7 +331,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -316,6 +352,7 @@ class Files:
 
         return res
 
+    
     
     def upload_file(self, upload_file_payload: Optional[shared.UploadFilePayload] = None, file_entity_id: Optional[str] = None) -> operations.UploadFileResponse:
         r"""uploadFile
@@ -339,7 +376,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -358,6 +398,7 @@ class Files:
         return res
 
     
+    
     def upload_file_public(self, request: shared.UploadFilePayload) -> operations.UploadFilePublicResponse:
         r"""uploadFilePublic
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).
@@ -374,7 +415,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -393,6 +437,7 @@ class Files:
         return res
 
     
+    
     def verify_custom_download_url(self, request: shared.VerifyCustomDownloadURLPayload) -> operations.VerifyCustomDownloadURLResponse:
         r"""verifyCustomDownloadUrl
         Verify a pre-signed custom download url for a file
@@ -407,7 +452,10 @@ class Files:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
