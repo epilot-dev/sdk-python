@@ -37,7 +37,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [.partners](docs/sdks/partners/README.md)
+### [partners](docs/sdks/partners/README.md)
 
 * [activate_partner](docs/sdks/partners/README.md#activate_partner) - activatePartner
 * [approve_partner](docs/sdks/partners/README.md#approve_partner) - approvePartner
@@ -61,7 +61,42 @@ if res.status_code == 200:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        as_organization="",
+    ),
+)
+
+
+res = None
+try:
+    res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
+    company_name='Company name',
+    organization_id='string',
+    signed_up_email='Lupe.Graham2@hotmail.com',
+))
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -139,7 +174,7 @@ if res.status_code == 200:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import epilot
@@ -154,12 +189,11 @@ s = epilot.Epilot(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name              | Type              | Scheme            |
 | ----------------- | ----------------- | ----------------- |

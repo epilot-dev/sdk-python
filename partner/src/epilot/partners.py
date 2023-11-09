@@ -13,6 +13,7 @@ class Partners:
         self.sdk_configuration = sdk_config
         
     
+    
     def activate_partner(self, token: str, activate_partner_payload: Optional[shared.ActivatePartnerPayload] = None) -> operations.ActivatePartnerResponse:
         r"""activatePartner
         Activate partner using an invite token
@@ -33,7 +34,10 @@ class Partners:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Partners:
 
         return res
 
+    
     
     def approve_partner(self, id: str) -> operations.ApprovePartnerResponse:
         r"""approvePartner
@@ -63,7 +68,10 @@ class Partners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -82,6 +90,7 @@ class Partners:
         return res
 
     
+    
     def batch_get_assignable(self, request: List[operations.RequestBody]) -> operations.BatchGetAssignableResponse:
         r"""batchGet
         Search for assignable users from this organization by its ids
@@ -96,7 +105,10 @@ class Partners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -115,6 +127,7 @@ class Partners:
         return res
 
     
+    
     def get_partner_by_token(self, token: str) -> operations.GetPartnerByTokenResponse:
         r"""getPartnerByToken
         Get partner by token
@@ -131,7 +144,10 @@ class Partners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -149,6 +165,7 @@ class Partners:
 
         return res
 
+    
     
     def invite_partner(self, id: str, partner_invitation_payload: Optional[shared.PartnerInvitationPayload] = None) -> operations.InvitePartnerResponse:
         r"""invitePartner
@@ -169,7 +186,10 @@ class Partners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -188,6 +208,7 @@ class Partners:
         return res
 
     
+    
     def reject_partner(self, id: str) -> operations.RejectPartnerResponse:
         r"""rejectPartner
         Reject partner request
@@ -203,7 +224,10 @@ class Partners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -221,6 +245,7 @@ class Partners:
 
         return res
 
+    
     
     def resend_partner_invitation(self, id: str, request_body: Optional[operations.ResendPartnerInvitationRequestBody] = None) -> operations.ResendPartnerInvitationResponse:
         r"""resendPartnerInvitation
@@ -241,7 +266,10 @@ class Partners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -259,6 +287,7 @@ class Partners:
 
         return res
 
+    
     
     def search_assignable(self, request: operations.SearchAssignableRequestBody) -> operations.SearchAssignableResponse:
         r"""searchAssignables
@@ -279,7 +308,10 @@ class Partners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -298,6 +330,7 @@ class Partners:
         return res
 
     
+    
     def search_geolocation_for_text(self, request: shared.SearchGeolocation) -> operations.SearchGeolocationForTextResponse:
         r"""searchGeolocationForText
         Converts a given string, in the format of an address, to geo-location latitude and longitude
@@ -312,7 +345,10 @@ class Partners:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

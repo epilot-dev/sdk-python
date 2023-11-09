@@ -1,5 +1,5 @@
 # Partners
-(*.partners*)
+(*partners*)
 
 ## Overview
 
@@ -56,7 +56,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ActivatePartnerResponse](../../models/operations/activatepartnerresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## approve_partner
 
@@ -92,7 +96,11 @@ if res.partner is not None:
 ### Response
 
 **[operations.ApprovePartnerResponse](../../models/operations/approvepartnerresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## batch_get_assignable
 
@@ -126,15 +134,19 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                         | Type                                              | Required                                          | Description                                       |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `request`                                         | [List[operations.RequestBody]](../../models//.md) | :heavy_check_mark:                                | The request object to use for the request.        |
+| Parameter                                        | Type                                             | Required                                         | Description                                      |
+| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
+| `request`                                        | [List[operations.RequestBody]](../../models/.md) | :heavy_check_mark:                               | The request object to use for the request.       |
 
 
 ### Response
 
 **[operations.BatchGetAssignableResponse](../../models/operations/batchgetassignableresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_partner_by_token
 
@@ -170,7 +182,11 @@ if res.partner is not None:
 ### Response
 
 **[operations.GetPartnerByTokenResponse](../../models/operations/getpartnerbytokenresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## invite_partner
 
@@ -207,7 +223,11 @@ if res.partner is not None:
 ### Response
 
 **[operations.InvitePartnerResponse](../../models/operations/invitepartnerresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## reject_partner
 
@@ -243,7 +263,11 @@ if res.partner is not None:
 ### Response
 
 **[operations.RejectPartnerResponse](../../models/operations/rejectpartnerresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## resend_partner_invitation
 
@@ -280,7 +304,11 @@ if res.partner is not None:
 ### Response
 
 **[operations.ResendPartnerInvitationResponse](../../models/operations/resendpartnerinvitationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## search_assignable
 
@@ -330,7 +358,11 @@ if res.object is not None:
 ### Response
 
 **[operations.SearchAssignableResponse](../../models/operations/searchassignableresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## search_geolocation_for_text
 
@@ -369,4 +401,8 @@ if res.geolocation is not None:
 ### Response
 
 **[operations.SearchGeolocationForTextResponse](../../models/operations/searchgeolocationfortextresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
