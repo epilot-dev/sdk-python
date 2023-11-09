@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Dict, Optional
+from typing import Callable, Dict, Optional, Union
 
 class Epilot:
     r"""Internal Auth API: Auth API to provide JWT tokens for internal API access that work with the epilot custom authorizer.
@@ -15,7 +15,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 sigv4: str,
+                 sigv4: Union[str,Callable[[], str]],
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
@@ -25,7 +25,7 @@ class Epilot:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param sigv4: The sigv4 required for authentication
-        :type sigv4: str
+        :type sigv4: Union[str,Callable[[], str]]
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -40,17 +40,16 @@ class Epilot:
         if client is None:
             client = requests_http.Session()
         
-        
-        security_client = utils.configure_security_client(client, shared.Security(sigv4 = sigv4))
-        
+        security = shared.Security(sigv4 = sigv4)
         
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, retry_config=retry_config)
        
         
+    
     
     
     
@@ -65,7 +64,10 @@ class Epilot:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -84,6 +86,7 @@ class Epilot:
         return res
 
     
+    
     def get_open_id_configuration(self) -> operations.GetOpenIDConfigurationResponse:
         r"""getOpenIDConfiguration
         OpenID Connect configuration for internal auth as identity provider
@@ -98,7 +101,10 @@ class Epilot:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -116,6 +122,7 @@ class Epilot:
 
         return res
 
+    
     
     def get_token(self) -> operations.GetTokenResponse:
         r"""getToken
@@ -151,7 +158,10 @@ class Epilot:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -169,6 +179,7 @@ class Epilot:
 
         return res
 
+    
     
     def get_token_v2(self, request: shared.AuthRequest) -> operations.GetTokenV2Response:
         r"""getTokenV2
@@ -209,7 +220,10 @@ class Epilot:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

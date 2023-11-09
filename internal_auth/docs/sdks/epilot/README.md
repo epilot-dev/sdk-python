@@ -40,7 +40,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetJwksResponse](../../models/operations/getjwksresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_open_id_configuration
 
@@ -71,7 +75,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetOpenIDConfigurationResponse](../../models/operations/getopenidconfigurationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_token
 
@@ -122,7 +130,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetTokenResponse](../../models/operations/gettokenresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_token_v2
 
@@ -201,4 +213,8 @@ if res.object is not None:
 ### Response
 
 **[operations.GetTokenV2Response](../../models/operations/gettokenv2response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
