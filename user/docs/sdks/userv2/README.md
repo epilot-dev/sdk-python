@@ -1,5 +1,5 @@
 # UserV2
-(*.user_v2*)
+(*user_v2*)
 
 ## Overview
 
@@ -55,7 +55,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ActivateUserResponse](../../models/operations/activateuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_user_v2
 
@@ -89,7 +93,11 @@ if res.user is not None:
 ### Response
 
 **[operations.DeleteUserV2Response](../../models/operations/deleteuserv2response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_me_v2
 
@@ -116,7 +124,11 @@ if res.user_v2 is not None:
 ### Response
 
 **[operations.GetMeV2Response](../../models/operations/getmev2response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_user_login_parameters_v2
 
@@ -150,7 +162,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetUserLoginParametersV2Response](../../models/operations/getuserloginparametersv2response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_user_v2
 
@@ -184,7 +200,11 @@ if res.user_v2 is not None:
 ### Response
 
 **[operations.GetUserV2Response](../../models/operations/getuserv2response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## invite_user
 
@@ -232,7 +252,11 @@ if res.user_v2 is not None:
 ### Response
 
 **[operations.InviteUserResponse](../../models/operations/inviteuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_users_v2
 
@@ -268,7 +292,11 @@ if res.object is not None:
 ### Response
 
 **[operations.ListUsersV2Response](../../models/operations/listusersv2response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## resend_user_invitation
 
@@ -305,7 +333,11 @@ if res.user_v2 is not None:
 ### Response
 
 **[operations.ResendUserInvitationResponse](../../models/operations/resenduserinvitationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## sign_up_user
 
@@ -357,7 +389,11 @@ if res.object is not None:
 ### Response
 
 **[operations.SignUpUserResponse](../../models/operations/signupuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_user_v2
 
@@ -419,7 +455,11 @@ if res.user_v2 is not None:
 ### Response
 
 **[operations.UpdateUserV2Response](../../models/operations/updateuserv2response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## verify_email_with_token
 
@@ -456,4 +496,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.VerifyEmailWithTokenResponse](../../models/operations/verifyemailwithtokenresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

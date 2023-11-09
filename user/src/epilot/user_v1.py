@@ -13,6 +13,7 @@ class UserV1:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_me(self) -> operations.GetMeResponse:
         r"""getMe
         Get currently logged in user
@@ -24,7 +25,10 @@ class UserV1:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -43,6 +47,7 @@ class UserV1:
         return res
 
     
+    
     def get_user(self, id: str) -> operations.GetUserResponse:
         r"""getUser
         Get user by id
@@ -58,7 +63,10 @@ class UserV1:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -77,6 +85,7 @@ class UserV1:
         return res
 
     
+    
     def get_user_login_parameters(self, username: str) -> operations.GetUserLoginParametersResponse:
         r"""getUserLoginParameters
         Get user organization login parameters by username
@@ -92,7 +101,10 @@ class UserV1:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -110,6 +122,7 @@ class UserV1:
 
         return res
 
+    
     
     def list_users(self, limit: Optional[float] = None, offset: Optional[float] = None, org_ids: Optional[List[str]] = None, query: Optional[str] = None) -> operations.ListUsersResponse:
         r"""listUsers
@@ -130,7 +143,10 @@ class UserV1:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

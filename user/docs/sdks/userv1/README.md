@@ -1,5 +1,5 @@
 # UserV1
-(*.user_v1*)
+(*user_v1*)
 
 ## Overview
 
@@ -37,7 +37,11 @@ if res.user is not None:
 ### Response
 
 **[operations.GetMeResponse](../../models/operations/getmeresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_user
 
@@ -71,7 +75,11 @@ if res.user is not None:
 ### Response
 
 **[operations.GetUserResponse](../../models/operations/getuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_user_login_parameters
 
@@ -105,7 +113,11 @@ if res.object is not None:
 ### Response
 
 **[operations.GetUserLoginParametersResponse](../../models/operations/getuserloginparametersresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_users
 
@@ -144,4 +156,8 @@ if res.object is not None:
 ### Response
 
 **[operations.ListUsersResponse](../../models/operations/listusersresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

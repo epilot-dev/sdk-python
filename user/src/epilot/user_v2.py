@@ -13,6 +13,7 @@ class UserV2:
         self.sdk_configuration = sdk_config
         
     
+    
     def activate_user(self, token: str, user_activation_payload: Optional[shared.UserActivationPayload] = None) -> operations.ActivateUserResponse:
         r"""activateUser
         Activate user using an invite token
@@ -33,7 +34,10 @@ class UserV2:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class UserV2:
 
         return res
 
+    
     
     def delete_user_v2(self, id: str) -> operations.DeleteUserV2Response:
         r"""deleteUserV2
@@ -63,7 +68,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -82,6 +90,7 @@ class UserV2:
         return res
 
     
+    
     def get_me_v2(self) -> operations.GetMeV2Response:
         r"""getMeV2
         Get currently logged in user
@@ -93,7 +102,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -112,6 +124,7 @@ class UserV2:
         return res
 
     
+    
     def get_user_login_parameters_v2(self, username: str) -> operations.GetUserLoginParametersV2Response:
         r"""getUserLoginParametersV2
         Get user organization login parameters by username
@@ -127,7 +140,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -146,6 +162,7 @@ class UserV2:
         return res
 
     
+    
     def get_user_v2(self, id: str) -> operations.GetUserV2Response:
         r"""getUserV2
         Get user details by user id
@@ -161,7 +178,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -180,6 +200,7 @@ class UserV2:
         return res
 
     
+    
     def invite_user(self, request: shared.UserInvitationPayload) -> operations.InviteUserResponse:
         r"""inviteUser
         Creates a new user in the caller's organization and sends an invite email to activate
@@ -194,7 +215,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -212,6 +236,7 @@ class UserV2:
 
         return res
 
+    
     
     def list_users_v2(self, limit: Optional[float] = None, offset: Optional[float] = None, query: Optional[str] = None) -> operations.ListUsersV2Response:
         r"""listUsersV2
@@ -231,7 +256,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -250,6 +278,7 @@ class UserV2:
         return res
 
     
+    
     def resend_user_invitation(self, request: operations.ResendUserInvitationRequestBody) -> operations.ResendUserInvitationResponse:
         r"""resendUserInvitation
         Resend user invitation email
@@ -264,7 +293,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -282,6 +314,7 @@ class UserV2:
 
         return res
 
+    
     
     def sign_up_user(self, signup_user_payload: Optional[shared.SignupUserPayload] = None, token: Optional[str] = None) -> operations.SignUpUserResponse:
         r"""signUpUser"""
@@ -301,7 +334,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -319,6 +355,7 @@ class UserV2:
 
         return res
 
+    
     
     def update_user_v2(self, id: str, user_v2: Optional[shared.UserV2] = None) -> operations.UpdateUserV2Response:
         r"""updateUserV2
@@ -339,7 +376,10 @@ class UserV2:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -357,6 +397,7 @@ class UserV2:
 
         return res
 
+    
     
     def verify_email_with_token(self, token: str, user_verification_payload: Optional[shared.UserVerificationPayload] = None) -> operations.VerifyEmailWithTokenResponse:
         r"""verifyEmailWithToken
@@ -378,7 +419,10 @@ class UserV2:
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

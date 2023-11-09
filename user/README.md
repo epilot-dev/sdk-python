@@ -30,14 +30,14 @@ if res.user is not None:
 ## Available Resources and Operations
 
 
-### [.user_v1](docs/sdks/userv1/README.md)
+### [user_v1](docs/sdks/userv1/README.md)
 
 * [get_me](docs/sdks/userv1/README.md#get_me) - getMe
 * [get_user](docs/sdks/userv1/README.md#get_user) - getUser
 * [get_user_login_parameters](docs/sdks/userv1/README.md#get_user_login_parameters) - getUserLoginParameters
 * [list_users](docs/sdks/userv1/README.md#list_users) - listUsers
 
-### [.user_v2](docs/sdks/userv2/README.md)
+### [user_v2](docs/sdks/userv2/README.md)
 
 * [activate_user](docs/sdks/userv2/README.md#activate_user) - activateUser
 * [delete_user_v2](docs/sdks/userv2/README.md#delete_user_v2) - deleteUserV2
@@ -63,7 +63,35 @@ if res.user is not None:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import epilot
+
+s = epilot.Epilot(
+    epilot_auth="",
+)
+
+
+res = None
+try:
+    res = s.user_v1.get_me()
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.user is not None:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -127,7 +155,7 @@ if res.user is not None:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import epilot
@@ -142,12 +170,11 @@ s = epilot.Epilot(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |
