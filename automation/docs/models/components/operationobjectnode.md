@@ -1,0 +1,14 @@
+# OperationObjectNode
+
+Mapping operation nodes are either primitive values or operation node objects
+
+
+## Fields
+
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `additional_properties`                                             | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
+| `append`                                                            | List[*Any*]                                                         | :heavy_minus_sign:                                                  | Append to array                                                     |                                                                     |
+| `copy`                                                              | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | Copy JSONPath value from source entity context                      | contact.first_name                                                  |
+| `set`                                                               | *Optional[Any]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
+| `uniq`                                                              | [Optional[Union[bool, List[str]]]](../../models/components/uniq.md) | :heavy_minus_sign:                                                  | Unique array                                                        |                                                                     |
