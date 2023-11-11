@@ -1,0 +1,13 @@
+# AssignableEcpPlaceholder
+
+
+## Fields
+
+| Field                                                        | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `display_name`                                               | *str*                                                        | :heavy_check_mark:                                           | N/A                                                          | Example Ecp Placeholder                                      |
+| `email`                                                      | *Optional[str]*                                              | :heavy_minus_sign:                                           | N/A                                                          | Email of ECP Placeholder                                     |
+| `image_uri`                                                  | [Optional[shared.ImageURI]](../../models/shared/imageuri.md) | :heavy_minus_sign:                                           | N/A                                                          |                                                              |
+| `org_id`                                                     | *str*                                                        | :heavy_check_mark:                                           | N/A                                                          | 123                                                          |
+| `type`                                                       | [shared.Type](../../models/shared/type.md)                   | :heavy_check_mark:                                           | N/A                                                          | ecp                                                          |
+| `user_id`                                                    | *str*                                                        | :heavy_check_mark:                                           | N/A                                                          | 456                                                          |

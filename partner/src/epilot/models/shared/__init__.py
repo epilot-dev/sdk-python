@@ -3,6 +3,7 @@
 from .activatepartnerpayload import *
 from .address import *
 from .addressgeolocation import *
+from .assignableecpplaceholder import *
 from .assignableorganization import *
 from .assignablepartneruser import *
 from .assignableuser import *
@@ -12,4 +13,4 @@ from .partnerinvitationpayload import *
 from .searchgeolocation import *
 from .security import *
 
-__all__ = ["ActivatePartnerPayload","Address","AddressGeolocation","AssignableOrganization","AssignablePartnerUser","AssignablePartnerUserImageURI","AssignablePartnerUserType","AssignableUser","AssignableUserImageURI","AssignableUserType","Geolocation","ImageURI","Language","Partner","PartnerInvitationPayload","SearchGeolocation","Security","Status","Type"]
+__all__ = ["ActivatePartnerPayload","Address","AddressGeolocation","AssignableEcpPlaceholder","AssignableOrganization","AssignableOrganizationImageURI","AssignableOrganizationType","AssignablePartnerUser","AssignablePartnerUserImageURI","AssignablePartnerUserType","AssignableUser","AssignableUserImageURI","AssignableUserType","Geolocation","ImageURI","Language","Partner","PartnerInvitationPayload","SearchGeolocation","Security","Status","Type"]

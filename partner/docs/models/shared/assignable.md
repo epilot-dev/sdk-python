@@ -21,3 +21,9 @@ assignable: shared.AssignablePartnerUser = /* values here */
 assignable: shared.AssignableOrganization = /* values here */
 ```
 
+### AssignableEcpPlaceholder
+
+```python
+assignable: shared.AssignableEcpPlaceholder = /* values here */
+```
+

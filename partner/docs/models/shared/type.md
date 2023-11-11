@@ -3,6 +3,6 @@
 
 ## Values
 
-| Name                   | Value                  |
-| ---------------------- | ---------------------- |
-| `PARTNER_ORGANIZATION` | partner_organization   |
+| Name  | Value |
+| ----- | ----- |
+| `ECP` | ecp   |

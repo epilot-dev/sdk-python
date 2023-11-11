@@ -3,6 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.shared import assignableecpplaceholder as shared_assignableecpplaceholder
 from ...models.shared import assignableorganization as shared_assignableorganization
 from ...models.shared import assignablepartneruser as shared_assignablepartneruser
 from ...models.shared import assignableuser as shared_assignableuser
@@ -15,6 +16,7 @@ class Types(str, Enum):
     USER = 'user'
     PARTNER_USER = 'partner_user'
     PARTNER_ORGANIZATION = 'partner_organization'
+    ECP = 'ecp'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -40,7 +42,7 @@ class SearchAssignableResponseBody:
     r"""List of assignable results"""
     hits: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     r"""total number of search results"""
-    results: Optional[List[Union[shared_assignableuser.AssignableUser, shared_assignablepartneruser.AssignablePartnerUser, shared_assignableorganization.AssignableOrganization]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[Union[shared_assignableuser.AssignableUser, shared_assignablepartneruser.AssignablePartnerUser, shared_assignableorganization.AssignableOrganization, shared_assignableecpplaceholder.AssignableEcpPlaceholder]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
 
 
