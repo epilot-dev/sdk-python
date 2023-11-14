@@ -1,0 +1,10 @@
+# TriggerCondition
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `comparison`                                                                            | [components.Comparison](../../models/components/comparison.md)                          | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `source`                                                                                | *str*                                                                                   | :heavy_check_mark:                                                                      | N/A                                                                                     |
+| `value`                                                                                 | [Optional[Union[str, float, List[str], List[float]]]](../../models/components/value.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
