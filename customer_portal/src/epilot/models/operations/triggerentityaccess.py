@@ -18,9 +18,11 @@ class TriggerEntityAccessSecurity:
 @dataclasses.dataclass
 class TriggerEntityAccessRequest:
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
-    r"""entity ID"""
+    r"""Entity ID"""
+    origin: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Portal origin"""
     schema: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'schema', 'style': 'form', 'explode': True }})
-    r"""entity schema"""
+    r"""Entity schema"""
     
 
 

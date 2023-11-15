@@ -10,6 +10,8 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=custom
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+### Example
+
 ```python
 import epilot
 from epilot.models import components, operations
@@ -43,6 +45,7 @@ if res.object is not None:
 * [get_org_portal_config](docs/sdks/ecpadmin/README.md#get_org_portal_config) - getOrgPortalConfig
 * [get_portal_config](docs/sdks/ecpadmin/README.md#get_portal_config) - getPortalConfig
 * [get_portal_widgets](docs/sdks/ecpadmin/README.md#get_portal_widgets) - getPortalWidgets
+* [get_registered_users](docs/sdks/ecpadmin/README.md#get_registered_users) - getRegisteredUsers
 * [get_valid_secondary_attributes](docs/sdks/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [login_to_portal_as_user](docs/sdks/ecpadmin/README.md#login_to_portal_as_user) - loginToPortalAsUser
 * [replace_ecp_template_variables](docs/sdks/ecpadmin/README.md#replace_ecp_template_variables) - replaceECPTemplateVariables
@@ -79,6 +82,8 @@ if res.object is not None:
 * [get_portal_widgets](docs/sdks/ecp/README.md#get_portal_widgets) - getPortalWidgets
 * [get_schemas](docs/sdks/ecp/README.md#get_schemas) - getSchemas
 * [save_entity_file](docs/sdks/ecp/README.md#save_entity_file) - saveEntityFile
+* [search_payment_relations_in_entities](docs/sdks/ecp/README.md#search_payment_relations_in_entities) - searchPaymentRelationsInEntities
+* [search_portal_user_entities](docs/sdks/ecp/README.md#search_portal_user_entities) - searchPortalUserEntities
 * [track_file_downloaded](docs/sdks/ecp/README.md#track_file_downloaded) - trackFileDownloaded
 * [trigger_entity_access](docs/sdks/ecp/README.md#trigger_entity_access) - triggerEntityAccess
 * [update_contact](docs/sdks/ecp/README.md#update_contact) - updateContact
@@ -86,6 +91,7 @@ if res.object is not None:
 * [update_opportunity](docs/sdks/ecp/README.md#update_opportunity) - updateOpportunity
 * [update_order](docs/sdks/ecp/README.md#update_order) - updateOrder
 * [update_portal_user](docs/sdks/ecp/README.md#update_portal_user) - updatePortalUser
+* [validate_cadence_entity_edit_rules](docs/sdks/ecp/README.md#validate_cadence_entity_edit_rules) - validateCadenceEntityEditRules
 
 ### [public](docs/sdks/public/README.md)
 
@@ -114,7 +120,7 @@ if res.object is not None:
 
 
 <!-- Start Error Handling -->
-# Error Handling
+## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
@@ -123,8 +129,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | errors.ErrorResp | 401,403,500      | application/json |
 | errors.SDKError  | 400-600          | */*              |
 
-
-## Example
+### Example
 
 ```python
 import epilot
@@ -152,9 +157,9 @@ if res.object is not None:
 
 
 <!-- Start Server Selection -->
-# Server Selection
+## Server Selection
 
-## Select Server by Index
+### Select Server by Index
 
 You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
@@ -162,7 +167,7 @@ You can override the default server globally by passing a server index to the `s
 | - | ------ | --------- |
 | 0 | `https://customer-portal-api.sls.epilot.io` | None |
 
-For example:
+#### Example
 
 ```python
 import epilot
@@ -181,10 +186,9 @@ if res.object is not None:
 ```
 
 
-## Override Server URL Per-Client
+### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
-
 ```python
 import epilot
 from epilot.models import components, operations
@@ -205,13 +209,11 @@ if res.object is not None:
 
 
 <!-- Start Custom HTTP Client -->
-# Custom HTTP Client
+## Custom HTTP Client
 
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
-
 For example, you could specify a header for every request that this sdk makes as follows:
-
 ```python
 import epilot
 import requests
@@ -220,17 +222,14 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 
 
 <!-- Start Authentication -->
+## Authentication
 
-# Authentication
-
-## Per-Client Security Schemes
+### Per-Client Security Schemes
 
 This SDK supports the following security schemes globally:
 
@@ -240,7 +239,6 @@ This SDK supports the following security schemes globally:
 | `portal_auth` | http          | HTTP Bearer   |
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
-
 ```python
 import epilot
 from epilot.models import components, operations
@@ -255,10 +253,9 @@ if res.object is not None:
     pass
 ```
 
-## Per-Operation Security Schemes
+### Per-Operation Security Schemes
 
 Some operations in this SDK require the security scheme to be specified at the request level. For example:
-
 ```python
 import epilot
 from epilot.models import components, operations

@@ -24,6 +24,7 @@ src/epilot/models/operations/getentityidentifiers.py
 src/epilot/models/operations/getorgportalconfig.py
 src/epilot/models/operations/getportalconfig.py
 src/epilot/models/operations/getportalwidgets.py
+src/epilot/models/operations/getregisteredusers.py
 src/epilot/models/operations/getvalidsecondaryattributes.py
 src/epilot/models/operations/logintoportalasuser.py
 src/epilot/models/operations/replaceecptemplatevariables.py
@@ -52,6 +53,8 @@ src/epilot/models/operations/getorganizationsettings.py
 src/epilot/models/operations/getportaluser.py
 src/epilot/models/operations/getschemas.py
 src/epilot/models/operations/saveentityfile.py
+src/epilot/models/operations/searchpaymentrelationsinentities.py
+src/epilot/models/operations/searchportaluserentities.py
 src/epilot/models/operations/trackfiledownloaded.py
 src/epilot/models/operations/triggerentityaccess.py
 src/epilot/models/operations/updatecontact.py
@@ -59,6 +62,7 @@ src/epilot/models/operations/updatecontract.py
 src/epilot/models/operations/updateopportunity.py
 src/epilot/models/operations/updateorder.py
 src/epilot/models/operations/updateportaluser.py
+src/epilot/models/operations/validatecadenceentityeditrules.py
 src/epilot/models/operations/confirmuser.py
 src/epilot/models/operations/createuser.py
 src/epilot/models/operations/getcontactcount.py
@@ -108,8 +112,10 @@ src/epilot/models/components/product.py
 src/epilot/models/components/organizationsettings.py
 src/epilot/models/components/schema.py
 src/epilot/models/components/saveentityfile.py
+src/epilot/models/components/entitysearchparams.py
 src/epilot/models/components/errorresp.py
 src/epilot/models/components/failedruleerrorresp.py
+src/epilot/models/components/entityeditrule.py
 src/epilot/models/components/createuserrequest.py
 src/epilot/models/components/contactcountrequest.py
 src/epilot/models/components/security.py
@@ -161,6 +167,10 @@ docs/models/operations/getportalconfigresponse.md
 docs/models/operations/getportalwidgetssecurity.md
 docs/models/operations/getportalwidgetsrequest.md
 docs/models/operations/getportalwidgetsresponse.md
+docs/models/operations/getregistereduserssecurity.md
+docs/models/operations/getregisteredusersrequestbody.md
+docs/models/operations/getregisteredusersresponsebody.md
+docs/models/operations/getregisteredusersresponse.md
 docs/models/operations/getvalidsecondaryattributessecurity.md
 docs/models/operations/getvalidsecondaryattributesdata.md
 docs/models/operations/getvalidsecondaryattributesresponsebody.md
@@ -264,6 +274,12 @@ docs/models/operations/getschemasresponse.md
 docs/models/operations/saveentityfilesecurity.md
 docs/models/operations/saveentityfileresponsebody.md
 docs/models/operations/saveentityfileresponse.md
+docs/models/operations/searchpaymentrelationsinentitiesrequest.md
+docs/models/operations/searchpaymentrelationsinentitiesresponsebody.md
+docs/models/operations/searchpaymentrelationsinentitiesresponse.md
+docs/models/operations/searchportaluserentitiessecurity.md
+docs/models/operations/searchportaluserentitiesresponsebody.md
+docs/models/operations/searchportaluserentitiesresponse.md
 docs/models/operations/trackfiledownloadedsecurity.md
 docs/models/operations/trackfiledownloadedrequest.md
 docs/models/operations/trackfiledownloadedresponsebody.md
@@ -290,6 +306,9 @@ docs/models/operations/updateorderresponse.md
 docs/models/operations/updateportalusersecurity.md
 docs/models/operations/updateportaluserresponsebody.md
 docs/models/operations/updateportaluserresponse.md
+docs/models/operations/validatecadenceentityeditrulesrequest.md
+docs/models/operations/validatecadenceentityeditrulesresponsebody.md
+docs/models/operations/validatecadenceentityeditrulesresponse.md
 docs/models/operations/confirmuserrequest.md
 docs/models/operations/confirmuserresponse.md
 docs/models/operations/createuserrequest.md
@@ -454,9 +473,11 @@ docs/models/components/saveentityfileaccesscontrol.md
 docs/models/components/s3ref.md
 docs/models/components/files.md
 docs/models/components/saveentityfile.md
+docs/models/components/entitysearchparams.md
 docs/models/components/errorresp.md
 docs/models/components/failedrule.md
 docs/models/components/failedruleerrorresp.md
+docs/models/components/entityeditrule.md
 docs/models/components/createuserrequest.md
 docs/models/components/contactcountrequest.md
 docs/models/components/security.md

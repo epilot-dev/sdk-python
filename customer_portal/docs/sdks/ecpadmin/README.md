@@ -19,6 +19,7 @@ APIs defined for a ECP Admin
 * [get_org_portal_config](#get_org_portal_config) - getOrgPortalConfig
 * [get_portal_config](#get_portal_config) - getPortalConfig
 * [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
+* [get_registered_users](#get_registered_users) - getRegisteredUsers
 * [get_valid_secondary_attributes](#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [login_to_portal_as_user](#login_to_portal_as_user) - loginToPortalAsUser
 * [replace_ecp_template_variables](#replace_ecp_template_variables) - replaceECPTemplateVariables
@@ -491,6 +492,49 @@ if res.upsert_portal_widget is not None:
 | errors.ErrorResp | 401,403,500      | application/json |
 | errors.SDKError  | 400-600          | */*              |
 
+## get_registered_users
+
+Returns the registered emails on any portal from the given emails
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+req = operations.GetRegisteredUsersRequestBody(
+    emails=[
+        'john@doe.com',
+    ],
+)
+
+res = s.ecp_admin.get_registered_users(req, "")
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetRegisteredUsersRequestBody](../../models/operations/getregisteredusersrequestbody.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.GetRegisteredUsersSecurity](../../models/operations/getregistereduserssecurity.md)       | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+
+
+### Response
+
+**[operations.GetRegisteredUsersResponse](../../models/operations/getregisteredusersresponse.md)**
+### Errors
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |
+
 ## get_valid_secondary_attributes
 
 Get valid secondary attributes that are used while mapping a contact on registration
@@ -683,6 +727,7 @@ res = s.ecp_admin.upsert_email_templates("", email_templates=components.EmailTem
     confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
     forgot_password='6538fddb-f0e9-4f0f-af51-6e57891ff20a',
     invitation='14ae65fb-0dc1-4863-8743-6bc01da469f6',
+    on_doc_upload='c8ee93c0-8158-4da7-82f3-114f0c7b20ff',
     on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
     on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
@@ -762,6 +807,7 @@ res = s.ecp_admin.upsert_portal("", upsert_portal_config=components.UpsertPortal
         confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
         forgot_password='6538fddb-f0e9-4f0f-af51-6e57891ff20a',
         invitation='14ae65fb-0dc1-4863-8743-6bc01da469f6',
+        on_doc_upload='c8ee93c0-8158-4da7-82f3-114f0c7b20ff',
         on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
         on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
     ),

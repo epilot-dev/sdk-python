@@ -29,6 +29,8 @@ APIs defined for a portal user
 * [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
 * [get_schemas](#get_schemas) - getSchemas
 * [save_entity_file](#save_entity_file) - saveEntityFile
+* [search_payment_relations_in_entities](#search_payment_relations_in_entities) - searchPaymentRelationsInEntities
+* [search_portal_user_entities](#search_portal_user_entities) - searchPortalUserEntities
 * [track_file_downloaded](#track_file_downloaded) - trackFileDownloaded
 * [trigger_entity_access](#trigger_entity_access) - triggerEntityAccess
 * [update_contact](#update_contact) - updateContact
@@ -36,6 +38,7 @@ APIs defined for a portal user
 * [update_opportunity](#update_opportunity) - updateOpportunity
 * [update_order](#update_order) - updateOrder
 * [update_portal_user](#update_portal_user) - updatePortalUser
+* [validate_cadence_entity_edit_rules](#validate_cadence_entity_edit_rules) - validateCadenceEntityEditRules
 
 ## add_end_customer_relation_to_entity
 
@@ -927,6 +930,94 @@ if res.object is not None:
 | errors.ErrorResp    | 400,401,403,404,500 | application/json    |
 | errors.SDKError     | 400-600             | */*                 |
 
+## search_payment_relations_in_entities
+
+Search for entities that have the payment relation with the given payment id
+
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import components, operations
+
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="",
+    ),
+)
+
+
+res = s.ecp.search_payment_relations_in_entities(id='5da0a718-c822-403d-9f5d-20d4584e0528')
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | Entity id                            | 5da0a718-c822-403d-9f5d-20d4584e0528 |
+
+
+### Response
+
+**[operations.SearchPaymentRelationsInEntitiesResponse](../../models/operations/searchpaymentrelationsinentitiesresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## search_portal_user_entities
+
+Search all entities of a portal user
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import components, operations
+
+s = epilot.Epilot()
+
+req = components.EntitySearchParams(
+    fields=[
+        '_id',
+        '_title',
+        'first_name',
+    ],
+    slug=components.EntitySlug.CONTACT,
+    sort='_created_at:desc',
+)
+
+res = s.ecp.search_portal_user_entities(req, "")
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [components.EntitySearchParams](../../models/components/entitysearchparams.md)                             | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `security`                                                                                                 | [operations.SearchPortalUserEntitiesSecurity](../../models/operations/searchportaluserentitiessecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+
+
+### Response
+
+**[operations.SearchPortalUserEntitiesResponse](../../models/operations/searchportaluserentitiesresponse.md)**
+### Errors
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 401,403,404,500  | application/json |
+| errors.SDKError  | 400-600          | */*              |
+
 ## track_file_downloaded
 
 Track that user has downloaded a file
@@ -978,7 +1069,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.trigger_entity_access("", entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e', schema='contract')
+res = s.ecp.trigger_entity_access("", entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e', origin='END_CUSTOMER_PORTAL', schema='contract')
 
 if res.object is not None:
     # handle response
@@ -990,8 +1081,9 @@ if res.object is not None:
 | Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      | Example                                                                                          |
 | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | `security`                                                                                       | [operations.TriggerEntityAccessSecurity](../../models/operations/triggerentityaccesssecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |                                                                                                  |
-| `entity_id`                                                                                      | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | entity ID                                                                                        | 1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e                                                             |
-| `schema`                                                                                         | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | entity schema                                                                                    | contract                                                                                         |
+| `entity_id`                                                                                      | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | Entity ID                                                                                        | 1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e                                                             |
+| `origin`                                                                                         | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | Portal origin                                                                                    | END_CUSTOMER_PORTAL                                                                              |
+| `schema`                                                                                         | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | Entity schema                                                                                    | contract                                                                                         |
 
 
 ### Response
@@ -1209,3 +1301,47 @@ if res.object is not None:
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,500          | application/json |
 | errors.SDKError  | 400-600          | */*              |
+
+## validate_cadence_entity_edit_rules
+
+Validate if cadence rule is valid for an entity
+
+
+### Example Usage
+
+```python
+import dateutil.parser
+import epilot
+from epilot.models import components, operations
+
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="",
+    ),
+)
+
+
+res = s.ecp.validate_cadence_entity_edit_rules(id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT, attribute=dateutil.parser.isoparse('2023-04-17T01:10:16.547Z'))
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | Entity id                                                            | 5da0a718-c822-403d-9f5d-20d4584e0528                                 |
+| `slug`                                                               | [components.EntitySlug](../../models/components/entityslug.md)       | :heavy_check_mark:                                                   | Entity Type                                                          | contact                                                              |
+| `attribute`                                                          | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_minus_sign:                                                   | Get activities after this timestamp                                  |                                                                      |
+
+
+### Response
+
+**[operations.ValidateCadenceEntityEditRulesResponse](../../models/operations/validatecadenceentityeditrulesresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

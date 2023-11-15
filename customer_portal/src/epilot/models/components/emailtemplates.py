@@ -17,6 +17,8 @@ class EmailTemplates:
     r"""ID of the email template for forgot password"""
     invitation: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitation'), 'exclude': lambda f: f is None }})
     r"""ID of the email template for invitation"""
+    on_doc_upload: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onDocUpload'), 'exclude': lambda f: f is None }})
+    r"""ID of the email template for document upload"""
     on_map_a_pending_user: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onMapAPendingUser'), 'exclude': lambda f: f is None }})
     r"""ID of the email template for mapping a pending portal user with a contact"""
     on_new_quote: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onNewQuote'), 'exclude': lambda f: f is None }})
