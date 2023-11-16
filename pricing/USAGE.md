@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import dateutil.parser
 import epilot
@@ -52,18 +50,18 @@ req = shared.OrderPayload(
                 [
                     shared.Tax(
                         additional_properties={
-                            "_id": 'string',
-                            "region": 'string',
-                            "_schema": 'string',
+                            "_tags": 'string',
                             "_created_at": 'string',
                             "type": 'string',
-                            "description": 'string',
                             "behavior": 'string',
                             "active": 'string',
                             "region_label": 'string',
-                            "_org": 'string',
-                            "_tags": 'string',
+                            "_schema": 'string',
                             "_updated_at": 'string',
+                            "_id": 'string',
+                            "description": 'string',
+                            "region": 'string',
+                            "_org": 'string',
                         },
                         created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                         id='db7b9f9b-d21b-44f2-9723-407318b6c79c',

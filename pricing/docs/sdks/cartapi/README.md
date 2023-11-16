@@ -92,18 +92,18 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                     [
                         shared.Tax(
                             additional_properties={
-                                "active": 'string',
-                                "region_label": 'string',
-                                "_org": 'string',
                                 "_tags": 'string',
                                 "_created_at": 'string',
                                 "type": 'string',
-                                "description": 'string',
                                 "behavior": 'string',
+                                "active": 'string',
+                                "region_label": 'string',
+                                "_schema": 'string',
                                 "_updated_at": 'string',
                                 "_id": 'string',
+                                "description": 'string',
                                 "region": 'string',
-                                "_schema": 'string',
+                                "_org": 'string',
                             },
                             created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
                             id='8a718dcd-4d08-4ffa-b671-3e809e1b5095',
