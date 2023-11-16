@@ -1,0 +1,11 @@
+# GetExecutionsResponse
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `content_type`                                                                         | *str*                                                                                  | :heavy_check_mark:                                                                     | HTTP response content type for this operation                                          |
+| `get_executions_resp`                                                                  | [Optional[components.GetExecutionsResp]](../../models/components/getexecutionsresp.md) | :heavy_minus_sign:                                                                     | List of automation executions                                                          |
+| `status_code`                                                                          | *int*                                                                                  | :heavy_check_mark:                                                                     | HTTP response status code for this operation                                           |
+| `raw_response`                                                                         | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)  | :heavy_check_mark:                                                                     | Raw HTTP response; suitable for custom response parsing                                |

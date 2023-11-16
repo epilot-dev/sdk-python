@@ -3,23 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import automationflow as shared_automationflow
+from ...models.components import automationflow as components_automationflow
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetFlowRequest:
-    
     flow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'flow_id', 'style': 'simple', 'explode': False }})
-    r"""Automation Workflow ID"""  
+    r"""Automation Workflow ID"""
     
+
+
 
 @dataclasses.dataclass
 class GetFlowResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    automation_flow: Optional[components_automationflow.AutomationFlow] = dataclasses.field(default=None)
+    r"""The returned automation flow"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    automation_flow: Optional[shared_automationflow.AutomationFlow] = dataclasses.field(default=None)
-    r"""The returned automation flow"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
