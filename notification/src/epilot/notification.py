@@ -35,7 +35,7 @@ class Notification:
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.CreateNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 202:
@@ -69,7 +69,7 @@ class Notification:
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetNotificationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -109,7 +109,7 @@ class Notification:
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetNotificationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -143,7 +143,7 @@ class Notification:
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetTotalUnreadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
@@ -176,7 +176,7 @@ class Notification:
         
         http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.MarkAllAsReadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 204:
@@ -210,7 +210,7 @@ class Notification:
         
         http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.MarkAsReadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 204:
