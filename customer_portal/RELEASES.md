@@ -51,3 +51,11 @@ Based on:
 - Speakeasy CLI 1.120.1 (2.189.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.3.1] customer_portal
+
+## 2023-11-16 00:32:17
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.120.3 (2.192.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.3.2] customer_portal
