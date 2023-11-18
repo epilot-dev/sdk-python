@@ -420,8 +420,8 @@ res = s.user_v2.update_user_v2(id='string', user_v2=shared.UserV2(
     },
     image_uri=shared.UserV2ImageURI(
         additional_properties={
-            "thumbnail_32": 'string',
             "original": 'string',
+            "thumbnail_32": 'string',
         },
     ),
     is_signature_enabled=True,
