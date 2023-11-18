@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from .grantcondition import GrantCondition
+from .grantcondition import Schemas
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils

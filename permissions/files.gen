@@ -9,6 +9,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/errors/sdkerror.py
+tests/helpers.py
 src/epilot/models/operations/addassignment.py
 src/epilot/models/operations/assignroles.py
 src/epilot/models/operations/getassignedrolesforuser.py
