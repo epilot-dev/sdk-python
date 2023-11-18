@@ -11,6 +11,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class ErrorResp(Exception):
+    r"""Other errors"""
     message: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
 

@@ -9,6 +9,7 @@ src/sdk/utils/__init__.py
 src/sdk/utils/retries.py
 src/sdk/utils/utils.py
 src/sdk/models/errors/sdkerror.py
+tests/helpers.py
 src/sdk/models/operations/changereasonstatus.py
 src/sdk/models/operations/createclosingreason.py
 src/sdk/models/operations/getallclosingreasons.py
