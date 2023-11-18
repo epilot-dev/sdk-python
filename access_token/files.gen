@@ -9,6 +9,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/errors/sdkerror.py
+tests/helpers.py
 src/epilot/models/operations/createaccesstoken.py
 src/epilot/models/operations/listaccesstokens.py
 src/epilot/models/operations/revokeaccesstoken.py
