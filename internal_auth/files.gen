@@ -7,6 +7,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/errors/sdkerror.py
+tests/helpers.py
 src/epilot/models/operations/getjwks.py
 src/epilot/models/operations/getopenidconfiguration.py
 src/epilot/models/operations/gettoken.py
