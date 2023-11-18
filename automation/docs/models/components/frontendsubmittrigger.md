@@ -1,0 +1,9 @@
+# FrontendSubmitTrigger
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `configuration`                                                                                                | [components.FrontendSubmitTriggerConfiguration](../../models/components/frontendsubmittriggerconfiguration.md) | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
+| `type`                                                                                                         | [components.FrontendSubmitTriggerType](../../models/components/frontendsubmittriggertype.md)                   | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
