@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from .compositeprice import CompositePrice
-from .metadata import MetaData
+from .metadata import MetaData1
 from .price import Price
 from .product import Product
 from .recurrenceamount import RecurrenceAmount

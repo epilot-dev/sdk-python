@@ -5,7 +5,7 @@ import dataclasses
 from .address import Address
 from .compositepriceitem import CompositePriceItem
 from .entityrelation import EntityRelation
-from .metadata import MetaData
+from .metadata import MetaData1
 from .ordersource import OrderSource
 from .orderstatus import OrderStatus
 from .paymentmethod import PaymentMethod

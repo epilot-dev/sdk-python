@@ -38,75 +38,75 @@ req = shared.OrderPayload(
     ],
     line_items=[
         shared.CompositePriceItemInput(
-            shared.Price(
+            price=shared.Price(
+            additional_properties={
+                "$ref": 'string',
+            },
+            tags=[
+                'string',
+            ],
+            billing_period=shared.BillingPeriod.WEEKLY,
+            sales_tax=shared.SalesTax.NONTAXABLE,
+            tax=[
+            shared.Tax(
                 additional_properties={
-                    "$ref": 'string',
+                    "_created_at": 'string',
+                    "description": 'string',
+                    "region_label": 'string',
+                    "_schema": 'string',
+                    "active": 'string',
+                    "region": 'string',
+                    "_org": 'string',
+                    "_tags": 'string',
+                    "_updated_at": 'string',
+                    "_id": 'string',
+                    "type": 'string',
+                    "behavior": 'string',
                 },
+                created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
+                id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
+                org='string',
+                schema='string',
                 tags=[
                     'string',
                 ],
-            shared.BillingPeriod.WEEKLY,
-            shared.SalesTax.NONTAXABLE,
-                [
-                    shared.Tax(
-                        additional_properties={
-                            "_tags": 'string',
-                            "_created_at": 'string',
-                            "type": 'string',
-                            "behavior": 'string',
-                            "active": 'string',
-                            "region_label": 'string',
-                            "_schema": 'string',
-                            "_updated_at": 'string',
-                            "_id": 'string',
-                            "description": 'string',
-                            "region": 'string',
-                            "_org": 'string',
-                        },
-                        created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
-                        id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
-                        org='string',
-                        schema='string',
-                        tags=[
-                            'string',
-                        ],
-                        title='string',
-                        updated_at=dateutil.parser.isoparse('2022-08-04T04:36:14.538Z'),
-                        behavior=shared.Behavior.INCLUSIVE_LOWER,
-                        rate=5305.72,
-                        type=shared.TaxType.GST,
-                    ),
-                ],
-            'string',
-                unit_amount_currency='EUR',
+                title='string',
+                updated_at=dateutil.parser.isoparse('2022-08-04T04:36:14.538Z'),
+                behavior=shared.Behavior.INCLUSIVE_LOWER,
+                rate=5305.72,
+                type=shared.TaxType.GST,
             ),
+        ],
+            unit='string',
+            unit_amount_currency='EUR',
+        ),
             currency='EUR',
             item_components=[
                 shared.PriceItemInput(
-                    shared.Price(
-                        additional_properties={
-                            "$ref": 'string',
-                        },
-                        tags=[
-                            'string',
-                        ],
-                    shared.BillingPeriod.MONTHLY,
-                    shared.SalesTax.STANDARD,
-                        shared.Price1(
-                            dollar_relation=[
-                                shared.EntityRelation(
-                                    additional_properties={
-                                        "key": 'string',
-                                    },
-                                    tags=[
-                                        'string',
-                                    ],
-                                ),
+                    price=shared.Price(
+                    additional_properties={
+                        "$ref": 'string',
+                    },
+                    tags=[
+                        'string',
+                    ],
+                    billing_period=shared.BillingPeriod.MONTHLY,
+                    sales_tax=shared.SalesTax.STANDARD,
+                    tax=shared.Price1(
+                    dollar_relation=[
+                        shared.EntityRelation(
+                            additional_properties={
+                                "key": 'string',
+                            },
+                            tags=[
+                                'string',
                             ],
                         ),
-                    shared.PriceSchemas1.L,
-                        unit_amount_currency='EUR',
-                    ),
+                    ],
+                ),
+                    unit=shared.PriceSchemas1.L,
+                    unit_amount_currency='EUR',
+                ),
                     currency='EUR',
                     metadata=[
                         shared.MetaData1(),

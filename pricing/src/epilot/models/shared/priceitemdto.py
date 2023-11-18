@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from .metadata import MetaData
+from .metadata import MetaData1
 from .price import Price
 from .product import ProductInput
 from dataclasses_json import Undefined, dataclass_json

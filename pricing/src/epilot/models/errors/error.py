@@ -11,6 +11,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class Error(Exception):
+    r"""Invalid payload"""
     message: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     r"""Error message"""
     cause: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cause'), 'exclude': lambda f: f is None }})

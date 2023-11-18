@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from .address import Address
 from .customer import Customer
-from .metadata import MetaData
+from .metadata import MetaData1
 from .ordersource import OrderSource
 from .orderstatus import OrderStatus
 from .paymentmethod import PaymentMethod

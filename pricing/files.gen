@@ -12,6 +12,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/errors/sdkerror.py
+tests/helpers.py
 src/epilot/models/operations/createorder.py
 src/epilot/models/operations/putorder.py
 src/epilot/models/operations/dollar_availabilitycheck.py

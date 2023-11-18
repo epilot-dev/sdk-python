@@ -41,203 +41,203 @@ s = epilot.Epilot(
 
 
 res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
-    shared.CartDto(
-        additional_addresses=[
-            shared.Address(
+    cart=shared.CartDto(
+    additional_addresses=[
+        shared.Address(
+            additional_properties={
+                "key": 'string',
+            },
+            tags=[
+                'billing',
+            ],
+        ),
+    ],
+    billing_address=shared.Address(
+        additional_properties={
+            "key": 'string',
+        },
+        tags=[
+            'billing',
+        ],
+    ),
+    consents={
+        "key": 'string',
+    },
+    customer=shared.Customer(),
+    delivery_address=shared.Address(
+        additional_properties={
+            "key": 'string',
+        },
+        tags=[
+            'billing',
+        ],
+    ),
+    files=[
+        'string',
+    ],
+    journey_data={
+        "key": 'string',
+    },
+    line_items=[
+        shared.PriceItemDto(
+            price=shared.Price(
                 additional_properties={
-                    "key": 'string',
+                    "$ref": 'string',
                 },
                 tags=[
-                    'billing',
+                    'string',
                 ],
-            ),
-        ],
-        billing_address=shared.Address(
-            additional_properties={
-                "key": 'string',
-            },
-            tags=[
-                'billing',
-            ],
-        ),
-        consents={
-            "key": 'string',
-        },
-        customer=shared.Customer(),
-        delivery_address=shared.Address(
-            additional_properties={
-                "key": 'string',
-            },
-            tags=[
-                'billing',
-            ],
-        ),
-        files=[
-            'string',
-        ],
-        journey_data={
-            "key": 'string',
-        },
-        line_items=[
-            shared.PriceItemDto(
-                price=shared.Price(
+                billing_period=shared.BillingPeriod.WEEKLY,
+                sales_tax=shared.SalesTax.NONTAXABLE,
+                tax=[
+                shared.Tax(
                     additional_properties={
-                        "$ref": 'string',
+                        "region_label": 'string',
+                        "_schema": 'string',
+                        "_created_at": 'string',
+                        "description": 'string',
+                        "type": 'string',
+                        "behavior": 'string',
+                        "active": 'string',
+                        "region": 'string',
+                        "_org": 'string',
+                        "_tags": 'string',
+                        "_updated_at": 'string',
+                        "_id": 'string',
                     },
+                    created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
+                    id='8a718dcd-4d08-4ffa-b671-3e809e1b5095',
+                    org='string',
+                    schema='string',
                     tags=[
                         'string',
                     ],
-                shared.BillingPeriod.WEEKLY,
-                shared.SalesTax.NONTAXABLE,
-                    [
-                        shared.Tax(
-                            additional_properties={
-                                "_tags": 'string',
-                                "_created_at": 'string',
-                                "type": 'string',
-                                "behavior": 'string',
-                                "active": 'string',
-                                "region_label": 'string',
-                                "_schema": 'string',
-                                "_updated_at": 'string',
-                                "_id": 'string',
-                                "description": 'string',
-                                "region": 'string',
-                                "_org": 'string',
-                            },
-                            created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
-                            id='8a718dcd-4d08-4ffa-b671-3e809e1b5095',
-                            org='string',
-                            schema='string',
-                            tags=[
-                                'string',
-                            ],
-                            title='string',
-                            updated_at=dateutil.parser.isoparse('2023-04-18T02:54:24.080Z'),
-                            behavior=shared.Behavior.INCLUSIVE_MIXED,
-                            rate=1343.96,
-                            type=shared.TaxType.VAT,
-                        ),
-                    ],
-                'string',
-                    unit_amount_currency='EUR',
+                    title='string',
+                    updated_at=dateutil.parser.isoparse('2023-04-18T02:54:24.080Z'),
+                    behavior=shared.Behavior.INCLUSIVE_MIXED,
+                    rate=1343.96,
+                    type=shared.TaxType.VAT,
                 ),
-                product=shared.ProductInput(
-                    additional_properties={
-                        "$ref": 'string',
-                    },
-                    availability_files=[
-                        shared.File(
-                            dollar_relation=shared.EntityRelation(
-                                additional_properties={
-                                    "key": 'string',
-                                },
-                                tags=[
-                                    'string',
-                                ],
-                            ),
+            ],
+                unit='string',
+                unit_amount_currency='EUR',
+            ),
+            product=shared.ProductInput(
+                additional_properties={
+                    "$ref": 'string',
+                },
+                availability_files=[
+                    shared.File(
+                        dollar_relation=shared.EntityRelation(
                             additional_properties={
                                 "key": 'string',
                             },
-                            created_at=dateutil.parser.isoparse('2021-12-13T21:52:33.452Z'),
-                            id='<ID>',
-                            org='string',
-                            schema='string',
-                            updated_at=dateutil.parser.isoparse('2022-10-07T05:49:24.603Z'),
-                            filename='specialist.m3a',
-                            mime_type='string',
-                            versions=[
-                                shared.Versions(
-                                    additional_properties={
-                                        "key": 'string',
-                                    },
-                                    s3ref=shared.S3ref(
-                                        bucket='string',
-                                        key='<key>',
-                                    ),
-                                ),
+                            tags=[
+                                'string',
                             ],
                         ),
-                    ],
-                    cross_sellable_products=shared.CrossSellableProducts(
-                        dollar_relation=[
-                            shared.EntityRelation(
+                        additional_properties={
+                            "key": 'string',
+                        },
+                        created_at=dateutil.parser.isoparse('2021-12-13T21:52:33.452Z'),
+                        id='<ID>',
+                        org='string',
+                        schema='string',
+                        updated_at=dateutil.parser.isoparse('2022-10-07T05:49:24.603Z'),
+                        filename='specialist.m3a',
+                        mime_type='string',
+                        versions=[
+                            shared.Versions(
                                 additional_properties={
                                     "key": 'string',
                                 },
-                                tags=[
-                                    'string',
-                                ],
+                                s3ref=shared.S3ref(
+                                    bucket='string',
+                                    key='<key>',
+                                ),
                             ),
                         ],
                     ),
-                    feature=[
-                        shared.Feature(
+                ],
+                cross_sellable_products=shared.CrossSellableProducts(
+                    dollar_relation=[
+                        shared.EntityRelation(
+                            additional_properties={
+                                "key": 'string',
+                            },
                             tags=[
                                 'string',
                             ],
                         ),
                     ],
-                    price_options=shared.PriceOptions(
-                        dollar_relation=[
-                            shared.EntityRelation(
-                                additional_properties={
-                                    "key": 'string',
-                                },
-                                tags=[
-                                    'string',
-                                ],
-                            ),
-                        ],
-                    ),
-                    product_downloads=shared.ProductDownloads(
-                        dollar_relation=[
-                            shared.EntityRelation(
-                                additional_properties={
-                                    "key": 'string',
-                                },
-                                tags=[
-                                    'string',
-                                ],
-                            ),
-                        ],
-                    ),
-                    product_images=shared.ProductImages(
-                        dollar_relation=[
-                            shared.EntityRelation(
-                                additional_properties={
-                                    "key": 'string',
-                                },
-                                tags=[
-                                    'string',
-                                ],
-                            ),
-                        ],
-                    ),
                 ),
-                metadata=[
-                    shared.MetaData1(),
+                feature=[
+                    shared.Feature(
+                        tags=[
+                            'string',
+                        ],
+                    ),
                 ],
+                price_options=shared.PriceOptions(
+                    dollar_relation=[
+                        shared.EntityRelation(
+                            additional_properties={
+                                "key": 'string',
+                            },
+                            tags=[
+                                'string',
+                            ],
+                        ),
+                    ],
+                ),
+                product_downloads=shared.ProductDownloads(
+                    dollar_relation=[
+                        shared.EntityRelation(
+                            additional_properties={
+                                "key": 'string',
+                            },
+                            tags=[
+                                'string',
+                            ],
+                        ),
+                    ],
+                ),
+                product_images=shared.ProductImages(
+                    dollar_relation=[
+                        shared.EntityRelation(
+                            additional_properties={
+                                "key": 'string',
+                            },
+                            tags=[
+                                'string',
+                            ],
+                        ),
+                    ],
+                ),
             ),
-        ],
-        metadata=[
-            shared.MetaData1(),
-        ],
-        payment_method=shared.PaymentMethod(
-            details={
-                "key": 'string',
-            },
+            metadata=[
+                shared.MetaData1(),
+            ],
         ),
-        source=shared.OrderSource(
-            http='/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939',
-            title='Journey: PH Journey',
-        ),
-        source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
-        source_type='journey',
-        tags=[
-            'string',
-        ],
+    ],
+    metadata=[
+        shared.MetaData1(),
+    ],
+    payment_method=shared.PaymentMethod(
+        details={
+            "key": 'string',
+        },
     ),
+    source=shared.OrderSource(
+        http='/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939',
+        title='Journey: PH Journey',
+    ),
+    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
+    source_type='journey',
+    tags=[
+        'string',
+    ],
+),
 ), x_ivy_org_id='string')
 
 if res.checkout_cart_result is not None:
