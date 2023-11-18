@@ -12,6 +12,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/errors/sdkerror.py
+tests/helpers.py
 src/epilot/models/operations/configuredistribution.py
 src/epilot/models/operations/createssouser.py
 src/epilot/models/operations/deleteportal.py
@@ -113,7 +114,6 @@ src/epilot/models/components/organizationsettings.py
 src/epilot/models/components/schema.py
 src/epilot/models/components/saveentityfile.py
 src/epilot/models/components/entitysearchparams.py
-src/epilot/models/components/errorresp.py
 src/epilot/models/components/failedruleerrorresp.py
 src/epilot/models/components/entityeditrule.py
 src/epilot/models/components/createuserrequest.py
@@ -474,7 +474,6 @@ docs/models/components/s3ref.md
 docs/models/components/files.md
 docs/models/components/saveentityfile.md
 docs/models/components/entitysearchparams.md
-docs/models/components/errorresp.md
 docs/models/components/failedrule.md
 docs/models/components/failedruleerrorresp.md
 docs/models/components/entityeditrule.md

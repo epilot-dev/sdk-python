@@ -1,5 +1,7 @@
 # ErrorResp
 
+Could not authenticate the user
+
 
 ## Fields
 
