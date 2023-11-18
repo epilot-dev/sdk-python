@@ -8,6 +8,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/errors/sdkerror.py
+tests/helpers.py
 src/epilot/models/operations/activatepartner.py
 src/epilot/models/operations/approvepartner.py
 src/epilot/models/operations/batchgetassignable.py
