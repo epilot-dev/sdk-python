@@ -8,6 +8,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/errors/sdkerror.py
+tests/helpers.py
 src/epilot/models/operations/createsubmission.py
 src/epilot/models/shared/submissionpayload.py
 src/epilot/models/shared/optin.py
