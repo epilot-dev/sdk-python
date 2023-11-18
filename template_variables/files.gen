@@ -9,6 +9,7 @@ src/epilot/utils/__init__.py
 src/epilot/utils/retries.py
 src/epilot/utils/utils.py
 src/epilot/models/errors/sdkerror.py
+tests/helpers.py
 src/epilot/models/operations/createcustomvariable.py
 src/epilot/models/operations/deletecustomvariable.py
 src/epilot/models/operations/getblueprinttableconfig.py
