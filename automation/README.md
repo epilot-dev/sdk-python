@@ -84,7 +84,6 @@ if res.automation_execution is not None:
     # handle response
     pass
 ```
-
 <!-- End Error Handling -->
 
 
@@ -162,7 +161,6 @@ s = epilot.Epilot(client: http_client)
 
 
 <!-- Start Authentication -->
-
 ## Authentication
 
 ### Per-Client Security Schemes
