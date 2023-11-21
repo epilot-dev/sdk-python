@@ -79,7 +79,6 @@ if res.organization is not None:
     # handle response
     pass
 ```
-
 <!-- End Error Handling -->
 
 
@@ -157,7 +156,6 @@ s = epilot.Epilot(client: http_client)
 
 
 <!-- Start Authentication -->
-
 ## Authentication
 
 ### Per-Client Security Schemes
