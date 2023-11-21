@@ -29,13 +29,13 @@ req = shared.SubmissionPayload(
     entities=[
         shared.SubmissionEntity(
             additional_properties={
+                "_schema": 'string',
+                "description": 'string',
+                "contact_first_name": 'string',
                 "contact_last_name": 'string',
                 "contact_email": 'string',
                 "request": 'string',
                 "files": 'string',
-                "_schema": 'string',
-                "description": 'string',
-                "contact_first_name": 'string',
             },
             schema=shared.Schema.SUBMISSION,
             files=[
