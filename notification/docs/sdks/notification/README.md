@@ -60,9 +60,9 @@ req = shared.Notification(
                 slug='contact',
             ),
             payload={
+                "status": 'string',
                 "_schema": 'string',
                 "_org": 'string',
-                "status": 'string',
             },
         ),
     ],
