@@ -6,13 +6,8 @@ import requests as requests_http
 from ...models.shared import templatetype as shared_templatetype
 from ...models.shared import variableresult as shared_variableresult
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
 from epilot import utils
 from typing import List, Optional
-
-class Lang(str, Enum):
-    EN = 'en'
-    DE = 'de'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -23,7 +18,8 @@ class SearchVariablesRequestBody:
     template_type: shared_templatetype.TemplateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})
     entity_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schemas'), 'exclude': lambda f: f is None }})
     from_: Optional[int] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})
-    lang: Optional[Lang] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lang'), 'exclude': lambda f: f is None }})
+    lang: Optional[str] = dataclasses.field(default='de', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lang'), 'exclude': lambda f: f is None }})
+    r"""2-letter language code (ISO 639-1)"""
     size: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
     
 

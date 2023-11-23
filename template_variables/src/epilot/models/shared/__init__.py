@@ -9,4 +9,4 @@ from .variablecontext import *
 from .variableparameters import *
 from .variableresult import *
 
-__all__ = ["CategoryResult","Config","ContextData","CustomVariable","ExternalCustomVariable","Language","Security","TemplateType","Type","VariableContext","VariableParameters","VariableResult","VariableResultType"]
+__all__ = ["CategoryResult","Config","ContextData","CustomVariable","ExternalCustomVariable","Security","TemplateType","Type","VariableContext","VariableParameters","VariableResult","VariableResultType"]

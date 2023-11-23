@@ -4,19 +4,12 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ...models.shared import categoryresult as shared_categoryresult
-from enum import Enum
 from typing import List, Optional
-
-class QueryParamLang(str, Enum):
-    r"""Language"""
-    EN = 'en'
-    DE = 'de'
 
 
 @dataclasses.dataclass
 class GetCategoriesRequest:
-    lang: Optional[QueryParamLang] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
-    r"""Language"""
+    lang: Optional[str] = dataclasses.field(default='de', metadata={'query_param': { 'field_name': 'lang', 'style': 'form', 'explode': True }})
     
 
 

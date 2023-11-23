@@ -49,7 +49,7 @@ class Variables:
 
     
     
-    def get_categories(self, lang: Optional[operations.QueryParamLang] = None) -> operations.GetCategoriesResponse:
+    def get_categories(self, lang: Optional[str] = None) -> operations.GetCategoriesResponse:
         r"""getCategories
         Get all template variable categories
         """

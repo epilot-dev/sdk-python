@@ -66,7 +66,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.variables.get_categories(lang=operations.QueryParamLang.DE)
+res = s.variables.get_categories(lang='string')
 
 if res.classes is not None:
     # handle response
@@ -75,9 +75,9 @@ if res.classes is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `lang`                                                                           | [Optional[operations.QueryParamLang]](../../models/operations/queryparamlang.md) | :heavy_minus_sign:                                                               | Language                                                                         | de                                                                               |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `lang`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 
 
 ### Response

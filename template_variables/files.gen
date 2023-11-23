@@ -45,7 +45,6 @@ docs/models/operations/updatecustomvariablerequest.md
 docs/models/operations/updatecustomvariableresponse.md
 docs/models/operations/generateqrcoderequest.md
 docs/models/operations/generateqrcoderesponse.md
-docs/models/operations/queryparamlang.md
 docs/models/operations/getcategoriesrequest.md
 docs/models/operations/getcategoriesresponse.md
 docs/models/operations/getvariablecontextrequestbody.md
@@ -53,7 +52,6 @@ docs/models/operations/getvariablecontextresponse.md
 docs/models/operations/replacetemplatesrequestbody.md
 docs/models/operations/replacetemplatesresponsebody.md
 docs/models/operations/replacetemplatesresponse.md
-docs/models/operations/lang.md
 docs/models/operations/searchvariablesrequestbody.md
 docs/models/operations/searchvariablesresponse.md
 docs/models/shared/config.md
@@ -62,7 +60,6 @@ docs/models/shared/customvariable.md
 docs/models/shared/categoryresult.md
 docs/models/shared/variablecontext.md
 docs/models/shared/contextdata.md
-docs/models/shared/language.md
 docs/models/shared/variableparameters.md
 docs/models/shared/templatetype.md
 docs/models/shared/externalcustomvariable.md
