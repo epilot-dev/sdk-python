@@ -21,10 +21,12 @@ Generate QR Code for the given payload
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 
@@ -59,10 +61,12 @@ Get all template variable categories
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 
@@ -103,7 +107,9 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = operations.GetVariableContextRequestBody(
@@ -164,7 +170,9 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = operations.ReplaceTemplatesRequestBody(
@@ -281,7 +289,9 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = operations.SearchVariablesRequestBody(

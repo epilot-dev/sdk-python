@@ -1,15 +1,16 @@
 # epilot-template-variables
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```python
@@ -17,7 +18,9 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = shared.CustomVariable(
@@ -150,11 +153,10 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [custom_variables](docs/sdks/customvariables/README.md)
 
@@ -172,17 +174,13 @@ if res.status_code == 200:
 * [get_variable_context](docs/sdks/variables/README.md#get_variable_context) - getVariableContext
 * [replace_templates](docs/sdks/variables/README.md#replace_templates) - replaceTemplates
 * [search_variables](docs/sdks/variables/README.md#search_variables) - searchVariables
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
 
 
-
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
@@ -198,7 +196,9 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = shared.CustomVariable(
@@ -337,11 +337,11 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
 
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Index
@@ -360,7 +360,9 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     server_idx=0,
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = shared.CustomVariable(
@@ -504,7 +506,9 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     server_url="https://template-variables-api.sls.epilot.io",
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = shared.CustomVariable(
@@ -637,11 +641,11 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
@@ -655,28 +659,31 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = epilot.Epilot(client: http_client)
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 
 
-<!-- Start Authentication -->
+<!-- Start Authentication [security] -->
 ## Authentication
 
 ### Per-Client Security Schemes
 
-This SDK supports the following security scheme globally:
+This SDK supports the following security schemes globally:
 
 | Name          | Type          | Scheme        |
 | ------------- | ------------- | ------------- |
 | `epilot_auth` | http          | HTTP Bearer   |
+| `epilot_org`  | apiKey        | API key       |
 
-To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = shared.CustomVariable(
@@ -809,7 +816,7 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End Authentication -->
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

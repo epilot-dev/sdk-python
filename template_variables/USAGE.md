@@ -1,10 +1,12 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = shared.CustomVariable(
@@ -137,4 +139,4 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

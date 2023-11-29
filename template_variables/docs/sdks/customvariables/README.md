@@ -21,7 +21,9 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 req = shared.CustomVariable(
@@ -179,10 +181,12 @@ Immediately and permanently deletes a custom variable
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 
@@ -217,9 +221,12 @@ Get default table config
 
 ```python
 import epilot
+from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 
@@ -248,10 +255,12 @@ Get custom variable
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 
@@ -286,9 +295,12 @@ Get all custom variables of organization
 
 ```python
 import epilot
+from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 
@@ -320,7 +332,9 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    security=shared.Security(
+        epilot_auth="",
+    ),
 )
 
 
