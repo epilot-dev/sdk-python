@@ -45,3 +45,9 @@ two: components.PrefixCondition = /* values here */
 two: components.SuffixCondition = /* values here */
 ```
 
+### WildcardCondition
+
+```python
+two: components.WildcardCondition = /* values here */
+```
+

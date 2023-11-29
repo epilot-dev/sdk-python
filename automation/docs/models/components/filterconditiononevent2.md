@@ -45,3 +45,9 @@ filterConditionOnEvent2: components.PrefixCondition = /* values here */
 filterConditionOnEvent2: components.SuffixCondition = /* values here */
 ```
 
+### WildcardCondition
+
+```python
+filterConditionOnEvent2: components.WildcardCondition = /* values here */
+```
+

@@ -18,6 +18,7 @@
   | Does not exist         | ProductName does not exist                          | `"ProductName": [ { "exists": false } ]`                 |
   | Begins with            | OpportunityNumber starts with OPP-                  | `"opportunity_number": [ { "prefix": "OPP-" } ]`         |
   | Ends with              | FileName ends with a .png extension                 | `"filename": [ { "suffix": ".png" } ]`                   |
+  | Wildcard               | search a string using a wildcard                    | `"email": [ { "wildcard": "*@doe.com" } ]`               |
   - To run the execution on all update events
     ```
       {

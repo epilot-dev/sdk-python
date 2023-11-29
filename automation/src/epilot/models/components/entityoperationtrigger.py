@@ -11,6 +11,7 @@ from .orcondition import OrCondition
 from .orconditionfordiff import OrConditionForDiff
 from .prefixcondition import PrefixCondition
 from .suffixcondition import SuffixCondition
+from .wildcardcondition import WildcardCondition
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -20,7 +21,7 @@ from typing import Dict, List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Activity:
-    type: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Filter on activity type. If not specified, all activities will be matched on execution.
     Example:
       1. Filter the events when an entity is updated from portal
@@ -48,9 +49,9 @@ class Activity:
 @dataclasses.dataclass
 class EntityOperationTrigger2:
     r"""Diff to it's prior state when an entity is updated"""
-    added: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'exclude': lambda f: f is None }})
-    deleted: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
-    updated: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
+    added: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'exclude': lambda f: f is None }})
+    deleted: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
+    updated: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
     
 
 
@@ -71,7 +72,7 @@ class Operation:
         }
       ```
     """
-    payload: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})
+    payload: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})
     
 
 
@@ -121,6 +122,7 @@ class EntityOperationTrigger:
       | Does not exist         | ProductName does not exist                          | `\"ProductName\": [ { \"exists\": false } ]`                 |
       | Begins with            | OpportunityNumber starts with OPP-                  | `\"opportunity_number\": [ { \"prefix\": \"OPP-\" } ]`         |
       | Ends with              | FileName ends with a .png extension                 | `\"filename\": [ { \"suffix\": \".png\" } ]`                   |
+      | Wildcard               | search a string using a wildcard                    | `\"email\": [ { \"wildcard\": \"*@doe.com\" } ]`               |
       - To run the execution on all update events
         ```
           {

@@ -9,6 +9,7 @@ from .numericcondition import NumericCondition
 from .orcondition import OrCondition
 from .prefixcondition import PrefixCondition
 from .suffixcondition import SuffixCondition
+from .wildcardcondition import WildcardCondition
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Dict, List, Optional, Union
@@ -17,6 +18,6 @@ from typing import Dict, List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OrConditionForDiff:
-    dollar_or: Optional[List[Union[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition]]]], Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition]]]], Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition]]]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$or'), 'exclude': lambda f: f is None }})
+    dollar_or: Optional[List[Union[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]], Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]], Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$or'), 'exclude': lambda f: f is None }})
     
 

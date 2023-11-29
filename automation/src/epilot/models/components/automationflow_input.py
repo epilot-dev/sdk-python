@@ -27,6 +27,8 @@ class AutomationFlowInput:
     r"""The triggering entity schema"""
     runs: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('runs'), 'exclude': lambda f: f is None }})
     r"""Number of automation executions that ran"""
+    system_flow: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system_flow'), 'exclude': lambda f: f is None }})
+    r"""Determines if the flow is a system generated flow"""
     trigger_conditions: Optional[List[TriggerCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger_conditions'), 'exclude': lambda f: f is None }})
     
 

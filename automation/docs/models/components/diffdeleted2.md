@@ -45,3 +45,9 @@ diffDeleted2: components.PrefixCondition = /* values here */
 diffDeleted2: components.SuffixCondition = /* values here */
 ```
 
+### WildcardCondition
+
+```python
+diffDeleted2: components.WildcardCondition = /* values here */
+```
+

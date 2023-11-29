@@ -67,5 +67,7 @@ class SendEmailConfig:
     """
     email_template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_template_id'), 'exclude': lambda f: f is None }})
     language_code: Optional[LanguageCode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language_code'), 'exclude': lambda f: f is None }})
+    notify_portal_user_only: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notify_portal_user_only'), 'exclude': lambda f: f is None }})
+    r"""Send an email exclusively to the portal user if they are registered on the portal."""
     
 
