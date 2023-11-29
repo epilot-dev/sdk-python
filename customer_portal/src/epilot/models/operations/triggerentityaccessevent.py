@@ -3,23 +3,24 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import origin as components_origin
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
 
 
 @dataclasses.dataclass
-class TriggerEntityAccessSecurity:
+class TriggerEntityAccessEventSecurity:
     portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
 
 
 
 @dataclasses.dataclass
-class TriggerEntityAccessRequest:
+class TriggerEntityAccessEventRequest:
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
     r"""Entity ID"""
-    origin: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    origin: Optional[components_origin.Origin] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Portal origin"""
     schema: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'schema', 'style': 'form', 'explode': True }})
     r"""Entity schema"""
@@ -29,7 +30,7 @@ class TriggerEntityAccessRequest:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class TriggerEntityAccessResponseBody:
+class TriggerEntityAccessEventResponseBody:
     r"""The event has been triggered successfully."""
     event_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('eventId'), 'exclude': lambda f: f is None }})
     r"""Event ID"""
@@ -38,14 +39,14 @@ class TriggerEntityAccessResponseBody:
 
 
 @dataclasses.dataclass
-class TriggerEntityAccessResponse:
+class TriggerEntityAccessEventResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     raw_response: requests_http.Response = dataclasses.field()
     r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    object: Optional[TriggerEntityAccessResponseBody] = dataclasses.field(default=None)
+    object: Optional[TriggerEntityAccessEventResponseBody] = dataclasses.field(default=None)
     r"""The event has been triggered successfully."""
     
 

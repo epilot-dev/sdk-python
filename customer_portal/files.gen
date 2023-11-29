@@ -57,7 +57,7 @@ src/epilot/models/operations/saveentityfile.py
 src/epilot/models/operations/searchpaymentrelationsinentities.py
 src/epilot/models/operations/searchportaluserentities.py
 src/epilot/models/operations/trackfiledownloaded.py
-src/epilot/models/operations/triggerentityaccess.py
+src/epilot/models/operations/triggerentityaccessevent.py
 src/epilot/models/operations/updatecontact.py
 src/epilot/models/operations/updatecontract.py
 src/epilot/models/operations/updateopportunity.py
@@ -123,7 +123,6 @@ src/epilot/models/__init__.py
 src/epilot/models/errors/__init__.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/components/__init__.py
-USAGE.md
 docs/models/operations/configuredistributionsecurity.md
 docs/models/operations/configuredistributionrequest.md
 docs/models/operations/configuredistributionresponsebody.md
@@ -284,10 +283,10 @@ docs/models/operations/trackfiledownloadedsecurity.md
 docs/models/operations/trackfiledownloadedrequest.md
 docs/models/operations/trackfiledownloadedresponsebody.md
 docs/models/operations/trackfiledownloadedresponse.md
-docs/models/operations/triggerentityaccesssecurity.md
-docs/models/operations/triggerentityaccessrequest.md
-docs/models/operations/triggerentityaccessresponsebody.md
-docs/models/operations/triggerentityaccessresponse.md
+docs/models/operations/triggerentityaccesseventsecurity.md
+docs/models/operations/triggerentityaccesseventrequest.md
+docs/models/operations/triggerentityaccesseventresponsebody.md
+docs/models/operations/triggerentityaccesseventresponse.md
 docs/models/operations/updatecontactsecurity.md
 docs/models/operations/updatecontactresponsebody.md
 docs/models/operations/updatecontactresponse.md
@@ -486,4 +485,5 @@ docs/sdks/balance/README.md
 docs/sdks/ecp/README.md
 docs/sdks/public/README.md
 docs/sdks/activity/README.md
+USAGE.md
 .gitattributes

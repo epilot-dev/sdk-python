@@ -32,7 +32,7 @@ APIs defined for a portal user
 * [search_payment_relations_in_entities](#search_payment_relations_in_entities) - searchPaymentRelationsInEntities
 * [search_portal_user_entities](#search_portal_user_entities) - searchPortalUserEntities
 * [track_file_downloaded](#track_file_downloaded) - trackFileDownloaded
-* [trigger_entity_access](#trigger_entity_access) - triggerEntityAccess
+* [trigger_entity_access_event](#trigger_entity_access_event) - triggerEntityAccessEvent
 * [update_contact](#update_contact) - updateContact
 * [update_contract](#update_contract) - updateContract
 * [update_opportunity](#update_opportunity) - updateOpportunity
@@ -95,7 +95,7 @@ s = epilot.Epilot()
 res = s.ecp.create_custom_entity_activity("", activity=components.Activity(
     message='{{caller}} did something with {{entity payload.entity.id}}.',
     payload={
-        "entity": 'string',
+        'entity': 'string',
     },
     title='My custom activity',
     type='MyCustomActivity',
@@ -278,7 +278,7 @@ if res.object is not None:
 | `security`                                                                       | [operations.GetAllFilesSecurity](../../models/operations/getallfilessecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |                                                                                  |
 | `from_`                                                                          | *float*                                                                          | :heavy_check_mark:                                                               | N/A                                                                              | 0                                                                                |
 | `size`                                                                           | *float*                                                                          | :heavy_check_mark:                                                               | N/A                                                                              | 0                                                                                |
-| `entity_ids`                                                                     | List[*str*]                                                                      | :heavy_minus_sign:                                                               | List of entity ids to filter the results                                         | 4910096f-000a-4504-bf5a-d3774ec3032a,7c9f8536-6266-42e8-a0de-c60b61aa81a7        |
+| `entity_ids`                                                                     | List[*str*]                                                                      | :heavy_minus_sign:                                                               | List of entity ids to filter the results                                         | ["4910096f-000a-4504-bf5a-d3774ec3032a","7c9f8536-6266-42e8-a0de-c60b61aa81a7"]  |
 
 
 ### Response
@@ -505,7 +505,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_entities_by_identifiers("", request_body={
-    "key": 'string',
+    'key': 'string',
 }, slug=components.EntitySlug.CONTACT)
 
 if res.object is not None:
@@ -1056,7 +1056,7 @@ if res.object is not None:
 | errors.ErrorResp | 401,403,404,500  | application/json |
 | errors.SDKError  | 400-600          | */*              |
 
-## trigger_entity_access
+## trigger_entity_access_event
 
 Trigger entity access event for a portal user
 
@@ -1064,12 +1064,12 @@ Trigger entity access event for a portal user
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components, operations
 
 s = epilot.Epilot()
 
 
-res = s.ecp.trigger_entity_access("", entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e', origin='END_CUSTOMER_PORTAL', schema='contract')
+res = s.ecp.trigger_entity_access_event("", entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e', origin=components.Origin.END_CUSTOMER_PORTAL, schema='contract')
 
 if res.object is not None:
     # handle response
@@ -1078,17 +1078,17 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      | Example                                                                                          |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `security`                                                                                       | [operations.TriggerEntityAccessSecurity](../../models/operations/triggerentityaccesssecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |                                                                                                  |
-| `entity_id`                                                                                      | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | Entity ID                                                                                        | 1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e                                                             |
-| `origin`                                                                                         | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | Portal origin                                                                                    | END_CUSTOMER_PORTAL                                                                              |
-| `schema`                                                                                         | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | Entity schema                                                                                    | contract                                                                                         |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                | Example                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                 | [operations.TriggerEntityAccessEventSecurity](../../models/operations/triggerentityaccesseventsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |                                                                                                            |
+| `entity_id`                                                                                                | *Optional[str]*                                                                                            | :heavy_minus_sign:                                                                                         | Entity ID                                                                                                  | 1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e                                                                       |
+| `origin`                                                                                                   | [Optional[components.Origin]](../../models/components/origin.md)                                           | :heavy_minus_sign:                                                                                         | Portal origin                                                                                              |                                                                                                            |
+| `schema`                                                                                                   | *Optional[str]*                                                                                            | :heavy_minus_sign:                                                                                         | Entity schema                                                                                              | contract                                                                                                   |
 
 
 ### Response
 
-**[operations.TriggerEntityAccessResponse](../../models/operations/triggerentityaccessresponse.md)**
+**[operations.TriggerEntityAccessEventResponse](../../models/operations/triggerentityaccesseventresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -1108,7 +1108,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "key": 'string',
+    'key': 'string',
 }
 
 res = s.ecp.update_contact(req, "")
@@ -1151,7 +1151,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.update_contract("", request_body={
-    "key": 'string',
+    'key': 'string',
 }, id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
@@ -1193,7 +1193,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.update_opportunity("", request_body={
-    "key": 'string',
+    'key': 'string',
 }, id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
@@ -1234,7 +1234,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.update_order("", id='5da0a718-c822-403d-9f5d-20d4584e0528', request_body={
-    "key": 'string',
+    'key': 'string',
 })
 
 if res.object is not None:
@@ -1274,7 +1274,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 req = {
-    "key": 'string',
+    'key': 'string',
 }
 
 res = s.ecp.update_portal_user(req, "")

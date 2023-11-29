@@ -1,4 +1,4 @@
-# TriggerEntityAccessSecurity
+# TriggerEntityAccessEventSecurity
 
 
 ## Fields

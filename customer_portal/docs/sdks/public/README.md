@@ -79,7 +79,7 @@ s = epilot.Epilot(
 res = s.public.create_user(create_user_request=components.CreateUserRequest(
     contact_id='123456',
     contact_identifiers={
-        "key": 'string',
+        'key': 'string',
     },
     email='testemail921@yopmail.com',
     first_name='John',
@@ -131,7 +131,7 @@ s = epilot.Epilot(
 
 res = s.public.get_contact_count(contact_count_request=components.ContactCountRequest(
     contact_identifiers={
-        "key": 'string',
+        'key': 'string',
     },
     org_id='728',
 ), origin=components.Origin.END_CUSTOMER_PORTAL)

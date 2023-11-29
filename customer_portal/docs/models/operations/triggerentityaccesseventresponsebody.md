@@ -1,4 +1,4 @@
-# TriggerEntityAccessResponseBody
+# TriggerEntityAccessEventResponseBody
 
 The event has been triggered successfully.
 

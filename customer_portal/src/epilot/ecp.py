@@ -1051,11 +1051,11 @@ class Ecp:
 
     
     
-    def trigger_entity_access(self, security: operations.TriggerEntityAccessSecurity, entity_id: Optional[str] = None, origin: Optional[str] = None, schema: Optional[str] = None) -> operations.TriggerEntityAccessResponse:
-        r"""triggerEntityAccess
+    def trigger_entity_access_event(self, security: operations.TriggerEntityAccessEventSecurity, entity_id: Optional[str] = None, origin: Optional[components.Origin] = None, schema: Optional[str] = None) -> operations.TriggerEntityAccessEventResponse:
+        r"""triggerEntityAccessEvent
         Trigger entity access event for a portal user
         """
-        request = operations.TriggerEntityAccessRequest(
+        request = operations.TriggerEntityAccessEventRequest(
             entity_id=entity_id,
             origin=origin,
             schema=schema,
@@ -1065,7 +1065,7 @@ class Ecp:
         
         url = base_url + '/v2/portal/entity/access'
         headers = {}
-        query_params = utils.get_query_params(operations.TriggerEntityAccessRequest, request)
+        query_params = utils.get_query_params(operations.TriggerEntityAccessEventRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
@@ -1074,11 +1074,11 @@ class Ecp:
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.TriggerEntityAccessResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.TriggerEntityAccessEventResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.TriggerEntityAccessResponseBody])
+                out = utils.unmarshal_json(http_res.text, Optional[operations.TriggerEntityAccessEventResponseBody])
                 res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

@@ -784,7 +784,7 @@ res = s.ecp_admin.upsert_portal("", upsert_portal_config=components.UpsertPortal
         on_pending_user=[
             components.AdminUser(
                 additional_properties={
-                    "key": 'string',
+                    'key': 'string',
                 },
                 display_name='John',
                 email='j.doe@epilot.cloud',
