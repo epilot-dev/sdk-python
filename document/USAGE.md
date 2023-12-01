@@ -1,31 +1,29 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import components, operations
 
 s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
+    epilot_auth="",
 )
-
 
 req = operations.GenerateDocumentRequestBody(
-    context_entity_id="bcd0aab9-b544-42b0-8bfb-6d449d02eacc",
-    language="de",
-    template_document=operations.GenerateDocumentRequestBodyTemplateDocument(
-        filename="my-template-{{order.order_number}}.docx",
-        s3ref=shared.S3Reference(
-            bucket="document-api-prod",
-            key="uploads/my-template.pdf",
+    context_entity_id='bcd0aab9-b544-42b0-8bfb-6d449d02eacc',
+    language='de',
+    template_document=operations.TemplateDocument(
+        filename='my-template-{{order.order_number}}.docx',
+        s3ref=components.S3Reference(
+            bucket='document-api-prod',
+            key='uploads/my-template.pdf',
         ),
     ),
-    user_id="100321",
+    user_id='100321',
 )
-    
+
 res = s.documents.generate_document(req)
 
-if res.generate_document_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
