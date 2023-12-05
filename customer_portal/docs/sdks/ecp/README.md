@@ -382,15 +382,7 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-req = operations.GetBillingEventsRequest(
-    customer_id='string',
-    entity_id=[
-        'string',
-    ],
-    event_type=[
-        operations.EventType.INSTALLMENT,
-    ],
-)
+req = operations.GetBillingEventsRequest()
 
 res = s.ecp.get_billing_events(req, "")
 

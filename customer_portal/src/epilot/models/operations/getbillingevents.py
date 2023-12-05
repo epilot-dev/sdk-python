@@ -6,7 +6,7 @@ import requests as requests_http
 from ...models.components import billingevent as components_billingevent
 from ...models.components import installmentevent as components_installmentevent
 from dataclasses_json import Undefined, dataclass_json
-from datetime import date
+from datetime import datetime
 from enum import Enum
 from epilot import utils
 from typing import List, Optional, Union
@@ -26,11 +26,12 @@ class EventType(str, Enum):
 
 @dataclasses.dataclass
 class GetBillingEventsRequest:
-    customer_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'customer_id', 'style': 'form', 'explode': True }})
-    date_after: Optional[date] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_after', 'style': 'form', 'explode': True }})
-    date_before: Optional[date] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_before', 'style': 'form', 'explode': True }})
-    entity_id: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
-    event_type: Optional[List[EventType]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'event_type', 'style': 'form', 'explode': True }})
+    customer_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'customer_id', 'style': 'form', 'explode': True }})
+    date_after: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_after', 'style': 'form', 'explode': True }})
+    date_before: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_before', 'style': 'form', 'explode': True }})
+    entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
+    event_type: Optional[EventType] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'event_type', 'style': 'form', 'explode': True }})
+    r"""Type of billing event to filter by"""
     
 
 

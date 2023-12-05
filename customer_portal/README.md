@@ -135,12 +135,12 @@ s = epilot.Epilot()
 res = None
 try:
     res = s.ecp_admin.configure_distribution("", origin=components.Origin.INSTALLER_PORTAL)
-except (errors.ErrorResp) as e:
-    print(e) # handle exception
-
-except (errors.SDKError) as e:
-    print(e) # handle exception
-
+except errors.ErrorResp as e:
+    print(e)  # handle exception
+    raise(e)
+except errors.SDKError as e:
+    print(e)  # handle exception
+    raise(e)
 
 if res.object is not None:
     # handle response
@@ -237,10 +237,14 @@ You can set the security parameters through the `security` optional parameter wh
 import epilot
 from epilot.models import components, operations
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="",
+    ),
+)
 
 
-res = s.ecp_admin.configure_distribution("", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp.search_payment_relations_in_entities(id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response

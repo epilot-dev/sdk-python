@@ -13,17 +13,17 @@ class Balance:
         
     
     
-    def get_customer_balance(self, security: operations.GetCustomerBalanceSecurity, customer_entity_id: str) -> operations.GetCustomerBalanceResponse:
+    def get_customer_balance(self, security: operations.GetCustomerBalanceSecurity, customer_id: str) -> operations.GetCustomerBalanceResponse:
         r"""getCustomerBalance
         Get total balance across all contracts and orders of a customer entity.
         """
         request = operations.GetCustomerBalanceRequest(
-            customer_entity_id=customer_entity_id,
+            customer_id=customer_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetCustomerBalanceRequest, base_url, '/v2/portal/billing/customers/{customer_entity_id}/balance', request)
+        url = utils.generate_url(operations.GetCustomerBalanceRequest, base_url, '/v2/portal/billing/customers/{customer_id}/balance', request)
         headers = {}
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
