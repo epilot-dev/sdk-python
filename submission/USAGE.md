@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
 from epilot.models import shared
@@ -12,19 +12,19 @@ req = shared.SubmissionPayload(
     entities=[
         shared.SubmissionEntity(
             additional_properties={
-                "contact_first_name": 'string',
-                "contact_last_name": 'string',
-                "contact_email": 'string',
-                "request": 'string',
-                "files": 'string',
-                "_schema": 'string',
-                "description": 'string',
+                '_schema': 'string',
+                'description': 'string',
+                'contact_first_name': 'string',
+                'contact_last_name': 'string',
+                'contact_email': 'string',
+                'request': 'string',
+                'files': 'string',
             },
             schema=shared.Schema.SUBMISSION,
             files=[
                 shared.Files(
                     additional_properties={
-                        "key": 'string',
+                        'key': 'string',
                     },
                     tags=[
                         'string',
@@ -45,7 +45,7 @@ req = shared.SubmissionPayload(
         shared.OptIn(
             identifier='example@email.com',
             meta={
-                "key": 'string',
+                'key': 'string',
             },
             topic='EMAIL_MARKETING',
         ),
@@ -61,4 +61,4 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

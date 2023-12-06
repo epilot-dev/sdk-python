@@ -18,7 +18,6 @@ src/epilot/models/__init__.py
 src/epilot/models/errors/__init__.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/__init__.py
-USAGE.md
 docs/models/operations/createsubmissionresponse.md
 docs/models/shared/submissionpayload.md
 docs/models/shared/optin.md
@@ -28,4 +27,5 @@ docs/models/shared/submissionentity.md
 docs/models/shared/s3reference.md
 docs/sdks/epilot/README.md
 docs/sdks/submissions/README.md
+USAGE.md
 .gitattributes
