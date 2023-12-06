@@ -1,15 +1,16 @@
 # openapi
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 ```
-<!-- End SDK Installation -->
+<!-- End SDK Installation [installation] -->
 
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
+
 ### Example
 
 ```python
@@ -29,11 +30,10 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
 
-<!-- Start SDK Available Operations -->
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
-
 
 ### [closing_reason](docs/sdks/closingreason/README.md)
 
@@ -51,17 +51,13 @@ if res.status_code == 200:
 * [get_workflow_closing_reasons](docs/sdks/workflows/README.md#get_workflow_closing_reasons) - getWorkflowClosingReasons
 * [set_workflow_closing_reasons](docs/sdks/workflows/README.md#set_workflow_closing_reasons) - setWorkflowClosingReasons
 * [update_definition](docs/sdks/workflows/README.md#update_definition) - updateDefinition
-<!-- End SDK Available Operations -->
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
 
 
-
-<!-- Start Error Handling -->
+<!-- Start Error Handling [errors] -->
 ## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
@@ -87,22 +83,22 @@ try:
     res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
-except (errors.ErrorResp) as e:
-    print(e) # handle exception
-
-except (errors.SDKError) as e:
-    print(e) # handle exception
-
+except errors.ErrorResp as e:
+    print(e)  # handle exception
+    raise(e)
+except errors.SDKError as e:
+    print(e)  # handle exception
+    raise(e)
 
 if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End Error Handling -->
+<!-- End Error Handling [errors] -->
 
 
 
-<!-- Start Server Selection -->
+<!-- Start Server Selection [server] -->
 ## Server Selection
 
 ### Select Server by Index
@@ -156,11 +152,11 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
+<!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
@@ -174,11 +170,11 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = sdk.SDK(client: http_client)
 ```
-<!-- End Custom HTTP Client -->
+<!-- End Custom HTTP Client [http-client] -->
 
 
 
-<!-- Start Authentication -->
+<!-- Start Authentication [security] -->
 ## Authentication
 
 ### Per-Client Security Schemes
@@ -207,7 +203,7 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End Authentication -->
+<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
