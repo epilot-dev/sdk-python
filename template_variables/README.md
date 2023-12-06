@@ -328,10 +328,9 @@ req = shared.CustomVariable(
 res = None
 try:
     res = s.custom_variables.create_custom_variable(req)
-
-except (errors.SDKError) as e:
-    print(e) # handle exception
-
+except errors.SDKError as e:
+    print(e)  # handle exception
+    raise(e)
 
 if res.status_code == 200:
     # handle response
