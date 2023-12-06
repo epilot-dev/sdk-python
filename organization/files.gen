@@ -21,7 +21,6 @@ src/epilot/models/__init__.py
 src/epilot/models/errors/__init__.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/components/__init__.py
-USAGE.md
 docs/models/operations/getorganizationrequest.md
 docs/models/operations/getorganizationresponse.md
 docs/models/operations/updateorganizationrequest.md
@@ -40,4 +39,5 @@ docs/models/components/security.md
 docs/sdks/epilot/README.md
 docs/sdks/organization/README.md
 docs/sdks/organizationsettings/README.md
+USAGE.md
 .gitattributes

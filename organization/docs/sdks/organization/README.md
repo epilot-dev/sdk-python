@@ -76,7 +76,7 @@ res = s.organization.update_organization(org_id='739224', organization=component
     pricing_tier='professional',
     signature='<p>Thanks</p>',
     style={
-        "key": 'string',
+        'key': 'string',
     },
     symbol='EPI',
     website='https://epilot.cloud',

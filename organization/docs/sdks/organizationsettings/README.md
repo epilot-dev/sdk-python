@@ -104,7 +104,7 @@ s = epilot.Epilot(
 
 
 res = s.organization_settings.put_settings_value(key='string', org_id='739224', settings_value={
-    "enabled": 'string',
+    'enabled': 'string',
 })
 
 if res.settings_value is not None:
@@ -118,7 +118,7 @@ if res.settings_value is not None:
 | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | `key`                                                                                                               | *str*                                                                                                               | :heavy_check_mark:                                                                                                  | Organization setting key                                                                                            |                                                                                                                     |
 | `org_id`                                                                                                            | *str*                                                                                                               | :heavy_check_mark:                                                                                                  | The Id of the organization.                                                                                         | 739224                                                                                                              |
-| `settings_value`                                                                                                    | [Optional[Union[str, float, bool, List[Dict[str, Any]], Dict[str, Any]]]](../../models/components/settingsvalue.md) | :heavy_minus_sign:                                                                                                  | Value to set                                                                                                        | [object Object]                                                                                                     |
+| `settings_value`                                                                                                    | [Optional[Union[str, float, bool, List[Dict[str, Any]], Dict[str, Any]]]](../../models/components/settingsvalue.md) | :heavy_minus_sign:                                                                                                  | Value to set                                                                                                        | {"enabled":true}                                                                                                    |
 
 
 ### Response
