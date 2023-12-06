@@ -178,7 +178,7 @@ s = epilot.Epilot(
 
 req = shared.AuthRequest(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     assume_roles=[
         'o',
