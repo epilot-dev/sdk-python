@@ -357,7 +357,7 @@ s = epilot.Epilot(
 res = s.user_v2.sign_up_user(signup_user_payload=shared.SignupUserPayload(
     organization_detail=shared.OrganizationDetail(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         email='Jettie71@yahoo.com',
         is_privacy_policy_checked=False,
@@ -415,13 +415,13 @@ res = s.user_v2.update_user_v2(id='string', user_v2=shared.UserV2(
     department='Sales',
     display_name='Example User',
     favorites={
-        "entity_views": 'string',
-        "dashboard": 'string',
+        'entity_views': 'string',
+        'dashboard': 'string',
     },
     image_uri=shared.UserV2ImageURI(
         additional_properties={
-            "original": 'string',
-            "thumbnail_32": 'string',
+            'original': 'string',
+            'thumbnail_32': 'string',
         },
     ),
     is_signature_enabled=True,
