@@ -75,10 +75,9 @@ s = epilot.Epilot(
 res = None
 try:
     res = s.executions.cancel_execution(execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4')
-
-except (errors.SDKError) as e:
-    print(e) # handle exception
-
+except errors.SDKError as e:
+    print(e)  # handle exception
+    raise(e)
 
 if res.automation_execution is not None:
     # handle response
