@@ -26,7 +26,6 @@ src/epilot/models/__init__.py
 src/epilot/models/errors/__init__.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/__init__.py
-USAGE.md
 docs/models/operations/createaccesstokenresponsebody.md
 docs/models/operations/createaccesstokenresponse.md
 docs/models/operations/listaccesstokensrequest.md
@@ -54,4 +53,5 @@ docs/models/shared/security.md
 docs/sdks/epilot/README.md
 docs/sdks/accesstokens/README.md
 docs/sdks/public/README.md
+USAGE.md
 .gitattributes
