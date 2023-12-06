@@ -30,11 +30,11 @@ s = epilot.Epilot(
 
 req = shared.Notification(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     caller=shared.NotificationCallerContext(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         epilot_auth=shared.EpilotAuth(
             token=shared.Token(
@@ -46,7 +46,7 @@ req = shared.Notification(
         ),
     ),
     force_notify_users={
-        "12345": 'string',
+        '12345': 'string',
     },
     message=shared.Message(
         de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
@@ -60,15 +60,15 @@ req = shared.Notification(
                 slug='contact',
             ),
             payload={
-                "status": 'string',
-                "_schema": 'string',
-                "_org": 'string',
+                '_schema': 'string',
+                '_org': 'string',
+                'status': 'string',
             },
         ),
     ],
     organization_id='206801',
     payload={
-        "entity": 'string',
+        'entity': 'string',
     },
     redirect_url='https://epilot.cloud',
     title=shared.Title(

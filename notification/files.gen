@@ -24,7 +24,6 @@ src/epilot/models/__init__.py
 src/epilot/models/errors/__init__.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/__init__.py
-USAGE.md
 docs/models/operations/createnotificationresponse.md
 docs/models/operations/getnotificationrequest.md
 docs/models/operations/getnotificationresponse.md
@@ -49,4 +48,5 @@ docs/models/shared/notificationitem.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md
 docs/sdks/notification/README.md
+USAGE.md
 .gitattributes

@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
 from epilot.models import shared
@@ -9,11 +9,11 @@ s = epilot.Epilot(
 
 req = shared.Notification(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     caller=shared.NotificationCallerContext(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         epilot_auth=shared.EpilotAuth(
             token=shared.Token(
@@ -25,7 +25,7 @@ req = shared.Notification(
         ),
     ),
     force_notify_users={
-        "12345": 'string',
+        '12345': 'string',
     },
     message=shared.Message(
         de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
@@ -39,15 +39,15 @@ req = shared.Notification(
                 slug='contact',
             ),
             payload={
-                "_schema": 'string',
-                "_org": 'string',
-                "status": 'string',
+                '_schema': 'string',
+                '_org': 'string',
+                'status': 'string',
             },
         ),
     ],
     organization_id='206801',
     payload={
-        "entity": 'string',
+        'entity': 'string',
     },
     redirect_url='https://epilot.cloud',
     title=shared.Title(
@@ -70,4 +70,4 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
