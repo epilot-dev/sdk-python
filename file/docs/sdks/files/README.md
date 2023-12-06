@@ -393,7 +393,7 @@ s = epilot.Epilot(
 
 req = shared.SaveS3FilePayload(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     tags=[
         'string',
