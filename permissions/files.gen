@@ -36,7 +36,6 @@ src/epilot/models/__init__.py
 src/epilot/models/errors/__init__.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/__init__.py
-USAGE.md
 docs/models/operations/addassignmentrequest.md
 docs/models/operations/addassignmentresponse.md
 docs/models/operations/assignrolesrequest.md
@@ -89,4 +88,5 @@ docs/models/shared/security.md
 docs/sdks/epilot/README.md
 docs/sdks/assignments/README.md
 docs/sdks/roles/README.md
+USAGE.md
 .gitattributes
