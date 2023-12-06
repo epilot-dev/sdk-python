@@ -45,7 +45,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
     additional_addresses=[
         shared.Address(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             tags=[
                 'billing',
@@ -54,19 +54,19 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
     ],
     billing_address=shared.Address(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         tags=[
             'billing',
         ],
     ),
     consents={
-        "key": 'string',
+        'key': 'string',
     },
     customer=shared.Customer(),
     delivery_address=shared.Address(
         additional_properties={
-            "key": 'string',
+            'key': 'string',
         },
         tags=[
             'billing',
@@ -76,13 +76,13 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
         'string',
     ],
     journey_data={
-        "key": 'string',
+        'key': 'string',
     },
     line_items=[
         shared.PriceItemDto(
             price=shared.Price(
                 additional_properties={
-                    "$ref": 'string',
+                    '$ref': 'string',
                 },
                 tags=[
                     'string',
@@ -92,18 +92,18 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                 tax=[
                 shared.Tax(
                     additional_properties={
-                        "type": 'string',
-                        "description": 'string',
-                        "behavior": 'string',
-                        "region": 'string',
-                        "region_label": 'string',
-                        "_schema": 'string',
-                        "_created_at": 'string',
-                        "_id": 'string',
-                        "_org": 'string',
-                        "_tags": 'string',
-                        "_updated_at": 'string',
-                        "active": 'string',
+                        '_id': 'string',
+                        'type': 'string',
+                        'description': 'string',
+                        'behavior': 'string',
+                        'active': 'string',
+                        'region': 'string',
+                        'region_label': 'string',
+                        '_org': 'string',
+                        '_schema': 'string',
+                        '_tags': 'string',
+                        '_created_at': 'string',
+                        '_updated_at': 'string',
                     },
                     created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
                     id='8a718dcd-4d08-4ffa-b671-3e809e1b5095',
@@ -124,20 +124,20 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
             ),
             product=shared.ProductInput(
                 additional_properties={
-                    "$ref": 'string',
+                    '$ref': 'string',
                 },
                 availability_files=[
                     shared.File(
                         dollar_relation=shared.EntityRelation(
                             additional_properties={
-                                "key": 'string',
+                                'key': 'string',
                             },
                             tags=[
                                 'string',
                             ],
                         ),
                         additional_properties={
-                            "key": 'string',
+                            'key': 'string',
                         },
                         created_at=dateutil.parser.isoparse('2021-12-13T21:52:33.452Z'),
                         id='<ID>',
@@ -149,7 +149,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                         versions=[
                             shared.Versions(
                                 additional_properties={
-                                    "key": 'string',
+                                    'key': 'string',
                                 },
                                 s3ref=shared.S3ref(
                                     bucket='string',
@@ -163,7 +163,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                     dollar_relation=[
                         shared.EntityRelation(
                             additional_properties={
-                                "key": 'string',
+                                'key': 'string',
                             },
                             tags=[
                                 'string',
@@ -182,7 +182,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                     dollar_relation=[
                         shared.EntityRelation(
                             additional_properties={
-                                "key": 'string',
+                                'key': 'string',
                             },
                             tags=[
                                 'string',
@@ -194,7 +194,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                     dollar_relation=[
                         shared.EntityRelation(
                             additional_properties={
-                                "key": 'string',
+                                'key': 'string',
                             },
                             tags=[
                                 'string',
@@ -206,7 +206,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                     dollar_relation=[
                         shared.EntityRelation(
                             additional_properties={
-                                "key": 'string',
+                                'key': 'string',
                             },
                             tags=[
                                 'string',
@@ -225,7 +225,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
     ],
     payment_method=shared.PaymentMethod(
         details={
-            "key": 'string',
+            'key': 'string',
         },
     ),
     source=shared.OrderSource(

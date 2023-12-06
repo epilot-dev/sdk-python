@@ -63,7 +63,6 @@ src/epilot/models/__init__.py
 src/epilot/models/errors/__init__.py
 src/epilot/models/operations/__init__.py
 src/epilot/models/shared/__init__.py
-USAGE.md
 docs/models/operations/createorderresponse.md
 docs/models/operations/putorderrequest.md
 docs/models/operations/putorderresponse.md
@@ -190,4 +189,5 @@ docs/sdks/availabilityapi/README.md
 docs/sdks/cartapi/README.md
 docs/sdks/catalogapi/README.md
 docs/sdks/deprecated/README.md
+USAGE.md
 .gitattributes

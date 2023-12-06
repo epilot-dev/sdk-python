@@ -30,7 +30,7 @@ s = epilot.Epilot(
 
 req = shared.OrderPayload(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     tags=[
         'string',
@@ -38,7 +38,7 @@ req = shared.OrderPayload(
     billing_address=[
         shared.Address(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             tags=[
                 'billing',
@@ -49,7 +49,7 @@ req = shared.OrderPayload(
     delivery_address=[
         shared.Address(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             tags=[
                 'billing',
@@ -60,7 +60,7 @@ req = shared.OrderPayload(
         shared.CompositePriceItemInput(
             price=shared.Price(
             additional_properties={
-                "$ref": 'string',
+                '$ref': 'string',
             },
             tags=[
                 'string',
@@ -70,18 +70,18 @@ req = shared.OrderPayload(
             tax=[
             shared.Tax(
                 additional_properties={
-                    "active": 'string',
-                    "_org": 'string',
-                    "_tags": 'string',
-                    "_updated_at": 'string',
-                    "_created_at": 'string',
-                    "_id": 'string',
-                    "type": 'string',
-                    "description": 'string',
-                    "behavior": 'string',
-                    "region": 'string',
-                    "region_label": 'string',
-                    "_schema": 'string',
+                    '_id': 'string',
+                    'type': 'string',
+                    'description': 'string',
+                    'behavior': 'string',
+                    'active': 'string',
+                    'region': 'string',
+                    'region_label': 'string',
+                    '_org': 'string',
+                    '_schema': 'string',
+                    '_tags': 'string',
+                    '_created_at': 'string',
+                    '_updated_at': 'string',
                 },
                 created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                 id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
@@ -105,7 +105,7 @@ req = shared.OrderPayload(
                 shared.PriceItemInput(
                     price=shared.Price(
                     additional_properties={
-                        "$ref": 'string',
+                        '$ref': 'string',
                     },
                     tags=[
                         'string',
@@ -116,7 +116,7 @@ req = shared.OrderPayload(
                     dollar_relation=[
                         shared.EntityRelation(
                             additional_properties={
-                                "key": 'string',
+                                'key': 'string',
                             },
                             tags=[
                                 'string',
@@ -141,7 +141,7 @@ req = shared.OrderPayload(
     payment_method=[
         shared.PaymentMethod(
             details={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ],
@@ -190,7 +190,7 @@ s = epilot.Epilot(
 
 res = s.order_api.put_order(order_payload=shared.OrderPayload(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     tags=[
         'string',
@@ -198,7 +198,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
     billing_address=[
         shared.Address(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             tags=[
                 'billing',
@@ -209,7 +209,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
     delivery_address=[
         shared.Address(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             tags=[
                 'billing',
@@ -220,7 +220,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
         shared.CompositePriceItemInput(
             price=shared.Price(
             additional_properties={
-                "$ref": 'string',
+                '$ref': 'string',
             },
             tags=[
                 'string',
@@ -231,7 +231,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
             dollar_relation=[
                 shared.EntityRelation(
                     additional_properties={
-                        "key": 'string',
+                        'key': 'string',
                     },
                     tags=[
                         'string',
@@ -247,7 +247,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
                 shared.PriceItemInput(
                     price=shared.Price(
                     additional_properties={
-                        "$ref": 'string',
+                        '$ref': 'string',
                     },
                     tags=[
                         'string',
@@ -258,7 +258,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
                     dollar_relation=[
                         shared.EntityRelation(
                             additional_properties={
-                                "key": 'string',
+                                'key': 'string',
                             },
                             tags=[
                                 'string',
@@ -283,7 +283,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
     payment_method=[
         shared.PaymentMethod(
             details={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ],

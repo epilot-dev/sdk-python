@@ -28,7 +28,7 @@ s = epilot.Epilot(
 
 res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput(
     additional_properties={
-        "$ref": 'string',
+        '$ref': 'string',
     },
     tags=[
         'string',
@@ -52,7 +52,7 @@ res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput
         dollar_relation=[
             shared.EntityRelation(
                 additional_properties={
-                    "key": 'string',
+                    'key': 'string',
                 },
                 tags=[
                     'string',

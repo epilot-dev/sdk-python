@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import dateutil.parser
 import epilot
@@ -10,7 +10,7 @@ s = epilot.Epilot(
 
 req = shared.OrderPayload(
     additional_properties={
-        "key": 'string',
+        'key': 'string',
     },
     tags=[
         'string',
@@ -18,7 +18,7 @@ req = shared.OrderPayload(
     billing_address=[
         shared.Address(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             tags=[
                 'billing',
@@ -29,7 +29,7 @@ req = shared.OrderPayload(
     delivery_address=[
         shared.Address(
             additional_properties={
-                "key": 'string',
+                'key': 'string',
             },
             tags=[
                 'billing',
@@ -40,7 +40,7 @@ req = shared.OrderPayload(
         shared.CompositePriceItemInput(
             price=shared.Price(
             additional_properties={
-                "$ref": 'string',
+                '$ref': 'string',
             },
             tags=[
                 'string',
@@ -50,18 +50,18 @@ req = shared.OrderPayload(
             tax=[
             shared.Tax(
                 additional_properties={
-                    "_org": 'string',
-                    "_tags": 'string',
-                    "_updated_at": 'string',
-                    "active": 'string',
-                    "type": 'string',
-                    "description": 'string',
-                    "behavior": 'string',
-                    "region": 'string',
-                    "region_label": 'string',
-                    "_schema": 'string',
-                    "_created_at": 'string',
-                    "_id": 'string',
+                    '_id': 'string',
+                    'type': 'string',
+                    'description': 'string',
+                    'behavior': 'string',
+                    'active': 'string',
+                    'region': 'string',
+                    'region_label': 'string',
+                    '_org': 'string',
+                    '_schema': 'string',
+                    '_tags': 'string',
+                    '_created_at': 'string',
+                    '_updated_at': 'string',
                 },
                 created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
                 id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
@@ -85,7 +85,7 @@ req = shared.OrderPayload(
                 shared.PriceItemInput(
                     price=shared.Price(
                     additional_properties={
-                        "$ref": 'string',
+                        '$ref': 'string',
                     },
                     tags=[
                         'string',
@@ -96,7 +96,7 @@ req = shared.OrderPayload(
                     dollar_relation=[
                         shared.EntityRelation(
                             additional_properties={
-                                "key": 'string',
+                                'key': 'string',
                             },
                             tags=[
                                 'string',
@@ -121,7 +121,7 @@ req = shared.OrderPayload(
     payment_method=[
         shared.PaymentMethod(
             details={
-                "key": 'string',
+                'key': 'string',
             },
         ),
     ],
@@ -134,4 +134,4 @@ if res.order is not None:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
