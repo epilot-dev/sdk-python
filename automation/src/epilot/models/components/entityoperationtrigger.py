@@ -26,7 +26,7 @@ class Activity:
     Example:
       1. Filter the events when an entity is updated from portal
         ```
-          { 
+          {
             \"activity\":{
               \"type\": [\"EntityUpdatedFromPortal\"]
             }
@@ -34,7 +34,7 @@ class Activity:
         ```
       2. Filter the events when either a doc is uploaded/removed on an entity from a portal
         ```
-          { 
+          {
             \"activity\":{
               \"type\": [\"DocUploadedFromPortal\", \"DocRemovedFromPortal\"]
             }
@@ -63,9 +63,9 @@ class Operation:
     operation: Optional[List[EntityOperation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation'), 'exclude': lambda f: f is None }})
     r"""Filter on operation type. If not specified, all operations will be matched on execution.
     Example:
-      1. Filter all the createEntity/updateEntity operations 
+      1. Filter all the createEntity/updateEntity operations
       ```
-        { 
+        {
           \"operation\":{
             \"operation\": [\"createEntity\", \"updateEntity\"]
           }
