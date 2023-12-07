@@ -1,0 +1,9 @@
+# APISubmissionTrigger
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `configuration`                                                                                              | [components.APISubmissionTriggerConfiguration](../../models/components/apisubmissiontriggerconfiguration.md) | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `type`                                                                                                       | [components.APISubmissionTriggerType](../../models/components/apisubmissiontriggertype.md)                   | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
