@@ -3,26 +3,38 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import savedviewitem as shared_savedviewitem
+from ...models.components import savedviewitem as components_savedviewitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
+
+
+@dataclasses.dataclass
+class ListSavedViewsRequest:
+    slug: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'slug', 'style': 'form', 'explode': True }})
+    r"""Return views belonging to this schema"""
+    
+
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ListSavedViews200ApplicationJSON:
+class ListSavedViewsResponseBody:
     r"""Success"""
+    results: Optional[List[components_savedviewitem.SavedViewItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-    results: Optional[list[shared_savedviewitem.SavedViewItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class ListSavedViewsResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    object: Optional[ListSavedViewsResponseBody] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    list_saved_views_200_application_json_object: Optional[ListSavedViews200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
