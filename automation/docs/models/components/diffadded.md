@@ -3,10 +3,10 @@
 
 ## Supported Types
 
-### OrCondition
+### OrCondition1
 
 ```python
-diffAdded: components.OrCondition = /* values here */
+diffAdded: components.OrCondition1 = /* values here */
 ```
 
 ### 

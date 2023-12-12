@@ -8,6 +8,7 @@ from .equalsignorecasecondition import EqualsIgnoreCaseCondition
 from .existscondition import ExistsCondition
 from .numericcondition import NumericCondition
 from .orcondition import OrCondition
+from .orcondition1 import OrCondition1
 from .orconditionfordiff import OrConditionForDiff
 from .prefixcondition import PrefixCondition
 from .suffixcondition import SuffixCondition
@@ -49,9 +50,9 @@ class Activity:
 @dataclasses.dataclass
 class EntityOperationTrigger2:
     r"""Diff to it's prior state when an entity is updated"""
-    added: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'exclude': lambda f: f is None }})
-    deleted: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
-    updated: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
+    added: Optional[Union[OrCondition1, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'exclude': lambda f: f is None }})
+    deleted: Optional[Union[OrCondition1, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
+    updated: Optional[Union[OrCondition1, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
     
 
 

@@ -55,6 +55,7 @@ src/epilot/models/components/prefixcondition.py
 src/epilot/models/components/suffixcondition.py
 src/epilot/models/components/wildcardcondition.py
 src/epilot/models/components/orconditionfordiff.py
+src/epilot/models/components/orcondition1.py
 src/epilot/models/components/activitytrigger.py
 src/epilot/models/components/entitymanualtrigger.py
 src/epilot/models/components/receivedemailtrigger.py
@@ -178,6 +179,7 @@ docs/models/components/dollaror.md
 docs/models/components/orconditionfordiff.md
 docs/models/components/two.md
 docs/models/components/diffadded.md
+docs/models/components/orcondition1.md
 docs/models/components/diffupdated2.md
 docs/models/components/diffupdated.md
 docs/models/components/diffdeleted2.md

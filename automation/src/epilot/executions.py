@@ -145,7 +145,7 @@ class Executions:
         
         url = utils.generate_url(operations.RetriggerActionRequest, base_url, '/v1/automation/executions/{execution_id}/{action_id}/retrigger', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "retry_req", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.RetriggerActionRequest, "retry_req", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -170,7 +170,7 @@ class Executions:
 
     
     
-    def start_execution(self, request: components.StartExecutionRequest) -> operations.StartExecutionResponse:
+    def start_execution(self, request: Optional[components.StartExecutionRequest]) -> operations.StartExecutionResponse:
         r"""startExecution
         Start new automation execution
         """
@@ -178,7 +178,7 @@ class Executions:
         
         url = base_url + '/v1/automation/executions'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[components.StartExecutionRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

@@ -18,7 +18,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -68,7 +68,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -106,7 +106,7 @@ from epilot.models import operations
 
 s = epilot.Epilot(
     server_idx=0,
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -127,7 +127,7 @@ from epilot.models import operations
 
 s = epilot.Epilot(
     server_url="https://automation.sls.epilot.io",
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -176,7 +176,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

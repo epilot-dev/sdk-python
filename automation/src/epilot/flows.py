@@ -14,7 +14,7 @@ class Flows:
         
     
     
-    def create_flow(self, request: components.AutomationFlowInput) -> operations.CreateFlowResponse:
+    def create_flow(self, request: Optional[components.AutomationFlowInput]) -> operations.CreateFlowResponse:
         r"""createFlow
         Create new automation flow
         """
@@ -22,7 +22,7 @@ class Flows:
         
         url = base_url + '/v1/automation/flows'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[components.AutomationFlowInput], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -140,7 +140,7 @@ class Flows:
         
         url = utils.generate_url(operations.PutFlowRequest, base_url, '/v1/automation/flows/{flow_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "automation_flow", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutFlowRequest, "automation_flow", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
