@@ -18,7 +18,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.WorkflowExecutionCreateReq(
@@ -82,7 +82,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.WorkflowExecutionCreateReq(
@@ -136,7 +136,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     server_idx=0,
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.WorkflowExecutionCreateReq(
@@ -170,7 +170,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     server_url="https://workflows-execution.sls.epilot.io",
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.WorkflowExecutionCreateReq(
@@ -232,7 +232,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.WorkflowExecutionCreateReq(

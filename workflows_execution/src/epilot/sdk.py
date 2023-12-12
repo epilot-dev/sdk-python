@@ -5,7 +5,7 @@ from .sdkconfiguration import SDKConfiguration
 from .workflows import Workflows
 from epilot import utils
 from epilot.models import shared
-from typing import Callable, Dict, Union
+from typing import Dict
 
 class Epilot:
     r"""Workflows Executions: Service for Workflow Executions which covers executions of processes defined in an Organization"""
@@ -15,7 +15,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 bearer_auth: Union[str,Callable[[], str]],
+                 bearer_auth: str ,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,

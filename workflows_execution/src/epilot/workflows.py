@@ -22,7 +22,7 @@ class Workflows:
         
         url = base_url + '/v1/workflows/executions'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.WorkflowExecutionCreateReq, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -73,7 +73,7 @@ class Workflows:
         
         url = utils.generate_url(operations.CreateStepRequest, base_url, '/v1/workflows/executions/{executionId}/steps', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "create_step_req", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateStepRequest, "create_step_req", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -341,7 +341,7 @@ class Workflows:
         
         url = base_url + '/v1/workflows/executions/search'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.SearchExecutionsReq, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -389,7 +389,7 @@ class Workflows:
         
         url = base_url + '/v1/workflows/executions/steps/search'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.SearchStepsReq, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -440,7 +440,7 @@ class Workflows:
         
         url = utils.generate_url(operations.UpdateExecutionRequest, base_url, '/v1/workflows/executions/{executionId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "workflow_execution_update_req", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateExecutionRequest, "workflow_execution_update_req", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -488,7 +488,7 @@ class Workflows:
         
         url = utils.generate_url(operations.UpdateStepRequest, base_url, '/v1/workflows/executions/{executionId}/steps/{stepId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "update_step_req", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateStepRequest, "update_step_req", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

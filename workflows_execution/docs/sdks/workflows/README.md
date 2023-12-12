@@ -30,7 +30,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.WorkflowExecutionCreateReq(
@@ -82,7 +82,7 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -127,7 +127,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -166,7 +166,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -209,7 +209,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -248,7 +248,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -287,7 +287,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -327,7 +327,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.SearchExecutionsReq(
@@ -371,7 +371,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.SearchStepsReq(
@@ -413,7 +413,7 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -474,7 +474,7 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

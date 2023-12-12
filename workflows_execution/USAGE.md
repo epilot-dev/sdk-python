@@ -4,7 +4,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.WorkflowExecutionCreateReq(
