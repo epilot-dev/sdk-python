@@ -18,7 +18,7 @@ import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -60,7 +60,7 @@ import sdk
 from sdk.models import shared
 
 s = sdk.SDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.ClosingReason(
@@ -102,7 +102,7 @@ import sdk
 from sdk.models import operations
 
 s = sdk.SDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

@@ -18,7 +18,7 @@ import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -74,7 +74,7 @@ import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -117,7 +117,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     server_idx=0,
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -140,7 +140,7 @@ from sdk.models import operations, shared
 
 s = sdk.SDK(
     server_url="https://workflows-definition.sls.epilot.io",
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -191,7 +191,7 @@ import sdk
 from sdk.models import operations, shared
 
 s = sdk.SDK(
-    bearer_auth="",
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

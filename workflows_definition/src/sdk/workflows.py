@@ -21,7 +21,7 @@ class Workflows:
         
         url = base_url + '/v1/workflows/definitions'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.WorkflowDefinition, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -285,7 +285,7 @@ class Workflows:
         
         url = utils.generate_url(operations.SetWorkflowClosingReasonsRequest, base_url, '/v1/workflows/definitions/{definitionId}/closing-reasons', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "closing_reasons_ids", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.SetWorkflowClosingReasonsRequest, "closing_reasons_ids", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -325,7 +325,7 @@ class Workflows:
         
         url = utils.generate_url(operations.UpdateDefinitionRequest, base_url, '/v1/workflows/definitions/{definitionId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "workflow_definition", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateDefinitionRequest, "workflow_definition", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

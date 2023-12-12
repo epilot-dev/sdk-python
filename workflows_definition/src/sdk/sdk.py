@@ -6,7 +6,7 @@ from .sdkconfiguration import SDKConfiguration
 from .workflows import Workflows
 from sdk import utils
 from sdk.models import shared
-from typing import Callable, Dict, Union
+from typing import Dict
 
 class SDK:
     r"""Workflows Definitions: Service for Workflow Definitions for different processes inside of an Organization"""
@@ -16,7 +16,7 @@ class SDK:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 bearer_auth: Union[str,Callable[[], str]],
+                 bearer_auth: str ,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
