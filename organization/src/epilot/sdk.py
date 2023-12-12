@@ -6,7 +6,7 @@ from .organization_settings import OrganizationSettings
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import components
-from typing import Callable, Dict, Union
+from typing import Dict
 
 class Epilot:
     r"""Organization API: Manage epilot tenant organizations"""
@@ -18,7 +18,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 epilot_auth: Union[str,Callable[[], str]],
+                 epilot_auth: str ,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
