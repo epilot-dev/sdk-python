@@ -14,7 +14,7 @@ class AccessTokens:
         
     
     
-    def create_access_token(self, request: Union[shared.AccessTokenParameters, shared.JourneyTokenParameters]) -> operations.CreateAccessTokenResponse:
+    def create_access_token(self, request: Optional[Union[shared.AccessTokenParameters, shared.JourneyTokenParameters]]) -> operations.CreateAccessTokenResponse:
         r"""createAccessToken
         **Access Token type: `API`** (default if not specified):
 
@@ -33,7 +33,7 @@ class AccessTokens:
         
         url = base_url + '/v1/access-tokens'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[Union[shared.AccessTokenParameters, shared.JourneyTokenParameters]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
