@@ -25,7 +25,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -65,7 +65,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -108,7 +108,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -171,68 +171,15 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.ReplaceTemplatesRequestBody(
     inputs=[
-        'H',
-        'e',
-        'l',
-        'l',
-        'o',
-        ',',
-        ' ',
-        '{',
-        '{',
-        'c',
-        'o',
-        'n',
-        't',
-        'a',
-        'c',
-        't',
-        '.',
-        'f',
-        'i',
-        'r',
-        's',
-        't',
-        '_',
-        'n',
-        'a',
-        'm',
-        'e',
-        '}',
-        '}',
-        '!',
-        '
-        ',
-        '
-        ',
-        '{',
-        '{',
-        '{',
-        'b',
-        'r',
-        'a',
-        'n',
-        'd',
-        '.',
-        's',
-        'i',
-        'g',
-        'n',
-        'a',
-        't',
-        'u',
-        'r',
-        'e',
-        '}',
-        '}',
-        '}',
-        '
+        'Hello, {{contact.first_name}}!
+
+        {{{brand.signature}}}
         ',
     ],
     parameters=shared.VariableParameters(
@@ -290,19 +237,13 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 req = operations.SearchVariablesRequestBody(
     entity_schemas=[
-        'c',
-        'o',
-        'n',
-        't',
-        'a',
-        'c',
-        't',
+        'contact',
     ],
     query='logo',
     template_type=shared.TemplateType.DOCUMENT,

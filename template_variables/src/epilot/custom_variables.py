@@ -13,7 +13,7 @@ class CustomVariables:
         
     
     
-    def create_custom_variable(self, request: shared.CustomVariable) -> operations.CreateCustomVariableResponse:
+    def create_custom_variable(self, request: Optional[shared.CustomVariable]) -> operations.CreateCustomVariableResponse:
         r"""Create custom variable
         Create custom variable
         """
@@ -21,7 +21,7 @@ class CustomVariables:
         
         url = base_url + '/v1/custom-variables'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.CustomVariable], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -199,7 +199,7 @@ class CustomVariables:
         
         url = utils.generate_url(operations.UpdateCustomVariableRequest, base_url, '/v1/custom-variables/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "custom_variable", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateCustomVariableRequest, "custom_variable", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'

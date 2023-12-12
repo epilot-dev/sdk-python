@@ -88,7 +88,7 @@ class Variables:
 
     
     
-    def get_variable_context(self, request: operations.GetVariableContextRequestBody) -> operations.GetVariableContextResponse:
+    def get_variable_context(self, request: Optional[operations.GetVariableContextRequestBody]) -> operations.GetVariableContextResponse:
         r"""getVariableContext
         Get full variable context
 
@@ -98,7 +98,7 @@ class Variables:
         
         url = base_url + '/v1/template-variables:context'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.GetVariableContextRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -127,7 +127,7 @@ class Variables:
 
     
     
-    def replace_templates(self, request: operations.ReplaceTemplatesRequestBody) -> operations.ReplaceTemplatesResponse:
+    def replace_templates(self, request: Optional[operations.ReplaceTemplatesRequestBody]) -> operations.ReplaceTemplatesResponse:
         r"""replaceTemplates
         Replace variables in handlebars templates
 
@@ -137,7 +137,7 @@ class Variables:
         
         url = base_url + '/v1/template-variables:replace'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.ReplaceTemplatesRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -166,7 +166,7 @@ class Variables:
 
     
     
-    def search_variables(self, request: operations.SearchVariablesRequestBody) -> operations.SearchVariablesResponse:
+    def search_variables(self, request: Optional[operations.SearchVariablesRequestBody]) -> operations.SearchVariablesResponse:
         r"""searchVariables
         Search variables
         """
@@ -174,7 +174,7 @@ class Variables:
         
         url = base_url + '/v1/template-variables:search'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.SearchVariablesRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
