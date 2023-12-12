@@ -36,7 +36,7 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

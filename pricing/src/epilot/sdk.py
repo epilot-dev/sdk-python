@@ -9,7 +9,7 @@ from .order_api import OrderAPI
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import shared
-from typing import Callable, Dict, Union
+from typing import Dict
 
 class Epilot:
     r"""Pricing API: The `pricing-api` hub sets the foundations for the following Pricing APIs:
@@ -51,7 +51,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 epilot_auth: Union[str,Callable[[], str]],
+                 epilot_auth: str ,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
