@@ -3,7 +3,7 @@
 import epilot
 
 s = epilot.Epilot(
-    sigv4="",
+    sigv4="<YOUR_API_KEY_HERE>",
 )
 
 

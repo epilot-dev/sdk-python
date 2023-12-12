@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 import dataclasses
+from typing import Optional
 
 
 @dataclasses.dataclass
 class Security:
-    sigv4: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'Authorization' }})
+    sigv4: Optional[str] = dataclasses.field(default=None, metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'Authorization' }})
     
 

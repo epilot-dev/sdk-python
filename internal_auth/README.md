@@ -17,7 +17,7 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=intern
 import epilot
 
 s = epilot.Epilot(
-    sigv4="",
+    sigv4="<YOUR_API_KEY_HERE>",
 )
 
 
@@ -59,7 +59,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 import epilot
 
 s = epilot.Epilot(
-    sigv4="",
+    sigv4="<YOUR_API_KEY_HERE>",
 )
 
 
@@ -96,7 +96,7 @@ import epilot
 
 s = epilot.Epilot(
     server_idx=0,
-    sigv4="",
+    sigv4="<YOUR_API_KEY_HERE>",
 )
 
 
@@ -116,7 +116,7 @@ import epilot
 
 s = epilot.Epilot(
     server_url="https://internal-auth.sls.epilot.io/v1/internal-auth",
-    sigv4="",
+    sigv4="<YOUR_API_KEY_HERE>",
 )
 
 
@@ -164,7 +164,7 @@ To authenticate with the API the `sigv4` parameter must be set when initializing
 import epilot
 
 s = epilot.Epilot(
-    sigv4="",
+    sigv4="<YOUR_API_KEY_HERE>",
 )
 
 

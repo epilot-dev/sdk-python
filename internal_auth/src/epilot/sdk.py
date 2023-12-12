@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Callable, Dict, Optional, Union
+from typing import Dict, Optional
 
 class Epilot:
     r"""Internal Auth API: Auth API to provide JWT tokens for internal API access that work with the epilot custom authorizer.
@@ -15,7 +15,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 sigv4: Union[str,Callable[[], str]],
+                 sigv4: Optional[str]  = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
@@ -181,7 +181,7 @@ class Epilot:
 
     
     
-    def get_token_v2(self, request: shared.AuthRequest) -> operations.GetTokenV2Response:
+    def get_token_v2(self, request: Optional[shared.AuthRequest]) -> operations.GetTokenV2Response:
         r"""getTokenV2
         Generates token for internal API access with internal roles
 
@@ -214,7 +214,7 @@ class Epilot:
         
         url = base_url + '/auth'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.AuthRequest], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
