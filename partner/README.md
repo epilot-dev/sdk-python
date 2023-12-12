@@ -19,7 +19,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -73,7 +73,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -117,7 +117,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot(
     server_idx=0,
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -144,7 +144,7 @@ from epilot.models import operations, shared
 s = epilot.Epilot(
     server_url="https://partner-directory-api.sls.epilot.io",
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -200,7 +200,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 

@@ -27,7 +27,7 @@ class Partners:
         
         url = base_url + '/v1/partner-directory/public/activate'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "activate_partner_payload", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ActivatePartnerRequest, "activate_partner_payload", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.ActivatePartnerRequest, request)
@@ -91,7 +91,7 @@ class Partners:
 
     
     
-    def batch_get_assignable(self, request: List[operations.RequestBody]) -> operations.BatchGetAssignableResponse:
+    def batch_get_assignable(self, request: Optional[List[operations.RequestBody]]) -> operations.BatchGetAssignableResponse:
         r"""batchGet
         Search for assignable users from this organization by its ids
         """
@@ -99,7 +99,7 @@ class Partners:
         
         url = base_url + '/v1/partners/assignables:batchGet'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[List[operations.RequestBody]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -180,7 +180,7 @@ class Partners:
         
         url = utils.generate_url(operations.InvitePartnerRequest, base_url, '/v1/partners/{id}/invite', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "partner_invitation_payload", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.InvitePartnerRequest, "partner_invitation_payload", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -260,7 +260,7 @@ class Partners:
         
         url = utils.generate_url(operations.ResendPartnerInvitationRequest, base_url, '/v1/partners/{id}/invite:resendEmail', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ResendPartnerInvitationRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -289,7 +289,7 @@ class Partners:
 
     
     
-    def search_assignable(self, request: operations.SearchAssignableRequestBody) -> operations.SearchAssignableResponse:
+    def search_assignable(self, request: Optional[operations.SearchAssignableRequestBody]) -> operations.SearchAssignableResponse:
         r"""searchAssignables
         Search for assignable users/organizations from this organization and Partners
 
@@ -302,7 +302,7 @@ class Partners:
         
         url = base_url + '/v1/partners/assignables:search'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.SearchAssignableRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -331,7 +331,7 @@ class Partners:
 
     
     
-    def search_geolocation_for_text(self, request: shared.SearchGeolocation) -> operations.SearchGeolocationForTextResponse:
+    def search_geolocation_for_text(self, request: Optional[shared.SearchGeolocation]) -> operations.SearchGeolocationForTextResponse:
         r"""searchGeolocationForText
         Converts a given string, in the format of an address, to geo-location latitude and longitude
         """
@@ -339,7 +339,7 @@ class Partners:
         
         url = base_url + '/v1/geolocation/text:search'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.SearchGeolocation], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

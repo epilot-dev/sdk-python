@@ -29,7 +29,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -74,7 +74,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -115,7 +115,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -160,7 +160,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -200,7 +200,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -241,7 +241,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -281,7 +281,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -328,7 +328,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -376,7 +376,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        as_organization="",
+        as_organization="<YOUR_API_KEY_HERE>",
     ),
 )
 
