@@ -14,7 +14,7 @@ class Files:
         
     
     
-    def delete_file(self, request: shared.DeleteFilePayload) -> operations.DeleteFileResponse:
+    def delete_file(self, request: Optional[shared.DeleteFilePayload]) -> operations.DeleteFileResponse:
         r"""deleteFile
         Delete file entity
         """
@@ -22,7 +22,7 @@ class Files:
         
         url = base_url + '/v1/files/delete'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.DeleteFilePayload], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
@@ -88,7 +88,7 @@ class Files:
 
     
     
-    def download_files(self, request: List[shared.DownloadFilesPayload]) -> operations.DownloadFilesResponse:
+    def download_files(self, request: Optional[List[shared.DownloadFilesPayload]]) -> operations.DownloadFilesResponse:
         r"""downloadFiles
         Generate pre-signed download S3 urls for multiple files
         """
@@ -96,7 +96,7 @@ class Files:
         
         url = base_url + '/v1/files:downloadFiles'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[List[shared.DownloadFilesPayload]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -249,7 +249,7 @@ class Files:
         
         url = base_url + '/v1/files:previewS3'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "s3_reference", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PreviewS3FileRequest, "s3_reference", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.PreviewS3FileRequest, request)
@@ -313,7 +313,7 @@ class Files:
 
     
     
-    def save_file(self, request: Union[shared.SaveS3FilePayload, shared.SaveCustomFilePayload]) -> operations.SaveFileResponse:
+    def save_file(self, request: Optional[Union[shared.SaveS3FilePayload, shared.SaveCustomFilePayload]]) -> operations.SaveFileResponse:
         r"""saveFile
         Create / Update a permanent File entity
 
@@ -325,7 +325,7 @@ class Files:
         
         url = base_url + '/v1/files'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[Union[shared.SaveS3FilePayload, shared.SaveCustomFilePayload]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -369,7 +369,7 @@ class Files:
         
         url = base_url + '/v1/files/upload'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "upload_file_payload", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UploadFileRequest, "upload_file_payload", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.UploadFileRequest, request)
@@ -399,7 +399,7 @@ class Files:
 
     
     
-    def upload_file_public(self, request: shared.UploadFilePayload) -> operations.UploadFilePublicResponse:
+    def upload_file_public(self, request: Optional[shared.UploadFilePayload]) -> operations.UploadFilePublicResponse:
         r"""uploadFilePublic
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).
 
@@ -409,7 +409,7 @@ class Files:
         
         url = base_url + '/v1/files/public/upload'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.UploadFilePayload], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -438,7 +438,7 @@ class Files:
 
     
     
-    def verify_custom_download_url(self, request: shared.VerifyCustomDownloadURLPayload) -> operations.VerifyCustomDownloadURLResponse:
+    def verify_custom_download_url(self, request: Optional[shared.VerifyCustomDownloadURLPayload]) -> operations.VerifyCustomDownloadURLResponse:
         r"""verifyCustomDownloadUrl
         Verify a pre-signed custom download url for a file
         """
@@ -446,7 +446,7 @@ class Files:
         
         url = base_url + '/v1/files/download:verify'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.VerifyCustomDownloadURLPayload], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

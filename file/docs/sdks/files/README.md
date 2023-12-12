@@ -32,7 +32,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -78,7 +78,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -120,7 +120,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -166,7 +166,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -208,7 +208,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -251,7 +251,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -294,7 +294,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -339,7 +339,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -387,7 +387,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -452,7 +452,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -499,7 +499,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -543,7 +543,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 

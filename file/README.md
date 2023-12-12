@@ -19,7 +19,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -83,7 +83,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -129,7 +129,7 @@ from epilot.models import shared
 s = epilot.Epilot(
     server_idx=0,
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -158,7 +158,7 @@ from epilot.models import shared
 s = epilot.Epilot(
     server_url="https://file.sls.epilot.io",
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
@@ -216,7 +216,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        cookie_auth="",
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
 )
 
