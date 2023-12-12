@@ -53,7 +53,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp.add_end_customer_relation_to_entity("", id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT)
+res = s.ecp.add_end_customer_relation_to_entity("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT)
 
 if res.object is not None:
     # handle response
@@ -92,7 +92,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp.create_custom_entity_activity("", activity=components.Activity(
+res = s.ecp.create_custom_entity_activity("<YOUR_BEARER_TOKEN_HERE>", activity=components.Activity(
     message='{{caller}} did something with {{entity payload.entity.id}}.',
     payload={
         'entity': 'string',
@@ -147,7 +147,7 @@ req = components.DeleteEntityFile(
     ],
 )
 
-res = s.ecp.delete_entity_file(req, "")
+res = s.ecp.delete_entity_file(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -185,7 +185,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.delete_portal_user("")
+res = s.ecp.delete_portal_user("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -222,7 +222,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_all_contracts("", from_=0, size=100)
+res = s.ecp.get_all_contracts("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
 
 if res.object is not None:
     # handle response
@@ -261,7 +261,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_all_files("", from_=0, size=0, entity_ids=[
+res = s.ecp.get_all_files("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=0, entity_ids=[
     '4910096f-000a-4504-bf5a-d3774ec3032a',
     '7c9f8536-6266-42e8-a0de-c60b61aa81a7',
 ])
@@ -304,7 +304,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_all_opportunities("", from_=0, size=100)
+res = s.ecp.get_all_opportunities("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
 
 if res.object is not None:
     # handle response
@@ -343,7 +343,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_all_orders("", from_=0, size=100)
+res = s.ecp.get_all_orders("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
 
 if res.object is not None:
     # handle response
@@ -382,9 +382,8 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-req = operations.GetBillingEventsRequest()
 
-res = s.ecp.get_billing_events(req, "")
+res = s.ecp.get_billing_events("<YOUR_BEARER_TOKEN_HERE>", date_after=dateutil.parser.isoparse('2021-09-06T11:20:21.393Z'), date_before=dateutil.parser.isoparse('2022-12-14T11:26:39.960Z'), entity_id='string', event_type=operations.EventType.REIMBURSEMENT)
 
 if res.object is not None:
     # handle response
@@ -395,8 +394,11 @@ if res.object is not None:
 
 | Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetBillingEventsRequest](../../models/operations/getbillingeventsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 | `security`                                                                                 | [operations.GetBillingEventsSecurity](../../models/operations/getbillingeventssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| `date_after`                                                                               | [date](https://docs.python.org/3/library/datetime.html#date-objects)                       | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `date_before`                                                                              | [date](https://docs.python.org/3/library/datetime.html#date-objects)                       | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `entity_id`                                                                                | *Optional[str]*                                                                            | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `event_type`                                                                               | [Optional[operations.EventType]](../../models/operations/eventtype.md)                     | :heavy_minus_sign:                                                                         | Type of billing event to filter by                                                         |
 
 
 ### Response
@@ -421,7 +423,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_contact("")
+res = s.ecp.get_contact("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -458,7 +460,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_contract("", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.get_contract("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -496,7 +498,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_entities_by_identifiers("", request_body={
+res = s.ecp.get_entities_by_identifiers("<YOUR_BEARER_TOKEN_HERE>", request_body={
     'key': 'string',
 }, slug=components.EntitySlug.CONTACT)
 
@@ -537,7 +539,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_file_by_id("", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.get_file_by_id("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -575,7 +577,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_files_count_by_entity("")
+res = s.ecp.get_files_count_by_entity("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.classes is not None:
     # handle response
@@ -612,7 +614,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_opportunity("", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.get_opportunity("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -650,7 +652,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_order("", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.get_order("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -688,7 +690,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_organization_settings("")
+res = s.ecp.get_organization_settings("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -726,7 +728,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_portal_config(operations.GetPortalConfigSecurity(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.portal_config is not None:
@@ -765,7 +767,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_portal_user("")
+res = s.ecp.get_portal_user("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -803,7 +805,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_portal_widgets(operations.GetPortalWidgetsSecurity(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.upsert_portal_widget is not None:
@@ -842,7 +844,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_schemas("")
+res = s.ecp.get_schemas("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -897,7 +899,7 @@ req = components.SaveEntityFile(
     ],
 )
 
-res = s.ecp.save_entity_file(req, "")
+res = s.ecp.save_entity_file(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -935,7 +937,7 @@ from epilot.models import components, operations
 
 s = epilot.Epilot(
     security=components.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -985,7 +987,7 @@ req = components.EntitySearchParams(
     sort='_created_at:desc',
 )
 
-res = s.ecp.search_portal_user_entities(req, "")
+res = s.ecp.search_portal_user_entities(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -1023,7 +1025,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.track_file_downloaded("", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.track_file_downloaded("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -1061,7 +1063,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp.trigger_entity_access_event("", entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e', origin=components.Origin.END_CUSTOMER_PORTAL, schema='contract')
+res = s.ecp.trigger_entity_access_event("<YOUR_BEARER_TOKEN_HERE>", entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e', origin=components.Origin.END_CUSTOMER_PORTAL, schema='contract')
 
 if res.object is not None:
     # handle response
@@ -1103,7 +1105,7 @@ req = {
     'key': 'string',
 }
 
-res = s.ecp.update_contact(req, "")
+res = s.ecp.update_contact(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -1142,7 +1144,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.update_contract("", request_body={
+res = s.ecp.update_contract("<YOUR_BEARER_TOKEN_HERE>", request_body={
     'key': 'string',
 }, id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
@@ -1184,7 +1186,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.update_opportunity("", request_body={
+res = s.ecp.update_opportunity("<YOUR_BEARER_TOKEN_HERE>", request_body={
     'key': 'string',
 }, id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
@@ -1225,7 +1227,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.update_order("", id='5da0a718-c822-403d-9f5d-20d4584e0528', request_body={
+res = s.ecp.update_order("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528', request_body={
     'key': 'string',
 })
 
@@ -1269,7 +1271,7 @@ req = {
     'key': 'string',
 }
 
-res = s.ecp.update_portal_user(req, "")
+res = s.ecp.update_portal_user(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -1308,7 +1310,7 @@ from epilot.models import components, operations
 
 s = epilot.Epilot(
     security=components.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 

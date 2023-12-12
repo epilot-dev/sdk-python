@@ -199,7 +199,6 @@ docs/models/operations/upsertportalwidgetsecurity.md
 docs/models/operations/upsertportalwidgetrequest.md
 docs/models/operations/upsertportalwidgetresponse.md
 docs/models/operations/getcustomerbalancesecurity.md
-docs/models/operations/getcustomerbalancerequest.md
 docs/models/operations/getcustomerbalanceresponse.md
 docs/models/operations/addendcustomerrelationtoentitysecurity.md
 docs/models/operations/addendcustomerrelationtoentityrequest.md

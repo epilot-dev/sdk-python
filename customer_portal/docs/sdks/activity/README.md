@@ -19,7 +19,7 @@ from epilot.models import components, operations
 
 s = epilot.Epilot(
     security=components.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 

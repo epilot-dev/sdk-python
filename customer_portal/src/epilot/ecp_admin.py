@@ -70,7 +70,7 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/sso/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "create_sso_user_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateSSOUserRequest, "create_sso_user_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -522,7 +522,7 @@ class ECPAdmin:
 
     
     
-    def get_registered_users(self, request: operations.GetRegisteredUsersRequestBody, security: operations.GetRegisteredUsersSecurity) -> operations.GetRegisteredUsersResponse:
+    def get_registered_users(self, request: Optional[operations.GetRegisteredUsersRequestBody], security: operations.GetRegisteredUsersSecurity) -> operations.GetRegisteredUsersResponse:
         r"""getRegisteredUsers
         Returns the registered emails on any portal from the given emails
         """
@@ -530,7 +530,7 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/registered/users'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.GetRegisteredUsersRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -611,7 +611,7 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/admin:login-as-user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.LoginToPortalAsUserRequestBody, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -647,7 +647,7 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/replace-ecp-template-variables'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ReplaceECPTemplateVariablesRequestBody, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -690,7 +690,7 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/portal/files'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, components.SavePortalFile, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -738,7 +738,7 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/email-templates'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "email_templates", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpsertEmailTemplatesRequest, "email_templates", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -787,7 +787,7 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/portal'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "upsert_portal_config", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpsertPortalRequest, "upsert_portal_config", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -836,7 +836,7 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/widgets'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "upsert_portal_widget", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpsertPortalWidgetRequest, "upsert_portal_widget", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

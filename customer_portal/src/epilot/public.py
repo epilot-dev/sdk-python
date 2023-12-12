@@ -71,7 +71,7 @@ class Public:
         
         url = base_url + '/v2/portal/public/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "create_user_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateUserRequest, "create_user_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -123,7 +123,7 @@ class Public:
         
         url = base_url + '/v2/portal/public/contact/count'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "contact_count_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetContactCountRequest, "contact_count_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

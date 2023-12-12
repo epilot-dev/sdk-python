@@ -15,14 +15,6 @@ class GetCustomerBalanceSecurity:
 
 
 @dataclasses.dataclass
-class GetCustomerBalanceRequest:
-    customer_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'customer_id', 'style': 'simple', 'explode': False }})
-    r"""Customer entity ID (contact or account)"""
-    
-
-
-
-@dataclasses.dataclass
 class GetCustomerBalanceResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""

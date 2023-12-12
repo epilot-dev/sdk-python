@@ -41,7 +41,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.configure_distribution("", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
 
 if res.object is not None:
     # handle response
@@ -79,7 +79,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.create_sso_user("", create_sso_user_request=components.CreateSSOUserRequest(
+res = s.ecp_admin.create_sso_user("<YOUR_BEARER_TOKEN_HERE>", create_sso_user_request=components.CreateSSOUserRequest(
     email='testemail921@yopmail.com',
     first_name='John',
     last_name='Doe',
@@ -122,7 +122,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.delete_portal("", origin=components.Origin.END_CUSTOMER_PORTAL)
+res = s.ecp_admin.delete_portal("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.status_code == 200:
     # handle response
@@ -160,7 +160,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.extra_permission_attributes("")
+res = s.ecp_admin.extra_permission_attributes("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -197,7 +197,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.fetch_portal_users_by_related_entity("", entity_id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT)
+res = s.ecp_admin.fetch_portal_users_by_related_entity("<YOUR_BEARER_TOKEN_HERE>", entity_id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT)
 
 if res.object is not None:
     # handle response
@@ -236,7 +236,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.get_all_portal_configs("")
+res = s.ecp_admin.get_all_portal_configs("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -273,7 +273,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.get_ecp_contact("", id='1234')
+res = s.ecp_admin.get_ecp_contact("<YOUR_BEARER_TOKEN_HERE>", id='1234')
 
 if res.object is not None:
     # handle response
@@ -311,7 +311,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.get_email_templates("", origin=components.Origin.END_CUSTOMER_PORTAL)
+res = s.ecp_admin.get_email_templates("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.email_templates is not None:
     # handle response
@@ -349,7 +349,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.get_entity_identifiers("", slug=components.EntitySlug.CONTACT)
+res = s.ecp_admin.get_entity_identifiers("<YOUR_BEARER_TOKEN_HERE>", slug=components.EntitySlug.CONTACT)
 
 if res.object is not None:
     # handle response
@@ -387,7 +387,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.get_org_portal_config("", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.get_org_portal_config("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
 
 if res.portal_config is not None:
     # handle response
@@ -426,7 +426,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp_admin.get_portal_config(operations.GetPortalConfigSecurity(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.portal_config is not None:
@@ -466,7 +466,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp_admin.get_portal_widgets(operations.GetPortalWidgetsSecurity(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.upsert_portal_widget is not None:
@@ -510,7 +510,7 @@ req = operations.GetRegisteredUsersRequestBody(
     ],
 )
 
-res = s.ecp_admin.get_registered_users(req, "")
+res = s.ecp_admin.get_registered_users(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -548,7 +548,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.get_valid_secondary_attributes("")
+res = s.ecp_admin.get_valid_secondary_attributes("<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -591,7 +591,7 @@ req = operations.LoginToPortalAsUserRequestBody(
     email='portal-customer@email.com',
 )
 
-res = s.ecp_admin.login_to_portal_as_user(req, "")
+res = s.ecp_admin.login_to_portal_as_user(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -631,7 +631,7 @@ req = operations.ReplaceECPTemplateVariablesRequestBody(
     contact_id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
 )
 
-res = s.ecp_admin.replace_ecp_template_variables(req, "")
+res = s.ecp_admin.replace_ecp_template_variables(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -685,7 +685,7 @@ req = components.SavePortalFile(
     origin=components.Origin.INSTALLER_PORTAL,
 )
 
-res = s.ecp_admin.save_portal_files(req, "")
+res = s.ecp_admin.save_portal_files(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -723,7 +723,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.upsert_email_templates("", email_templates=components.EmailTemplates(
+res = s.ecp_admin.upsert_email_templates("<YOUR_BEARER_TOKEN_HERE>", email_templates=components.EmailTemplates(
     confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
     forgot_password='6538fddb-f0e9-4f0f-af51-6e57891ff20a',
     invitation='14ae65fb-0dc1-4863-8743-6bc01da469f6',
@@ -769,7 +769,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.upsert_portal("", upsert_portal_config=components.UpsertPortalConfig(
+res = s.ecp_admin.upsert_portal("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_config=components.UpsertPortalConfig(
     cognito_details=components.UpsertPortalConfigCognitoDetails(
         cognito_user_pool_arn='arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341',
         cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
@@ -832,21 +832,7 @@ res = s.ecp_admin.upsert_portal("", upsert_portal_config=components.UpsertPortal
     entity_identifiers=components.UpsertPortalConfigEntityIdentifiers(
         type=components.UpsertPortalConfigType(
             attributes=[
-                'c',
-                'o',
-                'n',
-                't',
-                'r',
-                'a',
-                'c',
-                't',
-                '_',
-                'n',
-                'u',
-                'm',
-                'b',
-                'e',
-                'r',
+                'contract_number',
             ],
         ),
     ),
@@ -903,7 +889,7 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.upsert_portal_widget("", upsert_portal_widget=components.UpsertPortalWidget(
+res = s.ecp_admin.upsert_portal_widget("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_widget=components.UpsertPortalWidget(
     widgets=[
         components.WidgetBase(
             headline=components.WidgetBaseHeadline(),

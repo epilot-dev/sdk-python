@@ -71,7 +71,7 @@ class Ecp:
         
         url = base_url + '/v2/portal/entity/activity'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "activity", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateCustomEntityActivityRequest, "activity", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.CreateCustomEntityActivityRequest, request)
@@ -113,7 +113,7 @@ class Ecp:
         
         url = base_url + '/v2/portal/entity/file'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, components.DeleteEntityFile, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -363,10 +363,17 @@ class Ecp:
 
     
     
-    def get_billing_events(self, request: operations.GetBillingEventsRequest, security: operations.GetBillingEventsSecurity) -> operations.GetBillingEventsResponse:
+    def get_billing_events(self, security: operations.GetBillingEventsSecurity, date_after: Optional[datetime] = None, date_before: Optional[datetime] = None, entity_id: Optional[str] = None, event_type: Optional[operations.EventType] = None) -> operations.GetBillingEventsResponse:
         r"""getBillingEvents
         Fetch billing events for a portal user
         """
+        request = operations.GetBillingEventsRequest(
+            date_after=date_after,
+            date_before=date_before,
+            entity_id=entity_id,
+            event_type=event_type,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/billing/events'
@@ -488,7 +495,7 @@ class Ecp:
         
         url = utils.generate_url(operations.GetEntitiesByIdentifiersRequest, base_url, '/v2/portal/entity/by-identifiers/{slug}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetEntitiesByIdentifiersRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -895,7 +902,7 @@ class Ecp:
         
         url = base_url + '/v2/portal/entity/file'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, components.SaveEntityFile, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -968,7 +975,7 @@ class Ecp:
 
     
     
-    def search_portal_user_entities(self, request: components.EntitySearchParams, security: operations.SearchPortalUserEntitiesSecurity) -> operations.SearchPortalUserEntitiesResponse:
+    def search_portal_user_entities(self, request: Optional[components.EntitySearchParams], security: operations.SearchPortalUserEntitiesSecurity) -> operations.SearchPortalUserEntitiesResponse:
         r"""searchPortalUserEntities
         Search all entities of a portal user
         """
@@ -976,7 +983,7 @@ class Ecp:
         
         url = base_url + '/v2/portal/entity:search'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[components.EntitySearchParams], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1089,7 +1096,7 @@ class Ecp:
 
     
     
-    def update_contact(self, request: Dict[str, Any], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
+    def update_contact(self, request: Optional[Dict[str, Any]], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
         r"""updateContact
         Updates the contact details.
         """
@@ -1097,7 +1104,7 @@ class Ecp:
         
         url = base_url + '/v2/portal/contact'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[Dict[str, Any]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1150,7 +1157,7 @@ class Ecp:
         
         url = utils.generate_url(operations.UpdateContractRequest, base_url, '/v2/portal/contract/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateContractRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1205,7 +1212,7 @@ class Ecp:
         
         url = utils.generate_url(operations.UpdateOpportunityRequest, base_url, '/v2/portal/opportunities/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateOpportunityRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1253,7 +1260,7 @@ class Ecp:
         
         url = utils.generate_url(operations.UpdateOrderRequest, base_url, '/v2/portal/order/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateOrderRequest, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -1286,7 +1293,7 @@ class Ecp:
 
     
     
-    def update_portal_user(self, request: Dict[str, Any], security: operations.UpdatePortalUserSecurity) -> operations.UpdatePortalUserResponse:
+    def update_portal_user(self, request: Optional[Dict[str, Any]], security: operations.UpdatePortalUserSecurity) -> operations.UpdatePortalUserResponse:
         r"""updatePortalUser
         Update the portal user details
         """
@@ -1294,7 +1301,7 @@ class Ecp:
         
         url = base_url + '/v2/portal/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[Dict[str, Any]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'

@@ -26,7 +26,6 @@ class EventType(str, Enum):
 
 @dataclasses.dataclass
 class GetBillingEventsRequest:
-    customer_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'customer_id', 'style': 'form', 'explode': True }})
     date_after: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_after', 'style': 'form', 'explode': True }})
     date_before: Optional[datetime] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'date_before', 'style': 'form', 'explode': True }})
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
