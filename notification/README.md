@@ -18,7 +18,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.Notification(
@@ -119,7 +119,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.Notification(
@@ -213,7 +213,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     server_idx=0,
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.Notification(
@@ -290,7 +290,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     server_url="https://notification.sls.epilot.io",
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.Notification(
@@ -395,7 +395,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.Notification(

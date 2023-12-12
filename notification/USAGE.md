@@ -4,7 +4,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.Notification(

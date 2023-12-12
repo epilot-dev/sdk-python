@@ -25,7 +25,7 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.Notification(
@@ -119,7 +119,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -157,7 +157,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -195,7 +195,7 @@ Get total unread
 import epilot
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -226,7 +226,7 @@ Mark all as read
 import epilot
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -258,7 +258,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

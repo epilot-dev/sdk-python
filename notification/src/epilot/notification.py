@@ -14,7 +14,7 @@ class Notification:
         
     
     
-    def create_notification(self, request: shared.Notification) -> operations.CreateNotificationResponse:
+    def create_notification(self, request: Optional[shared.Notification]) -> operations.CreateNotificationResponse:
         r"""createNotification
         Create a message that can be displayed in the notification panel.
         """
@@ -22,7 +22,7 @@ class Notification:
         
         url = base_url + '/v1/notification/notifications'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.Notification], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
