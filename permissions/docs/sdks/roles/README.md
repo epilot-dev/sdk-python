@@ -27,7 +27,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -67,7 +67,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -107,7 +107,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -141,7 +141,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -176,7 +176,7 @@ from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -191,18 +191,6 @@ res = s.roles.put_role(role_id='123:owner', role_payload=shared.One(
                     attribute='workflows.primary.task_name',
                     operation=shared.Operation.EQUALS,
                     values=[
-                        'string',
-                        'string',
-                        'string',
-                        'string',
-                        'string',
-                        'string',
-                        'string',
-                        'string',
-                        'string',
-                        'string',
-                        'string',
-                        'string',
                         'string',
                     ],
                 ),
@@ -251,7 +239,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
@@ -285,7 +273,7 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
-        epilot_auth="",
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 

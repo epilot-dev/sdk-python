@@ -171,7 +171,7 @@ class Roles:
         
         url = utils.generate_url(operations.PutRoleRequest, base_url, '/v1/permissions/roles/{roleId}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "role_payload", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutRoleRequest, "role_payload", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -230,7 +230,7 @@ class Roles:
 
     
     
-    def search_roles(self, request: shared.RoleSearchInput) -> operations.SearchRolesResponse:
+    def search_roles(self, request: Optional[shared.RoleSearchInput]) -> operations.SearchRolesResponse:
         r"""searchRoles
         Search Roles
         """
@@ -238,7 +238,7 @@ class Roles:
         
         url = base_url + '/v1/permissions/roles:search'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.RoleSearchInput], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
