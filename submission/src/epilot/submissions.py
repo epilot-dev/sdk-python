@@ -3,6 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
+from typing import Optional
 
 class Submissions:
     r"""Journey Submission"""
@@ -13,7 +14,7 @@ class Submissions:
         
     
     
-    def create_submission(self, request: shared.SubmissionPayload) -> operations.CreateSubmissionResponse:
+    def create_submission(self, request: Optional[shared.SubmissionPayload]) -> operations.CreateSubmissionResponse:
         r"""createSubmission
         Creates a submission from a public facing Journey
         """
@@ -21,7 +22,7 @@ class Submissions:
         
         url = base_url + '/v1/submission/submissions'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.SubmissionPayload], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = '*/*'
