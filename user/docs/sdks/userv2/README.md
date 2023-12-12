@@ -30,7 +30,7 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -72,7 +72,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -109,7 +109,7 @@ Get currently logged in user
 import epilot
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -141,7 +141,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -179,7 +179,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -217,21 +217,13 @@ import epilot
 from epilot.models import shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.UserInvitationPayload(
     email='test@example.com',
     roles=[
-        '1',
-        '2',
-        '3',
-        ':',
-        'o',
-        'w',
-        'n',
-        'e',
-        'r',
+        '123:owner',
     ],
 )
 
@@ -269,7 +261,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -309,7 +301,7 @@ import epilot
 from epilot.models import operations
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = operations.ResendUserInvitationRequestBody(
@@ -350,7 +342,7 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -406,7 +398,7 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -472,7 +464,7 @@ import epilot
 from epilot.models import operations, shared
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

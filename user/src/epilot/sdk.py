@@ -6,7 +6,7 @@ from .user_v1 import UserV1
 from .user_v2 import UserV2
 from epilot import utils
 from epilot.models import shared
-from typing import Callable, Dict, Union
+from typing import Dict
 
 class Epilot:
     r"""User API: Manage users in epilot organization(s)"""
@@ -18,7 +18,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 epilot_auth: Union[str,Callable[[], str]],
+                 epilot_auth: str ,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,

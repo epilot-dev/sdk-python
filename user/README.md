@@ -17,7 +17,7 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=user
 import epilot
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -73,7 +73,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 import epilot
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -110,7 +110,7 @@ import epilot
 
 s = epilot.Epilot(
     server_idx=0,
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -130,7 +130,7 @@ import epilot
 
 s = epilot.Epilot(
     server_url="https://user.sls.epilot.io",
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -178,7 +178,7 @@ To authenticate with the API the `epilot_auth` parameter must be set when initia
 import epilot
 
 s = epilot.Epilot(
-    epilot_auth="",
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 

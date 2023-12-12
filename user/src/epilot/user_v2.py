@@ -27,7 +27,7 @@ class UserV2:
         
         url = base_url + '/v2/users/public/activate'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "user_activation_payload", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ActivateUserRequest, "user_activation_payload", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.ActivateUserRequest, request)
@@ -201,7 +201,7 @@ class UserV2:
 
     
     
-    def invite_user(self, request: shared.UserInvitationPayload) -> operations.InviteUserResponse:
+    def invite_user(self, request: Optional[shared.UserInvitationPayload]) -> operations.InviteUserResponse:
         r"""inviteUser
         Creates a new user in the caller's organization and sends an invite email to activate
         """
@@ -209,7 +209,7 @@ class UserV2:
         
         url = base_url + '/v2/users/invite'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.UserInvitationPayload], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -279,7 +279,7 @@ class UserV2:
 
     
     
-    def resend_user_invitation(self, request: operations.ResendUserInvitationRequestBody) -> operations.ResendUserInvitationResponse:
+    def resend_user_invitation(self, request: Optional[operations.ResendUserInvitationRequestBody]) -> operations.ResendUserInvitationResponse:
         r"""resendUserInvitation
         Resend user invitation email
         """
@@ -287,7 +287,7 @@ class UserV2:
         
         url = base_url + '/v2/users/invite:resendEmail'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.ResendUserInvitationRequestBody], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -327,7 +327,7 @@ class UserV2:
         
         url = base_url + '/v2/users/public/signup'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "signup_user_payload", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.SignUpUserRequest, "signup_user_payload", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.SignUpUserRequest, request)
@@ -370,7 +370,7 @@ class UserV2:
         
         url = utils.generate_url(operations.UpdateUserV2Request, base_url, '/v2/users/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "user_v2", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateUserV2Request, "user_v2", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
@@ -412,7 +412,7 @@ class UserV2:
         
         url = base_url + '/v2/users/public/verifyEmail'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "user_verification_payload", False, True, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.VerifyEmailWithTokenRequest, "user_verification_payload", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         query_params = utils.get_query_params(operations.VerifyEmailWithTokenRequest, request)
