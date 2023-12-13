@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `epilot_auth`      | *str*              | :heavy_check_mark: | N/A                |
+| `portal_auth`      | *str*              | :heavy_check_mark: | N/A                |

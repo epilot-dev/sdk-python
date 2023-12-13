@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 import dateutil.parser
 from dataclasses_json import Undefined, dataclass_json
-from datetime import date, datetime
+from datetime import datetime
 from enum import Enum
 from epilot import utils
 from typing import Any, Dict, List, Optional
@@ -72,22 +72,16 @@ class Contract:
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     balance: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance'), 'exclude': lambda f: f is None }})
     r"""Current balance of the contract in cents. (precision 2)"""
-    balance_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance_amount_decimal'), 'exclude': lambda f: f is None }})
-    r"""Current balance of the contract in decimal string representation."""
     balance_currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('balance_currency'), 'exclude': lambda f: f is None }})
     r"""Currency code in ISO 4217 format"""
     billing_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_address'), 'exclude': lambda f: f is None }})
     r"""The billing address associated with the contract."""
+    billing_due_day: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_due_day'), 'exclude': lambda f: f is None }})
+    r"""Defines the day of the month in which the installments are due."""
     billing_duration_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_duration_amount'), 'exclude': lambda f: f is None }})
     r"""The duration of the billing period."""
     billing_period: Optional[BillingPeriod] = dataclasses.field(default=BillingPeriod.WEEKLY, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_period'), 'exclude': lambda f: f is None }})
     r"""The billing period associated with the contract."""
-    billing_schedule_by_month_day: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_schedule_by_month_day'), 'exclude': lambda f: f is None }})
-    r"""Defines the day of the month in which the installments are due."""
-    billing_schedule_end_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_schedule_end_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
-    r"""Defines the end date for the billing schedule"""
-    billing_schedule_start_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_schedule_start_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
-    r"""Defines the start date for the billing schedule"""
     branch: Optional[Branch] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('branch'), 'exclude': lambda f: f is None }})
     r"""The branch associated with the contract."""
     contract_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract_name'), 'exclude': lambda f: f is None }})
@@ -100,8 +94,6 @@ class Contract:
     r"""A brief description of the contract."""
     installment_amount: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installment_amount'), 'exclude': lambda f: f is None }})
     r"""Set amount for installments in cents. (precision 2)"""
-    installment_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installment_amount_decimal'), 'exclude': lambda f: f is None }})
-    r"""Set amount for installments in decimal string representation."""
     notice_time_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notice_time_amount'), 'exclude': lambda f: f is None }})
     r"""The amount of notice required for termination of the contract."""
     notice_time_unit: Optional[NoticeTimeUnit] = dataclasses.field(default=NoticeTimeUnit.MONTHS, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notice_time_unit'), 'exclude': lambda f: f is None }})
