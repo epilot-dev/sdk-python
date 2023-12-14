@@ -183,6 +183,7 @@ req = shared.AuthRequest(
     assume_roles=[
         'org_id:root',
     ],
+    expires=62984,
     org_id='12345',
 )
 

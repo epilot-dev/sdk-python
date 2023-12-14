@@ -27,6 +27,7 @@ docs/models/operations/gettokenresponsebody.md
 docs/models/operations/gettokenresponse.md
 docs/models/operations/gettokenv2responsebody.md
 docs/models/operations/gettokenv2response.md
+docs/models/shared/expires.md
 docs/models/shared/authrequest.md
 docs/models/shared/security.md
 docs/sdks/epilot/README.md
