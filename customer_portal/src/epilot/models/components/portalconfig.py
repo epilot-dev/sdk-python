@@ -204,7 +204,10 @@ class PortalConfig:
     grants: Optional[List[Grant]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants'), 'exclude': lambda f: f is None }})
     r"""Permissions granted to a portal user while accessing entities"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
-    r"""ID of the organization"""
+    r"""ID of the organization
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     images: Optional[Images] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('images'), 'exclude': lambda f: f is None }})
     r"""Teaser & Banner Image web links"""
     is_epilot_domain: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_epilot_domain'), 'exclude': lambda f: f is None }})
@@ -215,6 +218,8 @@ class PortalConfig:
     r"""Name of the organization"""
     org_settings: Optional[OrgSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_settings'), 'exclude': lambda f: f is None }})
     r"""Organization settings"""
+    organization_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id'), 'exclude': lambda f: f is None }})
+    r"""ID of the organization"""
     origin: Optional[Origin] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin'), 'exclude': lambda f: f is None }})
     r"""Origin of the portal"""
     self_registration: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration'), 'exclude': lambda f: f is None }})

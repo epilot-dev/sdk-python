@@ -107,6 +107,10 @@ if res.object is not None:
 ### [activity](docs/sdks/activity/README.md)
 
 * [get_entity_activity_feed](docs/sdks/activity/README.md#get_entity_activity_feed) - getEntityActivityFeed
+
+### [internal](docs/sdks/internal/README.md)
+
+* [list_portals_internal](docs/sdks/internal/README.md#list_portals_internal) - listPortalsInternal
 <!-- End Available Resources and Operations [operations] -->
 
 
