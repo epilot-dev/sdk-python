@@ -5,7 +5,6 @@ from .activity import Activity
 from .balance import Balance
 from .ecp import Ecp
 from .ecp_admin import ECPAdmin
-from .internal import Internal
 from .public import Public
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
@@ -22,7 +21,6 @@ class Epilot:
     public: Public
     r"""Public APIs"""
     activity: Activity
-    internal: Internal
 
     sdk_configuration: SDKConfiguration
 
@@ -66,5 +64,4 @@ class Epilot:
         self.ecp = Ecp(self.sdk_configuration)
         self.public = Public(self.sdk_configuration)
         self.activity = Activity(self.sdk_configuration)
-        self.internal = Internal(self.sdk_configuration)
     

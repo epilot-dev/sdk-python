@@ -4,7 +4,6 @@ src/epilot/balance.py
 src/epilot/ecp.py
 src/epilot/public.py
 src/epilot/activity.py
-src/epilot/internal.py
 src/epilot/sdk.py
 pylintrc
 setup.py
@@ -74,7 +73,6 @@ src/epilot/models/operations/getpublicportalconfig.py
 src/epilot/models/operations/getpublicportalwidgets.py
 src/epilot/models/operations/userexists.py
 src/epilot/models/operations/getentityactivityfeed.py
-src/epilot/models/operations/listportalsinternal.py
 src/epilot/models/errors/errorresp.py
 src/epilot/models/errors/updatecontact.py
 src/epilot/models/errors/updatecontract.py
@@ -333,10 +331,6 @@ docs/models/operations/userexistsresponse.md
 docs/models/operations/getentityactivityfeedrequest.md
 docs/models/operations/getentityactivityfeedresponsebody.md
 docs/models/operations/getentityactivityfeedresponse.md
-docs/models/operations/listportalsinternalsecurity.md
-docs/models/operations/listportalsinternalrequest.md
-docs/models/operations/listportalsinternalresponsebody.md
-docs/models/operations/listportalsinternalresponse.md
 docs/models/errors/errorresp.md
 docs/models/errors/updatecontactresponsebody.md
 docs/models/errors/updatecontractresponsebody.md
@@ -490,6 +484,5 @@ docs/sdks/balance/README.md
 docs/sdks/ecp/README.md
 docs/sdks/public/README.md
 docs/sdks/activity/README.md
-docs/sdks/internal/README.md
 USAGE.md
 .gitattributes
