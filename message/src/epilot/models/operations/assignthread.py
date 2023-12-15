@@ -5,33 +5,38 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class AssignThreadRequestBody:
-    
+class RequestBody:
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is None }})
-    r"""Entity ID"""  
+    r"""Entity ID"""
     is_main_entity: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_main_entity'), 'exclude': lambda f: f is None }})
-    r"""To indicate this is main entity"""  
+    r"""To indicate this is main entity"""
     slug: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug'), 'exclude': lambda f: f is None }})
-    r"""Entity slug"""  
+    r"""Entity slug"""
     
+
+
 
 @dataclasses.dataclass
 class AssignThreadRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Thread ID"""  
-    request_body: list[AssignThreadRequestBody] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
+    r"""Thread ID"""
+    request_body: List[RequestBody] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
+
+
 
 @dataclasses.dataclass
 class AssignThreadResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

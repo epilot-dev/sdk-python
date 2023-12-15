@@ -1,16 +1,40 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 007d70cb5b2af152bc8b6492cdc0171c
+  docChecksum: 56e1ccd22ef4d071fe1b014b501f7633
   docVersion: 1.0.0
-  speakeasyVersion: 1.19.2
-  generationVersion: 2.16.5
+  speakeasyVersion: 1.126.3
+  generationVersion: 2.214.3
 generation:
-  telemetryEnabled: false
+  comments: {}
   sdkClassName: epilot
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  usageSnippets:
+    optionalPropertyRendering: withExample
   sdkFlattening: true
-  singleTagPerOp: false
+  telemetryEnabled: false
+features:
+  python:
+    core: 4.3.0
+    flattening: 2.81.1
+    globalSecurity: 2.83.1
+    globalServerURLs: 2.82.1
 python:
-  version: 1.2.2
+  version: 1.3.0
   author: epilot
+  clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot
+  flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/components
+      webhooks: models/webhooks
+  inputModelSuffix: input
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=message
+  maxMethodParams: 4
+  outputModelSuffix: output
   packageName: epilot-message
+  repoSubDirectory: message
