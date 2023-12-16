@@ -896,7 +896,7 @@ res = s.ecp_admin.upsert_portal_widget("<YOUR_BEARER_TOKEN_HERE>", upsert_portal
             id='<ID>',
             list_index=393843,
             sub_headline=components.WidgetBaseSubHeadline(),
-            type=components.WidgetBaseType.ACTION_WIDGET,
+            type=components.WidgetBaseType.CONTENT_WIDGET,
         ),
     ],
 ), origin=components.Origin.INSTALLER_PORTAL)

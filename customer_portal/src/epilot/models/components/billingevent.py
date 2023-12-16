@@ -12,7 +12,7 @@ from typing import Any, Dict, List, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DollarRelation:
+class SchemasDollarRelation:
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is None }})
     r"""Entity ID for the related contract."""
     
@@ -22,19 +22,19 @@ class DollarRelation:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SchemasContract:
-    dollar_relation: Optional[List[DollarRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    dollar_relation: Optional[List[SchemasDollarRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 
 
-class Type(str, Enum):
+class SchemasType(str, Enum):
     r"""Type of the billing event."""
     REIMBURSEMENT = 'reimbursement'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class Schemas:
-    r"""A base billing event to be inherited by all billing events."""
+class ReimbursementEventSchemas:
+    r"""An entity that describes a reimbursement billing event."""
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Creation timestamp of the entity"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id') }})
@@ -46,7 +46,7 @@ class Schemas:
     updated_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Last update timestamp of the entity"""
     contract: SchemasContract = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract') }})
-    type: Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: SchemasType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the billing event."""
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""Array of entity tags"""
@@ -63,5 +63,62 @@ class Schemas:
     r"""Unique identifier for event, used to reference the event to a 3rd party resource such as a SAP Installment."""
     paid_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paid_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
     r"""Date on which the customer is reimbursed."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class DollarRelation:
+    entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is None }})
+    r"""Entity ID for the related contract."""
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class SchemasInstallmentEventContract:
+    dollar_relation: Optional[List[DollarRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
+    
+
+
+class Type(str, Enum):
+    r"""Type of the billing event."""
+    INSTALLMENT = 'installment'
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class Schemas:
+    r"""An entity that describes an installment billing event."""
+    created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
+    r"""Creation timestamp of the entity"""
+    id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id') }})
+    r"""Entity ID"""
+    org: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_org') }})
+    r"""Organization ID the entity belongs to"""
+    title: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_title') }})
+    r"""Title of the entity"""
+    updated_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
+    r"""Last update timestamp of the entity"""
+    contract: SchemasInstallmentEventContract = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract') }})
+    due_date: date = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('due_date'), 'encoder': utils.dateisoformat(False), 'decoder': utils.datefromisoformat }})
+    r"""Date on which the installment is due."""
+    type: Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    r"""Type of the billing event."""
+    tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
+    r"""Array of entity tags"""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    billing_amount: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_amount'), 'exclude': lambda f: f is None }})
+    r"""Amount to be paid in cents i.e. precision 2"""
+    billing_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_amount_decimal'), 'exclude': lambda f: f is None }})
+    r"""Amount to be paid in cents in decimal string representation"""
+    billing_currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_currency'), 'exclude': lambda f: f is None }})
+    r"""Currency code in ISO 4217 format"""
+    external_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('external_id'), 'exclude': lambda f: f is None }})
+    r"""Unique identifier for event, used to reference the event to a 3rd party resource such as a SAP Installment."""
+    paid_date: Optional[date] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('paid_date'), 'encoder': utils.dateisoformat(True), 'decoder': utils.datefromisoformat, 'exclude': lambda f: f is None }})
+    r"""Date on which the installment is paid by the customer."""
     
 

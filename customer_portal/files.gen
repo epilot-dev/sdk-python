@@ -107,7 +107,6 @@ src/epilot/models/components/fileitem.py
 src/epilot/models/components/opportunity.py
 src/epilot/models/components/order.py
 src/epilot/models/components/billingevent.py
-src/epilot/models/components/installmentevent.py
 src/epilot/models/components/entityfilecount.py
 src/epilot/models/components/product.py
 src/epilot/models/components/organizationsettings.py
@@ -364,7 +363,6 @@ docs/models/components/adminuser.md
 docs/models/components/contactschema.md
 docs/models/components/contact.md
 docs/models/components/upsertportalwidget.md
-docs/models/components/portalwidget.md
 docs/models/components/entitywidgetheadline.md
 docs/models/components/entitywidgetsubheadline.md
 docs/models/components/entitywidgettype.md
@@ -434,15 +432,15 @@ docs/models/components/opportunityschema.md
 docs/models/components/opportunity.md
 docs/models/components/orderschema.md
 docs/models/components/order.md
-docs/models/components/dollarrelation.md
+docs/models/components/schemasdollarrelation.md
 docs/models/components/schemascontract.md
+docs/models/components/schemastype.md
+docs/models/components/reimbursementeventschemas.md
+docs/models/components/dollarrelation.md
+docs/models/components/schemasinstallmenteventcontract.md
 docs/models/components/type.md
 docs/models/components/schemas.md
 docs/models/components/billingevent.md
-docs/models/components/installmenteventdollarrelation.md
-docs/models/components/installmenteventcontract.md
-docs/models/components/installmenteventtype.md
-docs/models/components/installmentevent.md
 docs/models/components/entityfilecount.md
 docs/models/components/productschema.md
 docs/models/components/product.md

@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ...models.components import billingevent as components_billingevent
-from ...models.components import installmentevent as components_installmentevent
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
@@ -41,7 +40,7 @@ class GetBillingEventsResponseBody:
     r"""List billing events for all contracts/orders of specific customer"""
     hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
     r"""Total number of billing events for pagination"""
-    results: Optional[List[Union[components_installmentevent.InstallmentEvent, components_billingevent.Schemas]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[Union[components_billingevent.Schemas, components_billingevent.ReimbursementEventSchemas]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
 
 

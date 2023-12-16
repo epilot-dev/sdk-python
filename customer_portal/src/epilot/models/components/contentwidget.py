@@ -31,6 +31,7 @@ class ContentWidgetType(str, Enum):
     ENTITY_WIDGET = 'ENTITY_WIDGET'
     TEASER_WIDGET = 'TEASER_WIDGET'
     DOCUMENT_WIDGET = 'DOCUMENT_WIDGET'
+    PAYMENT_WIDGET = 'PAYMENT_WIDGET'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
