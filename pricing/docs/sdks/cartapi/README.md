@@ -88,37 +88,18 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                     'string',
                 ],
                 billing_period=shared.BillingPeriod.WEEKLY,
-                sales_tax=shared.SalesTax.NONTAXABLE,
-                tax=[
-                shared.Tax(
-                    additional_properties={
-                        '_id': 'string',
-                        'type': 'string',
-                        'description': 'string',
-                        'behavior': 'string',
-                        'active': 'string',
-                        'region': 'string',
-                        'region_label': 'string',
-                        '_org': 'string',
-                        '_schema': 'string',
-                        '_tags': 'string',
-                        '_created_at': 'string',
-                        '_updated_at': 'string',
-                    },
-                    created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
-                    id='8a718dcd-4d08-4ffa-b671-3e809e1b5095',
-                    org='string',
-                    schema='string',
-                    tags=[
-                        'string',
-                    ],
-                    title='string',
-                    updated_at=dateutil.parser.isoparse('2023-04-18T02:54:24.080Z'),
-                    behavior=shared.Behavior.INCLUSIVE_MIXED,
-                    rate=1343.96,
-                    type=shared.TaxType.VAT,
-                ),
-            ],
+                tax=shared.Price1(
+                dollar_relation=[
+                    shared.EntityRelation(
+                        additional_properties={
+                            'key': 'string',
+                        },
+                        tags=[
+                            'string',
+                        ],
+                    ),
+                ],
+            ),
                 unit='string',
                 unit_amount_currency='EUR',
             ),
@@ -139,12 +120,12 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                         additional_properties={
                             'key': 'string',
                         },
-                        created_at=dateutil.parser.isoparse('2021-12-13T21:52:33.452Z'),
+                        created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
                         id='<ID>',
                         org='string',
                         schema='string',
-                        updated_at=dateutil.parser.isoparse('2022-10-07T05:49:24.603Z'),
-                        filename='specialist.m3a',
+                        updated_at=dateutil.parser.isoparse('2022-07-14T15:24:21.428Z'),
+                        filename='ascii_program_gold.wav',
                         mime_type='string',
                         versions=[
                             shared.Versions(
@@ -216,12 +197,12 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                 ),
             ),
             metadata=[
-                shared.MetaData1(),
+                shared.One(),
             ],
         ),
     ],
     metadata=[
-        shared.MetaData1(),
+        shared.One(),
     ],
     payment_method=shared.PaymentMethod(
         details={

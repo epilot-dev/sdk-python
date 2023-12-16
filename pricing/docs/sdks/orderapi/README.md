@@ -66,75 +66,50 @@ req = shared.OrderPayload(
                 'string',
             ],
             billing_period=shared.BillingPeriod.WEEKLY,
-            sales_tax=shared.SalesTax.NONTAXABLE,
-            tax=[
-            shared.Tax(
-                additional_properties={
-                    '_id': 'string',
-                    'type': 'string',
-                    'description': 'string',
-                    'behavior': 'string',
-                    'active': 'string',
-                    'region': 'string',
-                    'region_label': 'string',
-                    '_org': 'string',
-                    '_schema': 'string',
-                    '_tags': 'string',
-                    '_created_at': 'string',
-                    '_updated_at': 'string',
-                },
-                created_at=dateutil.parser.isoparse('2022-08-23T04:46:44.470Z'),
-                id='db7b9f9b-d21b-44f2-9723-407318b6c79c',
-                org='string',
-                schema='string',
-                tags=[
-                    'string',
-                ],
-                title='string',
-                updated_at=dateutil.parser.isoparse('2022-08-04T04:36:14.538Z'),
-                behavior=shared.Behavior.INCLUSIVE_LOWER,
-                rate=5305.72,
-                type=shared.TaxType.GST,
-            ),
-        ],
+            tax=shared.Price1(
+            dollar_relation=[
+                shared.EntityRelation(
+                    additional_properties={
+                        'key': 'string',
+                    },
+                    tags=[
+                        'string',
+                    ],
+                ),
+            ],
+        ),
             unit='string',
             unit_amount_currency='EUR',
         ),
             currency='EUR',
             item_components=[
                 shared.PriceItemInput(
-                    price=shared.Price(
+                    price=shared.CompositePrice(
                     additional_properties={
                         '$ref': 'string',
                     },
                     tags=[
                         'string',
                     ],
-                    billing_period=shared.BillingPeriod.MONTHLY,
-                    sales_tax=shared.SalesTax.STANDARD,
-                    tax=shared.Price1(
+                    price_components=shared.Two(
                     dollar_relation=[
-                        shared.EntityRelation(
-                            additional_properties={
-                                'key': 'string',
-                            },
+                        shared.PriceComponentRelation(
                             tags=[
                                 'string',
                             ],
                         ),
                     ],
                 ),
-                    unit=shared.PriceSchemas1.L,
                     unit_amount_currency='EUR',
                 ),
                     currency='EUR',
                     metadata=[
-                        shared.MetaData1(),
+                        shared.One(),
                     ],
                 ),
             ],
             metadata=[
-                shared.MetaData1(),
+                shared.One(),
             ],
         ),
     ],
@@ -226,57 +201,68 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
                 'string',
             ],
             billing_period=shared.BillingPeriod.EVERY_QUARTER,
-            sales_tax=shared.SalesTax.STANDARD,
-            tax=shared.Price1(
-            dollar_relation=[
-                shared.EntityRelation(
-                    additional_properties={
-                        'key': 'string',
-                    },
-                    tags=[
-                        'string',
-                    ],
-                ),
-            ],
-        ),
-            unit=shared.PriceSchemas1.KW,
+            tax=[
+            shared.Tax(
+                additional_properties={
+                    '_id': 'string',
+                    'type': 'string',
+                    'description': 'string',
+                    'behavior': 'string',
+                    'active': 'string',
+                    'region': 'string',
+                    'region_label': 'string',
+                    '_org': 'string',
+                    '_schema': 'string',
+                    '_tags': 'string',
+                    '_created_at': 'string',
+                    '_updated_at': 'string',
+                },
+                created_at=dateutil.parser.isoparse('2021-07-04T18:23:03.249Z'),
+                id='10049643-f8ec-4f5e-9903-f16783587126',
+                org='string',
+                schema='string',
+                tags=[
+                    'string',
+                ],
+                title='string',
+                updated_at=dateutil.parser.isoparse('2021-04-11T20:52:51.479Z'),
+                behavior=shared.Behavior.INCLUSIVE_LOWER,
+                rate=7376.37,
+                type=shared.TaxType.VAT,
+            ),
+        ],
+            unit=shared.PriceSchemas1.M2,
             unit_amount_currency='EUR',
         ),
             currency='EUR',
             item_components=[
                 shared.PriceItemInput(
-                    price=shared.Price(
+                    price=shared.CompositePrice(
                     additional_properties={
                         '$ref': 'string',
                     },
                     tags=[
                         'string',
                     ],
-                    billing_period=shared.BillingPeriod.MONTHLY,
-                    sales_tax=shared.SalesTax.REDUCED,
-                    tax=shared.Price1(
+                    price_components=shared.Two(
                     dollar_relation=[
-                        shared.EntityRelation(
-                            additional_properties={
-                                'key': 'string',
-                            },
+                        shared.PriceComponentRelation(
                             tags=[
                                 'string',
                             ],
                         ),
                     ],
                 ),
-                    unit=shared.PriceSchemas1.KWH,
                     unit_amount_currency='EUR',
                 ),
                     currency='EUR',
                     metadata=[
-                        shared.MetaData1(),
+                        shared.One(),
                     ],
                 ),
             ],
             metadata=[
-                shared.MetaData1(),
+                shared.One(),
             ],
         ),
     ],

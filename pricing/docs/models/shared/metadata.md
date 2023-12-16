@@ -3,9 +3,9 @@
 
 ## Supported Types
 
-### MetaData1
+### One
 
 ```python
-metaData: shared.MetaData1 = /* values here */
+metaData: shared.One = /* values here */
 ```
 

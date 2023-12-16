@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 from .compositeprice import CompositePrice
-from .metadata import MetaData1
+from .metadata import One
 from .price import Price
 from .priceitem import PriceItem, PriceItemInput
 from .product import Product
@@ -17,7 +17,7 @@ from typing import List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CompositePriceItem:
-    r"""Represents a price item"""
+    r"""Represents a composite price input to the pricing library."""
     price: Optional[Union[Price, CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
     r"""The price snapshot data."""
     product: Optional[Product] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_product'), 'exclude': lambda f: f is None }})
@@ -38,7 +38,7 @@ class CompositePriceItem:
     r"""The flag for prices that contain price components."""
     item_components: Optional[List[PriceItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_components'), 'exclude': lambda f: f is None }})
     r"""Contains price item configurations, per price component, when the main price item is a [composite price](/api/pricing#tag/dynamic_price_schema)."""
-    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[List[Union[One]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
     r"""The id of the price."""
@@ -63,7 +63,7 @@ class CompositePriceItem:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CompositePriceItemInput:
-    r"""Represents a price item"""
+    r"""Represents a composite price input to the pricing library."""
     price: Optional[Union[Price, CompositePrice]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_price'), 'exclude': lambda f: f is None }})
     r"""The price snapshot data."""
     currency: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currency'), 'exclude': lambda f: f is None }})
@@ -76,7 +76,7 @@ class CompositePriceItemInput:
     r"""The flag for prices that contain price components."""
     item_components: Optional[List[PriceItemInput]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('item_components'), 'exclude': lambda f: f is None }})
     r"""Contains price item configurations, per price component, when the main price item is a [composite price](/api/pricing#tag/dynamic_price_schema)."""
-    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[List[Union[One]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     price_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('price_id'), 'exclude': lambda f: f is None }})
     r"""The id of the price."""

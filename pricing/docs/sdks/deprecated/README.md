@@ -35,7 +35,7 @@ res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput
     ],
     address=shared.OpportunityAddress(
         dollar_relation_ref=[
-            shared.Opportunity1(),
+            shared.OpportunitySchemas1(),
         ],
     ),
     assignee=[
@@ -45,7 +45,7 @@ res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput
     ],
     billing_address=shared.BillingAddress(
         dollar_relation_ref=[
-            shared.OpportunitySchemas1(),
+            shared.OpportunitySchemasBillingAddress1(),
         ],
     ),
     customer=shared.OpportunityCustomer(
@@ -61,7 +61,7 @@ res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput
         ],
     ),
     dates=[
-        shared.One(
+        shared.Opportunity1(
             tags=[
                 'string',
             ],

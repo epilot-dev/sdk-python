@@ -1,7 +1,5 @@
 # BillingPeriod
 
-For recurring prices `billing_period` defines the default extent of the recurrence.
-
 
 ## Values
 

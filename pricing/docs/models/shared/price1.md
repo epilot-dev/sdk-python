@@ -1,7 +1,5 @@
 # Price1
 
-The default tax rate applied to the price
-
 
 ## Fields
 

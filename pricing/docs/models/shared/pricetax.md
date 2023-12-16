@@ -1,5 +1,7 @@
 # PriceTax
 
+The default tax rate applied to the price
+
 
 ## Supported Types
 

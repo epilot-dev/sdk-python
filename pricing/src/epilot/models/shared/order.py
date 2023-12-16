@@ -5,7 +5,7 @@ import dataclasses
 from .address import Address
 from .compositepriceitem import CompositePriceItem
 from .entityrelation import EntityRelation
-from .metadata import MetaData1
+from .metadata import One
 from .ordersource import OrderSource
 from .orderstatus import OrderStatus
 from .paymentmethod import PaymentMethod
@@ -86,7 +86,7 @@ class Order:
     r"""The delivery address"""
     line_items: Optional[List[Union[PriceItem, CompositePriceItem]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('line_items'), 'exclude': lambda f: f is None }})
     r"""Tracks a set of product prices, quantities, (discounts) and taxes."""
-    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[List[Union[One]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     order_number: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('order_number'), 'exclude': lambda f: f is None }})
     r"""The order number (customer facing)"""

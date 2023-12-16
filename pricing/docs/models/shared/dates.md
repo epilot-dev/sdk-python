@@ -3,9 +3,9 @@
 
 ## Supported Types
 
-### One
+### Opportunity1
 
 ```python
-dates: shared.One = /* values here */
+dates: shared.Opportunity1 = /* values here */
 ```
 

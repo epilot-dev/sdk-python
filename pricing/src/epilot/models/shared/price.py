@@ -48,7 +48,6 @@ class RenewalDurationUnit(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Price1:
-    r"""The default tax rate applied to the price"""
     dollar_relation: Optional[List[EntityRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 

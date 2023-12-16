@@ -3,9 +3,9 @@
 
 ## Supported Types
 
-### OpportunitySchemas1
+### OpportunitySchemasBillingAddress1
 
 ```python
-opportunityDollarRelationRef: shared.OpportunitySchemas1 = /* values here */
+opportunityDollarRelationRef: shared.OpportunitySchemasBillingAddress1 = /* values here */
 ```
 

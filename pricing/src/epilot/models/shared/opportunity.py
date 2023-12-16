@@ -12,7 +12,7 @@ from typing import Any, Dict, List, Optional, Union
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class Opportunity1:
+class OpportunitySchemas1:
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is None }})
     r"""The id of the referenced entity"""
     path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path'), 'exclude': lambda f: f is None }})
@@ -25,7 +25,7 @@ class Opportunity1:
 @dataclasses.dataclass
 class OpportunityAddress:
     r"""A list of additional addresses"""
-    dollar_relation_ref: Optional[List[Union[Opportunity1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation_ref'), 'exclude': lambda f: f is None }})
+    dollar_relation_ref: Optional[List[Union[OpportunitySchemas1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation_ref'), 'exclude': lambda f: f is None }})
     r"""The relation from which a field is being referenced"""
     
 
@@ -58,7 +58,7 @@ class Assignee:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class OpportunitySchemas1:
+class OpportunitySchemasBillingAddress1:
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_id'), 'exclude': lambda f: f is None }})
     r"""The id of the referenced entity"""
     path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path'), 'exclude': lambda f: f is None }})
@@ -71,7 +71,7 @@ class OpportunitySchemas1:
 @dataclasses.dataclass
 class BillingAddress:
     r"""The billing address"""
-    dollar_relation_ref: Optional[List[Union[OpportunitySchemas1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation_ref'), 'exclude': lambda f: f is None }})
+    dollar_relation_ref: Optional[List[Union[OpportunitySchemasBillingAddress1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation_ref'), 'exclude': lambda f: f is None }})
     r"""The relation from which a field is being referenced"""
     
 
@@ -88,7 +88,7 @@ class OpportunityCustomer:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class One:
+class Opportunity1:
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""The date tags"""
     value: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value'), 'exclude': lambda f: f is None }})
@@ -150,7 +150,7 @@ class Opportunity:
     r"""The billing address"""
     customer: Optional[OpportunityCustomer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customer'), 'exclude': lambda f: f is None }})
     r"""A list of customers related with the opportunity"""
-    dates: Optional[List[Union[One]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dates'), 'exclude': lambda f: f is None }})
+    dates: Optional[List[Union[Opportunity1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dates'), 'exclude': lambda f: f is None }})
     r"""A set of dates associated with the opportunity"""
     delivery_address: Optional[DeliveryAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delivery_address'), 'exclude': lambda f: f is None }})
     r"""The delivery address"""
@@ -193,7 +193,7 @@ class OpportunityInput:
     r"""The billing address"""
     customer: Optional[OpportunityCustomer] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customer'), 'exclude': lambda f: f is None }})
     r"""A list of customers related with the opportunity"""
-    dates: Optional[List[Union[One]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dates'), 'exclude': lambda f: f is None }})
+    dates: Optional[List[Union[Opportunity1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dates'), 'exclude': lambda f: f is None }})
     r"""A set of dates associated with the opportunity"""
     delivery_address: Optional[DeliveryAddress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('delivery_address'), 'exclude': lambda f: f is None }})
     r"""The delivery address"""

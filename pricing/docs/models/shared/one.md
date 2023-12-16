@@ -1,9 +1,11 @@
 # One
 
+Key value pair entry
+
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `tags`             | List[*str*]        | :heavy_minus_sign: | The date tags      |
-| `value`            | *Optional[str]*    | :heavy_minus_sign: | The date value     |
+| `key`              | *Optional[str]*    | :heavy_minus_sign: | Item key           |
+| `value`            | *Optional[str]*    | :heavy_minus_sign: | Item value         |

@@ -1,5 +1,7 @@
 # PriceItemPrice
 
+The price snapshot data.
+
 
 ## Supported Types
 

@@ -1,5 +1,7 @@
 # TaxAmountTax
 
+The tax applied.
+
 
 ## Supported Types
 

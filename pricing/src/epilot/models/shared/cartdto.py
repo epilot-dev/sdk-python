@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 from .address import Address
 from .customer import Customer
-from .metadata import MetaData1
+from .metadata import One
 from .ordersource import OrderSource
 from .orderstatus import OrderStatus
 from .paymentmethod import PaymentMethod
@@ -28,7 +28,7 @@ class CartDto:
     files: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
     r"""An array of file IDs, already upload into the File API, that are related with this cart"""
     journey_data: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey_data'), 'exclude': lambda f: f is None }})
-    metadata: Optional[List[Union[MetaData1]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metadata: Optional[List[Union[One]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
     r"""A set of key-value pairs used to store meta data information about an entity."""
     payment_method: Optional[PaymentMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payment_method'), 'exclude': lambda f: f is None }})
     r"""A PaymentMethod represent your customer's payment instruments."""

@@ -12,7 +12,6 @@ from typing import Any, Dict, List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Two:
-    r"""A set of [price](/api/pricing#tag/simple_price_schema) components that define the composite price."""
     dollar_relation: Optional[List[PriceComponentRelation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     
 

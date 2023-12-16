@@ -4,7 +4,6 @@ from __future__ import annotations
 from enum import Enum
 
 class BillingPeriod(str, Enum):
-    r"""For recurring prices `billing_period` defines the default extent of the recurrence."""
     WEEKLY = 'weekly'
     MONTHLY = 'monthly'
     EVERY_QUARTER = 'every_quarter'
