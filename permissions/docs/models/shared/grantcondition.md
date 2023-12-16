@@ -1,11 +1,13 @@
 # GrantCondition
 
+An additional condition that must be met for the grant
+
 
 ## Supported Types
 
-### Schemas
+### EqualsCondition
 
 ```python
-grantCondition: shared.Schemas = /* values here */
+grantCondition: shared.EqualsCondition = /* values here */
 ```
 

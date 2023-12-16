@@ -1,4 +1,4 @@
-# Schemas
+# EqualsCondition
 
 Check if attribute equals to any of the values
 

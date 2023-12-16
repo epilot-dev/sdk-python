@@ -13,7 +13,7 @@ class Operation(str, Enum):
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class Schemas:
+class EqualsCondition:
     r"""Check if attribute equals to any of the values"""
     attribute: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attribute') }})
     operation: Operation = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation') }})

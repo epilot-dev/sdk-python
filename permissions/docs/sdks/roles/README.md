@@ -184,15 +184,30 @@ s = epilot.Epilot(
 res = s.roles.put_role(role_id='123:owner', role_payload=shared.One(
     expires_at=dateutil.parser.isoparse('2028-07-21T17:32:28Z'),
     grants=[
-        shared.Grant(
+        shared.GrantWithDependencies(
             action='entity-read',
             conditions=[
-                shared.Schemas(
+                shared.EqualsCondition(
                     attribute='workflows.primary.task_name',
                     operation=shared.Operation.EQUALS,
                     values=[
                         'string',
                     ],
+                ),
+            ],
+            dependencies=[
+                shared.Grant(
+                    action='entity-read',
+                    conditions=[
+                        shared.EqualsCondition(
+                            attribute='workflows.primary.task_name',
+                            operation=shared.Operation.EQUALS,
+                            values=[
+                                'string',
+                            ],
+                        ),
+                    ],
+                    resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
                 ),
             ],
             resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',

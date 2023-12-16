@@ -3,22 +3,25 @@
 from __future__ import annotations
 import dataclasses
 from .equalscondition import EqualsCondition
+from .grant import Grant
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
 from typing import List, Optional, Union
 
-class Effect(str, Enum):
+class GrantWithDependenciesEffect(str, Enum):
     ALLOW = 'allow'
     DENY = 'deny'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class Grant:
+class GrantWithDependencies:
     action: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('action') }})
     conditions: Optional[List[Union[EqualsCondition]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conditions'), 'exclude': lambda f: f is None }})
-    effect: Optional[Effect] = dataclasses.field(default=Effect.ALLOW, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('effect'), 'exclude': lambda f: f is None }})
+    dependencies: Optional[List[Grant]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dependencies'), 'exclude': lambda f: f is None }})
+    r"""Provided additional dependencies, exploded when storing the role"""
+    effect: Optional[GrantWithDependenciesEffect] = dataclasses.field(default=GrantWithDependenciesEffect.ALLOW, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('effect'), 'exclude': lambda f: f is None }})
     resource: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('resource'), 'exclude': lambda f: f is None }})
     
 

@@ -3,14 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from .grant import Grant
+from .grantwithdependencies import GrantWithDependencies
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from epilot import utils
 from typing import List, Optional
 
-class RolePayloadSchemasTrueRolePayloadType(str, Enum):
+class RolePayloadSchemasTrue4Type(str, Enum):
     PARTNER_ROLE = 'partner_role'
 
 
@@ -18,8 +18,7 @@ class RolePayloadSchemasTrueRolePayloadType(str, Enum):
 @dataclasses.dataclass
 class Four:
     r"""A role that appears in another organization's role list that can be assigned but not modified by the partner organization."""
-    grants: List[Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
-    r"""List of grants (permissions) applied to the role"""
+    grants: List[GrantWithDependencies] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Format: <organization_id>:<slug>"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -28,7 +27,7 @@ class Four:
     r"""Id of an organization"""
     slug: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slug') }})
     r"""URL-friendly name for the role"""
-    type: RolePayloadSchemasTrueRolePayloadType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    type: RolePayloadSchemasTrue4Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     expires_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     r"""date and time then the role will expire"""
     partner_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partner_org_id'), 'exclude': lambda f: f is None }})
@@ -43,8 +42,7 @@ class RolePayloadSchemasTrueType(str, Enum):
 @dataclasses.dataclass
 class Three:
     r"""A role that can be assigned to users in other organizations for sharing purposes."""
-    grants: List[Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
-    r"""List of grants (permissions) applied to the role"""
+    grants: List[GrantWithDependencies] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Format: <organization_id>:<slug>"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -67,8 +65,7 @@ class RolePayloadSchemasType(str, Enum):
 @dataclasses.dataclass
 class Two:
     r"""A role automatically applied to all users in an organization."""
-    grants: List[Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
-    r"""List of grants (permissions) applied to the role"""
+    grants: List[GrantWithDependencies] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Format: <organization_id>:<slug>"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -93,8 +90,7 @@ class RolePayloadType(str, Enum):
 @dataclasses.dataclass
 class One:
     r"""A standard user role. Must be explicitly assigned to users."""
-    grants: List[Grant] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
-    r"""List of grants (permissions) applied to the role"""
+    grants: List[GrantWithDependencies] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('grants') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Format: <organization_id>:<slug>"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
