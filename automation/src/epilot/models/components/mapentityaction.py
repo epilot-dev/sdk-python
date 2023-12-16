@@ -4,8 +4,10 @@ from __future__ import annotations
 import dataclasses
 from .erroroutput import ErrorOutput
 from .executionstatus import ExecutionStatus
+from .mapentityconfig import MapEntityConfig
 from .retrystrategy import RetryStrategy
 from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
 from epilot import utils
 from typing import Any, Dict, Optional
 
@@ -20,13 +22,16 @@ class MapEntityActionReason:
     
 
 
+class MapEntityActionType(str, Enum):
+    MAP_ENTITY = 'map-entity'
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class MapEntityAction:
     allow_failure: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allow_failure'), 'exclude': lambda f: f is None }})
     r"""Whether to stop execution in a failed state if this action fails"""
-    config: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
+    config: Optional[MapEntityConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
     created_automatically: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_automatically'), 'exclude': lambda f: f is None }})
     r"""Flag indicating whether the action was created automatically or manually"""
     error_output: Optional[ErrorOutput] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_output'), 'exclude': lambda f: f is None }})
@@ -39,7 +44,7 @@ class MapEntityAction:
     retry_strategy: Optional[RetryStrategy] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('retry_strategy'), 'exclude': lambda f: f is None }})
     r"""different behaviors for retrying failed execution actions."""
     started_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('started_at'), 'exclude': lambda f: f is None }})
-    type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[MapEntityActionType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'exclude': lambda f: f is None }})
     
 

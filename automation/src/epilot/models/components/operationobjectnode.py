@@ -10,7 +10,6 @@ from typing import Any, Dict, List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OperationObjectNode:
-    r"""Mapping operation nodes are either primitive values or operation node objects"""
     append: Optional[List[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_append'), 'exclude': lambda f: f is None }})
     r"""Append to array"""
     copy: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_copy'), 'exclude': lambda f: f is None }})

@@ -1,5 +1,7 @@
 # Uniq
 
+Unique array
+
 
 ## Supported Types
 

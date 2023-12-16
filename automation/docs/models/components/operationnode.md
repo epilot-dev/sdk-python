@@ -1,5 +1,7 @@
 # OperationNode
 
+Mapping operation nodes are either primitive values or operation node objects
+
 
 ## Supported Types
 
