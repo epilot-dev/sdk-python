@@ -7,8 +7,59 @@ Organization info
 
 ### Available Operations
 
+* [create_organization](#create_organization) - createOrganization
 * [get_organization](#get_organization) - getOrganization
 * [update_organization](#update_organization) - updateOrganization
+
+## create_organization
+
+createOrganization
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import components
+
+s = epilot.Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+req = components.CreateOrganizationRequest(
+    organization_detail=components.OrganizationDetail(
+        email_address='epilot@epilot.cloud',
+        name='epilot',
+        pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
+        type='Vendor',
+    ),
+    owner_user=components.OwnerUser(
+        email_address='ny.huynhthi@axonactive.com',
+        full_name='Ny Huynh',
+    ),
+)
+
+res = s.organization.create_organization(req)
+
+if res.organization is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [components.CreateOrganizationRequest](../../models/components/createorganizationrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+
+
+### Response
+
+**[operations.CreateOrganizationResponse](../../models/operations/createorganizationresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get_organization
 
@@ -46,7 +97,7 @@ if res.organization is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update_organization
 
@@ -102,4 +153,4 @@ if res.organization is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

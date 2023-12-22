@@ -75,3 +75,11 @@ Based on:
 - Speakeasy CLI 1.126.4 (2.214.10) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.4.1] organization
+
+## 2023-12-22 00:28:43
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/organization-v2.yaml
+- Speakeasy CLI 1.128.1 (2.223.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.4.2] organization

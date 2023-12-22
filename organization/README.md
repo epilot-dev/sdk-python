@@ -15,14 +15,26 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=organi
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+req = components.CreateOrganizationRequest(
+    organization_detail=components.OrganizationDetail(
+        email_address='epilot@epilot.cloud',
+        name='epilot',
+        pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
+        type='Vendor',
+    ),
+    owner_user=components.OwnerUser(
+        email_address='ny.huynhthi@axonactive.com',
+        full_name='Ny Huynh',
+    ),
+)
 
-res = s.organization.get_organization(org_id='739224')
+res = s.organization.create_organization(req)
 
 if res.organization is not None:
     # handle response
@@ -35,8 +47,13 @@ if res.organization is not None:
 
 ### [organization](docs/sdks/organization/README.md)
 
+* [create_organization](docs/sdks/organization/README.md#create_organization) - createOrganization
 * [get_organization](docs/sdks/organization/README.md#get_organization) - getOrganization
 * [update_organization](docs/sdks/organization/README.md#update_organization) - updateOrganization
+
+### [internal](docs/sdks/internal/README.md)
+
+* [create_organization](docs/sdks/internal/README.md#create_organization) - createOrganization
 
 ### [organization_settings](docs/sdks/organizationsettings/README.md)
 
@@ -54,22 +71,34 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ### Example
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+req = components.CreateOrganizationRequest(
+    organization_detail=components.OrganizationDetail(
+        email_address='epilot@epilot.cloud',
+        name='epilot',
+        pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
+        type='Vendor',
+    ),
+    owner_user=components.OwnerUser(
+        email_address='ny.huynhthi@axonactive.com',
+        full_name='Ny Huynh',
+    ),
+)
 
 res = None
 try:
-    res = s.organization.get_organization(org_id='739224')
+    res = s.organization.create_organization(req)
 except errors.SDKError as e:
     print(e)  # handle exception
     raise(e)
@@ -97,15 +126,27 @@ You can override the default server globally by passing a server index to the `s
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components
 
 s = epilot.Epilot(
     server_idx=0,
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+req = components.CreateOrganizationRequest(
+    organization_detail=components.OrganizationDetail(
+        email_address='epilot@epilot.cloud',
+        name='epilot',
+        pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
+        type='Vendor',
+    ),
+    owner_user=components.OwnerUser(
+        email_address='ny.huynhthi@axonactive.com',
+        full_name='Ny Huynh',
+    ),
+)
 
-res = s.organization.get_organization(org_id='739224')
+res = s.organization.create_organization(req)
 
 if res.organization is not None:
     # handle response
@@ -118,15 +159,27 @@ if res.organization is not None:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components
 
 s = epilot.Epilot(
     server_url="https://organization-v2.sls.epilot.io",
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+req = components.CreateOrganizationRequest(
+    organization_detail=components.OrganizationDetail(
+        email_address='epilot@epilot.cloud',
+        name='epilot',
+        pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
+        type='Vendor',
+    ),
+    owner_user=components.OwnerUser(
+        email_address='ny.huynhthi@axonactive.com',
+        full_name='Ny Huynh',
+    ),
+)
 
-res = s.organization.get_organization(org_id='739224')
+res = s.organization.create_organization(req)
 
 if res.organization is not None:
     # handle response
@@ -168,14 +221,26 @@ This SDK supports the following security scheme globally:
 To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
+req = components.CreateOrganizationRequest(
+    organization_detail=components.OrganizationDetail(
+        email_address='epilot@epilot.cloud',
+        name='epilot',
+        pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
+        type='Vendor',
+    ),
+    owner_user=components.OwnerUser(
+        email_address='ny.huynhthi@axonactive.com',
+        full_name='Ny Huynh',
+    ),
+)
 
-res = s.organization.get_organization(org_id='739224')
+res = s.organization.create_organization(req)
 
 if res.organization is not None:
     # handle response
