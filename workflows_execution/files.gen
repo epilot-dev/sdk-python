@@ -35,6 +35,7 @@ src/epilot/models/shared/stepjourney.py
 src/epilot/models/shared/ecpdetails.py
 src/epilot/models/shared/steptype.py
 src/epilot/models/shared/dynamicduedate.py
+src/epilot/models/shared/stepdescription.py
 src/epilot/models/shared/automationconfig.py
 src/epilot/models/shared/sectionstatus.py
 src/epilot/models/shared/workflowcontext.py
@@ -102,6 +103,7 @@ docs/models/shared/steptype.md
 docs/models/shared/actiontypecondition.md
 docs/models/shared/timeperiod.md
 docs/models/shared/dynamicduedate.md
+docs/models/shared/stepdescription.md
 docs/models/shared/automationconfig.md
 docs/models/shared/sectionstatus.md
 docs/models/shared/workflowcontext.md

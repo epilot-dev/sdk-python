@@ -4,6 +4,7 @@ from __future__ import annotations
 import dataclasses
 from .ecpdetails import ECPDetails
 from .itemtype import ItemType
+from .stepdescription import StepDescription
 from .steprequirement import StepRequirement
 from .steptype import StepType
 from dataclasses_json import Undefined, dataclass_json
@@ -18,6 +19,8 @@ class StepSimplified:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     type: ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     definition_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId'), 'exclude': lambda f: f is None }})
+    description: Optional[StepDescription] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    r"""Longer information regarding Task"""
     ecp: Optional[ECPDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ecp'), 'exclude': lambda f: f is None }})
     r"""Details regarding ECP for the workflow step"""
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})

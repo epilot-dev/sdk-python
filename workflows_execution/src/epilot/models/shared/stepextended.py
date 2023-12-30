@@ -6,6 +6,7 @@ from .automationconfig import AutomationConfig
 from .dynamicduedate import DynamicDueDate
 from .ecpdetails import ECPDetails
 from .itemtype import ItemType
+from .stepdescription import StepDescription
 from .stepjourney import StepJourney
 from .steprequirement import StepRequirement
 from .stepstatus import StepStatus
@@ -35,6 +36,8 @@ class StepExtended:
     contexts: Optional[List[WorkflowContext]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contexts'), 'exclude': lambda f: f is None }})
     created: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'exclude': lambda f: f is None }})
     definition_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitionId'), 'exclude': lambda f: f is None }})
+    description: Optional[StepDescription] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    r"""Longer information regarding Task"""
     due_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dueDate'), 'exclude': lambda f: f is None }})
     dynamic_due_date: Optional[DynamicDueDate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dynamicDueDate'), 'exclude': lambda f: f is None }})
     r"""set a Duedate for a step then a specific"""
