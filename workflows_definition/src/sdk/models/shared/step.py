@@ -5,6 +5,7 @@ import dataclasses
 from .dynamicduedate import DynamicDueDate
 from .ecpdetails import ECPDetails
 from .itemtype import ItemType
+from .stepdescription import StepDescription
 from .stepjourney import StepJourney
 from .steprequirement import StepRequirement
 from .steptype import StepType
@@ -31,6 +32,8 @@ class Step:
     type: ItemType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     assigned_to: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignedTo'), 'exclude': lambda f: f is None }})
     automation_config: Optional[AutomationConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automationConfig'), 'exclude': lambda f: f is None }})
+    description: Optional[StepDescription] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
+    r"""Longer information regarding Task"""
     due_date: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dueDate'), 'exclude': lambda f: f is None }})
     dynamic_due_date: Optional[DynamicDueDate] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dynamicDueDate'), 'exclude': lambda f: f is None }})
     r"""set a Duedate for a step then a specific"""

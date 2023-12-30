@@ -107,3 +107,11 @@ Based on:
 - Speakeasy CLI 1.126.4 (2.214.10) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v2.2.1] workflows_definition
+
+## 2023-12-30 01:16:54
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/workflows-definition.yaml
+- Speakeasy CLI 1.129.1 (2.223.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v2.2.2] workflows_definition

@@ -54,6 +54,7 @@ req = shared.WorkflowDefinition(
                     automation_config=shared.AutomationConfig(
                         flow_id='string',
                     ),
+                    description=shared.StepDescription(),
                     due_date='2021-04-27T12:00:00.000Z',
                     dynamic_due_date=shared.DynamicDueDate(
                         action_type_condition=shared.ActionTypeCondition.STEP_CLOSED,
@@ -123,7 +124,7 @@ if res.workflow_definition is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 400,401,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## delete_definition
 
@@ -162,7 +163,7 @@ if res.status_code == 200:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_definition
 
@@ -202,7 +203,7 @@ if res.workflow_definition is not None:
 | ----------------------------- | ----------------------------- | ----------------------------- |
 | errors.ErrorResp              | 400,401,500                   | application/json              |
 | errors.DefinitionNotFoundResp | 404                           | application/json              |
-| errors.SDKError               | 400-600                       | */*                           |
+| errors.SDKError               | 4x-5xx                        | */*                           |
 
 ## get_definitions
 
@@ -234,7 +235,7 @@ if res.classes is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 500              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_max_allowed_limit
 
@@ -266,7 +267,7 @@ if res.max_allowed_limit is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 500              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_workflow_closing_reasons
 
@@ -304,7 +305,7 @@ if res.closing_reasons_ids is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## set_workflow_closing_reasons
 
@@ -349,7 +350,7 @@ if res.status_code == 200:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update_definition
 
@@ -394,6 +395,7 @@ res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinitio
                     automation_config=shared.AutomationConfig(
                         flow_id='string',
                     ),
+                    description=shared.StepDescription(),
                     due_date='2021-04-27T12:00:00.000Z',
                     dynamic_due_date=shared.DynamicDueDate(
                         action_type_condition=shared.ActionTypeCondition.STEP_CLOSED,
@@ -462,4 +464,4 @@ if res.workflow_definition is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 400,401,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |

@@ -47,7 +47,7 @@ if res.status_code == 200:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 400,500          | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## create_closing_reason
 
@@ -89,7 +89,7 @@ if res.closing_reason is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get_all_closing_reasons
 
@@ -127,4 +127,4 @@ if res.closing_reasons is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
