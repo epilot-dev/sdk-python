@@ -120,11 +120,11 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                         additional_properties={
                             'key': 'string',
                         },
-                        created_at=dateutil.parser.isoparse('2021-07-18T16:49:23.890Z'),
+                        created_at=dateutil.parser.isoparse('2022-07-18T21:10:42.213Z'),
                         id='<ID>',
                         org='string',
                         schema='string',
-                        updated_at=dateutil.parser.isoparse('2022-07-14T15:24:21.428Z'),
+                        updated_at=dateutil.parser.isoparse('2023-07-15T03:40:19.475Z'),
                         filename='ascii_program_gold.wav',
                         mime_type='string',
                         versions=[
@@ -242,4 +242,4 @@ if res.checkout_cart_result is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 400              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |

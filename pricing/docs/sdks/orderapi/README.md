@@ -145,7 +145,7 @@ if res.order is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 400              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## put_order
 
@@ -217,7 +217,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
                     '_created_at': 'string',
                     '_updated_at': 'string',
                 },
-                created_at=dateutil.parser.isoparse('2021-07-04T18:23:03.249Z'),
+                created_at=dateutil.parser.isoparse('2022-07-04T22:26:02.046Z'),
                 id='10049643-f8ec-4f5e-9903-f16783587126',
                 org='string',
                 schema='string',
@@ -225,7 +225,7 @@ res = s.order_api.put_order(order_payload=shared.OrderPayload(
                     'string',
                 ],
                 title='string',
-                updated_at=dateutil.parser.isoparse('2021-04-11T20:52:51.479Z'),
+                updated_at=dateutil.parser.isoparse('2022-04-11T23:05:30.540Z'),
                 behavior=shared.Behavior.INCLUSIVE_LOWER,
                 rate=7376.37,
                 type=shared.TaxType.VAT,
@@ -297,4 +297,4 @@ if res.order is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.Error     | 400              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
