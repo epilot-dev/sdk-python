@@ -1,25 +1,10 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 8190aa87825f80bf02037b677edcb11a
-  docVersion: 2.0.0
-  speakeasyVersion: 1.126.4
-  generationVersion: 2.214.10
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: epilot
-  repoURL: https://github.com/epilot-dev/sdk-python.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
-features:
-  python:
-    additionalProperties: 0.1.0
-    core: 4.3.1
-    deprecations: 2.81.1
-    flattening: 2.81.1
-    globalSecurity: 2.83.1
-    globalServerURLs: 2.82.1
 python:
   version: 2.2.1
   author: epilot
@@ -35,8 +20,6 @@ python:
       shared: models/shared
       webhooks: models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=user
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: epilot-user
-  repoSubDirectory: user
