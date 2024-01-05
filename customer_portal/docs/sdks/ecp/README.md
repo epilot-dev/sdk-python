@@ -77,7 +77,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## create_custom_entity_activity
 
@@ -125,7 +125,7 @@ if res.activity_item is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## delete_entity_file
 
@@ -170,7 +170,7 @@ if res.object is not None:
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | errors.ErrorResp    | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| errors.SDKError     | 4x-5xx              | */*                 |
 
 ## delete_portal_user
 
@@ -207,7 +207,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,500          | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_all_contracts
 
@@ -246,7 +246,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_all_files
 
@@ -289,7 +289,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_all_opportunities
 
@@ -328,7 +328,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_all_orders
 
@@ -367,7 +367,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_billing_events
 
@@ -383,7 +383,7 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_billing_events("<YOUR_BEARER_TOKEN_HERE>", date_after=dateutil.parser.isoparse('2021-09-06T11:20:21.393Z'), date_before=dateutil.parser.isoparse('2022-12-14T11:26:39.960Z'), entity_id='string', event_type=operations.EventType.REIMBURSEMENT)
+res = s.ecp.get_billing_events("<YOUR_BEARER_TOKEN_HERE>", date_after=dateutil.parser.isoparse('2022-09-06T16:47:06.892Z'), date_before=dateutil.parser.isoparse('2023-12-15T03:03:37.312Z'), entity_id='string', event_type=operations.EventType.REIMBURSEMENT)
 
 if res.object is not None:
     # handle response
@@ -408,7 +408,7 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## get_contact
 
@@ -445,7 +445,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_contract
 
@@ -483,7 +483,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_entities_by_identifiers
 
@@ -524,7 +524,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 400,401,403,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_file_by_id
 
@@ -562,7 +562,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_files_count_by_entity
 
@@ -599,7 +599,7 @@ if res.classes is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_opportunity
 
@@ -637,7 +637,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_order
 
@@ -675,7 +675,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_organization_settings
 
@@ -712,7 +712,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,500          | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_portal_config
 
@@ -752,7 +752,7 @@ if res.portal_config is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_portal_user
 
@@ -789,7 +789,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,500          | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_portal_widgets
 
@@ -829,7 +829,7 @@ if res.upsert_portal_widget is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_schemas
 
@@ -866,7 +866,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,500          | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## save_entity_file
 
@@ -922,7 +922,7 @@ if res.object is not None:
 | Error Object        | Status Code         | Content Type        |
 | ------------------- | ------------------- | ------------------- |
 | errors.ErrorResp    | 400,401,403,404,500 | application/json    |
-| errors.SDKError     | 400-600             | */*                 |
+| errors.SDKError     | 4x-5xx              | */*                 |
 
 ## search_payment_relations_in_entities
 
@@ -963,7 +963,7 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## search_portal_user_entities
 
@@ -1010,7 +1010,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## track_file_downloaded
 
@@ -1048,7 +1048,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## trigger_entity_access_event
 
@@ -1087,7 +1087,7 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## update_contact
 
@@ -1129,7 +1129,7 @@ if res.object is not None:
 | -------------------------------- | -------------------------------- | -------------------------------- |
 | errors.ErrorResp                 | 401,404,500                      | application/json                 |
 | errors.UpdateContactResponseBody | 403                              | application/json                 |
-| errors.SDKError                  | 400-600                          | */*                              |
+| errors.SDKError                  | 4x-5xx                           | */*                              |
 
 ## update_contract
 
@@ -1171,7 +1171,7 @@ if res.object is not None:
 | --------------------------------- | --------------------------------- | --------------------------------- |
 | errors.ErrorResp                  | 401,404,500                       | application/json                  |
 | errors.UpdateContractResponseBody | 403                               | application/json                  |
-| errors.SDKError                   | 400-600                           | */*                               |
+| errors.SDKError                   | 4x-5xx                            | */*                               |
 
 ## update_opportunity
 
@@ -1212,7 +1212,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update_order
 
@@ -1253,7 +1253,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,404,500  | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update_portal_user
 
@@ -1294,7 +1294,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,500          | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## validate_cadence_entity_edit_rules
 
@@ -1315,7 +1315,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.ecp.validate_cadence_entity_edit_rules(id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT, attribute=dateutil.parser.isoparse('2023-04-17T01:10:16.547Z'))
+res = s.ecp.validate_cadence_entity_edit_rules(id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT, attribute=dateutil.parser.isoparse('2024-04-16T19:29:44.233Z'))
 
 if res.object is not None:
     # handle response
@@ -1338,4 +1338,4 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |

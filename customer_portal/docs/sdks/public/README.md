@@ -57,7 +57,7 @@ if res.status_code == 200:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 500              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## create_user
 
@@ -110,7 +110,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 400,500          | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_contact_count
 
@@ -157,7 +157,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 400,404,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_count_by_email
 
@@ -199,7 +199,7 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 500              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_portal_config_by_domain
 
@@ -240,7 +240,7 @@ if res.portal_config is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 500              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_public_portal_config
 
@@ -282,7 +282,7 @@ if res.portal_config is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 500              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_public_portal_widgets
 
@@ -324,7 +324,7 @@ if res.upsert_portal_widget is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## user_exists
 
@@ -367,4 +367,4 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 500              | application/json |
-| errors.SDKError  | 400-600          | */*              |
+| errors.SDKError  | 4x-5xx           | */*              |
