@@ -1,0 +1,55 @@
+lockVersion: 2.0.0
+id: 59f479cd-2e2e-4740-a85b-d4ff13596eaa
+management:
+  docChecksum: 88153a048a37af0988ef5bd002336a5e
+  docVersion: 0.0.1
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 2.2.2
+  configChecksum: ac40c2c457bdc2543ce2d08a7a5d1c1f
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: internal_auth
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=internal_auth
+features:
+  python:
+    additionalProperties: 0.1.0
+    core: 4.4.0
+    globalSecurity: 2.83.1
+    globalServerURLs: 2.82.1
+    unions: 2.82.5
+generatedFiles:
+  - src/epilot/sdkconfiguration.py
+  - src/epilot/sdk.py
+  - pylintrc
+  - setup.py
+  - src/epilot/__init__.py
+  - src/epilot/utils/__init__.py
+  - src/epilot/utils/retries.py
+  - src/epilot/utils/utils.py
+  - src/epilot/models/errors/sdkerror.py
+  - tests/helpers.py
+  - src/epilot/models/operations/getjwks.py
+  - src/epilot/models/operations/getopenidconfiguration.py
+  - src/epilot/models/operations/gettoken.py
+  - src/epilot/models/operations/gettokenv2.py
+  - src/epilot/models/shared/authrequest.py
+  - src/epilot/models/shared/security.py
+  - src/epilot/models/__init__.py
+  - src/epilot/models/errors/__init__.py
+  - src/epilot/models/operations/__init__.py
+  - src/epilot/models/shared/__init__.py
+  - docs/models/operations/keys.md
+  - docs/models/operations/getjwksresponsebody.md
+  - docs/models/operations/getjwksresponse.md
+  - docs/models/operations/getopenidconfigurationresponsebody.md
+  - docs/models/operations/getopenidconfigurationresponse.md
+  - docs/models/operations/gettokenresponsebody.md
+  - docs/models/operations/gettokenresponse.md
+  - docs/models/operations/gettokenv2responsebody.md
+  - docs/models/operations/gettokenv2response.md
+  - docs/models/shared/expires.md
+  - docs/models/shared/authrequest.md
+  - docs/models/shared/security.md
+  - docs/sdks/epilot/README.md
+  - USAGE.md
+  - .gitattributes
