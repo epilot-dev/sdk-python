@@ -1,0 +1,50 @@
+lockVersion: 2.0.0
+id: 21495979-beb3-4cdc-967a-d2e6fda33562
+management:
+  docChecksum: 3e73a0b032d576778d71b4b1bce49714
+  docVersion: 1.0.0
+  speakeasyVersion: internal
+  generationVersion: 2.225.2
+  releaseVersion: 2.1.1
+  configChecksum: 650392753f2fc019b0a4a5d6ec321090
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: submission
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=submission
+features:
+  python:
+    additionalProperties: 0.1.0
+    core: 4.4.0
+    deprecations: 2.81.1
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - src/epilot/sdkconfiguration.py
+  - src/epilot/submissions.py
+  - src/epilot/sdk.py
+  - pylintrc
+  - setup.py
+  - src/epilot/__init__.py
+  - src/epilot/utils/__init__.py
+  - src/epilot/utils/retries.py
+  - src/epilot/utils/utils.py
+  - src/epilot/models/errors/sdkerror.py
+  - tests/helpers.py
+  - src/epilot/models/operations/createsubmission.py
+  - src/epilot/models/shared/submissionpayload.py
+  - src/epilot/models/shared/optin.py
+  - src/epilot/models/shared/submissionentity.py
+  - src/epilot/models/shared/s3reference.py
+  - src/epilot/models/__init__.py
+  - src/epilot/models/errors/__init__.py
+  - src/epilot/models/operations/__init__.py
+  - src/epilot/models/shared/__init__.py
+  - docs/models/operations/createsubmissionresponse.md
+  - docs/models/shared/submissionpayload.md
+  - docs/models/shared/optin.md
+  - docs/models/shared/schema.md
+  - docs/models/shared/files.md
+  - docs/models/shared/submissionentity.md
+  - docs/models/shared/s3reference.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/submissions/README.md
+  - USAGE.md
+  - .gitattributes
