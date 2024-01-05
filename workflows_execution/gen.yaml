@@ -1,24 +1,10 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 0b4facb2e475353b2be77345cb758d52
-  docVersion: 1.0.0
-  speakeasyVersion: 1.129.1
-  generationVersion: 2.223.3
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: epilot
-  repoURL: https://github.com/epilot-dev/sdk-python.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
-features:
-  python:
-    core: 4.3.1
-    deprecations: 2.81.1
-    flattening: 2.81.1
-    globalSecurity: 2.83.1
-    globalServerURLs: 2.82.1
 python:
   version: 2.2.2
   author: epilot
@@ -34,8 +20,6 @@ python:
       shared: models/shared
       webhooks: models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_execution
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: epilot-workflows-execution
-  repoSubDirectory: workflows_execution
