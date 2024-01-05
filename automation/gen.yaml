@@ -1,28 +1,12 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 3f355cddc9ae620a696384108dc2e0ec
-  docVersion: 1.0.0
-  speakeasyVersion: 1.126.4
-  generationVersion: 2.214.10
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: epilot
-  repoURL: https://github.com/epilot-dev/sdk-python.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
   sdkFlattening: true
   telemetryEnabled: false
-features:
-  python:
-    additionalProperties: 0.1.0
-    core: 4.3.1
-    deprecations: 2.81.1
-    flattening: 2.81.1
-    globalSecurity: 2.83.1
-    globalServerURLs: 2.82.1
-    inputOutputModels: 2.83.0
 python:
   version: 1.5.0
   author: Epilot
@@ -38,8 +22,6 @@ python:
       shared: models/components
       webhooks: models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=automation
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: epilot-automation
-  repoSubDirectory: automation
