@@ -4,16 +4,16 @@ management:
   docChecksum: 0e661bd8cf4bb8f9a78a0eec763ee814
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 2.2.1
-  configChecksum: aa359ee1a8773dc578c030a6b5f21e3b
+  generationVersion: 2.228.1
+  releaseVersion: 2.2.2
+  configChecksum: dc912a6f0cc144349ec2d14c7c13a80d
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: notification
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=notification
 features:
   python:
     additionalProperties: 0.1.0
-    core: 4.4.0
+    core: 4.4.1
     flattening: 2.81.1
     globalSecurity: 2.83.1
     globalServerURLs: 2.82.1
