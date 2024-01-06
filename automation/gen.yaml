@@ -8,7 +8,7 @@ generation:
   sdkFlattening: true
   telemetryEnabled: false
 python:
-  version: 1.5.0
+  version: 1.5.1
   author: Epilot
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot API
