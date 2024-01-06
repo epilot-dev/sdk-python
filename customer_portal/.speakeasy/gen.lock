@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 875e421b-9fdf-42d5-ab3a-30a1cf7c82cf
 management:
-  docChecksum: ed61649f6cdc9fd71b8d2839ba41f985
+  docChecksum: 569a74031742fd61fac158b8cc79ab49
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 1.4.4
-  configChecksum: 17d80a6a0e2044840e13d9ab2794fc66
+  generationVersion: 2.228.1
+  releaseVersion: 1.4.5
+  configChecksum: cf2fc6e3a97a72740550caacc66e8c65
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: customer_portal
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
@@ -14,7 +14,7 @@ features:
   python:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.1.2
-    core: 4.4.0
+    core: 4.4.1
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.83.1
@@ -202,7 +202,7 @@ generatedFiles:
   - docs/models/operations/logintoportalasuserresponsebody.md
   - docs/models/operations/logintoportalasuserresponse.md
   - docs/models/operations/replaceecptemplatevariablessecurity.md
-  - docs/models/operations/replaceecptemplatevariablesrequestbody.md
+  - docs/models/operations/requestbody.md
   - docs/models/operations/customerportal.md
   - docs/models/operations/installerportal.md
   - docs/models/operations/replaceecptemplatevariablesresponsebody.md

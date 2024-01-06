@@ -17,9 +17,8 @@ class ReplaceECPTemplateVariablesSecurity:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ReplaceECPTemplateVariablesRequestBody:
-    r"""ECPVariables payload"""
-    contact_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contactId'), 'exclude': lambda f: f is None }})
+class RequestBody:
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
     r"""ID of the contact"""
     
 
@@ -29,6 +28,7 @@ class ReplaceECPTemplateVariablesRequestBody:
 @dataclasses.dataclass
 class CustomerPortal:
     invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
+    new_document_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('newDocumentLink'), 'exclude': lambda f: f is None }})
     
 
 
@@ -37,6 +37,7 @@ class CustomerPortal:
 @dataclasses.dataclass
 class InstallerPortal:
     invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
+    new_document_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('newDocumentLink'), 'exclude': lambda f: f is None }})
     
 
 

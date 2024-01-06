@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import components, errors, operations
-from typing import Optional
+from typing import Dict, Optional
 
 class ECPAdmin:
     r"""APIs defined for a ECP Admin"""
@@ -639,7 +639,7 @@ class ECPAdmin:
 
     
     
-    def replace_ecp_template_variables(self, request: operations.ReplaceECPTemplateVariablesRequestBody, security: operations.ReplaceECPTemplateVariablesSecurity) -> operations.ReplaceECPTemplateVariablesResponse:
+    def replace_ecp_template_variables(self, request: Optional[Dict[str, operations.RequestBody]], security: operations.ReplaceECPTemplateVariablesSecurity) -> operations.ReplaceECPTemplateVariablesResponse:
         r"""replaceECPTemplateVariables
         Replaces the template variables of a portal
         """
@@ -647,11 +647,9 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/replace-ecp-template-variables'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, operations.ReplaceECPTemplateVariablesRequestBody, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[Dict[str, operations.RequestBody]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        if data is None and form is None:
-            raise Exception('request body is required')
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         

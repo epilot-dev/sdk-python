@@ -627,9 +627,11 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
-req = operations.ReplaceECPTemplateVariablesRequestBody(
-    contact_id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
-)
+req = {
+    'key': operations.RequestBody(
+        id='7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51',
+    ),
+}
 
 res = s.ecp_admin.replace_ecp_template_variables(req, "<YOUR_BEARER_TOKEN_HERE>")
 
@@ -640,10 +642,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.ReplaceECPTemplateVariablesRequestBody](../../models/operations/replaceecptemplatevariablesrequestbody.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `security`                                                                                                             | [operations.ReplaceECPTemplateVariablesSecurity](../../models/operations/replaceecptemplatevariablessecurity.md)       | :heavy_check_mark:                                                                                                     | The security requirements to use for the request.                                                                      |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [Dict[str, operations.RequestBody]](../../models/.md)                                                            | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `security`                                                                                                       | [operations.ReplaceECPTemplateVariablesSecurity](../../models/operations/replaceecptemplatevariablessecurity.md) | :heavy_check_mark:                                                                                               | The security requirements to use for the request.                                                                |
 
 
 ### Response
