@@ -1,0 +1,66 @@
+lockVersion: 2.0.0
+id: 15e39c6b-c852-4dfb-872c-a7705b3cb640
+management:
+  docChecksum: 0d6a5b0f126cf69d4731c9ba3f694c69
+  docVersion: 1.0.0
+  speakeasyVersion: internal
+  generationVersion: 2.228.1
+  releaseVersion: 2.0.0
+  configChecksum: 46deab457523026a446b67c11bd1f26c
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: document
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=document
+features:
+  python:
+    constsAndDefaults: 0.1.2
+    core: 4.4.1
+    flattening: 2.81.1
+    globalSecurity: 2.83.1
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - src/epilot/sdkconfiguration.py
+  - src/epilot/documents.py
+  - src/epilot/sdk.py
+  - pylintrc
+  - setup.py
+  - src/epilot/__init__.py
+  - src/epilot/utils/__init__.py
+  - src/epilot/utils/retries.py
+  - src/epilot/utils/utils.py
+  - src/epilot/models/errors/sdkerror.py
+  - tests/helpers.py
+  - src/epilot/models/operations/generatedocument.py
+  - src/epilot/models/operations/generatedocumentv2.py
+  - src/epilot/models/components/s3reference.py
+  - src/epilot/models/components/erroroutput.py
+  - src/epilot/models/components/security.py
+  - src/epilot/models/__init__.py
+  - src/epilot/models/errors/__init__.py
+  - src/epilot/models/operations/__init__.py
+  - src/epilot/models/components/__init__.py
+  - docs/models/operations/templatedocument.md
+  - docs/models/operations/generatedocumentrequestbody.md
+  - docs/models/operations/outputdocument.md
+  - docs/models/operations/generatedocumentresponsebody.md
+  - docs/models/operations/generatedocumentresponse.md
+  - docs/models/operations/generatedocumentv2templatedocument.md
+  - docs/models/operations/variablepayload.md
+  - docs/models/operations/generatedocumentv2requestbody.md
+  - docs/models/operations/mode.md
+  - docs/models/operations/generatedocumentv2request.md
+  - docs/models/operations/generatedocumentv2outputdocument.md
+  - docs/models/operations/docxoutput.md
+  - docs/models/operations/jobstatus.md
+  - docs/models/operations/generatedocumentv2documentsoutputdocument.md
+  - docs/models/operations/pdfoutput.md
+  - docs/models/operations/generatedocumentv2variablepayload.md
+  - docs/models/operations/generatedocumentv2responsebody.md
+  - docs/models/operations/generatedocumentv2response.md
+  - docs/models/components/s3reference.md
+  - docs/models/components/errorcode.md
+  - docs/models/components/erroroutput.md
+  - docs/models/components/security.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/documents/README.md
+  - USAGE.md
+  - .gitattributes
