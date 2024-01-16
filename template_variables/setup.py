@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="epilot-template-variables",
-    version="2.2.3",
+    version="2.2.4",
     author="epilot",
     description="Python Client SDK for Epilot",
     long_description=long_description,
