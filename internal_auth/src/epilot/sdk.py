@@ -4,7 +4,7 @@ import requests as requests_http
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import errors, operations, shared
-from typing import Dict, Optional
+from typing import Callable, Dict, Optional, Union
 
 class Epilot:
     r"""Internal Auth API: Auth API to provide JWT tokens for internal API access that work with the epilot custom authorizer.
@@ -15,7 +15,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 sigv4: Optional[str]  = None,
+                 sigv4: Union[Optional[str], Callable[[], Optional[str]]] = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
@@ -25,7 +25,7 @@ class Epilot:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param sigv4: The sigv4 required for authentication
-        :type sigv4: Union[str,Callable[[], str]]
+        :type sigv4: Union[Optional[str], Callable[[], Optional[str]]]
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -40,7 +40,11 @@ class Epilot:
         if client is None:
             client = requests_http.Session()
         
-        security = shared.Security(sigv4 = sigv4)
+        if callable(sigv4):
+            def security():
+                return shared.Security(sigv4 = sigv4())
+        else:
+            security = shared.Security(sigv4 = sigv4)
         
         if server_url is not None:
             if url_params is not None:
