@@ -4,15 +4,15 @@ management:
   docChecksum: 156cb9f42b82b8c55de863616118e1f4
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.233.2
-  releaseVersion: 2.2.4
-  configChecksum: 1faa176f7b64fee479047450e1f7400a
+  generationVersion: 2.234.3
+  releaseVersion: 2.2.5
+  configChecksum: a43b1a820e308fabbfd56fa3e12146fa
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 features:
   python:
-    core: 4.4.1
+    core: 4.4.2
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.83.1
