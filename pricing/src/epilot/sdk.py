@@ -9,7 +9,7 @@ from .order_api import OrderAPI
 from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot.models import shared
-from typing import Dict
+from typing import Callable, Dict, Union
 
 class Epilot:
     r"""Pricing API: The `pricing-api` hub sets the foundations for the following Pricing APIs:
@@ -51,7 +51,7 @@ class Epilot:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 epilot_auth: str ,
+                 epilot_auth: Union[str, Callable[[], str]],
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
@@ -61,7 +61,7 @@ class Epilot:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param epilot_auth: The epilot_auth required for authentication
-        :type epilot_auth: Union[str,Callable[[], str]]
+        :type epilot_auth: Union[str, Callable[[], str]]
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -76,7 +76,11 @@ class Epilot:
         if client is None:
             client = requests_http.Session()
         
-        security = shared.Security(epilot_auth = epilot_auth)
+        if callable(epilot_auth):
+            def security():
+                return shared.Security(epilot_auth = epilot_auth())
+        else:
+            security = shared.Security(epilot_auth = epilot_auth)
         
         if server_url is not None:
             if url_params is not None:
