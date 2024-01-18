@@ -1,0 +1,9 @@
+# DocxOutput
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             | Example                                                                                 |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `output_document`                                                                       | [Optional[components.OutputDocument]](../../models/components/outputdocument.md)        | :heavy_minus_sign:                                                                      | N/A                                                                                     |                                                                                         |
+| `preview_url`                                                                           | *Optional[str]*                                                                         | :heavy_minus_sign:                                                                      | Pre-signed S3 GET URL for DOCX preview                                                  | https://document-api-prod.s3.eu-central-1.amazonaws.com/preview/my-template-OR-001.docx |
