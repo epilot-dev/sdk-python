@@ -91,6 +91,7 @@ if res.object is not None:
 * [update_opportunity](docs/sdks/ecp/README.md#update_opportunity) - updateOpportunity
 * [update_order](docs/sdks/ecp/README.md#update_order) - updateOrder
 * [update_portal_user](docs/sdks/ecp/README.md#update_portal_user) - updatePortalUser
+* [update_workflow_step_as_done](docs/sdks/ecp/README.md#update_workflow_step_as_done) - updateWorkflowStepAsDone
 * [validate_cadence_entity_edit_rules](docs/sdks/ecp/README.md#validate_cadence_entity_edit_rules) - validateCadenceEntityEditRules
 
 ### [public](docs/sdks/public/README.md)

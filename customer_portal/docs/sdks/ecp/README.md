@@ -38,6 +38,7 @@ APIs defined for a portal user
 * [update_opportunity](#update_opportunity) - updateOpportunity
 * [update_order](#update_order) - updateOrder
 * [update_portal_user](#update_portal_user) - updatePortalUser
+* [update_workflow_step_as_done](#update_workflow_step_as_done) - updateWorkflowStepAsDone
 * [validate_cadence_entity_edit_rules](#validate_cadence_entity_edit_rules) - validateCadenceEntityEditRules
 
 ## add_end_customer_relation_to_entity
@@ -383,7 +384,9 @@ from epilot.models import operations
 s = epilot.Epilot()
 
 
-res = s.ecp.get_billing_events("<YOUR_BEARER_TOKEN_HERE>", date_after=dateutil.parser.isoparse('2022-09-06T16:47:06.892Z'), date_before=dateutil.parser.isoparse('2023-12-15T03:03:37.312Z'), entity_id='string', event_type=operations.EventType.REIMBURSEMENT)
+res = s.ecp.get_billing_events("<YOUR_BEARER_TOKEN_HERE>", entity_id=[
+    'string',
+], date_after=dateutil.parser.isoparse('2022-09-06T16:47:06.892Z'), date_before=dateutil.parser.isoparse('2023-12-15T03:03:37.312Z'), event_type=operations.EventType.REIMBURSEMENT)
 
 if res.object is not None:
     # handle response
@@ -395,9 +398,9 @@ if res.object is not None:
 | Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
 | `security`                                                                                 | [operations.GetBillingEventsSecurity](../../models/operations/getbillingeventssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| `entity_id`                                                                                | List[*str*]                                                                                | :heavy_check_mark:                                                                         | Comma-separated list of entity IDs to filter by                                            |
 | `date_after`                                                                               | [date](https://docs.python.org/3/library/datetime.html#date-objects)                       | :heavy_minus_sign:                                                                         | N/A                                                                                        |
 | `date_before`                                                                              | [date](https://docs.python.org/3/library/datetime.html#date-objects)                       | :heavy_minus_sign:                                                                         | N/A                                                                                        |
-| `entity_id`                                                                                | *Optional[str]*                                                                            | :heavy_minus_sign:                                                                         | N/A                                                                                        |
 | `event_type`                                                                               | [Optional[operations.EventType]](../../models/operations/eventtype.md)                     | :heavy_minus_sign:                                                                         | Type of billing event to filter by                                                         |
 
 
@@ -1295,6 +1298,44 @@ if res.object is not None:
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,500          | application/json |
 | errors.SDKError  | 4x-5xx           | */*              |
+
+## update_workflow_step_as_done
+
+Update a workflow step as done
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+
+res = s.ecp.update_workflow_step_as_done("<YOUR_BEARER_TOKEN_HERE>", step_id='q1d6vcbsqvn', workflow_id='0bjwcxc827t')
+
+if res.workflow_step is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                | Example                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                 | [operations.UpdateWorkflowStepAsDoneSecurity](../../models/operations/updateworkflowstepasdonesecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |                                                                                                            |
+| `step_id`                                                                                                  | *str*                                                                                                      | :heavy_check_mark:                                                                                         | N/A                                                                                                        | q1d6vcbsqvn                                                                                                |
+| `workflow_id`                                                                                              | *str*                                                                                                      | :heavy_check_mark:                                                                                         | N/A                                                                                                        | 0bjwcxc827t                                                                                                |
+
+
+### Response
+
+**[operations.UpdateWorkflowStepAsDoneResponse](../../models/operations/updateworkflowstepasdoneresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## validate_cadence_entity_edit_rules
 

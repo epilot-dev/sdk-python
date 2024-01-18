@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 875e421b-9fdf-42d5-ab3a-30a1cf7c82cf
 management:
-  docChecksum: 569a74031742fd61fac158b8cc79ab49
+  docChecksum: e0e163b1e1d24164d724d0bdcf1f77c2
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.233.2
-  releaseVersion: 1.4.5
-  configChecksum: cf2fc6e3a97a72740550caacc66e8c65
+  generationVersion: 2.235.3
+  releaseVersion: 1.4.6
+  configChecksum: 64e975ea2402ff82131d301be0631d4e
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: customer_portal
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
@@ -14,7 +14,7 @@ features:
   python:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.1.2
-    core: 4.4.1
+    core: 4.4.2
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.83.1
@@ -87,6 +87,7 @@ generatedFiles:
   - src/epilot/models/operations/updateopportunity.py
   - src/epilot/models/operations/updateorder.py
   - src/epilot/models/operations/updateportaluser.py
+  - src/epilot/models/operations/updateworkflowstepasdone.py
   - src/epilot/models/operations/validatecadenceentityeditrules.py
   - src/epilot/models/operations/confirmuser.py
   - src/epilot/models/operations/createuser.py
@@ -327,6 +328,9 @@ generatedFiles:
   - docs/models/operations/updateportalusersecurity.md
   - docs/models/operations/updateportaluserresponsebody.md
   - docs/models/operations/updateportaluserresponse.md
+  - docs/models/operations/updateworkflowstepasdonesecurity.md
+  - docs/models/operations/updateworkflowstepasdonerequest.md
+  - docs/models/operations/updateworkflowstepasdoneresponse.md
   - docs/models/operations/validatecadenceentityeditrulesrequest.md
   - docs/models/operations/validatecadenceentityeditrulesresponsebody.md
   - docs/models/operations/validatecadenceentityeditrulesresponse.md

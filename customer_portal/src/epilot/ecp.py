@@ -363,14 +363,14 @@ class Ecp:
 
     
     
-    def get_billing_events(self, security: operations.GetBillingEventsSecurity, date_after: Optional[datetime] = None, date_before: Optional[datetime] = None, entity_id: Optional[str] = None, event_type: Optional[operations.EventType] = None) -> operations.GetBillingEventsResponse:
+    def get_billing_events(self, security: operations.GetBillingEventsSecurity, entity_id: List[str], date_after: Optional[datetime] = None, date_before: Optional[datetime] = None, event_type: Optional[operations.EventType] = None) -> operations.GetBillingEventsResponse:
         r"""getBillingEvents
         Fetch billing events for a portal user
         """
         request = operations.GetBillingEventsRequest(
+            entity_id=entity_id,
             date_after=date_after,
             date_before=date_before,
-            entity_id=entity_id,
             event_type=event_type,
         )
         
@@ -1325,6 +1325,42 @@ class Ecp:
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
                 out.raw_response = http_res
                 raise out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def update_workflow_step_as_done(self, security: operations.UpdateWorkflowStepAsDoneSecurity, step_id: str, workflow_id: str) -> operations.UpdateWorkflowStepAsDoneResponse:
+        r"""updateWorkflowStepAsDone
+        Update a workflow step as done
+        """
+        request = operations.UpdateWorkflowStepAsDoneRequest(
+            step_id=step_id,
+            workflow_id=workflow_id,
+        )
+        
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.UpdateWorkflowStepAsDoneRequest, base_url, '/v2/portal/workflow/{workflow_id}/{step_id}:markDone', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('PUT', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+        
+        res = operations.UpdateWorkflowStepAsDoneResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[Dict[str, Any]])
+                res.workflow_step = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
