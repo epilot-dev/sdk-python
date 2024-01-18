@@ -11,6 +11,8 @@ from typing import List, Optional
 @dataclasses.dataclass
 class TriggerWebhookConfig:
     entity_sources: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_sources'), 'exclude': lambda f: f is None }})
+    sync: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sync'), 'exclude': lambda f: f is None }})
+    r"""Whether to wait for the request to finish before continuing automation execution"""
     target_webhook_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('target_webhook_id'), 'exclude': lambda f: f is None }})
     
 
