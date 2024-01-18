@@ -15,7 +15,6 @@ class OauthResponseType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class LoginParameters:
-    cognito_identity_pool_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_identity_pool_id'), 'exclude': lambda f: f is None }})
     cognito_oauth_domain: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_oauth_domain'), 'exclude': lambda f: f is None }})
     cognito_oauth_scopes: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_oauth_scopes'), 'exclude': lambda f: f is None }})
     cognito_region: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_region'), 'exclude': lambda f: f is None }})
