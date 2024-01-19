@@ -4,18 +4,18 @@ management:
   docChecksum: 13e3fc85e2bde98445e8869c82c8bcbe
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.233.2
-  releaseVersion: 2.2.4
-  configChecksum: b05a5700f905cf6ffa88882fa28081d1
+  generationVersion: 2.237.2
+  releaseVersion: 2.2.5
+  configChecksum: a5b8946f3a9dea6ad06fdf055d4ca588
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: template_variables
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.1
+    core: 4.4.2
     flattening: 2.81.1
-    globalSecurity: 2.83.1
+    globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/epilot/sdkconfiguration.py
