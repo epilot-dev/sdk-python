@@ -1,21 +1,21 @@
 lockVersion: 2.0.0
 id: 8c336290-90ec-4ac5-adec-c746d4ec73e8
 management:
-  docChecksum: 56e1ccd22ef4d071fe1b014b501f7633
+  docChecksum: 1d38c1ad1e2a5560569caa715abb1ac3
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.233.2
-  releaseVersion: 1.3.2
-  configChecksum: 3a7d8d0e26441ccabee513e3c1226b49
+  generationVersion: 2.237.2
+  releaseVersion: 1.3.3
+  configChecksum: c0d21ab2d2cca24b11929be9a498dd30
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: message
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=message
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.1
+    core: 4.4.2
     flattening: 2.81.1
-    globalSecurity: 2.83.1
+    globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/epilot/sdkconfiguration.py

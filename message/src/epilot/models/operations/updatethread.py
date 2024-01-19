@@ -34,6 +34,8 @@ class UpdateThreadResponseBody:
     assigned_to: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assigned_to'), 'exclude': lambda f: f is None }})
     r"""Ivy User ID of who the message is assigned to. Default is the user who sends message."""
     latest_message: Optional[components_message.Message] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('latest_message'), 'exclude': lambda f: f is None }})
+    latest_message_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('latest_message_at'), 'exclude': lambda f: f is None }})
+    r"""The date of the latest message time in the thread"""
     latest_trash_message: Optional[components_message.Message] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('latest_trash_message'), 'exclude': lambda f: f is None }})
     org_read_message: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_read_message'), 'exclude': lambda f: f is None }})
     r"""Ivy Organization ID of organization read the message."""
