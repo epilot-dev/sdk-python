@@ -4,9 +4,9 @@ management:
   docChecksum: c4ebc821a511e104121bf4e398786d38
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.235.3
-  releaseVersion: 1.5.3
-  configChecksum: 6d18a37311d73d1b5b13a46d44b47f11
+  generationVersion: 2.237.2
+  releaseVersion: 1.5.4
+  configChecksum: ec885661e7666d53f1787db8c077d603
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: automation
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=automation
@@ -17,7 +17,7 @@ features:
     core: 4.4.2
     deprecations: 2.81.1
     flattening: 2.81.1
-    globalSecurity: 2.83.1
+    globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.0
     unions: 2.82.5
