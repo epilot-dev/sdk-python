@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 383e30b1-63fc-49e6-8b6e-ae38335f0730
 management:
-  docChecksum: 156cb9f42b82b8c55de863616118e1f4
+  docChecksum: 8a2ff4be25db818a35891d602baa4a25
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 2.2.6
-  configChecksum: d87d006620b46a51cb0b437708238cb3
+  generationVersion: 2.237.3
+  releaseVersion: 2.2.7
+  configChecksum: c95e5bcb33b908733ae7dfb6bf8d362f
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
