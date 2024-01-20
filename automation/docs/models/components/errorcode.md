@@ -13,3 +13,4 @@
 | `BAD_CONFIG`              | BAD_CONFIG                |
 | `INTERNAL_ERROR`          | INTERNAL_ERROR            |
 | `TRIGGER_WEBHOOK_ERROR`   | TRIGGER_WEBHOOK_ERROR     |
+| `TEMPLATE_ERROR`          | TEMPLATE_ERROR            |
