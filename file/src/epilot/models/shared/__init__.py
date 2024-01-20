@@ -4,6 +4,8 @@ from .deletefilepayload import *
 from .downloadfilespayload import *
 from .fileentity import *
 from .filerelationitem import *
+from .fileupload import *
+from .publiclink import *
 from .s3reference import *
 from .savecustomfilepayload import *
 from .saves3filepayload import *
@@ -11,4 +13,4 @@ from .security import *
 from .uploadfilepayload import *
 from .verifycustomdownloadurlpayload import *
 
-__all__ = ["AccessControl","DeleteFilePayload","DocumentType","DownloadFilesPayload","FileEntity","FileRelationItem","S3Reference","SaveCustomFilePayload","SaveCustomFilePayloadAccessControl","SaveS3FilePayload","SaveS3FilePayloadAccessControl","SaveS3FilePayloadDocumentType","Security","Type","UploadFilePayload","VerifyCustomDownloadURLPayload","Versions"]
+__all__ = ["AccessControl","DeleteFilePayload","DocumentType","DownloadFilesPayload","FileEntity","FileRelationItem","FileUpload","PublicLink","S3Reference","S3ref","SaveCustomFilePayload","SaveCustomFilePayloadAccessControl","SaveS3FilePayload","SaveS3FilePayloadAccessControl","SaveS3FilePayloadDocumentType","Security","Type","UploadFilePayload","VerifyCustomDownloadURLPayload","Versions"]

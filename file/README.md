@@ -15,7 +15,7 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=file
 
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -23,14 +23,8 @@ s = epilot.Epilot(
     ),
 )
 
-req = shared.DeleteFilePayload(
-    s3ref=shared.S3Reference(
-        bucket='epilot-files-prod',
-        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-    ),
-)
 
-res = s.files.delete_file(req)
+res = s.files.access_public_link(filename='invoice-2023-12.pdf', id='13d22918-36bd-4227-9ad4-2cb978788c8d')
 
 if res.status_code == 200:
     # handle response
@@ -43,17 +37,22 @@ if res.status_code == 200:
 
 ### [files](docs/sdks/files/README.md)
 
+* [access_public_link](docs/sdks/files/README.md#access_public_link) - accessPublicLink
 * [delete_file](docs/sdks/files/README.md#delete_file) - deleteFile
 * [download_file](docs/sdks/files/README.md#download_file) - downloadFile
 * [download_files](docs/sdks/files/README.md#download_files) - downloadFiles
 * [download_s3_file](docs/sdks/files/README.md#download_s3_file) - downloadS3File
+* [generate_public_link](docs/sdks/files/README.md#generate_public_link) - generatePublicLink
+* [get_all_public_links_for_file](docs/sdks/files/README.md#get_all_public_links_for_file) - getAllPublicLinksForFile
 * [preview_file](docs/sdks/files/README.md#preview_file) - previewFile
 * [preview_public_file](docs/sdks/files/README.md#preview_public_file) - previewPublicFile
 * [preview_s3_file](docs/sdks/files/README.md#preview_s3_file) - previewS3File
 * [preview_s3_file_get](docs/sdks/files/README.md#preview_s3_file_get) - previewS3FileGet
+* [revoke_public_link](docs/sdks/files/README.md#revoke_public_link) - revokePublicLink
 * [save_file](docs/sdks/files/README.md#save_file) - saveFile
 * [upload_file](docs/sdks/files/README.md#upload_file) - uploadFile
 * [upload_file_public](docs/sdks/files/README.md#upload_file_public) - uploadFilePublic
+* [upload_file_v2](docs/sdks/files/README.md#upload_file_v2) - uploadFileV2
 * [verify_custom_download_url](docs/sdks/files/README.md#verify_custom_download_url) - verifyCustomDownloadUrl
 
 ### [session](docs/sdks/session/README.md)
@@ -73,13 +72,13 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ### Example
 
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -87,16 +86,10 @@ s = epilot.Epilot(
     ),
 )
 
-req = shared.DeleteFilePayload(
-    s3ref=shared.S3Reference(
-        bucket='epilot-files-prod',
-        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-    ),
-)
 
 res = None
 try:
-    res = s.files.delete_file(req)
+    res = s.files.access_public_link(filename='invoice-2023-12.pdf', id='13d22918-36bd-4227-9ad4-2cb978788c8d')
 except errors.SDKError as e:
     print(e)  # handle exception
     raise(e)
@@ -124,7 +117,7 @@ You can override the default server globally by passing a server index to the `s
 
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     server_idx=0,
@@ -133,14 +126,8 @@ s = epilot.Epilot(
     ),
 )
 
-req = shared.DeleteFilePayload(
-    s3ref=shared.S3Reference(
-        bucket='epilot-files-prod',
-        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-    ),
-)
 
-res = s.files.delete_file(req)
+res = s.files.access_public_link(filename='invoice-2023-12.pdf', id='13d22918-36bd-4227-9ad4-2cb978788c8d')
 
 if res.status_code == 200:
     # handle response
@@ -153,7 +140,7 @@ if res.status_code == 200:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     server_url="https://file.sls.epilot.io",
@@ -162,14 +149,8 @@ s = epilot.Epilot(
     ),
 )
 
-req = shared.DeleteFilePayload(
-    s3ref=shared.S3Reference(
-        bucket='epilot-files-prod',
-        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-    ),
-)
 
-res = s.files.delete_file(req)
+res = s.files.access_public_link(filename='invoice-2023-12.pdf', id='13d22918-36bd-4227-9ad4-2cb978788c8d')
 
 if res.status_code == 200:
     # handle response
@@ -182,7 +163,7 @@ if res.status_code == 200:
 <!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+The Python SDK makes API calls using the [requests](https://pypi.org/project/requests/) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 For example, you could specify a header for every request that this sdk makes as follows:
 ```python
@@ -212,7 +193,7 @@ This SDK supports the following security schemes globally:
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import operations, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -220,14 +201,8 @@ s = epilot.Epilot(
     ),
 )
 
-req = shared.DeleteFilePayload(
-    s3ref=shared.S3Reference(
-        bucket='epilot-files-prod',
-        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-    ),
-)
 
-res = s.files.delete_file(req)
+res = s.files.access_public_link(filename='invoice-2023-12.pdf', id='13d22918-36bd-4227-9ad4-2cb978788c8d')
 
 if res.status_code == 200:
     # handle response

@@ -7,18 +7,64 @@ Files API
 
 ### Available Operations
 
+* [access_public_link](#access_public_link) - accessPublicLink
 * [delete_file](#delete_file) - deleteFile
 * [download_file](#download_file) - downloadFile
 * [download_files](#download_files) - downloadFiles
 * [download_s3_file](#download_s3_file) - downloadS3File
+* [generate_public_link](#generate_public_link) - generatePublicLink
+* [get_all_public_links_for_file](#get_all_public_links_for_file) - getAllPublicLinksForFile
 * [preview_file](#preview_file) - previewFile
 * [preview_public_file](#preview_public_file) - previewPublicFile
 * [preview_s3_file](#preview_s3_file) - previewS3File
 * [preview_s3_file_get](#preview_s3_file_get) - previewS3FileGet
+* [revoke_public_link](#revoke_public_link) - revokePublicLink
 * [save_file](#save_file) - saveFile
 * [upload_file](#upload_file) - uploadFile
 * [upload_file_public](#upload_file_public) - uploadFilePublic
+* [upload_file_v2](#upload_file_v2) - uploadFileV2
 * [verify_custom_download_url](#verify_custom_download_url) - verifyCustomDownloadUrl
+
+## access_public_link
+
+Redirects to a accessible signed url for the respective file associated to the public link
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+)
+
+
+res = s.files.access_public_link(filename='invoice-2023-12.pdf', id='13d22918-36bd-4227-9ad4-2cb978788c8d')
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `filename`                           | *str*                                | :heavy_check_mark:                   | N/A                                  | invoice-2023-12.pdf                  |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | N/A                                  | 13d22918-36bd-4227-9ad4-2cb978788c8d |
+
+
+### Response
+
+**[operations.AccessPublicLinkResponse](../../models/operations/accesspubliclinkresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## delete_file
 
@@ -64,7 +110,7 @@ if res.status_code == 200:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## download_file
 
@@ -106,7 +152,7 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## download_files
 
@@ -152,7 +198,7 @@ if res.classes is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## download_s3_file
 
@@ -194,7 +240,88 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## generate_public_link
+
+Generates a public link to access the private files
+
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+)
+
+
+res = s.files.generate_public_link(id='ef7d985c-2385-44f4-9c71-ae06a52264f8')
+
+if res.res is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | N/A                                  | ef7d985c-2385-44f4-9c71-ae06a52264f8 |
+
+
+### Response
+
+**[operations.GeneratePublicLinkResponse](../../models/operations/generatepubliclinkresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_all_public_links_for_file
+
+Not yet implemented; This API would fetches all the public links that are previously generated for a file
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+)
+
+
+res = s.files.get_all_public_links_for_file(id='13d22918-36bd-4227-9ad4-2cb978788c8d')
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | N/A                                  | 13d22918-36bd-4227-9ad4-2cb978788c8d |
+
+
+### Response
+
+**[operations.GetAllPublicLinksForFileResponse](../../models/operations/getallpubliclinksforfileresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## preview_file
 
@@ -237,7 +364,7 @@ if res.status_code == 200:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## preview_public_file
 
@@ -280,7 +407,7 @@ if res.status_code == 200:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## preview_s3_file
 
@@ -325,7 +452,7 @@ if res.status_code == 200:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## preview_s3_file_get
 
@@ -368,7 +495,47 @@ if res.status_code == 200:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## revoke_public_link
+
+Not yet implemented; This operation would revokes a given public link by ID
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+)
+
+
+res = s.files.revoke_public_link(id='13d22918-36bd-4227-9ad4-2cb978788c8d')
+
+if res.res is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | N/A                                  | 13d22918-36bd-4227-9ad4-2cb978788c8d |
+
+
+### Response
+
+**[operations.RevokePublicLinkResponse](../../models/operations/revokepubliclinkresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## save_file
 
@@ -435,7 +602,7 @@ if res.file_entity is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## upload_file
 
@@ -482,7 +649,7 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## upload_file_public
 
@@ -529,7 +696,54 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## upload_file_v2
+
+Create pre-signed S3 URL to upload a file to keep temporarily (one week). - v2
+
+Use the createFile operation to store file file permanently.
+
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations, shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+)
+
+
+res = s.files.upload_file_v2(upload_file_payload=shared.UploadFilePayload(
+    filename='document.pdf',
+    mime_type='application/pdf',
+), file_entity_id='ef7d985c-2385-44f4-9c71-ae06a52264f8')
+
+if res.file_upload is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `upload_file_payload`                                                          | [Optional[shared.UploadFilePayload]](../../models/shared/uploadfilepayload.md) | :heavy_minus_sign:                                                             | N/A                                                                            |                                                                                |
+| `file_entity_id`                                                               | *Optional[str]*                                                                | :heavy_minus_sign:                                                             | file entity id                                                                 | ef7d985c-2385-44f4-9c71-ae06a52264f8                                           |
+
+
+### Response
+
+**[operations.UploadFileV2Response](../../models/operations/uploadfilev2response.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## verify_custom_download_url
 
@@ -572,4 +786,4 @@ if res.object is not None:
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| errors.SDKError | 400-600         | */*             |
+| errors.SDKError | 4x-5xx          | */*             |
