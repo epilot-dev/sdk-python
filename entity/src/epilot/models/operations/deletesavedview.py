@@ -3,20 +3,23 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Optional
 
 
 @dataclasses.dataclass
 class DeleteSavedViewRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""View id"""  
+    r"""View id"""
     
+
+
 
 @dataclasses.dataclass
 class DeleteSavedViewResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
