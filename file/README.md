@@ -50,6 +50,7 @@ if res.status_code == 200:
 * [preview_s3_file_get](docs/sdks/files/README.md#preview_s3_file_get) - previewS3FileGet
 * [revoke_public_link](docs/sdks/files/README.md#revoke_public_link) - revokePublicLink
 * [save_file](docs/sdks/files/README.md#save_file) - saveFile
+* [save_file_v2](docs/sdks/files/README.md#save_file_v2) - saveFileV2
 * [upload_file](docs/sdks/files/README.md#upload_file) - uploadFile
 * [upload_file_public](docs/sdks/files/README.md#upload_file_public) - uploadFilePublic
 * [upload_file_v2](docs/sdks/files/README.md#upload_file_v2) - uploadFileV2

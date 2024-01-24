@@ -15,9 +15,10 @@ from .previews3file import *
 from .previews3fileget import *
 from .revokepubliclink import *
 from .savefile import *
+from .savefilev2 import *
 from .uploadfile import *
 from .uploadfilepublic import *
 from .uploadfilev2 import *
 from .verifycustomdownloadurl import *
 
-__all__ = ["AccessPublicLinkRequest","AccessPublicLinkResponse","DeleteFileResponse","DeleteSessionResponse","DownloadFileRequest","DownloadFileResponse","DownloadFileResponseBody","DownloadFilesResponse","DownloadS3FileRequest","DownloadS3FileResponse","DownloadS3FileResponseBody","GeneratePublicLinkRequest","GeneratePublicLinkResponse","GetAllPublicLinksForFileRequest","GetAllPublicLinksForFileResponse","GetAllPublicLinksForFileResponseBody","GetSessionResponse","PreviewFileRequest","PreviewFileResponse","PreviewPublicFileRequest","PreviewPublicFileResponse","PreviewS3FileGetRequest","PreviewS3FileGetResponse","PreviewS3FileRequest","PreviewS3FileResponse","ResponseBody","RevokePublicLinkRequest","RevokePublicLinkResponse","S3ref","SaveFileResponse","UploadFilePublicResponse","UploadFilePublicResponseBody","UploadFilePublicS3ref","UploadFileRequest","UploadFileResponse","UploadFileResponseBody","UploadFileV2Request","UploadFileV2Response","VerifyCustomDownloadURLResponse","VerifyCustomDownloadURLResponseBody"]
+__all__ = ["AccessPublicLinkRequest","AccessPublicLinkResponse","DeleteFileResponse","DeleteSessionResponse","DownloadFileRequest","DownloadFileResponse","DownloadFileResponseBody","DownloadFilesResponse","DownloadS3FileRequest","DownloadS3FileResponse","DownloadS3FileResponseBody","GeneratePublicLinkRequest","GeneratePublicLinkResponse","GetAllPublicLinksForFileRequest","GetAllPublicLinksForFileResponse","GetAllPublicLinksForFileResponseBody","GetSessionResponse","PreviewFileRequest","PreviewFileResponse","PreviewPublicFileRequest","PreviewPublicFileResponse","PreviewS3FileGetRequest","PreviewS3FileGetResponse","PreviewS3FileRequest","PreviewS3FileResponse","ResponseBody","RevokePublicLinkRequest","RevokePublicLinkResponse","S3ref","SaveFileResponse","SaveFileV2Response","UploadFilePublicResponse","UploadFilePublicResponseBody","UploadFilePublicS3ref","UploadFileRequest","UploadFileResponse","UploadFileResponseBody","UploadFileV2Request","UploadFileV2Response","VerifyCustomDownloadURLResponse","VerifyCustomDownloadURLResponseBody"]

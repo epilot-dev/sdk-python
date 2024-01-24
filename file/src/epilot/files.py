@@ -501,6 +501,47 @@ class Files:
 
     
     
+    def save_file_v2(self, request: Optional[shared.SaveFilePayloadV2]) -> operations.SaveFileV2Response:
+        r"""saveFileV2
+        Create / Update a permanent File entity
+
+        Makes file object permanent
+
+        Saves metadata to file entity
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/files'
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.SaveFilePayloadV2], "request", False, True, 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+        
+        res = operations.SaveFileV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 201:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.FileEntity])
+                res.file_entity = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
     def upload_file(self, upload_file_payload: Optional[shared.UploadFilePayload] = None, file_entity_id: Optional[str] = None) -> operations.UploadFileResponse:
         r"""uploadFile
         Create pre-signed S3 URL to upload a file to keep temporarily (one week).

@@ -20,6 +20,7 @@ Files API
 * [preview_s3_file_get](#preview_s3_file_get) - previewS3FileGet
 * [revoke_public_link](#revoke_public_link) - revokePublicLink
 * [save_file](#save_file) - saveFile
+* [save_file_v2](#save_file_v2) - saveFileV2
 * [upload_file](#upload_file) - uploadFile
 * [upload_file_public](#upload_file_public) - uploadFilePublic
 * [upload_file_v2](#upload_file_v2) - uploadFileV2
@@ -598,6 +599,64 @@ if res.file_entity is not None:
 ### Response
 
 **[operations.SaveFileResponse](../../models/operations/savefileresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## save_file_v2
+
+Create / Update a permanent File entity
+
+Makes file object permanent
+
+Saves metadata to file entity
+
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+)
+
+req = shared.SaveFilePayloadV2(
+    additional_properties={
+        'key': 'string',
+    },
+    tags=[
+        'string',
+    ],
+    filename='document.pdf',
+    s3ref=shared.SaveFilePayloadV2S3ref(
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+    ),
+)
+
+res = s.files.save_file_v2(req)
+
+if res.file_entity is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.SaveFilePayloadV2](../../models/shared/savefilepayloadv2.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+
+
+### Response
+
+**[operations.SaveFileV2Response](../../models/operations/savefilev2response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

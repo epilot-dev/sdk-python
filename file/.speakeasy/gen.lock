@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: a7421760-30f5-4e43-987e-389538ab6a02
 management:
-  docChecksum: 250a08e38b906641aa1ba181b2ee0b6c
+  docChecksum: 8ab78139733454ac110d7127e39b7956
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.237.3
-  releaseVersion: 3.0.0
-  configChecksum: 51586099c53c304b6eaa1f1d8769d4d9
+  generationVersion: 2.239.0
+  releaseVersion: 3.0.1
+  configChecksum: 6ce4671de0204846ece82bd6600d3c40
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: file
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=file
@@ -45,6 +45,7 @@ generatedFiles:
   - src/epilot/models/operations/previews3fileget.py
   - src/epilot/models/operations/revokepubliclink.py
   - src/epilot/models/operations/savefile.py
+  - src/epilot/models/operations/savefilev2.py
   - src/epilot/models/operations/uploadfile.py
   - src/epilot/models/operations/uploadfilepublic.py
   - src/epilot/models/operations/uploadfilev2.py
@@ -59,6 +60,7 @@ generatedFiles:
   - src/epilot/models/shared/saves3filepayload.py
   - src/epilot/models/shared/filerelationitem.py
   - src/epilot/models/shared/savecustomfilepayload.py
+  - src/epilot/models/shared/savefilepayloadv2.py
   - src/epilot/models/shared/uploadfilepayload.py
   - src/epilot/models/shared/fileupload.py
   - src/epilot/models/shared/verifycustomdownloadurlpayload.py
@@ -94,6 +96,7 @@ generatedFiles:
   - docs/models/operations/revokepubliclinkrequest.md
   - docs/models/operations/revokepubliclinkresponse.md
   - docs/models/operations/savefileresponse.md
+  - docs/models/operations/savefilev2response.md
   - docs/models/operations/uploadfilerequest.md
   - docs/models/operations/s3ref.md
   - docs/models/operations/uploadfileresponsebody.md
@@ -123,6 +126,10 @@ generatedFiles:
   - docs/models/shared/savecustomfilepayloadaccesscontrol.md
   - docs/models/shared/documenttype.md
   - docs/models/shared/savecustomfilepayload.md
+  - docs/models/shared/savefilepayloadv2accesscontrol.md
+  - docs/models/shared/savefilepayloadv2documenttype.md
+  - docs/models/shared/savefilepayloadv2s3ref.md
+  - docs/models/shared/savefilepayloadv2.md
   - docs/models/shared/uploadfilepayload.md
   - docs/models/shared/s3ref.md
   - docs/models/shared/fileupload.md

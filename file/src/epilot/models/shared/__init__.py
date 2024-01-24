@@ -8,9 +8,10 @@ from .fileupload import *
 from .publiclink import *
 from .s3reference import *
 from .savecustomfilepayload import *
+from .savefilepayloadv2 import *
 from .saves3filepayload import *
 from .security import *
 from .uploadfilepayload import *
 from .verifycustomdownloadurlpayload import *
 
-__all__ = ["AccessControl","DeleteFilePayload","DocumentType","DownloadFilesPayload","FileEntity","FileRelationItem","FileUpload","PublicLink","S3Reference","S3ref","SaveCustomFilePayload","SaveCustomFilePayloadAccessControl","SaveS3FilePayload","SaveS3FilePayloadAccessControl","SaveS3FilePayloadDocumentType","Security","Type","UploadFilePayload","VerifyCustomDownloadURLPayload","Versions"]
+__all__ = ["AccessControl","DeleteFilePayload","DocumentType","DownloadFilesPayload","FileEntity","FileRelationItem","FileUpload","PublicLink","S3Reference","S3ref","SaveCustomFilePayload","SaveCustomFilePayloadAccessControl","SaveFilePayloadV2","SaveFilePayloadV2AccessControl","SaveFilePayloadV2DocumentType","SaveFilePayloadV2S3ref","SaveS3FilePayload","SaveS3FilePayloadAccessControl","SaveS3FilePayloadDocumentType","Security","Type","UploadFilePayload","VerifyCustomDownloadURLPayload","Versions"]
