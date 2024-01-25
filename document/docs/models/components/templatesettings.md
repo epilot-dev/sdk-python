@@ -1,0 +1,13 @@
+# TemplateSettings
+
+Template Settings for document generation
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `custom_margins`                                                               | [Optional[components.CustomMargins]](../../models/components/custommargins.md) | :heavy_minus_sign:                                                             | Custom margins for the document                                                |                                                                                |
+| `display_margin_guidelines`                                                    | *Optional[bool]*                                                               | :heavy_minus_sign:                                                             | Display margin guidelines (applicable to partial generation only)              | true                                                                           |
+| `enable_data_table_margin_autofix`                                             | *Optional[bool]*                                                               | :heavy_minus_sign:                                                             | Enable data table margin autofix                                               | false                                                                          |
+| `misconfigured_margins`                                                        | *Optional[bool]*                                                               | :heavy_minus_sign:                                                             | An indication that the page margins are misconfigured                          | false                                                                          |
