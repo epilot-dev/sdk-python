@@ -1,0 +1,71 @@
+lockVersion: 2.0.0
+id: fc5d1c36-bd6e-4eb5-a682-1a998e46ba4e
+management:
+  docChecksum: 2e3c391d084864c3490a4d12178bfa45
+  docVersion: 1.0.0
+  speakeasyVersion: internal
+  generationVersion: 2.239.4
+  releaseVersion: 2.0.0
+  configChecksum: 46deab457523026a446b67c11bd1f26c
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: document
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=document
+features:
+  python:
+    constsAndDefaults: 0.1.2
+    core: 4.4.2
+    flattening: 2.81.1
+    globalSecurity: 2.83.2
+    globalServerURLs: 2.82.1
+generatedFiles:
+  - src/epilot/sdkconfiguration.py
+  - src/epilot/documents.py
+  - src/epilot/sdk.py
+  - pylintrc
+  - setup.py
+  - src/epilot/__init__.py
+  - src/epilot/utils/__init__.py
+  - src/epilot/utils/retries.py
+  - src/epilot/utils/utils.py
+  - src/epilot/models/errors/sdkerror.py
+  - tests/helpers.py
+  - src/epilot/models/operations/generatedocument.py
+  - src/epilot/models/operations/generatedocumentv2.py
+  - src/epilot/models/components/s3reference.py
+  - src/epilot/models/components/documentgenerationv2response.py
+  - src/epilot/models/components/templatesettings.py
+  - src/epilot/models/components/erroroutput.py
+  - src/epilot/models/components/documentgenerationv2request.py
+  - src/epilot/models/components/security.py
+  - src/epilot/models/__init__.py
+  - src/epilot/models/errors/__init__.py
+  - src/epilot/models/operations/__init__.py
+  - src/epilot/models/components/__init__.py
+  - docs/models/operations/templatedocument.md
+  - docs/models/operations/generatedocumentrequestbody.md
+  - docs/models/operations/outputdocument.md
+  - docs/models/operations/generatedocumentresponsebody.md
+  - docs/models/operations/generatedocumentresponse.md
+  - docs/models/operations/mode.md
+  - docs/models/operations/generatedocumentv2request.md
+  - docs/models/operations/generatedocumentv2response.md
+  - docs/models/components/s3reference.md
+  - docs/models/components/outputdocument.md
+  - docs/models/components/docxoutput.md
+  - docs/models/components/jobstatus.md
+  - docs/models/components/documentgenerationv2responseoutputdocument.md
+  - docs/models/components/pdfoutput.md
+  - docs/models/components/documentgenerationv2responsevariablepayload.md
+  - docs/models/components/documentgenerationv2response.md
+  - docs/models/components/custommargins.md
+  - docs/models/components/templatesettings.md
+  - docs/models/components/errorcode.md
+  - docs/models/components/erroroutput.md
+  - docs/models/components/templatedocument.md
+  - docs/models/components/variablepayload.md
+  - docs/models/components/documentgenerationv2request.md
+  - docs/models/components/security.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/documents/README.md
+  - USAGE.md
+  - .gitattributes
