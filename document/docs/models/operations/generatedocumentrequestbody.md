@@ -1,0 +1,11 @@
+# GenerateDocumentRequestBody
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `context_entity_id`                                                        | *Optional[str]*                                                            | :heavy_minus_sign:                                                         | Entity to use for variable context                                         | bcd0aab9-b544-42b0-8bfb-6d449d02eacc                                       |
+| `language`                                                                 | *Optional[str]*                                                            | :heavy_minus_sign:                                                         | Language to use                                                            | de                                                                         |
+| `template_document`                                                        | [operations.TemplateDocument](../../models/operations/templatedocument.md) | :heavy_check_mark:                                                         | Input template document                                                    |                                                                            |
+| `user_id`                                                                  | *Optional[str]*                                                            | :heavy_minus_sign:                                                         | User Id for variable context                                               | 100321                                                                     |
