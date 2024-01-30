@@ -18,12 +18,12 @@ class TriggerEntityAccessEventSecurity:
 
 @dataclasses.dataclass
 class TriggerEntityAccessEventRequest:
+    origin: components_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Portal origin"""
+    schema: str = dataclasses.field(metadata={'path_param': { 'field_name': 'schema', 'style': 'simple', 'explode': False }})
+    r"""Entity schema"""
     entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entity_id', 'style': 'form', 'explode': True }})
     r"""Entity ID"""
-    origin: Optional[components_origin.Origin] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Portal origin"""
-    schema: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'schema', 'style': 'form', 'explode': True }})
-    r"""Entity schema"""
     
 
 

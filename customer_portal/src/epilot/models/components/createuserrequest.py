@@ -25,6 +25,9 @@ class CreateUserRequest:
     last_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name'), 'exclude': lambda f: f is None }})
     r"""Last Name of the portal user"""
     secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondaryIdentifier'), 'exclude': lambda f: f is None }})
-    r"""Secondary identifier to identify a contact"""
+    r"""Deprecated. Use contactIdentifiers instead.
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     
 

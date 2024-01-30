@@ -1058,19 +1058,19 @@ class Ecp:
 
     
     
-    def trigger_entity_access_event(self, security: operations.TriggerEntityAccessEventSecurity, entity_id: Optional[str] = None, origin: Optional[components.Origin] = None, schema: Optional[str] = None) -> operations.TriggerEntityAccessEventResponse:
+    def trigger_entity_access_event(self, security: operations.TriggerEntityAccessEventSecurity, origin: components.Origin, schema: str, entity_id: Optional[str] = None) -> operations.TriggerEntityAccessEventResponse:
         r"""triggerEntityAccessEvent
         Trigger entity access event for a portal user
         """
         request = operations.TriggerEntityAccessEventRequest(
-            entity_id=entity_id,
             origin=origin,
             schema=schema,
+            entity_id=entity_id,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = base_url + '/v2/portal/entity/access'
+        url = utils.generate_url(operations.TriggerEntityAccessEventRequest, base_url, '/v2/portal/entity/{schema}/access', request)
         headers = {}
         query_params = utils.get_query_params(operations.TriggerEntityAccessEventRequest, request)
         headers['Accept'] = 'application/json'
