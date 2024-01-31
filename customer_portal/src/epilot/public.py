@@ -14,6 +14,58 @@ class Public:
         
     
     
+    def check_contact_exists(self, contact_exists_request: components.ContactExistsRequest, origin: components.Origin) -> operations.CheckContactExistsResponse:
+        r"""checkContactExists
+        True if contact with given identifiers exists.
+        """
+        request = operations.CheckContactExistsRequest(
+            contact_exists_request=contact_exists_request,
+            origin=origin,
+        )
+        
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/portal/public/contact/exists'
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CheckContactExistsRequest, "contact_exists_request", False, False, 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        if data is None and form is None:
+            raise Exception('request body is required')
+        query_params = utils.get_query_params(operations.CheckContactExistsRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+        
+        http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+        
+        res = operations.CheckContactExistsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.CheckContactExistsResponseBody])
+                res.object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code in [400, 404, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
+                out.raw_response = http_res
+                raise out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
     def confirm_user(self, id: str, org_id: str, origin: components.Origin) -> operations.ConfirmUserResponse:
         r"""confirmUser
         Confirm a portal user
@@ -112,7 +164,9 @@ class Public:
     
     def get_contact_count(self, contact_count_request: components.ContactCountRequest, origin: components.Origin) -> operations.GetContactCountResponse:
         r"""getContactCount
-        Check existence of contacts.
+        Return number of contacts matching identifier values.
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
         request = operations.GetContactCountRequest(
             contact_count_request=contact_count_request,

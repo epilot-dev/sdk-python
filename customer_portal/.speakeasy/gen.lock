@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 875e421b-9fdf-42d5-ab3a-30a1cf7c82cf
 management:
-  docChecksum: 57768e5fdc8bd9a4adffea8b11d92e9e
+  docChecksum: 9400384f806ef4ed864c4d32f7bdedc6
   docVersion: 1.0.0
   speakeasyVersion: internal
   generationVersion: 2.239.4
-  releaseVersion: 1.4.8
-  configChecksum: a681c1963e50d7c1e29baa0e5ea0d6d5
+  releaseVersion: 1.4.9
+  configChecksum: 579d439762e55f86b4d53e92baad3499
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: customer_portal
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
@@ -50,6 +50,7 @@ generatedFiles:
   - src/epilot/models/operations/getportalconfig.py
   - src/epilot/models/operations/getportalwidgets.py
   - src/epilot/models/operations/getregisteredusers.py
+  - src/epilot/models/operations/getregistrationidentifiers.py
   - src/epilot/models/operations/getvalidsecondaryattributes.py
   - src/epilot/models/operations/logintoportalasuser.py
   - src/epilot/models/operations/replaceecptemplatevariables.py
@@ -89,6 +90,7 @@ generatedFiles:
   - src/epilot/models/operations/updateportaluser.py
   - src/epilot/models/operations/updateworkflowstepasdone.py
   - src/epilot/models/operations/validatecadenceentityeditrules.py
+  - src/epilot/models/operations/checkcontactexists.py
   - src/epilot/models/operations/confirmuser.py
   - src/epilot/models/operations/createuser.py
   - src/epilot/models/operations/getcontactcount.py
@@ -107,6 +109,7 @@ generatedFiles:
   - src/epilot/models/components/extraschemaattributes.py
   - src/epilot/models/components/entityslug.py
   - src/epilot/models/components/portalconfig.py
+  - src/epilot/models/components/registrationidentifier.py
   - src/epilot/models/components/grant.py
   - src/epilot/models/components/emailtemplates.py
   - src/epilot/models/components/adminuser.py
@@ -118,6 +121,7 @@ generatedFiles:
   - src/epilot/models/components/widgetaction.py
   - src/epilot/models/components/teaserwidget.py
   - src/epilot/models/components/widgetbase.py
+  - src/epilot/models/components/identifierattribute.py
   - src/epilot/models/components/file.py
   - src/epilot/models/components/saveportalfile.py
   - src/epilot/models/components/upsertportalconfig.py
@@ -140,6 +144,7 @@ generatedFiles:
   - src/epilot/models/components/entitysearchparams.py
   - src/epilot/models/components/failedruleerrorresp.py
   - src/epilot/models/components/entityeditrule.py
+  - src/epilot/models/components/contactexistsrequest.py
   - src/epilot/models/components/createuserrequest.py
   - src/epilot/models/components/contactcountrequest.py
   - src/epilot/models/components/security.py
@@ -194,6 +199,9 @@ generatedFiles:
   - docs/models/operations/getregisteredusersrequestbody.md
   - docs/models/operations/getregisteredusersresponsebody.md
   - docs/models/operations/getregisteredusersresponse.md
+  - docs/models/operations/getregistrationidentifierssecurity.md
+  - docs/models/operations/getregistrationidentifiersresponsebody.md
+  - docs/models/operations/getregistrationidentifiersresponse.md
   - docs/models/operations/getvalidsecondaryattributessecurity.md
   - docs/models/operations/getvalidsecondaryattributesdata.md
   - docs/models/operations/getvalidsecondaryattributesresponsebody.md
@@ -334,6 +342,9 @@ generatedFiles:
   - docs/models/operations/validatecadenceentityeditrulesrequest.md
   - docs/models/operations/validatecadenceentityeditrulesresponsebody.md
   - docs/models/operations/validatecadenceentityeditrulesresponse.md
+  - docs/models/operations/checkcontactexistsrequest.md
+  - docs/models/operations/checkcontactexistsresponsebody.md
+  - docs/models/operations/checkcontactexistsresponse.md
   - docs/models/operations/confirmuserrequest.md
   - docs/models/operations/confirmuserresponse.md
   - docs/models/operations/createuserrequest.md
@@ -383,6 +394,7 @@ generatedFiles:
   - docs/models/components/orgsettings.md
   - docs/models/components/selfregistrationsetting.md
   - docs/models/components/portalconfig.md
+  - docs/models/components/registrationidentifier.md
   - docs/models/components/effect.md
   - docs/models/components/grant.md
   - docs/models/components/emailtemplates.md
@@ -417,6 +429,7 @@ generatedFiles:
   - docs/models/components/widgetbasesubheadline.md
   - docs/models/components/widgetbasetype.md
   - docs/models/components/widgetbase.md
+  - docs/models/components/identifierattribute.md
   - docs/models/components/fileschema.md
   - docs/models/components/file.md
   - docs/models/components/saveportalfiles3ref.md
@@ -501,6 +514,7 @@ generatedFiles:
   - docs/models/components/failedrule.md
   - docs/models/components/failedruleerrorresp.md
   - docs/models/components/entityeditrule.md
+  - docs/models/components/contactexistsrequest.md
   - docs/models/components/createuserrequest.md
   - docs/models/components/contactcountrequest.md
   - docs/models/components/security.md

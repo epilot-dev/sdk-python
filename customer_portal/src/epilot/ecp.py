@@ -363,14 +363,14 @@ class Ecp:
 
     
     
-    def get_billing_events(self, security: operations.GetBillingEventsSecurity, entity_id: List[str], date_after: Optional[datetime] = None, date_before: Optional[datetime] = None, event_type: Optional[operations.EventType] = None) -> operations.GetBillingEventsResponse:
+    def get_billing_events(self, security: operations.GetBillingEventsSecurity, date_after: Optional[datetime] = None, date_before: Optional[datetime] = None, entity_id: Optional[List[str]] = None, event_type: Optional[operations.EventType] = None) -> operations.GetBillingEventsResponse:
         r"""getBillingEvents
         Fetch billing events for a portal user
         """
         request = operations.GetBillingEventsRequest(
-            entity_id=entity_id,
             date_after=date_after,
             date_before=date_before,
+            entity_id=entity_id,
             event_type=event_type,
         )
         

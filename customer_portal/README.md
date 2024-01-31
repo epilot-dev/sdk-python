@@ -46,6 +46,7 @@ if res.object is not None:
 * [get_portal_config](docs/sdks/ecpadmin/README.md#get_portal_config) - getPortalConfig
 * [get_portal_widgets](docs/sdks/ecpadmin/README.md#get_portal_widgets) - getPortalWidgets
 * [get_registered_users](docs/sdks/ecpadmin/README.md#get_registered_users) - getRegisteredUsers
+* [get_registration_identifiers](docs/sdks/ecpadmin/README.md#get_registration_identifiers) - getRegistrationIdentifiers
 * [get_valid_secondary_attributes](docs/sdks/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [login_to_portal_as_user](docs/sdks/ecpadmin/README.md#login_to_portal_as_user) - loginToPortalAsUser
 * [replace_ecp_template_variables](docs/sdks/ecpadmin/README.md#replace_ecp_template_variables) - replaceECPTemplateVariables
@@ -96,9 +97,10 @@ if res.object is not None:
 
 ### [public](docs/sdks/public/README.md)
 
+* [check_contact_exists](docs/sdks/public/README.md#check_contact_exists) - checkContactExists
 * [confirm_user](docs/sdks/public/README.md#confirm_user) - confirmUser
 * [create_user](docs/sdks/public/README.md#create_user) - createUser
-* [get_contact_count](docs/sdks/public/README.md#get_contact_count) - getContactCount
+* [~~get_contact_count~~](docs/sdks/public/README.md#get_contact_count) - getContactCount :warning: **Deprecated**
 * [get_count_by_email](docs/sdks/public/README.md#get_count_by_email) - getCountByEmail
 * [get_portal_config_by_domain](docs/sdks/public/README.md#get_portal_config_by_domain) - getPortalConfigByDomain
 * [get_public_portal_config](docs/sdks/public/README.md#get_public_portal_config) - getPublicPortalConfig

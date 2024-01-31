@@ -19,15 +19,15 @@ class CreateUserRequest:
     contact_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contactId'), 'exclude': lambda f: f is None }})
     r"""ID of the contact"""
     contact_identifiers: Optional[Dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contactIdentifiers'), 'exclude': lambda f: f is None }})
-    r"""Identifiers to identify a contact"""
+    r"""Deprecated. Use registration_identifiers instead.
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     first_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first_name'), 'exclude': lambda f: f is None }})
     r"""First Name of the portal user"""
     last_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('last_name'), 'exclude': lambda f: f is None }})
     r"""Last Name of the portal user"""
-    secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secondaryIdentifier'), 'exclude': lambda f: f is None }})
-    r"""Deprecated. Use contactIdentifiers instead.
-
-    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-    """
+    registration_identifiers: Optional[Dict[str, Dict[str, str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('registration_identifiers'), 'exclude': lambda f: f is None }})
+    r"""Identifier-value pairs per schema to identify a contact of a portal user during the resgistration"""
     
 

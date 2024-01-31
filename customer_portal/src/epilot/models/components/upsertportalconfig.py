@@ -6,6 +6,7 @@ from .adminuser import AdminUser
 from .emailtemplates import EmailTemplates
 from .entityslug import EntitySlug
 from .grant import Grant
+from .registrationidentifier import RegistrationIdentifier
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -146,9 +147,7 @@ class UpsertPortalConfig:
     config: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config'), 'exclude': lambda f: f is None }})
     r"""Stringified object with configuration details"""
     contact_identifiers: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_identifiers'), 'exclude': lambda f: f is None }})
-    r"""Identifiers to identify a contact."""
-    contact_secondary_identifier: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contact_secondary_identifier'), 'exclude': lambda f: f is None }})
-    r"""Deprecated. Use contact_identifiers instead.
+    r"""Deprecated. Use registration_identifiers instead.
 
     Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
     """
@@ -176,11 +175,8 @@ class UpsertPortalConfig:
     r"""Mark true if the domain is an Epilot domain"""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     r"""A short name to identify your portal"""
-    self_registration: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration'), 'exclude': lambda f: f is None }})
-    r"""Deprecated. Use self_registration_setting instead.
-
-    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
-    """
+    registration_identifiers: Optional[List[RegistrationIdentifier]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('registration_identifiers'), 'exclude': lambda f: f is None }})
+    r"""Identifiers to identify a contact of a portal user during the registration."""
     self_registration_setting: Optional[UpsertPortalConfigSelfRegistrationSetting] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('self_registration_setting'), 'exclude': lambda f: f is None }})
     
 

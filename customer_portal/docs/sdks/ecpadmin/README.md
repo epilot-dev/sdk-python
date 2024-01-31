@@ -20,6 +20,7 @@ APIs defined for a ECP Admin
 * [get_portal_config](#get_portal_config) - getPortalConfig
 * [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
 * [get_registered_users](#get_registered_users) - getRegisteredUsers
+* [get_registration_identifiers](#get_registration_identifiers) - getRegistrationIdentifiers
 * [get_valid_secondary_attributes](#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [login_to_portal_as_user](#login_to_portal_as_user) - loginToPortalAsUser
 * [replace_ecp_template_variables](#replace_ecp_template_variables) - replaceECPTemplateVariables
@@ -535,6 +536,43 @@ if res.object is not None:
 | errors.ErrorResp | 500              | application/json |
 | errors.SDKError  | 4x-5xx           | */*              |
 
+## get_registration_identifiers
+
+Get valid attributes from entities that can be used as identifier to map contact to user on registration
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+
+res = s.ecp_admin.get_registration_identifiers("<YOUR_BEARER_TOKEN_HERE>")
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                     | [operations.GetRegistrationIdentifiersSecurity](../../models/operations/getregistrationidentifierssecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
+
+
+### Response
+
+**[operations.GetRegistrationIdentifiersResponse](../../models/operations/getregistrationidentifiersresponse.md)**
+### Errors
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 401,403,500      | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
+
 ## get_valid_secondary_attributes
 
 Get valid secondary attributes that are used while mapping a contact on registration
@@ -781,7 +819,6 @@ res = s.ecp_admin.upsert_portal("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_config
         'email',
         'last_name',
     ],
-    contact_secondary_identifier='full_name',
     default_user_to_notify=components.UpsertPortalConfigDefaultUserToNotify(
         on_pending_user=[
             components.AdminUser(
@@ -851,7 +888,17 @@ res = s.ecp_admin.upsert_portal("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_config
         welcome_banner='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg',
     ),
     name='Installer Portal',
-    self_registration=False,
+    registration_identifiers=[
+        components.RegistrationIdentifier(
+            schema=components.EntitySlug.CONTACT,
+        ),
+        components.RegistrationIdentifier(
+            schema=components.EntitySlug.CONTACT,
+        ),
+        components.RegistrationIdentifier(
+            schema=components.EntitySlug.CONTACT,
+        ),
+    ],
 ), origin=components.Origin.INSTALLER_PORTAL)
 
 if res.portal_config is not None:

@@ -563,6 +563,44 @@ class ECPAdmin:
 
     
     
+    def get_registration_identifiers(self, security: operations.GetRegistrationIdentifiersSecurity) -> operations.GetRegistrationIdentifiersResponse:
+        r"""getRegistrationIdentifiers
+        Get valid attributes from entities that can be used as identifier to map contact to user on registration
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/portal/registration/identifiers'
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+        
+        res = operations.GetRegistrationIdentifiersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetRegistrationIdentifiersResponseBody])
+                res.object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code in [401, 403, 500]:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
+                out.raw_response = http_res
+                raise out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
     def get_valid_secondary_attributes(self, security: operations.GetValidSecondaryAttributesSecurity) -> operations.GetValidSecondaryAttributesResponse:
         r"""getValidSecondaryAttributes
         Get valid secondary attributes that are used while mapping a contact on registration

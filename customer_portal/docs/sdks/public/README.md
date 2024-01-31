@@ -7,14 +7,67 @@ Public APIs
 
 ### Available Operations
 
+* [check_contact_exists](#check_contact_exists) - checkContactExists
 * [confirm_user](#confirm_user) - confirmUser
 * [create_user](#create_user) - createUser
-* [get_contact_count](#get_contact_count) - getContactCount
+* [~~get_contact_count~~](#get_contact_count) - getContactCount :warning: **Deprecated**
 * [get_count_by_email](#get_count_by_email) - getCountByEmail
 * [get_portal_config_by_domain](#get_portal_config_by_domain) - getPortalConfigByDomain
 * [get_public_portal_config](#get_public_portal_config) - getPublicPortalConfig
 * [get_public_portal_widgets](#get_public_portal_widgets) - getPublicPortalWidgets
 * [user_exists](#user_exists) - userExists
+
+## check_contact_exists
+
+True if contact with given identifiers exists.
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import components, operations
+
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.public.check_contact_exists(contact_exists_request=components.ContactExistsRequest(
+    org_id='728',
+    registration_identifiers={
+        'contact': {
+            'email': 'john.doe@example.com',
+        },
+        'contract': {
+            'contract_number': '123456',
+        },
+    },
+), origin=components.Origin.END_CUSTOMER_PORTAL)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `contact_exists_request`                                                           | [components.ContactExistsRequest](../../models/components/contactexistsrequest.md) | :heavy_check_mark:                                                                 | Request payload                                                                    |
+| `origin`                                                                           | [components.Origin](../../models/components/origin.md)                             | :heavy_check_mark:                                                                 | Origin of the portal                                                               |
+
+
+### Response
+
+**[operations.CheckContactExistsResponse](../../models/operations/checkcontactexistsresponse.md)**
+### Errors
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 400,404,500      | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## confirm_user
 
@@ -86,7 +139,14 @@ res = s.public.create_user(create_user_request=components.CreateUserRequest(
     last_name='Doe',
     org_id='728',
     password='124n$aAJs*d41h4',
-    secondary_identifier='123456',
+    registration_identifiers={
+        'contact': {
+            'email': 'john.doe@example.com',
+        },
+        'contract': {
+            'contract_number': '123456',
+        },
+    },
 ), origin=components.Origin.INSTALLER_PORTAL)
 
 if res.object is not None:
@@ -112,9 +172,11 @@ if res.object is not None:
 | errors.ErrorResp | 400,500          | application/json |
 | errors.SDKError  | 4x-5xx           | */*              |
 
-## get_contact_count
+## ~~get_contact_count~~
 
-Check existence of contacts.
+Return number of contacts matching identifier values.
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
