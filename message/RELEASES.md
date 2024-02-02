@@ -91,3 +91,11 @@ Based on:
 - Speakeasy CLI 1.161.0 (2.245.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.3.4] message
+
+## 2024-02-02 00:12:16
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/message.yaml
+- Speakeasy CLI 1.163.1 (2.248.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v2.0.0] message

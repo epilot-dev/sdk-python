@@ -4,16 +4,16 @@ management:
   docChecksum: 1d38c1ad1e2a5560569caa715abb1ac3
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.245.1
-  releaseVersion: 1.3.4
-  configChecksum: a3253eecf6db8ff7a1b07ec962e1c1b7
+  generationVersion: 2.248.1
+  releaseVersion: 2.0.0
+  configChecksum: 9d7838c10cd8914bc891528bdbf0d5c9
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: message
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=message
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.3
+    core: 4.4.4
     flattening: 2.81.1
     globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
