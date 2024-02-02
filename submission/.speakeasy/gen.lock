@@ -4,16 +4,16 @@ management:
   docChecksum: 3e73a0b032d576778d71b4b1bce49714
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.245.1
-  releaseVersion: 2.1.4
-  configChecksum: 5de1aeb5c0f89b32b8b0a41d7be3649a
+  generationVersion: 2.248.1
+  releaseVersion: 3.0.0
+  configChecksum: 9be3c9700ab9c0a3a75882fc4ba45d03
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: submission
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=submission
 features:
   python:
     additionalProperties: 0.1.0
-    core: 4.4.3
+    core: 4.4.4
     deprecations: 2.81.1
     globalServerURLs: 2.82.1
 generatedFiles:
