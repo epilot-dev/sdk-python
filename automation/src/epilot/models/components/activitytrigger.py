@@ -5,19 +5,21 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import List, Optional
+from typing import List, Optional, Union
 
-class Types(str, Enum):
+class One(str, Enum):
     CREATE_METER_READING = 'CreateMeterReading'
     UPDATE_METER_READING = 'UpdateMeterReading'
     DOC_DOWNLOADED_FROM_PORTAL = 'DocDownloadedFromPortal'
+    PORTAL_USER_RESET_PASSWORD = 'PortalUserResetPassword'
+    PORTAL_USER_RESET_FORGOT_PASSWORD = 'PortalUserResetForgotPassword'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Configuration:
     schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema'), 'exclude': lambda f: f is None }})
-    types: Optional[List[Types]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('types'), 'exclude': lambda f: f is None }})
+    types: Optional[List[Union[One, str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('types'), 'exclude': lambda f: f is None }})
     
 
 

@@ -3,9 +3,19 @@
 from __future__ import annotations
 import dataclasses
 from .errorcode import ErrorCode
+from .errordetail import ErrorDetail
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class ErrorInfo:
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    details: Optional[List[ErrorDetail]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('details'), 'exclude': lambda f: f is None }})
+    
+
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -13,6 +23,6 @@ from typing import Any, Dict, Optional
 class ErrorOutput:
     error_code: ErrorCode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_code') }})
     error_reason: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_reason') }})
-    error_info: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_info'), 'exclude': lambda f: f is None }})
+    error_info: Optional[ErrorInfo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('error_info'), 'exclude': lambda f: f is None }})
     
 

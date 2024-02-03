@@ -1,10 +1,17 @@
 # Types
 
 
-## Values
+## Supported Types
 
-| Name                         | Value                        |
-| ---------------------------- | ---------------------------- |
-| `CREATE_METER_READING`       | CreateMeterReading           |
-| `UPDATE_METER_READING`       | UpdateMeterReading           |
-| `DOC_DOWNLOADED_FROM_PORTAL` | DocDownloadedFromPortal      |
+### One
+
+```python
+types: components.One = /* values here */
+```
+
+### 
+
+```python
+types: str = /* values here */
+```
+
