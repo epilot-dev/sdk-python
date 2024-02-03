@@ -31,6 +31,8 @@ class GetBillingEventsRequest:
     r"""Entity ID to filter billing events by"""
     event_type: Optional[EventType] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'event_type', 'style': 'form', 'explode': True }})
     r"""Type of billing event to filter by"""
+    from_: Optional[float] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    size: Optional[float] = dataclasses.field(default=100, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
     
 
 

@@ -7,7 +7,7 @@ generation:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
 python:
-  version: 2.0.0
+  version: 2.0.1
   author: epilot
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot

@@ -383,10 +383,15 @@ from epilot.models import operations
 
 s = epilot.Epilot()
 
+req = operations.GetBillingEventsRequest(
+    entity_id=[
+        'string',
+    ],
+    from_=0,
+    size=100,
+)
 
-res = s.ecp.get_billing_events("<YOUR_BEARER_TOKEN_HERE>", date_after=dateutil.parser.isoparse('2022-09-06T16:47:06.892Z'), date_before=dateutil.parser.isoparse('2023-12-15T03:03:37.312Z'), entity_id=[
-    'string',
-], event_type=operations.EventType.REIMBURSEMENT)
+res = s.ecp.get_billing_events(req, "<YOUR_BEARER_TOKEN_HERE>")
 
 if res.object is not None:
     # handle response
@@ -397,11 +402,8 @@ if res.object is not None:
 
 | Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetBillingEventsRequest](../../models/operations/getbillingeventsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 | `security`                                                                                 | [operations.GetBillingEventsSecurity](../../models/operations/getbillingeventssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
-| `date_after`                                                                               | [date](https://docs.python.org/3/library/datetime.html#date-objects)                       | :heavy_minus_sign:                                                                         | N/A                                                                                        |
-| `date_before`                                                                              | [date](https://docs.python.org/3/library/datetime.html#date-objects)                       | :heavy_minus_sign:                                                                         | N/A                                                                                        |
-| `entity_id`                                                                                | List[*str*]                                                                                | :heavy_minus_sign:                                                                         | Entity ID to filter billing events by                                                      |
-| `event_type`                                                                               | [Optional[operations.EventType]](../../models/operations/eventtype.md)                     | :heavy_minus_sign:                                                                         | Type of billing event to filter by                                                         |
 
 
 ### Response

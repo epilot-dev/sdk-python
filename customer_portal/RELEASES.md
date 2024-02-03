@@ -211,3 +211,11 @@ Based on:
 - Speakeasy CLI 1.163.1 (2.248.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v2.0.0] customer_portal
+
+## 2024-02-03 00:03:34
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/customer-portal.yaml
+- Speakeasy CLI 1.166.0 (2.248.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v2.0.1] customer_portal

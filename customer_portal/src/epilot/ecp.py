@@ -363,17 +363,10 @@ class Ecp:
 
     
     
-    def get_billing_events(self, security: operations.GetBillingEventsSecurity, date_after: Optional[datetime] = None, date_before: Optional[datetime] = None, entity_id: Optional[List[str]] = None, event_type: Optional[operations.EventType] = None) -> operations.GetBillingEventsResponse:
+    def get_billing_events(self, request: operations.GetBillingEventsRequest, security: operations.GetBillingEventsSecurity) -> operations.GetBillingEventsResponse:
         r"""getBillingEvents
         Fetch billing events for a portal user
         """
-        request = operations.GetBillingEventsRequest(
-            date_after=date_after,
-            date_before=date_before,
-            entity_id=entity_id,
-            event_type=event_type,
-        )
-        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/billing/events'
