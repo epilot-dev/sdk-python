@@ -39,10 +39,10 @@ class GetValidSecondaryAttributesResponseBody:
 class GetValidSecondaryAttributesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     object: Optional[GetValidSecondaryAttributesResponseBody] = dataclasses.field(default=None)
     r"""Valid secondary attributes for the contact entity are returned successfully."""
     

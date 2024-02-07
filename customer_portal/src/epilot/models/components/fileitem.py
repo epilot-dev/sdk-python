@@ -61,11 +61,11 @@ class FileItem:
     r"""Title of the entity"""
     updated_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Last update timestamp of the entity"""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     relations: Optional[List[Relations]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_relations'), 'exclude': lambda f: f is None }})
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""Array of entity tags"""
     access_control: Optional[AccessControl] = dataclasses.field(default=AccessControl.PRIVATE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_control'), 'exclude': lambda f: f is None }})
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
     is_new: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_new'), 'exclude': lambda f: f is None }})
     r"""Indicate whether the user has not seen/downloaded the file before"""

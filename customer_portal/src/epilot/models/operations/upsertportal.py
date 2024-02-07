@@ -18,10 +18,10 @@ class UpsertPortalSecurity:
 
 @dataclasses.dataclass
 class UpsertPortalRequest:
-    origin: components_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""
     upsert_portal_config: components_upsertportalconfig.UpsertPortalConfig = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Portal payload"""
+    origin: components_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Origin of the portal"""
     
 
 
@@ -30,10 +30,10 @@ class UpsertPortalRequest:
 class UpsertPortalResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     portal_config: Optional[components_portalconfig.PortalConfig] = dataclasses.field(default=None)
     r"""Portal upserted successfully."""
     

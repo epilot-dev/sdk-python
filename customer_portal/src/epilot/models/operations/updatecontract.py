@@ -18,10 +18,10 @@ class UpdateContractSecurity:
 
 @dataclasses.dataclass
 class UpdateContractRequest:
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The ID of the contract"""
     request_body: Dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Requested contract body to update"""
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    r"""The ID of the contract"""
     
 
 
@@ -40,10 +40,10 @@ class UpdateContractResponseBody:
 class UpdateContractResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     object: Optional[UpdateContractResponseBody] = dataclasses.field(default=None)
     r"""Updated the contract successfully."""
     

@@ -711,10 +711,10 @@ s = epilot.Epilot()
 req = components.SavePortalFile(
     files=[
         components.SavePortalFileFiles(
+            file_type='orderRightTeaser',
             tags=[
                 'string',
             ],
-            file_type='orderRightTeaser',
             filename='12345',
             s3ref=components.SavePortalFileS3ref(
                 bucket='12345',
@@ -810,6 +810,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp_admin.upsert_portal("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_config=components.UpsertPortalConfig(
+    design_id='9ba94f20-b872-4217-a259-2a90a8ee1a29',
     cognito_details=components.UpsertPortalConfigCognitoDetails(
         cognito_user_pool_arn='arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341',
         cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
@@ -840,7 +841,6 @@ res = s.ecp_admin.upsert_portal("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_config
             ),
         ],
     ),
-    design_id='9ba94f20-b872-4217-a259-2a90a8ee1a29',
     domain='abc.com',
     email_templates=components.EmailTemplates(
         confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
@@ -941,11 +941,11 @@ s = epilot.Epilot()
 res = s.ecp_admin.upsert_portal_widget("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_widget=components.UpsertPortalWidget(
     widgets=[
         components.WidgetBase(
-            headline=components.WidgetBaseHeadline(),
             id='<ID>',
             list_index=393843,
-            sub_headline=components.WidgetBaseSubHeadline(),
             type=components.WidgetBaseType.CONTENT_WIDGET,
+            headline=components.WidgetBaseHeadline(),
+            sub_headline=components.WidgetBaseSubHeadline(),
         ),
     ],
 ), origin=components.Origin.INSTALLER_PORTAL)

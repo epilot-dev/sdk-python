@@ -18,10 +18,10 @@ class UpdateOpportunitySecurity:
 
 @dataclasses.dataclass
 class UpdateOpportunityRequest:
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""The ID of opportunity"""
     request_body: Dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Requested opportunity body to update"""
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    r"""The ID of opportunity"""
     
 
 
@@ -40,10 +40,10 @@ class UpdateOpportunityResponseBody:
 class UpdateOpportunityResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     object: Optional[UpdateOpportunityResponseBody] = dataclasses.field(default=None)
     r"""Updated the opportunity successfully."""
     

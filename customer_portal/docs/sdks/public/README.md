@@ -130,15 +130,15 @@ s = epilot.Epilot(
 
 
 res = s.public.create_user(create_user_request=components.CreateUserRequest(
+    email='testemail921@yopmail.com',
+    org_id='728',
+    password='124n$aAJs*d41h4',
     contact_id='123456',
     contact_identifiers={
         'key': 'string',
     },
-    email='testemail921@yopmail.com',
     first_name='John',
     last_name='Doe',
-    org_id='728',
-    password='124n$aAJs*d41h4',
     registration_identifiers={
         'contact': {
             'email': 'john.doe@example.com',

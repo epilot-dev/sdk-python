@@ -95,11 +95,11 @@ s = epilot.Epilot()
 
 res = s.ecp.create_custom_entity_activity("<YOUR_BEARER_TOKEN_HERE>", activity=components.Activity(
     message='{{caller}} did something with {{entity payload.entity.id}}.',
+    title='My custom activity',
+    type='MyCustomActivity',
     payload={
         'entity': 'string',
     },
-    title='My custom activity',
-    type='MyCustomActivity',
 ), entities=[
     '5da0a718-c822-403d-9f5d-20d4584e0528',
 ])
@@ -890,16 +890,16 @@ req = components.SaveEntityFile(
     entity_type='order',
     files=[
         components.Files(
-            tags=[
-                'string',
-            ],
-            document_type='12345',
-            file_entity_id='12345',
             filename='12345',
             s3ref=components.S3ref(
                 bucket='12345',
                 key='12345',
             ),
+            tags=[
+                'string',
+            ],
+            document_type='12345',
+            file_entity_id='12345',
         ),
     ],
 )
@@ -983,12 +983,12 @@ from epilot.models import components, operations
 s = epilot.Epilot()
 
 req = components.EntitySearchParams(
+    slug=components.EntitySlug.CONTACT,
     fields=[
         '_id',
         '_title',
         'first_name',
     ],
-    slug=components.EntitySlug.CONTACT,
     sort='_created_at:desc',
 )
 

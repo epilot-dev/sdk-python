@@ -48,9 +48,9 @@ class ReimbursementEventSchemas:
     contract: SchemasContract = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contract') }})
     type: SchemasType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the billing event."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""Array of entity tags"""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     billing_amount: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_amount'), 'exclude': lambda f: f is None }})
     r"""Amount to be paid in cents i.e. precision 2"""
     billing_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_amount_decimal'), 'exclude': lambda f: f is None }})
@@ -107,9 +107,9 @@ class Schemas:
     r"""Date on which the installment is due."""
     type: Type = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     r"""Type of the billing event."""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""Array of entity tags"""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     billing_amount: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_amount'), 'exclude': lambda f: f is None }})
     r"""Amount to be paid in cents i.e. precision 2"""
     billing_amount_decimal: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_amount_decimal'), 'exclude': lambda f: f is None }})
