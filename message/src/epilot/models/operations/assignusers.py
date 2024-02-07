@@ -20,9 +20,9 @@ class AssignUsersRequestBody:
 
 @dataclasses.dataclass
 class AssignUsersRequest:
+    request_body: AssignUsersRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Thread ID"""
-    request_body: AssignUsersRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
 
 
@@ -31,9 +31,9 @@ class AssignUsersRequest:
 class AssignUsersResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

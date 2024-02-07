@@ -16,9 +16,9 @@ from typing import List, Optional
 
 @dataclasses.dataclass
 class SendMessageRequest:
+    message_request_params: Optional[components_messagerequestparams.MessageRequestParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     do_not_create_entities: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'do_not_create_entities', 'style': 'form', 'explode': True }})
     r"""When true, this flag lets the caller to send only the message and by-pass creating the thread & message entities."""
-    message_request_params: Optional[components_messagerequestparams.MessageRequestParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 
@@ -99,10 +99,10 @@ class SendMessageResponseBody:
 class SendMessageResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     object: Optional[SendMessageResponseBody] = dataclasses.field(default=None)
     r"""Success"""
     
