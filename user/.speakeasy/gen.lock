@@ -4,9 +4,9 @@ management:
   docChecksum: 8643811cc01c0c61b1f75df65de61692
   docVersion: 2.0.0
   speakeasyVersion: internal
-  generationVersion: 2.248.1
-  releaseVersion: 3.0.0
-  configChecksum: 65921d7f98e3c517195b5dae42b9dbf8
+  generationVersion: 2.250.12
+  releaseVersion: 4.0.0
+  configChecksum: 36c3b8770c82cc42651f17de87e343f2
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: user
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=user
@@ -14,7 +14,7 @@ features:
   python:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.1.2
-    core: 4.4.4
+    core: 4.4.5
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.83.2

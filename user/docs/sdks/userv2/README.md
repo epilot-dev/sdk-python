@@ -348,15 +348,15 @@ s = epilot.Epilot(
 
 res = s.user_v2.sign_up_user(signup_user_payload=shared.SignupUserPayload(
     organization_detail=shared.OrganizationDetail(
-        additional_properties={
-            'key': 'string',
-        },
         email='Jettie71@yahoo.com',
-        is_privacy_policy_checked=False,
-        is_terms_and_conditions_checked=False,
         name='Epilot',
         pricing_tier='professional',
         type=shared.OrganizationDetailType.PARTNER,
+        additional_properties={
+            'key': 'string',
+        },
+        is_privacy_policy_checked=False,
+        is_terms_and_conditions_checked=False,
     ),
     user_detail=shared.UserDetail(
         email='Caden82@hotmail.com',
