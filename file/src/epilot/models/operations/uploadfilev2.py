@@ -10,9 +10,9 @@ from typing import Optional
 
 @dataclasses.dataclass
 class UploadFileV2Request:
+    upload_file_payload: Optional[shared_uploadfilepayload.UploadFilePayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     file_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'file_entity_id', 'style': 'form', 'explode': True }})
     r"""file entity id"""
-    upload_file_payload: Optional[shared_uploadfilepayload.UploadFilePayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
 
 
@@ -21,10 +21,10 @@ class UploadFileV2Request:
 class UploadFileV2Response:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     file_upload: Optional[shared_fileupload.FileUpload] = dataclasses.field(default=None)
     r"""Pre-signed URL for POST / PUT upload"""
     

@@ -560,6 +560,10 @@ s = epilot.Epilot(
 )
 
 req = shared.SaveS3FilePayload(
+    s3ref=shared.S3Reference(
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+    ),
     additional_properties={
         'key': 'string',
     },
@@ -569,17 +573,13 @@ req = shared.SaveS3FilePayload(
     filename='document.pdf',
     relations=[
         shared.FileRelationItem(
+            entity_id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
             schema='contact',
             tags=[
                 'string',
             ],
-            entity_id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
         ),
     ],
-    s3ref=shared.S3Reference(
-        bucket='epilot-files-prod',
-        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-    ),
 )
 
 res = s.files.save_file(req)
@@ -627,17 +627,17 @@ s = epilot.Epilot(
 )
 
 req = shared.SaveFilePayloadV2(
+    filename='document.pdf',
+    s3ref=shared.SaveFilePayloadV2S3ref(
+        bucket='epilot-files-prod',
+        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+    ),
     additional_properties={
         'key': 'string',
     },
     tags=[
         'string',
     ],
-    filename='document.pdf',
-    s3ref=shared.SaveFilePayloadV2S3ref(
-        bucket='epilot-files-prod',
-        key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-    ),
 )
 
 res = s.files.save_file_v2(req)

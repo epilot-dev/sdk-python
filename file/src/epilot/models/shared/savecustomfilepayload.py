@@ -32,9 +32,9 @@ class DocumentType(str, Enum):
 class SaveCustomFilePayload:
     custom_download_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_download_url') }})
     r"""Custom external download url used for the file"""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     access_control: Optional[SaveCustomFilePayloadAccessControl] = dataclasses.field(default=SaveCustomFilePayloadAccessControl.PRIVATE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('access_control'), 'exclude': lambda f: f is None }})
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     document_type: Optional[DocumentType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('document_type'), 'exclude': lambda f: f is None }})
     file_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file_entity_id'), 'exclude': lambda f: f is None }})
     r"""if passed, adds a new version to existing file entity"""
