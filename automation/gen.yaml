@@ -6,10 +6,11 @@ generation:
   fixes:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
   sdkFlattening: true
   telemetryEnabled: false
 python:
-  version: 2.0.1
+  version: 3.0.0
   author: Epilot
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot API

@@ -10,6 +10,7 @@ from typing import Any, Dict, List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OperationObjectNode:
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     append: Optional[List[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_append'), 'exclude': lambda f: f is None }})
     r"""Append to array"""
     copy: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_copy'), 'exclude': lambda f: f is None }})
@@ -17,6 +18,5 @@ class OperationObjectNode:
     set: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_set'), 'exclude': lambda f: f is None }})
     uniq: Optional[Union[bool, List[str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_uniq'), 'exclude': lambda f: f is None }})
     r"""Unique array"""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     
 

@@ -28,20 +28,22 @@ s = epilot.Epilot(
 )
 
 req = components.AutomationFlowInput(
-    entity_schema='submission',
     flow_name='Handle contact form',
+    triggers=[
+        components.JourneySubmitTrigger(
+            configuration=components.JourneySubmitTriggerConfiguration(
+                source_id='343cfeec-b458-4c3a-b9c0-433e64907d80',
+            ),
+            type=components.JourneySubmitTriggerType.JOURNEY_SUBMISSION,
+        ),
+    ],
+    entity_schema='submission',
     runs=7,
     trigger_conditions=[
         components.TriggerCondition(
             comparison=components.Comparison.EQUALS,
             source='string',
             value='string',
-        ),
-    ],
-    triggers=[
-        components.APISubmissionTrigger(
-            configuration=components.APISubmissionTriggerConfiguration(),
-            type=components.APISubmissionTriggerType.API_SUBMISSION,
         ),
     ],
 )
@@ -161,22 +163,25 @@ s = epilot.Epilot(
 
 
 res = s.flows.put_flow(flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f', automation_flow=components.AutomationFlowInput(
-    entity_schema='submission',
     flow_name='Handle contact form',
+    triggers=[
+        components.ActivityTrigger(
+            configuration=components.Configuration(
+                schema='submission',
+                types=[
+                    components.One.UPDATE_METER_READING,
+                ],
+            ),
+            type=components.Type.ACTIVITY,
+        ),
+    ],
+    entity_schema='submission',
     runs=7,
     trigger_conditions=[
         components.TriggerCondition(
-            comparison=components.Comparison.NOT_EMPTY,
+            comparison=components.Comparison.EQUALS,
             source='string',
-            value=2067.93,
-        ),
-    ],
-    triggers=[
-        components.FrontendSubmitTrigger(
-            configuration=components.FrontendSubmitTriggerConfiguration(
-                source_id='99',
-            ),
-            type=components.FrontendSubmitTriggerType.FRONTEND_SUBMISSION,
+            value='string',
         ),
     ],
 ))

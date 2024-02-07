@@ -22,10 +22,10 @@ class GetExecutionsRequest:
 class GetExecutionsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     get_executions_resp: Optional[components_getexecutionsresp.GetExecutionsResp] = dataclasses.field(default=None)
     r"""List of automation executions"""
     
