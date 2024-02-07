@@ -8,6 +8,7 @@ s = epilot.Epilot(
 )
 
 req = shared.WorkflowExecutionCreateReq(
+    workflow_id='string',
     assigned_to=[
         'string',
     ],
@@ -18,7 +19,6 @@ req = shared.WorkflowExecutionCreateReq(
             title='string',
         ),
     ],
-    workflow_id='string',
 )
 
 res = s.workflows.create_execution(req)

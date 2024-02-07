@@ -10,12 +10,12 @@ from typing import Optional
 
 @dataclasses.dataclass
 class UpdateStepRequest:
+    update_step_req: shared_updatestepreq.UpdateStepReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    r"""Workflow Execution Step payload"""
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
     r"""Id of the execution"""
     step_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'stepId', 'style': 'simple', 'explode': False }})
     r"""Short uuid (length 6) to identify the Workflow Execution Step."""
-    update_step_req: shared_updatestepreq.UpdateStepReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Workflow Execution Step payload"""
     
 
 
@@ -24,10 +24,10 @@ class UpdateStepRequest:
 class UpdateStepResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     step: Optional[shared_step.Step] = dataclasses.field(default=None)
     r"""Success - if the step is updated successfully"""
     

@@ -8,10 +8,10 @@ from ...models.shared import workflowexecutionupdatereq as shared_workflowexecut
 
 @dataclasses.dataclass
 class UpdateExecutionRequest:
-    execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
-    r"""Id of the execution"""
     workflow_execution_update_req: shared_workflowexecutionupdatereq.WorkflowExecutionUpdateReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Patch Updates for Workflow Execution payload."""
+    execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
+    r"""Id of the execution"""
     
 
 
@@ -20,9 +20,9 @@ class UpdateExecutionRequest:
 class UpdateExecutionResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
-    raw_response: requests_http.Response = dataclasses.field()
-    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

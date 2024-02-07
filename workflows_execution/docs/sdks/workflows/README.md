@@ -34,6 +34,7 @@ s = epilot.Epilot(
 )
 
 req = shared.WorkflowExecutionCreateReq(
+    workflow_id='string',
     assigned_to=[
         'string',
     ],
@@ -44,7 +45,6 @@ req = shared.WorkflowExecutionCreateReq(
             title='string',
         ),
     ],
-    workflow_id='string',
 )
 
 res = s.workflows.create_execution(req)
@@ -87,10 +87,10 @@ s = epilot.Epilot(
 
 
 res = s.workflows.create_step(create_step_req=shared.CreateStepReq(
+    name='string',
     automation_config=shared.AutomationConfig(
         flow_id='string',
     ),
-    name='string',
 ), execution_id='string')
 
 if res.step is not None:
