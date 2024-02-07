@@ -182,7 +182,6 @@ s = epilot.Epilot(
 
 
 res = s.roles.put_role(role_id='123:owner', role_payload=shared.One(
-    expires_at=dateutil.parser.isoparse('2028-07-21T17:32:28Z'),
     grants=[
         shared.GrantWithDependencies(
             action='entity-read',
@@ -218,6 +217,7 @@ res = s.roles.put_role(role_id='123:owner', role_payload=shared.One(
     organization_id='123',
     slug='owner',
     type=shared.RolePayloadType.USER_ROLE,
+    expires_at=dateutil.parser.isoparse('2028-07-21T17:32:28Z'),
 ))
 
 if res.role is not None:
