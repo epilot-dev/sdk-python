@@ -29,6 +29,15 @@ s = epilot.Epilot(
 )
 
 req = shared.Notification(
+    message=shared.Message(
+        de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
+        en='{{caller}} did something with {{contact.entity.id}} {{branch.name}}.',
+    ),
+    title=shared.Title(
+        de='Meine benutzerdefinierte Aktivität',
+        en='My custom notification',
+    ),
+    type='workflow',
     additional_properties={
         'key': 'string',
     },
@@ -48,10 +57,6 @@ req = shared.Notification(
     force_notify_users={
         '12345': 'string',
     },
-    message=shared.Message(
-        de='{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.',
-        en='{{caller}} did something with {{contact.entity.id}} {{branch.name}}.',
-    ),
     operations=[
         shared.EntityOperation(
             entity='d9fa50df-3a77-4db4-9782-9e5cd1039cd9',
@@ -71,11 +76,6 @@ req = shared.Notification(
         'entity': 'string',
     },
     redirect_url='https://epilot.cloud',
-    title=shared.Title(
-        de='Meine benutzerdefinierte Aktivität',
-        en='My custom notification',
-    ),
-    type='workflow',
     visibility_user_ids=[
         '1',
         '2',
