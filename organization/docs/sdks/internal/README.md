@@ -21,10 +21,10 @@ s = epilot.Epilot(
 
 req = components.CreateOrganizationRequest(
     organization_detail=components.OrganizationDetail(
-        email_address='epilot@epilot.cloud',
         name='epilot',
         pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
         type='Vendor',
+        email_address='epilot@epilot.cloud',
     ),
     owner_user=components.OwnerUser(
         email_address='ny.huynhthi@axonactive.com',
