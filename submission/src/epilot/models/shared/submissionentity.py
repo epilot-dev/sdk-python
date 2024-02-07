@@ -17,9 +17,9 @@ class Schema(str, Enum):
 class Files:
     s3ref: S3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
     r"""S3 Reference from File API"""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_tags'), 'exclude': lambda f: f is None }})
     r"""List of tags for File entities"""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     filename: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename'), 'exclude': lambda f: f is None }})
     r"""Override the file name"""
     relation_tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relation_tags'), 'exclude': lambda f: f is None }})

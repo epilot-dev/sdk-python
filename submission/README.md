@@ -20,11 +20,9 @@ from epilot.models import shared
 s = epilot.Epilot()
 
 req = shared.SubmissionPayload(
-    ivy_opportunity_ids=[
-        'string',
-    ],
     entities=[
         shared.SubmissionEntity(
+            schema=shared.Schema.SUBMISSION,
             additional_properties={
                 '_schema': 'string',
                 'description': 'string',
@@ -34,9 +32,12 @@ req = shared.SubmissionPayload(
                 'request': 'string',
                 'files': 'string',
             },
-            schema=shared.Schema.SUBMISSION,
             files=[
                 shared.Files(
+                    s3ref=shared.S3Reference(
+                        bucket='epilot-user-content',
+                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+                    ),
                     additional_properties={
                         'key': 'string',
                     },
@@ -46,13 +47,15 @@ req = shared.SubmissionPayload(
                     relation_tags=[
                         'string',
                     ],
-                    s3ref=shared.S3Reference(
-                        bucket='epilot-user-content',
-                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-                    ),
                 ),
             ],
         ),
+    ],
+    organization_id='123',
+    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
+    source_type='journey',
+    ivy_opportunity_ids=[
+        'string',
     ],
     journey_submit_id='123',
     opt_ins=[
@@ -64,9 +67,6 @@ req = shared.SubmissionPayload(
             topic='EMAIL_MARKETING',
         ),
     ],
-    organization_id='123',
-    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
-    source_type='journey',
 )
 
 res = s.submissions.create_submission(req)
@@ -107,11 +107,9 @@ from epilot.models import shared
 s = epilot.Epilot()
 
 req = shared.SubmissionPayload(
-    ivy_opportunity_ids=[
-        'string',
-    ],
     entities=[
         shared.SubmissionEntity(
+            schema=shared.Schema.SUBMISSION,
             additional_properties={
                 '_schema': 'string',
                 'description': 'string',
@@ -121,9 +119,12 @@ req = shared.SubmissionPayload(
                 'request': 'string',
                 'files': 'string',
             },
-            schema=shared.Schema.SUBMISSION,
             files=[
                 shared.Files(
+                    s3ref=shared.S3Reference(
+                        bucket='epilot-user-content',
+                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+                    ),
                     additional_properties={
                         'key': 'string',
                     },
@@ -133,13 +134,15 @@ req = shared.SubmissionPayload(
                     relation_tags=[
                         'string',
                     ],
-                    s3ref=shared.S3Reference(
-                        bucket='epilot-user-content',
-                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-                    ),
                 ),
             ],
         ),
+    ],
+    organization_id='123',
+    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
+    source_type='journey',
+    ivy_opportunity_ids=[
+        'string',
     ],
     journey_submit_id='123',
     opt_ins=[
@@ -151,9 +154,6 @@ req = shared.SubmissionPayload(
             topic='EMAIL_MARKETING',
         ),
     ],
-    organization_id='123',
-    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
-    source_type='journey',
 )
 
 res = None
@@ -193,11 +193,9 @@ s = epilot.Epilot(
 )
 
 req = shared.SubmissionPayload(
-    ivy_opportunity_ids=[
-        'string',
-    ],
     entities=[
         shared.SubmissionEntity(
+            schema=shared.Schema.SUBMISSION,
             additional_properties={
                 '_schema': 'string',
                 'description': 'string',
@@ -207,9 +205,12 @@ req = shared.SubmissionPayload(
                 'request': 'string',
                 'files': 'string',
             },
-            schema=shared.Schema.SUBMISSION,
             files=[
                 shared.Files(
+                    s3ref=shared.S3Reference(
+                        bucket='epilot-user-content',
+                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+                    ),
                     additional_properties={
                         'key': 'string',
                     },
@@ -219,13 +220,15 @@ req = shared.SubmissionPayload(
                     relation_tags=[
                         'string',
                     ],
-                    s3ref=shared.S3Reference(
-                        bucket='epilot-user-content',
-                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-                    ),
                 ),
             ],
         ),
+    ],
+    organization_id='123',
+    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
+    source_type='journey',
+    ivy_opportunity_ids=[
+        'string',
     ],
     journey_submit_id='123',
     opt_ins=[
@@ -237,9 +240,6 @@ req = shared.SubmissionPayload(
             topic='EMAIL_MARKETING',
         ),
     ],
-    organization_id='123',
-    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
-    source_type='journey',
 )
 
 res = s.submissions.create_submission(req)
@@ -262,11 +262,9 @@ s = epilot.Epilot(
 )
 
 req = shared.SubmissionPayload(
-    ivy_opportunity_ids=[
-        'string',
-    ],
     entities=[
         shared.SubmissionEntity(
+            schema=shared.Schema.SUBMISSION,
             additional_properties={
                 '_schema': 'string',
                 'description': 'string',
@@ -276,9 +274,12 @@ req = shared.SubmissionPayload(
                 'request': 'string',
                 'files': 'string',
             },
-            schema=shared.Schema.SUBMISSION,
             files=[
                 shared.Files(
+                    s3ref=shared.S3Reference(
+                        bucket='epilot-user-content',
+                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
+                    ),
                     additional_properties={
                         'key': 'string',
                     },
@@ -288,13 +289,15 @@ req = shared.SubmissionPayload(
                     relation_tags=[
                         'string',
                     ],
-                    s3ref=shared.S3Reference(
-                        bucket='epilot-user-content',
-                        key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
-                    ),
                 ),
             ],
         ),
+    ],
+    organization_id='123',
+    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
+    source_type='journey',
+    ivy_opportunity_ids=[
+        'string',
     ],
     journey_submit_id='123',
     opt_ins=[
@@ -306,9 +309,6 @@ req = shared.SubmissionPayload(
             topic='EMAIL_MARKETING',
         ),
     ],
-    organization_id='123',
-    source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
-    source_type='journey',
 )
 
 res = s.submissions.create_submission(req)
