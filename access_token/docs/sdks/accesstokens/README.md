@@ -40,10 +40,10 @@ s = epilot.Epilot(
 )
 
 req = shared.AccessTokenParameters(
+    name='Postman Access Token',
     assignments=[
         '123:owner',
     ],
-    name='Postman Access Token',
 )
 
 res = s.access_tokens.create_access_token(req)
