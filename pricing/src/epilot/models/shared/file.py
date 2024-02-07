@@ -39,8 +39,8 @@ class File:
     filename: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename') }})
     mime_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mime_type') }})
     versions: List[Versions] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions') }})
-    title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_title'), 'exclude': lambda f: f is None }})
     dollar_relation: Optional[EntityRelation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('$relation'), 'exclude': lambda f: f is None }})
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_title'), 'exclude': lambda f: f is None }})
     
 

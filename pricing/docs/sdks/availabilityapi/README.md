@@ -28,8 +28,8 @@ s = epilot.Epilot(
 
 res = s.availability_api.dollar_availability_check(availability_check_params=shared.AvailabilityCheckParams(
     filters=shared.AvailabilityFilters(
-        available_date=dateutil.parser.parse('2017-07-21').date(),
         location=shared.AvailabilityLocation(),
+        available_date=dateutil.parser.parse('2017-07-21').date(),
     ),
     products=[
         'string',

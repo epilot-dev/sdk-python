@@ -42,42 +42,6 @@ s = epilot.Epilot(
 
 res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
     cart=shared.CartDto(
-    additional_addresses=[
-        shared.Address(
-            additional_properties={
-                'key': 'string',
-            },
-            tags=[
-                'billing',
-            ],
-        ),
-    ],
-    billing_address=shared.Address(
-        additional_properties={
-            'key': 'string',
-        },
-        tags=[
-            'billing',
-        ],
-    ),
-    consents={
-        'key': 'string',
-    },
-    customer=shared.Customer(),
-    delivery_address=shared.Address(
-        additional_properties={
-            'key': 'string',
-        },
-        tags=[
-            'billing',
-        ],
-    ),
-    files=[
-        'string',
-    ],
-    journey_data={
-        'key': 'string',
-    },
     line_items=[
         shared.PriceItemDto(
             price=shared.Price(
@@ -109,6 +73,24 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                 },
                 availability_files=[
                     shared.File(
+                        created_at=dateutil.parser.isoparse('2022-07-18T21:10:42.213Z'),
+                        id='<ID>',
+                        org='string',
+                        schema='string',
+                        updated_at=dateutil.parser.isoparse('2023-07-15T03:40:19.475Z'),
+                        filename='ascii_program_gold.wav',
+                        mime_type='string',
+                        versions=[
+                            shared.Versions(
+                                s3ref=shared.S3ref(
+                                    bucket='string',
+                                    key='<key>',
+                                ),
+                                additional_properties={
+                                    'key': 'string',
+                                },
+                            ),
+                        ],
                         dollar_relation=shared.EntityRelation(
                             additional_properties={
                                 'key': 'string',
@@ -120,24 +102,6 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
                         additional_properties={
                             'key': 'string',
                         },
-                        created_at=dateutil.parser.isoparse('2022-07-18T21:10:42.213Z'),
-                        id='<ID>',
-                        org='string',
-                        schema='string',
-                        updated_at=dateutil.parser.isoparse('2023-07-15T03:40:19.475Z'),
-                        filename='ascii_program_gold.wav',
-                        mime_type='string',
-                        versions=[
-                            shared.Versions(
-                                additional_properties={
-                                    'key': 'string',
-                                },
-                                s3ref=shared.S3ref(
-                                    bucket='string',
-                                    key='<key>',
-                                ),
-                            ),
-                        ],
                     ),
                 ],
                 cross_sellable_products=shared.CrossSellableProducts(
@@ -201,6 +165,42 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(
             ],
         ),
     ],
+    additional_addresses=[
+        shared.Address(
+            additional_properties={
+                'key': 'string',
+            },
+            tags=[
+                'billing',
+            ],
+        ),
+    ],
+    billing_address=shared.Address(
+        additional_properties={
+            'key': 'string',
+        },
+        tags=[
+            'billing',
+        ],
+    ),
+    consents={
+        'key': 'string',
+    },
+    customer=shared.Customer(),
+    delivery_address=shared.Address(
+        additional_properties={
+            'key': 'string',
+        },
+        tags=[
+            'billing',
+        ],
+    ),
+    files=[
+        'string',
+    ],
+    journey_data={
+        'key': 'string',
+    },
     metadata=[
         shared.One(),
     ],

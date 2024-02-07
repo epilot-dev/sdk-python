@@ -27,11 +27,11 @@ s = epilot.Epilot(
 
 
 res = s.catalog_api.dollar_search_catalog(catalog_search=shared.CatalogSearch(
-    availability=shared.AvailabilityFilters(
-        available_date=dateutil.parser.parse('2017-07-21').date(),
-        location=shared.AvailabilityLocation(),
-    ),
     q='string',
+    availability=shared.AvailabilityFilters(
+        location=shared.AvailabilityLocation(),
+        available_date=dateutil.parser.parse('2017-07-21').date(),
+    ),
 ), x_ivy_org_id='string')
 
 if res.catalog_search_result is not None:

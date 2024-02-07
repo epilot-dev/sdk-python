@@ -47,6 +47,7 @@ class Products:
 @dataclasses.dataclass
 class Order:
     r"""The order entity"""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'exclude': lambda f: f is None }})
     r"""The order creation date"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
@@ -57,7 +58,6 @@ class Order:
     r"""An arbitrary set of tags attached to the order"""
     updated_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_updated_at'), 'exclude': lambda f: f is None }})
     r"""The order last update date"""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     amount_subtotal: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_subtotal'), 'exclude': lambda f: f is None }})
     r"""Total of all items before (discounts or) taxes are applied."""
     amount_total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('amount_total'), 'exclude': lambda f: f is None }})

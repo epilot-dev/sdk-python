@@ -87,6 +87,7 @@ class PriceSchemas1(str, Enum):
 @dataclasses.dataclass
 class Price:
     r"""The price entity schema for simple pricing"""
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'exclude': lambda f: f is None }})
     r"""The price creation date"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
@@ -101,7 +102,6 @@ class Price:
     r"""The price last update date"""
     active: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('active'), 'exclude': lambda f: f is None }})
     r"""Whether the price can be used for new purchases."""
-    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     billing_duration_amount: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_duration_amount'), 'exclude': lambda f: f is None }})
     r"""The billing period duration"""
     billing_duration_unit: Optional[BillingDurationUnit] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('billing_duration_unit'), 'exclude': lambda f: f is None }})
