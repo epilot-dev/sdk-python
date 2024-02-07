@@ -25,9 +25,9 @@ s = epilot.Epilot(
 
 
 res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
-    company_name='Company name',
     organization_id='string',
     signed_up_email='Lupe.Graham2@hotmail.com',
+    company_name='Company name',
 ))
 
 if res.status_code == 200:
@@ -81,9 +81,9 @@ s = epilot.Epilot(
 res = None
 try:
     res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
-    company_name='Company name',
     organization_id='string',
     signed_up_email='Lupe.Graham2@hotmail.com',
+    company_name='Company name',
 ))
 except errors.SDKError as e:
     print(e)  # handle exception
@@ -123,9 +123,9 @@ s = epilot.Epilot(
 
 
 res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
-    company_name='Company name',
     organization_id='string',
     signed_up_email='Lupe.Graham2@hotmail.com',
+    company_name='Company name',
 ))
 
 if res.status_code == 200:
@@ -150,9 +150,9 @@ s = epilot.Epilot(
 
 
 res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
-    company_name='Company name',
     organization_id='string',
     signed_up_email='Lupe.Graham2@hotmail.com',
+    company_name='Company name',
 ))
 
 if res.status_code == 200:
@@ -206,9 +206,9 @@ s = epilot.Epilot(
 
 
 res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
-    company_name='Company name',
     organization_id='string',
     signed_up_email='Lupe.Graham2@hotmail.com',
+    company_name='Company name',
 ))
 
 if res.status_code == 200:
