@@ -4,16 +4,16 @@ management:
   docChecksum: 88153a048a37af0988ef5bd002336a5e
   docVersion: 0.0.1
   speakeasyVersion: internal
-  generationVersion: 2.248.1
-  releaseVersion: 3.0.0
-  configChecksum: 9594c4f548c1aad969c181a57394c51f
+  generationVersion: 2.250.12
+  releaseVersion: 4.0.0
+  configChecksum: 8a0174d14f989a10f30321c3beb73820
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: internal_auth
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=internal_auth
 features:
   python:
     additionalProperties: 0.1.0
-    core: 4.4.4
+    core: 4.4.5
     globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
     unions: 2.82.5
