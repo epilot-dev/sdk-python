@@ -27,6 +27,51 @@ s = sdk.SDK(
 )
 
 req = shared.WorkflowDefinition(
+    flow=[
+        shared.Section(
+            name='string',
+            order=1581.6,
+            steps=[
+                shared.Step(
+                    name='string',
+                    order=6545.76,
+                    type=shared.ItemType.STEP,
+                    assigned_to=[
+                        'string',
+                    ],
+                    automation_config=shared.AutomationConfig(
+                        flow_id='string',
+                    ),
+                    description=shared.StepDescription(),
+                    due_date='2021-04-27T12:00:00.000Z',
+                    dynamic_due_date=shared.DynamicDueDate(
+                        action_type_condition=shared.ActionTypeCondition.WORKFLOW_STARTED,
+                        number_of_units=9212.14,
+                        time_period=shared.TimePeriod.MONTHS,
+                    ),
+                    ecp=shared.ECPDetails(
+                        journey=shared.StepJourney(),
+                    ),
+                    installer=shared.ECPDetails(
+                        journey=shared.StepJourney(),
+                    ),
+                    journey=shared.StepJourney(),
+                    requirements=[
+                        shared.StepRequirement(
+                            condition=shared.Condition.CLOSED,
+                            definition_id='string',
+                            type=shared.ItemType.STEP,
+                        ),
+                    ],
+                    user_ids=[
+                        8841.45,
+                    ],
+                ),
+            ],
+            type=shared.ItemType.SECTION,
+        ),
+    ],
+    name='string',
     assigned_to=[
         'string',
     ],
@@ -39,55 +84,10 @@ req = shared.WorkflowDefinition(
     due_date='2021-04-27T12:00:00.000Z',
     dynamic_due_date=shared.DynamicDueDate(
         action_type_condition=shared.ActionTypeCondition.WORKFLOW_STARTED,
-        number_of_units=1581.6,
-        time_period=shared.TimePeriod.WEEKS,
+        number_of_units=463.65,
+        time_period=shared.TimePeriod.DAYS,
     ),
-    flow=[
-        shared.Section(
-            name='string',
-            order=768.01,
-            steps=[
-                shared.Step(
-                    assigned_to=[
-                        'string',
-                    ],
-                    automation_config=shared.AutomationConfig(
-                        flow_id='string',
-                    ),
-                    description=shared.StepDescription(),
-                    due_date='2021-04-27T12:00:00.000Z',
-                    dynamic_due_date=shared.DynamicDueDate(
-                        action_type_condition=shared.ActionTypeCondition.STEP_CLOSED,
-                        number_of_units=8711.4,
-                        time_period=shared.TimePeriod.DAYS,
-                    ),
-                    ecp=shared.ECPDetails(
-                        journey=shared.StepJourney(),
-                    ),
-                    installer=shared.ECPDetails(
-                        journey=shared.StepJourney(),
-                    ),
-                    journey=shared.StepJourney(),
-                    name='string',
-                    order=8841.45,
-                    requirements=[
-                        shared.StepRequirement(
-                            condition=shared.Condition.CLOSED,
-                            definition_id='string',
-                            type=shared.ItemType.SECTION,
-                        ),
-                    ],
-                    type=shared.ItemType.STEP,
-                    user_ids=[
-                        463.65,
-                    ],
-                ),
-            ],
-            type=shared.ItemType.STEP,
-        ),
-    ],
     last_update_time='2021-04-27T12:01:13.000Z',
-    name='string',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
             source=shared.Source.WORKFLOW_STATUS,
@@ -368,6 +368,51 @@ s = sdk.SDK(
 
 
 res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinition(
+    flow=[
+        shared.Section(
+            name='string',
+            order=8376.64,
+            steps=[
+                shared.Step(
+                    name='string',
+                    order=7832.36,
+                    type=shared.ItemType.STEP,
+                    assigned_to=[
+                        'string',
+                    ],
+                    automation_config=shared.AutomationConfig(
+                        flow_id='string',
+                    ),
+                    description=shared.StepDescription(),
+                    due_date='2021-04-27T12:00:00.000Z',
+                    dynamic_due_date=shared.DynamicDueDate(
+                        action_type_condition=shared.ActionTypeCondition.WORKFLOW_STARTED,
+                        number_of_units=6141.93,
+                        time_period=shared.TimePeriod.MONTHS,
+                    ),
+                    ecp=shared.ECPDetails(
+                        journey=shared.StepJourney(),
+                    ),
+                    installer=shared.ECPDetails(
+                        journey=shared.StepJourney(),
+                    ),
+                    journey=shared.StepJourney(),
+                    requirements=[
+                        shared.StepRequirement(
+                            condition=shared.Condition.CLOSED,
+                            definition_id='string',
+                            type=shared.ItemType.STEP,
+                        ),
+                    ],
+                    user_ids=[
+                        4890.23,
+                    ],
+                ),
+            ],
+            type=shared.ItemType.SECTION,
+        ),
+    ],
+    name='string',
     assigned_to=[
         'string',
     ],
@@ -379,56 +424,11 @@ res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinitio
     creation_time='2021-04-27T12:01:13.000Z',
     due_date='2021-04-27T12:00:00.000Z',
     dynamic_due_date=shared.DynamicDueDate(
-        action_type_condition=shared.ActionTypeCondition.WORKFLOW_STARTED,
-        number_of_units=8376.64,
-        time_period=shared.TimePeriod.MONTHS,
+        action_type_condition=shared.ActionTypeCondition.STEP_CLOSED,
+        number_of_units=3753.56,
+        time_period=shared.TimePeriod.DAYS,
     ),
-    flow=[
-        shared.Section(
-            name='string',
-            order=452.1,
-            steps=[
-                shared.Step(
-                    assigned_to=[
-                        'string',
-                    ],
-                    automation_config=shared.AutomationConfig(
-                        flow_id='string',
-                    ),
-                    description=shared.StepDescription(),
-                    due_date='2021-04-27T12:00:00.000Z',
-                    dynamic_due_date=shared.DynamicDueDate(
-                        action_type_condition=shared.ActionTypeCondition.STEP_CLOSED,
-                        number_of_units=9991.65,
-                        time_period=shared.TimePeriod.DAYS,
-                    ),
-                    ecp=shared.ECPDetails(
-                        journey=shared.StepJourney(),
-                    ),
-                    installer=shared.ECPDetails(
-                        journey=shared.StepJourney(),
-                    ),
-                    journey=shared.StepJourney(),
-                    name='string',
-                    order=4890.23,
-                    requirements=[
-                        shared.StepRequirement(
-                            condition=shared.Condition.CLOSED,
-                            definition_id='string',
-                            type=shared.ItemType.SECTION,
-                        ),
-                    ],
-                    type=shared.ItemType.SECTION,
-                    user_ids=[
-                        3753.56,
-                    ],
-                ),
-            ],
-            type=shared.ItemType.STEP,
-        ),
-    ],
     last_update_time='2021-04-27T12:01:13.000Z',
-    name='string',
     update_entity_attributes=[
         shared.UpdateEntityAttributes(
             source=shared.Source.WORKFLOW_STATUS,

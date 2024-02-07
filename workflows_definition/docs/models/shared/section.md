@@ -7,8 +7,8 @@ A group of Steps that define the progress of the Workflow
 
 | Field                                              | Type                                               | Required                                           | Description                                        |
 | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| `id`                                               | *Optional[str]*                                    | :heavy_minus_sign:                                 | N/A                                                |
 | `name`                                             | *str*                                              | :heavy_check_mark:                                 | N/A                                                |
 | `order`                                            | *float*                                            | :heavy_check_mark:                                 | N/A                                                |
 | `steps`                                            | List[[shared.Step](../../models/shared/step.md)]   | :heavy_check_mark:                                 | N/A                                                |
 | `type`                                             | [shared.ItemType](../../models/shared/itemtype.md) | :heavy_check_mark:                                 | N/A                                                |
+| `id`                                               | *Optional[str]*                                    | :heavy_minus_sign:                                 | N/A                                                |
