@@ -7,18 +7,7 @@ s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = components.CreateOrganizationRequest(
-    organization_detail=components.OrganizationDetail(
-        name='epilot',
-        pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
-        type='Vendor',
-        email_address='epilot@epilot.cloud',
-    ),
-    owner_user=components.OwnerUser(
-        email_address='ny.huynhthi@axonactive.com',
-        full_name='Ny Huynh',
-    ),
-)
+req = components.CreateOrganizationRequest()
 
 res = s.organization.create_organization(req)
 

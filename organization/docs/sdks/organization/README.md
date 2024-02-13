@@ -25,18 +25,7 @@ s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = components.CreateOrganizationRequest(
-    organization_detail=components.OrganizationDetail(
-        name='epilot',
-        pricing_tier_id='01GEKHZHSN19KK10ZS92Y3WY9B',
-        type='Vendor',
-        email_address='epilot@epilot.cloud',
-    ),
-    owner_user=components.OwnerUser(
-        email_address='ny.huynhthi@axonactive.com',
-        full_name='Ny Huynh',
-    ),
-)
+req = components.CreateOrganizationRequest()
 
 res = s.organization.create_organization(req)
 
@@ -69,7 +58,6 @@ getOrganization
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -107,7 +95,7 @@ updateOrganization
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -115,7 +103,6 @@ s = epilot.Epilot(
 
 
 res = s.organization.update_organization(org_id='739224', organization=components.Organization(
-    address=components.Address(),
     email='someone@epilot.cloud',
     free_user_limit=50,
     id='739224',
@@ -126,9 +113,6 @@ res = s.organization.update_organization(org_id='739224', organization=component
     phone='49123123123',
     pricing_tier='professional',
     signature='<p>Thanks</p>',
-    style={
-        'key': 'string',
-    },
     symbol='EPI',
     website='https://epilot.cloud',
 ))

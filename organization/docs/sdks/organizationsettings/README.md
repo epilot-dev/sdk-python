@@ -19,7 +19,6 @@ Updates an organizatio nsetting
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -58,7 +57,6 @@ Get full organization settings object
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -96,7 +94,6 @@ Updates an organization setting
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -104,7 +101,7 @@ s = epilot.Epilot(
 
 
 res = s.organization_settings.put_settings_value(key='string', org_id='739224', settings_value={
-    'enabled': 'string',
+    'enabled': True,
 })
 
 if res.settings_value is not None:
