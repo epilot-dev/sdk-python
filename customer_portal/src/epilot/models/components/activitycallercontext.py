@@ -30,6 +30,7 @@ class PortalAuth:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ActivityCallerContext:
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     portal_auth: Optional[PortalAuth] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('PortalAuth'), 'exclude': lambda f: f is None }})
     

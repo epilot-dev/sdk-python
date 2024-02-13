@@ -15,7 +15,7 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=custom
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -130,7 +130,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components, errors
 
 s = epilot.Epilot()
 
@@ -139,10 +139,10 @@ res = None
 try:
     res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
 except errors.ErrorResp as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.object is not None:
@@ -168,7 +168,7 @@ You can override the default server globally by passing a server index to the `s
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     server_idx=0,
@@ -188,7 +188,7 @@ if res.object is not None:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     server_url="https://customer-portal-api.sls.epilot.io",
@@ -238,7 +238,7 @@ This SDK supports the following security schemes globally:
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -259,7 +259,7 @@ if res.object is not None:
 Some operations in this SDK require the security scheme to be specified at the request level. For example:
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 

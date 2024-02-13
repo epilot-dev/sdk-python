@@ -13,7 +13,6 @@ Get activity feed for an entity
 ### Example Usage
 
 ```python
-import dateutil.parser
 import epilot
 from epilot.models import components, operations
 

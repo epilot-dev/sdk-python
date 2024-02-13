@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 

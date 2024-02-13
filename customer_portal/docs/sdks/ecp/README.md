@@ -49,7 +49,7 @@ Add portal user relation to an entity
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -88,7 +88,7 @@ Create a custom activity that can be displayed in activity feed of an entity.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -136,7 +136,7 @@ Delete files from an entity
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -181,7 +181,6 @@ Delete the portal user
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -218,7 +217,6 @@ Get all contracts for a portal user
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -257,7 +255,6 @@ Fetch all documents under the related entities of a contact
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -300,7 +297,6 @@ Get all opportunities of a portal user
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -339,7 +335,6 @@ Get all orders for the portal user
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -377,16 +372,12 @@ Fetch billing events for a portal user
 ### Example Usage
 
 ```python
-import dateutil.parser
 import epilot
 from epilot.models import operations
 
 s = epilot.Epilot()
 
 req = operations.GetBillingEventsRequest(
-    entity_id=[
-        'string',
-    ],
     from_=0,
     size=100,
 )
@@ -423,7 +414,6 @@ Retrieves the contact by ID.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -460,7 +450,6 @@ Get a contract by id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -498,7 +487,7 @@ Get entities by identifiers by portal user
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -539,7 +528,6 @@ Fetch a document with ID
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -577,7 +565,6 @@ Fetch file counts for all ECP user related entities
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -614,7 +601,6 @@ Get an opportunity by id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -652,7 +638,6 @@ Get an order by id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -690,7 +675,6 @@ Retrieves the organization settings.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -767,7 +751,6 @@ Get the portal user details
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -844,7 +827,6 @@ Retrieves the schemas.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -881,7 +863,7 @@ Add files to an entity
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -938,7 +920,7 @@ Search for entities that have the payment relation with the given payment id
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -978,7 +960,7 @@ Search all entities of a portal user
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -1025,7 +1007,6 @@ Track that user has downloaded a file
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -1063,7 +1044,7 @@ Trigger entity access event for a portal user
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -1102,7 +1083,6 @@ Updates the contact details.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -1144,7 +1124,6 @@ Update a contract by id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -1186,7 +1165,6 @@ Update an opportunity by id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -1227,7 +1205,6 @@ Update an order by id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -1268,7 +1245,6 @@ Update the portal user details
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -1309,7 +1285,6 @@ Update a workflow step as done
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -1349,7 +1324,7 @@ Validate if cadence rule is valid for an entity
 ```python
 import dateutil.parser
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(

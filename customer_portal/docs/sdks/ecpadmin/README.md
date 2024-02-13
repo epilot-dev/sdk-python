@@ -37,7 +37,7 @@ Configure the distribution for the portal's custom domain
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -75,7 +75,7 @@ Creates a portal user as an SSO user.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -118,7 +118,7 @@ Deletes the portal.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -156,7 +156,6 @@ Retrieves the extra permission attributes.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -193,7 +192,7 @@ Get all users for a given entity
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -232,7 +231,6 @@ Retrieves all portal configurations.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -269,7 +267,6 @@ Get the Contact by id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -307,7 +304,7 @@ Retrieves the email templates of a portal
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -345,7 +342,7 @@ Retrieve a list of entity identifiers used for entity search by portal users.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -383,7 +380,7 @@ Retrieves the portal configuration for the organization.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -544,7 +541,6 @@ Get valid attributes from entities that can be used as identifier to map contact
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -581,7 +577,6 @@ Get valid secondary attributes that are used while mapping a contact on registra
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -621,7 +616,7 @@ Token is valid for 5 minutes.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import operations
 
 s = epilot.Epilot()
 
@@ -704,7 +699,7 @@ Add files to portal
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -716,10 +711,6 @@ req = components.SavePortalFile(
                 'string',
             ],
             filename='12345',
-            s3ref=components.SavePortalFileS3ref(
-                bucket='12345',
-                key='12345',
-            ),
         ),
     ],
     origin=components.Origin.INSTALLER_PORTAL,
@@ -758,7 +749,7 @@ Upserts the email templates of a portal
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -804,99 +795,31 @@ Upserts the settings for a portal of an organization.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
 
 res = s.ecp_admin.upsert_portal("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_config=components.UpsertPortalConfig(
     design_id='9ba94f20-b872-4217-a259-2a90a8ee1a29',
-    cognito_details=components.UpsertPortalConfigCognitoDetails(
-        cognito_user_pool_arn='arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341',
-        cognito_user_pool_client_id='6bsd0jkgoie74k2i8mrhc1vest',
-        cognito_user_pool_id='eu-central-1_CUEQRNbUb',
-    ),
     contact_identifiers=[
         'email',
         'last_name',
     ],
-    default_user_to_notify=components.UpsertPortalConfigDefaultUserToNotify(
-        on_pending_user=[
-            components.AdminUser(
-                additional_properties={
-                    'key': 'string',
-                },
-                display_name='John',
-                email='j.doe@epilot.cloud',
-                image_uri=components.ImageURI(
-                    key='fuafjvoHKsudhfagweucjasdvga',
-                    original='https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original',
-                    thumbnail_32='https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original?w=32&h=32',
-                    thumbnail_64='https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original?w=64&h=64',
-                ),
-                org_id='123',
-                phone='12345 67890',
-                type='user',
-                user_id='123456',
-            ),
-        ],
-    ),
     domain='abc.com',
-    email_templates=components.EmailTemplates(
-        confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
-        forgot_password='6538fddb-f0e9-4f0f-af51-6e57891ff20a',
-        invitation='14ae65fb-0dc1-4863-8743-6bc01da469f6',
-        on_doc_upload='c8ee93c0-8158-4da7-82f3-114f0c7b20ff',
-        on_map_a_pending_user='940134fa-50f2-4204-a08a-fd3afddbf39a',
-        on_new_quote='b03e2b88-8f3f-4a93-8118-1fb07e9198a1',
-    ),
-    entity_actions=[
-        components.UpsertPortalConfigEntityActions(
-            action_label=components.UpsertPortalConfigActionLabel(),
-            slug=components.EntitySlug.CONTACT,
-        ),
-    ],
-    entity_edit_rules=[
-        components.UpsertPortalConfigEntityEditRules(
-            allowed_decrement='10%',
-            allowed_increment='10%',
-            attribute='first_name',
-            cadence_period=1,
-            changes_allowed=1,
-            grace_period=1,
-            number_of_days_before_restriction=10,
-            slug=components.EntitySlug.CONTACT,
-        ),
-    ],
-    entity_identifiers=components.UpsertPortalConfigEntityIdentifiers(
-        type=components.UpsertPortalConfigType(
-            attributes=[
-                'contract_number',
-            ],
-        ),
-    ),
-    feature_settings=components.UpsertPortalConfigFeatureSettings(),
-    grants=[
-        components.Grant(
-            action='entity-read',
-            resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
-        ),
-    ],
-    images=components.UpsertPortalConfigImages(
-        order_left_teaser='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg',
-        order_right_teaser='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg',
-        welcome_banner='https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg',
-    ),
     name='Installer Portal',
     registration_identifiers=[
         components.RegistrationIdentifier(
+            name='email',
             schema=components.EntitySlug.CONTACT,
         ),
         components.RegistrationIdentifier(
+            name='last_name',
             schema=components.EntitySlug.CONTACT,
         ),
         components.RegistrationIdentifier(
-            schema=components.EntitySlug.CONTACT,
+            name='contract_number',
+            schema=components.EntitySlug.CONTRACT,
         ),
     ],
 ), origin=components.Origin.INSTALLER_PORTAL)
@@ -933,7 +856,7 @@ Upsert widget for a portal of an organization.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot()
 
@@ -944,8 +867,6 @@ res = s.ecp_admin.upsert_portal_widget("<YOUR_BEARER_TOKEN_HERE>", upsert_portal
             id='<ID>',
             list_index=393843,
             type=components.WidgetBaseType.CONTENT_WIDGET,
-            headline=components.WidgetBaseHeadline(),
-            sub_headline=components.WidgetBaseSubHeadline(),
         ),
     ],
 ), origin=components.Origin.INSTALLER_PORTAL)

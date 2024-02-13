@@ -13,7 +13,6 @@ Get total balance across all contracts and orders of a customer entity.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot()
 

@@ -17,6 +17,7 @@ class PortalUserSchema(str, Enum):
 @dataclasses.dataclass
 class PortalUser:
     r"""The portal user entity"""
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Creation timestamp of the entity"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id') }})

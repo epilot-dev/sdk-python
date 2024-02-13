@@ -17,6 +17,7 @@ class ContactSchema(str, Enum):
 @dataclasses.dataclass
 class Contact:
     r"""The mapped contact of the portal user"""
+    UNSET='__SPEAKEASY_UNSET__'
     created_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     r"""Creation timestamp of the entity"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id') }})

@@ -25,7 +25,7 @@ True if contact with given identifiers exists.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -77,7 +77,7 @@ Confirm a portal user
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -120,7 +120,7 @@ Registers a portal user
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -134,9 +134,6 @@ res = s.public.create_user(create_user_request=components.CreateUserRequest(
     org_id='728',
     password='124n$aAJs*d41h4',
     contact_id='123456',
-    contact_identifiers={
-        'key': 'string',
-    },
     first_name='John',
     last_name='Doe',
     registration_identifiers={
@@ -182,7 +179,7 @@ Return number of contacts matching identifier values.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -229,7 +226,7 @@ Check Contact by email
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -271,7 +268,7 @@ Retrieves the portal configuration by domain.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -312,7 +309,7 @@ Retrieves the public portal configuration.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -354,7 +351,7 @@ Retrieves the public widgets of a portal
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -396,7 +393,7 @@ Checks whether a user exists in the portal
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
