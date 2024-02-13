@@ -15,7 +15,7 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=workfl
 
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import shared
 
 s = sdk.SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -71,7 +71,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import errors, shared
 
 s = sdk.SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -84,10 +84,10 @@ try:
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 except errors.ErrorResp as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.status_code == 200:
@@ -113,7 +113,7 @@ You can override the default server globally by passing a server index to the `s
 
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import shared
 
 s = sdk.SDK(
     server_idx=0,
@@ -136,7 +136,7 @@ if res.status_code == 200:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import shared
 
 s = sdk.SDK(
     server_url="https://workflows-definition.sls.epilot.io",
@@ -188,7 +188,7 @@ This SDK supports the following security scheme globally:
 To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import shared
 
 s = sdk.SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",

@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import shared
 
 s = sdk.SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
