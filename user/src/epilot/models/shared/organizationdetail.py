@@ -15,13 +15,14 @@ class OrganizationDetailType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OrganizationDetail:
+    UNSET='__SPEAKEASY_UNSET__'
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     pricing_tier: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pricing_tier') }})
     type: OrganizationDetailType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
-    is_privacy_policy_checked: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_privacy_policy_checked') }})
-    is_terms_and_conditions_checked: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_terms_and_conditions_checked') }})
+    is_privacy_policy_checked: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_privacy_policy_checked'), 'exclude': lambda f: f is OrganizationDetail.UNSET }})
+    is_terms_and_conditions_checked: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_terms_and_conditions_checked'), 'exclude': lambda f: f is OrganizationDetail.UNSET }})
     phone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phone'), 'exclude': lambda f: f is None }})
     website: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('website'), 'exclude': lambda f: f is None }})
     

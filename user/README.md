@@ -71,6 +71,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import epilot
+from epilot.models import errors
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -81,7 +82,7 @@ res = None
 try:
     res = s.user_v1.get_me()
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.user is not None:

@@ -27,7 +27,7 @@ Activate user using an invite token
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -69,7 +69,6 @@ Delete user by user id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -138,7 +137,6 @@ Get user organization login parameters by username
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -176,7 +174,6 @@ Get user details by user id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -222,9 +219,6 @@ s = epilot.Epilot(
 
 req = shared.UserInvitationPayload(
     email='test@example.com',
-    roles=[
-        '123:owner',
-    ],
 )
 
 res = s.user_v2.invite_user(req)
@@ -258,7 +252,6 @@ Get the list of organization users
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -339,31 +332,14 @@ signUpUser
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.user_v2.sign_up_user(signup_user_payload=shared.SignupUserPayload(
-    organization_detail=shared.OrganizationDetail(
-        email='Jettie71@yahoo.com',
-        name='Epilot',
-        pricing_tier='professional',
-        type=shared.OrganizationDetailType.PARTNER,
-        additional_properties={
-            'key': 'string',
-        },
-        is_privacy_policy_checked=False,
-        is_terms_and_conditions_checked=False,
-    ),
-    user_detail=shared.UserDetail(
-        email='Caden82@hotmail.com',
-        full_name='Example user',
-        password='AKjhdakjsdh@!34',
-    ),
-), token='string')
+res = s.user_v2.sign_up_user(signup_user_payload=shared.SignupUserPayload(), token='string')
 
 if res.object is not None:
     # handle response
@@ -395,7 +371,7 @@ Update user details
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -408,25 +384,21 @@ res = s.user_v2.update_user_v2(id='string', user_v2=shared.UserV2(
     display_name='Example User',
     favorites={
         'entity_views': 'string',
-        'dashboard': 'string',
+        'dashboard': '751ff121-9ac2-4511-a2e6-851f11287380',
     },
     image_uri=shared.UserV2ImageURI(
         additional_properties={
-            'original': 'string',
-            'thumbnail_32': 'string',
+            'original': 'https://account-profile-images.epilot.cloud/1/avatar.png',
+            'thumbnail_32': 'https://account-profile-images.epilot.cloud/1/avatar_32x32.png',
         },
+        original='https://account-profile-images.epilot.cloud/1/avatar.png',
+        thumbnail_32='https://account-profile-images.epilot.cloud/1/avatar_32x32.png',
     ),
     is_signature_enabled=True,
     mfa_enabled=False,
     phone='1234567890',
     phone_verified=True,
     preferred_language='de',
-    properties=[
-        shared.UserV2Properties(
-            name='profileImageName',
-            value='avatar.png',
-        ),
-    ],
     signature='<p>Thanks</p>',
     token='65dc527f-cb2d-4158-8f2e-8978dbceb599',
 ))
@@ -461,7 +433,7 @@ Update new email using an verification token
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
