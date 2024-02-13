@@ -41,9 +41,6 @@ s = epilot.Epilot(
 
 req = shared.AccessTokenParameters(
     name='Postman Access Token',
-    assignments=[
-        '123:owner',
-    ],
 )
 
 res = s.access_tokens.create_access_token(req)
@@ -77,7 +74,7 @@ Lists all Access Tokens for current user (by default excludes system generated t
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -119,7 +116,7 @@ Revokes an Access Token so it can't be used anymore.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(

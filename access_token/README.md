@@ -25,9 +25,6 @@ s = epilot.Epilot(
 
 req = shared.AccessTokenParameters(
     name='Postman Access Token',
-    assignments=[
-        '123:owner',
-    ],
 )
 
 res = s.access_tokens.create_access_token(req)
@@ -72,7 +69,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import errors, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -82,16 +79,13 @@ s = epilot.Epilot(
 
 req = shared.AccessTokenParameters(
     name='Postman Access Token',
-    assignments=[
-        '123:owner',
-    ],
 )
 
 res = None
 try:
     res = s.access_tokens.create_access_token(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.object is not None:
@@ -128,9 +122,6 @@ s = epilot.Epilot(
 
 req = shared.AccessTokenParameters(
     name='Postman Access Token',
-    assignments=[
-        '123:owner',
-    ],
 )
 
 res = s.access_tokens.create_access_token(req)
@@ -157,9 +148,6 @@ s = epilot.Epilot(
 
 req = shared.AccessTokenParameters(
     name='Postman Access Token',
-    assignments=[
-        '123:owner',
-    ],
 )
 
 res = s.access_tokens.create_access_token(req)
@@ -215,9 +203,6 @@ s = epilot.Epilot(
 
 req = shared.AccessTokenParameters(
     name='Postman Access Token',
-    assignments=[
-        '123:owner',
-    ],
 )
 
 res = s.access_tokens.create_access_token(req)
