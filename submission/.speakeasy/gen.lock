@@ -4,7 +4,7 @@ management:
   docChecksum: 3e73a0b032d576778d71b4b1bce49714
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.250.12
+  generationVersion: 2.253.0
   releaseVersion: 4.0.0
   configChecksum: 3498cc9a7c939b6198211fe45c2d5114
   repoURL: https://github.com/epilot-dev/sdk-python.git

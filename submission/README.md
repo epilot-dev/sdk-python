@@ -24,29 +24,22 @@ req = shared.SubmissionPayload(
         shared.SubmissionEntity(
             schema=shared.Schema.SUBMISSION,
             additional_properties={
-                '_schema': 'string',
-                'description': 'string',
-                'contact_first_name': 'string',
-                'contact_last_name': 'string',
-                'contact_email': 'string',
-                'request': 'string',
+                '_schema': 'submission',
+                'description': 'Submission created via API',
+                'contact_first_name': 'First',
+                'contact_last_name': 'Last',
+                'contact_email': 'example@submission.com',
+                'request': 'I would like to know more about electric vehicles',
                 'files': 'string',
             },
+            description='Submission created via API',
             files=[
                 shared.Files(
                     s3ref=shared.S3Reference(
                         bucket='epilot-user-content',
                         key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
                     ),
-                    additional_properties={
-                        'key': 'string',
-                    },
-                    tags=[
-                        'string',
-                    ],
-                    relation_tags=[
-                        'string',
-                    ],
+                    filename='document.pdf',
                 ),
             ],
         ),
@@ -54,19 +47,7 @@ req = shared.SubmissionPayload(
     organization_id='123',
     source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
     source_type='journey',
-    ivy_opportunity_ids=[
-        'string',
-    ],
     journey_submit_id='123',
-    opt_ins=[
-        shared.OptIn(
-            identifier='example@email.com',
-            meta={
-                'key': 'string',
-            },
-            topic='EMAIL_MARKETING',
-        ),
-    ],
 )
 
 res = s.submissions.create_submission(req)
@@ -102,7 +83,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import errors, shared
 
 s = epilot.Epilot()
 
@@ -111,29 +92,22 @@ req = shared.SubmissionPayload(
         shared.SubmissionEntity(
             schema=shared.Schema.SUBMISSION,
             additional_properties={
-                '_schema': 'string',
-                'description': 'string',
-                'contact_first_name': 'string',
-                'contact_last_name': 'string',
-                'contact_email': 'string',
-                'request': 'string',
+                '_schema': 'submission',
+                'description': 'Submission created via API',
+                'contact_first_name': 'First',
+                'contact_last_name': 'Last',
+                'contact_email': 'example@submission.com',
+                'request': 'I would like to know more about electric vehicles',
                 'files': 'string',
             },
+            description='Submission created via API',
             files=[
                 shared.Files(
                     s3ref=shared.S3Reference(
                         bucket='epilot-user-content',
                         key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
                     ),
-                    additional_properties={
-                        'key': 'string',
-                    },
-                    tags=[
-                        'string',
-                    ],
-                    relation_tags=[
-                        'string',
-                    ],
+                    filename='document.pdf',
                 ),
             ],
         ),
@@ -141,26 +115,14 @@ req = shared.SubmissionPayload(
     organization_id='123',
     source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
     source_type='journey',
-    ivy_opportunity_ids=[
-        'string',
-    ],
     journey_submit_id='123',
-    opt_ins=[
-        shared.OptIn(
-            identifier='example@email.com',
-            meta={
-                'key': 'string',
-            },
-            topic='EMAIL_MARKETING',
-        ),
-    ],
 )
 
 res = None
 try:
     res = s.submissions.create_submission(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.status_code == 200:
@@ -197,29 +159,22 @@ req = shared.SubmissionPayload(
         shared.SubmissionEntity(
             schema=shared.Schema.SUBMISSION,
             additional_properties={
-                '_schema': 'string',
-                'description': 'string',
-                'contact_first_name': 'string',
-                'contact_last_name': 'string',
-                'contact_email': 'string',
-                'request': 'string',
+                '_schema': 'submission',
+                'description': 'Submission created via API',
+                'contact_first_name': 'First',
+                'contact_last_name': 'Last',
+                'contact_email': 'example@submission.com',
+                'request': 'I would like to know more about electric vehicles',
                 'files': 'string',
             },
+            description='Submission created via API',
             files=[
                 shared.Files(
                     s3ref=shared.S3Reference(
                         bucket='epilot-user-content',
                         key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
                     ),
-                    additional_properties={
-                        'key': 'string',
-                    },
-                    tags=[
-                        'string',
-                    ],
-                    relation_tags=[
-                        'string',
-                    ],
+                    filename='document.pdf',
                 ),
             ],
         ),
@@ -227,19 +182,7 @@ req = shared.SubmissionPayload(
     organization_id='123',
     source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
     source_type='journey',
-    ivy_opportunity_ids=[
-        'string',
-    ],
     journey_submit_id='123',
-    opt_ins=[
-        shared.OptIn(
-            identifier='example@email.com',
-            meta={
-                'key': 'string',
-            },
-            topic='EMAIL_MARKETING',
-        ),
-    ],
 )
 
 res = s.submissions.create_submission(req)
@@ -266,29 +209,22 @@ req = shared.SubmissionPayload(
         shared.SubmissionEntity(
             schema=shared.Schema.SUBMISSION,
             additional_properties={
-                '_schema': 'string',
-                'description': 'string',
-                'contact_first_name': 'string',
-                'contact_last_name': 'string',
-                'contact_email': 'string',
-                'request': 'string',
+                '_schema': 'submission',
+                'description': 'Submission created via API',
+                'contact_first_name': 'First',
+                'contact_last_name': 'Last',
+                'contact_email': 'example@submission.com',
+                'request': 'I would like to know more about electric vehicles',
                 'files': 'string',
             },
+            description='Submission created via API',
             files=[
                 shared.Files(
                     s3ref=shared.S3Reference(
                         bucket='epilot-user-content',
                         key='temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
                     ),
-                    additional_properties={
-                        'key': 'string',
-                    },
-                    tags=[
-                        'string',
-                    ],
-                    relation_tags=[
-                        'string',
-                    ],
+                    filename='document.pdf',
                 ),
             ],
         ),
@@ -296,19 +232,7 @@ req = shared.SubmissionPayload(
     organization_id='123',
     source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
     source_type='journey',
-    ivy_opportunity_ids=[
-        'string',
-    ],
     journey_submit_id='123',
-    opt_ins=[
-        shared.OptIn(
-            identifier='example@email.com',
-            meta={
-                'key': 'string',
-            },
-            topic='EMAIL_MARKETING',
-        ),
-    ],
 )
 
 res = s.submissions.create_submission(req)

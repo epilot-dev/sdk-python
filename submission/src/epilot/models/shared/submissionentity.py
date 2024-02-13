@@ -15,6 +15,7 @@ class Schema(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Files:
+    UNSET='__SPEAKEASY_UNSET__'
     s3ref: S3Reference = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3ref') }})
     r"""S3 Reference from File API"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
@@ -32,6 +33,7 @@ class Files:
 @dataclasses.dataclass
 class SubmissionEntity:
     r"""The submission entity to create"""
+    UNSET='__SPEAKEASY_UNSET__'
     schema: Schema = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_schema') }})
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
