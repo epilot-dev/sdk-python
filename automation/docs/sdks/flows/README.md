@@ -39,13 +39,6 @@ req = components.AutomationFlowInput(
     ],
     entity_schema='submission',
     runs=7,
-    trigger_conditions=[
-        components.TriggerCondition(
-            comparison=components.Comparison.EQUALS,
-            source='string',
-            value='string',
-        ),
-    ],
 )
 
 res = s.flows.create_flow(req)
@@ -79,7 +72,6 @@ Update automation flow by id
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -117,7 +109,6 @@ List available automation flows
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -155,7 +146,7 @@ Update automation flow by id
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -168,22 +159,12 @@ res = s.flows.put_flow(flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f', automatio
         components.ActivityTrigger(
             configuration=components.Configuration(
                 schema='submission',
-                types=[
-                    components.One.UPDATE_METER_READING,
-                ],
             ),
             type=components.Type.ACTIVITY,
         ),
     ],
     entity_schema='submission',
     runs=7,
-    trigger_conditions=[
-        components.TriggerCondition(
-            comparison=components.Comparison.EQUALS,
-            source='string',
-            value='string',
-        ),
-    ],
 ))
 
 if res.automation_flow is not None:
@@ -216,7 +197,6 @@ Search available automation flows
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",

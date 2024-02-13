@@ -10,6 +10,7 @@ from typing import Any, Dict, List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class OperationObjectNode:
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     append: Optional[List[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_append'), 'exclude': lambda f: f is None }})
     r"""Append to array"""

@@ -15,7 +15,6 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=automa
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -65,7 +64,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import errors
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -76,7 +75,7 @@ res = None
 try:
     res = s.executions.cancel_execution(execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4')
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.automation_execution is not None:
@@ -102,7 +101,6 @@ You can override the default server globally by passing a server index to the `s
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     server_idx=0,
@@ -123,7 +121,6 @@ if res.automation_execution is not None:
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     server_url="https://automation.sls.epilot.io",
@@ -173,7 +170,6 @@ This SDK supports the following security scheme globally:
 To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",

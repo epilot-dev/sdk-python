@@ -1,7 +1,6 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",

@@ -21,7 +21,6 @@ Cancel automation execution
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -59,7 +58,6 @@ Get automation execution
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -97,7 +95,6 @@ List automation executions
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -137,7 +134,7 @@ Retry a specific automation execution action which failed / is stuck.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
