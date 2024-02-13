@@ -3,33 +3,44 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import entityschemaitem as shared_entityschemaitem
+from ...models.components import entityschemaitem as components_entityschemaitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetSchemaVersionsRequest:
+    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    r"""Entity Type"""
+    drafts_from: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'drafts_from', 'style': 'form', 'explode': True }})
+    drafts_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'drafts_size', 'style': 'form', 'explode': True }})
+    fields: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'fields', 'style': 'form', 'explode': False }})
+    versions_from: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'versions_from', 'style': 'form', 'explode': True }})
+    versions_size: Optional[float] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'versions_size', 'style': 'form', 'explode': True }})
     
-    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})  
-    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetSchemaVersions200ApplicationJSON:
+class GetSchemaVersionsResponseBody:
     r"""Success"""
+    drafts: Optional[List[components_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drafts'), 'exclude': lambda f: f is None }})
+    versions: Optional[List[components_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})
     
-    drafts: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drafts'), 'exclude': lambda f: f is None }})  
-    versions: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('versions'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetSchemaVersionsResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[GetSchemaVersionsResponseBody] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_schema_versions_200_application_json_object: Optional[GetSchemaVersions200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
