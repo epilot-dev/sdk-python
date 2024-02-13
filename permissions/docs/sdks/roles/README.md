@@ -23,7 +23,7 @@ Delete role by id
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -63,7 +63,7 @@ Get role by id
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -172,7 +172,7 @@ Create or update role
 ```python
 import dateutil.parser
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -185,30 +185,6 @@ res = s.roles.put_role(role_id='123:owner', role_payload=shared.One(
     grants=[
         shared.GrantWithDependencies(
             action='entity-read',
-            conditions=[
-                shared.EqualsCondition(
-                    attribute='workflows.primary.task_name',
-                    operation=shared.Operation.EQUALS,
-                    values=[
-                        'string',
-                    ],
-                ),
-            ],
-            dependencies=[
-                shared.Grant(
-                    action='entity-read',
-                    conditions=[
-                        shared.EqualsCondition(
-                            attribute='workflows.primary.task_name',
-                            operation=shared.Operation.EQUALS,
-                            values=[
-                                'string',
-                            ],
-                        ),
-                    ],
-                    resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
-                ),
-            ],
             resource='entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947',
         ),
     ],

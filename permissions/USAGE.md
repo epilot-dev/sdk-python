@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
