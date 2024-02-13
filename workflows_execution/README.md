@@ -22,17 +22,20 @@ s = epilot.Epilot(
 )
 
 req = shared.WorkflowExecutionCreateReq(
-    workflow_id='string',
-    assigned_to=[
-        'string',
-    ],
+    workflow_id='j3f23fh23uif98',
     contexts=[
         shared.WorkflowContext(
-            id='<ID>',
-            schema='string',
+            id='3fa3fa86-0907-4642-a57e-0fe30a19874d',
+            schema='contact',
+            title='string',
+        ),
+        shared.WorkflowContext(
+            id='3a6d42fa-5070-4723-b90f-41ead4303e33',
+            schema='opportunity',
             title='string',
         ),
     ],
+    trigger=shared.TriggerType.AUTOMATIC,
 )
 
 res = s.workflows.create_execution(req)
@@ -79,34 +82,37 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import errors, shared
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 req = shared.WorkflowExecutionCreateReq(
-    workflow_id='string',
-    assigned_to=[
-        'string',
-    ],
+    workflow_id='j3f23fh23uif98',
     contexts=[
         shared.WorkflowContext(
-            id='<ID>',
-            schema='string',
+            id='3fa3fa86-0907-4642-a57e-0fe30a19874d',
+            schema='contact',
+            title='string',
+        ),
+        shared.WorkflowContext(
+            id='3a6d42fa-5070-4723-b90f-41ead4303e33',
+            schema='opportunity',
             title='string',
         ),
     ],
+    trigger=shared.TriggerType.AUTOMATIC,
 )
 
 res = None
 try:
     res = s.workflows.create_execution(req)
 except errors.ErrorResp as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.workflow_execution is not None:
@@ -140,17 +146,20 @@ s = epilot.Epilot(
 )
 
 req = shared.WorkflowExecutionCreateReq(
-    workflow_id='string',
-    assigned_to=[
-        'string',
-    ],
+    workflow_id='j3f23fh23uif98',
     contexts=[
         shared.WorkflowContext(
-            id='<ID>',
-            schema='string',
+            id='3fa3fa86-0907-4642-a57e-0fe30a19874d',
+            schema='contact',
+            title='string',
+        ),
+        shared.WorkflowContext(
+            id='3a6d42fa-5070-4723-b90f-41ead4303e33',
+            schema='opportunity',
             title='string',
         ),
     ],
+    trigger=shared.TriggerType.AUTOMATIC,
 )
 
 res = s.workflows.create_execution(req)
@@ -174,17 +183,20 @@ s = epilot.Epilot(
 )
 
 req = shared.WorkflowExecutionCreateReq(
-    workflow_id='string',
-    assigned_to=[
-        'string',
-    ],
+    workflow_id='j3f23fh23uif98',
     contexts=[
         shared.WorkflowContext(
-            id='<ID>',
-            schema='string',
+            id='3fa3fa86-0907-4642-a57e-0fe30a19874d',
+            schema='contact',
+            title='string',
+        ),
+        shared.WorkflowContext(
+            id='3a6d42fa-5070-4723-b90f-41ead4303e33',
+            schema='opportunity',
             title='string',
         ),
     ],
+    trigger=shared.TriggerType.AUTOMATIC,
 )
 
 res = s.workflows.create_execution(req)
@@ -236,17 +248,20 @@ s = epilot.Epilot(
 )
 
 req = shared.WorkflowExecutionCreateReq(
-    workflow_id='string',
-    assigned_to=[
-        'string',
-    ],
+    workflow_id='j3f23fh23uif98',
     contexts=[
         shared.WorkflowContext(
-            id='<ID>',
-            schema='string',
+            id='3fa3fa86-0907-4642-a57e-0fe30a19874d',
+            schema='contact',
+            title='string',
+        ),
+        shared.WorkflowContext(
+            id='3a6d42fa-5070-4723-b90f-41ead4303e33',
+            schema='opportunity',
             title='string',
         ),
     ],
+    trigger=shared.TriggerType.AUTOMATIC,
 )
 
 res = s.workflows.create_execution(req)

@@ -8,17 +8,20 @@ s = epilot.Epilot(
 )
 
 req = shared.WorkflowExecutionCreateReq(
-    workflow_id='string',
-    assigned_to=[
-        'string',
-    ],
+    workflow_id='j3f23fh23uif98',
     contexts=[
         shared.WorkflowContext(
-            id='<ID>',
-            schema='string',
+            id='3fa3fa86-0907-4642-a57e-0fe30a19874d',
+            schema='contact',
+            title='string',
+        ),
+        shared.WorkflowContext(
+            id='3a6d42fa-5070-4723-b90f-41ead4303e33',
+            schema='opportunity',
             title='string',
         ),
     ],
+    trigger=shared.TriggerType.AUTOMATIC,
 )
 
 res = s.workflows.create_execution(req)

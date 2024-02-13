@@ -34,17 +34,20 @@ s = epilot.Epilot(
 )
 
 req = shared.WorkflowExecutionCreateReq(
-    workflow_id='string',
-    assigned_to=[
-        'string',
-    ],
+    workflow_id='j3f23fh23uif98',
     contexts=[
         shared.WorkflowContext(
-            id='<ID>',
-            schema='string',
+            id='3fa3fa86-0907-4642-a57e-0fe30a19874d',
+            schema='contact',
+            title='string',
+        ),
+        shared.WorkflowContext(
+            id='3a6d42fa-5070-4723-b90f-41ead4303e33',
+            schema='opportunity',
             title='string',
         ),
     ],
+    trigger=shared.TriggerType.AUTOMATIC,
 )
 
 res = s.workflows.create_execution(req)
@@ -79,7 +82,7 @@ Create a new step in current workflow execution.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -88,9 +91,6 @@ s = epilot.Epilot(
 
 res = s.workflows.create_step(create_step_req=shared.CreateStepReq(
     name='string',
-    automation_config=shared.AutomationConfig(
-        flow_id='string',
-    ),
 ), execution_id='string')
 
 if res.step is not None:
@@ -124,7 +124,6 @@ Delete workflow execution by id. Workflow contexts will NOT be deleted.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -163,7 +162,6 @@ Deletes a step from a workflow execution.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -206,7 +204,6 @@ from the state of the Definition when the instance was created.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -245,7 +242,6 @@ Get a full workflow execution, included steps information, by execution id.
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -284,7 +280,6 @@ Retrieve Workflow Executions. Optionally, you can filter them by context & schem
 
 ```python
 import epilot
-from epilot.models import operations
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -330,9 +325,7 @@ s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.SearchExecutionsReq(
-    pagination=shared.ExecutionPaginationDynamo(),
-)
+req = shared.SearchExecutionsReq()
 
 res = s.workflows.search_executions(req)
 
@@ -374,9 +367,7 @@ s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.SearchStepsReq(
-    pagination=shared.SearchPagination(),
-)
+req = shared.SearchStepsReq()
 
 res = s.workflows.search_steps(req)
 
@@ -410,35 +401,14 @@ Patches updates like assignees, status, closingReason for a single Workflow Exec
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.workflows.update_execution(workflow_execution_update_req=shared.WorkflowExecutionUpdateReq(
-    assigned_to=[
-        'string',
-    ],
-    contexts=[
-        shared.WorkflowContext(
-            id='<ID>',
-            schema='string',
-            title='string',
-        ),
-    ],
-    dynamic_due_date=shared.DynamicDueDate(
-        number_of_units=1932.48,
-        time_period=shared.TimePeriod.WEEKS,
-    ),
-    selected_closing_reasons=[
-        shared.ClosingReason(
-            id='<ID>',
-            title='string',
-        ),
-    ],
-), execution_id='string')
+res = s.workflows.update_execution(workflow_execution_update_req=shared.WorkflowExecutionUpdateReq(), execution_id='string')
 
 if res.status_code == 200:
     # handle response
@@ -471,29 +441,14 @@ Patches various changes to a workflow execution step.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.workflows.update_step(update_step_req=shared.UpdateStepReq(
-    assigned_to=[
-        'string',
-    ],
-    automation_config=shared.AutomationConfig(
-        flow_id='string',
-    ),
-    dynamic_due_date=shared.DynamicDueDate(
-        number_of_units=444.49,
-        time_period=shared.TimePeriod.WEEKS,
-    ),
-    position=shared.StepPositionAt(),
-    user_ids=[
-        9439.44,
-    ],
-), execution_id='string', step_id='string')
+res = s.workflows.update_step(update_step_req=shared.UpdateStepReq(), execution_id='string', step_id='string')
 
 if res.step is not None:
     # handle response
