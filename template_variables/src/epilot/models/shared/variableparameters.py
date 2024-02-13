@@ -19,8 +19,9 @@ class ContextData:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class VariableParameters:
+    UNSET='__SPEAKEASY_UNSET__'
     template_type: TemplateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})
-    brand_id: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('brand_id') }})
+    brand_id: Optional[float] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('brand_id'), 'exclude': lambda f: f is VariableParameters.UNSET }})
     r"""Brand ID"""
     context_data: Optional[ContextData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_data'), 'exclude': lambda f: f is None }})
     r"""If context data is avaialble, this data will be used for variable replace."""
@@ -34,9 +35,9 @@ class VariableParameters:
     r"""The name of email template"""
     template_tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_tags'), 'exclude': lambda f: f is None }})
     r"""The tags of email template"""
-    user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id') }})
+    user_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is VariableParameters.UNSET }})
     r"""User ID"""
-    user_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_org_id') }})
+    user_org_id: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_org_id'), 'exclude': lambda f: f is VariableParameters.UNSET }})
     r"""Organization ID of the user"""
     variables_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('variables_version'), 'exclude': lambda f: f is None }})
     r"""The version of the variables syntax supported. Default is 1.0"""

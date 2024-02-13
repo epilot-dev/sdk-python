@@ -21,7 +21,7 @@ Generate QR Code for the given payload
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -61,7 +61,7 @@ Get all template variable categories
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -112,26 +112,7 @@ s = epilot.Epilot(
     ),
 )
 
-req = operations.GetVariableContextRequestBody(
-    parameters=shared.VariableParameters(
-        brand_id=123451,
-        context_data=shared.ContextData(),
-        custom_variables=[
-            shared.ExternalCustomVariable(
-                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
-                variable='{{craftsmen.invitation_link}}',
-            ),
-        ],
-        main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_tags=[
-            'string',
-        ],
-        template_type=shared.TemplateType.EMAIL,
-        user_id='50001',
-        user_org_id='729224',
-        variables_version='2',
-    ),
-)
+req = operations.GetVariableContextRequestBody()
 
 res = s.variables.get_variable_context(req)
 
@@ -175,32 +156,7 @@ s = epilot.Epilot(
     ),
 )
 
-req = operations.ReplaceTemplatesRequestBody(
-    inputs=[
-        'Hello, {{contact.first_name}}!
-
-        {{{brand.signature}}}
-        ',
-    ],
-    parameters=shared.VariableParameters(
-        brand_id=123451,
-        context_data=shared.ContextData(),
-        custom_variables=[
-            shared.ExternalCustomVariable(
-                value='https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19',
-                variable='{{craftsmen.invitation_link}}',
-            ),
-        ],
-        main_entity_id='63753437-c9e2-4e83-82bb-b1c666514561',
-        template_tags=[
-            'string',
-        ],
-        template_type=shared.TemplateType.EMAIL,
-        user_id='50001',
-        user_org_id='729224',
-        variables_version='2',
-    ),
-)
+req = operations.ReplaceTemplatesRequestBody()
 
 res = s.variables.replace_templates(req)
 
@@ -242,9 +198,6 @@ s = epilot.Epilot(
 )
 
 req = operations.SearchVariablesRequestBody(
-    entity_schemas=[
-        'contact',
-    ],
     query='logo',
     template_type=shared.TemplateType.DOCUMENT,
 )

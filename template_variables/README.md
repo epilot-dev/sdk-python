@@ -193,7 +193,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import epilot
-from epilot.models import shared
+from epilot.models import errors, shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -329,7 +329,7 @@ res = None
 try:
     res = s.custom_variables.create_custom_variable(req)
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.status_code == 200:
