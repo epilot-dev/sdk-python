@@ -34,7 +34,7 @@ Redirects to a accessible signed url for the respective file associated to the p
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -121,7 +121,7 @@ Generate pre-signed download S3 url for a file
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -209,7 +209,7 @@ Generate pre-signed download S3 url for a file
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -252,7 +252,7 @@ Generates a public link to access the private files
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -292,7 +292,7 @@ Not yet implemented; This API would fetches all the public links that are previo
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -332,7 +332,7 @@ Generate thumbnail preview for a file entity
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -418,7 +418,7 @@ Generate thumbnail preview from an s3 reference for a file entity
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -463,7 +463,7 @@ Get thumbnail preview from an s3 reference for a file entity
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -506,7 +506,7 @@ Not yet implemented; This operation would revokes a given public link by ID
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -564,22 +564,7 @@ req = shared.SaveS3FilePayload(
         bucket='epilot-files-prod',
         key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
-    additional_properties={
-        'key': 'string',
-    },
-    tags=[
-        'string',
-    ],
     filename='document.pdf',
-    relations=[
-        shared.FileRelationItem(
-            entity_id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
-            schema='contact',
-            tags=[
-                'string',
-            ],
-        ),
-    ],
 )
 
 res = s.files.save_file(req)
@@ -632,12 +617,6 @@ req = shared.SaveFilePayloadV2(
         bucket='epilot-files-prod',
         key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
     ),
-    additional_properties={
-        'key': 'string',
-    },
-    tags=[
-        'string',
-    ],
 )
 
 res = s.files.save_file_v2(req)
@@ -674,7 +653,7 @@ Use the createFile operation to store file file permanently.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -768,7 +747,7 @@ Use the createFile operation to store file file permanently.
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(

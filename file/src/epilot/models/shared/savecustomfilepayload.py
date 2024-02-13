@@ -30,6 +30,7 @@ class DocumentType(str, Enum):
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SaveCustomFilePayload:
+    UNSET='__SPEAKEASY_UNSET__'
     custom_download_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_download_url') }})
     r"""Custom external download url used for the file"""
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
