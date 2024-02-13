@@ -79,11 +79,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.threads.assign_users(request_body=operations.AssignUsersRequestBody(
-    assigned_to=[
-        '206801',
-    ],
-), id='string')
+res = s.threads.assign_users(request_body=operations.AssignUsersRequestBody(), id='string')
 
 if res.status_code == 200:
     # handle response
@@ -115,7 +111,7 @@ Immediately and permanently delete a thread. This operation cannot be undone.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -155,7 +151,7 @@ Mark thread as read
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -195,7 +191,7 @@ Mark thread as unread
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -283,7 +279,7 @@ Move a thread to trash
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -323,7 +319,7 @@ Restore a trashed thread
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(

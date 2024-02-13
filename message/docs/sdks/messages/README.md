@@ -21,7 +21,7 @@ Immediately and permanently delete a message. This operation cannot be undone.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -61,7 +61,7 @@ Get an email message by id
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -111,7 +111,7 @@ if res.object is not None:
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -151,7 +151,7 @@ Mark message as read
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -191,7 +191,7 @@ Mark message as unread
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -231,7 +231,7 @@ Send an email message
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -244,53 +244,18 @@ res = s.messages.send_message(message_request_params=components.MessageRequestPa
     from_=components.Address(
         address='messaging@epilot.cloud',
         name='epilot',
-        send_error=components.SendError(),
     ),
     subject='Request for solar panel price',
-    bcc=[
-        components.Address(
-            address='messaging@epilot.cloud',
-            name='epilot',
-            send_error=components.SendError(),
-        ),
-    ],
-    cc=[
-        components.Address(
-            address='messaging@epilot.cloud',
-            name='epilot',
-            send_error=components.SendError(),
-        ),
-    ],
-    file=components.AttachmentsRelation(
-        dollar_relation=[
-            components.File(
-                entity_id='f820ce3b-07b0-45ae-bcc6-babb2f53f79f',
-                cid='fb222496-a1a5-4639-94f2-07b5e35e4068',
-                filename='Produktinformationen_epilot360_Double_Opt_in.pdf',
-            ),
-        ],
-    ),
     html='<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>',
     parent_id='44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2',
-    reply_to=components.Address(
-        address='messaging@epilot.cloud',
-        name='epilot',
-        send_error=components.SendError(),
-    ),
     text='We at ABC GmbH would like to request a price quote for the solar panel.',
     thread=components.Thread(
-        topic='string',
+        topic='CUSTOMER_MESSAGE',
         assigned_to=[
-            'string',
+            '206801',
+            '200109',
         ],
     ),
-    to=[
-        components.Address(
-            address='messaging@epilot.cloud',
-            name='epilot',
-            send_error=components.SendError(),
-        ),
-    ],
 ), do_not_create_entities=False)
 
 if res.object is not None:
@@ -323,7 +288,7 @@ Move a message to the trash
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
@@ -363,7 +328,7 @@ Restore a trashed message
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
 s = epilot.Epilot(
     security=components.Security(
