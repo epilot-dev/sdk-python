@@ -29,6 +29,7 @@ class EpilotAuth:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class NotificationCallerContext:
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     epilot_auth: Optional[EpilotAuth] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('EpilotAuth'), 'exclude': lambda f: f is None }})
     

@@ -36,6 +36,7 @@ class NotificationItemTitle:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class NotificationItem:
+    UNSET='__SPEAKEASY_UNSET__'
     message: NotificationItemMessage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message') }})
     title: NotificationItemTitle = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
