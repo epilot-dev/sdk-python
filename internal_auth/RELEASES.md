@@ -179,3 +179,11 @@ Based on:
 - Speakeasy CLI 1.170.1 (2.250.12) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v4.0.0] internal_auth
+
+## 2024-02-13 00:04:44
+### Changes
+Based on:
+- OpenAPI Doc 0.0.1 https://docs.api.epilot.io/internal-auth.yaml
+- Speakeasy CLI 1.178.0 (2.253.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v4.0.0] internal_auth

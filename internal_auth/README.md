@@ -57,6 +57,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```python
 import epilot
+from epilot.models import errors
 
 s = epilot.Epilot(
     sigv4="<YOUR_API_KEY_HERE>",
@@ -67,7 +68,7 @@ res = None
 try:
     res = s.get_jwks()
 except errors.SDKError as e:
-    print(e)  # handle exception
+    # handle exception
     raise(e)
 
 if res.object is not None:
