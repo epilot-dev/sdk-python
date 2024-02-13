@@ -131,6 +131,7 @@ class Items:
 @dataclasses.dataclass
 class Opportunity:
     r"""The opportunity entity"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_created_at'), 'exclude': lambda f: f is None }})
     r"""The opportunity creation date"""
@@ -180,6 +181,7 @@ class Opportunity:
 @dataclasses.dataclass
 class OpportunityInput:
     r"""The opportunity entity"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_org_id'), 'exclude': lambda f: f is None }})
     r"""Organization Id the order belongs to"""

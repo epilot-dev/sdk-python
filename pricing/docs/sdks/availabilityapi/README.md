@@ -19,7 +19,7 @@ The availability check endpoint
 ```python
 import dateutil.parser
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",

@@ -9,7 +9,7 @@ from typing import Optional
 
 @dataclasses.dataclass
 class DollarCreateOpportunityRequest:
-    opportunity: shared_opportunity_input.OpportunityInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    opportunity: shared_opportunity.OpportunityInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
     r"""The target Organization Id represented by the caller"""
     

@@ -20,7 +20,6 @@ Create an order
 ### Example Usage
 
 ```python
-import dateutil.parser
 import epilot
 from epilot.models import shared
 
@@ -29,97 +28,7 @@ s = epilot.Epilot(
 )
 
 req = shared.OrderPayload(
-    additional_properties={
-        'key': 'string',
-    },
-    tags=[
-        'string',
-    ],
-    billing_address=[
-        shared.Address(
-            additional_properties={
-                'key': 'string',
-            },
-            tags=[
-                'billing',
-            ],
-        ),
-    ],
     currency='EUR',
-    delivery_address=[
-        shared.Address(
-            additional_properties={
-                'key': 'string',
-            },
-            tags=[
-                'billing',
-            ],
-        ),
-    ],
-    line_items=[
-        shared.CompositePriceItemInput(
-            price=shared.Price(
-            additional_properties={
-                '$ref': 'string',
-            },
-            tags=[
-                'string',
-            ],
-            billing_period=shared.BillingPeriod.WEEKLY,
-            tax=shared.Price1(
-            dollar_relation=[
-                shared.EntityRelation(
-                    additional_properties={
-                        'key': 'string',
-                    },
-                    tags=[
-                        'string',
-                    ],
-                ),
-            ],
-        ),
-            unit='string',
-            unit_amount_currency='EUR',
-        ),
-            currency='EUR',
-            item_components=[
-                shared.PriceItemInput(
-                    price=shared.CompositePrice(
-                    additional_properties={
-                        '$ref': 'string',
-                    },
-                    tags=[
-                        'string',
-                    ],
-                    price_components=shared.Two(
-                    dollar_relation=[
-                        shared.PriceComponentRelation(
-                            tags=[
-                                'string',
-                            ],
-                        ),
-                    ],
-                ),
-                    unit_amount_currency='EUR',
-                ),
-                    currency='EUR',
-                    metadata=[
-                        shared.One(),
-                    ],
-                ),
-            ],
-            metadata=[
-                shared.One(),
-            ],
-        ),
-    ],
-    payment_method=[
-        shared.PaymentMethod(
-            details={
-                'key': 'string',
-            },
-        ),
-    ],
     source_type='journey',
 )
 
@@ -154,9 +63,8 @@ Update an existing Order
 ### Example Usage
 
 ```python
-import dateutil.parser
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -164,115 +72,7 @@ s = epilot.Epilot(
 
 
 res = s.order_api.put_order(order_payload=shared.OrderPayload(
-    additional_properties={
-        'key': 'string',
-    },
-    tags=[
-        'string',
-    ],
-    billing_address=[
-        shared.Address(
-            additional_properties={
-                'key': 'string',
-            },
-            tags=[
-                'billing',
-            ],
-        ),
-    ],
     currency='EUR',
-    delivery_address=[
-        shared.Address(
-            additional_properties={
-                'key': 'string',
-            },
-            tags=[
-                'billing',
-            ],
-        ),
-    ],
-    line_items=[
-        shared.CompositePriceItemInput(
-            price=shared.Price(
-            additional_properties={
-                '$ref': 'string',
-            },
-            tags=[
-                'string',
-            ],
-            billing_period=shared.BillingPeriod.EVERY_QUARTER,
-            tax=[
-            shared.Tax(
-                created_at=dateutil.parser.isoparse('2022-07-04T22:26:02.046Z'),
-                id='10049643-f8ec-4f5e-9903-f16783587126',
-                org='string',
-                schema='string',
-                title='string',
-                updated_at=dateutil.parser.isoparse('2022-04-11T23:05:30.540Z'),
-                behavior=shared.Behavior.INCLUSIVE_LOWER,
-                rate=7376.37,
-                type=shared.TaxType.VAT,
-                additional_properties={
-                    '_id': 'string',
-                    'type': 'string',
-                    'description': 'string',
-                    'behavior': 'string',
-                    'active': 'string',
-                    'region': 'string',
-                    'region_label': 'string',
-                    '_org': 'string',
-                    '_schema': 'string',
-                    '_tags': 'string',
-                    '_created_at': 'string',
-                    '_updated_at': 'string',
-                },
-                tags=[
-                    'string',
-                ],
-            ),
-        ],
-            unit=shared.PriceSchemas1.M2,
-            unit_amount_currency='EUR',
-        ),
-            currency='EUR',
-            item_components=[
-                shared.PriceItemInput(
-                    price=shared.CompositePrice(
-                    additional_properties={
-                        '$ref': 'string',
-                    },
-                    tags=[
-                        'string',
-                    ],
-                    price_components=shared.Two(
-                    dollar_relation=[
-                        shared.PriceComponentRelation(
-                            tags=[
-                                'string',
-                            ],
-                        ),
-                    ],
-                ),
-                    unit_amount_currency='EUR',
-                ),
-                    currency='EUR',
-                    metadata=[
-                        shared.One(),
-                    ],
-                ),
-            ],
-            metadata=[
-                shared.One(),
-            ],
-        ),
-    ],
-    payment_method=[
-        shared.PaymentMethod(
-            details={
-                'key': 'string',
-            },
-        ),
-    ],
     source_type='journey',
 ), id='string')
 

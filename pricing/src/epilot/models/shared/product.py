@@ -73,6 +73,7 @@ class ProductType(str, Enum):
 @dataclasses.dataclass
 class Product:
     r"""The product entity"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     availability_files: Optional[List[File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_availability_files'), 'exclude': lambda f: f is None }})
     r"""Stores references to the availability files that define where this product is available.
@@ -119,6 +120,7 @@ class Product:
 @dataclasses.dataclass
 class ProductInput:
     r"""The product entity"""
+    UNSET='__SPEAKEASY_UNSET__'
     additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
     availability_files: Optional[List[File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_availability_files'), 'exclude': lambda f: f is None }})
     r"""Stores references to the availability files that define where this product is available.

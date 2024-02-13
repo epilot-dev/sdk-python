@@ -19,7 +19,7 @@ The `opportunity_number` can be used to universally identify an opportunity with
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
@@ -28,63 +28,8 @@ s = epilot.Epilot(
 
 res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput(
     additional_properties={
-        '$ref': 'string',
+        '$ref': '#/components/examples/opportunity',
     },
-    tags=[
-        'string',
-    ],
-    address=shared.OpportunityAddress(
-        dollar_relation_ref=[
-            shared.OpportunitySchemas1(),
-        ],
-    ),
-    assignee=[
-        shared.Assignee(
-            email_notification_settings=shared.EmailNotificationSettings(),
-        ),
-    ],
-    billing_address=shared.BillingAddress(
-        dollar_relation_ref=[
-            shared.OpportunitySchemasBillingAddress1(),
-        ],
-    ),
-    customer=shared.OpportunityCustomer(
-        dollar_relation=[
-            shared.EntityRelation(
-                additional_properties={
-                    'key': 'string',
-                },
-                tags=[
-                    'string',
-                ],
-            ),
-        ],
-    ),
-    dates=[
-        shared.Opportunity1(
-            tags=[
-                'string',
-            ],
-        ),
-    ],
-    delivery_address=shared.DeliveryAddress(
-        dollar_relation_ref=[
-            shared.OpportunitySchemasDeliveryAddress1(),
-        ],
-    ),
-    items=shared.Items(
-        dollar_relation=[
-            shared.OrderRelation(
-                tags=[
-                    'string',
-                ],
-            ),
-        ],
-    ),
-    source=shared.OpportunitySource(
-        http='/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939',
-        title='Journey: PH Journey',
-    ),
     source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
     source_type='journey',
 ), x_ivy_org_id='string')
@@ -96,10 +41,10 @@ if res.opportunity is not None:
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `opportunity`                                                      | [shared.OpportunityInput](../../models/shared/opportunityinput.md) | :heavy_check_mark:                                                 | N/A                                                                |
-| `x_ivy_org_id`                                                     | *str*                                                              | :heavy_check_mark:                                                 | The target Organization Id represented by the caller               |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `opportunity`                                                      | [shared.OpportunityInput](../../models/shared/opportunityinput.md) | :heavy_check_mark:                                                 | N/A                                                                | {"$ref":"#/components/examples/opportunity"}                       |
+| `x_ivy_org_id`                                                     | *str*                                                              | :heavy_check_mark:                                                 | The target Organization Id represented by the caller               |                                                                    |
 
 
 ### Response
