@@ -25,7 +25,7 @@ Activate partner using an invite token
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -70,7 +70,7 @@ Approve partner request
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -156,7 +156,7 @@ Get partner by token
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -196,7 +196,7 @@ Create a new partner in partner directory and send an invite email to accept req
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -237,7 +237,7 @@ Reject partner request
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
     security=shared.Security(
@@ -332,14 +332,7 @@ s = epilot.Epilot(
     ),
 )
 
-req = operations.SearchAssignableRequestBody(
-    org_ids=[
-        '123',
-    ],
-    types=[
-        operations.Types.PARTNER_USER,
-    ],
-)
+req = operations.SearchAssignableRequestBody()
 
 res = s.partners.search_assignable(req)
 
