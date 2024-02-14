@@ -3,37 +3,47 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import classificationsupdate as shared_classificationsupdate
-from ..shared import taxonomyclassification as shared_taxonomyclassification
+from ...models.components import classificationsupdate as components_classificationsupdate
+from ...models.components import taxonomyclassification as components_taxonomyclassification
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class UpdateClassificationsForTaxonomyRequest:
-    
     taxonomy_slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'taxonomySlug', 'style': 'simple', 'explode': False }})
-    r"""Taxonomy slug"""  
-    classifications_update: Optional[shared_classificationsupdate.ClassificationsUpdate] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    r"""Taxonomy slug"""
+    classifications_update: Optional[components_classificationsupdate.ClassificationsUpdate] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
+
+
+
+@dataclasses.dataclass
+class Deleted:
+    pass
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class UpdateClassificationsForTaxonomy200ApplicationJSON:
+class UpdateClassificationsForTaxonomyResponseBody:
     r"""Taxonomies classifications"""
+    created: Optional[List[components_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'exclude': lambda f: f is None }})
+    deleted: Optional[Deleted] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
+    updated: Optional[List[components_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
     
-    created: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'exclude': lambda f: f is None }})  
-    deleted: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})  
-    updated: Optional[list[shared_taxonomyclassification.TaxonomyClassification]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class UpdateClassificationsForTaxonomyResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[UpdateClassificationsForTaxonomyResponseBody] = dataclasses.field(default=None)
+    r"""Taxonomies classifications"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    update_classifications_for_taxonomy_200_application_json_object: Optional[UpdateClassificationsForTaxonomy200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Taxonomies classifications"""  
-    
+
