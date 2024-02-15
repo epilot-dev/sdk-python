@@ -74,7 +74,7 @@ s = epilot.Epilot(
 res = s.order_api.put_order(order_payload=shared.OrderPayload(
     currency='EUR',
     source_type='journey',
-), id='string')
+), id='<value>')
 
 if res.order is not None:
     # handle response

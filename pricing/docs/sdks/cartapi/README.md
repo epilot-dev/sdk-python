@@ -39,7 +39,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(), x_ivy_org_id='string')
+res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(), x_ivy_org_id='<value>')
 
 if res.checkout_cart_result is not None:
     # handle response

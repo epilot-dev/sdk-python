@@ -32,7 +32,7 @@ res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput
     },
     source_id='ce99875f-fba9-4fe2-a8f9-afaf52059051',
     source_type='journey',
-), x_ivy_org_id='string')
+), x_ivy_org_id='<value>')
 
 if res.opportunity is not None:
     # handle response

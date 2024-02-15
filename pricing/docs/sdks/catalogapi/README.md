@@ -40,7 +40,7 @@ res = s.catalog_api.dollar_search_catalog(catalog_search=shared.CatalogSearch(
     from_=0,
     size=200,
     sort='description ASC',
-), x_ivy_org_id='string')
+), x_ivy_org_id='<value>')
 
 if res.catalog_search_result is not None:
     # handle response

@@ -32,9 +32,9 @@ res = s.availability_api.dollar_availability_check(availability_check_params=sha
         available_date=dateutil.parser.parse('2017-07-21').date(),
     ),
     products=[
-        'string',
+        '<value>',
     ],
-), x_ivy_org_id='string')
+), x_ivy_org_id='<value>')
 
 if res.availability_result is not None:
     # handle response
