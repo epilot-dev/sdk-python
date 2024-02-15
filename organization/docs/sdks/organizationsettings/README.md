@@ -25,7 +25,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.organization_settings.delete_settings_value(key='string', org_id='739224')
+res = s.organization_settings.delete_settings_value(key='<value>', org_id='739224')
 
 if res.status_code == 200:
     # handle response
@@ -100,7 +100,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.organization_settings.put_settings_value(key='string', org_id='739224', settings_value={
+res = s.organization_settings.put_settings_value(key='<value>', org_id='739224', settings_value={
     'enabled': True,
 })
 
