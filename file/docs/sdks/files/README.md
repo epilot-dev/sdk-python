@@ -218,7 +218,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.files.download_s3_file(s3_bucket='string', s3_key='string', attachment=False)
+res = s.files.download_s3_file(s3_bucket='<value>', s3_key='<value>', attachment=False)
 
 if res.object is not None:
     # handle response
@@ -472,7 +472,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.files.preview_s3_file_get(bucket='string', key='string', h=40814, w=119215)
+res = s.files.preview_s3_file_get(bucket='<value>', key='<value>', h=40814, w=119215)
 
 if res.status_code == 200:
     # handle response
