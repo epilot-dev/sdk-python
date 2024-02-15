@@ -33,7 +33,7 @@ req = shared.SubmissionPayload(
                 'contact_last_name': 'Last',
                 'contact_email': 'example@submission.com',
                 'request': 'I would like to know more about electric vehicles',
-                'files': 'string',
+                'files': '<value>',
             },
             description='Submission created via API',
             files=[
