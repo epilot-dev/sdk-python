@@ -22,7 +22,7 @@ s = sdk.SDK(
 )
 
 
-res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
+res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_status_req=shared.ChangeReasonStatusReq(
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 
@@ -80,7 +80,7 @@ s = sdk.SDK(
 
 res = None
 try:
-    res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
+    res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_status_req=shared.ChangeReasonStatusReq(
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 except errors.ErrorResp as e:
@@ -121,7 +121,7 @@ s = sdk.SDK(
 )
 
 
-res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
+res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_status_req=shared.ChangeReasonStatusReq(
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 
@@ -144,7 +144,7 @@ s = sdk.SDK(
 )
 
 
-res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
+res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_status_req=shared.ChangeReasonStatusReq(
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 
@@ -195,7 +195,7 @@ s = sdk.SDK(
 )
 
 
-res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
+res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_status_req=shared.ChangeReasonStatusReq(
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 

@@ -29,11 +29,11 @@ s = sdk.SDK(
 req = shared.WorkflowDefinition(
     flow=[
         shared.Section(
-            name='string',
+            name='<value>',
             order=1581.6,
             steps=[
                 shared.Step(
-                    name='string',
+                    name='<value>',
                     order=6545.76,
                     type=shared.ItemType.STEP,
                     due_date='2021-04-27T12:00:00.000Z',
@@ -42,7 +42,7 @@ req = shared.WorkflowDefinition(
             type=shared.ItemType.STEP,
         ),
     ],
-    name='string',
+    name='<value>',
     creation_time='2021-04-27T12:01:13.000Z',
     due_date='2021-04-27T12:00:00.000Z',
     last_update_time='2021-04-27T12:01:13.000Z',
@@ -86,7 +86,7 @@ s = sdk.SDK(
 )
 
 
-res = s.workflows.delete_definition(definition_id='string')
+res = s.workflows.delete_definition(definition_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -124,7 +124,7 @@ s = sdk.SDK(
 )
 
 
-res = s.workflows.get_definition(definition_id='string')
+res = s.workflows.get_definition(definition_id='<value>')
 
 if res.workflow_definition is not None:
     # handle response
@@ -227,7 +227,7 @@ s = sdk.SDK(
 )
 
 
-res = s.workflows.get_workflow_closing_reasons(definition_id='string')
+res = s.workflows.get_workflow_closing_reasons(definition_id='<value>')
 
 if res.closing_reasons_ids is not None:
     # handle response
@@ -271,7 +271,7 @@ res = s.workflows.set_workflow_closing_reasons(closing_reasons_ids=shared.Closin
             id='x739cew',
         ),
     ],
-), definition_id='string')
+), definition_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -313,11 +313,11 @@ s = sdk.SDK(
 res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinition(
     flow=[
         shared.Section(
-            name='string',
+            name='<value>',
             order=8376.64,
             steps=[
                 shared.Step(
-                    name='string',
+                    name='<value>',
                     order=7832.36,
                     type=shared.ItemType.STEP,
                     due_date='2021-04-27T12:00:00.000Z',
@@ -326,11 +326,11 @@ res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinitio
             type=shared.ItemType.STEP,
         ),
     ],
-    name='string',
+    name='<value>',
     creation_time='2021-04-27T12:01:13.000Z',
     due_date='2021-04-27T12:00:00.000Z',
     last_update_time='2021-04-27T12:01:13.000Z',
-), definition_id='string')
+), definition_id='<value>')
 
 if res.workflow_definition is not None:
     # handle response

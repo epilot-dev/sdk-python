@@ -22,7 +22,7 @@ s = sdk.SDK(
 )
 
 
-res = s.closing_reason.change_reason_status(reason_id='string', change_reason_status_req=shared.ChangeReasonStatusReq(
+res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_status_req=shared.ChangeReasonStatusReq(
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 
@@ -65,7 +65,7 @@ s = sdk.SDK(
 
 req = shared.ClosingReason(
     status=shared.ClosingReasonsStatus.ACTIVE,
-    title='string',
+    title='<value>',
 )
 
 res = s.closing_reason.create_closing_reason(req)
