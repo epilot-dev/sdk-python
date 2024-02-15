@@ -57,7 +57,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v1.get_user(id='string')
+res = s.user_v1.get_user(id='<value>')
 
 if res.user is not None:
     # handle response
@@ -94,7 +94,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v1.get_user_login_parameters(username='string')
+res = s.user_v1.get_user_login_parameters(username='<value>')
 
 if res.object is not None:
     # handle response
@@ -132,8 +132,8 @@ s = epilot.Epilot(
 
 
 res = s.user_v1.list_users(limit=5262.12, offset=5400.61, org_ids=[
-    'string',
-], query='string')
+    '<value>',
+], query='<value>')
 
 if res.object is not None:
     # handle response

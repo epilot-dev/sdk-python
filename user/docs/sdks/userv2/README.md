@@ -34,7 +34,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v2.activate_user(token='string', user_activation_payload=shared.UserActivationPayload(
+res = s.user_v2.activate_user(token='<value>', user_activation_payload=shared.UserActivationPayload(
     display_name='Example User',
     password='AKjhdakjsdh@!34',
 ))
@@ -75,7 +75,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v2.delete_user_v2(id='string')
+res = s.user_v2.delete_user_v2(id='<value>')
 
 if res.user is not None:
     # handle response
@@ -143,7 +143,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v2.get_user_login_parameters_v2(username='string')
+res = s.user_v2.get_user_login_parameters_v2(username='<value>')
 
 if res.object is not None:
     # handle response
@@ -180,7 +180,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v2.get_user_v2(id='string')
+res = s.user_v2.get_user_v2(id='<value>')
 
 if res.user_v2 is not None:
     # handle response
@@ -258,7 +258,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v2.list_users_v2(limit=4589.67, offset=7253.59, query='string')
+res = s.user_v2.list_users_v2(limit=4589.67, offset=7253.59, query='<value>')
 
 if res.object is not None:
     # handle response
@@ -339,7 +339,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v2.sign_up_user(signup_user_payload=shared.SignupUserPayload(), token='string')
+res = s.user_v2.sign_up_user(signup_user_payload=shared.SignupUserPayload(), token='<value>')
 
 if res.object is not None:
     # handle response
@@ -378,12 +378,12 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v2.update_user_v2(id='string', user_v2=shared.UserV2(
+res = s.user_v2.update_user_v2(id='<value>', user_v2=shared.UserV2(
     created_at='2022-02-08T04:44:32.246Z',
     department='Sales',
     display_name='Example User',
     favorites={
-        'entity_views': 'string',
+        'entity_views': '<value>',
         'dashboard': '751ff121-9ac2-4511-a2e6-851f11287380',
     },
     image_uri=shared.UserV2ImageURI(
@@ -440,7 +440,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.user_v2.verify_email_with_token(token='string', user_verification_payload=shared.UserVerificationPayload(
+res = s.user_v2.verify_email_with_token(token='<value>', user_verification_payload=shared.UserVerificationPayload(
     password='AKjhdakjsdh@!34',
 ))
 
