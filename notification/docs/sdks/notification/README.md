@@ -10,6 +10,7 @@ Notification
 * [create_notification](#create_notification) - createNotification
 * [get_notification](#get_notification) - getNotification
 * [get_notifications](#get_notifications) - getNotifications
+* [get_notifications_v2](#get_notifications_v2) - getNotificationsV2
 * [get_total_unread](#get_total_unread) - getTotalUnread
 * [mark_all_as_read](#mark_all_as_read) - markAllAsRead
 * [mark_as_read](#mark_as_read) - markAsRead
@@ -39,11 +40,11 @@ req = shared.Notification(
     ),
     type='workflow',
     force_notify_users={
-        '12345': 'string',
+        '12345': '<value>',
     },
     organization_id='206801',
     payload={
-        'entity': 'string',
+        'entity': '<value>',
     },
     redirect_url='https://epilot.cloud',
     visibility_user_ids=[
@@ -129,7 +130,46 @@ s = epilot.Epilot(
 )
 
 
-res = s.notification.get_notifications(after_id=436719, limit=707368)
+res = s.notification.get_notifications(after_id=436719, limit=707368, no_hydrate=False)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `after_id`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | *Optional[int]*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `limit`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | *Optional[int]*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | The numbers of items to return                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `no_hydrate`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | *Optional[bool]*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | When true, the payload will not be hydrated with the entity data. This is useful when the client does not need the entity data and wants to save on API calls (performance gain). When false, the payload will be hydrated with the entity data. This is useful when the client needs the entity data to display the notification (e.g. to show the name of the contact in the notification message), but can have a significative performance impact.<br/><br/>This endpoint will eventually be deprecated in favor of GET /v2/notification/notifications which no longer hydrates the payload by default.<br/> |
+
+
+### Response
+
+**[operations.GetNotificationsResponse](../../models/operations/getnotificationsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## get_notifications_v2
+
+Get notifications items. These items may eventually contain entities within their payload, which can be hydrated by the client if desired by calling the Entity API directly.
+
+### Example Usage
+
+```python
+import epilot
+
+s = epilot.Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+)
+
+
+res = s.notification.get_notifications_v2(after_id=629883, limit=111070)
 
 if res.object is not None:
     # handle response
@@ -146,7 +186,7 @@ if res.object is not None:
 
 ### Response
 
-**[operations.GetNotificationsResponse](../../models/operations/getnotificationsresponse.md)**
+**[operations.GetNotificationsV2Response](../../models/operations/getnotificationsv2response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

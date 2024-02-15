@@ -32,11 +32,11 @@ req = shared.Notification(
     ),
     type='workflow',
     force_notify_users={
-        '12345': 'string',
+        '12345': '<value>',
     },
     organization_id='206801',
     payload={
-        'entity': 'string',
+        'entity': '<value>',
     },
     redirect_url='https://epilot.cloud',
     visibility_user_ids=[
@@ -64,6 +64,7 @@ if res.status_code == 200:
 * [create_notification](docs/sdks/notification/README.md#create_notification) - createNotification
 * [get_notification](docs/sdks/notification/README.md#get_notification) - getNotification
 * [get_notifications](docs/sdks/notification/README.md#get_notifications) - getNotifications
+* [get_notifications_v2](docs/sdks/notification/README.md#get_notifications_v2) - getNotificationsV2
 * [get_total_unread](docs/sdks/notification/README.md#get_total_unread) - getTotalUnread
 * [mark_all_as_read](docs/sdks/notification/README.md#mark_all_as_read) - markAllAsRead
 * [mark_as_read](docs/sdks/notification/README.md#mark_as_read) - markAsRead
@@ -103,11 +104,11 @@ req = shared.Notification(
     ),
     type='workflow',
     force_notify_users={
-        '12345': 'string',
+        '12345': '<value>',
     },
     organization_id='206801',
     payload={
-        'entity': 'string',
+        'entity': '<value>',
     },
     redirect_url='https://epilot.cloud',
     visibility_user_ids=[
@@ -167,11 +168,11 @@ req = shared.Notification(
     ),
     type='workflow',
     force_notify_users={
-        '12345': 'string',
+        '12345': '<value>',
     },
     organization_id='206801',
     payload={
-        'entity': 'string',
+        'entity': '<value>',
     },
     redirect_url='https://epilot.cloud',
     visibility_user_ids=[
@@ -214,11 +215,11 @@ req = shared.Notification(
     ),
     type='workflow',
     force_notify_users={
-        '12345': 'string',
+        '12345': '<value>',
     },
     organization_id='206801',
     payload={
-        'entity': 'string',
+        'entity': '<value>',
     },
     redirect_url='https://epilot.cloud',
     visibility_user_ids=[
@@ -289,11 +290,11 @@ req = shared.Notification(
     ),
     type='workflow',
     force_notify_users={
-        '12345': 'string',
+        '12345': '<value>',
     },
     organization_id='206801',
     payload={
-        'entity': 'string',
+        'entity': '<value>',
     },
     redirect_url='https://epilot.cloud',
     visibility_user_ids=[

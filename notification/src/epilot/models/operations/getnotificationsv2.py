@@ -10,22 +10,17 @@ from typing import List, Optional
 
 
 @dataclasses.dataclass
-class GetNotificationsRequest:
+class GetNotificationsV2Request:
     after_id: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after_id', 'style': 'form', 'explode': True }})
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     r"""The numbers of items to return"""
-    no_hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'no_hydrate', 'style': 'form', 'explode': True }})
-    r"""When true, the payload will not be hydrated with the entity data. This is useful when the client does not need the entity data and wants to save on API calls (performance gain). When false, the payload will be hydrated with the entity data. This is useful when the client needs the entity data to display the notification (e.g. to show the name of the contact in the notification message), but can have a significative performance impact.
-
-    This endpoint will eventually be deprecated in favor of GET /v2/notification/notifications which no longer hydrates the payload by default.
-    """
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetNotificationsResponseBody:
+class GetNotificationsV2ResponseBody:
     r"""Success"""
     results: Optional[List[shared_notificationitem.NotificationItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})
@@ -35,14 +30,14 @@ class GetNotificationsResponseBody:
 
 
 @dataclasses.dataclass
-class GetNotificationsResponse:
+class GetNotificationsV2Response:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     raw_response: requests_http.Response = dataclasses.field()
     r"""Raw HTTP response; suitable for custom response parsing"""
-    object: Optional[GetNotificationsResponseBody] = dataclasses.field(default=None)
+    object: Optional[GetNotificationsV2ResponseBody] = dataclasses.field(default=None)
     r"""Success"""
     
 

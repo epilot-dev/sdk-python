@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: 706b689e-eda6-4c2d-b9ab-afceb2101e0f
 management:
-  docChecksum: 0e661bd8cf4bb8f9a78a0eec763ee814
+  docChecksum: 08d313f49d7be7cb046a1cb893fb34ee
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.253.0
-  releaseVersion: 4.0.0
-  configChecksum: 3b0d1eec636e7bef8ef441d80e1b78a4
+  generationVersion: 2.258.0
+  releaseVersion: 4.0.1
+  configChecksum: f395f141582b3b1bb609db56dc6d1196
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: notification
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=notification
 features:
   python:
     additionalProperties: 0.1.0
-    core: 4.4.5
+    core: 4.4.6
     flattening: 2.81.1
     globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
@@ -32,6 +32,7 @@ generatedFiles:
   - src/epilot/models/operations/createnotification.py
   - src/epilot/models/operations/getnotification.py
   - src/epilot/models/operations/getnotifications.py
+  - src/epilot/models/operations/getnotificationsv2.py
   - src/epilot/models/operations/gettotalunread.py
   - src/epilot/models/operations/markallasread.py
   - src/epilot/models/operations/markasread.py
@@ -50,6 +51,9 @@ generatedFiles:
   - docs/models/operations/getnotificationsrequest.md
   - docs/models/operations/getnotificationsresponsebody.md
   - docs/models/operations/getnotificationsresponse.md
+  - docs/models/operations/getnotificationsv2request.md
+  - docs/models/operations/getnotificationsv2responsebody.md
+  - docs/models/operations/getnotificationsv2response.md
   - docs/models/operations/gettotalunreadresponse.md
   - docs/models/operations/markallasreadresponse.md
   - docs/models/operations/markasreadrequest.md

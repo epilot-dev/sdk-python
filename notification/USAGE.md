@@ -18,11 +18,11 @@ req = shared.Notification(
     ),
     type='workflow',
     force_notify_users={
-        '12345': 'string',
+        '12345': '<value>',
     },
     organization_id='206801',
     payload={
-        'entity': 'string',
+        'entity': '<value>',
     },
     redirect_url='https://epilot.cloud',
     visibility_user_ids=[

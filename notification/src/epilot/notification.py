@@ -85,13 +85,14 @@ class Notification:
 
     
     
-    def get_notifications(self, after_id: Optional[int] = None, limit: Optional[int] = None) -> operations.GetNotificationsResponse:
+    def get_notifications(self, after_id: Optional[int] = None, limit: Optional[int] = None, no_hydrate: Optional[bool] = None) -> operations.GetNotificationsResponse:
         r"""getNotifications
         Get notifications
         """
         request = operations.GetNotificationsRequest(
             after_id=after_id,
             limit=limit,
+            no_hydrate=no_hydrate,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -115,6 +116,46 @@ class Notification:
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetNotificationsResponseBody])
+                res.object = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def get_notifications_v2(self, after_id: Optional[int] = None, limit: Optional[int] = None) -> operations.GetNotificationsV2Response:
+        r"""getNotificationsV2
+        Get notifications items. These items may eventually contain entities within their payload, which can be hydrated by the client if desired by calling the Entity API directly.
+        """
+        request = operations.GetNotificationsV2Request(
+            after_id=after_id,
+            limit=limit,
+        )
+        
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/notification/notifications'
+        headers = {}
+        query_params = utils.get_query_params(operations.GetNotificationsV2Request, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+        
+        res = operations.GetNotificationsV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetNotificationsV2ResponseBody])
                 res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
