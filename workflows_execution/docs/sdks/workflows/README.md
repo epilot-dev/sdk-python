@@ -39,12 +39,12 @@ req = shared.WorkflowExecutionCreateReq(
         shared.WorkflowContext(
             id='3fa3fa86-0907-4642-a57e-0fe30a19874d',
             schema='contact',
-            title='string',
+            title='<value>',
         ),
         shared.WorkflowContext(
             id='3a6d42fa-5070-4723-b90f-41ead4303e33',
             schema='opportunity',
-            title='string',
+            title='<value>',
         ),
     ],
     trigger=shared.TriggerType.AUTOMATIC,
@@ -90,8 +90,8 @@ s = epilot.Epilot(
 
 
 res = s.workflows.create_step(create_step_req=shared.CreateStepReq(
-    name='string',
-), execution_id='string')
+    name='<value>',
+), execution_id='<value>')
 
 if res.step is not None:
     # handle response
@@ -130,7 +130,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.workflows.delete_execution(execution_id='string')
+res = s.workflows.delete_execution(execution_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -168,7 +168,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.workflows.delete_step(execution_id='string', step_id='string')
+res = s.workflows.delete_step(execution_id='<value>', step_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -210,7 +210,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.workflows.get_closing_reason_execution(execution_id='string')
+res = s.workflows.get_closing_reason_execution(execution_id='<value>')
 
 if res.closing_reason_resp is not None:
     # handle response
@@ -248,7 +248,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.workflows.get_execution(execution_id='string')
+res = s.workflows.get_execution(execution_id='<value>')
 
 if res.workflow_execution is not None:
     # handle response
@@ -286,7 +286,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.workflows.get_executions(context='string', schema='string')
+res = s.workflows.get_executions(context='<value>', schema='<value>')
 
 if res.classes is not None:
     # handle response
@@ -408,7 +408,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.workflows.update_execution(workflow_execution_update_req=shared.WorkflowExecutionUpdateReq(), execution_id='string')
+res = s.workflows.update_execution(workflow_execution_update_req=shared.WorkflowExecutionUpdateReq(), execution_id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -448,7 +448,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.workflows.update_step(update_step_req=shared.UpdateStepReq(), execution_id='string', step_id='string')
+res = s.workflows.update_step(update_step_req=shared.UpdateStepReq(), execution_id='<value>', step_id='<value>')
 
 if res.step is not None:
     # handle response
