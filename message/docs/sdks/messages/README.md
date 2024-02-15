@@ -30,7 +30,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.messages.delete_message(id='string')
+res = s.messages.delete_message(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -160,7 +160,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.messages.mark_read_message(id='string')
+res = s.messages.mark_read_message(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -200,7 +200,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.messages.mark_unread_message(id='string')
+res = s.messages.mark_unread_message(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -297,7 +297,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.messages.trash_message(id='string')
+res = s.messages.trash_message(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -337,7 +337,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.messages.untrash_message(id='string')
+res = s.messages.untrash_message(id='<value>')
 
 if res.status_code == 200:
     # handle response

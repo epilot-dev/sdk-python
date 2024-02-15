@@ -36,7 +36,7 @@ res = s.threads.assign_thread(request_body=[
         is_main_entity=True,
         slug='contact',
     ),
-], id='string')
+], id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -79,7 +79,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.threads.assign_users(request_body=operations.AssignUsersRequestBody(), id='string')
+res = s.threads.assign_users(request_body=operations.AssignUsersRequestBody(), id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -120,7 +120,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.threads.delete_thread(id='string')
+res = s.threads.delete_thread(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -160,7 +160,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.threads.mark_read_thread(id='string')
+res = s.threads.mark_read_thread(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -200,7 +200,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.threads.mark_unread_thread(id='string')
+res = s.threads.mark_unread_thread(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -288,7 +288,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.threads.trash_thread(id='string')
+res = s.threads.trash_thread(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -328,7 +328,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.threads.untrash_thread(id='string')
+res = s.threads.untrash_thread(id='<value>')
 
 if res.status_code == 200:
     # handle response
