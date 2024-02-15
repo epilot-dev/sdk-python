@@ -10,8 +10,8 @@ s = epilot.Epilot(
 )
 
 
-res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
-    organization_id='string',
+res = s.partners.activate_partner(token='<value>', activate_partner_payload=shared.ActivatePartnerPayload(
+    organization_id='<value>',
     signed_up_email='Lupe.Graham2@hotmail.com',
     company_name='Company name',
 ))

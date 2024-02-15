@@ -34,8 +34,8 @@ s = epilot.Epilot(
 )
 
 
-res = s.partners.activate_partner(token='string', activate_partner_payload=shared.ActivatePartnerPayload(
-    organization_id='string',
+res = s.partners.activate_partner(token='<value>', activate_partner_payload=shared.ActivatePartnerPayload(
+    organization_id='<value>',
     signed_up_email='Lupe.Graham2@hotmail.com',
     company_name='Company name',
 ))
@@ -121,7 +121,7 @@ s = epilot.Epilot(
 
 req = [
     operations.RequestBody(
-        user_id='string',
+        user_id='<value>',
     ),
 ]
 
@@ -165,7 +165,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.partners.get_partner_by_token(token='string')
+res = s.partners.get_partner_by_token(token='<value>')
 
 if res.partner is not None:
     # handle response
