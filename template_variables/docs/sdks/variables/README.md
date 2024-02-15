@@ -30,7 +30,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.variables.generate_q_rcode(qrdata='string')
+res = s.variables.generate_q_rcode(qrdata='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -70,7 +70,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.variables.get_categories(lang='string')
+res = s.variables.get_categories(lang='<value>')
 
 if res.classes is not None:
     # handle response

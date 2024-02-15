@@ -190,7 +190,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.custom_variables.delete_custom_variable(id='string')
+res = s.custom_variables.delete_custom_variable(id='<value>')
 
 if res.status_code == 200:
     # handle response
@@ -264,7 +264,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.custom_variables.get_custom_variable(id='string')
+res = s.custom_variables.get_custom_variable(id='<value>')
 
 if res.custom_variable is not None:
     # handle response
@@ -338,7 +338,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.custom_variables.update_custom_variable(id='string', custom_variable=shared.CustomVariable(
+res = s.custom_variables.update_custom_variable(id='<value>', custom_variable=shared.CustomVariable(
     config=shared.Config(),
     created_at='2022-04-19T12:41:43.662Z',
     created_by='100042',
