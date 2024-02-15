@@ -98,7 +98,7 @@ res = s.ecp.create_custom_entity_activity("<YOUR_BEARER_TOKEN_HERE>", activity=c
     title='My custom activity',
     type='MyCustomActivity',
     payload={
-        'entity': 'string',
+        'entity': '<value>',
     },
 ), entities=[
     '5da0a718-c822-403d-9f5d-20d4584e0528',
@@ -493,7 +493,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.get_entities_by_identifiers("<YOUR_BEARER_TOKEN_HERE>", request_body={
-    'key': 'string',
+    'key': '<value>',
 }, slug=components.EntitySlug.CONTACT)
 
 if res.object is not None:
@@ -878,7 +878,7 @@ req = components.SaveEntityFile(
                 key='12345',
             ),
             tags=[
-                'string',
+                '<value>',
             ],
             document_type='12345',
             file_entity_id='12345',
@@ -1087,7 +1087,7 @@ import epilot
 s = epilot.Epilot()
 
 req = {
-    'key': 'string',
+    'key': '<value>',
 }
 
 res = s.ecp.update_contact(req, "<YOUR_BEARER_TOKEN_HERE>")
@@ -1129,7 +1129,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.update_contract("<YOUR_BEARER_TOKEN_HERE>", request_body={
-    'key': 'string',
+    'key': '<value>',
 }, id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
@@ -1170,7 +1170,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.update_opportunity("<YOUR_BEARER_TOKEN_HERE>", request_body={
-    'key': 'string',
+    'key': '<value>',
 }, id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
@@ -1210,7 +1210,7 @@ s = epilot.Epilot()
 
 
 res = s.ecp.update_order("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528', request_body={
-    'key': 'string',
+    'key': '<value>',
 })
 
 if res.object is not None:
@@ -1249,7 +1249,7 @@ import epilot
 s = epilot.Epilot()
 
 req = {
-    'key': 'string',
+    'key': '<value>',
 }
 
 res = s.ecp.update_portal_user(req, "<YOUR_BEARER_TOKEN_HERE>")

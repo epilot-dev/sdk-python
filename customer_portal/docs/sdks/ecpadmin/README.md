@@ -708,7 +708,7 @@ req = components.SavePortalFile(
         components.SavePortalFileFiles(
             file_type='orderRightTeaser',
             tags=[
-                'string',
+                '<value>',
             ],
             filename='12345',
         ),
@@ -864,7 +864,7 @@ s = epilot.Epilot()
 res = s.ecp_admin.upsert_portal_widget("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_widget=components.UpsertPortalWidget(
     widgets=[
         components.WidgetBase(
-            id='<ID>',
+            id='<id>',
             list_index=393843,
             type=components.WidgetBaseType.CONTENT_WIDGET,
         ),

@@ -190,7 +190,7 @@ s = epilot.Epilot(
 
 res = s.public.get_contact_count(contact_count_request=components.ContactCountRequest(
     contact_identifiers={
-        'key': 'string',
+        'key': '<value>',
     },
     org_id='728',
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
