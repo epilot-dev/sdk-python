@@ -3,31 +3,37 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ...models.components import entity as components_entity
+from ...models.components import entityitem as components_entityitem
+from typing import Optional
 
 
 @dataclasses.dataclass
 class PatchEntityRequest:
-    
+    entity: components_entity.Entity = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Entity Id"""  
-    request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
+    r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Schema"""  
+    r"""Entity Type"""
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
-    r"""Activity to include in event feed"""  
-    async_: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
-    r"""Don't wait for the patch entity to become available in Search API. Useful for large migrations"""  
-    dry_run: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'dry_run', 'style': 'form', 'explode': True }})
-    r"""Dry Run mode = returns the patch result but doesn't perform the patch."""  
+    r"""Activity to include in event feed"""
+    async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
+    r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
+    dry_run: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'dry_run', 'style': 'form', 'explode': True }})
+    r"""Dry Run mode = return results but does not perform the operation."""
     
+
+
 
 @dataclasses.dataclass
 class PatchEntityResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    entity_item: Optional[components_entityitem.EntityItem] = dataclasses.field(default=None)
+    r"""Entity was updated"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""Entity was updated"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
