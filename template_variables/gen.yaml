@@ -8,7 +8,7 @@ generation:
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
 python:
-  version: 3.0.2
+  version: 3.0.3
   author: epilot
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot

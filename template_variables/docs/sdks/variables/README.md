@@ -7,51 +7,10 @@ Variables
 
 ### Available Operations
 
-* [generate_q_rcode](#generate_q_rcode) - generateQRcode
 * [get_categories](#get_categories) - getCategories
 * [get_variable_context](#get_variable_context) - getVariableContext
 * [replace_templates](#replace_templates) - replaceTemplates
 * [search_variables](#search_variables) - searchVariables
-
-## generate_q_rcode
-
-Generate QR Code for the given payload
-
-### Example Usage
-
-```python
-import epilot
-from epilot.models import shared
-
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
-
-
-res = s.variables.generate_q_rcode(qrdata='<value>')
-
-if res.status_code == 200:
-    # handle response
-    pass
-```
-
-### Parameters
-
-| Parameter              | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `qrdata`               | *Optional[str]*        | :heavy_minus_sign:     | Payload of the QR code |
-
-
-### Response
-
-**[operations.GenerateQRcodeResponse](../../models/operations/generateqrcoderesponse.md)**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4x-5xx          | */*             |
 
 ## get_categories
 

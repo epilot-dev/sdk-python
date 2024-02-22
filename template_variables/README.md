@@ -169,7 +169,6 @@ if res.status_code == 200:
 
 ### [variables](docs/sdks/variables/README.md)
 
-* [generate_q_rcode](docs/sdks/variables/README.md#generate_q_rcode) - generateQRcode
 * [get_categories](docs/sdks/variables/README.md#get_categories) - getCategories
 * [get_variable_context](docs/sdks/variables/README.md#get_variable_context) - getVariableContext
 * [replace_templates](docs/sdks/variables/README.md#replace_templates) - replaceTemplates

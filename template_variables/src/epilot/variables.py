@@ -14,41 +14,6 @@ class Variables:
         
     
     
-    def generate_q_rcode(self, qrdata: Optional[str] = None) -> operations.GenerateQRcodeResponse:
-        r"""generateQRcode
-        Generate QR Code for the given payload
-        """
-        request = operations.GenerateQRcodeRequest(
-            qrdata=qrdata,
-        )
-        
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/v1/template-variables/qrcode:generate'
-        headers = {}
-        query_params = utils.get_query_params(operations.GenerateQRcodeRequest, request)
-        headers['Accept'] = '*/*'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
-        http_res = client.request('GET', url, params=query_params, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-        
-        res = operations.GenerateQRcodeResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            pass
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
     def get_categories(self, lang: Optional[str] = None) -> operations.GetCategoriesResponse:
         r"""getCategories
         Get all template variable categories

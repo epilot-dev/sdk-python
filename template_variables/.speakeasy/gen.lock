@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: b265321b-1f4b-4ec9-8139-a8f7996baa88
 management:
-  docChecksum: 13e3fc85e2bde98445e8869c82c8bcbe
+  docChecksum: 9efe370082758b9cf2fd0a2bcf412e38
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 3.0.2
-  configChecksum: 6bff7f86ded13d5e289ade4f5d85e98d
+  generationVersion: 2.263.3
+  releaseVersion: 3.0.3
+  configChecksum: dc9d979677d54daecebaa3de3229c080
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: template_variables
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
@@ -36,7 +36,6 @@ generatedFiles:
   - src/epilot/models/operations/getcustomvariable.py
   - src/epilot/models/operations/getcustomvariables.py
   - src/epilot/models/operations/updatecustomvariable.py
-  - src/epilot/models/operations/generateqrcode.py
   - src/epilot/models/operations/getcategories.py
   - src/epilot/models/operations/getvariablecontext.py
   - src/epilot/models/operations/replacetemplates.py
@@ -62,8 +61,6 @@ generatedFiles:
   - docs/models/operations/getcustomvariablesresponse.md
   - docs/models/operations/updatecustomvariablerequest.md
   - docs/models/operations/updatecustomvariableresponse.md
-  - docs/models/operations/generateqrcoderequest.md
-  - docs/models/operations/generateqrcoderesponse.md
   - docs/models/operations/getcategoriesrequest.md
   - docs/models/operations/getcategoriesresponse.md
   - docs/models/operations/getvariablecontextrequestbody.md
