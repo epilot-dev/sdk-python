@@ -7,8 +7,10 @@ generation:
     nameResolutionDec2023: false
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
 python:
-  version: 4.0.0
+  version: 4.0.1
   author: epilot
   clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot
