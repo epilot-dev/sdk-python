@@ -21,9 +21,7 @@ The `opportunity_number` can be used to universally identify an opportunity with
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+s = epilot.Epilot()
 
 
 res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput(
@@ -43,7 +41,7 @@ if res.opportunity is not None:
 
 | Parameter                                                          | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `opportunity`                                                      | [shared.OpportunityInput](../../models/shared/opportunityinput.md) | :heavy_check_mark:                                                 | N/A                                                                | {"$ref":"#/components/examples/opportunity"}                       |
+| `opportunity`                                                      | [shared.OpportunityInput](../../models/shared/opportunityinput.md) | :heavy_check_mark:                                                 | N/A                                                                | {<br/>"$ref": "#/components/examples/opportunity"<br/>}            |
 | `x_ivy_org_id`                                                     | *str*                                                              | :heavy_check_mark:                                                 | The target Organization Id represented by the caller               |                                                                    |
 
 

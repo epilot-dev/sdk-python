@@ -21,9 +21,7 @@ import dateutil.parser
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+s = epilot.Epilot()
 
 
 res = s.availability_api.dollar_availability_check(availability_check_params=shared.AvailabilityCheckParams(

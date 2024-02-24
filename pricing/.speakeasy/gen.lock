@@ -4,9 +4,9 @@ management:
   docChecksum: 0c38c5e4341d7eb39afb394a855c5a8a
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 4.0.2
-  configChecksum: 7bd6389985d96212d12b8a0311a82af7
+  generationVersion: 2.272.4
+  releaseVersion: 4.0.3
+  configChecksum: 5a305f1d3d9b00be9e69cbc3ca7a5bef
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: pricing
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=pricing
@@ -14,10 +14,10 @@ features:
   python:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.1.2
-    core: 4.4.6
+    core: 4.4.7
     deprecations: 2.81.1
     flattening: 2.81.1
-    globalSecurity: 2.83.2
+    globalSecurity: 2.83.3
     globalServerURLs: 2.82.1
     inputOutputModels: 2.83.1
     unions: 2.82.5

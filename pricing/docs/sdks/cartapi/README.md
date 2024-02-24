@@ -34,9 +34,7 @@ If the checkout `mode` is omitted, the `mode` will default to `create_order`.
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+s = epilot.Epilot()
 
 
 res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(), x_ivy_org_id='<value>')
