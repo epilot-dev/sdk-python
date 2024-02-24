@@ -34,13 +34,8 @@ Redirects to a accessible signed url for the respective file associated to the p
 
 ```python
 import epilot
-from epilot.models import shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        cookie_auth="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.files.access_public_link(filename='invoice-2023-12.pdf', id='13d22918-36bd-4227-9ad4-2cb978788c8d')
@@ -375,13 +370,9 @@ Generate thumbnail preview for a public file entity
 
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import operations
 
-s = epilot.Epilot(
-    security=shared.Security(
-        cookie_auth="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 req = operations.PreviewPublicFileRequest(
     id='ef7d985c-2385-44f4-9c71-ae06a52264f8',
@@ -506,13 +497,8 @@ Not yet implemented; This operation would revokes a given public link by ID
 
 ```python
 import epilot
-from epilot.models import shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        cookie_auth="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.files.revoke_public_link(id='13d22918-36bd-4227-9ad4-2cb978788c8d')
@@ -702,11 +688,7 @@ Use the createFile operation to store file file permanently.
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        cookie_auth="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 req = shared.UploadFilePayload(
     filename='document.pdf',
