@@ -27,11 +27,7 @@ True if contact with given identifiers exists.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.check_contact_exists(contact_exists_request=components.ContactExistsRequest(
@@ -79,11 +75,7 @@ Confirm a portal user
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.confirm_user(id='5da0a718-c822-403d-9f5d-20d4584e0528', org_id='123', origin=components.Origin.INSTALLER_PORTAL)
@@ -122,11 +114,7 @@ Registers a portal user
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.create_user(create_user_request=components.CreateUserRequest(
@@ -181,11 +169,7 @@ Return number of contacts matching identifier values.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.get_contact_count(contact_count_request=components.ContactCountRequest(
@@ -226,13 +210,8 @@ Check Contact by email
 
 ```python
 import epilot
-from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.get_count_by_email(email='test@test.com', org_id='123')
@@ -268,13 +247,8 @@ Retrieves the portal configuration by domain.
 
 ```python
 import epilot
-from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.get_portal_config_by_domain(domain='example.com')
@@ -311,11 +285,7 @@ Retrieves the public portal configuration.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.get_public_portal_config(org_id='12324', origin=components.Origin.INSTALLER_PORTAL)
@@ -353,11 +323,7 @@ Retrieves the public widgets of a portal
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.get_public_portal_widgets(org_id='123', origin=components.Origin.END_CUSTOMER_PORTAL)
@@ -395,11 +361,7 @@ Checks whether a user exists in the portal
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.public.user_exists(email='user@example.com', org_id='123', origin=components.Origin.END_CUSTOMER_PORTAL)
