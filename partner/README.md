@@ -17,11 +17,7 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=partne
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_organization="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.partners.activate_partner(token='<value>', activate_partner_payload=shared.ActivatePartnerPayload(
@@ -71,11 +67,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 import epilot
 from epilot.models import errors, shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_organization="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = None
@@ -116,9 +108,6 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     server_idx=0,
-    security=shared.Security(
-        as_organization="<YOUR_API_KEY_HERE>",
-    ),
 )
 
 
@@ -143,9 +132,6 @@ from epilot.models import shared
 
 s = epilot.Epilot(
     server_url="https://partner-directory-api.sls.epilot.io",
-    security=shared.Security(
-        as_organization="<YOUR_API_KEY_HERE>",
-    ),
 )
 
 

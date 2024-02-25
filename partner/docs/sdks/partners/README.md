@@ -27,11 +27,7 @@ Activate partner using an invite token
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_organization="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.partners.activate_partner(token='<value>', activate_partner_payload=shared.ActivatePartnerPayload(
@@ -156,13 +152,8 @@ Get partner by token
 
 ```python
 import epilot
-from epilot.models import shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_organization="<YOUR_API_KEY_HERE>",
-    ),
-)
+s = epilot.Epilot()
 
 
 res = s.partners.get_partner_by_token(token='<value>')
