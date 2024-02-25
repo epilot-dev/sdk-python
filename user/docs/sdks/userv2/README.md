@@ -29,9 +29,7 @@ Activate user using an invite token
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+s = epilot.Epilot()
 
 
 res = s.user_v2.activate_user(token='<value>', user_activation_payload=shared.UserActivationPayload(
@@ -138,9 +136,7 @@ Get user organization login parameters by username
 ```python
 import epilot
 
-s = epilot.Epilot(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+s = epilot.Epilot()
 
 
 res = s.user_v2.get_user_login_parameters_v2(username='<value>')
@@ -334,9 +330,7 @@ signUpUser
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+s = epilot.Epilot()
 
 
 res = s.user_v2.sign_up_user(signup_user_payload=shared.SignupUserPayload(), token='<value>')
@@ -435,9 +429,7 @@ Update new email using an verification token
 import epilot
 from epilot.models import shared
 
-s = epilot.Epilot(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+s = epilot.Epilot()
 
 
 res = s.user_v2.verify_email_with_token(token='<value>', user_verification_payload=shared.UserVerificationPayload(

@@ -89,9 +89,7 @@ Get user organization login parameters by username
 ```python
 import epilot
 
-s = epilot.Epilot(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+s = epilot.Epilot()
 
 
 res = s.user_v1.get_user_login_parameters(username='<value>')
