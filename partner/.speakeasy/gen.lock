@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: b90ea03e-6cd5-41c5-9aeb-279cf80ab44c
 management:
-  docChecksum: 51b680d02edd4dae44ff1396215d9c36
+  docChecksum: ef4eb1834fe147b46bf1f219afe4d455
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 4.0.2
-  configChecksum: f38815842db8a2a5ef7b7c46b8262ae7
+  generationVersion: 2.272.7
+  releaseVersion: 4.1.0
+  configChecksum: b18b3bb25b4eca9234c3e6f8801fec0f
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: partner
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=partner
@@ -14,8 +14,9 @@ features:
   python:
     constsAndDefaults: 0.1.2
     core: 4.4.7
+    deprecations: 2.81.1
     flattening: 2.81.1
-    globalSecurity: 2.83.3
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     unions: 2.82.5
 generatedFiles:

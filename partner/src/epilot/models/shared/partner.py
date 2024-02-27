@@ -23,9 +23,14 @@ class Partner:
     created_at: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""Description"""
+    email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is None }})
+    r"""Email using to receive invitation"""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     invitation_email: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitation_email'), 'exclude': lambda f: f is None }})
-    r"""Email using to receive invitation"""
+    r"""Email using to receive invitation
+
+    Deprecated field: This will be removed in a future release, please migrate away from it as soon as possible.
+    """
     invitation_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitation_token'), 'exclude': lambda f: f is None }})
     r"""Invitation token"""
     organization_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization_id'), 'exclude': lambda f: f is None }})
