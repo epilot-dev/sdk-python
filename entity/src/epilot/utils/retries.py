@@ -2,6 +2,7 @@
 
 import random
 import time
+from typing import List
 
 import requests
 
@@ -24,16 +25,17 @@ class RetryConfig:
     backoff: BackoffStrategy
     retry_connection_errors: bool
 
-    def __init__(self, strategy: str, retry_connection_errors: bool):
+    def __init__(self, strategy: str, backoff: BackoffStrategy, retry_connection_errors: bool):
         self.strategy = strategy
+        self.backoff = backoff
         self.retry_connection_errors = retry_connection_errors
 
 
 class Retries:
     config: RetryConfig
-    status_codes: list[str]
+    status_codes: List[str]
 
-    def __init__(self, config: RetryConfig, status_codes: list[str]):
+    def __init__(self, config: RetryConfig, status_codes: List[str]):
         self.config = config
         self.status_codes = status_codes
 
@@ -73,12 +75,12 @@ def retry(func, retries: Retries):
                         if res.status_code == parsed_code:
                             raise TemporaryError(res)
             except requests.exceptions.ConnectionError as exception:
-                if not retries.config.config.retry_connection_errors:
+                if retries.config.config.retry_connection_errors:
                     raise
 
                 raise PermanentError(exception) from exception
             except requests.exceptions.Timeout as exception:
-                if not retries.config.config.retry_connection_errors:
+                if retries.config.config.retry_connection_errors:
                     raise
 
                 raise PermanentError(exception) from exception
