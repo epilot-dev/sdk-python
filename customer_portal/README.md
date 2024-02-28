@@ -82,6 +82,8 @@ if res.object is not None:
 * [get_portal_user](docs/sdks/ecp/README.md#get_portal_user) - getPortalUser
 * [get_portal_widgets](docs/sdks/ecp/README.md#get_portal_widgets) - getPortalWidgets
 * [get_schemas](docs/sdks/ecp/README.md#get_schemas) - getSchemas
+* [get_search_results_for_opportunities](docs/sdks/ecp/README.md#get_search_results_for_opportunities) - getSearchResultsForOpportunities
+* [get_searchable_attributes_for_opportunities](docs/sdks/ecp/README.md#get_searchable_attributes_for_opportunities) - getSearchableAttributesForOpportunities
 * [save_entity_file](docs/sdks/ecp/README.md#save_entity_file) - saveEntityFile
 * [search_payment_relations_in_entities](docs/sdks/ecp/README.md#search_payment_relations_in_entities) - searchPaymentRelationsInEntities
 * [search_portal_user_entities](docs/sdks/ecp/README.md#search_portal_user_entities) - searchPortalUserEntities

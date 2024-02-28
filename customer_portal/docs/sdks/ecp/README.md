@@ -28,6 +28,8 @@ APIs defined for a portal user
 * [get_portal_user](#get_portal_user) - getPortalUser
 * [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
 * [get_schemas](#get_schemas) - getSchemas
+* [get_search_results_for_opportunities](#get_search_results_for_opportunities) - getSearchResultsForOpportunities
+* [get_searchable_attributes_for_opportunities](#get_searchable_attributes_for_opportunities) - getSearchableAttributesForOpportunities
 * [save_entity_file](#save_entity_file) - saveEntityFile
 * [search_payment_relations_in_entities](#search_payment_relations_in_entities) - searchPaymentRelationsInEntities
 * [search_portal_user_entities](#search_portal_user_entities) - searchPortalUserEntities
@@ -853,6 +855,84 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
+
+## get_search_results_for_opportunities
+
+Get all opportunity with the given serached attributes
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import operations
+
+s = epilot.Epilot()
+
+
+res = s.ecp.get_search_results_for_opportunities("<YOUR_BEARER_TOKEN_HERE>", request_body=operations.GetSearchResultsForOpportunitiesRequestBody(), from_=0, size=1000)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      | Example                                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                                       | [operations.GetSearchResultsForOpportunitiesSecurity](../../models/operations/getsearchresultsforopportunitiessecurity.md)       | :heavy_check_mark:                                                                                                               | The security requirements to use for the request.                                                                                |                                                                                                                                  |
+| `request_body`                                                                                                                   | [operations.GetSearchResultsForOpportunitiesRequestBody](../../models/operations/getsearchresultsforopportunitiesrequestbody.md) | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |                                                                                                                                  |
+| `from_`                                                                                                                          | *Optional[float]*                                                                                                                | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              | 0                                                                                                                                |
+| `size`                                                                                                                           | *Optional[float]*                                                                                                                | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              | 1000                                                                                                                             |
+
+
+### Response
+
+**[operations.GetSearchResultsForOpportunitiesResponse](../../models/operations/getsearchresultsforopportunitiesresponse.md)**
+### Errors
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 401,403,404,500  | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
+
+## get_searchable_attributes_for_opportunities
+
+Get all opportunity searchable attributes for a portal user
+
+### Example Usage
+
+```python
+import epilot
+
+s = epilot.Epilot()
+
+
+res = s.ecp.get_searchable_attributes_for_opportunities("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=1000)
+
+if res.object is not None:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              | Example                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                                               | [operations.GetSearchableAttributesForOpportunitiesSecurity](../../models/operations/getsearchableattributesforopportunitiessecurity.md) | :heavy_check_mark:                                                                                                                       | The security requirements to use for the request.                                                                                        |                                                                                                                                          |
+| `from_`                                                                                                                                  | *Optional[float]*                                                                                                                        | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      | 0                                                                                                                                        |
+| `size`                                                                                                                                   | *Optional[float]*                                                                                                                        | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      | 1000                                                                                                                                     |
+
+
+### Response
+
+**[operations.GetSearchableAttributesForOpportunitiesResponse](../../models/operations/getsearchableattributesforopportunitiesresponse.md)**
+### Errors
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 401,403,404,500  | application/json |
 | errors.SDKError  | 4x-5xx           | */*              |
 
 ## save_entity_file

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 875e421b-9fdf-42d5-ab3a-30a1cf7c82cf
 management:
-  docChecksum: 240e06c7c12d66a4697ffeffbc464658
+  docChecksum: ec3dd4458aaf6752e77b063665a0eec0
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 3.0.2
-  configChecksum: 9006b5de97e0f60f29279caab8d6566f
+  generationVersion: 2.272.7
+  releaseVersion: 3.0.3
+  configChecksum: a5a34326f2ad43e9338215349136a794
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: customer_portal
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
@@ -17,7 +17,7 @@ features:
     core: 4.4.7
     deprecations: 2.81.1
     flattening: 2.81.1
-    globalSecurity: 2.83.3
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.1
     unions: 2.82.5
@@ -78,6 +78,8 @@ generatedFiles:
   - src/epilot/models/operations/getorganizationsettings.py
   - src/epilot/models/operations/getportaluser.py
   - src/epilot/models/operations/getschemas.py
+  - src/epilot/models/operations/getsearchresultsforopportunities.py
+  - src/epilot/models/operations/getsearchableattributesforopportunities.py
   - src/epilot/models/operations/saveentityfile.py
   - src/epilot/models/operations/searchpaymentrelationsinentities.py
   - src/epilot/models/operations/searchportaluserentities.py
@@ -301,6 +303,16 @@ generatedFiles:
   - docs/models/operations/getschemassecurity.md
   - docs/models/operations/getschemasresponsebody.md
   - docs/models/operations/getschemasresponse.md
+  - docs/models/operations/getsearchresultsforopportunitiessecurity.md
+  - docs/models/operations/workflows.md
+  - docs/models/operations/getsearchresultsforopportunitiesrequestbody.md
+  - docs/models/operations/getsearchresultsforopportunitiesrequest.md
+  - docs/models/operations/getsearchresultsforopportunitiesresponsebody.md
+  - docs/models/operations/getsearchresultsforopportunitiesresponse.md
+  - docs/models/operations/getsearchableattributesforopportunitiessecurity.md
+  - docs/models/operations/getsearchableattributesforopportunitiesrequest.md
+  - docs/models/operations/getsearchableattributesforopportunitiesresponsebody.md
+  - docs/models/operations/getsearchableattributesforopportunitiesresponse.md
   - docs/models/operations/saveentityfilesecurity.md
   - docs/models/operations/saveentityfileresponsebody.md
   - docs/models/operations/saveentityfileresponse.md
