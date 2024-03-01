@@ -3,28 +3,34 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import relationitem as shared_relationitem
-from typing import Optional
+from ...models.components import relationitem as components_relationitem
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class AddRelationsRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Entity id"""  
+    r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Type"""  
-    async_: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
-    r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""  
-    request_body: Optional[list[shared_relationitem.RelationItem]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    r"""Entity Type"""
+    request_body: Optional[List[components_relationitem.RelationItem]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
+    r"""Activity to include in event feed"""
+    async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
+    r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
     
+
+
 
 @dataclasses.dataclass
 class AddRelationsResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    relation_item: Optional[components_relationitem.RelationItem] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    relation_item: Optional[shared_relationitem.RelationItem] = dataclasses.field(default=None)
-    r"""Success"""  
-    
+
