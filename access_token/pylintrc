@@ -180,8 +180,8 @@ good-names=i,
            ex,
            Run,
            _,
-           id,
            e,
+           id,
            n
 
 # Good variable names regexes, separated by a comma. If names match any regex,

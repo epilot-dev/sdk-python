@@ -4,17 +4,17 @@ management:
   docChecksum: 02397f0d4663d4ade6c146f4c087489b
   docVersion: 0.2.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 4.0.1
-  configChecksum: 9b777b0919de2977dd73e176ec146932
+  generationVersion: 2.275.4
+  releaseVersion: 4.1.0
+  configChecksum: 3c8f3825a2c07d0eb504e4b0838f3d92
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: access_token
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=access_token
 features:
   python:
-    core: 4.4.7
+    core: 4.5.0
     flattening: 2.81.1
-    globalSecurity: 2.83.3
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     unions: 2.82.5
 generatedFiles:
@@ -75,3 +75,6 @@ generatedFiles:
   - docs/sdks/public/README.md
   - USAGE.md
   - .gitattributes
+  - src/epilot/_hooks/sdkhooks.py
+  - src/epilot/_hooks/types.py
+  - src/epilot/_hooks/__init__.py
