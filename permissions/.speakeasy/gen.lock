@@ -4,18 +4,18 @@ management:
   docChecksum: 9218c63642f76aa067b51607f78062e8
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 4.0.2
-  configChecksum: d92b5bddd1ec24f0c7d3beb6e6a17898
+  generationVersion: 2.275.4
+  releaseVersion: 4.1.0
+  configChecksum: a4b17eecc726a6036469b76f175e8d01
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: permissions
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=permissions
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.7
+    core: 4.5.0
     flattening: 2.81.1
-    globalSecurity: 2.83.3
+    globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
     unions: 2.82.5
 generatedFiles:
@@ -114,3 +114,6 @@ generatedFiles:
   - docs/sdks/roles/README.md
   - USAGE.md
   - .gitattributes
+  - src/epilot/_hooks/sdkhooks.py
+  - src/epilot/_hooks/types.py
+  - src/epilot/_hooks/__init__.py
