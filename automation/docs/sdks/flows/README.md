@@ -203,7 +203,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.flows.search_flows(from_=253836, schema='submission', size=186991, trigger_source_id='600945fe-212e-4b97-acf7-391d64648384')
+res = s.flows.search_flows(from_=0, schema='submission', size=25, trigger_source_id='600945fe-212e-4b97-acf7-391d64648384')
 
 if res.search_automations_resp is not None:
     # handle response

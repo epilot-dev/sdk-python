@@ -101,7 +101,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.executions.get_executions(entity_id='e3d3ebac-baab-4395-abf4-50b5bf1f8b74', from_=964899, size=653722)
+res = s.executions.get_executions(entity_id='e3d3ebac-baab-4395-abf4-50b5bf1f8b74', from_=0, size=25)
 
 if res.get_executions_resp is not None:
     # handle response
