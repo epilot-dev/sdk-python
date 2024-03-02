@@ -125,7 +125,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.files.download_file(id='ef7d985c-2385-44f4-9c71-ae06a52264f8', attachment=False, version=925360)
+res = s.files.download_file(id='ef7d985c-2385-44f4-9c71-ae06a52264f8', attachment=True, version=0)
 
 if res.object is not None:
     # handle response
@@ -213,7 +213,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.files.download_s3_file(s3_bucket='<value>', s3_key='<value>', attachment=False)
+res = s.files.download_s3_file(s3_bucket='<value>', s3_key='<value>', attachment=True)
 
 if res.object is not None:
     # handle response
@@ -336,7 +336,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.files.preview_file(id='ef7d985c-2385-44f4-9c71-ae06a52264f8', h=427171, version=171541, w=89142)
+res = s.files.preview_file(id='ef7d985c-2385-44f4-9c71-ae06a52264f8', h=427171, version=0, w=171541)
 
 if res.status_code == 200:
     # handle response

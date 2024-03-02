@@ -4,21 +4,21 @@ management:
   docChecksum: 8ab78139733454ac110d7127e39b7956
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 5.1.0
-  configChecksum: e0f5b962b0c42e5196813c4a9b2e569c
+  generationVersion: 2.277.0
+  releaseVersion: 5.1.1
+  configChecksum: 20247b29f4449e32909d534c1b3efd30
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: file
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=file
 features:
   python:
     additionalProperties: 0.1.0
-    constsAndDefaults: 0.1.2
+    constsAndDefaults: 0.1.3
     core: 4.5.0
     flattening: 2.81.1
     globalSecurity: 2.83.4
     globalServerURLs: 2.82.1
-    unions: 2.82.5
+    unions: 2.82.6
 generatedFiles:
   - src/epilot/sdkconfiguration.py
   - src/epilot/files.py
