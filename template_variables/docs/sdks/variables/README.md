@@ -29,7 +29,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.variables.get_categories(lang='<value>')
+res = s.variables.get_categories(lang='de')
 
 if res.classes is not None:
     # handle response
