@@ -3,28 +3,42 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ...models.components import relationentity as components_relationentity
+from ...models.components import relationitem as components_relationitem
+from typing import List, Optional, Union
 
 
 @dataclasses.dataclass
 class GetRelationsRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Entity id"""  
+    r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Type"""  
-    hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
-    r"""When true, expand relation items with full blown entities."""  
-    include_reverse: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
-    r"""When true, includes reverse relations in response (other entities pointing to this entity)"""  
+    r"""Entity Type"""
+    exclude_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'exclude_schemas', 'style': 'form', 'explode': False }})
+    r"""Filter results to exclude schemas"""
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
+    r"""Starting page number"""
+    hydrate: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'hydrate', 'style': 'form', 'explode': True }})
+    r"""When true, enables entity hydration to resolve nested $relation & $relation_ref references in-place."""
+    include_reverse: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'include_reverse', 'style': 'form', 'explode': True }})
+    r"""When true, includes reverse relations in response (other entities pointing to this entity)"""
+    include_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_schemas', 'style': 'form', 'explode': False }})
+    r"""Filter results to only include schemas"""
+    size: Optional[int] = dataclasses.field(default=100, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    r"""Number of results to return per page"""
     
+
+
 
 @dataclasses.dataclass
 class GetRelationsResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    get_relations_resp: Optional[List[Union[components_relationitem.RelationItem, components_relationentity.RelationEntity]]] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_relations_resp: Optional[list[Any]] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
