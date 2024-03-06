@@ -4,6 +4,7 @@ from __future__ import annotations
 import dataclasses
 from .activitytrigger import ActivityTrigger
 from .apisubmissiontrigger import APISubmissionTrigger
+from .edge import Edge
 from .entitymanualtrigger import EntityManualTrigger
 from .entityoperationtrigger import EntityOperationTrigger
 from .frontendsubmittrigger import FrontendSubmitTrigger
@@ -21,6 +22,8 @@ class AutomationFlowInput:
     flow_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_name') }})
     r"""A descriptive name for the Automation"""
     triggers: List[Union[FrontendSubmitTrigger, JourneySubmitTrigger, APISubmissionTrigger, EntityOperationTrigger, ActivityTrigger, EntityManualTrigger, ReceivedEmailTrigger]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('triggers') }})
+    edges: Optional[List[Edge]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('edges'), 'exclude': lambda f: f is None }})
+    r"""The edges between actions which define the flow order"""
     enabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Whether the automation is enabled or not"""
     entity_schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schema'), 'exclude': lambda f: f is None }})
@@ -30,5 +33,7 @@ class AutomationFlowInput:
     system_flow: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('system_flow'), 'exclude': lambda f: f is None }})
     r"""Determines if the flow is a system generated flow"""
     trigger_conditions: Optional[List[TriggerCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger_conditions'), 'exclude': lambda f: f is None }})
+    version: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version'), 'exclude': lambda f: f is None }})
+    r"""Version of the flow"""
     
 

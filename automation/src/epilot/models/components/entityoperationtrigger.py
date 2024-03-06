@@ -59,7 +59,7 @@ class EntityOperationTrigger2:
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class Operation:
+class EntityOperationTriggerOperation:
     diff: Optional[Union[OrConditionForDiff, EntityOperationTrigger2]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('diff'), 'exclude': lambda f: f is None }})
     operation: Optional[List[EntityOperation]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation'), 'exclude': lambda f: f is None }})
     r"""Filter on operation type. If not specified, all operations will be matched on execution.
@@ -82,7 +82,7 @@ class Operation:
 @dataclasses.dataclass
 class FilterConfig:
     activity: Optional[Activity] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity'), 'exclude': lambda f: f is None }})
-    operation: Optional[Operation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation'), 'exclude': lambda f: f is None }})
+    operation: Optional[EntityOperationTriggerOperation] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('operation'), 'exclude': lambda f: f is None }})
     
 
 

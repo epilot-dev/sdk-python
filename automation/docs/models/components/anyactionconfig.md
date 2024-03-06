@@ -45,3 +45,9 @@ anyActionConfig: components.CartCheckoutActionConfig = /* values here */
 anyActionConfig: components.AutomationActionConfig = /* values here */
 ```
 
+### ConditionActionConfig
+
+```python
+anyActionConfig: components.ConditionActionConfig = /* values here */
+```
+

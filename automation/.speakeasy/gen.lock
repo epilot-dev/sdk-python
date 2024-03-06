@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 3a0a8e68-0910-41f9-bb5a-aaaec12179b0
 management:
-  docChecksum: bd71a6c1b2a4686645d9c54347e95c40
+  docChecksum: 36a125238fa57ff109f38f3689057934
   docVersion: 1.0.0
   speakeasyVersion: internal
   generationVersion: 2.277.0
-  releaseVersion: 3.1.1
-  configChecksum: 222409b497fb272f7fb6c3b5937b6555
+  releaseVersion: 3.1.2
+  configChecksum: a8c4ffa51b913bd97c5df3282d851161
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: automation
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=automation
@@ -102,6 +102,7 @@ generatedFiles:
   - src/epilot/models/components/entitymanualtrigger.py
   - src/epilot/models/components/receivedemailtrigger.py
   - src/epilot/models/components/triggercondition.py
+  - src/epilot/models/components/edge.py
   - src/epilot/models/components/mapentityactionconfig.py
   - src/epilot/models/components/triggerworkflowactionconfig.py
   - src/epilot/models/components/triggerwebhookactionconfig.py
@@ -109,6 +110,8 @@ generatedFiles:
   - src/epilot/models/components/sendemailactionconfig.py
   - src/epilot/models/components/cartcheckoutactionconfig.py
   - src/epilot/models/components/automationactionconfig.py
+  - src/epilot/models/components/conditionactionconfig.py
+  - src/epilot/models/components/conditionconfig.py
   - src/epilot/models/components/automationflow_input.py
   - src/epilot/models/components/searchautomationsresp.py
   - src/epilot/models/components/security.py
@@ -221,7 +224,7 @@ generatedFiles:
   - docs/models/components/activity.md
   - docs/models/components/entityoperationtrigger2.md
   - docs/models/components/diff.md
-  - docs/models/components/operation.md
+  - docs/models/components/entityoperationtriggeroperation.md
   - docs/models/components/filterconfig.md
   - docs/models/components/entityoperationtriggerconfiguration.md
   - docs/models/components/entityoperationtriggertype.md
@@ -260,6 +263,7 @@ generatedFiles:
   - docs/models/components/receivedemailtrigger.md
   - docs/models/components/value.md
   - docs/models/components/triggercondition.md
+  - docs/models/components/edge.md
   - docs/models/components/anyactionconfig.md
   - docs/models/components/mapentityactionconfigreason.md
   - docs/models/components/mapentityactionconfigtype.md
@@ -281,6 +285,12 @@ generatedFiles:
   - docs/models/components/cartcheckoutactionconfig.md
   - docs/models/components/automationactionconfigreason.md
   - docs/models/components/automationactionconfig.md
+  - docs/models/components/conditionactionconfigreason.md
+  - docs/models/components/conditionactionconfigtype.md
+  - docs/models/components/conditionactionconfig.md
+  - docs/models/components/operation.md
+  - docs/models/components/source.md
+  - docs/models/components/conditionconfig.md
   - docs/models/components/automationflowinput.md
   - docs/models/components/anytriggerinput.md
   - docs/models/components/searchautomationsresp.md

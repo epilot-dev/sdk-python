@@ -39,6 +39,7 @@ req = components.AutomationFlowInput(
     ],
     entity_schema='submission',
     runs=7,
+    version=2,
 )
 
 res = s.flows.create_flow(req)
@@ -165,6 +166,7 @@ res = s.flows.put_flow(flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f', automatio
     ],
     entity_schema='submission',
     runs=7,
+    version=2,
 ))
 
 if res.automation_flow is not None:

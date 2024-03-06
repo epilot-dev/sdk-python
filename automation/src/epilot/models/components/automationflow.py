@@ -7,7 +7,9 @@ from .activitytrigger import ActivityTrigger
 from .apisubmissiontrigger import APISubmissionTrigger
 from .automationactionconfig import AutomationActionConfig
 from .cartcheckoutactionconfig import CartCheckoutActionConfig
+from .conditionactionconfig import ConditionActionConfig
 from .createdocumentactionconfig import CreateDocumentActionConfig
+from .edge import Edge
 from .entitymanualtrigger import EntityManualTrigger
 from .entityoperationtrigger import EntityOperationTrigger
 from .frontendsubmittrigger import FrontendSubmitTrigger
@@ -27,13 +29,16 @@ from typing import List, Optional, Union
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AutomationFlow:
-    actions: List[Union[MapEntityActionConfig, TriggerWorkflowActionConfig, TriggerWebhookActionConfig, CreateDocumentActionConfig, SendEmailActionConfig, CartCheckoutActionConfig, AutomationActionConfig]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions') }})
+    actions: List[Union[MapEntityActionConfig, TriggerWorkflowActionConfig, TriggerWebhookActionConfig, CreateDocumentActionConfig, SendEmailActionConfig, CartCheckoutActionConfig, AutomationActionConfig, ConditionActionConfig]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('actions') }})
+    r"""The actions (nodes) of the automation flow"""
     flow_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flow_name') }})
     r"""A descriptive name for the Automation"""
     triggers: List[Union[FrontendSubmitTrigger, JourneySubmitTrigger, APISubmissionTrigger, EntityOperationTrigger, ActivityTrigger, EntityManualTrigger, ReceivedEmailTrigger]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('triggers') }})
     created_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
     created_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created_by'), 'exclude': lambda f: f is None }})
     r"""User / service who created automation flow"""
+    edges: Optional[List[Edge]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('edges'), 'exclude': lambda f: f is None }})
+    r"""The edges between actions which define the flow order"""
     enabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled'), 'exclude': lambda f: f is None }})
     r"""Whether the automation is enabled or not"""
     entity_schema: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schema'), 'exclude': lambda f: f is None }})
@@ -49,5 +54,7 @@ class AutomationFlow:
     r"""Determines if the flow is a system generated flow"""
     trigger_conditions: Optional[List[TriggerCondition]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('trigger_conditions'), 'exclude': lambda f: f is None }})
     updated_at: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated_at'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
+    version: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version'), 'exclude': lambda f: f is None }})
+    r"""Version of the flow"""
     
 
