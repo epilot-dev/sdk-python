@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
+from .cognitodetails import CognitoDetails
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
@@ -30,6 +31,7 @@ class Type(str, Enum):
 class Organization:
     UNSET='__SPEAKEASY_UNSET__'
     address: Optional[Address] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('address'), 'exclude': lambda f: f is None }})
+    cognito_details: Optional[CognitoDetails] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cognito_details'), 'exclude': lambda f: f is None }})
     email: Optional[str] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email'), 'exclude': lambda f: f is Organization.UNSET }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     is_unlicensed_org: Optional[bool] = dataclasses.field(default=UNSET, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_unlicensed_org'), 'exclude': lambda f: f is Organization.UNSET }})

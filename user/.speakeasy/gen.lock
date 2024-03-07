@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: f375d434-1cbd-420c-8060-287d881b5157
 management:
-  docChecksum: d838fdf850daa5538af50d19cece2f15
+  docChecksum: 4aa1902f60b1304da419fe45f1ec2d84
   docVersion: 2.0.0
-  speakeasyVersion: internal
-  generationVersion: 2.275.4
-  releaseVersion: 4.1.0
-  configChecksum: efa3ec88cbd425f5c8e0cf097deb32eb
+  speakeasyVersion: 1.202.0
+  generationVersion: 2.277.0
+  releaseVersion: 4.1.1
+  configChecksum: d5e3e900751001017f89d8b81cbc10e4
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: user
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=user
 features:
   python:
     additionalProperties: 0.1.0
-    constsAndDefaults: 0.1.2
+    constsAndDefaults: 0.1.3
     core: 4.5.0
     deprecations: 2.81.1
     flattening: 2.81.1
@@ -53,6 +53,7 @@ generatedFiles:
   - src/epilot/models/shared/userv2.py
   - src/epilot/models/shared/userinvitationpayload.py
   - src/epilot/models/shared/organization.py
+  - src/epilot/models/shared/cognitodetails.py
   - src/epilot/models/shared/signupuserpayload.py
   - src/epilot/models/shared/userdetail.py
   - src/epilot/models/shared/organizationdetail.py
@@ -110,6 +111,7 @@ generatedFiles:
   - docs/models/shared/address.md
   - docs/models/shared/type.md
   - docs/models/shared/organization.md
+  - docs/models/shared/cognitodetails.md
   - docs/models/shared/language.md
   - docs/models/shared/signupuserpayload.md
   - docs/models/shared/userdetail.md
