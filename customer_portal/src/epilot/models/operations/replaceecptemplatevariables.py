@@ -5,7 +5,7 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -20,6 +20,7 @@ class ReplaceECPTemplateVariablesSecurity:
 class RequestBody:
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
     r"""ID of the contact"""
+    is_main_entity: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_main_entity'), 'exclude': lambda f: f is None }})
     
 
 
@@ -27,8 +28,10 @@ class RequestBody:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CustomerPortal:
+    entity_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityLink'), 'exclude': lambda f: f is None }})
     invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
     new_document_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('newDocumentLink'), 'exclude': lambda f: f is None }})
+    user_emails_on_entity: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEmailsOnEntity'), 'exclude': lambda f: f is None }})
     
 
 
@@ -36,8 +39,10 @@ class CustomerPortal:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class InstallerPortal:
+    entity_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityLink'), 'exclude': lambda f: f is None }})
     invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
     new_document_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('newDocumentLink'), 'exclude': lambda f: f is None }})
+    user_emails_on_entity: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEmailsOnEntity'), 'exclude': lambda f: f is None }})
     
 
 
