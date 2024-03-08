@@ -34,6 +34,7 @@ res = s.get_jwks()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -69,6 +70,7 @@ res = s.get_open_id_configuration()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -124,6 +126,7 @@ res = s.get_token()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -185,6 +188,7 @@ res = s.get_token_v2(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
