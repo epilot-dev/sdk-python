@@ -36,9 +36,10 @@ res = s.partners.activate_partner(token='<value>', activate_partner_payload=shar
     company_name='Company name',
 ))
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -80,6 +81,7 @@ res = s.partners.approve_partner(id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc')
 if res.partner is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -126,6 +128,7 @@ res = s.partners.batch_get_assignable(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -161,6 +164,7 @@ res = s.partners.get_partner_by_token(token='<value>')
 if res.partner is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -201,6 +205,7 @@ res = s.partners.invite_partner(id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc', partn
 if res.partner is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -242,6 +247,7 @@ res = s.partners.reject_partner(id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc')
 if res.partner is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -282,6 +288,7 @@ res = s.partners.resend_partner_invitation(id='e45a6dc2-3795-43a3-ae0f-6b6760f31
 if res.partner is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -330,6 +337,7 @@ res = s.partners.search_assignable(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -373,6 +381,7 @@ res = s.partners.search_geolocation_for_text(req)
 if res.geolocation is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

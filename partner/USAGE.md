@@ -12,8 +12,9 @@ res = s.partners.activate_partner(token='<value>', activate_partner_payload=shar
     company_name='Company name',
 ))
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
