@@ -52,9 +52,10 @@ req = shared.SubmissionPayload(
 
 res = s.submissions.create_submission(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -125,9 +126,10 @@ except errors.SDKError as e:
     # handle exception
     raise(e)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -187,9 +189,10 @@ req = shared.SubmissionPayload(
 
 res = s.submissions.create_submission(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -237,9 +240,10 @@ req = shared.SubmissionPayload(
 
 res = s.submissions.create_submission(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 

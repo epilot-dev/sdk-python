@@ -55,9 +55,10 @@ req = shared.SubmissionPayload(
 
 res = s.submissions.create_submission(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
