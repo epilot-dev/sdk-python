@@ -32,5 +32,6 @@ res = s.drafts.create_draft(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

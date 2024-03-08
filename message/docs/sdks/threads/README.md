@@ -38,9 +38,10 @@ res = s.threads.assign_thread(request_body=[
     ),
 ], id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -81,9 +82,10 @@ s = epilot.Epilot(
 
 res = s.threads.assign_users(request_body=operations.AssignUsersRequestBody(), id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -122,9 +124,10 @@ s = epilot.Epilot(
 
 res = s.threads.delete_thread(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -162,9 +165,10 @@ s = epilot.Epilot(
 
 res = s.threads.mark_read_thread(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -202,9 +206,10 @@ s = epilot.Epilot(
 
 res = s.threads.mark_unread_thread(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -253,6 +258,7 @@ res = s.threads.search_threads(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -290,9 +296,10 @@ s = epilot.Epilot(
 
 res = s.threads.trash_thread(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -330,9 +337,10 @@ s = epilot.Epilot(
 
 res = s.threads.untrash_thread(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -373,6 +381,7 @@ res = s.threads.update_thread()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 

@@ -45,6 +45,7 @@ res = s.drafts.create_draft(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -85,6 +86,7 @@ res = s.drafts.send_draft()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 

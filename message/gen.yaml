@@ -12,7 +12,7 @@ generation:
   sdkFlattening: true
   telemetryEnabled: false
 python:
-  version: 3.1.0
+  version: 3.2.0
   additionalDependencies:
     dependencies: {}
     extraDependencies:
@@ -33,3 +33,4 @@ python:
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: epilot-message
+  responseFormat: envelope

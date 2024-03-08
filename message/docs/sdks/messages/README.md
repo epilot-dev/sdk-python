@@ -32,9 +32,10 @@ s = epilot.Epilot(
 
 res = s.messages.delete_message(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ res = s.messages.get_message(id='4d74976d-fb64-47fd-85e2-65eea140f5eb')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -125,6 +127,7 @@ res = s.messages.get_message_v2(id='4d74976d-fb64-47fd-85e2-65eea140f5eb')
 if res.message_v2 is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -162,9 +165,10 @@ s = epilot.Epilot(
 
 res = s.messages.mark_read_message(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -202,9 +206,10 @@ s = epilot.Epilot(
 
 res = s.messages.mark_unread_message(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -261,6 +266,7 @@ res = s.messages.send_message(message_request_params=components.MessageRequestPa
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -299,9 +305,10 @@ s = epilot.Epilot(
 
 res = s.messages.trash_message(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -339,9 +346,10 @@ s = epilot.Epilot(
 
 res = s.messages.untrash_message(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -382,6 +390,7 @@ res = s.messages.update_message()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
