@@ -2,40 +2,42 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import entity as components_entity
+from ...models.components import entityitem as components_entityitem
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class UpsertEntityRequestBody:
+    entity: components_entity.Entity = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity') }})
+    unique_key: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unique_key') }})
     
-    entity: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity') }})  
-    unique_key: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('unique_key') }})  
-    
+
+
 
 @dataclasses.dataclass
 class UpsertEntityRequest:
-    
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Schema"""  
+    r"""Entity Type"""
+    request_body: Optional[UpsertEntityRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
-    r"""Activity to include in event feed"""  
-    async_: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
-    r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""  
-    dry_run: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'dry_run', 'style': 'form', 'explode': True }})
-    r"""Dry Run mode = return matched entities but don't update them."""  
-    request_body: Optional[UpsertEntityRequestBody] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    r"""Activity to include in event feed"""
+    async_: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'async', 'style': 'form', 'explode': True }})
+    r"""Don't wait for updated entity to become available in Search API. Useful for large migrations"""
+    dry_run: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'dry_run', 'style': 'form', 'explode': True }})
+    r"""Dry Run mode = return results but does not perform the operation."""
     
+
+
 
 @dataclasses.dataclass
 class UpsertEntityResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    entity_item: Optional[components_entityitem.EntityItem] = dataclasses.field(default=None)
+    r"""Entity was updated"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""Entity was updated"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

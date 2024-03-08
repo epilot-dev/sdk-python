@@ -1,0 +1,10 @@
+# SearchEntitiesResponse
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `http_meta`                                                                                | [components.HTTPMetadata](../../models/components/httpmetadata.md)                         | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `entity_search_results`                                                                    | [Optional[components.EntitySearchResults]](../../models/components/entitysearchresults.md) | :heavy_minus_sign:                                                                         | Success                                                                                    |
+| `res`                                                                                      | *Optional[str]*                                                                            | :heavy_minus_sign:                                                                         | Success                                                                                    |
