@@ -32,6 +32,7 @@ res = s.organization.create_organization(req)
 if res.organization is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.organization.get_organization(org_id='739224')
 if res.organization is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -120,6 +122,7 @@ res = s.organization.update_organization(org_id='739224', organization=component
 if res.organization is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -27,9 +27,10 @@ s = epilot.Epilot(
 
 res = s.organization_settings.delete_settings_value(key='<value>', org_id='739224')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -68,6 +69,7 @@ res = s.organization_settings.get_settings(org_id='739224')
 if res.settings is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -107,6 +109,7 @@ res = s.organization_settings.put_settings_value(key='<value>', org_id='739224',
 if res.settings_value is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -28,6 +28,7 @@ res = s.organization.create_organization(req)
 if res.organization is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -84,6 +85,7 @@ except errors.SDKError as e:
 if res.organization is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -118,6 +120,7 @@ res = s.organization.create_organization(req)
 if res.organization is not None:
     # handle response
     pass
+
 ```
 
 
@@ -140,6 +143,7 @@ res = s.organization.create_organization(req)
 if res.organization is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -190,6 +194,7 @@ res = s.organization.create_organization(req)
 if res.organization is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
