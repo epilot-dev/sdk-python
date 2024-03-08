@@ -47,6 +47,7 @@ res = s.flows.create_flow(req)
 if res.automation_flow is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -84,6 +85,7 @@ res = s.flows.delete_flow(flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f')
 if res.automation_flow is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -121,6 +123,7 @@ res = s.flows.get_flow(flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f')
 if res.automation_flow is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -172,6 +175,7 @@ res = s.flows.put_flow(flow_id='7791b04a-16d2-44a2-9af9-2d59c25c512f', automatio
 if res.automation_flow is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -210,6 +214,7 @@ res = s.flows.search_flows(from_=0, schema='submission', size=25, trigger_source
 if res.search_automations_resp is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

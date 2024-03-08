@@ -12,5 +12,6 @@ res = s.executions.cancel_execution(execution_id='9baf184f-bc81-4128-bca3-d974c9
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

@@ -26,6 +26,7 @@ res = s.executions.cancel_execution(execution_id='9baf184f-bc81-4128-bca3-d974c9
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -81,6 +82,7 @@ except errors.SDKError as e:
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -113,6 +115,7 @@ res = s.executions.cancel_execution(execution_id='9baf184f-bc81-4128-bca3-d974c9
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 
 
@@ -133,6 +136,7 @@ res = s.executions.cancel_execution(execution_id='9baf184f-bc81-4128-bca3-d974c9
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -181,6 +185,7 @@ res = s.executions.cancel_execution(execution_id='9baf184f-bc81-4128-bca3-d974c9
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 

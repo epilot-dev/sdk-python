@@ -32,6 +32,7 @@ res = s.executions.cancel_execution(execution_id='9baf184f-bc81-4128-bca3-d974c9
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -69,6 +70,7 @@ res = s.executions.get_execution(execution_id='9baf184f-bc81-4128-bca3-d974c90a1
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -106,6 +108,7 @@ res = s.executions.get_executions(entity_id='e3d3ebac-baab-4395-abf4-50b5bf1f8b7
 if res.get_executions_resp is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -143,9 +146,10 @@ s = epilot.Epilot(
 
 res = s.executions.retrigger_action(action_id='9ec3711b-db63-449c-b894-54d5bb622a8f', execution_id='9baf184f-bc81-4128-bca3-d974c90a12c4', retry_req=components.RetryReq())
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -189,6 +193,7 @@ res = s.executions.start_execution(req)
 if res.automation_execution is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
