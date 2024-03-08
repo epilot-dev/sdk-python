@@ -55,6 +55,7 @@ res = s.workflows.create_execution(req)
 if res.workflow_execution is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -96,6 +97,7 @@ res = s.workflows.create_step(create_step_req=shared.CreateStepReq(
 if res.step is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -132,9 +134,10 @@ s = epilot.Epilot(
 
 res = s.workflows.delete_execution(execution_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -170,9 +173,10 @@ s = epilot.Epilot(
 
 res = s.workflows.delete_step(execution_id='<value>', step_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -215,6 +219,7 @@ res = s.workflows.get_closing_reason_execution(execution_id='<value>')
 if res.closing_reason_resp is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -253,6 +258,7 @@ res = s.workflows.get_execution(execution_id='<value>')
 if res.workflow_execution is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -291,6 +297,7 @@ res = s.workflows.get_executions(context='<value>', schema='<value>')
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -332,6 +339,7 @@ res = s.workflows.search_executions(req)
 if res.search_executions_resp is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -374,6 +382,7 @@ res = s.workflows.search_steps(req)
 if res.search_steps_resp is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -410,9 +419,10 @@ s = epilot.Epilot(
 
 res = s.workflows.update_execution(workflow_execution_update_req=shared.WorkflowExecutionUpdateReq(), execution_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -453,6 +463,7 @@ res = s.workflows.update_step(update_step_req=shared.UpdateStepReq(), execution_
 if res.step is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

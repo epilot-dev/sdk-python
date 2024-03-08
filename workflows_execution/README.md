@@ -43,6 +43,7 @@ res = s.workflows.create_execution(req)
 if res.workflow_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -118,6 +119,7 @@ except errors.SDKError as e:
 if res.workflow_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -167,6 +169,7 @@ res = s.workflows.create_execution(req)
 if res.workflow_execution is not None:
     # handle response
     pass
+
 ```
 
 
@@ -204,6 +207,7 @@ res = s.workflows.create_execution(req)
 if res.workflow_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -269,6 +273,7 @@ res = s.workflows.create_execution(req)
 if res.workflow_execution is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
