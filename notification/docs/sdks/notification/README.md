@@ -58,9 +58,10 @@ req = shared.Notification(
 
 res = s.notification.create_notification(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -98,6 +99,7 @@ res = s.notification.get_notification(id=3493.28)
 if res.notification_item is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -135,6 +137,7 @@ res = s.notification.get_notifications(after_id=436719, limit=707368, no_hydrate
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -174,6 +177,7 @@ res = s.notification.get_notifications_v2(after_id=629883, limit=111070)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -212,6 +216,7 @@ res = s.notification.get_total_unread()
 if res.res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -240,9 +245,10 @@ s = epilot.Epilot(
 
 res = s.notification.mark_all_as_read()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -271,9 +277,10 @@ s = epilot.Epilot(
 
 res = s.notification.mark_as_read(id=883397)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
