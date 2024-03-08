@@ -34,6 +34,7 @@ res = s.variables.get_categories(lang='de')
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -78,6 +79,7 @@ res = s.variables.get_variable_context(req)
 if res.variable_context is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -122,6 +124,7 @@ res = s.variables.replace_templates(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -166,6 +169,7 @@ res = s.variables.search_variables(req)
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

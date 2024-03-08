@@ -152,9 +152,10 @@ req = shared.CustomVariable(
 
 res = s.custom_variables.create_custom_variable(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -192,9 +193,10 @@ s = epilot.Epilot(
 
 res = s.custom_variables.delete_custom_variable(id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -235,6 +237,7 @@ res = s.custom_variables.get_blue_print_table_config()
 if res.custom_variable is not None:
     # handle response
     pass
+
 ```
 
 
@@ -269,6 +272,7 @@ res = s.custom_variables.get_custom_variable(id='<value>')
 if res.custom_variable is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -309,6 +313,7 @@ res = s.custom_variables.get_custom_variables()
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 
@@ -462,9 +467,10 @@ res = s.custom_variables.update_custom_variable(id='<value>', custom_variable=sh
     updated_by='100042',
 ))
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

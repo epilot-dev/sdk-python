@@ -135,8 +135,9 @@ req = shared.CustomVariable(
 
 res = s.custom_variables.create_custom_variable(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

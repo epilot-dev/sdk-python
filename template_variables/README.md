@@ -149,9 +149,10 @@ req = shared.CustomVariable(
 
 res = s.custom_variables.create_custom_variable(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -331,9 +332,10 @@ except errors.SDKError as e:
     # handle exception
     raise(e)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -489,9 +491,10 @@ req = shared.CustomVariable(
 
 res = s.custom_variables.create_custom_variable(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -635,9 +638,10 @@ req = shared.CustomVariable(
 
 res = s.custom_variables.create_custom_variable(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -810,9 +814,10 @@ req = shared.CustomVariable(
 
 res = s.custom_variables.create_custom_variable(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
