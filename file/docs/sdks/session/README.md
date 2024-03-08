@@ -29,9 +29,10 @@ s = epilot.Epilot(
 
 res = s.session.delete_session()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -66,9 +67,10 @@ s = epilot.Epilot(
 
 res = s.session.get_session()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 

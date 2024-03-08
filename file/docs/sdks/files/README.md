@@ -40,9 +40,10 @@ s = epilot.Epilot()
 
 res = s.files.access_public_link(filename='invoice-2023-12.pdf', id='13d22918-36bd-4227-9ad4-2cb978788c8d')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -87,9 +88,10 @@ req = shared.DeleteFilePayload(
 
 res = s.files.delete_file(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -130,6 +132,7 @@ res = s.files.download_file(id='ef7d985c-2385-44f4-9c71-ae06a52264f8', attachmen
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -178,6 +181,7 @@ res = s.files.download_files(req)
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -218,6 +222,7 @@ res = s.files.download_s3_file(s3_bucket='<value>', s3_key='<value>', attachment
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -258,9 +263,10 @@ s = epilot.Epilot(
 
 res = s.files.generate_public_link(id='ef7d985c-2385-44f4-9c71-ae06a52264f8')
 
-if res.res is not None:
+if res.string is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -301,6 +307,7 @@ res = s.files.get_all_public_links_for_file(id='13d22918-36bd-4227-9ad4-2cb97878
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -338,9 +345,10 @@ s = epilot.Epilot(
 
 res = s.files.preview_file(id='ef7d985c-2385-44f4-9c71-ae06a52264f8', h=427171, version=0, w=171541)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -380,9 +388,10 @@ req = operations.PreviewPublicFileRequest(
 
 res = s.files.preview_public_file(req)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -423,9 +432,10 @@ res = s.files.preview_s3_file(s3_reference=shared.S3Reference(
     key='123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf',
 ), h=240917, w=724428)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -465,9 +475,10 @@ s = epilot.Epilot(
 
 res = s.files.preview_s3_file_get(bucket='<value>', key='<value>', h=40814, w=119215)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -503,9 +514,10 @@ s = epilot.Epilot()
 
 res = s.files.revoke_public_link(id='13d22918-36bd-4227-9ad4-2cb978788c8d')
 
-if res.res is not None:
+if res.string is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -558,6 +570,7 @@ res = s.files.save_file(req)
 if res.file_entity is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -610,6 +623,7 @@ res = s.files.save_file_v2(req)
 if res.file_entity is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -656,6 +670,7 @@ res = s.files.upload_file(upload_file_payload=shared.UploadFilePayload(
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -700,6 +715,7 @@ res = s.files.upload_file_public(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -746,6 +762,7 @@ res = s.files.upload_file_v2(upload_file_payload=shared.UploadFilePayload(
 if res.file_upload is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -790,6 +807,7 @@ res = s.files.verify_custom_download_url(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
