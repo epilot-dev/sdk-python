@@ -22,6 +22,7 @@ res = s.balance.get_customer_balance("<YOUR_BEARER_TOKEN_HERE>")
 if res.balance is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

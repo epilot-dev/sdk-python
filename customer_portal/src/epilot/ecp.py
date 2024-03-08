@@ -30,17 +30,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.AddEndCustomerRelationToEntityRequest, base_url, '/v2/portal/entity/add-end-customer/{slug}/{id}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PUT', url, headers=headers).prepare(),
+                requests_http.Request('PUT', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -57,25 +57,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.AddEndCustomerRelationToEntityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.AddEndCustomerRelationToEntityResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.AddEndCustomerRelationToEntityResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -94,16 +96,16 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/entity/activity'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.CreateCustomEntityActivityRequest, "activity", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.CreateCustomEntityActivityRequest, request)
+        query_params = { **utils.get_query_params(operations.CreateCustomEntityActivityRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -125,25 +127,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.CreateCustomEntityActivityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateCustomEntityActivityResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 201:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.ActivityItem])
                 res.activity_item = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -157,7 +161,9 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/entity/file'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, components.DeleteEntityFile, "request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
@@ -165,14 +171,12 @@ class Ecp:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('DELETE', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('DELETE', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -189,25 +193,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteEntityFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteEntityFileResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 202:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteEntityFileResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -221,17 +227,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('DELETE', url, headers=headers).prepare(),
+                requests_http.Request('DELETE', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -248,25 +254,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeletePortalUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeletePortalUserResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.DeletePortalUserResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -285,13 +293,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/contract'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetAllContractsRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.GetAllContractsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -313,25 +321,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAllContractsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAllContractsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetAllContractsResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -351,13 +361,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user/files'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetAllFilesRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.GetAllFilesRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -379,25 +389,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAllFilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAllFilesResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetAllFilesResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -416,13 +428,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/opportunity'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetAllOpportunitiesRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.GetAllOpportunitiesRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -444,25 +456,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAllOpportunitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAllOpportunitiesResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetAllOpportunitiesResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -481,13 +495,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/order'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetAllOrdersRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.GetAllOrdersRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -509,25 +523,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetAllOrdersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAllOrdersResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetAllOrdersResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -541,13 +557,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/billing/events'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetBillingEventsRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.GetBillingEventsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -569,18 +585,20 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetBillingEventsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetBillingEventsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetBillingEventsResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -594,17 +612,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/contact'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -621,25 +639,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetContactResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetContactResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetContactResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -657,17 +677,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetContractRequest, base_url, '/v2/portal/contract/{id}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -684,25 +704,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetContractResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetContractResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetContractResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -721,7 +743,9 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetEntitiesByIdentifiersRequest, base_url, '/v2/portal/entity/by-identifiers/{slug}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.GetEntitiesByIdentifiersRequest, "request_body", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
@@ -729,14 +753,12 @@ class Ecp:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -753,25 +775,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetEntitiesByIdentifiersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetEntitiesByIdentifiersResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetEntitiesByIdentifiersResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -789,17 +813,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetFileByIDRequest, base_url, '/v2/portal/user/file/{id}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -816,25 +840,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetFileByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFileByIDResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetFileByIDResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -848,17 +874,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user/files/count-by-entity'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -875,25 +901,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetFilesCountByEntityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetFilesCountByEntityResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[List[components.EntityFileCount]])
                 res.classes = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -911,17 +939,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetOpportunityRequest, base_url, '/v2/portal/opportunities/{id}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -938,25 +966,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetOpportunityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetOpportunityResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetOpportunityResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -974,17 +1004,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetOrderRequest, base_url, '/v2/portal/order/{id}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1001,25 +1031,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetOrderResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetOrderResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetOrderResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1033,17 +1065,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/org/settings'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1060,25 +1092,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetOrganizationSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetOrganizationSettingsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetOrganizationSettingsResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1096,13 +1130,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/config'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetPortalConfigRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.GetPortalConfigRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -1124,25 +1158,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetPortalConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPortalConfigResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.PortalConfig])
                 res.portal_config = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1156,17 +1192,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1183,25 +1219,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetPortalUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPortalUserResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetPortalUserResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1219,13 +1257,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/widgets'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetPortalWidgetsRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.GetPortalWidgetsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -1247,25 +1285,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetPortalWidgetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPortalWidgetsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.UpsertPortalWidget])
                 res.upsert_portal_widget = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1279,17 +1319,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/schemas'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1306,25 +1346,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetSchemasResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetSchemasResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetSchemasResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1344,18 +1386,18 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/opportunities/search'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.GetSearchResultsForOpportunitiesRequest, "request_body", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        query_params = utils.get_query_params(operations.GetSearchResultsForOpportunitiesRequest, request)
+        query_params = { **utils.get_query_params(operations.GetSearchResultsForOpportunitiesRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -1377,25 +1419,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetSearchResultsForOpportunitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetSearchResultsForOpportunitiesResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetSearchResultsForOpportunitiesResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1414,13 +1458,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/opportunities/searchable-attributes'
-        headers = {}
-        query_params = utils.get_query_params(operations.GetSearchableAttributesForOpportunitiesRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.GetSearchableAttributesForOpportunitiesRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -1442,25 +1486,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetSearchableAttributesForOpportunitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetSearchableAttributesForOpportunitiesResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetSearchableAttributesForOpportunitiesResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1474,7 +1520,9 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/entity/file'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, components.SaveEntityFile, "request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
@@ -1482,14 +1530,12 @@ class Ecp:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1506,25 +1552,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.SaveEntityFileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SaveEntityFileResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 201:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.SaveEntityFileResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1542,20 +1590,20 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.SearchPaymentRelationsInEntitiesRequest, base_url, '/v2/portal/entities-by-payment/{id}', request)
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1572,18 +1620,20 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.SearchPaymentRelationsInEntitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SearchPaymentRelationsInEntitiesResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.SearchPaymentRelationsInEntitiesResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1597,20 +1647,20 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/entity:search'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, Optional[components.EntitySearchParams], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1627,25 +1677,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.SearchPortalUserEntitiesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SearchPortalUserEntitiesResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.SearchPortalUserEntitiesResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1663,17 +1715,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.TrackFileDownloadedRequest, base_url, '/v2/portal/user/file/{id}/downloaded', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, headers=headers).prepare(),
+                requests_http.Request('POST', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1690,25 +1742,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.TrackFileDownloadedResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.TrackFileDownloadedResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.TrackFileDownloadedResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1728,13 +1782,13 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.TriggerEntityAccessEventRequest, base_url, '/v2/portal/entity/{schema}/access', request)
-        headers = {}
-        query_params = utils.get_query_params(operations.TriggerEntityAccessEventRequest, request)
+        
+        headers, query_params = utils.get_security(security)
+        
+        query_params = { **utils.get_query_params(operations.TriggerEntityAccessEventRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -1756,18 +1810,20 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.TriggerEntityAccessEventResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.TriggerEntityAccessEventResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.TriggerEntityAccessEventResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1781,20 +1837,20 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/contact'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, Optional[Dict[str, Any]], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PATCH', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1811,32 +1867,35 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UpdateContactResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateContactResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateContactResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.UpdateContactResponseBody)
                 out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1855,7 +1914,9 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateContractRequest, base_url, '/v2/portal/contract/{id}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateContractRequest, "request_body", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
@@ -1863,14 +1924,12 @@ class Ecp:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PATCH', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1887,32 +1946,35 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UpdateContractResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateContractResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateContractResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 403:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.UpdateContractResponseBody)
                 out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -1931,7 +1993,9 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateOpportunityRequest, base_url, '/v2/portal/opportunities/{id}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateOpportunityRequest, "request_body", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
@@ -1939,14 +2003,12 @@ class Ecp:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PATCH', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -1963,25 +2025,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UpdateOpportunityResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateOpportunityResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateOpportunityResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -2000,20 +2064,20 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateOrderRequest, base_url, '/v2/portal/order/{id}', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateOrderRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PATCH', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -2030,25 +2094,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UpdateOrderResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateOrderResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateOrderResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -2062,20 +2128,20 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user'
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, Optional[Dict[str, Any]], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PATCH', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -2092,25 +2158,27 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UpdatePortalUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdatePortalUserResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UpdatePortalUserResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -2129,17 +2197,17 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateWorkflowStepAsDoneRequest, base_url, '/v2/portal/workflow/{workflow_id}/{step_id}:markDone', request)
-        headers = {}
+        
+        headers, query_params = utils.get_security(security)
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PUT', url, headers=headers).prepare(),
+                requests_http.Request('PUT', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -2156,18 +2224,20 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UpdateWorkflowStepAsDoneResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateWorkflowStepAsDoneResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[Dict[str, Any]])
                 res.workflow_step = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -2187,16 +2257,16 @@ class Ecp:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.ValidateCadenceEntityEditRulesRequest, base_url, '/v2/portal/{slug}/{id}:validateRule', request)
-        headers = {}
-        query_params = utils.get_query_params(operations.ValidateCadenceEntityEditRulesRequest, request)
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        query_params = { **utils.get_query_params(operations.ValidateCadenceEntityEditRulesRequest, request), **query_params }
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -2218,18 +2288,20 @@ class Ecp:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.ValidateCadenceEntityEditRulesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ValidateCadenceEntityEditRulesResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.ValidateCadenceEntityEditRulesResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 

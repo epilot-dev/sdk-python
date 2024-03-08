@@ -61,6 +61,7 @@ res = s.ecp.add_end_customer_relation_to_entity("<YOUR_BEARER_TOKEN_HERE>", id='
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -109,6 +110,7 @@ res = s.ecp.create_custom_entity_activity("<YOUR_BEARER_TOKEN_HERE>", activity=c
 if res.activity_item is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -155,6 +157,7 @@ res = s.ecp.delete_entity_file(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -192,6 +195,7 @@ res = s.ecp.delete_portal_user("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -228,6 +232,7 @@ res = s.ecp.get_all_contracts("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -269,6 +274,7 @@ res = s.ecp.get_all_files("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=0, entity_id
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -308,6 +314,7 @@ res = s.ecp.get_all_opportunities("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -346,6 +353,7 @@ res = s.ecp.get_all_orders("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -389,6 +397,7 @@ res = s.ecp.get_billing_events(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -425,6 +434,7 @@ res = s.ecp.get_contact("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -461,6 +471,7 @@ res = s.ecp.get_contract("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -501,6 +512,7 @@ res = s.ecp.get_entities_by_identifiers("<YOUR_BEARER_TOKEN_HERE>", request_body
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -539,6 +551,7 @@ res = s.ecp.get_file_by_id("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -576,6 +589,7 @@ res = s.ecp.get_files_count_by_entity("<YOUR_BEARER_TOKEN_HERE>")
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -612,6 +626,7 @@ res = s.ecp.get_opportunity("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -649,6 +664,7 @@ res = s.ecp.get_order("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -686,6 +702,7 @@ res = s.ecp.get_organization_settings("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -725,6 +742,7 @@ res = s.ecp.get_portal_config(operations.GetPortalConfigSecurity(
 if res.portal_config is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -762,6 +780,7 @@ res = s.ecp.get_portal_user("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -801,6 +820,7 @@ res = s.ecp.get_portal_widgets(operations.GetPortalWidgetsSecurity(
 if res.upsert_portal_widget is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -838,6 +858,7 @@ res = s.ecp.get_schemas("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -875,6 +896,7 @@ res = s.ecp.get_search_results_for_opportunities("<YOUR_BEARER_TOKEN_HERE>", req
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -914,6 +936,7 @@ res = s.ecp.get_searchable_attributes_for_opportunities("<YOUR_BEARER_TOKEN_HERE
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -971,6 +994,7 @@ res = s.ecp.save_entity_file(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1014,6 +1038,7 @@ res = s.ecp.search_payment_relations_in_entities(id='5da0a718-c822-403d-9f5d-20d
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1059,6 +1084,7 @@ res = s.ecp.search_portal_user_entities(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1096,6 +1122,7 @@ res = s.ecp.track_file_downloaded("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1134,6 +1161,7 @@ res = s.ecp.trigger_entity_access_event("<YOUR_BEARER_TOKEN_HERE>", origin=compo
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1175,6 +1203,7 @@ res = s.ecp.update_contact(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1215,6 +1244,7 @@ res = s.ecp.update_contract("<YOUR_BEARER_TOKEN_HERE>", request_body={
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1256,6 +1286,7 @@ res = s.ecp.update_opportunity("<YOUR_BEARER_TOKEN_HERE>", request_body={
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1296,6 +1327,7 @@ res = s.ecp.update_order("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1337,6 +1369,7 @@ res = s.ecp.update_portal_user(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1374,6 +1407,7 @@ res = s.ecp.update_workflow_step_as_done("<YOUR_BEARER_TOKEN_HERE>", step_id='q1
 if res.workflow_step is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -1418,6 +1452,7 @@ res = s.ecp.validate_cadence_entity_edit_rules(id='5da0a718-c822-403d-9f5d-20d45
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

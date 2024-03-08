@@ -33,6 +33,7 @@ res = s.activity.get_entity_activity_feed(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

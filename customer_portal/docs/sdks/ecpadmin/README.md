@@ -47,6 +47,7 @@ res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=comp
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -89,6 +90,7 @@ res = s.ecp_admin.create_sso_user("<YOUR_BEARER_TOKEN_HERE>", create_sso_user_re
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -125,9 +127,10 @@ s = epilot.Epilot()
 
 res = s.ecp_admin.delete_portal("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.END_CUSTOMER_PORTAL)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -165,6 +168,7 @@ res = s.ecp_admin.extra_permission_attributes("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -202,6 +206,7 @@ res = s.ecp_admin.fetch_portal_users_by_related_entity("<YOUR_BEARER_TOKEN_HERE>
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -240,6 +245,7 @@ res = s.ecp_admin.get_all_portal_configs("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -276,6 +282,7 @@ res = s.ecp_admin.get_ecp_contact("<YOUR_BEARER_TOKEN_HERE>", id='1234')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -314,6 +321,7 @@ res = s.ecp_admin.get_email_templates("<YOUR_BEARER_TOKEN_HERE>", origin=compone
 if res.email_templates is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -352,6 +360,7 @@ res = s.ecp_admin.get_entity_identifiers("<YOUR_BEARER_TOKEN_HERE>", slug=compon
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -390,6 +399,7 @@ res = s.ecp_admin.get_org_portal_config("<YOUR_BEARER_TOKEN_HERE>", origin=compo
 if res.portal_config is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -430,6 +440,7 @@ res = s.ecp_admin.get_portal_config(operations.GetPortalConfigSecurity(
 if res.portal_config is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -470,6 +481,7 @@ res = s.ecp_admin.get_portal_widgets(operations.GetPortalWidgetsSecurity(
 if res.upsert_portal_widget is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -513,6 +525,7 @@ res = s.ecp_admin.get_registered_users(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -550,6 +563,7 @@ res = s.ecp_admin.get_registration_identifiers("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -586,6 +600,7 @@ res = s.ecp_admin.get_valid_secondary_attributes("<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -629,6 +644,7 @@ res = s.ecp_admin.login_to_portal_as_user(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -671,6 +687,7 @@ res = s.ecp_admin.replace_ecp_template_variables(req, "<YOUR_BEARER_TOKEN_HERE>"
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -721,6 +738,7 @@ res = s.ecp_admin.save_portal_files(req, "<YOUR_BEARER_TOKEN_HERE>")
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -766,6 +784,7 @@ res = s.ecp_admin.upsert_email_templates("<YOUR_BEARER_TOKEN_HERE>", email_templ
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -827,6 +846,7 @@ res = s.ecp_admin.upsert_portal("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_config
 if res.portal_config is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -874,6 +894,7 @@ res = s.ecp_admin.upsert_portal_widget("<YOUR_BEARER_TOKEN_HERE>", upsert_portal
 if res.upsert_portal_widget is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

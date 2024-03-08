@@ -29,18 +29,19 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/public/contact/exists'
+        
         headers = {}
+        query_params = {}
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.CheckContactExistsRequest, "contact_exists_request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        query_params = utils.get_query_params(operations.CheckContactExistsRequest, request)
+        query_params = { **utils.get_query_params(operations.CheckContactExistsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -62,25 +63,27 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.CheckContactExistsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CheckContactExistsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CheckContactExistsResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -100,13 +103,14 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.ConfirmUserRequest, base_url, '/v2/portal/user/confirm/{id}', request)
+        
         headers = {}
-        query_params = utils.get_query_params(operations.ConfirmUserRequest, request)
+        query_params = {}
+        
+        query_params = { **utils.get_query_params(operations.ConfirmUserRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -128,21 +132,22 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.ConfirmUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ConfirmUserResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 301:
             pass
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -161,18 +166,19 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/public/user'
+        
         headers = {}
+        query_params = {}
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.CreateUserRequest, "create_user_request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        query_params = utils.get_query_params(operations.CreateUserRequest, request)
+        query_params = { **utils.get_query_params(operations.CreateUserRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -194,25 +200,27 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.CreateUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateUserResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 201:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.CreateUserResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -233,18 +241,19 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/public/contact/count'
+        
         headers = {}
+        query_params = {}
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.GetContactCountRequest, "contact_count_request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
-        query_params = utils.get_query_params(operations.GetContactCountRequest, request)
+        query_params = { **utils.get_query_params(operations.GetContactCountRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -266,25 +275,27 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetContactCountResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetContactCountResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetContactCountResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 404, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -303,13 +314,14 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/contact/email/count'
+        
         headers = {}
-        query_params = utils.get_query_params(operations.GetCountByEmailRequest, request)
+        query_params = {}
+        
+        query_params = { **utils.get_query_params(operations.GetCountByEmailRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -331,25 +343,27 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetCountByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetCountByEmailResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.GetCountByEmailResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -367,13 +381,14 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/public/config'
+        
         headers = {}
-        query_params = utils.get_query_params(operations.GetPortalConfigByDomainRequest, request)
+        query_params = {}
+        
+        query_params = { **utils.get_query_params(operations.GetPortalConfigByDomainRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -395,25 +410,27 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetPortalConfigByDomainResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPortalConfigByDomainResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.PortalConfig])
                 res.portal_config = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -432,13 +449,14 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/public/portal/config'
+        
         headers = {}
-        query_params = utils.get_query_params(operations.GetPublicPortalConfigRequest, request)
+        query_params = {}
+        
+        query_params = { **utils.get_query_params(operations.GetPublicPortalConfigRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -460,25 +478,27 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetPublicPortalConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPublicPortalConfigResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.PortalConfig])
                 res.portal_config = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -497,13 +517,14 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/public-widgets'
+        
         headers = {}
-        query_params = utils.get_query_params(operations.GetPublicPortalWidgetsRequest, request)
+        query_params = {}
+        
+        query_params = { **utils.get_query_params(operations.GetPublicPortalWidgetsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -525,25 +546,27 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetPublicPortalWidgetsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetPublicPortalWidgetsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[components.UpsertPortalWidget])
                 res.upsert_portal_widget = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [401, 403, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -563,13 +586,14 @@ class Public:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/public/user/exists'
+        
         headers = {}
-        query_params = utils.get_query_params(operations.UserExistsRequest, request)
+        query_params = {}
+        
+        query_params = { **utils.get_query_params(operations.UserExistsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -591,25 +615,27 @@ class Public:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UserExistsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UserExistsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.UserExistsResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 

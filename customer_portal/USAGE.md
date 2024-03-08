@@ -11,5 +11,6 @@ res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=comp
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

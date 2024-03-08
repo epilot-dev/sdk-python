@@ -45,6 +45,7 @@ res = s.public.check_contact_exists(contact_exists_request=components.ContactExi
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -80,9 +81,10 @@ s = epilot.Epilot()
 
 res = s.public.confirm_user(id='5da0a718-c822-403d-9f5d-20d4584e0528', org_id='123', origin=components.Origin.INSTALLER_PORTAL)
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -137,6 +139,7 @@ res = s.public.create_user(create_user_request=components.CreateUserRequest(
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -182,6 +185,7 @@ res = s.public.get_contact_count(contact_count_request=components.ContactCountRe
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -219,6 +223,7 @@ res = s.public.get_count_by_email(email='test@test.com', org_id='123')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -256,6 +261,7 @@ res = s.public.get_portal_config_by_domain(domain='example.com')
 if res.portal_config is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -293,6 +299,7 @@ res = s.public.get_public_portal_config(org_id='12324', origin=components.Origin
 if res.portal_config is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -331,6 +338,7 @@ res = s.public.get_public_portal_widgets(org_id='123', origin=components.Origin.
 if res.upsert_portal_widget is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -369,6 +377,7 @@ res = s.public.user_exists(email='user@example.com', org_id='123', origin=compon
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

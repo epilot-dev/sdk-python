@@ -25,6 +25,7 @@ res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=comp
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -150,6 +151,7 @@ except errors.SDKError as e:
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -182,6 +184,7 @@ res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=comp
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -202,6 +205,7 @@ res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=comp
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -254,6 +258,7 @@ res = s.ecp.search_payment_relations_in_entities(id='5da0a718-c822-403d-9f5d-20d
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Per-Operation Security Schemes
@@ -271,6 +276,7 @@ res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=comp
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
