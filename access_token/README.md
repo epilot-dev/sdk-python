@@ -32,6 +32,7 @@ res = s.access_tokens.create_access_token(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -91,6 +92,7 @@ except errors.SDKError as e:
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -129,6 +131,7 @@ res = s.access_tokens.create_access_token(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -155,6 +158,7 @@ res = s.access_tokens.create_access_token(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -210,6 +214,7 @@ res = s.access_tokens.create_access_token(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 

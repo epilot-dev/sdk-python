@@ -48,6 +48,7 @@ res = s.access_tokens.create_access_token(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -90,6 +91,7 @@ res = s.access_tokens.list_access_tokens(token_type=[
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -130,6 +132,7 @@ res = s.access_tokens.revoke_access_token(id='api_5ZugdRXasLfWBypHi93Fk')
 if res.access_token_item is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
