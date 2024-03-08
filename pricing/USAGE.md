@@ -17,5 +17,6 @@ res = s.order_api.create_order(req)
 if res.order is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

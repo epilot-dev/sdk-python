@@ -37,6 +37,7 @@ res = s.availability_api.dollar_availability_check(availability_check_params=sha
 if res.availability_result is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

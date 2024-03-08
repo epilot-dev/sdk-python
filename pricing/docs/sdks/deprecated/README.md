@@ -35,6 +35,7 @@ res = s.deprecated.dollar_create_opportunity(opportunity=shared.OpportunityInput
 if res.opportunity is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

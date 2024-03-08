@@ -42,6 +42,7 @@ res = s.cart_api.dollar_checkout_cart(checkout_cart=shared.CheckoutCart(), x_ivy
 if res.checkout_cart_result is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
