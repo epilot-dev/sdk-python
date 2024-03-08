@@ -12,8 +12,9 @@ res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_s
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->

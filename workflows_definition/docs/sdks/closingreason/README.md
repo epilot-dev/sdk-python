@@ -26,9 +26,10 @@ res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_s
     status=shared.ClosingReasonsStatus.ACTIVE,
 ))
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -73,6 +74,7 @@ res = s.closing_reason.create_closing_reason(req)
 if res.closing_reason is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -110,6 +112,7 @@ res = s.closing_reason.get_all_closing_reasons(include_inactive=False)
 if res.closing_reasons is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

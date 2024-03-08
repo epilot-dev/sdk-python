@@ -53,6 +53,7 @@ res = s.workflows.create_definition(req)
 if res.workflow_definition is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -88,9 +89,10 @@ s = sdk.SDK(
 
 res = s.workflows.delete_definition(definition_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -129,6 +131,7 @@ res = s.workflows.get_definition(definition_id='<value>')
 if res.workflow_definition is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -168,6 +171,7 @@ res = s.workflows.get_definitions()
 if res.classes is not None:
     # handle response
     pass
+
 ```
 
 
@@ -200,6 +204,7 @@ res = s.workflows.get_max_allowed_limit()
 if res.max_allowed_limit is not None:
     # handle response
     pass
+
 ```
 
 
@@ -232,6 +237,7 @@ res = s.workflows.get_workflow_closing_reasons(definition_id='<value>')
 if res.closing_reasons_ids is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -273,9 +279,10 @@ res = s.workflows.set_workflow_closing_reasons(closing_reasons_ids=shared.Closin
     ],
 ), definition_id='<value>')
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -335,6 +342,7 @@ res = s.workflows.update_definition(workflow_definition=shared.WorkflowDefinitio
 if res.workflow_definition is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -23,7 +23,12 @@ class Workflows:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v1/workflows/definitions'
-        headers = {}
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, shared.WorkflowDefinition, "request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
@@ -31,17 +36,12 @@ class Workflows:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -58,25 +58,27 @@ class Workflows:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.CreateDefinitionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.CreateDefinitionResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.WorkflowDefinition])
                 res.workflow_definition = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -94,20 +96,20 @@ class Workflows:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.DeleteDefinitionRequest, base_url, '/v1/workflows/definitions/{definitionId}', request)
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('DELETE', url, headers=headers).prepare(),
+                requests_http.Request('DELETE', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -124,21 +126,22 @@ class Workflows:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteDefinitionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteDefinitionResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 204:
             pass
         elif http_res.status_code == 401:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404 or http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -156,20 +159,20 @@ class Workflows:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetDefinitionRequest, base_url, '/v1/workflows/definitions/{definitionId}', request)
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -186,32 +189,34 @@ class Workflows:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetDefinitionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDefinitionResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.WorkflowDefinition])
                 res.workflow_definition = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.DefinitionNotFoundResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -225,20 +230,20 @@ class Workflows:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v1/workflows/definitions'
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -255,25 +260,27 @@ class Workflows:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetDefinitionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetDefinitionsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.WorkflowDefinition]])
                 res.classes = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -287,20 +294,20 @@ class Workflows:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v1/workflows/limits/max-allowed'
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -317,25 +324,27 @@ class Workflows:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetMaxAllowedLimitResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMaxAllowedLimitResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.MaxAllowedLimit])
                 res.max_allowed_limit = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 500:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -353,20 +362,20 @@ class Workflows:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.GetWorkflowClosingReasonsRequest, base_url, '/v1/workflows/definitions/{definitionId}/closing-reasons', request)
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -383,18 +392,20 @@ class Workflows:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.GetWorkflowClosingReasonsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetWorkflowClosingReasonsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ClosingReasonsIds])
                 res.closing_reasons_ids = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -413,7 +424,12 @@ class Workflows:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.SetWorkflowClosingReasonsRequest, base_url, '/v1/workflows/definitions/{definitionId}/closing-reasons', request)
-        headers = {}
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.SetWorkflowClosingReasonsRequest, "closing_reasons_ids", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
@@ -421,17 +437,12 @@ class Workflows:
             raise Exception('request body is required')
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PATCH', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -448,14 +459,15 @@ class Workflows:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.SetWorkflowClosingReasonsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SetWorkflowClosingReasonsResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 201:
             pass
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -474,7 +486,12 @@ class Workflows:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateDefinitionRequest, base_url, '/v1/workflows/definitions/{definitionId}', request)
-        headers = {}
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateDefinitionRequest, "workflow_definition", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
@@ -482,17 +499,12 @@ class Workflows:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PUT', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('PUT', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -509,25 +521,27 @@ class Workflows:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UpdateDefinitionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateDefinitionResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.WorkflowDefinition])
                 res.workflow_definition = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code in [400, 401, 500]:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                out.raw_response = http_res
                 raise out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
