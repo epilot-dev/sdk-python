@@ -29,16 +29,17 @@ class UserV2:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/users/public/activate'
+        
         headers = {}
+        query_params = {}
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.ActivateUserRequest, "user_activation_payload", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.ActivateUserRequest, request)
+        query_params = { **utils.get_query_params(operations.ActivateUserRequest, request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -60,14 +61,15 @@ class UserV2:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.ActivateUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.ActivateUserResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
         elif http_res.status_code == 404 or http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -85,20 +87,20 @@ class UserV2:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.DeleteUserV2Request, base_url, '/v2/users/{id}', request)
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('DELETE', url, headers=headers).prepare(),
+                requests_http.Request('DELETE', url, params=query_params, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -115,18 +117,20 @@ class UserV2:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.DeleteUserV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.DeleteUserV2Response(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.User])
                 res.user = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -140,250 +144,15 @@ class UserV2:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/users/me'
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
         
         if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
         else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        content_type = http_res.headers.get('Content-Type')
-        
-        res = operations.GetMeV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.UserV2])
-                res.user_v2 = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def get_user_login_parameters_v2(self, username: str) -> operations.GetUserLoginParametersV2Response:
-        r"""getUserLoginParametersV2
-        Get user organization login parameters by username
-        """
-        hook_ctx = HookContext(operation_id='getUserLoginParametersV2', oauth2_scopes=[], security_source=None)
-        request = operations.GetUserLoginParametersV2Request(
-            username=username,
-        )
-        
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = utils.generate_url(operations.GetUserLoginParametersV2Request, base_url, '/v2/users/public/username/{username}:getLoginParameters', request)
-        headers = {}
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        content_type = http_res.headers.get('Content-Type')
-        
-        res = operations.GetUserLoginParametersV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.GetUserLoginParametersV2ResponseBody])
-                res.object = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def get_user_v2(self, id: str) -> operations.GetUserV2Response:
-        r"""getUserV2
-        Get user details by user id
-        """
-        hook_ctx = HookContext(operation_id='getUserV2', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        request = operations.GetUserV2Request(
-            id=id,
-        )
-        
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = utils.generate_url(operations.GetUserV2Request, base_url, '/v2/users/{id}', request)
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('GET', url, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        content_type = http_res.headers.get('Content-Type')
-        
-        res = operations.GetUserV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.UserV2])
-                res.user_v2 = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def invite_user(self, request: Optional[shared.UserInvitationPayload]) -> operations.InviteUserResponse:
-        r"""inviteUser
-        Creates a new user in the caller's organization and sends an invite email to activate
-        """
-        hook_ctx = HookContext(operation_id='inviteUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/v2/users/invite'
-        headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.UserInvitationPayload], "request", False, True, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['400','4XX','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        content_type = http_res.headers.get('Content-Type')
-        
-        res = operations.InviteUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if http_res.status_code == 201:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.UserV2])
-                res.user_v2 = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code == 400 or http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def list_users_v2(self, limit: Optional[float] = None, offset: Optional[float] = None, query: Optional[str] = None) -> operations.ListUsersV2Response:
-        r"""listUsersV2
-        Get the list of organization users
-        """
-        hook_ctx = HookContext(operation_id='listUsersV2', oauth2_scopes=[], security_source=self.sdk_configuration.security)
-        request = operations.ListUsersV2Request(
-            limit=limit,
-            offset=offset,
-            query=query,
-        )
-        
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/v2/users'
-        headers = {}
-        query_params = utils.get_query_params(operations.ListUsersV2Request, request)
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -405,48 +174,169 @@ class UserV2:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.ListUsersV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetMeV2Response(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.ListUsersV2ResponseBody])
-                res.object = out
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[shared.UserV2])
+                res.user_v2 = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
     
-    def resend_user_invitation(self, request: Optional[operations.ResendUserInvitationRequestBody]) -> operations.ResendUserInvitationResponse:
-        r"""resendUserInvitation
-        Resend user invitation email
+    def get_user_login_parameters_v2(self, username: str) -> operations.GetUserLoginParametersV2Response:
+        r"""getUserLoginParametersV2
+        Get user organization login parameters by username
         """
-        hook_ctx = HookContext(operation_id='resendUserInvitation', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        hook_ctx = HookContext(operation_id='getUserLoginParametersV2', oauth2_scopes=[], security_source=None)
+        request = operations.GetUserLoginParametersV2Request(
+            username=username,
+        )
+        
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = base_url + '/v2/users/invite:resendEmail'
+        url = utils.generate_url(operations.GetUserLoginParametersV2Request, base_url, '/v2/users/public/username/{username}:getLoginParameters', request)
+        
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.ResendUserInvitationRequestBody], "request", False, True, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
+        
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('POST', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('GET', url, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.GetUserLoginParametersV2Response(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[operations.GetUserLoginParametersV2ResponseBody])
+                res.object = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def get_user_v2(self, id: str) -> operations.GetUserV2Response:
+        r"""getUserV2
+        Get user details by user id
+        """
+        hook_ctx = HookContext(operation_id='getUserV2', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        request = operations.GetUserV2Request(
+            id=id,
+        )
+        
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetUserV2Request, base_url, '/v2/users/{id}', request)
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.GetUserV2Response(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[shared.UserV2])
+                res.user_v2 = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def invite_user(self, request: Optional[shared.UserInvitationPayload]) -> operations.InviteUserResponse:
+        r"""inviteUser
+        Creates a new user in the caller's organization and sends an invite email to activate
+        """
+        hook_ctx = HookContext(operation_id='inviteUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/users/invite'
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[shared.UserInvitationPayload], "request", False, True, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -463,18 +353,144 @@ class UserV2:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.ResendUserInvitationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.InviteUserResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
-        if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+        if http_res.status_code == 201:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.UserV2])
                 res.user_v2 = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400 or http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def list_users_v2(self, limit: Optional[float] = None, offset: Optional[float] = None, query: Optional[str] = None) -> operations.ListUsersV2Response:
+        r"""listUsersV2
+        Get the list of organization users
+        """
+        hook_ctx = HookContext(operation_id='listUsersV2', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        request = operations.ListUsersV2Request(
+            limit=limit,
+            offset=offset,
+            query=query,
+        )
+        
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/users'
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        query_params = { **utils.get_query_params(operations.ListUsersV2Request, request), **query_params }
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('GET', url, params=query_params, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.ListUsersV2Response(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[operations.ListUsersV2ResponseBody])
+                res.object = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def resend_user_invitation(self, request: Optional[operations.ResendUserInvitationRequestBody]) -> operations.ResendUserInvitationResponse:
+        r"""resendUserInvitation
+        Resend user invitation email
+        """
+        hook_ctx = HookContext(operation_id='resendUserInvitation', oauth2_scopes=[], security_source=self.sdk_configuration.security)
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v2/users/invite:resendEmail'
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.ResendUserInvitationRequestBody], "request", False, True, 'json')
+        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        client = self.sdk_configuration.client
+        
+        try:
+            req = self.sdk_configuration.get_hooks().before_request(
+                hook_ctx, 
+                requests_http.Request('POST', url, params=query_params, data=data, files=form, headers=headers).prepare(),
+            )
+            http_res = client.send(req)
+        except Exception as e:
+            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
+            raise e
+
+        if utils.match_status_codes(['400','4XX','5XX'], http_res.status_code):
+            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
+            if e:
+                raise e
+        else:
+            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
+            if isinstance(result, Exception):
+                raise result
+            http_res = result
+        
+        
+        res = operations.ResendUserInvitationResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
+        
+        if http_res.status_code == 200:
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
+                out = utils.unmarshal_json(http_res.text, Optional[shared.UserV2])
+                res.user_v2 = out
+            else:
+                content_type = http_res.headers.get('Content-Type')
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+        elif http_res.status_code == 400 or http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -491,16 +507,17 @@ class UserV2:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/users/public/signup'
+        
         headers = {}
+        query_params = {}
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.SignUpUserRequest, "signup_user_payload", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.SignUpUserRequest, request)
+        query_params = { **utils.get_query_params(operations.SignUpUserRequest, request), **query_params }
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -522,18 +539,20 @@ class UserV2:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.SignUpUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.SignUpUserResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[operations.SignUpUserResponseBody])
                 res.object = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -552,23 +571,23 @@ class UserV2:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateUserV2Request, base_url, '/v2/users/{id}', request)
-        headers = {}
+        
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateUserV2Request, "user_v2", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        if callable(self.sdk_configuration.security):
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
-        else:
-            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
-        
+        client = self.sdk_configuration.client
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
                 hook_ctx, 
-                requests_http.Request('PATCH', url, data=data, files=form, headers=headers).prepare(),
+                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
             )
             http_res = client.send(req)
         except Exception as e:
@@ -585,18 +604,20 @@ class UserV2:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.UpdateUserV2Response(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.UpdateUserV2Response(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
-            if utils.match_content_type(content_type, 'application/json'):
+            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
                 out = utils.unmarshal_json(http_res.text, Optional[shared.UserV2])
                 res.user_v2 = out
             else:
+                content_type = http_res.headers.get('Content-Type')
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -615,16 +636,17 @@ class UserV2:
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/users/public/verifyEmail'
+        
         headers = {}
+        query_params = {}
+        
         req_content_type, data, form = utils.serialize_request_body(request, operations.VerifyEmailWithTokenRequest, "user_verification_payload", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        query_params = utils.get_query_params(operations.VerifyEmailWithTokenRequest, request)
+        query_params = { **utils.get_query_params(operations.VerifyEmailWithTokenRequest, request), **query_params }
         headers['Accept'] = '*/*'
         headers['user-agent'] = self.sdk_configuration.user_agent
-        
         client = self.sdk_configuration.client
-        
         
         try:
             req = self.sdk_configuration.get_hooks().before_request(
@@ -646,14 +668,15 @@ class UserV2:
                 raise result
             http_res = result
         
-        content_type = http_res.headers.get('Content-Type')
         
-        res = operations.VerifyEmailWithTokenResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.VerifyEmailWithTokenResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
         
         if http_res.status_code == 200:
             pass
         elif http_res.status_code == 404 or http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
 
         return res
 

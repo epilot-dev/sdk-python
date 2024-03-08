@@ -31,6 +31,7 @@ res = s.user_v1.get_me()
 if res.user is not None:
     # handle response
     pass
+
 ```
 
 
@@ -62,6 +63,7 @@ res = s.user_v1.get_user(id='<value>')
 if res.user is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -97,6 +99,7 @@ res = s.user_v1.get_user_login_parameters(username='<value>')
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -136,6 +139,7 @@ res = s.user_v1.list_users(limit=5262.12, offset=5400.61, org_ids=[
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

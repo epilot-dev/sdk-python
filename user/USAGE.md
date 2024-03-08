@@ -12,5 +12,6 @@ res = s.user_v1.get_me()
 if res.user is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
