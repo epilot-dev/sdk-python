@@ -38,6 +38,7 @@ res = s.assignments.add_assignment(role_id='123:owner', user_id='1')
 if res.assignment is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -81,6 +82,7 @@ res = s.assignments.assign_roles(user_id='1', request_body=[
 if res.assignments is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -122,6 +124,7 @@ res = s.assignments.get_assigned_roles_for_user(user_id='1')
 if res.assignments is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -162,6 +165,7 @@ res = s.assignments.list_all_assignments()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -196,6 +200,7 @@ res = s.assignments.remove_assignment(role_id='123:owner', user_id='1')
 if res.assignment is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

@@ -37,6 +37,7 @@ res = s.roles.delete_role(role_id='123:owner')
 if res.role is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -77,6 +78,7 @@ res = s.roles.get_role(role_id='123:owner')
 if res.role is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -117,6 +119,7 @@ res = s.roles.list_all_roles()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -151,6 +154,7 @@ res = s.roles.list_current_roles()
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 
@@ -199,6 +203,7 @@ res = s.roles.put_role(role_id='123:owner', role_payload=shared.One(
 if res.role is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
@@ -237,9 +242,10 @@ s = epilot.Epilot(
 
 res = s.roles.refresh_permissions()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
@@ -291,6 +297,7 @@ res = s.roles.search_roles(req)
 if res.object is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters

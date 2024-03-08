@@ -29,6 +29,7 @@ res = s.assignments.add_assignment(role_id='123:owner', user_id='1')
 if res.assignment is not None:
     # handle response
     pass
+
 ```
 <!-- End SDK Example Usage [usage] -->
 
@@ -90,6 +91,7 @@ except errors.SDKError as e:
 if res.assignment is not None:
     # handle response
     pass
+
 ```
 <!-- End Error Handling [errors] -->
 
@@ -125,6 +127,7 @@ res = s.assignments.add_assignment(role_id='123:owner', user_id='1')
 if res.assignment is not None:
     # handle response
     pass
+
 ```
 
 
@@ -148,6 +151,7 @@ res = s.assignments.add_assignment(role_id='123:owner', user_id='1')
 if res.assignment is not None:
     # handle response
     pass
+
 ```
 <!-- End Server Selection [server] -->
 
@@ -200,6 +204,7 @@ res = s.assignments.add_assignment(role_id='123:owner', user_id='1')
 if res.assignment is not None:
     # handle response
     pass
+
 ```
 <!-- End Authentication [security] -->
 
