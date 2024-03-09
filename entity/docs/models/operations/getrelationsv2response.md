@@ -1,0 +1,9 @@
+# GetRelationsV2Response
+
+
+## Fields
+
+| Field                                                                                                            | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `http_meta`                                                                                                      | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                               | :heavy_check_mark:                                                                                               | N/A                                                                                                              |
+| `get_relations_resp_with_pagination`                                                                             | [Optional[components.GetRelationsRespWithPagination]](../../models/components/getrelationsrespwithpagination.md) | :heavy_minus_sign:                                                                                               | Success                                                                                                          |

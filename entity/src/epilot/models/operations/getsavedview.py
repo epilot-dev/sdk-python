@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import savedviewitem as shared_savedviewitem
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import savedviewitem as components_savedviewitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -11,25 +11,25 @@ from typing import Optional
 
 @dataclasses.dataclass
 class GetSavedViewRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""View id"""  
+    r"""View id"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetSavedView200ApplicationJSON:
+class GetSavedViewResponseBody:
     r"""Success"""
+    view: Optional[components_savedviewitem.SavedViewItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view'), 'exclude': lambda f: f is None }})
     
-    view: Optional[shared_savedviewitem.SavedViewItem] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('view'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetSavedViewResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    object: Optional[GetSavedViewResponseBody] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_saved_view_200_application_json_object: Optional[GetSavedView200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

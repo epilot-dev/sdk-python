@@ -2,27 +2,26 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import entitysearchparams as shared_entitysearchparams
+from ...models.components import entitysearchparams as components_entitysearchparams
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
 
 
 @dataclasses.dataclass
 class ExportEntitiesRequest:
-    
-    entity_search_params: Optional[shared_entitysearchparams.EntitySearchParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    entity_search_params: Optional[components_entitysearchparams.EntitySearchParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     is_template: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'is_template', 'style': 'form', 'explode': True }})
-    r"""Pass 'true' to generate import template"""  
+    r"""Pass 'true' to generate import template"""
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'job_id', 'style': 'form', 'explode': True }})
-    r"""Export Job Id to get the result"""  
+    r"""Export Job Id to get the result"""
     language: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'language', 'style': 'form', 'explode': True }})
-    r"""Export headers translation language"""  
+    r"""Export headers translation language"""
     
+
+
 
 @dataclasses.dataclass
 class ExportEntitiesResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
