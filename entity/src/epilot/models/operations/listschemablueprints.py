@@ -2,27 +2,26 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import entityschemaitem as shared_entityschemaitem
+from ...models.components import entityschemaitem as components_entityschemaitem
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ListSchemaBlueprints200ApplicationJSON:
+class ListSchemaBlueprintsResponseBody:
     r"""Success"""
+    results: Optional[List[components_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-    results: Optional[list[shared_entityschemaitem.EntitySchemaItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class ListSchemaBlueprintsResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    object: Optional[ListSchemaBlueprintsResponseBody] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    list_schema_blueprints_200_application_json_object: Optional[ListSchemaBlueprints200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

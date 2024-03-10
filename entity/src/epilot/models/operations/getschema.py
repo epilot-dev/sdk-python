@@ -2,24 +2,24 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import entityschemaitem as shared_entityschemaitem
+from ...models.components import entityschemaitem as components_entityschemaitem
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetSchemaRequest:
+    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
+    r"""Entity Type"""
+    id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'id', 'style': 'form', 'explode': True }})
     
-    slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})  
-    id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'id', 'style': 'form', 'explode': True }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetSchemaResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    entity_schema_item: Optional[components_entityschemaitem.EntitySchemaItem] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    entity_schema_item: Optional[shared_entityschemaitem.EntitySchemaItem] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
