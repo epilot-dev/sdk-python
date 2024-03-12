@@ -7,6 +7,7 @@ APIs defined for a ECP Admin
 
 ### Available Operations
 
+* [can_trigger_portal_flow](#can_trigger_portal_flow) - canTriggerPortalFlow
 * [configure_distribution](#configure_distribution) - configureDistribution
 * [create_sso_user](#create_sso_user) - createSSOUser
 * [delete_portal](#delete_portal) - deletePortal
@@ -28,6 +29,45 @@ APIs defined for a ECP Admin
 * [upsert_email_templates](#upsert_email_templates) - upsertEmailTemplates
 * [upsert_portal](#upsert_portal) - upsertPortal
 * [upsert_portal_widget](#upsert_portal_widget) - upsertPortalWidget
+
+## can_trigger_portal_flow
+
+Returns whether the user can trigger a portal flow
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import components
+
+s = epilot.Epilot()
+
+
+res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(), origin=components.Origin.END_CUSTOMER_PORTAL)
+
+if res.object is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `security`                                                                                         | [operations.CanTriggerPortalFlowSecurity](../../models/operations/cantriggerportalflowsecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
+| `trigger_portal_flow`                                                                              | [components.TriggerPortalFlow](../../models/components/triggerportalflow.md)                       | :heavy_check_mark:                                                                                 | Request of trigger portal flow                                                                     |
+| `origin`                                                                                           | [components.Origin](../../models/components/origin.md)                                             | :heavy_check_mark:                                                                                 | Origin of the portal                                                                               |
+
+
+### Response
+
+**[operations.CanTriggerPortalFlowResponse](../../models/operations/cantriggerportalflowresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## configure_distribution
 

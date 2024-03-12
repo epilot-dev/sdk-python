@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 875e421b-9fdf-42d5-ab3a-30a1cf7c82cf
 management:
-  docChecksum: 9652ff1c90da7a443d1b3a4f8533b58e
+  docChecksum: bdbca966116eb982c1482824905c2c45
   docVersion: 1.0.0
-  speakeasyVersion: 1.204.1
+  speakeasyVersion: 1.205.2
   generationVersion: 2.279.1
-  releaseVersion: 3.2.0
-  configChecksum: 5d15f3c8ec88ee4618a16d59591539b1
+  releaseVersion: 3.2.1
+  configChecksum: fe0fa7506ac96cc0d684effe06f7a107
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: customer_portal
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
@@ -39,6 +39,7 @@ generatedFiles:
   - src/epilot/utils/utils.py
   - src/epilot/models/errors/sdkerror.py
   - tests/helpers.py
+  - src/epilot/models/operations/cantriggerportalflow.py
   - src/epilot/models/operations/configuredistribution.py
   - src/epilot/models/operations/createssouser.py
   - src/epilot/models/operations/deleteportal.py
@@ -104,10 +105,8 @@ generatedFiles:
   - src/epilot/models/operations/getpublicportalwidgets.py
   - src/epilot/models/operations/userexists.py
   - src/epilot/models/operations/getentityactivityfeed.py
-  - src/epilot/models/errors/errorresp.py
-  - src/epilot/models/errors/updatecontact.py
-  - src/epilot/models/errors/updatecontract.py
   - src/epilot/models/components/origin.py
+  - src/epilot/models/components/triggerportalflow.py
   - src/epilot/models/components/portaluser.py
   - src/epilot/models/components/createssouserrequest.py
   - src/epilot/models/components/extraschemaattributes.py
@@ -152,10 +151,17 @@ generatedFiles:
   - src/epilot/models/components/createuserrequest.py
   - src/epilot/models/components/contactcountrequest.py
   - src/epilot/models/components/security.py
+  - src/epilot/models/errors/errorresp.py
+  - src/epilot/models/errors/updatecontact.py
+  - src/epilot/models/errors/updatecontract.py
   - src/epilot/models/__init__.py
   - src/epilot/models/errors/__init__.py
   - src/epilot/models/operations/__init__.py
   - src/epilot/models/components/__init__.py
+  - docs/models/operations/cantriggerportalflowsecurity.md
+  - docs/models/operations/cantriggerportalflowrequest.md
+  - docs/models/operations/cantriggerportalflowresponsebody.md
+  - docs/models/operations/cantriggerportalflowresponse.md
   - docs/models/operations/configuredistributionsecurity.md
   - docs/models/operations/configuredistributionrequest.md
   - docs/models/operations/configuredistributionresponsebody.md
@@ -383,10 +389,11 @@ generatedFiles:
   - docs/models/operations/getentityactivityfeedrequest.md
   - docs/models/operations/getentityactivityfeedresponsebody.md
   - docs/models/operations/getentityactivityfeedresponse.md
-  - docs/models/errors/errorresp.md
-  - docs/models/errors/updatecontactresponsebody.md
-  - docs/models/errors/updatecontractresponsebody.md
   - docs/models/components/origin.md
+  - docs/models/components/diff.md
+  - docs/models/components/fileconfig.md
+  - docs/models/components/ecpconfig.md
+  - docs/models/components/triggerportalflow.md
   - docs/models/components/portaluserschema.md
   - docs/models/components/portaluser.md
   - docs/models/components/createssouserrequest.md
@@ -532,6 +539,9 @@ generatedFiles:
   - docs/models/components/createuserrequest.md
   - docs/models/components/contactcountrequest.md
   - docs/models/components/security.md
+  - docs/models/errors/errorresp.md
+  - docs/models/errors/updatecontactresponsebody.md
+  - docs/models/errors/updatecontractresponsebody.md
   - docs/sdks/epilot/README.md
   - docs/sdks/ecpadmin/README.md
   - docs/sdks/balance/README.md

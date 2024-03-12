@@ -20,7 +20,7 @@ from epilot.models import components
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.object is not None:
     # handle response
@@ -34,6 +34,7 @@ if res.object is not None:
 
 ### [ecp_admin](docs/sdks/ecpadmin/README.md)
 
+* [can_trigger_portal_flow](docs/sdks/ecpadmin/README.md#can_trigger_portal_flow) - canTriggerPortalFlow
 * [configure_distribution](docs/sdks/ecpadmin/README.md#configure_distribution) - configureDistribution
 * [create_sso_user](docs/sdks/ecpadmin/README.md#create_sso_user) - createSSOUser
 * [delete_portal](docs/sdks/ecpadmin/README.md#delete_portal) - deletePortal
@@ -179,7 +180,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.object is not None:
     # handle response
@@ -200,7 +201,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.object is not None:
     # handle response
@@ -271,7 +272,7 @@ from epilot.models import components
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.object is not None:
     # handle response

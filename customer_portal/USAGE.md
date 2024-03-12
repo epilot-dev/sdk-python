@@ -6,7 +6,7 @@ from epilot.models import components
 s = epilot.Epilot()
 
 
-res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(), origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.object is not None:
     # handle response
