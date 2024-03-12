@@ -4,12 +4,12 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import List, Optional
+from typing import List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AnythingButCondition:
-    anything_but: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('anything-but'), 'exclude': lambda f: f is None }})
+    anything_but: Optional[List[Union[str, int]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('anything-but'), 'exclude': lambda f: f is None }})
     
 

@@ -12,6 +12,6 @@ diffAdded: components.OrCondition1 = /* values here */
 ### 
 
 ```python
-diffAdded: Dict[str, List[Union[str, components.EqualsIgnoreCaseCondition, components.AnythingButCondition, components.NumericCondition, components.ExistsCondition, components.PrefixCondition, components.SuffixCondition, components.WildcardCondition]]] = /* values here */
+diffAdded: Dict[str, List[Union[str, float, bool, components.EqualsIgnoreCaseCondition, components.AnythingButCondition, components.NumericCondition, components.ExistsCondition, components.PrefixCondition, components.SuffixCondition, components.WildcardCondition]]] = /* values here */
 ```
 

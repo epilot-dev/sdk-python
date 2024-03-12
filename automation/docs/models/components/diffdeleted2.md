@@ -9,6 +9,18 @@
 diffDeleted2: str = /* values here */
 ```
 
+### 
+
+```python
+diffDeleted2: float = /* values here */
+```
+
+### 
+
+```python
+diffDeleted2: bool = /* values here */
+```
+
 ### EqualsIgnoreCaseCondition
 
 ```python

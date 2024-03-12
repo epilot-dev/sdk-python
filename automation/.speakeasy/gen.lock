@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 3a0a8e68-0910-41f9-bb5a-aaaec12179b0
 management:
-  docChecksum: 36a125238fa57ff109f38f3689057934
+  docChecksum: ae5eee43a76f02947e3f5366276d8ba7
   docVersion: 1.0.0
-  speakeasyVersion: 1.204.1
+  speakeasyVersion: 1.205.2
   generationVersion: 2.279.1
-  releaseVersion: 3.2.0
-  configChecksum: 9dc67f9799e22d03932b4d4071ca4a17
+  releaseVersion: 3.2.1
+  configChecksum: 352544ff9ad66c6b1ed6e5962d88ee4f
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: automation
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=automation
@@ -222,6 +222,8 @@ generatedFiles:
   - docs/models/components/apisubmissiontriggerconfiguration.md
   - docs/models/components/apisubmissiontriggertype.md
   - docs/models/components/apisubmissiontrigger.md
+  - docs/models/components/fileconfig.md
+  - docs/models/components/ecpconfig.md
   - docs/models/components/entityoperationtriggerschemastype.md
   - docs/models/components/activity.md
   - docs/models/components/entityoperationtrigger2.md
@@ -235,6 +237,7 @@ generatedFiles:
   - docs/models/components/filterconditiononevent.md
   - docs/models/components/orcondition.md
   - docs/models/components/equalsignorecasecondition.md
+  - docs/models/components/anythingbut.md
   - docs/models/components/anythingbutcondition.md
   - docs/models/components/numeric.md
   - docs/models/components/numericcondition.md

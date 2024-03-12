@@ -9,6 +9,18 @@
 filterConditionOnEvent2: str = /* values here */
 ```
 
+### 
+
+```python
+filterConditionOnEvent2: float = /* values here */
+```
+
+### 
+
+```python
+filterConditionOnEvent2: bool = /* values here */
+```
+
 ### EqualsIgnoreCaseCondition
 
 ```python

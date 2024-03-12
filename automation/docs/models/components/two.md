@@ -9,6 +9,18 @@
 two: str = /* values here */
 ```
 
+### 
+
+```python
+two: float = /* values here */
+```
+
+### 
+
+```python
+two: bool = /* values here */
+```
+
 ### EqualsIgnoreCaseCondition
 
 ```python

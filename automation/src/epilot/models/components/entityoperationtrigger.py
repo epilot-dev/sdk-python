@@ -21,6 +21,23 @@ from typing import Dict, List, Optional, Union
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
+class FileConfig:
+    shared_with_end_customer: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shared_with_end_customer'), 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class EcpConfig:
+    file_config: Optional[FileConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('file_config'), 'exclude': lambda f: f is None }})
+    origin: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('origin'), 'exclude': lambda f: f is None }})
+    
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
 class Activity:
     type: Optional[List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     r"""Filter on activity type. If not specified, all activities will be matched on execution.
@@ -50,9 +67,9 @@ class Activity:
 @dataclasses.dataclass
 class EntityOperationTrigger2:
     r"""Diff to it's prior state when an entity is updated"""
-    added: Optional[Union[OrCondition1, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'exclude': lambda f: f is None }})
-    deleted: Optional[Union[OrCondition1, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
-    updated: Optional[Union[OrCondition1, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
+    added: Optional[Union[OrCondition1, Dict[str, List[Union[str, float, bool, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'exclude': lambda f: f is None }})
+    deleted: Optional[Union[OrCondition1, Dict[str, List[Union[str, float, bool, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
+    updated: Optional[Union[OrCondition1, Dict[str, List[Union[str, float, bool, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
     
 
 
@@ -73,7 +90,7 @@ class EntityOperationTriggerOperation:
         }
       ```
     """
-    payload: Optional[Union[OrCondition, Dict[str, List[Union[str, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})
+    payload: Optional[Union[OrCondition, Dict[str, List[Union[str, float, bool, EqualsIgnoreCaseCondition, AnythingButCondition, NumericCondition, ExistsCondition, PrefixCondition, SuffixCondition, WildcardCondition]]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})
     
 
 
@@ -90,6 +107,7 @@ class FilterConfig:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class EntityOperationTriggerConfiguration:
+    ecp_config: Optional[EcpConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ecp_config'), 'exclude': lambda f: f is None }})
     exclude_activities: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exclude_activities'), 'exclude': lambda f: f is None }})
     filter_config: Optional[FilterConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filter_config'), 'exclude': lambda f: f is None }})
     include_activities: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('include_activities'), 'exclude': lambda f: f is None }})
