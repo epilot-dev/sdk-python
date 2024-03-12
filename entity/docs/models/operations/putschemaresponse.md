@@ -1,0 +1,9 @@
+# PutSchemaResponse
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `http_meta`                                                                          | [components.HTTPMetadata](../../models/components/httpmetadata.md)                   | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `entity_schema_item`                                                                 | [Optional[components.EntitySchemaItem]](../../models/components/entityschemaitem.md) | :heavy_minus_sign:                                                                   | Success                                                                              |

@@ -1,0 +1,9 @@
+# GetRelationsResponse
+
+
+## Fields
+
+| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `http_meta`                                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                             | :heavy_check_mark:                                                                                             | N/A                                                                                                            |
+| `get_relations_resp`                                                                                           | List[[Union[components.RelationItem, components.RelationEntity]](../../models/components/getrelationsresp.md)] | :heavy_minus_sign:                                                                                             | Success                                                                                                        |

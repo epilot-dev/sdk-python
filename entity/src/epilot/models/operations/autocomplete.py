@@ -2,40 +2,40 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional, Union
 
 
 @dataclasses.dataclass
 class AutocompleteRequest:
-    
     attribute: str = dataclasses.field(metadata={'query_param': { 'field_name': 'attribute', 'style': 'form', 'explode': True }})
-    r"""Autocomplete attribute"""  
+    r"""Autocomplete attribute"""
     input: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'input', 'style': 'form', 'explode': True }})
-    r"""Input to autocomplete"""  
-    size: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
-    r"""Maximum number of results to return"""  
+    r"""Input to autocomplete"""
+    size: Optional[int] = dataclasses.field(default=10, metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})
+    r"""Maximum number of results to return"""
     slug: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'slug', 'style': 'form', 'explode': True }})
-    r"""Limit results to entity schema"""  
+    r"""Limit results to entity schema"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class Autocomplete200ApplicationJSON:
+class AutocompleteResponseBody:
     r"""Success"""
+    hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
+    results: Optional[List[Union[str, bool, Dict[str, Any]]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
-    hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})  
-    results: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class AutocompleteResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    object: Optional[AutocompleteResponseBody] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    autocomplete_200_application_json_object: Optional[Autocomplete200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
