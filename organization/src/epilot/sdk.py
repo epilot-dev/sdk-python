@@ -8,7 +8,7 @@ from .sdkconfiguration import SDKConfiguration
 from epilot import utils
 from epilot._hooks import SDKHooks
 from epilot.models import components
-from typing import Callable, Dict, Union
+from typing import Callable, Dict, Optional, Union
 
 class Epilot:
     r"""Organization API: Manage epilot tenant organizations"""
@@ -22,14 +22,14 @@ class Epilot:
 
     def __init__(self,
                  epilot_auth: Union[str, Callable[[], str]],
-                 server_idx: int = None,
-                 server_url: str = None,
-                 url_params: Dict[str, str] = None,
-                 client: requests_http.Session = None,
-                 retry_config: utils.RetryConfig = None
+                 server_idx: Optional[int] = None,
+                 server_url: Optional[str] = None,
+                 url_params: Optional[Dict[str, str]] = None,
+                 client: Optional[requests_http.Session] = None,
+                 retry_config: Optional[utils.RetryConfig] = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
-        
+
         :param epilot_auth: The epilot_auth required for authentication
         :type epilot_auth: Union[str, Callable[[], str]]
         :param server_idx: The index of the server to use for all operations
@@ -45,18 +45,24 @@ class Epilot:
         """
         if client is None:
             client = requests_http.Session()
-        
+
         if callable(epilot_auth):
             def security():
                 return components.Security(epilot_auth = epilot_auth())
         else:
             security = components.Security(epilot_auth = epilot_auth)
-        
+
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
 
-        self.sdk_configuration = SDKConfiguration(client, security, server_url, server_idx, retry_config=retry_config)
+        self.sdk_configuration = SDKConfiguration(
+            client,
+            security,
+            server_url,
+            server_idx,
+            retry_config=retry_config
+        )
 
         hooks = SDKHooks()
 
@@ -66,12 +72,12 @@ class Epilot:
             self.sdk_configuration.server_url = server_url
 
         # pylint: disable=protected-access
-        self.sdk_configuration._hooks=hooks
-       
+        self.sdk_configuration._hooks = hooks
+
         self._init_sdks()
-    
+
+
     def _init_sdks(self):
         self.organization = Organization(self.sdk_configuration)
         self.internal = Internal(self.sdk_configuration)
         self.organization_settings = OrganizationSettings(self.sdk_configuration)
-    
