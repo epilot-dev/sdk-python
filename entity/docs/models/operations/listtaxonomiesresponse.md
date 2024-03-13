@@ -1,0 +1,9 @@
+# ListTaxonomiesResponse
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `http_meta`                                                                                              | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                       | :heavy_check_mark:                                                                                       | N/A                                                                                                      |
+| `object`                                                                                                 | [Optional[operations.ListTaxonomiesResponseBody]](../../models/operations/listtaxonomiesresponsebody.md) | :heavy_minus_sign:                                                                                       | Returns list of taxonomies in an organisation                                                            |
