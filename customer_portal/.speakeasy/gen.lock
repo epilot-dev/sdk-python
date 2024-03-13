@@ -3,10 +3,10 @@ id: 875e421b-9fdf-42d5-ab3a-30a1cf7c82cf
 management:
   docChecksum: bdbca966116eb982c1482824905c2c45
   docVersion: 1.0.0
-  speakeasyVersion: 1.205.2
-  generationVersion: 2.279.1
-  releaseVersion: 3.2.1
-  configChecksum: fe0fa7506ac96cc0d684effe06f7a107
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 3.2.2
+  configChecksum: 3baf59b4f49ab9bcf47af964fdb50553
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: customer_portal
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
@@ -18,7 +18,7 @@ features:
     deprecations: 2.81.1
     flattening: 2.81.1
     globalSecurity: 2.83.4
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     methodSecurity: 2.82.1
     responseFormat: 0.1.0
     unions: 2.82.6
