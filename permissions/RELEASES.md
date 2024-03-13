@@ -195,3 +195,11 @@ Based on:
 - Speakeasy CLI 1.204.1 (2.279.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v4.2.0] permissions
+
+## 2024-03-13 00:15:25
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/permissions.yaml
+- Speakeasy CLI 1.207.1 (2.280.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v4.2.1] permissions
