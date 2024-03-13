@@ -3,10 +3,10 @@ id: 59f479cd-2e2e-4740-a85b-d4ff13596eaa
 management:
   docChecksum: 88153a048a37af0988ef5bd002336a5e
   docVersion: 0.0.1
-  speakeasyVersion: 1.204.1
-  generationVersion: 2.279.1
-  releaseVersion: 4.2.0
-  configChecksum: 3782699b6eb8a3e9e45630d022a8fcc5
+  speakeasyVersion: 1.207.1
+  generationVersion: 2.280.6
+  releaseVersion: 4.2.1
+  configChecksum: e952477ae3cabaf4d1e0f831820937b1
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: internal_auth
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=internal_auth
@@ -15,7 +15,7 @@ features:
     additionalProperties: 0.1.0
     core: 4.5.1
     globalSecurity: 2.83.4
-    globalServerURLs: 2.82.1
+    globalServerURLs: 2.82.2
     responseFormat: 0.1.0
     unions: 2.82.6
 generatedFiles:
