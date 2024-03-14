@@ -2,23 +2,22 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import entityimportparams as shared_entityimportparams
+from ...models.components import entityimportparams as components_entityimportparams
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
 
 
 @dataclasses.dataclass
 class ImportEntitiesRequest:
-    
-    entity_import_params: Optional[shared_entityimportparams.EntityImportParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    entity_import_params: Optional[components_entityimportparams.EntityImportParams] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     job_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'job_id', 'style': 'form', 'explode': True }})
-    r"""Import Job Id to get the result"""  
+    r"""The ID of the import job. This ID is used to track the progress and fetch the result of the import operation."""
     
+
+
 
 @dataclasses.dataclass
 class ImportEntitiesResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
