@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 875e421b-9fdf-42d5-ab3a-30a1cf7c82cf
 management:
-  docChecksum: bdbca966116eb982c1482824905c2c45
+  docChecksum: 9221849aa80cf9d13141400407885e8f
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 3.2.2
-  configChecksum: 3baf59b4f49ab9bcf47af964fdb50553
+  speakeasyVersion: 1.209.2
+  generationVersion: 2.281.2
+  releaseVersion: 3.2.3
+  configChecksum: ce3a2002234a87199de6da6d4e8416d0
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: customer_portal
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
@@ -390,7 +390,6 @@ generatedFiles:
   - docs/models/operations/getentityactivityfeedresponsebody.md
   - docs/models/operations/getentityactivityfeedresponse.md
   - docs/models/components/origin.md
-  - docs/models/components/diff.md
   - docs/models/components/fileconfig.md
   - docs/models/components/ecpconfig.md
   - docs/models/components/triggerportalflow.md

@@ -9,17 +9,6 @@ from typing import Any, Dict, Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class Diff:
-    r"""The diff of the entity"""
-    added: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('added'), 'exclude': lambda f: f is None }})
-    deleted: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted'), 'exclude': lambda f: f is None }})
-    updated: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('updated'), 'exclude': lambda f: f is None }})
-    
-
-
-
-@dataclass_json(undefined=Undefined.EXCLUDE)
-@dataclasses.dataclass
 class FileConfig:
     shared_with_end_customer: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shared_with_end_customer'), 'exclude': lambda f: f is None }})
     r"""Indicate whether the file is shared with the end customer"""
@@ -38,8 +27,8 @@ class EcpConfig:
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class TriggerPortalFlow:
-    diff: Optional[Diff] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('diff'), 'exclude': lambda f: f is None }})
-    r"""The diff of the entity"""
+    activity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('activity_id'), 'exclude': lambda f: f is None }})
+    r"""Id of the activity"""
     ecp_config: Optional[EcpConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ecp_config'), 'exclude': lambda f: f is None }})
     entity: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
     
