@@ -2,24 +2,24 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
 
 
 @dataclasses.dataclass
 class DeleteEntityRequest:
-    
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})  
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    r"""Entity id"""
     slug: str = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
-    r"""Entity Type"""  
+    r"""Entity Type"""
     activity_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'activity_id', 'style': 'form', 'explode': True }})
-    r"""Activity to include in event feed"""  
+    r"""Activity to include in event feed"""
     
+
+
 
 @dataclasses.dataclass
 class DeleteEntityResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
