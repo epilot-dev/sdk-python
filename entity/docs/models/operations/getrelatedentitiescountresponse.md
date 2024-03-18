@@ -1,0 +1,9 @@
+# GetRelatedEntitiesCountResponse
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `http_meta`                                                                                        | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                 | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `get_related_entities_count`                                                                       | [Optional[components.GetRelatedEntitiesCount]](../../models/components/getrelatedentitiescount.md) | :heavy_minus_sign:                                                                                 | Success                                                                                            |
