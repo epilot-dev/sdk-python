@@ -10,13 +10,6 @@ from enum import Enum
 from epilot import utils
 from typing import List, Optional, Union
 
-
-@dataclasses.dataclass
-class GetBillingEventsSecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
 class EventType(str, Enum):
     r"""Type of billing event to filter by"""
     INSTALLMENT = 'installment'

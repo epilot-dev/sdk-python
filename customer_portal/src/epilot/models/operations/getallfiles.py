@@ -10,13 +10,6 @@ from typing import List, Optional
 
 
 @dataclasses.dataclass
-class GetAllFilesSecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class GetAllFilesRequest:
     from_: float = dataclasses.field(metadata={'query_param': { 'field_name': 'from', 'style': 'form', 'explode': True }})
     size: float = dataclasses.field(metadata={'query_param': { 'field_name': 'size', 'style': 'form', 'explode': True }})

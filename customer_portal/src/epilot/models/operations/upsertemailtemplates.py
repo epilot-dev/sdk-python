@@ -12,13 +12,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class UpsertEmailTemplatesSecurity:
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class UpsertEmailTemplatesRequest:
     email_templates: components_emailtemplates.EmailTemplates = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Email templates payload"""

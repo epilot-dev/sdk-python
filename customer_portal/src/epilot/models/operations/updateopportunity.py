@@ -10,13 +10,6 @@ from typing import Any, Dict, Optional
 
 
 @dataclasses.dataclass
-class UpdateOpportunitySecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class UpdateOpportunityRequest:
     request_body: Dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Requested opportunity body to update"""

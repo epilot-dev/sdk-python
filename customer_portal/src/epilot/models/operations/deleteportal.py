@@ -7,13 +7,6 @@ from ...models.components import origin as components_origin
 
 
 @dataclasses.dataclass
-class DeletePortalSecurity:
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class DeletePortalRequest:
     origin: components_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
     r"""Origin of the portal"""

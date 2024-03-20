@@ -15,16 +15,19 @@ class Balance:
         
     
     
-    def get_customer_balance(self, security: operations.GetCustomerBalanceSecurity) -> operations.GetCustomerBalanceResponse:
+    def get_customer_balance(self) -> operations.GetCustomerBalanceResponse:
         r"""getCustomerBalance
         Get total balance across all contracts and orders of a customer entity.
         """
-        hook_ctx = HookContext(operation_id='getCustomerBalance', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getCustomerBalance', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/billing/customers/balance'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent

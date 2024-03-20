@@ -35,8 +35,6 @@ APIs defined for a portal user
 * [search_portal_user_entities](#search_portal_user_entities) - searchPortalUserEntities
 * [track_file_downloaded](#track_file_downloaded) - trackFileDownloaded
 * [trigger_entity_access_event](#trigger_entity_access_event) - triggerEntityAccessEvent
-* [update_contact](#update_contact) - updateContact
-* [update_contract](#update_contract) - updateContract
 * [update_opportunity](#update_opportunity) - updateOpportunity
 * [update_order](#update_order) - updateOrder
 * [update_portal_user](#update_portal_user) - updatePortalUser
@@ -53,10 +51,14 @@ Add portal user relation to an entity
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.add_end_customer_relation_to_entity("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT)
+res = s.ecp.add_end_customer_relation_to_entity(id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT)
 
 if res.object is not None:
     # handle response
@@ -66,11 +68,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            | Example                                                                                                                |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                             | [operations.AddEndCustomerRelationToEntitySecurity](../../models/operations/addendcustomerrelationtoentitysecurity.md) | :heavy_check_mark:                                                                                                     | The security requirements to use for the request.                                                                      |                                                                                                                        |
-| `id`                                                                                                                   | *str*                                                                                                                  | :heavy_check_mark:                                                                                                     | The ID of the Entity                                                                                                   | 5da0a718-c822-403d-9f5d-20d4584e0528                                                                                   |
-| `slug`                                                                                                                 | [components.EntitySlug](../../models/components/entityslug.md)                                                         | :heavy_check_mark:                                                                                                     | The slug of an entity                                                                                                  | contact                                                                                                                |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    | Example                                                        |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `id`                                                           | *str*                                                          | :heavy_check_mark:                                             | The ID of the Entity                                           | 5da0a718-c822-403d-9f5d-20d4584e0528                           |
+| `slug`                                                         | [components.EntitySlug](../../models/components/entityslug.md) | :heavy_check_mark:                                             | The slug of an entity                                          | contact                                                        |
 
 
 ### Response
@@ -93,10 +94,14 @@ Create a custom activity that can be displayed in activity feed of an entity.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.create_custom_entity_activity("<YOUR_BEARER_TOKEN_HERE>", activity=components.Activity(
+res = s.ecp.create_custom_entity_activity(activity=components.Activity(
     message='{{caller}} did something with {{entity payload.entity.id}}.',
     title='My custom activity',
     type='MyCustomActivity',
@@ -115,11 +120,10 @@ if res.activity_item is not None:
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                     | [operations.CreateCustomEntityActivitySecurity](../../models/operations/createcustomentityactivitysecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
-| `activity`                                                                                                     | [Optional[components.Activity]](../../models/components/activity.md)                                           | :heavy_minus_sign:                                                                                             | N/A                                                                                                            |
-| `entities`                                                                                                     | List[*str*]                                                                                                    | :heavy_minus_sign:                                                                                             | Comma-separated list of entities which the activity primarily concerns                                         |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `activity`                                                             | [Optional[components.Activity]](../../models/components/activity.md)   | :heavy_minus_sign:                                                     | N/A                                                                    |
+| `entities`                                                             | List[*str*]                                                            | :heavy_minus_sign:                                                     | Comma-separated list of entities which the activity primarily concerns |
 
 
 ### Response
@@ -142,7 +146,11 @@ Delete files from an entity
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = components.DeleteEntityFile(
     entity_id='123456',
@@ -152,7 +160,7 @@ req = components.DeleteEntityFile(
     ],
 )
 
-res = s.ecp.delete_entity_file(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.delete_entity_file(req)
 
 if res.object is not None:
     # handle response
@@ -162,10 +170,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [components.DeleteEntityFile](../../models/components/deleteentityfile.md)                 | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.DeleteEntityFileSecurity](../../models/operations/deleteentityfilesecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [components.DeleteEntityFile](../../models/components/deleteentityfile.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -186,23 +193,22 @@ Delete the portal user
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.delete_portal_user("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.delete_portal_user()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `security`                                                                                 | [operations.DeletePortalUserSecurity](../../models/operations/deleteportalusersecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
 
 
 ### Response
@@ -223,11 +229,16 @@ Get all contracts for a portal user
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_all_contracts("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
+res = s.ecp.get_all_contracts(from_=0, size=100)
 
 if res.object is not None:
     # handle response
@@ -237,11 +248,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              | Example                                                                                  |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `security`                                                                               | [operations.GetAllContractsSecurity](../../models/operations/getallcontractssecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |                                                                                          |
-| `from_`                                                                                  | *Optional[float]*                                                                        | :heavy_minus_sign:                                                                       | N/A                                                                                      | 0                                                                                        |
-| `size`                                                                                   | *Optional[float]*                                                                        | :heavy_minus_sign:                                                                       | N/A                                                                                      | 100                                                                                      |
+| Parameter          | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `from_`            | *Optional[float]*  | :heavy_minus_sign: | N/A                | 0                  |
+| `size`             | *Optional[float]*  | :heavy_minus_sign: | N/A                | 100                |
 
 
 ### Response
@@ -262,11 +272,16 @@ Fetch all documents under the related entities of a contact
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_all_files("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=0, entity_ids=[
+res = s.ecp.get_all_files(from_=0, size=0, entity_ids=[
     '4910096f-000a-4504-bf5a-d3774ec3032a',
     '7c9f8536-6266-42e8-a0de-c60b61aa81a7',
 ])
@@ -281,7 +296,6 @@ if res.object is not None:
 
 | Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
 | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `security`                                                                         | [operations.GetAllFilesSecurity](../../models/operations/getallfilessecurity.md)   | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |                                                                                    |
 | `from_`                                                                            | *float*                                                                            | :heavy_check_mark:                                                                 | N/A                                                                                | 0                                                                                  |
 | `size`                                                                             | *float*                                                                            | :heavy_check_mark:                                                                 | N/A                                                                                | 0                                                                                  |
 | `entity_ids`                                                                       | List[*str*]                                                                        | :heavy_minus_sign:                                                                 | List of entity ids to filter the results                                           | [<br/>"4910096f-000a-4504-bf5a-d3774ec3032a",<br/>"7c9f8536-6266-42e8-a0de-c60b61aa81a7"<br/>] |
@@ -305,11 +319,16 @@ Get all opportunities of a portal user
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_all_opportunities("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
+res = s.ecp.get_all_opportunities(from_=0, size=100)
 
 if res.object is not None:
     # handle response
@@ -319,11 +338,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      | Example                                                                                          |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `security`                                                                                       | [operations.GetAllOpportunitiesSecurity](../../models/operations/getallopportunitiessecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |                                                                                                  |
-| `from_`                                                                                          | *Optional[float]*                                                                                | :heavy_minus_sign:                                                                               | N/A                                                                                              | 0                                                                                                |
-| `size`                                                                                           | *Optional[float]*                                                                                | :heavy_minus_sign:                                                                               | N/A                                                                                              | 100                                                                                              |
+| Parameter          | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `from_`            | *Optional[float]*  | :heavy_minus_sign: | N/A                | 0                  |
+| `size`             | *Optional[float]*  | :heavy_minus_sign: | N/A                | 100                |
 
 
 ### Response
@@ -344,11 +362,16 @@ Get all orders for the portal user
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_all_orders("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=100)
+res = s.ecp.get_all_orders(from_=0, size=100)
 
 if res.object is not None:
     # handle response
@@ -358,11 +381,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `security`                                                                         | [operations.GetAllOrdersSecurity](../../models/operations/getallorderssecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |                                                                                    |
-| `from_`                                                                            | *Optional[float]*                                                                  | :heavy_minus_sign:                                                                 | N/A                                                                                | 0                                                                                  |
-| `size`                                                                             | *Optional[float]*                                                                  | :heavy_minus_sign:                                                                 | N/A                                                                                | 100                                                                                |
+| Parameter          | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `from_`            | *Optional[float]*  | :heavy_minus_sign: | N/A                | 0                  |
+| `size`             | *Optional[float]*  | :heavy_minus_sign: | N/A                | 100                |
 
 
 ### Response
@@ -383,16 +405,20 @@ Fetch billing events for a portal user
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components, operations
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = operations.GetBillingEventsRequest(
     from_=0,
     size=100,
 )
 
-res = s.ecp.get_billing_events(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.get_billing_events(req)
 
 if res.object is not None:
     # handle response
@@ -402,10 +428,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetBillingEventsRequest](../../models/operations/getbillingeventsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.GetBillingEventsSecurity](../../models/operations/getbillingeventssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.GetBillingEventsRequest](../../models/operations/getbillingeventsrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -425,23 +450,22 @@ Retrieves the contact by ID.
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_contact("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.get_contact()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `security`                                                                     | [operations.GetContactSecurity](../../models/operations/getcontactsecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
 
 
 ### Response
@@ -462,11 +486,16 @@ Get a contract by id
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_contract("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.get_contract(id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -476,10 +505,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `security`                                                                       | [operations.GetContractSecurity](../../models/operations/getcontractsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |                                                                                  |
-| `id`                                                                             | *str*                                                                            | :heavy_check_mark:                                                               | The ID of the contract                                                           | 5da0a718-c822-403d-9f5d-20d4584e0528                                             |
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | The ID of the contract               | 5da0a718-c822-403d-9f5d-20d4584e0528 |
 
 
 ### Response
@@ -502,10 +530,14 @@ Get entities by identifiers by portal user
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_entities_by_identifiers("<YOUR_BEARER_TOKEN_HERE>", request_body={
+res = s.ecp.get_entities_by_identifiers(request_body={
     'key': '<value>',
 }, slug=components.EntitySlug.CONTACT)
 
@@ -517,11 +549,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                | Example                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                 | [operations.GetEntitiesByIdentifiersSecurity](../../models/operations/getentitiesbyidentifierssecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |                                                                                                            |
-| `request_body`                                                                                             | Dict[str, *Any*]                                                                                           | :heavy_check_mark:                                                                                         | The entities are retrieved successfully.                                                                   |                                                                                                            |
-| `slug`                                                                                                     | [components.EntitySlug](../../models/components/entityslug.md)                                             | :heavy_check_mark:                                                                                         | The slug of an entity                                                                                      | contact                                                                                                    |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    | Example                                                        |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `request_body`                                                 | Dict[str, *Any*]                                               | :heavy_check_mark:                                             | The entities are retrieved successfully.                       |                                                                |
+| `slug`                                                         | [components.EntitySlug](../../models/components/entityslug.md) | :heavy_check_mark:                                             | The slug of an entity                                          | contact                                                        |
 
 
 ### Response
@@ -542,11 +573,16 @@ Fetch a document with ID
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_file_by_id("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.get_file_by_id(id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -556,10 +592,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `security`                                                                       | [operations.GetFileByIDSecurity](../../models/operations/getfilebyidsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |                                                                                  |
-| `id`                                                                             | *str*                                                                            | :heavy_check_mark:                                                               | The Id of a file                                                                 | 5da0a718-c822-403d-9f5d-20d4584e0528                                             |
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | The Id of a file                     | 5da0a718-c822-403d-9f5d-20d4584e0528 |
 
 
 ### Response
@@ -580,23 +615,22 @@ Fetch file counts for all ECP user related entities
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_files_count_by_entity("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.get_files_count_by_entity()
 
 if res.classes is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `security`                                                                                           | [operations.GetFilesCountByEntitySecurity](../../models/operations/getfilescountbyentitysecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
 
 
 ### Response
@@ -617,11 +651,16 @@ Get an opportunity by id
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_opportunity("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.get_opportunity(id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -631,10 +670,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            | Example                                                                                |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `security`                                                                             | [operations.GetOpportunitySecurity](../../models/operations/getopportunitysecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |                                                                                        |
-| `id`                                                                                   | *str*                                                                                  | :heavy_check_mark:                                                                     | The ID of opportunity                                                                  | 5da0a718-c822-403d-9f5d-20d4584e0528                                                   |
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | The ID of opportunity                | 5da0a718-c822-403d-9f5d-20d4584e0528 |
 
 
 ### Response
@@ -655,11 +693,16 @@ Get an order by id
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_order("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.get_order(id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -669,10 +712,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                | Example                                                                    |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `security`                                                                 | [operations.GetOrderSecurity](../../models/operations/getordersecurity.md) | :heavy_check_mark:                                                         | The security requirements to use for the request.                          |                                                                            |
-| `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | The ID of order                                                            | 5da0a718-c822-403d-9f5d-20d4584e0528                                       |
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | The ID of order                      | 5da0a718-c822-403d-9f5d-20d4584e0528 |
 
 
 ### Response
@@ -693,23 +735,22 @@ Retrieves the organization settings.
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_organization_settings("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.get_organization_settings()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                               | [operations.GetOrganizationSettingsSecurity](../../models/operations/getorganizationsettingssecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
 
 
 ### Response
@@ -730,14 +771,16 @@ Retrieves the portal configuration.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_portal_config(operations.GetPortalConfigSecurity(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-), origin=components.Origin.END_CUSTOMER_PORTAL)
+res = s.ecp.get_portal_config(origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.portal_config is not None:
     # handle response
@@ -747,10 +790,9 @@ if res.portal_config is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `security`                                                                               | [operations.GetPortalConfigSecurity](../../models/operations/getportalconfigsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
-| `origin`                                                                                 | [Optional[components.Origin]](../../models/components/origin.md)                         | :heavy_minus_sign:                                                                       | Origin of the portal                                                                     |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `origin`                                                         | [Optional[components.Origin]](../../models/components/origin.md) | :heavy_minus_sign:                                               | Origin of the portal                                             |
 
 
 ### Response
@@ -771,23 +813,22 @@ Get the portal user details
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_portal_user("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.get_portal_user()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `security`                                                                           | [operations.GetPortalUserSecurity](../../models/operations/getportalusersecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
 
 
 ### Response
@@ -808,14 +849,16 @@ Retrieves the widgets of a portal
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_portal_widgets(operations.GetPortalWidgetsSecurity(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-), origin=components.Origin.END_CUSTOMER_PORTAL)
+res = s.ecp.get_portal_widgets(origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.upsert_portal_widget is not None:
     # handle response
@@ -825,10 +868,9 @@ if res.upsert_portal_widget is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `security`                                                                                 | [operations.GetPortalWidgetsSecurity](../../models/operations/getportalwidgetssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
-| `origin`                                                                                   | [Optional[components.Origin]](../../models/components/origin.md)                           | :heavy_minus_sign:                                                                         | Origin of the portal                                                                       |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `origin`                                                         | [Optional[components.Origin]](../../models/components/origin.md) | :heavy_minus_sign:                                               | Origin of the portal                                             |
 
 
 ### Response
@@ -849,23 +891,22 @@ Retrieves the schemas.
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_schemas("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.get_schemas()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `security`                                                                     | [operations.GetSchemasSecurity](../../models/operations/getschemassecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
 
 
 ### Response
@@ -886,12 +927,16 @@ Get all opportunity with the given serached attributes
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components, operations
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_search_results_for_opportunities("<YOUR_BEARER_TOKEN_HERE>", request_body=operations.GetSearchResultsForOpportunitiesRequestBody(), from_=0, size=1000)
+res = s.ecp.get_search_results_for_opportunities(request_body=operations.GetSearchResultsForOpportunitiesRequestBody(), from_=0, size=1000)
 
 if res.object is not None:
     # handle response
@@ -903,7 +948,6 @@ if res.object is not None:
 
 | Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      | Example                                                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                       | [operations.GetSearchResultsForOpportunitiesSecurity](../../models/operations/getsearchresultsforopportunitiessecurity.md)       | :heavy_check_mark:                                                                                                               | The security requirements to use for the request.                                                                                |                                                                                                                                  |
 | `request_body`                                                                                                                   | [operations.GetSearchResultsForOpportunitiesRequestBody](../../models/operations/getsearchresultsforopportunitiesrequestbody.md) | :heavy_check_mark:                                                                                                               | N/A                                                                                                                              |                                                                                                                                  |
 | `from_`                                                                                                                          | *Optional[float]*                                                                                                                | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              | 0                                                                                                                                |
 | `size`                                                                                                                           | *Optional[float]*                                                                                                                | :heavy_minus_sign:                                                                                                               | N/A                                                                                                                              | 1000                                                                                                                             |
@@ -927,11 +971,16 @@ Get all opportunity searchable attributes for a portal user
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.get_searchable_attributes_for_opportunities("<YOUR_BEARER_TOKEN_HERE>", from_=0, size=1000)
+res = s.ecp.get_searchable_attributes_for_opportunities(from_=0, size=1000)
 
 if res.object is not None:
     # handle response
@@ -941,11 +990,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              | Example                                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                               | [operations.GetSearchableAttributesForOpportunitiesSecurity](../../models/operations/getsearchableattributesforopportunitiessecurity.md) | :heavy_check_mark:                                                                                                                       | The security requirements to use for the request.                                                                                        |                                                                                                                                          |
-| `from_`                                                                                                                                  | *Optional[float]*                                                                                                                        | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      | 0                                                                                                                                        |
-| `size`                                                                                                                                   | *Optional[float]*                                                                                                                        | :heavy_minus_sign:                                                                                                                       | N/A                                                                                                                                      | 1000                                                                                                                                     |
+| Parameter          | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `from_`            | *Optional[float]*  | :heavy_minus_sign: | N/A                | 0                  |
+| `size`             | *Optional[float]*  | :heavy_minus_sign: | N/A                | 1000               |
 
 
 ### Response
@@ -968,7 +1016,11 @@ Add files to an entity
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = components.SaveEntityFile(
     entity_id='123456',
@@ -989,7 +1041,7 @@ req = components.SaveEntityFile(
     ],
 )
 
-res = s.ecp.save_entity_file(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.save_entity_file(req)
 
 if res.object is not None:
     # handle response
@@ -999,10 +1051,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [components.SaveEntityFile](../../models/components/saveentityfile.md)                 | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.SaveEntityFileSecurity](../../models/operations/saveentityfilesecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [components.SaveEntityFile](../../models/components/saveentityfile.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
@@ -1067,7 +1118,11 @@ Search all entities of a portal user
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = components.EntitySearchParams(
     slug=components.EntitySlug.CONTACT,
@@ -1079,7 +1134,7 @@ req = components.EntitySearchParams(
     sort='_created_at:desc',
 )
 
-res = s.ecp.search_portal_user_entities(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.search_portal_user_entities(req)
 
 if res.object is not None:
     # handle response
@@ -1089,10 +1144,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [components.EntitySearchParams](../../models/components/entitysearchparams.md)                             | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.SearchPortalUserEntitiesSecurity](../../models/operations/searchportaluserentitiessecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [components.EntitySearchParams](../../models/components/entitysearchparams.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -1113,11 +1167,16 @@ Track that user has downloaded a file
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.track_file_downloaded("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528')
+res = s.ecp.track_file_downloaded(id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
 if res.object is not None:
     # handle response
@@ -1127,10 +1186,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      | Example                                                                                          |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `security`                                                                                       | [operations.TrackFileDownloadedSecurity](../../models/operations/trackfiledownloadedsecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |                                                                                                  |
-| `id`                                                                                             | *str*                                                                                            | :heavy_check_mark:                                                                               | The Id of a file                                                                                 | 5da0a718-c822-403d-9f5d-20d4584e0528                                                             |
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | The Id of a file                     | 5da0a718-c822-403d-9f5d-20d4584e0528 |
 
 
 ### Response
@@ -1153,10 +1211,14 @@ Trigger entity access event for a portal user
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.trigger_entity_access_event("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.END_CUSTOMER_PORTAL, schema='contract', entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e')
+res = s.ecp.trigger_entity_access_event(origin=components.Origin.END_CUSTOMER_PORTAL, schema='contract', entity_id='1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e')
 
 if res.object is not None:
     # handle response
@@ -1166,12 +1228,11 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                | Example                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                 | [operations.TriggerEntityAccessEventSecurity](../../models/operations/triggerentityaccesseventsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |                                                                                                            |
-| `origin`                                                                                                   | [components.Origin](../../models/components/origin.md)                                                     | :heavy_check_mark:                                                                                         | Portal origin                                                                                              |                                                                                                            |
-| `schema`                                                                                                   | *str*                                                                                                      | :heavy_check_mark:                                                                                         | Entity schema                                                                                              | contract                                                                                                   |
-| `entity_id`                                                                                                | *Optional[str]*                                                                                            | :heavy_minus_sign:                                                                                         | Entity ID                                                                                                  | 1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e                                                                       |
+| Parameter                                              | Type                                                   | Required                                               | Description                                            | Example                                                |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `origin`                                               | [components.Origin](../../models/components/origin.md) | :heavy_check_mark:                                     | Portal origin                                          |                                                        |
+| `schema`                                               | *str*                                                  | :heavy_check_mark:                                     | Entity schema                                          | contract                                               |
+| `entity_id`                                            | *Optional[str]*                                        | :heavy_minus_sign:                                     | Entity ID                                              | 1e3f0d58-69d2-4dbb-9a43-3ee63d862e8e                   |
 
 
 ### Response
@@ -1183,90 +1244,6 @@ if res.object is not None:
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## update_contact
-
-Updates the contact details.
-
-### Example Usage
-
-```python
-import epilot
-
-s = epilot.Epilot()
-
-req = {
-    'key': '<value>',
-}
-
-res = s.ecp.update_contact(req, "<YOUR_BEARER_TOKEN_HERE>")
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-### Parameters
-
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [Dict[str, Any]](../../models/.md)                                                   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.UpdateContactSecurity](../../models/operations/updatecontactsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
-
-
-### Response
-
-**[operations.UpdateContactResponse](../../models/operations/updatecontactresponse.md)**
-### Errors
-
-| Error Object                     | Status Code                      | Content Type                     |
-| -------------------------------- | -------------------------------- | -------------------------------- |
-| errors.ErrorResp                 | 401,404,500                      | application/json                 |
-| errors.UpdateContactResponseBody | 403                              | application/json                 |
-| errors.SDKError                  | 4x-5xx                           | */*                              |
-
-## update_contract
-
-Update a contract by id
-
-### Example Usage
-
-```python
-import epilot
-
-s = epilot.Epilot()
-
-
-res = s.ecp.update_contract("<YOUR_BEARER_TOKEN_HERE>", request_body={
-    'key': '<value>',
-}, id='5da0a718-c822-403d-9f5d-20d4584e0528')
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-### Parameters
-
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            | Example                                                                                |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `security`                                                                             | [operations.UpdateContractSecurity](../../models/operations/updatecontractsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |                                                                                        |
-| `request_body`                                                                         | Dict[str, *Any*]                                                                       | :heavy_check_mark:                                                                     | Requested contract body to update                                                      |                                                                                        |
-| `id`                                                                                   | *str*                                                                                  | :heavy_check_mark:                                                                     | The ID of the contract                                                                 | 5da0a718-c822-403d-9f5d-20d4584e0528                                                   |
-
-
-### Response
-
-**[operations.UpdateContractResponse](../../models/operations/updatecontractresponse.md)**
-### Errors
-
-| Error Object                      | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| errors.ErrorResp                  | 401,404,500                       | application/json                  |
-| errors.UpdateContractResponseBody | 403                               | application/json                  |
-| errors.SDKError                   | 4x-5xx                            | */*                               |
-
 ## update_opportunity
 
 Update an opportunity by id
@@ -1275,11 +1252,16 @@ Update an opportunity by id
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.update_opportunity("<YOUR_BEARER_TOKEN_HERE>", request_body={
+res = s.ecp.update_opportunity(request_body={
     'key': '<value>',
 }, id='5da0a718-c822-403d-9f5d-20d4584e0528')
 
@@ -1291,11 +1273,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  | Example                                                                                      |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `security`                                                                                   | [operations.UpdateOpportunitySecurity](../../models/operations/updateopportunitysecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |                                                                                              |
-| `request_body`                                                                               | Dict[str, *Any*]                                                                             | :heavy_check_mark:                                                                           | Requested opportunity body to update                                                         |                                                                                              |
-| `id`                                                                                         | *str*                                                                                        | :heavy_check_mark:                                                                           | The ID of opportunity                                                                        | 5da0a718-c822-403d-9f5d-20d4584e0528                                                         |
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `request_body`                       | Dict[str, *Any*]                     | :heavy_check_mark:                   | Requested opportunity body to update |                                      |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | The ID of opportunity                | 5da0a718-c822-403d-9f5d-20d4584e0528 |
 
 
 ### Response
@@ -1316,11 +1297,16 @@ Update an order by id
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.update_order("<YOUR_BEARER_TOKEN_HERE>", id='5da0a718-c822-403d-9f5d-20d4584e0528', request_body={
+res = s.ecp.update_order(id='5da0a718-c822-403d-9f5d-20d4584e0528', request_body={
     'key': '<value>',
 })
 
@@ -1332,11 +1318,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `security`                                                                       | [operations.UpdateOrderSecurity](../../models/operations/updateordersecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |                                                                                  |
-| `id`                                                                             | *str*                                                                            | :heavy_check_mark:                                                               | The ID of order                                                                  | 5da0a718-c822-403d-9f5d-20d4584e0528                                             |
-| `request_body`                                                                   | Dict[str, *Any*]                                                                 | :heavy_minus_sign:                                                               | N/A                                                                              |                                                                                  |
+| Parameter                            | Type                                 | Required                             | Description                          | Example                              |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| `id`                                 | *str*                                | :heavy_check_mark:                   | The ID of order                      | 5da0a718-c822-403d-9f5d-20d4584e0528 |
+| `request_body`                       | Dict[str, *Any*]                     | :heavy_minus_sign:                   | N/A                                  |                                      |
 
 
 ### Response
@@ -1357,14 +1342,19 @@ Update the portal user details
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = {
     'key': '<value>',
 }
 
-res = s.ecp.update_portal_user(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp.update_portal_user(req)
 
 if res.object is not None:
     # handle response
@@ -1374,10 +1364,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [Dict[str, Any]](../../models/.md)                                                         | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.UpdatePortalUserSecurity](../../models/operations/updateportalusersecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | [Dict[str, Any]](../../models/.md)         | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
@@ -1398,11 +1387,16 @@ Update a workflow step as done
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp.update_workflow_step_as_done("<YOUR_BEARER_TOKEN_HERE>", step_id='q1d6vcbsqvn', workflow_id='0bjwcxc827t')
+res = s.ecp.update_workflow_step_as_done(step_id='q1d6vcbsqvn', workflow_id='0bjwcxc827t')
 
 if res.workflow_step is not None:
     # handle response
@@ -1412,11 +1406,10 @@ if res.workflow_step is not None:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                | Example                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                 | [operations.UpdateWorkflowStepAsDoneSecurity](../../models/operations/updateworkflowstepasdonesecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |                                                                                                            |
-| `step_id`                                                                                                  | *str*                                                                                                      | :heavy_check_mark:                                                                                         | N/A                                                                                                        | q1d6vcbsqvn                                                                                                |
-| `workflow_id`                                                                                              | *str*                                                                                                      | :heavy_check_mark:                                                                                         | N/A                                                                                                        | 0bjwcxc827t                                                                                                |
+| Parameter          | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `step_id`          | *str*              | :heavy_check_mark: | N/A                | q1d6vcbsqvn        |
+| `workflow_id`      | *str*              | :heavy_check_mark: | N/A                | 0bjwcxc827t        |
 
 
 ### Response

@@ -17,10 +17,14 @@ pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=custom
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(
+res = s.ecp_admin.can_trigger_portal_flow(trigger_portal_flow=components.TriggerPortalFlow(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 
@@ -93,8 +97,6 @@ if res.object is not None:
 * [search_portal_user_entities](docs/sdks/ecp/README.md#search_portal_user_entities) - searchPortalUserEntities
 * [track_file_downloaded](docs/sdks/ecp/README.md#track_file_downloaded) - trackFileDownloaded
 * [trigger_entity_access_event](docs/sdks/ecp/README.md#trigger_entity_access_event) - triggerEntityAccessEvent
-* [update_contact](docs/sdks/ecp/README.md#update_contact) - updateContact
-* [update_contract](docs/sdks/ecp/README.md#update_contract) - updateContract
 * [update_opportunity](docs/sdks/ecp/README.md#update_opportunity) - updateOpportunity
 * [update_order](docs/sdks/ecp/README.md#update_order) - updateOrder
 * [update_portal_user](docs/sdks/ecp/README.md#update_portal_user) - updatePortalUser
@@ -138,12 +140,16 @@ Handling errors in this SDK should largely match your expectations.  All operati
 import epilot
 from epilot.models import components, errors
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
 res = None
 try:
-    res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
+    res = s.ecp_admin.configure_distribution(origin=components.Origin.INSTALLER_PORTAL)
 except errors.ErrorResp as e:
     # handle exception
     raise(e)
@@ -179,10 +185,13 @@ from epilot.models import components
 
 s = epilot.Epilot(
     server_idx=0,
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
 )
 
 
-res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(
+res = s.ecp_admin.can_trigger_portal_flow(trigger_portal_flow=components.TriggerPortalFlow(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 
@@ -202,10 +211,13 @@ from epilot.models import components
 
 s = epilot.Epilot(
     server_url="https://customer-portal-api.sls.epilot.io",
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
 )
 
 
-res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(
+res = s.ecp_admin.can_trigger_portal_flow(trigger_portal_flow=components.TriggerPortalFlow(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 
@@ -260,25 +272,7 @@ s = epilot.Epilot(
 )
 
 
-res = s.ecp.search_payment_relations_in_entities(id='5da0a718-c822-403d-9f5d-20d4584e0528')
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-### Per-Operation Security Schemes
-
-Some operations in this SDK require the security scheme to be specified at the request level. For example:
-```python
-import epilot
-from epilot.models import components
-
-s = epilot.Epilot()
-
-
-res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(
+res = s.ecp_admin.can_trigger_portal_flow(trigger_portal_flow=components.TriggerPortalFlow(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 

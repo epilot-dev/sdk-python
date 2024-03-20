@@ -7,13 +7,6 @@ from typing import Any, Dict, Optional
 
 
 @dataclasses.dataclass
-class UpdateWorkflowStepAsDoneSecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class UpdateWorkflowStepAsDoneRequest:
     step_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'step_id', 'style': 'simple', 'explode': False }})
     workflow_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'workflow_id', 'style': 'simple', 'explode': False }})

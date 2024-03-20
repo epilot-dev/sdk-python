@@ -16,11 +16,11 @@ class ECPAdmin:
         
     
     
-    def can_trigger_portal_flow(self, security: operations.CanTriggerPortalFlowSecurity, trigger_portal_flow: components.TriggerPortalFlow, origin: components.Origin) -> operations.CanTriggerPortalFlowResponse:
+    def can_trigger_portal_flow(self, trigger_portal_flow: components.TriggerPortalFlow, origin: components.Origin) -> operations.CanTriggerPortalFlowResponse:
         r"""canTriggerPortalFlow
         Returns whether the user can trigger a portal flow
         """
-        hook_ctx = HookContext(operation_id='canTriggerPortalFlow', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='canTriggerPortalFlow', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CanTriggerPortalFlowRequest(
             trigger_portal_flow=trigger_portal_flow,
             origin=origin,
@@ -30,7 +30,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/can-trigger-portal-flow'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.CanTriggerPortalFlowRequest, "trigger_portal_flow", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -81,11 +84,11 @@ class ECPAdmin:
 
     
     
-    def configure_distribution(self, security: operations.ConfigureDistributionSecurity, origin: components.Origin) -> operations.ConfigureDistributionResponse:
+    def configure_distribution(self, origin: components.Origin) -> operations.ConfigureDistributionResponse:
         r"""configureDistribution
         Configure the distribution for the portal's custom domain
         """
-        hook_ctx = HookContext(operation_id='configureDistribution', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='configureDistribution', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.ConfigureDistributionRequest(
             origin=origin,
         )
@@ -94,7 +97,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/configure-distribution'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.ConfigureDistributionRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -147,11 +153,11 @@ class ECPAdmin:
 
     
     
-    def create_sso_user(self, security: operations.CreateSSOUserSecurity, create_sso_user_request: components.CreateSSOUserRequest, origin: components.Origin) -> operations.CreateSSOUserResponse:
+    def create_sso_user(self, create_sso_user_request: components.CreateSSOUserRequest, origin: components.Origin) -> operations.CreateSSOUserResponse:
         r"""createSSOUser
         Creates a portal user as an SSO user.
         """
-        hook_ctx = HookContext(operation_id='createSSOUser', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='createSSOUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateSSOUserRequest(
             create_sso_user_request=create_sso_user_request,
             origin=origin,
@@ -161,7 +167,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/sso/user'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.CreateSSOUserRequest, "create_sso_user_request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -219,11 +228,11 @@ class ECPAdmin:
 
     
     
-    def delete_portal(self, security: operations.DeletePortalSecurity, origin: components.Origin) -> operations.DeletePortalResponse:
+    def delete_portal(self, origin: components.Origin) -> operations.DeletePortalResponse:
         r"""deletePortal
         Deletes the portal.
         """
-        hook_ctx = HookContext(operation_id='deletePortal', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='deletePortal', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.DeletePortalRequest(
             origin=origin,
         )
@@ -232,7 +241,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/config'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.DeletePortalRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -280,16 +292,19 @@ class ECPAdmin:
 
     
     
-    def extra_permission_attributes(self, security: operations.ExtraPermissionAttributesSecurity) -> operations.ExtraPermissionAttributesResponse:
+    def extra_permission_attributes(self) -> operations.ExtraPermissionAttributesResponse:
         r"""extraPermissionAttributes
         Retrieves the extra permission attributes.
         """
-        hook_ctx = HookContext(operation_id='extraPermissionAttributes', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='extraPermissionAttributes', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/extra-permission-attributes'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -341,11 +356,11 @@ class ECPAdmin:
 
     
     
-    def fetch_portal_users_by_related_entity(self, security: operations.FetchPortalUsersByRelatedEntitySecurity, entity_id: str, slug: components.EntitySlug) -> operations.FetchPortalUsersByRelatedEntityResponse:
+    def fetch_portal_users_by_related_entity(self, entity_id: str, slug: components.EntitySlug) -> operations.FetchPortalUsersByRelatedEntityResponse:
         r"""fetchPortalUsersByRelatedEntity
         Get all users for a given entity
         """
-        hook_ctx = HookContext(operation_id='fetchPortalUsersByRelatedEntity', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='fetchPortalUsersByRelatedEntity', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.FetchPortalUsersByRelatedEntityRequest(
             entity_id=entity_id,
             slug=slug,
@@ -355,7 +370,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/porta/users/by-related-entity'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.FetchPortalUsersByRelatedEntityRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -408,16 +426,19 @@ class ECPAdmin:
 
     
     
-    def get_all_portal_configs(self, security: operations.GetAllPortalConfigsSecurity) -> operations.GetAllPortalConfigsResponse:
+    def get_all_portal_configs(self) -> operations.GetAllPortalConfigsResponse:
         r"""getAllPortalConfigs
         Retrieves all portal configurations.
         """
-        hook_ctx = HookContext(operation_id='getAllPortalConfigs', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getAllPortalConfigs', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/configs'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -469,11 +490,11 @@ class ECPAdmin:
 
     
     
-    def get_ecp_contact(self, security: operations.GetECPContactSecurity, id: str) -> operations.GetECPContactResponse:
+    def get_ecp_contact(self, id: str) -> operations.GetECPContactResponse:
         r"""getECPContact
         Get the Contact by id
         """
-        hook_ctx = HookContext(operation_id='getECPContact', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getECPContact', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetECPContactRequest(
             id=id,
         )
@@ -482,7 +503,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/ecp/contact'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetECPContactRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -535,11 +559,11 @@ class ECPAdmin:
 
     
     
-    def get_email_templates(self, security: operations.GetEmailTemplatesSecurity, origin: components.Origin) -> operations.GetEmailTemplatesResponse:
+    def get_email_templates(self, origin: components.Origin) -> operations.GetEmailTemplatesResponse:
         r"""getEmailTemplates
         Retrieves the email templates of a portal
         """
-        hook_ctx = HookContext(operation_id='getEmailTemplates', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getEmailTemplates', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetEmailTemplatesRequest(
             origin=origin,
         )
@@ -548,7 +572,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/email-templates'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetEmailTemplatesRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -601,11 +628,11 @@ class ECPAdmin:
 
     
     
-    def get_entity_identifiers(self, security: operations.GetEntityIdentifiersSecurity, slug: components.EntitySlug) -> operations.GetEntityIdentifiersResponse:
+    def get_entity_identifiers(self, slug: components.EntitySlug) -> operations.GetEntityIdentifiersResponse:
         r"""getEntityIdentifiers
         Retrieve a list of entity identifiers used for entity search by portal users.
         """
-        hook_ctx = HookContext(operation_id='getEntityIdentifiers', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getEntityIdentifiers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetEntityIdentifiersRequest(
             slug=slug,
         )
@@ -614,7 +641,10 @@ class ECPAdmin:
         
         url = utils.generate_url(operations.GetEntityIdentifiersRequest, base_url, '/v2/portal/entity/identifiers/{slug}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -666,11 +696,11 @@ class ECPAdmin:
 
     
     
-    def get_org_portal_config(self, security: operations.GetOrgPortalConfigSecurity, origin: components.Origin) -> operations.GetOrgPortalConfigResponse:
+    def get_org_portal_config(self, origin: components.Origin) -> operations.GetOrgPortalConfigResponse:
         r"""getOrgPortalConfig
         Retrieves the portal configuration for the organization.
         """
-        hook_ctx = HookContext(operation_id='getOrgPortalConfig', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getOrgPortalConfig', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetOrgPortalConfigRequest(
             origin=origin,
         )
@@ -679,7 +709,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/org/portal/config'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetOrgPortalConfigRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -732,11 +765,11 @@ class ECPAdmin:
 
     
     
-    def get_portal_config(self, security: operations.GetPortalConfigSecurity, origin: Optional[components.Origin] = None) -> operations.GetPortalConfigResponse:
+    def get_portal_config(self, origin: Optional[components.Origin] = None) -> operations.GetPortalConfigResponse:
         r"""getPortalConfig
         Retrieves the portal configuration.
         """
-        hook_ctx = HookContext(operation_id='getPortalConfig', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getPortalConfig', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPortalConfigRequest(
             origin=origin,
         )
@@ -745,7 +778,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/config'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetPortalConfigRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -798,11 +834,11 @@ class ECPAdmin:
 
     
     
-    def get_portal_widgets(self, security: operations.GetPortalWidgetsSecurity, origin: Optional[components.Origin] = None) -> operations.GetPortalWidgetsResponse:
+    def get_portal_widgets(self, origin: Optional[components.Origin] = None) -> operations.GetPortalWidgetsResponse:
         r"""getPortalWidgets
         Retrieves the widgets of a portal
         """
-        hook_ctx = HookContext(operation_id='getPortalWidgets', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getPortalWidgets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPortalWidgetsRequest(
             origin=origin,
         )
@@ -811,7 +847,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/widgets'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetPortalWidgetsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -864,16 +903,19 @@ class ECPAdmin:
 
     
     
-    def get_registered_users(self, request: Optional[operations.GetRegisteredUsersRequestBody], security: operations.GetRegisteredUsersSecurity) -> operations.GetRegisteredUsersResponse:
+    def get_registered_users(self, request: Optional[operations.GetRegisteredUsersRequestBody]) -> operations.GetRegisteredUsersResponse:
         r"""getRegisteredUsers
         Returns the registered emails on any portal from the given emails
         """
-        hook_ctx = HookContext(operation_id='getRegisteredUsers', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getRegisteredUsers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/registered/users'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, Optional[operations.GetRegisteredUsersRequestBody], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -928,16 +970,19 @@ class ECPAdmin:
 
     
     
-    def get_registration_identifiers(self, security: operations.GetRegistrationIdentifiersSecurity) -> operations.GetRegistrationIdentifiersResponse:
+    def get_registration_identifiers(self) -> operations.GetRegistrationIdentifiersResponse:
         r"""getRegistrationIdentifiers
         Get valid attributes from entities that can be used as identifier to map contact to user on registration
         """
-        hook_ctx = HookContext(operation_id='getRegistrationIdentifiers', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getRegistrationIdentifiers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/registration/identifiers'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -989,16 +1034,19 @@ class ECPAdmin:
 
     
     
-    def get_valid_secondary_attributes(self, security: operations.GetValidSecondaryAttributesSecurity) -> operations.GetValidSecondaryAttributesResponse:
+    def get_valid_secondary_attributes(self) -> operations.GetValidSecondaryAttributesResponse:
         r"""getValidSecondaryAttributes
         Get valid secondary attributes that are used while mapping a contact on registration
         """
-        hook_ctx = HookContext(operation_id='getValidSecondaryAttributes', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getValidSecondaryAttributes', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/contact/valid/secondary/attributes'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1050,18 +1098,21 @@ class ECPAdmin:
 
     
     
-    def login_to_portal_as_user(self, request: operations.LoginToPortalAsUserRequestBody, security: operations.LoginToPortalAsUserSecurity) -> operations.LoginToPortalAsUserResponse:
+    def login_to_portal_as_user(self, request: operations.LoginToPortalAsUserRequestBody) -> operations.LoginToPortalAsUserResponse:
         r"""loginToPortalAsUser
         Generate a token to log in to a portal impersonating a users.
 
         Token is valid for 5 minutes.
         """
-        hook_ctx = HookContext(operation_id='loginToPortalAsUser', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='loginToPortalAsUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/admin:login-as-user'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.LoginToPortalAsUserRequestBody, "request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -1111,16 +1162,19 @@ class ECPAdmin:
 
     
     
-    def replace_ecp_template_variables(self, request: Optional[Dict[str, operations.RequestBody]], security: operations.ReplaceECPTemplateVariablesSecurity) -> operations.ReplaceECPTemplateVariablesResponse:
+    def replace_ecp_template_variables(self, request: Optional[Dict[str, operations.RequestBody]]) -> operations.ReplaceECPTemplateVariablesResponse:
         r"""replaceECPTemplateVariables
         Replaces the template variables of a portal
         """
-        hook_ctx = HookContext(operation_id='replaceECPTemplateVariables', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='replaceECPTemplateVariables', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/replace-ecp-template-variables'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, Optional[Dict[str, operations.RequestBody]], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -1175,16 +1229,19 @@ class ECPAdmin:
 
     
     
-    def save_portal_files(self, request: components.SavePortalFile, security: operations.SavePortalFilesSecurity) -> operations.SavePortalFilesResponse:
+    def save_portal_files(self, request: components.SavePortalFile) -> operations.SavePortalFilesResponse:
         r"""savePortalFiles
         Add files to portal
         """
-        hook_ctx = HookContext(operation_id='savePortalFiles', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='savePortalFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/portal/files'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, components.SavePortalFile, "request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -1241,11 +1298,11 @@ class ECPAdmin:
 
     
     
-    def upsert_email_templates(self, security: operations.UpsertEmailTemplatesSecurity, email_templates: components.EmailTemplates, origin: components.Origin) -> operations.UpsertEmailTemplatesResponse:
+    def upsert_email_templates(self, email_templates: components.EmailTemplates, origin: components.Origin) -> operations.UpsertEmailTemplatesResponse:
         r"""upsertEmailTemplates
         Upserts the email templates of a portal
         """
-        hook_ctx = HookContext(operation_id='upsertEmailTemplates', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='upsertEmailTemplates', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpsertEmailTemplatesRequest(
             email_templates=email_templates,
             origin=origin,
@@ -1255,7 +1312,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/email-templates'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpsertEmailTemplatesRequest, "email_templates", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -1313,11 +1373,11 @@ class ECPAdmin:
 
     
     
-    def upsert_portal(self, security: operations.UpsertPortalSecurity, upsert_portal_config: components.UpsertPortalConfig, origin: components.Origin) -> operations.UpsertPortalResponse:
+    def upsert_portal(self, upsert_portal_config: components.UpsertPortalConfig, origin: components.Origin) -> operations.UpsertPortalResponse:
         r"""upsertPortal
         Upserts the settings for a portal of an organization.
         """
-        hook_ctx = HookContext(operation_id='upsertPortal', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='upsertPortal', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpsertPortalRequest(
             upsert_portal_config=upsert_portal_config,
             origin=origin,
@@ -1327,7 +1387,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/portal'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpsertPortalRequest, "upsert_portal_config", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -1385,11 +1448,11 @@ class ECPAdmin:
 
     
     
-    def upsert_portal_widget(self, security: operations.UpsertPortalWidgetSecurity, upsert_portal_widget: components.UpsertPortalWidget, origin: components.Origin) -> operations.UpsertPortalWidgetResponse:
+    def upsert_portal_widget(self, upsert_portal_widget: components.UpsertPortalWidget, origin: components.Origin) -> operations.UpsertPortalWidgetResponse:
         r"""upsertPortalWidget
         Upsert widget for a portal of an organization.
         """
-        hook_ctx = HookContext(operation_id='upsertPortalWidget', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='upsertPortalWidget', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpsertPortalWidgetRequest(
             upsert_portal_widget=upsert_portal_widget,
             origin=origin,
@@ -1399,7 +1462,10 @@ class ECPAdmin:
         
         url = base_url + '/v2/portal/widgets'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpsertPortalWidgetRequest, "upsert_portal_widget", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):

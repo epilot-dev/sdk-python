@@ -2,7 +2,5 @@
 
 from .errorresp import *
 from .sdkerror import *
-from .updatecontact import *
-from .updatecontract import *
 
-__all__ = ["ErrorResp","SDKError","UpdateContactResponseBody","UpdateContractResponseBody"]
+__all__ = ["ErrorResp","SDKError"]

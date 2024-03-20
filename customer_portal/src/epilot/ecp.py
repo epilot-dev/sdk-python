@@ -17,11 +17,11 @@ class Ecp:
         
     
     
-    def add_end_customer_relation_to_entity(self, security: operations.AddEndCustomerRelationToEntitySecurity, id: str, slug: components.EntitySlug) -> operations.AddEndCustomerRelationToEntityResponse:
+    def add_end_customer_relation_to_entity(self, id: str, slug: components.EntitySlug) -> operations.AddEndCustomerRelationToEntityResponse:
         r"""addEndCustomerRelationToEntity
         Add portal user relation to an entity
         """
-        hook_ctx = HookContext(operation_id='addEndCustomerRelationToEntity', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='addEndCustomerRelationToEntity', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.AddEndCustomerRelationToEntityRequest(
             id=id,
             slug=slug,
@@ -31,7 +31,10 @@ class Ecp:
         
         url = utils.generate_url(operations.AddEndCustomerRelationToEntityRequest, base_url, '/v2/portal/entity/add-end-customer/{slug}/{id}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -83,11 +86,11 @@ class Ecp:
 
     
     
-    def create_custom_entity_activity(self, security: operations.CreateCustomEntityActivitySecurity, activity: Optional[components.Activity] = None, entities: Optional[List[str]] = None) -> operations.CreateCustomEntityActivityResponse:
+    def create_custom_entity_activity(self, activity: Optional[components.Activity] = None, entities: Optional[List[str]] = None) -> operations.CreateCustomEntityActivityResponse:
         r"""createCustomEntityActivity
         Create a custom activity that can be displayed in activity feed of an entity.
         """
-        hook_ctx = HookContext(operation_id='createCustomEntityActivity', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='createCustomEntityActivity', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.CreateCustomEntityActivityRequest(
             activity=activity,
             entities=entities,
@@ -97,7 +100,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/entity/activity'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.CreateCustomEntityActivityRequest, "activity", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -153,16 +159,19 @@ class Ecp:
 
     
     
-    def delete_entity_file(self, request: components.DeleteEntityFile, security: operations.DeleteEntityFileSecurity) -> operations.DeleteEntityFileResponse:
+    def delete_entity_file(self, request: components.DeleteEntityFile) -> operations.DeleteEntityFileResponse:
         r"""deleteEntityFile
         Delete files from an entity
         """
-        hook_ctx = HookContext(operation_id='deleteEntityFile', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='deleteEntityFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/entity/file'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, components.DeleteEntityFile, "request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -219,16 +228,19 @@ class Ecp:
 
     
     
-    def delete_portal_user(self, security: operations.DeletePortalUserSecurity) -> operations.DeletePortalUserResponse:
+    def delete_portal_user(self) -> operations.DeletePortalUserResponse:
         r"""deletePortalUser
         Delete the portal user
         """
-        hook_ctx = HookContext(operation_id='deletePortalUser', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='deletePortalUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -280,11 +292,11 @@ class Ecp:
 
     
     
-    def get_all_contracts(self, security: operations.GetAllContractsSecurity, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetAllContractsResponse:
+    def get_all_contracts(self, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetAllContractsResponse:
         r"""getAllContracts
         Get all contracts for a portal user
         """
-        hook_ctx = HookContext(operation_id='getAllContracts', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getAllContracts', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAllContractsRequest(
             from_=from_,
             size=size,
@@ -294,7 +306,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/contract'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetAllContractsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -347,11 +362,11 @@ class Ecp:
 
     
     
-    def get_all_files(self, security: operations.GetAllFilesSecurity, from_: float, size: float, entity_ids: Optional[List[str]] = None) -> operations.GetAllFilesResponse:
+    def get_all_files(self, from_: float, size: float, entity_ids: Optional[List[str]] = None) -> operations.GetAllFilesResponse:
         r"""getAllFiles
         Fetch all documents under the related entities of a contact
         """
-        hook_ctx = HookContext(operation_id='getAllFiles', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getAllFiles', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAllFilesRequest(
             from_=from_,
             size=size,
@@ -362,7 +377,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/user/files'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetAllFilesRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -415,11 +433,11 @@ class Ecp:
 
     
     
-    def get_all_opportunities(self, security: operations.GetAllOpportunitiesSecurity, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetAllOpportunitiesResponse:
+    def get_all_opportunities(self, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetAllOpportunitiesResponse:
         r"""getAllOpportunities
         Get all opportunities of a portal user
         """
-        hook_ctx = HookContext(operation_id='getAllOpportunities', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getAllOpportunities', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAllOpportunitiesRequest(
             from_=from_,
             size=size,
@@ -429,7 +447,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/opportunity'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetAllOpportunitiesRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -482,11 +503,11 @@ class Ecp:
 
     
     
-    def get_all_orders(self, security: operations.GetAllOrdersSecurity, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetAllOrdersResponse:
+    def get_all_orders(self, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetAllOrdersResponse:
         r"""getAllOrders
         Get all orders for the portal user
         """
-        hook_ctx = HookContext(operation_id='getAllOrders', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getAllOrders', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetAllOrdersRequest(
             from_=from_,
             size=size,
@@ -496,7 +517,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/order'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetAllOrdersRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -549,16 +573,19 @@ class Ecp:
 
     
     
-    def get_billing_events(self, request: operations.GetBillingEventsRequest, security: operations.GetBillingEventsSecurity) -> operations.GetBillingEventsResponse:
+    def get_billing_events(self, request: operations.GetBillingEventsRequest) -> operations.GetBillingEventsResponse:
         r"""getBillingEvents
         Fetch billing events for a portal user
         """
-        hook_ctx = HookContext(operation_id='getBillingEvents', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getBillingEvents', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/billing/events'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetBillingEventsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -604,16 +631,19 @@ class Ecp:
 
     
     
-    def get_contact(self, security: operations.GetContactSecurity) -> operations.GetContactResponse:
+    def get_contact(self) -> operations.GetContactResponse:
         r"""getContact
         Retrieves the contact by ID.
         """
-        hook_ctx = HookContext(operation_id='getContact', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getContact', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/contact'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -665,11 +695,11 @@ class Ecp:
 
     
     
-    def get_contract(self, security: operations.GetContractSecurity, id: str) -> operations.GetContractResponse:
+    def get_contract(self, id: str) -> operations.GetContractResponse:
         r"""getContract
         Get a contract by id
         """
-        hook_ctx = HookContext(operation_id='getContract', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getContract', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetContractRequest(
             id=id,
         )
@@ -678,7 +708,10 @@ class Ecp:
         
         url = utils.generate_url(operations.GetContractRequest, base_url, '/v2/portal/contract/{id}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -730,11 +763,11 @@ class Ecp:
 
     
     
-    def get_entities_by_identifiers(self, security: operations.GetEntitiesByIdentifiersSecurity, request_body: Dict[str, Any], slug: components.EntitySlug) -> operations.GetEntitiesByIdentifiersResponse:
+    def get_entities_by_identifiers(self, request_body: Dict[str, Any], slug: components.EntitySlug) -> operations.GetEntitiesByIdentifiersResponse:
         r"""getEntitiesByIdentifiers
         Get entities by identifiers by portal user
         """
-        hook_ctx = HookContext(operation_id='getEntitiesByIdentifiers', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getEntitiesByIdentifiers', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetEntitiesByIdentifiersRequest(
             request_body=request_body,
             slug=slug,
@@ -744,7 +777,10 @@ class Ecp:
         
         url = utils.generate_url(operations.GetEntitiesByIdentifiersRequest, base_url, '/v2/portal/entity/by-identifiers/{slug}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.GetEntitiesByIdentifiersRequest, "request_body", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -801,11 +837,11 @@ class Ecp:
 
     
     
-    def get_file_by_id(self, security: operations.GetFileByIDSecurity, id: str) -> operations.GetFileByIDResponse:
+    def get_file_by_id(self, id: str) -> operations.GetFileByIDResponse:
         r"""getFileById
         Fetch a document with ID
         """
-        hook_ctx = HookContext(operation_id='getFileById', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getFileById', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetFileByIDRequest(
             id=id,
         )
@@ -814,7 +850,10 @@ class Ecp:
         
         url = utils.generate_url(operations.GetFileByIDRequest, base_url, '/v2/portal/user/file/{id}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -866,16 +905,19 @@ class Ecp:
 
     
     
-    def get_files_count_by_entity(self, security: operations.GetFilesCountByEntitySecurity) -> operations.GetFilesCountByEntityResponse:
+    def get_files_count_by_entity(self) -> operations.GetFilesCountByEntityResponse:
         r"""getFileCountByEntity
         Fetch file counts for all ECP user related entities
         """
-        hook_ctx = HookContext(operation_id='getFilesCountByEntity', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getFilesCountByEntity', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user/files/count-by-entity'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -927,11 +969,11 @@ class Ecp:
 
     
     
-    def get_opportunity(self, security: operations.GetOpportunitySecurity, id: str) -> operations.GetOpportunityResponse:
+    def get_opportunity(self, id: str) -> operations.GetOpportunityResponse:
         r"""getOpportunity
         Get an opportunity by id
         """
-        hook_ctx = HookContext(operation_id='getOpportunity', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getOpportunity', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetOpportunityRequest(
             id=id,
         )
@@ -940,7 +982,10 @@ class Ecp:
         
         url = utils.generate_url(operations.GetOpportunityRequest, base_url, '/v2/portal/opportunities/{id}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -992,11 +1037,11 @@ class Ecp:
 
     
     
-    def get_order(self, security: operations.GetOrderSecurity, id: str) -> operations.GetOrderResponse:
+    def get_order(self, id: str) -> operations.GetOrderResponse:
         r"""getOrder
         Get an order by id
         """
-        hook_ctx = HookContext(operation_id='getOrder', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getOrder', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetOrderRequest(
             id=id,
         )
@@ -1005,7 +1050,10 @@ class Ecp:
         
         url = utils.generate_url(operations.GetOrderRequest, base_url, '/v2/portal/order/{id}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1057,16 +1105,19 @@ class Ecp:
 
     
     
-    def get_organization_settings(self, security: operations.GetOrganizationSettingsSecurity) -> operations.GetOrganizationSettingsResponse:
+    def get_organization_settings(self) -> operations.GetOrganizationSettingsResponse:
         r"""getOrganizationSettings
         Retrieves the organization settings.
         """
-        hook_ctx = HookContext(operation_id='getOrganizationSettings', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getOrganizationSettings', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/org/settings'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1118,11 +1169,11 @@ class Ecp:
 
     
     
-    def get_portal_config(self, security: operations.GetPortalConfigSecurity, origin: Optional[components.Origin] = None) -> operations.GetPortalConfigResponse:
+    def get_portal_config(self, origin: Optional[components.Origin] = None) -> operations.GetPortalConfigResponse:
         r"""getPortalConfig
         Retrieves the portal configuration.
         """
-        hook_ctx = HookContext(operation_id='getPortalConfig', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getPortalConfig', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPortalConfigRequest(
             origin=origin,
         )
@@ -1131,7 +1182,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/config'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetPortalConfigRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -1184,16 +1238,19 @@ class Ecp:
 
     
     
-    def get_portal_user(self, security: operations.GetPortalUserSecurity) -> operations.GetPortalUserResponse:
+    def get_portal_user(self) -> operations.GetPortalUserResponse:
         r"""getPortalUser
         Get the portal user details
         """
-        hook_ctx = HookContext(operation_id='getPortalUser', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getPortalUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1245,11 +1302,11 @@ class Ecp:
 
     
     
-    def get_portal_widgets(self, security: operations.GetPortalWidgetsSecurity, origin: Optional[components.Origin] = None) -> operations.GetPortalWidgetsResponse:
+    def get_portal_widgets(self, origin: Optional[components.Origin] = None) -> operations.GetPortalWidgetsResponse:
         r"""getPortalWidgets
         Retrieves the widgets of a portal
         """
-        hook_ctx = HookContext(operation_id='getPortalWidgets', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getPortalWidgets', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetPortalWidgetsRequest(
             origin=origin,
         )
@@ -1258,7 +1315,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/widgets'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetPortalWidgetsRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -1311,16 +1371,19 @@ class Ecp:
 
     
     
-    def get_schemas(self, security: operations.GetSchemasSecurity) -> operations.GetSchemasResponse:
+    def get_schemas(self) -> operations.GetSchemasResponse:
         r"""getSchemas
         Retrieves the schemas.
         """
-        hook_ctx = HookContext(operation_id='getSchemas', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getSchemas', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/schemas'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1372,11 +1435,11 @@ class Ecp:
 
     
     
-    def get_search_results_for_opportunities(self, security: operations.GetSearchResultsForOpportunitiesSecurity, request_body: operations.GetSearchResultsForOpportunitiesRequestBody, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetSearchResultsForOpportunitiesResponse:
+    def get_search_results_for_opportunities(self, request_body: operations.GetSearchResultsForOpportunitiesRequestBody, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetSearchResultsForOpportunitiesResponse:
         r"""getSearchResultsForOpportunities
         Get all opportunity with the given serached attributes
         """
-        hook_ctx = HookContext(operation_id='getSearchResultsForOpportunities', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getSearchResultsForOpportunities', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetSearchResultsForOpportunitiesRequest(
             request_body=request_body,
             from_=from_,
@@ -1387,7 +1450,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/opportunities/search'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.GetSearchResultsForOpportunitiesRequest, "request_body", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -1445,11 +1511,11 @@ class Ecp:
 
     
     
-    def get_searchable_attributes_for_opportunities(self, security: operations.GetSearchableAttributesForOpportunitiesSecurity, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetSearchableAttributesForOpportunitiesResponse:
+    def get_searchable_attributes_for_opportunities(self, from_: Optional[float] = None, size: Optional[float] = None) -> operations.GetSearchableAttributesForOpportunitiesResponse:
         r"""getSearchableAttributesForOpportunities
         Get all opportunity searchable attributes for a portal user
         """
-        hook_ctx = HookContext(operation_id='getSearchableAttributesForOpportunities', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='getSearchableAttributesForOpportunities', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.GetSearchableAttributesForOpportunitiesRequest(
             from_=from_,
             size=size,
@@ -1459,7 +1525,10 @@ class Ecp:
         
         url = base_url + '/v2/portal/opportunities/searchable-attributes'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.GetSearchableAttributesForOpportunitiesRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -1512,16 +1581,19 @@ class Ecp:
 
     
     
-    def save_entity_file(self, request: components.SaveEntityFile, security: operations.SaveEntityFileSecurity) -> operations.SaveEntityFileResponse:
+    def save_entity_file(self, request: components.SaveEntityFile) -> operations.SaveEntityFileResponse:
         r"""saveEntityFile
         Add files to an entity
         """
-        hook_ctx = HookContext(operation_id='saveEntityFile', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='saveEntityFile', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/entity/file'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, components.SaveEntityFile, "request", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -1639,16 +1711,19 @@ class Ecp:
 
     
     
-    def search_portal_user_entities(self, request: Optional[components.EntitySearchParams], security: operations.SearchPortalUserEntitiesSecurity) -> operations.SearchPortalUserEntitiesResponse:
+    def search_portal_user_entities(self, request: Optional[components.EntitySearchParams]) -> operations.SearchPortalUserEntitiesResponse:
         r"""searchPortalUserEntities
         Search all entities of a portal user
         """
-        hook_ctx = HookContext(operation_id='searchPortalUserEntities', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='searchPortalUserEntities', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/entity:search'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, Optional[components.EntitySearchParams], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -1703,11 +1778,11 @@ class Ecp:
 
     
     
-    def track_file_downloaded(self, security: operations.TrackFileDownloadedSecurity, id: str) -> operations.TrackFileDownloadedResponse:
+    def track_file_downloaded(self, id: str) -> operations.TrackFileDownloadedResponse:
         r"""trackFileDownloaded
         Track that user has downloaded a file
         """
-        hook_ctx = HookContext(operation_id='trackFileDownloaded', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='trackFileDownloaded', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.TrackFileDownloadedRequest(
             id=id,
         )
@@ -1716,7 +1791,10 @@ class Ecp:
         
         url = utils.generate_url(operations.TrackFileDownloadedRequest, base_url, '/v2/portal/user/file/{id}/downloaded', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
@@ -1768,11 +1846,11 @@ class Ecp:
 
     
     
-    def trigger_entity_access_event(self, security: operations.TriggerEntityAccessEventSecurity, origin: components.Origin, schema: str, entity_id: Optional[str] = None) -> operations.TriggerEntityAccessEventResponse:
+    def trigger_entity_access_event(self, origin: components.Origin, schema: str, entity_id: Optional[str] = None) -> operations.TriggerEntityAccessEventResponse:
         r"""triggerEntityAccessEvent
         Trigger entity access event for a portal user
         """
-        hook_ctx = HookContext(operation_id='triggerEntityAccessEvent', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='triggerEntityAccessEvent', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.TriggerEntityAccessEventRequest(
             origin=origin,
             schema=schema,
@@ -1783,7 +1861,10 @@ class Ecp:
         
         url = utils.generate_url(operations.TriggerEntityAccessEventRequest, base_url, '/v2/portal/entity/{schema}/access', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         query_params = { **utils.get_query_params(operations.TriggerEntityAccessEventRequest, request), **query_params }
         headers['Accept'] = 'application/json'
@@ -1829,162 +1910,11 @@ class Ecp:
 
     
     
-    def update_contact(self, request: Optional[Dict[str, Any]], security: operations.UpdateContactSecurity) -> operations.UpdateContactResponse:
-        r"""updateContact
-        Updates the contact details.
-        """
-        hook_ctx = HookContext(operation_id='updateContact', oauth2_scopes=[], security_source=security)
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = base_url + '/v2/portal/contact'
-        
-        headers, query_params = utils.get_security(security)
-        
-        req_content_type, data, form = utils.serialize_request_body(request, Optional[Dict[str, Any]], "request", False, True, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        client = self.sdk_configuration.client
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['401','403','404','4XX','500','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        
-        res = operations.UpdateContactResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateContactResponseBody])
-                res.object = out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code in [401, 404, 500]:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                raise out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code == 403:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, errors.UpdateContactResponseBody)
-                out.raw_response = http_res
-                raise out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-        else:
-            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def update_contract(self, security: operations.UpdateContractSecurity, request_body: Dict[str, Any], id: str) -> operations.UpdateContractResponse:
-        r"""updateContract
-        Update a contract by id
-        """
-        hook_ctx = HookContext(operation_id='updateContract', oauth2_scopes=[], security_source=security)
-        request = operations.UpdateContractRequest(
-            request_body=request_body,
-            id=id,
-        )
-        
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = utils.generate_url(operations.UpdateContractRequest, base_url, '/v2/portal/contract/{id}', request)
-        
-        headers, query_params = utils.get_security(security)
-        
-        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateContractRequest, "request_body", False, False, 'json')
-        if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
-            headers['content-type'] = req_content_type
-        if data is None and form is None:
-            raise Exception('request body is required')
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        client = self.sdk_configuration.client
-        
-        try:
-            req = self.sdk_configuration.get_hooks().before_request(
-                hook_ctx, 
-                requests_http.Request('PATCH', url, params=query_params, data=data, files=form, headers=headers).prepare(),
-            )
-            http_res = client.send(req)
-        except Exception as e:
-            _, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, None, e)
-            raise e
-
-        if utils.match_status_codes(['401','403','404','4XX','500','5XX'], http_res.status_code):
-            http_res, e = self.sdk_configuration.get_hooks().after_error(hook_ctx, http_res, None)
-            if e:
-                raise e
-        else:
-            result = self.sdk_configuration.get_hooks().after_success(hook_ctx, http_res)
-            if isinstance(result, Exception):
-                raise result
-            http_res = result
-        
-        
-        res = operations.UpdateContractResponse(status_code=http_res.status_code, content_type=http_res.headers.get('Content-Type'), raw_response=http_res)
-        
-        if http_res.status_code == 200:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, Optional[operations.UpdateContractResponseBody])
-                res.object = out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code in [401, 404, 500]:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, errors.ErrorResp)
-                raise out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code == 403:
-            if utils.match_content_type(http_res.headers.get('Content-Type'), 'application/json'):                
-                out = utils.unmarshal_json(http_res.text, errors.UpdateContractResponseBody)
-                out.raw_response = http_res
-                raise out
-            else:
-                content_type = http_res.headers.get('Content-Type')
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-        elif http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
-            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
-        else:
-            raise errors.SDKError('unknown status code received', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
-    
-    def update_opportunity(self, security: operations.UpdateOpportunitySecurity, request_body: Dict[str, Any], id: str) -> operations.UpdateOpportunityResponse:
+    def update_opportunity(self, request_body: Dict[str, Any], id: str) -> operations.UpdateOpportunityResponse:
         r"""updateOpportunity
         Update an opportunity by id
         """
-        hook_ctx = HookContext(operation_id='updateOpportunity', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='updateOpportunity', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateOpportunityRequest(
             request_body=request_body,
             id=id,
@@ -1994,7 +1924,10 @@ class Ecp:
         
         url = utils.generate_url(operations.UpdateOpportunityRequest, base_url, '/v2/portal/opportunities/{id}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateOpportunityRequest, "request_body", False, False, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -2051,11 +1984,11 @@ class Ecp:
 
     
     
-    def update_order(self, security: operations.UpdateOrderSecurity, id: str, request_body: Optional[Dict[str, Any]] = None) -> operations.UpdateOrderResponse:
+    def update_order(self, id: str, request_body: Optional[Dict[str, Any]] = None) -> operations.UpdateOrderResponse:
         r"""updateOrder
         Update an order by id
         """
-        hook_ctx = HookContext(operation_id='updateOrder', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='updateOrder', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateOrderRequest(
             id=id,
             request_body=request_body,
@@ -2065,7 +1998,10 @@ class Ecp:
         
         url = utils.generate_url(operations.UpdateOrderRequest, base_url, '/v2/portal/order/{id}', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateOrderRequest, "request_body", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -2120,16 +2056,19 @@ class Ecp:
 
     
     
-    def update_portal_user(self, request: Optional[Dict[str, Any]], security: operations.UpdatePortalUserSecurity) -> operations.UpdatePortalUserResponse:
+    def update_portal_user(self, request: Optional[Dict[str, Any]]) -> operations.UpdatePortalUserResponse:
         r"""updatePortalUser
         Update the portal user details
         """
-        hook_ctx = HookContext(operation_id='updatePortalUser', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='updatePortalUser', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v2/portal/user'
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         req_content_type, data, form = utils.serialize_request_body(request, Optional[Dict[str, Any]], "request", False, True, 'json')
         if req_content_type is not None and req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -2184,11 +2123,11 @@ class Ecp:
 
     
     
-    def update_workflow_step_as_done(self, security: operations.UpdateWorkflowStepAsDoneSecurity, step_id: str, workflow_id: str) -> operations.UpdateWorkflowStepAsDoneResponse:
+    def update_workflow_step_as_done(self, step_id: str, workflow_id: str) -> operations.UpdateWorkflowStepAsDoneResponse:
         r"""updateWorkflowStepAsDone
         Update a workflow step as done
         """
-        hook_ctx = HookContext(operation_id='updateWorkflowStepAsDone', oauth2_scopes=[], security_source=security)
+        hook_ctx = HookContext(operation_id='updateWorkflowStepAsDone', oauth2_scopes=[], security_source=self.sdk_configuration.security)
         request = operations.UpdateWorkflowStepAsDoneRequest(
             step_id=step_id,
             workflow_id=workflow_id,
@@ -2198,7 +2137,10 @@ class Ecp:
         
         url = utils.generate_url(operations.UpdateWorkflowStepAsDoneRequest, base_url, '/v2/portal/workflow/{workflow_id}/{step_id}:markDone', request)
         
-        headers, query_params = utils.get_security(security)
+        if callable(self.sdk_configuration.security):
+            headers, query_params = utils.get_security(self.sdk_configuration.security())
+        else:
+            headers, query_params = utils.get_security(self.sdk_configuration.security)
         
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent

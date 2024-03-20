@@ -13,13 +13,6 @@ from typing import Any, Dict, List, Optional
 
 
 @dataclasses.dataclass
-class GetContractSecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class GetContractRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""The ID of the contract"""

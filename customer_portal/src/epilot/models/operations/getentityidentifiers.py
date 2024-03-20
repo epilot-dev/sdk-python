@@ -10,13 +10,6 @@ from typing import List, Optional
 
 
 @dataclasses.dataclass
-class GetEntityIdentifiersSecurity:
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class GetEntityIdentifiersRequest:
     slug: components_entityslug.EntitySlug = dataclasses.field(metadata={'path_param': { 'field_name': 'slug', 'style': 'simple', 'explode': False }})
     r"""The slug of an entity"""

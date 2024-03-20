@@ -11,13 +11,6 @@ from typing import Any, Dict, List, Optional
 
 
 @dataclasses.dataclass
-class GetEntitiesByIdentifiersSecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class GetEntitiesByIdentifiersRequest:
     request_body: Dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""The entities are retrieved successfully."""

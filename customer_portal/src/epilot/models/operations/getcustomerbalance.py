@@ -8,13 +8,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetCustomerBalanceSecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class GetCustomerBalanceResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""

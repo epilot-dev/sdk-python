@@ -9,13 +9,6 @@ from typing import List, Optional
 
 
 @dataclasses.dataclass
-class CreateCustomEntityActivitySecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class CreateCustomEntityActivityRequest:
     activity: Optional[components_activity.Activity] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     entities: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'entities', 'style': 'form', 'explode': False }})

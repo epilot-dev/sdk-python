@@ -13,23 +13,22 @@ Get total balance across all contracts and orders of a customer entity.
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.balance.get_customer_balance("<YOUR_BEARER_TOKEN_HERE>")
+res = s.balance.get_customer_balance()
 
 if res.balance is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `security`                                                                                     | [operations.GetCustomerBalanceSecurity](../../models/operations/getcustomerbalancesecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
 
 
 ### Response

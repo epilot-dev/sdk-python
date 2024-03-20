@@ -40,10 +40,14 @@ Returns whether the user can trigger a portal flow
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.can_trigger_portal_flow("<YOUR_BEARER_TOKEN_HERE>", trigger_portal_flow=components.TriggerPortalFlow(
+res = s.ecp_admin.can_trigger_portal_flow(trigger_portal_flow=components.TriggerPortalFlow(
     activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
 ), origin=components.Origin.END_CUSTOMER_PORTAL)
 
@@ -55,11 +59,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `security`                                                                                         | [operations.CanTriggerPortalFlowSecurity](../../models/operations/cantriggerportalflowsecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
-| `trigger_portal_flow`                                                                              | [components.TriggerPortalFlow](../../models/components/triggerportalflow.md)                       | :heavy_check_mark:                                                                                 | Request of trigger portal flow                                                                     |
-| `origin`                                                                                           | [components.Origin](../../models/components/origin.md)                                             | :heavy_check_mark:                                                                                 | Origin of the portal                                                                               |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `trigger_portal_flow`                                                        | [components.TriggerPortalFlow](../../models/components/triggerportalflow.md) | :heavy_check_mark:                                                           | Request of trigger portal flow                                               |
+| `origin`                                                                     | [components.Origin](../../models/components/origin.md)                       | :heavy_check_mark:                                                           | Origin of the portal                                                         |
 
 
 ### Response
@@ -81,10 +84,14 @@ Configure the distribution for the portal's custom domain
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.configure_distribution("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.configure_distribution(origin=components.Origin.INSTALLER_PORTAL)
 
 if res.object is not None:
     # handle response
@@ -94,10 +101,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `security`                                                                                           | [operations.ConfigureDistributionSecurity](../../models/operations/configuredistributionsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
-| `origin`                                                                                             | [components.Origin](../../models/components/origin.md)                                               | :heavy_check_mark:                                                                                   | Origin of the portal                                                                                 |
+| Parameter                                              | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `origin`                                               | [components.Origin](../../models/components/origin.md) | :heavy_check_mark:                                     | Origin of the portal                                   |
 
 
 ### Response
@@ -120,10 +126,14 @@ Creates a portal user as an SSO user.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.create_sso_user("<YOUR_BEARER_TOKEN_HERE>", create_sso_user_request=components.CreateSSOUserRequest(
+res = s.ecp_admin.create_sso_user(create_sso_user_request=components.CreateSSOUserRequest(
     email='testemail921@yopmail.com',
     first_name='John',
     last_name='Doe',
@@ -137,11 +147,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `security`                                                                           | [operations.CreateSSOUserSecurity](../../models/operations/createssousersecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
-| `create_sso_user_request`                                                            | [components.CreateSSOUserRequest](../../models/components/createssouserrequest.md)   | :heavy_check_mark:                                                                   | Portal user payload                                                                  |
-| `origin`                                                                             | [components.Origin](../../models/components/origin.md)                               | :heavy_check_mark:                                                                   | Origin of the portal                                                                 |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `create_sso_user_request`                                                          | [components.CreateSSOUserRequest](../../models/components/createssouserrequest.md) | :heavy_check_mark:                                                                 | Portal user payload                                                                |
+| `origin`                                                                           | [components.Origin](../../models/components/origin.md)                             | :heavy_check_mark:                                                                 | Origin of the portal                                                               |
 
 
 ### Response
@@ -164,10 +173,14 @@ Deletes the portal.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.delete_portal("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.END_CUSTOMER_PORTAL)
+res = s.ecp_admin.delete_portal(origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res is not None:
     # handle response
@@ -177,10 +190,9 @@ if res is not None:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `security`                                                                         | [operations.DeletePortalSecurity](../../models/operations/deleteportalsecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
-| `origin`                                                                           | [components.Origin](../../models/components/origin.md)                             | :heavy_check_mark:                                                                 | Origin of the portal                                                               |
+| Parameter                                              | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `origin`                                               | [components.Origin](../../models/components/origin.md) | :heavy_check_mark:                                     | Origin of the portal                                   |
 
 
 ### Response
@@ -201,23 +213,22 @@ Retrieves the extra permission attributes.
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.extra_permission_attributes("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp_admin.extra_permission_attributes()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `security`                                                                                                   | [operations.ExtraPermissionAttributesSecurity](../../models/operations/extrapermissionattributessecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
 
 
 ### Response
@@ -240,10 +251,14 @@ Get all users for a given entity
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.fetch_portal_users_by_related_entity("<YOUR_BEARER_TOKEN_HERE>", entity_id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT)
+res = s.ecp_admin.fetch_portal_users_by_related_entity(entity_id='5da0a718-c822-403d-9f5d-20d4584e0528', slug=components.EntitySlug.CONTACT)
 
 if res.object is not None:
     # handle response
@@ -253,11 +268,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              | Example                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `security`                                                                                                               | [operations.FetchPortalUsersByRelatedEntitySecurity](../../models/operations/fetchportalusersbyrelatedentitysecurity.md) | :heavy_check_mark:                                                                                                       | The security requirements to use for the request.                                                                        |                                                                                                                          |
-| `entity_id`                                                                                                              | *str*                                                                                                                    | :heavy_check_mark:                                                                                                       | N/A                                                                                                                      | 5da0a718-c822-403d-9f5d-20d4584e0528                                                                                     |
-| `slug`                                                                                                                   | [components.EntitySlug](../../models/components/entityslug.md)                                                           | :heavy_check_mark:                                                                                                       | URL-friendly identifier for the entity schema                                                                            | contact                                                                                                                  |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    | Example                                                        |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `entity_id`                                                    | *str*                                                          | :heavy_check_mark:                                             | N/A                                                            | 5da0a718-c822-403d-9f5d-20d4584e0528                           |
+| `slug`                                                         | [components.EntitySlug](../../models/components/entityslug.md) | :heavy_check_mark:                                             | URL-friendly identifier for the entity schema                  | contact                                                        |
 
 
 ### Response
@@ -278,23 +292,22 @@ Retrieves all portal configurations.
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_all_portal_configs("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp_admin.get_all_portal_configs()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `security`                                                                                       | [operations.GetAllPortalConfigsSecurity](../../models/operations/getallportalconfigssecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
 
 
 ### Response
@@ -315,11 +328,16 @@ Get the Contact by id
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_ecp_contact("<YOUR_BEARER_TOKEN_HERE>", id='1234')
+res = s.ecp_admin.get_ecp_contact(id='1234')
 
 if res.object is not None:
     # handle response
@@ -329,10 +347,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          | Example                                                                              |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `security`                                                                           | [operations.GetECPContactSecurity](../../models/operations/getecpcontactsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |                                                                                      |
-| `id`                                                                                 | *str*                                                                                | :heavy_check_mark:                                                                   | N/A                                                                                  | 1234                                                                                 |
+| Parameter          | Type               | Required           | Description        | Example            |
+| ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *str*              | :heavy_check_mark: | N/A                | 1234               |
 
 
 ### Response
@@ -355,10 +372,14 @@ Retrieves the email templates of a portal
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_email_templates("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.END_CUSTOMER_PORTAL)
+res = s.ecp_admin.get_email_templates(origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.email_templates is not None:
     # handle response
@@ -368,10 +389,9 @@ if res.email_templates is not None:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `security`                                                                                   | [operations.GetEmailTemplatesSecurity](../../models/operations/getemailtemplatessecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
-| `origin`                                                                                     | [components.Origin](../../models/components/origin.md)                                       | :heavy_check_mark:                                                                           | Origin of the portal                                                                         |
+| Parameter                                              | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `origin`                                               | [components.Origin](../../models/components/origin.md) | :heavy_check_mark:                                     | Origin of the portal                                   |
 
 
 ### Response
@@ -394,10 +414,14 @@ Retrieve a list of entity identifiers used for entity search by portal users.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_entity_identifiers("<YOUR_BEARER_TOKEN_HERE>", slug=components.EntitySlug.CONTACT)
+res = s.ecp_admin.get_entity_identifiers(slug=components.EntitySlug.CONTACT)
 
 if res.object is not None:
     # handle response
@@ -407,10 +431,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        | Example                                                                                            |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `security`                                                                                         | [operations.GetEntityIdentifiersSecurity](../../models/operations/getentityidentifierssecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |                                                                                                    |
-| `slug`                                                                                             | [components.EntitySlug](../../models/components/entityslug.md)                                     | :heavy_check_mark:                                                                                 | The slug of an entity                                                                              | contact                                                                                            |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    | Example                                                        |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `slug`                                                         | [components.EntitySlug](../../models/components/entityslug.md) | :heavy_check_mark:                                             | The slug of an entity                                          | contact                                                        |
 
 
 ### Response
@@ -433,10 +456,14 @@ Retrieves the portal configuration for the organization.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_org_portal_config("<YOUR_BEARER_TOKEN_HERE>", origin=components.Origin.INSTALLER_PORTAL)
+res = s.ecp_admin.get_org_portal_config(origin=components.Origin.INSTALLER_PORTAL)
 
 if res.portal_config is not None:
     # handle response
@@ -446,10 +473,9 @@ if res.portal_config is not None:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `security`                                                                                     | [operations.GetOrgPortalConfigSecurity](../../models/operations/getorgportalconfigsecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
-| `origin`                                                                                       | [components.Origin](../../models/components/origin.md)                                         | :heavy_check_mark:                                                                             | Origin of the portal                                                                           |
+| Parameter                                              | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `origin`                                               | [components.Origin](../../models/components/origin.md) | :heavy_check_mark:                                     | Origin of the portal                                   |
 
 
 ### Response
@@ -470,14 +496,16 @@ Retrieves the portal configuration.
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_portal_config(operations.GetPortalConfigSecurity(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-), origin=components.Origin.END_CUSTOMER_PORTAL)
+res = s.ecp_admin.get_portal_config(origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.portal_config is not None:
     # handle response
@@ -487,10 +515,9 @@ if res.portal_config is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `security`                                                                               | [operations.GetPortalConfigSecurity](../../models/operations/getportalconfigsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
-| `origin`                                                                                 | [Optional[components.Origin]](../../models/components/origin.md)                         | :heavy_minus_sign:                                                                       | Origin of the portal                                                                     |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `origin`                                                         | [Optional[components.Origin]](../../models/components/origin.md) | :heavy_minus_sign:                                               | Origin of the portal                                             |
 
 
 ### Response
@@ -511,14 +538,16 @@ Retrieves the widgets of a portal
 
 ```python
 import epilot
-from epilot.models import components, operations
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_portal_widgets(operations.GetPortalWidgetsSecurity(
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-), origin=components.Origin.END_CUSTOMER_PORTAL)
+res = s.ecp_admin.get_portal_widgets(origin=components.Origin.END_CUSTOMER_PORTAL)
 
 if res.upsert_portal_widget is not None:
     # handle response
@@ -528,10 +557,9 @@ if res.upsert_portal_widget is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `security`                                                                                 | [operations.GetPortalWidgetsSecurity](../../models/operations/getportalwidgetssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
-| `origin`                                                                                   | [Optional[components.Origin]](../../models/components/origin.md)                           | :heavy_minus_sign:                                                                         | Origin of the portal                                                                       |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `origin`                                                         | [Optional[components.Origin]](../../models/components/origin.md) | :heavy_minus_sign:                                               | Origin of the portal                                             |
 
 
 ### Response
@@ -552,9 +580,13 @@ Returns the registered emails on any portal from the given emails
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components, operations
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = operations.GetRegisteredUsersRequestBody(
     emails=[
@@ -562,7 +594,7 @@ req = operations.GetRegisteredUsersRequestBody(
     ],
 )
 
-res = s.ecp_admin.get_registered_users(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp_admin.get_registered_users(req)
 
 if res.object is not None:
     # handle response
@@ -575,7 +607,6 @@ if res.object is not None:
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | `request`                                                                                            | [operations.GetRegisteredUsersRequestBody](../../models/operations/getregisteredusersrequestbody.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetRegisteredUsersSecurity](../../models/operations/getregistereduserssecurity.md)       | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
 
 
 ### Response
@@ -596,23 +627,22 @@ Get valid attributes from entities that can be used as identifier to map contact
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_registration_identifiers("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp_admin.get_registration_identifiers()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                     | [operations.GetRegistrationIdentifiersSecurity](../../models/operations/getregistrationidentifierssecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
 
 
 ### Response
@@ -633,23 +663,22 @@ Get valid secondary attributes that are used while mapping a contact on registra
 
 ```python
 import epilot
+from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.get_valid_secondary_attributes("<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp_admin.get_valid_secondary_attributes()
 
 if res.object is not None:
     # handle response
     pass
 
 ```
-
-### Parameters
-
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                       | [operations.GetValidSecondaryAttributesSecurity](../../models/operations/getvalidsecondaryattributessecurity.md) | :heavy_check_mark:                                                                                               | The security requirements to use for the request.                                                                |
 
 
 ### Response
@@ -673,15 +702,19 @@ Token is valid for 5 minutes.
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components, operations
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = operations.LoginToPortalAsUserRequestBody(
     email='portal-customer@email.com',
 )
 
-res = s.ecp_admin.login_to_portal_as_user(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp_admin.login_to_portal_as_user(req)
 
 if res.object is not None:
     # handle response
@@ -694,7 +727,6 @@ if res.object is not None:
 | Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | `request`                                                                                              | [operations.LoginToPortalAsUserRequestBody](../../models/operations/logintoportalasuserrequestbody.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [operations.LoginToPortalAsUserSecurity](../../models/operations/logintoportalasusersecurity.md)       | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
 
 
 ### Response
@@ -714,9 +746,13 @@ Replaces the template variables of a portal
 
 ```python
 import epilot
-from epilot.models import operations
+from epilot.models import components, operations
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = {
     'key': operations.RequestBody(
@@ -724,7 +760,7 @@ req = {
     ),
 }
 
-res = s.ecp_admin.replace_ecp_template_variables(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp_admin.replace_ecp_template_variables(req)
 
 if res.object is not None:
     # handle response
@@ -734,10 +770,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [Dict[str, operations.RequestBody]](../../models/.md)                                                            | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `security`                                                                                                       | [operations.ReplaceECPTemplateVariablesSecurity](../../models/operations/replaceecptemplatevariablessecurity.md) | :heavy_check_mark:                                                                                               | The security requirements to use for the request.                                                                |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `request`                                             | [Dict[str, operations.RequestBody]](../../models/.md) | :heavy_check_mark:                                    | The request object to use for the request.            |
 
 
 ### Response
@@ -760,7 +795,11 @@ Add files to portal
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 req = components.SavePortalFile(
     files=[
@@ -775,7 +814,7 @@ req = components.SavePortalFile(
     origin=components.Origin.INSTALLER_PORTAL,
 )
 
-res = s.ecp_admin.save_portal_files(req, "<YOUR_BEARER_TOKEN_HERE>")
+res = s.ecp_admin.save_portal_files(req)
 
 if res.object is not None:
     # handle response
@@ -785,10 +824,9 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [components.SavePortalFile](../../models/components/saveportalfile.md)                   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.SavePortalFilesSecurity](../../models/operations/saveportalfilessecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [components.SavePortalFile](../../models/components/saveportalfile.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
@@ -811,10 +849,14 @@ Upserts the email templates of a portal
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.upsert_email_templates("<YOUR_BEARER_TOKEN_HERE>", email_templates=components.EmailTemplates(
+res = s.ecp_admin.upsert_email_templates(email_templates=components.EmailTemplates(
     confirm_account='701f089d-6953-48b5-ac35-442de7c59cd3',
     forgot_password='6538fddb-f0e9-4f0f-af51-6e57891ff20a',
     invitation='14ae65fb-0dc1-4863-8743-6bc01da469f6',
@@ -831,11 +873,10 @@ if res.object is not None:
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `security`                                                                                         | [operations.UpsertEmailTemplatesSecurity](../../models/operations/upsertemailtemplatessecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
-| `email_templates`                                                                                  | [components.EmailTemplates](../../models/components/emailtemplates.md)                             | :heavy_check_mark:                                                                                 | Email templates payload                                                                            |
-| `origin`                                                                                           | [components.Origin](../../models/components/origin.md)                                             | :heavy_check_mark:                                                                                 | Origin of the portal                                                                               |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `email_templates`                                                      | [components.EmailTemplates](../../models/components/emailtemplates.md) | :heavy_check_mark:                                                     | Email templates payload                                                |
+| `origin`                                                               | [components.Origin](../../models/components/origin.md)                 | :heavy_check_mark:                                                     | Origin of the portal                                                   |
 
 
 ### Response
@@ -858,10 +899,14 @@ Upserts the settings for a portal of an organization.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.upsert_portal("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_config=components.UpsertPortalConfig(
+res = s.ecp_admin.upsert_portal(upsert_portal_config=components.UpsertPortalConfig(
     design_id='9ba94f20-b872-4217-a259-2a90a8ee1a29',
     contact_identifiers=[
         'email',
@@ -893,11 +938,10 @@ if res.portal_config is not None:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `security`                                                                         | [operations.UpsertPortalSecurity](../../models/operations/upsertportalsecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
-| `upsert_portal_config`                                                             | [components.UpsertPortalConfig](../../models/components/upsertportalconfig.md)     | :heavy_check_mark:                                                                 | Portal payload                                                                     |
-| `origin`                                                                           | [components.Origin](../../models/components/origin.md)                             | :heavy_check_mark:                                                                 | Origin of the portal                                                               |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `upsert_portal_config`                                                         | [components.UpsertPortalConfig](../../models/components/upsertportalconfig.md) | :heavy_check_mark:                                                             | Portal payload                                                                 |
+| `origin`                                                                       | [components.Origin](../../models/components/origin.md)                         | :heavy_check_mark:                                                             | Origin of the portal                                                           |
 
 
 ### Response
@@ -920,10 +964,14 @@ Upsert widget for a portal of an organization.
 import epilot
 from epilot.models import components
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
 
 
-res = s.ecp_admin.upsert_portal_widget("<YOUR_BEARER_TOKEN_HERE>", upsert_portal_widget=components.UpsertPortalWidget(
+res = s.ecp_admin.upsert_portal_widget(upsert_portal_widget=components.UpsertPortalWidget(
     widgets=[
         components.WidgetBase(
             id='<id>',
@@ -941,11 +989,10 @@ if res.upsert_portal_widget is not None:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `security`                                                                                     | [operations.UpsertPortalWidgetSecurity](../../models/operations/upsertportalwidgetsecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
-| `upsert_portal_widget`                                                                         | [components.UpsertPortalWidget](../../models/components/upsertportalwidget.md)                 | :heavy_check_mark:                                                                             | Portal widgets payload                                                                         |
-| `origin`                                                                                       | [components.Origin](../../models/components/origin.md)                                         | :heavy_check_mark:                                                                             | Origin of the portal                                                                           |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `upsert_portal_widget`                                                         | [components.UpsertPortalWidget](../../models/components/upsertportalwidget.md) | :heavy_check_mark:                                                             | Portal widgets payload                                                         |
+| `origin`                                                                       | [components.Origin](../../models/components/origin.md)                         | :heavy_check_mark:                                                             | Origin of the portal                                                           |
 
 
 ### Response

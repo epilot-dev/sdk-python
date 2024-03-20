@@ -9,13 +9,6 @@ from epilot import utils
 from typing import List, Optional
 
 
-@dataclasses.dataclass
-class SaveEntityFileSecurity:
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SaveEntityFileResponseBody:

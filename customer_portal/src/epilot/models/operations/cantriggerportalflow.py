@@ -11,13 +11,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CanTriggerPortalFlowSecurity:
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
-    
-
-
-
-@dataclasses.dataclass
 class CanTriggerPortalFlowRequest:
     trigger_portal_flow: components_triggerportalflow.TriggerPortalFlow = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     r"""Request of trigger portal flow"""
