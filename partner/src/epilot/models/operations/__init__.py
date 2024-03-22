@@ -5,9 +5,10 @@ from .approvepartner import *
 from .batchgetassignable import *
 from .getpartnerbytoken import *
 from .invitepartner import *
+from .invitepartnerv2 import *
 from .rejectpartner import *
 from .resendpartnerinvitation import *
 from .searchassignable import *
 from .searchgeolocationfortext import *
 
-__all__ = ["ActivatePartnerRequest","ActivatePartnerResponse","ApprovePartnerRequest","ApprovePartnerResponse","BatchGetAssignableResponse","BatchGetAssignableResponseBody","GetPartnerByTokenRequest","GetPartnerByTokenResponse","InvitePartnerRequest","InvitePartnerResponse","Language","RejectPartnerRequest","RejectPartnerResponse","RequestBody","ResendPartnerInvitationRequest","ResendPartnerInvitationRequestBody","ResendPartnerInvitationResponse","SearchAssignableRequestBody","SearchAssignableResponse","SearchAssignableResponseBody","SearchGeolocationForTextResponse","Types"]
+__all__ = ["ActivatePartnerRequest","ActivatePartnerResponse","ApprovePartnerRequest","ApprovePartnerResponse","BatchGetAssignableResponse","BatchGetAssignableResponseBody","GetPartnerByTokenRequest","GetPartnerByTokenResponse","InvitePartnerRequest","InvitePartnerResponse","InvitePartnerV2Request","InvitePartnerV2Response","Language","RejectPartnerRequest","RejectPartnerResponse","RequestBody","ResendPartnerInvitationRequest","ResendPartnerInvitationRequestBody","ResendPartnerInvitationResponse","SearchAssignableRequestBody","SearchAssignableResponse","SearchAssignableResponseBody","SearchGeolocationForTextResponse","Types"]

@@ -42,9 +42,10 @@ if res is not None:
 * [approve_partner](docs/sdks/partners/README.md#approve_partner) - approvePartner
 * [batch_get_assignable](docs/sdks/partners/README.md#batch_get_assignable) - batchGet
 * [get_partner_by_token](docs/sdks/partners/README.md#get_partner_by_token) - getPartnerByToken
-* [invite_partner](docs/sdks/partners/README.md#invite_partner) - invitePartner
+* [~~invite_partner~~](docs/sdks/partners/README.md#invite_partner) - invitePartner :warning: **Deprecated**
+* [invite_partner_v2](docs/sdks/partners/README.md#invite_partner_v2) - invitePartnerV2
 * [reject_partner](docs/sdks/partners/README.md#reject_partner) - rejectPartner
-* [resend_partner_invitation](docs/sdks/partners/README.md#resend_partner_invitation) - resendPartnerInvitation
+* [~~resend_partner_invitation~~](docs/sdks/partners/README.md#resend_partner_invitation) - resendPartnerInvitation :warning: **Deprecated**
 * [search_assignable](docs/sdks/partners/README.md#search_assignable) - searchAssignables
 * [search_geolocation_for_text](docs/sdks/partners/README.md#search_geolocation_for_text) - searchGeolocationForText
 <!-- End Available Resources and Operations [operations] -->

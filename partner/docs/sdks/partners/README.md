@@ -11,9 +11,10 @@ Partners
 * [approve_partner](#approve_partner) - approvePartner
 * [batch_get_assignable](#batch_get_assignable) - batchGet
 * [get_partner_by_token](#get_partner_by_token) - getPartnerByToken
-* [invite_partner](#invite_partner) - invitePartner
+* [~~invite_partner~~](#invite_partner) - invitePartner :warning: **Deprecated**
+* [invite_partner_v2](#invite_partner_v2) - invitePartnerV2
 * [reject_partner](#reject_partner) - rejectPartner
-* [resend_partner_invitation](#resend_partner_invitation) - resendPartnerInvitation
+* [~~resend_partner_invitation~~](#resend_partner_invitation) - resendPartnerInvitation :warning: **Deprecated**
 * [search_assignable](#search_assignable) - searchAssignables
 * [search_geolocation_for_text](#search_geolocation_for_text) - searchGeolocationForText
 
@@ -183,9 +184,11 @@ if res.partner is not None:
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## invite_partner
+## ~~invite_partner~~
 
 Create a new partner in partner directory and send an invite email to accept request
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
@@ -219,6 +222,48 @@ if res.partner is not None:
 ### Response
 
 **[operations.InvitePartnerResponse](../../models/operations/invitepartnerresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## invite_partner_v2
+
+Invite a partner into collaboration. It will send an email to partner and ask to join into collaboration
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import shared
+
+s = epilot.Epilot(
+    security=shared.Security(
+        as_organization="<YOUR_API_KEY_HERE>",
+    ),
+)
+
+
+res = s.partners.invite_partner_v2(id='e45a6dc2-3795-43a3-ae0f-6b6760f310fc', partner_invitation_payload=shared.PartnerInvitationPayload())
+
+if res.partner is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  | Example                                                                                      |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `id`                                                                                         | *str*                                                                                        | :heavy_check_mark:                                                                           | The Id of partner                                                                            | e45a6dc2-3795-43a3-ae0f-6b6760f310fc                                                         |
+| `partner_invitation_payload`                                                                 | [Optional[shared.PartnerInvitationPayload]](../../models/shared/partnerinvitationpayload.md) | :heavy_minus_sign:                                                                           | N/A                                                                                          |                                                                                              |
+
+
+### Response
+
+**[operations.InvitePartnerV2Response](../../models/operations/invitepartnerv2response.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -266,9 +311,11 @@ if res.partner is not None:
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4x-5xx          | */*             |
 
-## resend_partner_invitation
+## ~~resend_partner_invitation~~
 
 Resend partner invitation email
+
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 

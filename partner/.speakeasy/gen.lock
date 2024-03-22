@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: b90ea03e-6cd5-41c5-9aeb-279cf80ab44c
 management:
-  docChecksum: ef4eb1834fe147b46bf1f219afe4d455
+  docChecksum: bc315c49b25b7705719556ad5d08ab2e
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 4.3.1
-  configChecksum: 405df3038aa7e8926124ff42367798af
+  speakeasyVersion: 1.219.2
+  generationVersion: 2.286.7
+  releaseVersion: 4.3.2
+  configChecksum: d944e0b53a1bfedca4101e59cb2afa3d
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: partner
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=partner
@@ -16,7 +16,7 @@ features:
     core: 4.5.1
     deprecations: 2.81.1
     flattening: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
     unions: 2.82.6
@@ -38,6 +38,7 @@ generatedFiles:
   - src/epilot/models/operations/batchgetassignable.py
   - src/epilot/models/operations/getpartnerbytoken.py
   - src/epilot/models/operations/invitepartner.py
+  - src/epilot/models/operations/invitepartnerv2.py
   - src/epilot/models/operations/rejectpartner.py
   - src/epilot/models/operations/resendpartnerinvitation.py
   - src/epilot/models/operations/searchassignable.py
@@ -69,6 +70,8 @@ generatedFiles:
   - docs/models/operations/getpartnerbytokenresponse.md
   - docs/models/operations/invitepartnerrequest.md
   - docs/models/operations/invitepartnerresponse.md
+  - docs/models/operations/invitepartnerv2request.md
+  - docs/models/operations/invitepartnerv2response.md
   - docs/models/operations/rejectpartnerrequest.md
   - docs/models/operations/rejectpartnerresponse.md
   - docs/models/operations/language.md
