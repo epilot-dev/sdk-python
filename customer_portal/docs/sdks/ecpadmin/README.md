@@ -13,6 +13,7 @@ APIs defined for a ECP Admin
 * [delete_portal](#delete_portal) - deletePortal
 * [extra_permission_attributes](#extra_permission_attributes) - extraPermissionAttributes
 * [fetch_portal_users_by_related_entity](#fetch_portal_users_by_related_entity) - fetchPortalUsersByRelatedEntity
+* [filter_users_to_notify_on_automation](#filter_users_to_notify_on_automation) - filterUsersToNotifyOnAutomation
 * [get_all_portal_configs](#get_all_portal_configs) - getAllPortalConfigs
 * [get_ecp_contact](#get_ecp_contact) - getECPContact
 * [get_email_templates](#get_email_templates) - getEmailTemplates
@@ -20,7 +21,6 @@ APIs defined for a ECP Admin
 * [get_org_portal_config](#get_org_portal_config) - getOrgPortalConfig
 * [get_portal_config](#get_portal_config) - getPortalConfig
 * [get_portal_widgets](#get_portal_widgets) - getPortalWidgets
-* [get_registered_users](#get_registered_users) - getRegisteredUsers
 * [get_registration_identifiers](#get_registration_identifiers) - getRegistrationIdentifiers
 * [get_valid_secondary_attributes](#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [login_to_portal_as_user](#login_to_portal_as_user) - loginToPortalAsUser
@@ -282,6 +282,54 @@ if res.object is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
+
+## filter_users_to_notify_on_automation
+
+Filters the portal user emails to notify on automation
+
+### Example Usage
+
+```python
+import epilot
+from epilot.models import components, operations
+
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+req = operations.FilterUsersToNotifyOnAutomationRequestBody(
+    emails=[
+        'john@doe.com',
+    ],
+    template_id='d11eb11a-c4cf-4365-8a92-e7c05f61cde4',
+)
+
+res = s.ecp_admin.filter_users_to_notify_on_automation(req)
+
+if res.object is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                      | [operations.FilterUsersToNotifyOnAutomationRequestBody](../../models/operations/filteruserstonotifyonautomationrequestbody.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
+
+
+### Response
+
+**[operations.FilterUsersToNotifyOnAutomationResponse](../../models/operations/filteruserstonotifyonautomationresponse.md)**
+### Errors
+
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.ErrorResp | 500              | application/json |
 | errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_all_portal_configs
@@ -570,53 +618,6 @@ if res.upsert_portal_widget is not None:
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | errors.ErrorResp | 401,403,500      | application/json |
-| errors.SDKError  | 4x-5xx           | */*              |
-
-## get_registered_users
-
-Returns the registered emails on any portal from the given emails
-
-### Example Usage
-
-```python
-import epilot
-from epilot.models import components, operations
-
-s = epilot.Epilot(
-    security=components.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
-
-req = operations.GetRegisteredUsersRequestBody(
-    emails=[
-        'john@doe.com',
-    ],
-)
-
-res = s.ecp_admin.get_registered_users(req)
-
-if res.object is not None:
-    # handle response
-    pass
-
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetRegisteredUsersRequestBody](../../models/operations/getregisteredusersrequestbody.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-
-
-### Response
-
-**[operations.GetRegisteredUsersResponse](../../models/operations/getregisteredusersresponse.md)**
-### Errors
-
-| Error Object     | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| errors.ErrorResp | 500              | application/json |
 | errors.SDKError  | 4x-5xx           | */*              |
 
 ## get_registration_identifiers

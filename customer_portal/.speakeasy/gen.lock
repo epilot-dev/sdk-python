@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 875e421b-9fdf-42d5-ab3a-30a1cf7c82cf
 management:
-  docChecksum: 83113cb86ef6d9d2a21fa8a556b29078
+  docChecksum: e1818cd5e1a2f2a08e3cda61ee95f508
   docVersion: 1.0.0
-  speakeasyVersion: 1.213.0
-  generationVersion: 2.283.1
-  releaseVersion: 3.3.0
-  configChecksum: 29c6d789d280fe97e778c8f0b5b98835
+  speakeasyVersion: 1.221.0
+  generationVersion: 2.287.0
+  releaseVersion: 3.3.1
+  configChecksum: 657daca88598c5ee895a0747a46ec6c2
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: customer_portal
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
@@ -44,6 +44,7 @@ generatedFiles:
   - src/epilot/models/operations/deleteportal.py
   - src/epilot/models/operations/extrapermissionattributes.py
   - src/epilot/models/operations/fetchportalusersbyrelatedentity.py
+  - src/epilot/models/operations/filteruserstonotifyonautomation.py
   - src/epilot/models/operations/getallportalconfigs.py
   - src/epilot/models/operations/getecpcontact.py
   - src/epilot/models/operations/getemailtemplates.py
@@ -51,7 +52,6 @@ generatedFiles:
   - src/epilot/models/operations/getorgportalconfig.py
   - src/epilot/models/operations/getportalconfig.py
   - src/epilot/models/operations/getportalwidgets.py
-  - src/epilot/models/operations/getregisteredusers.py
   - src/epilot/models/operations/getregistrationidentifiers.py
   - src/epilot/models/operations/getvalidsecondaryattributes.py
   - src/epilot/models/operations/logintoportalasuser.py
@@ -169,6 +169,9 @@ generatedFiles:
   - docs/models/operations/fetchportalusersbyrelatedentityrequest.md
   - docs/models/operations/fetchportalusersbyrelatedentityresponsebody.md
   - docs/models/operations/fetchportalusersbyrelatedentityresponse.md
+  - docs/models/operations/filteruserstonotifyonautomationrequestbody.md
+  - docs/models/operations/filteruserstonotifyonautomationresponsebody.md
+  - docs/models/operations/filteruserstonotifyonautomationresponse.md
   - docs/models/operations/getallportalconfigsresponsebody.md
   - docs/models/operations/getallportalconfigsresponse.md
   - docs/models/operations/getecpcontactrequest.md
@@ -186,9 +189,6 @@ generatedFiles:
   - docs/models/operations/getportalconfigresponse.md
   - docs/models/operations/getportalwidgetsrequest.md
   - docs/models/operations/getportalwidgetsresponse.md
-  - docs/models/operations/getregisteredusersrequestbody.md
-  - docs/models/operations/getregisteredusersresponsebody.md
-  - docs/models/operations/getregisteredusersresponse.md
   - docs/models/operations/getregistrationidentifiersresponsebody.md
   - docs/models/operations/getregistrationidentifiersresponse.md
   - docs/models/operations/getvalidsecondaryattributesdata.md

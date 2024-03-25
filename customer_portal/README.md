@@ -46,6 +46,7 @@ if res.object is not None:
 * [delete_portal](docs/sdks/ecpadmin/README.md#delete_portal) - deletePortal
 * [extra_permission_attributes](docs/sdks/ecpadmin/README.md#extra_permission_attributes) - extraPermissionAttributes
 * [fetch_portal_users_by_related_entity](docs/sdks/ecpadmin/README.md#fetch_portal_users_by_related_entity) - fetchPortalUsersByRelatedEntity
+* [filter_users_to_notify_on_automation](docs/sdks/ecpadmin/README.md#filter_users_to_notify_on_automation) - filterUsersToNotifyOnAutomation
 * [get_all_portal_configs](docs/sdks/ecpadmin/README.md#get_all_portal_configs) - getAllPortalConfigs
 * [get_ecp_contact](docs/sdks/ecpadmin/README.md#get_ecp_contact) - getECPContact
 * [get_email_templates](docs/sdks/ecpadmin/README.md#get_email_templates) - getEmailTemplates
@@ -53,7 +54,6 @@ if res.object is not None:
 * [get_org_portal_config](docs/sdks/ecpadmin/README.md#get_org_portal_config) - getOrgPortalConfig
 * [get_portal_config](docs/sdks/ecpadmin/README.md#get_portal_config) - getPortalConfig
 * [get_portal_widgets](docs/sdks/ecpadmin/README.md#get_portal_widgets) - getPortalWidgets
-* [get_registered_users](docs/sdks/ecpadmin/README.md#get_registered_users) - getRegisteredUsers
 * [get_registration_identifiers](docs/sdks/ecpadmin/README.md#get_registration_identifiers) - getRegistrationIdentifiers
 * [get_valid_secondary_attributes](docs/sdks/ecpadmin/README.md#get_valid_secondary_attributes) - getValidSecondaryAttributes
 * [login_to_portal_as_user](docs/sdks/ecpadmin/README.md#login_to_portal_as_user) - loginToPortalAsUser
