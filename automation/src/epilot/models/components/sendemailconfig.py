@@ -62,12 +62,13 @@ class LanguageCode(str, Enum):
 class SendEmailConfig:
     attachments: Optional[List[Attachments]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('attachments'), 'exclude': lambda f: f is None }})
     r"""Include extra file attachments in sent email.
-
     Attachments in email template will be sent regardless of this configuration.
     """
     email_template_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email_template_id'), 'exclude': lambda f: f is None }})
     language_code: Optional[LanguageCode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language_code'), 'exclude': lambda f: f is None }})
     notify_portal_user_only: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notify_portal_user_only'), 'exclude': lambda f: f is None }})
     r"""Send an email exclusively to the portal user if they are registered on the portal."""
+    skip_creating_entities: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('skip_creating_entities'), 'exclude': lambda f: f is None }})
+    r"""When true, it lets to send only the email by skip creating the thread & message entities."""
     
 
