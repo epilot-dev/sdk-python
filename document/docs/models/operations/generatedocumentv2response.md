@@ -1,0 +1,9 @@
+# GenerateDocumentV2Response
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `http_meta`                                                                                                  | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                           | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `document_generation_v2_response`                                                                            | [Optional[components.DocumentGenerationV2Response]](../../models/components/documentgenerationv2response.md) | :heavy_minus_sign:                                                                                           | Generated document output                                                                                    |
