@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
+from .stepjourney import StepJourney
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -11,6 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class ECPDetails:
     r"""Details regarding ECP for the workflow step"""
+    journey: Optional[StepJourney] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('journey'), 'exclude': lambda f: f is None }})
+    label: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label'), 'exclude': lambda f: f is None }})
     
-    label: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label'), 'exclude': lambda f: f is None }})  
-    
+

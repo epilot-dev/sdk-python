@@ -3,26 +3,26 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import workflowexecutionupdatereq as shared_workflowexecutionupdatereq
-from typing import Optional
+from ...models.shared import workflowexecutionupdatereq as shared_workflowexecutionupdatereq
 
 
 @dataclasses.dataclass
 class UpdateExecutionRequest:
-    
-    execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
-    r"""Id of the execution"""  
     workflow_execution_update_req: shared_workflowexecutionupdatereq.WorkflowExecutionUpdateReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Patch Updates for Workflow Execution payload."""  
+    r"""Patch Updates for Workflow Execution payload."""
+    execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
+    r"""Id of the execution"""
     
+
+
 
 @dataclasses.dataclass
 class UpdateExecutionResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

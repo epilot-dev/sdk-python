@@ -2,16 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import closingreason as shared_closingreason
+from .closingreason import ClosingReason
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ClosingReasonResp:
-    r"""returns all Closing Reasons for this Execution"""
+    reasons: Optional[List[ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reasons'), 'exclude': lambda f: f is None }})
     
-    reasons: Optional[list[shared_closingreason.ClosingReason]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reasons'), 'exclude': lambda f: f is None }})  
-    
+

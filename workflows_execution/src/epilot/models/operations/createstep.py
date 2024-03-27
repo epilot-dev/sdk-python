@@ -3,29 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createstepreq as shared_createstepreq
-from ..shared import errorresp as shared_errorresp
-from ..shared import step as shared_step
+from ...models.shared import createstepreq as shared_createstepreq
+from ...models.shared import step as shared_step
 from typing import Optional
 
 
 @dataclasses.dataclass
 class CreateStepRequest:
-    
     create_step_req: shared_createstepreq.CreateStepReq = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Workflow Execution Step payload"""  
+    r"""Workflow Execution Step payload"""
     execution_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'executionId', 'style': 'simple', 'explode': False }})
-    r"""Id of the execution"""  
+    r"""Id of the execution"""
     
+
+
 
 @dataclasses.dataclass
 class CreateStepResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     step: Optional[shared_step.Step] = dataclasses.field(default=None)
-    r"""Success - if the step is created with success"""  
+    r"""Success - if the step is created with success"""
     
+
