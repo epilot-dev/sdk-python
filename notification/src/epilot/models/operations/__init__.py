@@ -3,8 +3,9 @@
 from .createnotification import *
 from .getnotification import *
 from .getnotifications import *
+from .getnotificationsv2 import *
 from .gettotalunread import *
 from .markallasread import *
 from .markasread import *
 
-__all__ = ["CreateNotificationResponse","GetNotificationRequest","GetNotificationResponse","GetNotifications200ApplicationJSON","GetNotificationsRequest","GetNotificationsResponse","GetTotalUnreadResponse","MarkAllAsReadResponse","MarkAsReadRequest","MarkAsReadResponse"]
+__all__ = ["CreateNotificationResponse","GetNotificationRequest","GetNotificationResponse","GetNotificationsRequest","GetNotificationsResponse","GetNotificationsResponseBody","GetNotificationsV2Request","GetNotificationsV2Response","GetNotificationsV2ResponseBody","GetTotalUnreadResponse","MarkAllAsReadResponse","MarkAsReadRequest","MarkAsReadResponse"]

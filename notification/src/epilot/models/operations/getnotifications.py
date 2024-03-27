@@ -3,35 +3,46 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.shared import notificationitem as shared_notificationitem
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetNotificationsRequest:
-    
-    after_id: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after_id', 'style': 'form', 'explode': True }})  
+    after_id: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'after_id', 'style': 'form', 'explode': True }})
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
-    r"""The numbers of items to return"""  
+    r"""The numbers of items to return"""
+    no_hydrate: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'no_hydrate', 'style': 'form', 'explode': True }})
+    r"""When true, the payload will not be hydrated with the entity data. This is useful when the client does not need the entity data and wants to save on API calls (performance gain). When false, the payload will be hydrated with the entity data. This is useful when the client needs the entity data to display the notification (e.g. to show the name of the contact in the notification message), but can have a significative performance impact.
+
+    This endpoint will eventually be deprecated in favor of GET /v2/notification/notifications which no longer hydrates the payload by default.
+    """
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetNotifications200ApplicationJSON:
+class GetNotificationsResponseBody:
     r"""Success"""
+    results: Optional[List[shared_notificationitem.NotificationItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})
+    total_unread: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total_unread'), 'exclude': lambda f: f is None }})
     
-    results: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
-    total: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total'), 'exclude': lambda f: f is None }})  
-    total_unread: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('total_unread'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetNotificationsResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[GetNotificationsResponseBody] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_notifications_200_application_json_object: Optional[GetNotifications200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
