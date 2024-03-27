@@ -10,19 +10,23 @@ from typing import Optional
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetOpenIDConfiguration200ApplicationJSON:
+class GetOpenIDConfigurationResponseBody:
     r"""OpenID Configuration"""
+    issuer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issuer'), 'exclude': lambda f: f is None }})
+    jwks_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jwks_uri'), 'exclude': lambda f: f is None }})
     
-    issuer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('issuer'), 'exclude': lambda f: f is None }})  
-    jwks_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jwks_uri'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetOpenIDConfigurationResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[GetOpenIDConfigurationResponseBody] = dataclasses.field(default=None)
+    r"""OpenID Configuration"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    get_open_id_configuration_200_application_json_object: Optional[GetOpenIDConfiguration200ApplicationJSON] = dataclasses.field(default=None)
-    r"""OpenID Configuration"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

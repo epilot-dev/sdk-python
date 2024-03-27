@@ -1,14 +1,17 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import operations, shared
 
-s = epilot.Epilot()
+s = epilot.Epilot(
+    sigv4="<YOUR_API_KEY_HERE>",
+)
 
-    
+
 res = s.get_jwks()
 
-if res.get_jwks_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
