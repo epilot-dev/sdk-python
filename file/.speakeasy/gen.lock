@@ -3,10 +3,10 @@ id: a7421760-30f5-4e43-987e-389538ab6a02
 management:
   docChecksum: 8ab78139733454ac110d7127e39b7956
   docVersion: 0.1.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 5.2.1
-  configChecksum: a6b0b18235ae1e6a311f65f9f7029cdb
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 5.2.2
+  configChecksum: b9dce6496bc01acad9c56ced31747905
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: file
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=file
@@ -14,9 +14,9 @@ features:
   python:
     additionalProperties: 0.1.0
     constsAndDefaults: 0.1.3
-    core: 4.5.1
+    core: 4.5.2
     flattening: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
     unions: 2.82.6
