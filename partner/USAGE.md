@@ -1,27 +1,20 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_organization="YOUR_API_KEY_HERE",
-    ),
-)
+s = epilot.Epilot()
 
 
-req = operations.ActivatePartnerRequest(
-    activate_partner_payload=shared.ActivatePartnerPayload(
-        company_name="Company name",
-        organization_id="unde",
-        signed_up_email="Michale_Sporer@yahoo.com",
-    ),
-    token="perspiciatis",
-)
-    
-res = s.partners.activate_partner(req)
+res = s.partners.activate_partner(token='<value>', activate_partner_payload=shared.ActivatePartnerPayload(
+    organization_id='<value>',
+    signed_up_email='Lupe.Graham2@hotmail.com',
+    company_name='Company name',
+))
 
-if res.status_code == 200:
+if res is not None:
     # handle response
+    pass
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
