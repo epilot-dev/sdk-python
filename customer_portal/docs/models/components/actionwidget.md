@@ -1,0 +1,13 @@
+# ActionWidget
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | N/A                                                                        |
+| `list_index`                                                               | *int*                                                                      | :heavy_check_mark:                                                         | Index of the widget in the list, used for ordering (left or right)         |
+| `type`                                                                     | [components.ActionWidgetType](../../models/components/actionwidgettype.md) | :heavy_check_mark:                                                         | N/A                                                                        |
+| `actions`                                                                  | List[[components.WidgetAction](../../models/components/widgetaction.md)]   | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `headline`                                                                 | [Optional[components.Headline]](../../models/components/headline.md)       | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `sub_headline`                                                             | [Optional[components.SubHeadline]](../../models/components/subheadline.md) | :heavy_minus_sign:                                                         | N/A                                                                        |

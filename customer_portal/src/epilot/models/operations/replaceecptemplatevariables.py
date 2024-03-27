@@ -3,56 +3,62 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import origin_enum as shared_origin_enum
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
-
-@dataclasses.dataclass
-class ReplaceECPTemplateVariablesSecurity:
-    
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ReplaceECPTemplateVariablesRequestBody:
-    r"""ECPVariables payload"""
-    
-    contact_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('contactId'), 'exclude': lambda f: f is None }})  
+class RequestBody:
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('_id'), 'exclude': lambda f: f is None }})
+    r"""ID of the contact"""
+    is_main_entity: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('is_main_entity'), 'exclude': lambda f: f is None }})
     
 
-@dataclasses.dataclass
-class ReplaceECPTemplateVariablesRequest:
-    
-    origin: shared_origin_enum.OriginEnum = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""  
-    request_body: ReplaceECPTemplateVariablesRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""ECPVariables payload"""  
-    
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ReplaceECPTemplateVariables200ApplicationJSONPortalUser:
+class CustomerPortal:
+    entity_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityLink'), 'exclude': lambda f: f is None }})
+    invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
+    new_document_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('newDocumentLink'), 'exclude': lambda f: f is None }})
+    user_emails_on_entity: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEmailsOnEntity'), 'exclude': lambda f: f is None }})
     
-    invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ReplaceECPTemplateVariables200ApplicationJSON:
-    r"""ok"""
+class InstallerPortal:
+    entity_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entityLink'), 'exclude': lambda f: f is None }})
+    invitation_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('invitationLink'), 'exclude': lambda f: f is None }})
+    new_document_link: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('newDocumentLink'), 'exclude': lambda f: f is None }})
+    user_emails_on_entity: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userEmailsOnEntity'), 'exclude': lambda f: f is None }})
     
-    portal_user: Optional[ReplaceECPTemplateVariables200ApplicationJSONPortalUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('portalUser'), 'exclude': lambda f: f is None }})  
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class ReplaceECPTemplateVariablesResponseBody:
+    r"""Replaced portal template variables successfully."""
+    customer_portal: Optional[CustomerPortal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customerPortal'), 'exclude': lambda f: f is None }})
+    installer_portal: Optional[InstallerPortal] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installerPortal'), 'exclude': lambda f: f is None }})
     
+
+
 
 @dataclasses.dataclass
 class ReplaceECPTemplateVariablesResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[ReplaceECPTemplateVariablesResponseBody] = dataclasses.field(default=None)
+    r"""Replaced portal template variables successfully."""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    replace_ecp_template_variables_200_application_json_object: Optional[ReplaceECPTemplateVariables200ApplicationJSON] = dataclasses.field(default=None)
-    r"""ok"""  
-    
+

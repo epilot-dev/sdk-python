@@ -1,0 +1,10 @@
+# ValidateCadenceEntityEditRulesRequest
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | Entity id                                                            | 5da0a718-c822-403d-9f5d-20d4584e0528                                 |
+| `slug`                                                               | [components.EntitySlug](../../models/components/entityslug.md)       | :heavy_check_mark:                                                   | Entity Type                                                          | contact                                                              |
+| `attribute`                                                          | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_minus_sign:                                                   | Get activities after this timestamp                                  |                                                                      |

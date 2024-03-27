@@ -1,21 +1,22 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import components
 
-s = epilot.Epilot()
-
-
-req = operations.AddEndCustomerRelationToEntityRequest(
-    id="unde",
-    slug="contact",
+s = epilot.Epilot(
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
 )
-    
-res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
-    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-))
 
-if res.add_end_customer_relation_to_entity_200_application_json_object is not None:
+
+res = s.ecp_admin.can_trigger_portal_flow(trigger_portal_flow=components.TriggerPortalFlow(
+    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
+), origin=components.Origin.END_CUSTOMER_PORTAL)
+
+if res.object is not None:
     # handle response
+    pass
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

@@ -3,36 +3,31 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import addportalresp as shared_addportalresp
-from ..shared import errorresp as shared_errorresp
-from ..shared import origin_enum as shared_origin_enum
-from ..shared import upsertportalconfig as shared_upsertportalconfig
+from ...models.components import origin as components_origin
+from ...models.components import portalconfig as components_portalconfig
+from ...models.components import upsertportalconfig as components_upsertportalconfig
 from typing import Optional
 
 
 @dataclasses.dataclass
-class UpsertPortalSecurity:
-    
-    epilot_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+class UpsertPortalRequest:
+    upsert_portal_config: components_upsertportalconfig.UpsertPortalConfig = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    r"""Portal payload"""
+    origin: components_origin.Origin = dataclasses.field(metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
+    r"""Origin of the portal"""
     
 
-@dataclasses.dataclass
-class UpsertPortalRequest:
-    
-    upsert_portal_config: shared_upsertportalconfig.UpsertPortalConfig = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Portal payload"""  
-    origin: Optional[shared_origin_enum.OriginEnum] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'origin', 'style': 'form', 'explode': True }})
-    r"""Origin of the portal"""  
-    
+
 
 @dataclasses.dataclass
 class UpsertPortalResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    portal_config: Optional[components_portalconfig.PortalConfig] = dataclasses.field(default=None)
+    r"""Portal upserted successfully."""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    add_portal_resp: Optional[shared_addportalresp.AddPortalResp] = dataclasses.field(default=None)
-    r"""Success - portal created with success."""  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

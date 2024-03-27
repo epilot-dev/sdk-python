@@ -3,21 +3,35 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from dataclasses_json import Undefined, dataclass_json
+from enum import Enum
+from epilot import utils
 from typing import Optional
 
+class DeletePortalUserMessage(str, Enum):
+    USER_SUCCESFULLY_DELETED = 'User Succesfully Deleted'
 
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class DeletePortalUserSecurity:
+class DeletePortalUserResponseBody:
+    r"""Portal user deleted successfully."""
+    data: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
+    r"""Entity ID"""
+    message: Optional[DeletePortalUserMessage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('message'), 'exclude': lambda f: f is None }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
 
 @dataclasses.dataclass
 class DeletePortalUserResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[DeletePortalUserResponseBody] = dataclasses.field(default=None)
+    r"""Portal user deleted successfully."""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    delete_portal_user_200_application_json_string: Optional[str] = dataclasses.field(default=None)
-    r"""The returned portal user id"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

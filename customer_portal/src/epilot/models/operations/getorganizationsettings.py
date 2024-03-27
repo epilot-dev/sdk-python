@@ -3,22 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import organizationsettings as shared_organizationsettings
+from ...models.components import organizationsettings as components_organizationsettings
+from dataclasses_json import Undefined, dataclass_json
+from epilot import utils
 from typing import Optional
 
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class GetOrganizationSettingsSecurity:
+class GetOrganizationSettingsResponseBody:
+    r"""Retrieved the settings for an organization successfully."""
+    data: Optional[components_organizationsettings.OrganizationSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data'), 'exclude': lambda f: f is None }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetOrganizationSettingsResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[GetOrganizationSettingsResponseBody] = dataclasses.field(default=None)
+    r"""Retrieved the settings for an organization successfully."""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    organization_settings: Optional[shared_organizationsettings.OrganizationSettings] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
