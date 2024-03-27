@@ -3,25 +3,33 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.shared import orgrole as shared_orgrole
+from ...models.shared import partnerrole as shared_partnerrole
+from ...models.shared import sharerole as shared_sharerole
+from ...models.shared import userrole as shared_userrole
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class ListCurrentRoles200ApplicationJSON:
+class ListCurrentRolesResponseBody:
     r"""ok"""
+    roles: Optional[List[Union[shared_userrole.UserRole, shared_orgrole.OrgRole, shared_sharerole.ShareRole, shared_partnerrole.PartnerRole]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles'), 'exclude': lambda f: f is None }})
     
-    roles: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('roles'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class ListCurrentRolesResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[ListCurrentRolesResponseBody] = dataclasses.field(default=None)
+    r"""ok"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    list_current_roles_200_application_json_object: Optional[ListCurrentRoles200ApplicationJSON] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

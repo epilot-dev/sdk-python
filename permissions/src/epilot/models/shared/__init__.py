@@ -3,11 +3,13 @@
 from .assignment import *
 from .equalscondition import *
 from .grant import *
+from .grantwithdependencies import *
 from .orgrole import *
 from .partnerrole import *
+from .rolepayload import *
 from .rolesearchinput import *
 from .security import *
 from .sharerole import *
 from .userrole import *
 
-__all__ = ["Assignment","EqualsCondition","EqualsConditionOperationEnum","Grant","GrantEffectEnum","OrgRole","OrgRoleTypeEnum","PartnerRole","PartnerRoleTypeEnum","RoleSearchInput","Security","ShareRole","ShareRoleTypeEnum","UserRole","UserRoleTypeEnum"]
+__all__ = ["Assignment","Effect","EqualsCondition","Four","Grant","GrantWithDependencies","GrantWithDependenciesEffect","One","Operation","OrgRole","PartnerRole","PartnerRoleType","RolePayloadSchemasTrue4Type","RolePayloadSchemasTrueType","RolePayloadSchemasType","RolePayloadType","RoleSearchInput","Security","ShareRole","ShareRoleType","Three","Two","Type","UserRole","UserRoleType"]
