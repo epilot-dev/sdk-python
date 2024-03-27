@@ -3,19 +3,19 @@ id: 8c336290-90ec-4ac5-adec-c746d4ec73e8
 management:
   docChecksum: 1d38c1ad1e2a5560569caa715abb1ac3
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 3.2.1
-  configChecksum: 717878ea9f767ea4540929027207d555
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 3.2.2
+  configChecksum: cd844bab9c94a05201763cfe92b8fba3
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: message
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=message
 features:
   python:
     constsAndDefaults: 0.1.3
-    core: 4.5.1
+    core: 4.5.2
     flattening: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
 generatedFiles:
