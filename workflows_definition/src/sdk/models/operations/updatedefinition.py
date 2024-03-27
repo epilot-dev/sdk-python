@@ -3,28 +3,29 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import workflowdefinition as shared_workflowdefinition
+from ...models.shared import workflowdefinition as shared_workflowdefinition
 from typing import Optional
 
 
 @dataclasses.dataclass
 class UpdateDefinitionRequest:
-    
-    definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
-    r"""Short uuid (length 8) to identify the Workflow Definition."""  
     workflow_definition: shared_workflowdefinition.WorkflowDefinition = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Workflow Definition payload"""  
+    r"""Workflow Definition payload"""
+    definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
+    r"""Short uuid (length 8) to identify the Workflow Definition."""
     
+
+
 
 @dataclasses.dataclass
 class UpdateDefinitionResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     workflow_definition: Optional[shared_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
-    r"""Success - if the definition is updated successfully"""  
+    r"""Success - if the definition is updated successfully"""
     
+

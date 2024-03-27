@@ -5,18 +5,19 @@ from .closingreason import *
 from .closingreasonid import *
 from .closingreasons import *
 from .closingreasonsids import *
-from .closingreasonsstatus_enum import *
+from .closingreasonsstatus import *
 from .dynamicduedate import *
 from .ecpdetails import *
-from .errorresp import *
-from .itemtype_enum import *
+from .itemtype import *
 from .maxallowedlimit import *
 from .section import *
 from .security import *
 from .step import *
+from .stepdescription import *
+from .stepjourney import *
 from .steprequirement import *
-from .steptype_enum import *
+from .steptype import *
 from .updateentityattributes import *
 from .workflowdefinition import *
 
-__all__ = ["ChangeReasonStatusReq","ClosingReason","ClosingReasonID","ClosingReasons","ClosingReasonsIds","ClosingReasonsStatusEnum","DynamicDueDate","DynamicDueDateActionTypeConditionEnum","DynamicDueDateTimePeriodEnum","ECPDetails","ErrorResp","ItemTypeEnum","MaxAllowedLimit","Section","Security","Step","StepAutomationConfig","StepRequirement","StepRequirementConditionEnum","StepTypeEnum","UpdateEntityAttributes","UpdateEntityAttributesSourceEnum","UpdateEntityAttributesTarget","WorkflowDefinition"]
+__all__ = ["ActionTypeCondition","AutomationConfig","ChangeReasonStatusReq","ClosingReason","ClosingReasonID","ClosingReasons","ClosingReasonsIds","ClosingReasonsStatus","Condition","DynamicDueDate","ECPDetails","ItemType","MaxAllowedLimit","Section","Security","Source","Step","StepDescription","StepJourney","StepRequirement","StepType","Target","TimePeriod","UpdateEntityAttributes","WorkflowDefinition"]

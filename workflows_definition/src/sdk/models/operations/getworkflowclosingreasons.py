@@ -3,23 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import closingreasonsids as shared_closingreasonsids
+from ...models.shared import closingreasonsids as shared_closingreasonsids
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetWorkflowClosingReasonsRequest:
-    
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
-    r"""ID of a workflow definition"""  
+    r"""ID of a workflow definition"""
     
+
+
 
 @dataclasses.dataclass
 class GetWorkflowClosingReasonsResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     closing_reasons_ids: Optional[shared_closingreasonsids.ClosingReasonsIds] = dataclasses.field(default=None)
-    r"""Returns the entire catalog of closing reasons for a specific workflow"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Returns the entire catalog of closing reasons for a specific workflow"""
     
+

@@ -3,23 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import closingreasons as shared_closingreasons
+from ...models.shared import closingreasons as shared_closingreasons
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetAllClosingReasonsRequest:
-    
     include_inactive: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'includeInactive', 'style': 'form', 'explode': True }})
-    r"""Filter Closing Reasons by status like active inactiv"""  
+    r"""Filter Closing Reasons by status like active inactiv"""
     
+
+
 
 @dataclasses.dataclass
 class GetAllClosingReasonsResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     closing_reasons: Optional[shared_closingreasons.ClosingReasons] = dataclasses.field(default=None)
-    r"""Returns the entire catalog of closing reasons per organization"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Returns the entire catalog of closing reasons per organization"""
     
+
