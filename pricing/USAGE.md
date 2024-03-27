@@ -1,39 +1,22 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import shared
 
 s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
-req = operations.DollarAvailabilityCheckRequest(
-    availability_check_params=shared.AvailabilityCheckParams(
-        filters=shared.AvailabilityFilters(
-            available_date="2017-07-21",
-            location=shared.AvailabilityLocation(
-                city="Larrychester",
-                country="Suriname",
-                postal_code="85846-6342",
-                street="092 Schiller Junction",
-                street_number="vel",
-            ),
-        ),
-        products=[
-            "deleniti",
-            "similique",
-            "reprehenderit",
-        ],
-    ),
-    x_ivy_org_id="molestiae",
+req = shared.OrderPayload(
+    currency='EUR',
+    source_type='journey',
 )
-    
-res = s.availability_api.dollar_availability_check(req)
 
-if res.availability_result is not None:
+res = s.order_api.create_order(req)
+
+if res.order is not None:
     # handle response
+    pass
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
