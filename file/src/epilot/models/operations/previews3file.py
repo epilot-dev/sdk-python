@@ -3,24 +3,28 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import s3reference as shared_s3reference
+from ...models.shared import s3reference as shared_s3reference
 from typing import Optional
 
 
 @dataclasses.dataclass
 class PreviewS3FileRequest:
-    
+    s3_reference: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     h: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'h', 'style': 'form', 'explode': True }})
-    r"""height"""  
-    s3_reference: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    r"""height"""
     w: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'w', 'style': 'form', 'explode': True }})
-    r"""width"""  
+    r"""width"""
     
+
+
 
 @dataclasses.dataclass
 class PreviewS3FileResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
