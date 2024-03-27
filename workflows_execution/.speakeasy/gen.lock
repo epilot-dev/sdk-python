@@ -3,20 +3,20 @@ id: 2a2e8491-f418-443e-87c8-f3348536a5ca
 management:
   docChecksum: ca5e315650c21ba84aac5f6075ae1109
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 4.2.1
-  configChecksum: 3bb65a126e0c0aa300cb41030ea3425d
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 4.2.2
+  configChecksum: f46030c58ed11009caeea3ce6a5fe7a7
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_execution
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_execution
 features:
   python:
     constsAndDefaults: 0.1.3
-    core: 4.5.1
+    core: 4.5.2
     deprecations: 2.81.1
     flattening: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
     unions: 2.82.6
