@@ -3,16 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import customvariable as shared_customvariable
-from typing import Optional
+from ...models.shared import customvariable as shared_customvariable
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetCustomVariablesResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    classes: Optional[List[shared_customvariable.CustomVariable]] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    custom_variables: Optional[list[shared_customvariable.CustomVariable]] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

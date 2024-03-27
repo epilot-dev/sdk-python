@@ -2,7 +2,6 @@
 
 from .createcustomvariable import *
 from .deletecustomvariable import *
-from .generateqrcode import *
 from .getblueprinttableconfig import *
 from .getcategories import *
 from .getcustomvariable import *
@@ -12,4 +11,4 @@ from .replacetemplates import *
 from .searchvariables import *
 from .updatecustomvariable import *
 
-__all__ = ["CreateCustomVariableResponse","DeleteCustomVariableRequest","DeleteCustomVariableResponse","GenerateQRcodeRequest","GenerateQRcodeResponse","GetBluePrintTableConfigResponse","GetCategoriesLangEnum","GetCategoriesRequest","GetCategoriesResponse","GetCustomVariableRequest","GetCustomVariableResponse","GetCustomVariablesResponse","GetVariableContextRequestBody","GetVariableContextResponse","ReplaceTemplates200ApplicationJSON","ReplaceTemplatesRequestBody","ReplaceTemplatesResponse","SearchVariablesRequestBody","SearchVariablesRequestBodyLangEnum","SearchVariablesResponse","UpdateCustomVariableRequest","UpdateCustomVariableResponse"]
+__all__ = ["CreateCustomVariableResponse","DeleteCustomVariableRequest","DeleteCustomVariableResponse","GetBluePrintTableConfigResponse","GetCategoriesRequest","GetCategoriesResponse","GetCustomVariableRequest","GetCustomVariableResponse","GetCustomVariablesResponse","GetVariableContextRequestBody","GetVariableContextResponse","ReplaceTemplatesRequestBody","ReplaceTemplatesResponse","ReplaceTemplatesResponseBody","SearchVariablesRequestBody","SearchVariablesResponse","UpdateCustomVariableRequest","UpdateCustomVariableResponse"]
