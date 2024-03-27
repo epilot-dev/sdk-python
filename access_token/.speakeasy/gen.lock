@@ -3,18 +3,18 @@ id: 51bbb9f6-90dc-40e8-ad14-1e8f06accc42
 management:
   docChecksum: 02397f0d4663d4ade6c146f4c087489b
   docVersion: 0.2.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 4.2.1
-  configChecksum: 7981060ef655f5994de2f0d1944f348c
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 4.2.2
+  configChecksum: cf399adb1f561a48d6b882943a654546
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: access_token
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=access_token
 features:
   python:
-    core: 4.5.1
+    core: 4.5.2
     flattening: 2.81.1
-    globalSecurity: 2.83.4
+    globalSecurity: 2.83.5
     globalServerURLs: 2.82.2
     responseFormat: 0.1.0
     unions: 2.82.6
