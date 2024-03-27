@@ -23,9 +23,9 @@ class SDKConfiguration:
     server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '1.0.0'
-    sdk_version: str = '1.3.0'
-    gen_version: str = '2.287.0'
-    user_agent: str = 'speakeasy-sdk/python 1.3.0 2.287.0 1.0.0 epilot-document'
+    sdk_version: str = '1.3.1'
+    gen_version: str = '2.291.0'
+    user_agent: str = 'speakeasy-sdk/python 1.3.1 2.291.0 1.0.0 epilot-document'
     retry_config: RetryConfig = None
     _hooks: SDKHooks = None
 
