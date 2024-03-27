@@ -1,0 +1,76 @@
+lockVersion: 2.0.0
+id: 0f6117d5-15be-4b81-ba36-38a313f73a7c
+management:
+  docChecksum: 82ae96ab11aed9d93612f387e7dd0dfe
+  docVersion: 1.0.0
+  speakeasyVersion: 1.227.0
+  generationVersion: 2.291.0
+  releaseVersion: 3.2.2
+  configChecksum: dec901be8d065484e74f0825168ac8d0
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: organization
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=organization
+features:
+  python:
+    core: 4.5.2
+    flattening: 2.81.1
+    globalSecurity: 2.83.5
+    globalServerURLs: 2.82.2
+    responseFormat: 0.1.0
+    unions: 2.82.6
+generatedFiles:
+  - src/epilot/sdkconfiguration.py
+  - src/epilot/organization.py
+  - src/epilot/internal.py
+  - src/epilot/organization_settings.py
+  - src/epilot/sdk.py
+  - py.typed
+  - pylintrc
+  - setup.py
+  - src/epilot/__init__.py
+  - src/epilot/utils/__init__.py
+  - src/epilot/utils/retries.py
+  - src/epilot/utils/utils.py
+  - src/epilot/models/errors/sdkerror.py
+  - tests/helpers.py
+  - src/epilot/models/operations/createorganization.py
+  - src/epilot/models/operations/getorganization.py
+  - src/epilot/models/operations/updateorganization.py
+  - src/epilot/models/operations/deletesettingsvalue.py
+  - src/epilot/models/operations/getsettings.py
+  - src/epilot/models/operations/putsettingsvalue.py
+  - src/epilot/models/components/organization.py
+  - src/epilot/models/components/createorganizationrequest.py
+  - src/epilot/models/components/security.py
+  - src/epilot/models/__init__.py
+  - src/epilot/models/errors/__init__.py
+  - src/epilot/models/operations/__init__.py
+  - src/epilot/models/components/__init__.py
+  - docs/models/operations/createorganizationresponse.md
+  - docs/models/operations/getorganizationrequest.md
+  - docs/models/operations/getorganizationresponse.md
+  - docs/models/operations/updateorganizationrequest.md
+  - docs/models/operations/updateorganizationresponse.md
+  - docs/models/operations/deletesettingsvaluerequest.md
+  - docs/models/operations/deletesettingsvalueresponse.md
+  - docs/models/operations/getsettingsrequest.md
+  - docs/models/operations/getsettingsresponse.md
+  - docs/models/operations/putsettingsvaluerequest.md
+  - docs/models/operations/putsettingsvalueresponse.md
+  - docs/models/components/address.md
+  - docs/models/components/type.md
+  - docs/models/components/organization.md
+  - docs/models/components/organizationdetail.md
+  - docs/models/components/owneruser.md
+  - docs/models/components/createorganizationrequest.md
+  - docs/models/components/settingsvalue.md
+  - docs/models/components/security.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/organization/README.md
+  - docs/sdks/internal/README.md
+  - docs/sdks/organizationsettings/README.md
+  - USAGE.md
+  - .gitattributes
+  - src/epilot/_hooks/sdkhooks.py
+  - src/epilot/_hooks/types.py
+  - src/epilot/_hooks/__init__.py
