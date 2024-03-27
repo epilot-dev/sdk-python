@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import organization as shared_organization
-from ..shared import signupuserpayload as shared_signupuserpayload
-from ..shared import user as shared_user
+from ...models.shared import organization as shared_organization
+from ...models.shared import signupuserpayload as shared_signupuserpayload
+from ...models.shared import user as shared_user
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -13,27 +13,32 @@ from typing import Optional
 
 @dataclasses.dataclass
 class SignUpUserRequest:
-    
-    signup_user_payload: Optional[shared_signupuserpayload.SignupUserPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    signup_user_payload: Optional[shared_signupuserpayload.SignupUserPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     token: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'token', 'style': 'form', 'explode': True }})
-    r"""Invitation partner token"""  
+    r"""Invitation partner token"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SignUpUser200ApplicationJSON:
+class SignUpUserResponseBody:
     r"""The created user and organization"""
+    organization: Optional[shared_organization.Organization] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization'), 'exclude': lambda f: f is None }})
+    user: Optional[shared_user.User] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
     
-    organization: Optional[shared_organization.Organization] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('organization'), 'exclude': lambda f: f is None }})  
-    user: Optional[shared_user.User] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class SignUpUserResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    object: Optional[SignUpUserResponseBody] = dataclasses.field(default=None)
+    r"""The created user and organization"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    sign_up_user_200_application_json_object: Optional[SignUpUser200ApplicationJSON] = dataclasses.field(default=None)
-    r"""The created user and organization"""  
-    
+
