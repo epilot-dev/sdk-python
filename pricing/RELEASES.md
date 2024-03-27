@@ -207,3 +207,11 @@ Based on:
 - Speakeasy CLI 1.213.0 (2.283.1) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v4.2.1] pricing
+
+## 2024-03-27 00:21:47
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/pricing-api.yaml
+- Speakeasy CLI 1.227.0 (2.291.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v4.2.2] pricing
