@@ -2,27 +2,26 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from typing import Any, Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from typing import Any, Dict, List, Optional, Union
 
 
 @dataclasses.dataclass
 class PutSettingsValueRequest:
-    
     key: str = dataclasses.field(metadata={'path_param': { 'field_name': 'key', 'style': 'simple', 'explode': False }})
-    r"""Organization setting key"""  
+    r"""Organization setting key"""
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
-    r"""The Id of the organization."""  
-    request_body: Optional[Any] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-    r"""Value to set"""  
+    r"""The Id of the organization."""
+    settings_value: Optional[Union[str, float, bool, List[Dict[str, Any]], Dict[str, Any]]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    r"""Value to set"""
     
+
+
 
 @dataclasses.dataclass
 class PutSettingsValueResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    settings_value: Optional[Union[str, float, bool, List[Dict[str, Any]], Dict[str, Any]]] = dataclasses.field(default=None)
+    r"""Returns the value of the setting"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    settings_value: Optional[Any] = dataclasses.field(default=None)
-    r"""Returns the value of the setting"""  
-    
+
