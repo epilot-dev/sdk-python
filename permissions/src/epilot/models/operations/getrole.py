@@ -2,22 +2,24 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from typing import Any, Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import role as components_role
+from dataclasses_json import Undefined, dataclass_json
+from typing import Optional
 
 
 @dataclasses.dataclass
 class GetRoleRequest:
-    
-    role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})  
+    role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetRoleResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    role: Optional[components_role.Role] = dataclasses.field(default=None)
+    r"""ok"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    role: Optional[Any] = dataclasses.field(default=None)
-    r"""ok"""  
-    
+

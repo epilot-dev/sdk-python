@@ -2,22 +2,23 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from typing import Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetAssignedRolesForUserRequest:
-    
-    user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})  
+    user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetAssignedRolesForUserResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    assignments: Optional[List[str]] = dataclasses.field(default=None)
+    r"""ok"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    assignments: Optional[list[str]] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

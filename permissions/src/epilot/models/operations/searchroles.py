@@ -2,27 +2,28 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import role as components_role
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
-class SearchRoles200ApplicationJSON:
+class SearchRolesResponseBody:
     r"""ok"""
-    
-    hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})  
-    results: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})  
+    hits: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('hits'), 'exclude': lambda f: f is None }})
+    results: Optional[List[components_role.Role]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SearchRolesResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    object: Optional[SearchRolesResponseBody] = dataclasses.field(default=None)
+    r"""ok"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    search_roles_200_application_json_object: Optional[SearchRoles200ApplicationJSON] = dataclasses.field(default=None)
-    r"""ok"""  
-    
+

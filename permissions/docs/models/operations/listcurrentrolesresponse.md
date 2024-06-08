@@ -1,0 +1,9 @@
+# ListCurrentRolesResponse
+
+
+## Fields
+
+| Field                                                                                                        | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `http_meta`                                                                                                  | [components.HTTPMetadata](../../models/components/httpmetadata.md)                                           | :heavy_check_mark:                                                                                           | N/A                                                                                                          |
+| `object`                                                                                                     | [Optional[operations.ListCurrentRolesResponseBody]](../../models/operations/listcurrentrolesresponsebody.md) | :heavy_minus_sign:                                                                                           | ok                                                                                                           |

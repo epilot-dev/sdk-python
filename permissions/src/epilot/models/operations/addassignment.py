@@ -2,24 +2,25 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import assignment as shared_assignment
+from ...models.components import assignment as components_assignment
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
 @dataclasses.dataclass
 class AddAssignmentRequest:
-    
-    role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})  
-    user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})  
+    role_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'roleId', 'style': 'simple', 'explode': False }})
+    user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'userId', 'style': 'simple', 'explode': False }})
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AddAssignmentResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    assignment: Optional[components_assignment.Assignment] = dataclasses.field(default=None)
+    r"""ok"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    assignment: Optional[shared_assignment.Assignment] = dataclasses.field(default=None)
-    r"""ok"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
