@@ -1,34 +1,28 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import epilot
-from epilot.models import operations, shared
+from epilot.models import components
 
 s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+    security=components.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-req = shared.CustomVariable(
-    config={
-        "deserunt": "porro",
-        "nulla": "id",
-        "vero": "perspiciatis",
-    },
-    created_at="2022-04-19T12:41:43.662Z",
-    created_by="100042",
-    helper_logic="return param1 * param2;",
+res = s.custom_variables.create_custom_variable(request=components.CustomVariable(
+    config=components.Config(),
+    created_at='2022-04-19T12:41:43.662Z',
+    created_by='100042',
+    helper_logic='return param1 * param2;',
     helper_params=[
-        "nihil",
-        "fuga",
-        "facilis",
-        "eum",
+        'param1',
+        'param2',
     ],
-    id="rbse777b-3cf8-4bff-bb0c-253fd1123250",
-    key="my_custom_table",
-    name="My Custom table",
-    template="<table style="table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;">
+    id='rbse777b-3cf8-4bff-bb0c-253fd1123250',
+    key='my_custom_table',
+    name='My Custom table',
+    template='<table style="table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;">
   <thead>
     <tr style="height: 48px;border-bottom: 1px solid #D5E1ED;">
       {{#each table_config.header.columns as |column|}}
@@ -48,7 +42,7 @@ req = shared.CustomVariable(
       {{/if}}
         {{#each @root.table_config.header.columns as |column|}}
           {{#if column.enable}}
-            {{#if (eq column.id 'item')}}
+            {{#if (eq column.id \'item\')}}
               <!-- Item -->
               <td style="{{makeStyle @root.table_config.body.product_name.style}}">
                 {{#if @root.table_config.body.product_name.enable}}
@@ -64,41 +58,41 @@ req = shared.CustomVariable(
                 {{/if}}
               </td>
             {{/if}}
-            {{#if (eq column.id 'quantity')}}
+            {{#if (eq column.id \'quantity\')}}
               <!-- Quantity -->
               <td style="{{makeStyle @root.table_config.body.quantity.style}}">{{product.price.quantity}}
               </td>
             {{/if}}
-            {{#if (eq column.id 'tax')}}
+            {{#if (eq column.id \'tax\')}}
               <!-- Tax -->
               <td style="{{makeStyle @root.table_config.body.tax.style}}">
                 {{product.price.tax_rate}}
               </td>
             {{/if}}
-            {{#if (eq column.id 'unit_amount')}}
+            {{#if (eq column.id \'unit_amount\')}}
               <!-- Unit amount -->
               <td style="{{makeStyle @root.table_config.body.unit_amount.style}}">
                 {{product.price.unit_amount_net}}
               </td>
             {{/if}}
-            {{#if (eq column.id 'net_total')}}
+            {{#if (eq column.id \'net_total\')}}
               <!-- Amount Subtotal -->
               <td style="{{makeStyle @root.table_config.body.net_total.style}}">
                 {{product.price.amount_subtotal}}
               </td>
             {{/if}}
-            {{#if (eq column.id 'amount_tax')}}
+            {{#if (eq column.id \'amount_tax\')}}
               <!-- Tax amount-->
               <td style="{{makeStyle @root.table_config.body.amount_tax.style}}">
                 {{product.price.amount_tax}}
               </td>
             {{/if}}
-            {{#if (eq column.id 'gross_total')}}
+            {{#if (eq column.id \'gross_total\')}}
               <!-- Gross total -->
               <td style="{{makeStyle @root.table_config.body.gross_total.style}}">
                 {{product.price.amount_total}}
                 {{#if @root.table_config.body.payment_type.enable}}
-                  {{#if (eq product.price.type 'recurring')}}
+                  {{#if (eq product.price.type \'recurring\')}}
                     <br>
                     <span style="{{makeStyle @root.table_config.body.payment_type.style}}">{{product.price.billing_period}}</span>
                   {{/if}}
@@ -117,7 +111,7 @@ req = shared.CustomVariable(
           {{#if @root.table_config.footer.payment_type.enable}}
             <td style="{{makeStyle @root.table_config.footer.payment_type.style}}" colspan="2">{{item.billing_period}}</td>
           {{/if}}
-          {{#if (isColumnEnabled @root.table_config 'net_total')}}
+          {{#if (isColumnEnabled @root.table_config \'net_total\')}}
             {{#if @root.table_config.footer.net_total.enable}}
               <td style="{{makeStyle @root.table_config.footer.net_total.style}}">{{item.amount_subtotal}}</td>
             {{/if}}
@@ -134,15 +128,15 @@ req = shared.CustomVariable(
     <tr style="height:16px !important;"></tr>
   </tbody>
 </table>
-",
-    type="order_table",
-    updated_at="2022-04-20T12:41:43.662Z",
-    updated_by="100042",
-)
-    
-res = s.custom_variables.create_custom_variable(req)
+',
+    type=components.Type.CUSTOM,
+    updated_at='2022-04-20T12:41:43.662Z',
+    updated_by='100042',
+))
 
-if res.status_code == 200:
+if res is not None:
     # handle response
+    pass
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

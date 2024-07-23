@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import variablecontext as shared_variablecontext
-from ..shared import variableparameters as shared_variableparameters
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import variablecontext as components_variablecontext
+from ...models.components import variableparameters as components_variableparameters
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
 from typing import Optional
@@ -13,16 +13,16 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetVariableContextRequestBody:
-    
-    parameters: Optional[shared_variableparameters.VariableParameters] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})  
+    parameters: Optional[components_variableparameters.VariableParameters] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetVariableContextResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    variable_context: Optional[components_variablecontext.VariableContext] = dataclasses.field(default=None)
+    r"""ok"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    variable_context: Optional[shared_variablecontext.VariableContext] = dataclasses.field(default=None)
-    r"""ok"""  
-    
+

@@ -2,24 +2,25 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import customvariable as shared_customvariable
+from ...models.components import customvariable as components_customvariable
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
 @dataclasses.dataclass
 class GetCustomVariableRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Custom vairable ID"""  
+    r"""Custom vairable ID"""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetCustomVariableResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    custom_variable: Optional[components_customvariable.CustomVariable] = dataclasses.field(default=None)
+    r"""Success"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    custom_variable: Optional[shared_customvariable.CustomVariable] = dataclasses.field(default=None)
-    r"""Success"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
