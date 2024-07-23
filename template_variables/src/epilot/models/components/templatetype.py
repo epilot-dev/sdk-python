@@ -3,6 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class TemplateTypeEnum(str, Enum):
-    EMAIL = "email"
-    DOCUMENT = "document"
+
+class TemplateType(str, Enum):
+    EMAIL = 'email'
+    DOCUMENT = 'document'

@@ -2,21 +2,21 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from typing import Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
 
 
 @dataclasses.dataclass
 class DeleteCustomVariableRequest:
-    
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Custom vairable ID"""  
+    r"""Custom vairable ID"""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DeleteCustomVariableResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
