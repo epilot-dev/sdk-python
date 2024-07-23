@@ -2,26 +2,24 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import changereasonstatusreq as shared_changereasonstatusreq
-from ..shared import errorresp as shared_errorresp
+from ...models.components import changereasonstatusreq as components_changereasonstatusreq
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
 @dataclasses.dataclass
 class ChangeReasonStatusRequest:
-    
-    reason_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'reasonId', 'style': 'simple', 'explode': False }})  
-    change_reason_status_req: Optional[shared_changereasonstatusreq.ChangeReasonStatusReq] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
-    r"""change the status of a closing reason"""  
+    reason_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'reasonId', 'style': 'simple', 'explode': False }})
+    change_reason_status_req: Optional[components_changereasonstatusreq.ChangeReasonStatusReq] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    r"""change the status of a closing reason"""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ChangeReasonStatusResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""bad request"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

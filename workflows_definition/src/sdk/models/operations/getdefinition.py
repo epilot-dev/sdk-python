@@ -2,29 +2,25 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import workflowdefinition as shared_workflowdefinition
-from typing import Any, Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import workflowdefinition as components_workflowdefinition
+from dataclasses_json import Undefined, dataclass_json
+from typing import Optional
 
 
 @dataclasses.dataclass
 class GetDefinitionRequest:
-    
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
-    r"""Short uuid (length 8) to identify the Workflow Definition."""  
+    r"""Short uuid (length 8) to identify the Workflow Definition."""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetDefinitionResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    workflow_definition: Optional[components_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
+    r"""Returns the Workflow definition"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    definition_not_found_resp: Optional[Any] = dataclasses.field(default=None)
-    r"""Definition Not found"""  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    workflow_definition: Optional[shared_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
-    r"""Returns the Workflow definition"""  
-    
+

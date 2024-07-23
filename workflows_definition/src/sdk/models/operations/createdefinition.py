@@ -2,20 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import workflowdefinition as shared_workflowdefinition
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import workflowdefinition as components_workflowdefinition
+from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateDefinitionResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    workflow_definition: Optional[components_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
+    r"""Success - if the definition is created successfully"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    workflow_definition: Optional[shared_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
-    r"""Success - if the definition is created successfully"""  
-    
+

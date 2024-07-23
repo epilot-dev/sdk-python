@@ -2,17 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import closingreason as shared_closingreason
+from ...models.components import closingreason as components_closingreason
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateClosingReasonResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    closing_reason: Optional[components_closingreason.ClosingReason] = dataclasses.field(default=None)
+    r"""closing reason is stored successfully in the repository"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    closing_reason: Optional[shared_closingreason.ClosingReason] = dataclasses.field(default=None)
-    r"""closing reason is stored successfully in the repository"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

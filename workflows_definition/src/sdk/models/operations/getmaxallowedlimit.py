@@ -2,20 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import maxallowedlimit as shared_maxallowedlimit
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import maxallowedlimit as components_maxallowedlimit
+from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetMaxAllowedLimitResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    max_allowed_limit: Optional[components_maxallowedlimit.MaxAllowedLimit] = dataclasses.field(default=None)
+    r"""A combo of current number of workflows, and the max allowed number of workflows."""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""  
-    max_allowed_limit: Optional[shared_maxallowedlimit.MaxAllowedLimit] = dataclasses.field(default=None)
-    r"""A combo of current number of workflows, and the max allowed number of workflows."""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

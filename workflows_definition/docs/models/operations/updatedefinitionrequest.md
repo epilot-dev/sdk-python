@@ -1,0 +1,9 @@
+# UpdateDefinitionRequest
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    | Example                                                                        |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `workflow_definition`                                                          | [components.WorkflowDefinition](../../models/components/workflowdefinition.md) | :heavy_check_mark:                                                             | Workflow Definition payload                                                    |                                                                                |
+| `definition_id`                                                                | *str*                                                                          | :heavy_check_mark:                                                             | Short uuid (length 8) to identify the Workflow Definition.                     | 7hj28a                                                                         |
