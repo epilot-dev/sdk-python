@@ -2,20 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import workflowdefinition as shared_workflowdefinition
-from typing import Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import workflowdefinition as components_workflowdefinition
+from dataclasses_json import Undefined, dataclass_json
+from typing import List, Optional
 
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetDefinitionsResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    classes: Optional[List[components_workflowdefinition.WorkflowDefinition]] = dataclasses.field(default=None)
+    r"""Success - definitions loaded with success. Empty array if org has no definitions."""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    workflow_definitions: Optional[list[shared_workflowdefinition.WorkflowDefinition]] = dataclasses.field(default=None)
-    r"""Success - definitions loaded with success. Empty array if org has no definitions."""  
-    
+

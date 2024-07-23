@@ -2,29 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from ..shared import workflowdefinition as shared_workflowdefinition
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import workflowdefinition as components_workflowdefinition
+from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
 @dataclasses.dataclass
 class UpdateDefinitionRequest:
-    
+    workflow_definition: components_workflowdefinition.WorkflowDefinition = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    r"""Workflow Definition payload"""
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
-    r"""Short uuid (length 8) to identify the Workflow Definition."""  
-    workflow_definition: shared_workflowdefinition.WorkflowDefinition = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    r"""Workflow Definition payload"""  
+    r"""Short uuid (length 8) to identify the Workflow Definition."""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class UpdateDefinitionResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    workflow_definition: Optional[components_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
+    r"""Success - if the definition is updated successfully"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Validation Errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    workflow_definition: Optional[shared_workflowdefinition.WorkflowDefinition] = dataclasses.field(default=None)
-    r"""Success - if the definition is updated successfully"""  
-    
+

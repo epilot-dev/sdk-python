@@ -1,25 +1,20 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import sdk
-from sdk.models import operations, shared
+from sdk.models import components
 
 s = sdk.SDK(
-    security=shared.Security(
-        bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-req = operations.ChangeReasonStatusRequest(
-    change_reason_status_req=shared.ChangeReasonStatusReq(
-        status="INACTIVE",
-    ),
-    reason_id="deserunt",
-)
-    
-res = s.closing_reason.change_reason_status(req)
+res = s.closing_reason.change_reason_status(reason_id='<value>', change_reason_status_req=components.ChangeReasonStatusReq(
+    status=components.ClosingReasonsStatus.ACTIVE,
+))
 
-if res.status_code == 200:
+if res is not None:
     # handle response
+    pass
+
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

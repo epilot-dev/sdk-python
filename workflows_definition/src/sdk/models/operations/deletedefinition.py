@@ -2,24 +2,21 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import errorresp as shared_errorresp
-from typing import Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
 
 
 @dataclasses.dataclass
 class DeleteDefinitionRequest:
-    
     definition_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'definitionId', 'style': 'simple', 'explode': False }})
-    r"""Id of the definition to de deleted."""  
+    r"""Id of the definition to de deleted."""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DeleteDefinitionResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Failed to authenticate"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
