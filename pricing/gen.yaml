@@ -1,16 +1,39 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 0c38c5e4341d7eb39afb394a855c5a8a
-  docVersion: 1.0.0
-  speakeasyVersion: 1.19.2
-  generationVersion: 2.16.5
+configVersion: 2.0.0
 generation:
-  telemetryEnabled: false
   sdkClassName: epilot
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
   sdkFlattening: true
-  singleTagPerOp: false
+  telemetryEnabled: false
 python:
-  version: 1.1.2
+  version: 1.2.0
+  additionalDependencies:
+    dependencies: {}
+    extraDependencies:
+      dev: {}
   author: epilot
+  clientServerStatusCodesAsErrors: true
   description: Python Client SDK for Epilot
+  flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: models/callbacks
+      errors: models/errors
+      operations: models/operations
+      shared: models/components
+      webhooks: models/webhooks
+  inputModelSuffix: input
+  maxMethodParams: 4
+  methodArguments: require-security-and-request
+  outputModelSuffix: output
   packageName: epilot-pricing
+  projectUrls: {}
+  responseFormat: envelope-http
+  templateVersion: v1

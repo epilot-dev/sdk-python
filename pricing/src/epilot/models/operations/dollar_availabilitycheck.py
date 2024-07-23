@@ -2,28 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import availabilitycheckparams as shared_availabilitycheckparams
-from ..shared import availabilityresult as shared_availabilityresult
-from typing import Any, Optional
+from ...models.components import availabilitycheckparams as components_availabilitycheckparams
+from ...models.components import availabilityresult as components_availabilityresult
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
+from typing import Optional
 
 
 @dataclasses.dataclass
 class DollarAvailabilityCheckRequest:
-    
-    availability_check_params: shared_availabilitycheckparams.AvailabilityCheckParams = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
+    availability_check_params: components_availabilitycheckparams.AvailabilityCheckParams = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
-    r"""The target Organization Id represented by the caller"""  
+    r"""The target Organization Id represented by the caller"""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DollarAvailabilityCheckResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    availability_result: Optional[components_availabilityresult.AvailabilityResult] = dataclasses.field(default=None)
+    r"""The availability check result"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    availability_result: Optional[shared_availabilityresult.AvailabilityResult] = dataclasses.field(default=None)
-    r"""The availability check result"""  
-    error: Optional[Any] = dataclasses.field(default=None)
-    r"""Invalid payload"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

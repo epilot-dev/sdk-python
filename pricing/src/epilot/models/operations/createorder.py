@@ -2,18 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from typing import Any, Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import order as components_order
+from dataclasses_json import Undefined, dataclass_json
+from typing import Optional
 
 
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class CreateOrderResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    order: Optional[components_order.Order] = dataclasses.field(default=None)
+    r"""Order result"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error: Optional[Any] = dataclasses.field(default=None)
-    r"""Invalid payload"""  
-    order: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""Order result"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
