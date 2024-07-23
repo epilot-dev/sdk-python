@@ -2,28 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import checkoutcart as shared_checkoutcart
-from ..shared import checkoutcartresult as shared_checkoutcartresult
-from typing import Any, Optional
+from ...models.components import checkoutcart as components_checkoutcart
+from ...models.components import checkoutcartresult as components_checkoutcartresult
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
+from typing import Optional
 
 
 @dataclasses.dataclass
 class DollarCheckoutCartRequest:
-    
-    checkout_cart: shared_checkoutcart.CheckoutCart = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
+    checkout_cart: components_checkoutcart.CheckoutCart = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
-    r"""The target Organization Id represented by the caller"""  
+    r"""The target Organization Id represented by the caller"""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DollarCheckoutCartResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    checkout_cart_result: Optional[components_checkoutcartresult.CheckoutCartResult] = dataclasses.field(default=None)
+    r"""The checkout result"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    checkout_cart_result: Optional[shared_checkoutcartresult.CheckoutCartResult] = dataclasses.field(default=None)
-    r"""The checkout result"""  
-    error: Optional[Any] = dataclasses.field(default=None)
-    r"""Invalid payload"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

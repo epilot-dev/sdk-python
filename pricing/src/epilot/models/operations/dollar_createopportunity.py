@@ -2,26 +2,26 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from typing import Any, Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import opportunity as components_opportunity
+from dataclasses_json import Undefined, dataclass_json
+from typing import Optional
 
 
 @dataclasses.dataclass
 class DollarCreateOpportunityRequest:
-    
-    request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
+    opportunity: components_opportunity.OpportunityInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
-    r"""The target Organization Id represented by the caller"""  
+    r"""The target Organization Id represented by the caller"""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DollarCreateOpportunityResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    opportunity: Optional[components_opportunity.Opportunity] = dataclasses.field(default=None)
+    r"""The new Opportunity."""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error: Optional[Any] = dataclasses.field(default=None)
-    r"""Invalid payload"""  
-    opportunity: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The new Opportunity."""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

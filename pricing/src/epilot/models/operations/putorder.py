@@ -2,26 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from typing import Any, Optional
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import order as components_order
+from ...models.components import orderpayload as components_orderpayload
+from dataclasses_json import Undefined, dataclass_json
+from typing import Optional
 
 
 @dataclasses.dataclass
 class PutOrderRequest:
-    
+    order_payload: components_orderpayload.OrderPayload = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
-    r"""Order entity ID"""  
-    request_body: dict[str, Any] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
+    r"""Order entity ID"""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PutOrderResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    order: Optional[components_order.Order] = dataclasses.field(default=None)
+    r"""Order result"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    error: Optional[Any] = dataclasses.field(default=None)
-    r"""Invalid payload"""  
-    order: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""Order result"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

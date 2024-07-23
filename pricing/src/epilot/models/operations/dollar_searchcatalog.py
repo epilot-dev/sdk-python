@@ -2,28 +2,27 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import catalogsearch as shared_catalogsearch
-from ..shared import catalogsearchresult as shared_catalogsearchresult
-from typing import Any, Optional
+from ...models.components import catalogsearch as components_catalogsearch
+from ...models.components import catalogsearchresult as components_catalogsearchresult
+from ...models.components import httpmetadata as components_httpmetadata
+from dataclasses_json import Undefined, dataclass_json
+from typing import Optional
 
 
 @dataclasses.dataclass
 class DollarSearchCatalogRequest:
-    
-    catalog_search: shared_catalogsearch.CatalogSearch = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})  
+    catalog_search: components_catalogsearch.CatalogSearch = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_ivy_org_id: str = dataclasses.field(metadata={'header': { 'field_name': 'X-Ivy-Org-ID', 'style': 'simple', 'explode': False }})
-    r"""The target Organization Id represented by the caller"""  
+    r"""The target Organization Id represented by the caller"""
     
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DollarSearchCatalogResponse:
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field(metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    catalog_search_result: Optional[components_catalogsearchresult.CatalogSearchResult] = dataclasses.field(default=None)
+    r"""The search result"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    catalog_search_result: Optional[shared_catalogsearchresult.CatalogSearchResult] = dataclasses.field(default=None)
-    r"""The search result"""  
-    error: Optional[Any] = dataclasses.field(default=None)
-    r"""Invalid payload"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
