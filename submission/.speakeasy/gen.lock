@@ -1,0 +1,61 @@
+lockVersion: 2.0.0
+id: ab83a5c0-66fa-4f54-bb0c-e9e5c6c19b95
+management:
+  docChecksum: 2ff9f6c43afde1839bb320502ba37d3a
+  docVersion: 1.0.0
+  speakeasyVersion: 1.345.1
+  generationVersion: 2.378.1
+  releaseVersion: 1.3.0
+  configChecksum: 60f35741c0b86f429167b6a45b98fcb0
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: submission
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=submission
+features:
+  python:
+    additionalDependencies: 0.1.0
+    additionalProperties: 0.1.0
+    core: 4.8.2
+    deprecations: 2.81.1
+    globalSecurityCallbacks: 0.1.0
+    globalServerURLs: 2.82.2
+    responseFormat: 0.1.0
+    sdkHooks: 0.1.0
+generatedFiles:
+  - src/epilot/sdkconfiguration.py
+  - src/epilot/submissions.py
+  - src/epilot/sdk.py
+  - py.typed
+  - pylintrc
+  - scripts/publish.sh
+  - setup.py
+  - src/epilot/__init__.py
+  - src/epilot/utils/__init__.py
+  - src/epilot/utils/retries.py
+  - src/epilot/utils/utils.py
+  - src/epilot/models/errors/sdkerror.py
+  - src/epilot/models/operations/createsubmission.py
+  - src/epilot/models/components/httpmetadata.py
+  - src/epilot/models/components/submissionpayload.py
+  - src/epilot/models/components/optin.py
+  - src/epilot/models/components/submissionentity.py
+  - src/epilot/models/components/s3reference.py
+  - src/epilot/models/__init__.py
+  - src/epilot/models/errors/__init__.py
+  - src/epilot/models/operations/__init__.py
+  - src/epilot/models/components/__init__.py
+  - docs/models/operations/createsubmissionresponse.md
+  - docs/models/components/httpmetadata.md
+  - docs/models/components/submissionpayload.md
+  - docs/models/components/optin.md
+  - docs/models/components/schema.md
+  - docs/models/components/files.md
+  - docs/models/components/submissionentity.md
+  - docs/models/components/s3reference.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/submissions/README.md
+  - USAGE.md
+  - .gitattributes
+  - src/epilot/_hooks/sdkhooks.py
+  - src/epilot/_hooks/types.py
+  - src/epilot/_hooks/__init__.py
+  - CONTRIBUTING.md
