@@ -1,31 +1,57 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+import epilot_document
+from epilot_document import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
+s = Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-req = operations.GenerateDocumentRequestBody(
-    context_entity_id="bcd0aab9-b544-42b0-8bfb-6d449d02eacc",
-    language="de",
-    template_document=operations.GenerateDocumentRequestBodyTemplateDocument(
-        filename="my-template-{{order.order_number}}.docx",
-        s3ref=shared.S3Reference(
-            bucket="document-api-prod",
-            key="uploads/my-template.pdf",
-        ),
-    ),
-    user_id="100321",
-)
-    
-res = s.documents.generate_document(req)
+res = s.documents.convert_document(request={
+    "input_document": {
+        "s3ref": {
+            "bucket": "document-api-prod",
+            "key": "uploads/my-template.pdf",
+        },
+    },
+    "output_format": epilot_document.OutputFormat.PDF,
+    "output_filename": "converted.pdf",
+})
 
-if res.generate_document_200_application_json_object is not None:
+if res is not None:
     # handle response
+    pass
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_document
+from epilot_document import Epilot
+
+async def main():
+    s = Epilot(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    )
+    res = await s.documents.convert_document_async(request={
+        "input_document": {
+            "s3ref": {
+                "bucket": "document-api-prod",
+                "key": "uploads/my-template.pdf",
+            },
+        },
+        "output_format": epilot_document.OutputFormat.PDF,
+        "output_filename": "converted.pdf",
+    })
+    if res is not None:
+        # handle response
+        pass
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->

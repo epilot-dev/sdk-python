@@ -1,0 +1,9 @@
+# OutputDocument
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   | Example                                                                       |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `preview_url`                                                                 | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | Pre-signed URL for the converted document                                     | https://document-api-prod.s3.eu-central-1.amazonaws.com/preview/converted.pdf |
+| `s3ref`                                                                       | [Optional[models.S3Reference]](../models/s3reference.md)                      | :heavy_minus_sign:                                                            | N/A                                                                           |                                                                               |
