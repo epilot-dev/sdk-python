@@ -1,0 +1,13 @@
+# ContentWidget
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `id`                                                                               | *str*                                                                              | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `list_index`                                                                       | *int*                                                                              | :heavy_check_mark:                                                                 | Index of the widget in the list, used for ordering (left or right)                 |
+| `type`                                                                             | [models.ContentWidgetType](../models/contentwidgettype.md)                         | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `content`                                                                          | *Optional[str]*                                                                    | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `headline`                                                                         | [Optional[models.ContentWidgetHeadline]](../models/contentwidgetheadline.md)       | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `sub_headline`                                                                     | [Optional[models.ContentWidgetSubHeadline]](../models/contentwidgetsubheadline.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |

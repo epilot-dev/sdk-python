@@ -1,0 +1,15 @@
+# AdminUser
+
+
+## Fields
+
+| Field                                                      | Type                                                       | Required                                                   | Description                                                | Example                                                    |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `__pydantic_extra__`                                       | Dict[str, *Any*]                                           | :heavy_minus_sign:                                         | N/A                                                        |                                                            |
+| `display_name`                                             | *OptionalNullable[str]*                                    | :heavy_minus_sign:                                         | N/A                                                        | John                                                       |
+| `email`                                                    | *OptionalNullable[str]*                                    | :heavy_minus_sign:                                         | N/A                                                        | j.doe@epilot.cloud                                         |
+| `image_uri`                                                | [OptionalNullable[models.ImageURI]](../models/imageuri.md) | :heavy_minus_sign:                                         | N/A                                                        |                                                            |
+| `org_id`                                                   | *Optional[str]*                                            | :heavy_minus_sign:                                         | N/A                                                        | 123                                                        |
+| `phone`                                                    | *OptionalNullable[str]*                                    | :heavy_minus_sign:                                         | N/A                                                        | 12345 67890                                                |
+| `type`                                                     | *OptionalNullable[str]*                                    | :heavy_minus_sign:                                         | N/A                                                        | user                                                       |
+| `user_id`                                                  | *Optional[str]*                                            | :heavy_minus_sign:                                         | N/A                                                        | 123456                                                     |
