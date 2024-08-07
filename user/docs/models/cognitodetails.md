@@ -1,0 +1,11 @@
+# CognitoDetails
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `cognito_region`                                                         | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      | eu-central-1                                                             |
+| `cognito_user_pool_arn`                                                  | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      | arn:aws:cognito-idp:eu-central-1:123456789012:userpool/eu-central-sample |
+| `cognito_user_pool_client_id`                                            | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      | asbkh213ehkquwhdi                                                        |
+| `cognito_user_pool_id`                                                   | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      | eu-central-sample                                                        |
