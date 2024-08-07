@@ -1,0 +1,9 @@
+# UpdateExecutionRequest
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  | Example                                                                      |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `workflow_execution_update_req`                                              | [models.WorkflowExecutionUpdateReq](../models/workflowexecutionupdatereq.md) | :heavy_check_mark:                                                           | Patch Updates for Workflow Execution payload.                                |                                                                              |
+| `execution_id`                                                               | *str*                                                                        | :heavy_check_mark:                                                           | Id of the execution                                                          | wd561                                                                        |
