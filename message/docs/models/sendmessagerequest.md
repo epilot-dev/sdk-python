@@ -1,0 +1,9 @@
+# SendMessageRequest
+
+
+## Fields
+
+| Field                                                                                                             | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `message_request_params`                                                                                          | [Optional[models.MessageRequestParams]](../models/messagerequestparams.md)                                        | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| `do_not_create_entities`                                                                                          | *Optional[bool]*                                                                                                  | :heavy_minus_sign:                                                                                                | When true, this flag lets the caller to send only the message and by-pass creating the thread & message entities. |

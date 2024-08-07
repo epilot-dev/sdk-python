@@ -1,0 +1,20 @@
+# PatchInfoRequestBody
+
+Request body for genai info update
+
+
+## Fields
+
+| Field                                          | Type                                           | Required                                       | Description                                    | Example                                        |
+| ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
+| `created_at`                                   | *Optional[float]*                              | :heavy_minus_sign:                             | Job created date                               | 1612900000000                                  |
+| `error`                                        | *OptionalNullable[str]*                        | :heavy_minus_sign:                             | Error message if the job failed                | Failed to generate summary                     |
+| `feedback`                                     | *OptionalNullable[str]*                        | :heavy_minus_sign:                             | Feedback of the suggested reply                | Good summary                                   |
+| `next_steps`                                   | List[*str*]                                    | :heavy_minus_sign:                             | Recommended next steps                         | [<br/>"The agent should approve the refund"<br/>] |
+| `progress`                                     | *Optional[float]*                              | :heavy_minus_sign:                             | Progress of the GenAI job in percentage        | 100                                            |
+| `rating`                                       | *OptionalNullable[str]*                        | :heavy_minus_sign:                             | Rating of the suggested reply                  | positive                                       |
+| `status`                                       | [Optional[models.Status]](../models/status.md) | :heavy_minus_sign:                             | Status of the GenAI job                        | COMPLETED                                      |
+| `summary`                                      | List[*str*]                                    | :heavy_minus_sign:                             | Generated summary                              | [<br/>"Customer is interested in solar panels"<br/>] |
+| `tags`                                         | List[*str*]                                    | :heavy_minus_sign:                             | Tags                                           | [<br/>"solar",<br/>"quote"<br/>]               |
+| `topics`                                       | List[*str*]                                    | :heavy_minus_sign:                             | Topics of the email thread                     | [<br/>"Product enquiry"<br/>]                  |
+| `updated_at`                                   | *Optional[float]*                              | :heavy_minus_sign:                             | Job last updated date                          | 1612900000000                                  |
