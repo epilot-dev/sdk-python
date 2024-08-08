@@ -1,0 +1,18 @@
+# File
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `created_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `org`                                                                | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `schema_`                                                            | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `updated_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |
+| `filename`                                                           | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `mime_type`                                                          | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  |
+| `versions`                                                           | List[[models.Versions](../models/versions.md)]                       | :heavy_check_mark:                                                   | N/A                                                                  |
+| `dollar_relation`                                                    | [Optional[models.EntityRelation]](../models/entityrelation.md)       | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `__pydantic_extra__`                                                 | Dict[str, *Any*]                                                     | :heavy_minus_sign:                                                   | N/A                                                                  |
+| `title`                                                              | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | N/A                                                                  |

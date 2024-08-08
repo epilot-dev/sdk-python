@@ -1,0 +1,13 @@
+# PriceTier
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `display_mode`                                                             | [Optional[models.PriceTierDisplayMode]](../models/pricetierdisplaymode.md) | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `flat_fee_amount`                                                          | *Optional[float]*                                                          | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `flat_fee_amount_decimal`                                                  | *Optional[str]*                                                            | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `unit_amount`                                                              | *Optional[float]*                                                          | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `unit_amount_decimal`                                                      | *Optional[str]*                                                            | :heavy_minus_sign:                                                         | N/A                                                                        |
+| `up_to`                                                                    | *OptionalNullable[float]*                                                  | :heavy_minus_sign:                                                         | N/A                                                                        |

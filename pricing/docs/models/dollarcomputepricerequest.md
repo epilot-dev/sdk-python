@@ -1,0 +1,10 @@
+# DollarComputePriceRequest
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `x_epilot_org_id`                                                      | *str*                                                                  | :heavy_check_mark:                                                     | The target Organization Id represented by the caller                   | 739224                                                                 |
+| `integration_id`                                                       | [models.IntegrationID](../models/integrationid.md)                     | :heavy_check_mark:                                                     | The integration identifier                                             | getag                                                                  |
+| `compute_price_params`                                                 | [Optional[models.ComputePriceParams]](../models/computepriceparams.md) | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |

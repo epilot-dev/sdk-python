@@ -1,39 +1,57 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+import dateutil.parser
+from epilot_pricing import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
+s = Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-req = operations.DollarAvailabilityCheckRequest(
-    availability_check_params=shared.AvailabilityCheckParams(
-        filters=shared.AvailabilityFilters(
-            available_date="2017-07-21",
-            location=shared.AvailabilityLocation(
-                city="Larrychester",
-                country="Suriname",
-                postal_code="85846-6342",
-                street="092 Schiller Junction",
-                street_number="vel",
-            ),
-        ),
-        products=[
-            "deleniti",
-            "similique",
-            "reprehenderit",
-        ],
-    ),
-    x_ivy_org_id="molestiae",
-)
-    
-res = s.availability_api.dollar_availability_check(req)
+res = s.catalog_api.dollar_private_search_catalog(request={
+    "q": "_id:1233432 OR _id:123432454 OR _id:23445433",
+    "availability": {
+        "location": {},
+        "available_date": dateutil.parser.parse("2017-07-21").date(),
+    },
+    "from_": 0,
+    "size": 200,
+    "sort": "description ASC",
+})
 
-if res.availability_result is not None:
+if res is not None:
     # handle response
+    pass
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import dateutil.parser
+from epilot_pricing import Epilot
+
+async def main():
+    s = Epilot(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    )
+    res = await s.catalog_api.dollar_private_search_catalog_async(request={
+        "q": "_id:1233432 OR _id:123432454 OR _id:23445433",
+        "availability": {
+            "location": {},
+            "available_date": dateutil.parser.parse("2017-07-21").date(),
+        },
+        "from_": 0,
+        "size": 200,
+        "sort": "description ASC",
+    })
+    if res is not None:
+        # handle response
+        pass
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
