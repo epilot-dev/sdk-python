@@ -1,25 +1,33 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import sdk
-from sdk.models import operations, shared
+# Synchronous Example
+from openapi import SDK
 
-s = sdk.SDK(
-    security=shared.Security(
-        bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
+s = SDK(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-req = operations.ChangeReasonStatusRequest(
-    change_reason_status_req=shared.ChangeReasonStatusReq(
-        status="INACTIVE",
-    ),
-    reason_id="deserunt",
-)
-    
-res = s.closing_reason.change_reason_status(req)
+s.closing_reason.change_reason_status(reason_id="<value>")
 
-if res.status_code == 200:
-    # handle response
+# Use the SDK ...
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+from openapi import SDK
+
+async def main():
+    s = SDK(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+    )
+    await s.closing_reason.change_reason_status_async(reason_id="<value>")
+    # Use the SDK ...
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
