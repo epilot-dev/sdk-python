@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "epilot-pricing"
-version = "1.2.0"
+version = "1.2.1"
 description = "Python Client SDK for Epilot"
 authors = ["Speakeasy",]
-readme = "README.md"
+readme = "README-PYPI.md"
 repository = "https://github.com/epilot-dev/sdk-python.git"
 packages = [
     { include = "epilot_pricing", from = "src" }
