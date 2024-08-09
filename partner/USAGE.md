@@ -1,27 +1,37 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+from epilot_partner import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        as_organization="YOUR_API_KEY_HERE",
-    ),
-)
+s = Epilot()
 
 
-req = operations.ActivatePartnerRequest(
-    activate_partner_payload=shared.ActivatePartnerPayload(
-        company_name="Company name",
-        organization_id="unde",
-        signed_up_email="Michale_Sporer@yahoo.com",
-    ),
-    token="perspiciatis",
-)
-    
-res = s.partners.activate_partner(req)
+s.partners.activate_partner(token="<value>", activate_partner_payload={
+    "organization_id": "<value>",
+    "signed_up_email": "Lupe.Graham2@hotmail.com",
+    "company_name": "Company name",
+})
 
-if res.status_code == 200:
-    # handle response
+# Use the SDK ...
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+from epilot_partner import Epilot
+
+async def main():
+    s = Epilot()
+    await s.partners.activate_partner_async(token="<value>", activate_partner_payload={
+        "organization_id": "<value>",
+        "signed_up_email": "Flavio.Ankunding@hotmail.com",
+        "company_name": "Company name",
+    })
+    # Use the SDK ...
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
