@@ -1,0 +1,13 @@
+# EntityOperationTriggerConfiguration
+
+
+## Fields
+
+| Field                                                        | Type                                                         | Required                                                     | Description                                                  | Example                                                      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ecp_config`                                                 | [Optional[models.EcpConfig]](../models/ecpconfig.md)         | :heavy_minus_sign:                                           | N/A                                                          |                                                              |
+| `exclude_activities`                                         | List[*str*]                                                  | :heavy_minus_sign:                                           | N/A                                                          |                                                              |
+| `filter_config`                                              | [Optional[models.FilterConfig]](../models/filterconfig.md)   | :heavy_minus_sign:                                           | N/A                                                          |                                                              |
+| `include_activities`                                         | List[*str*]                                                  | :heavy_minus_sign:                                           | N/A                                                          |                                                              |
+| `operations`                                                 | List[[models.EntityOperation](../models/entityoperation.md)] | :heavy_minus_sign:                                           | N/A                                                          |                                                              |
+| `schema_`                                                    | *Optional[str]*                                              | :heavy_minus_sign:                                           | N/A                                                          | submission                                                   |
