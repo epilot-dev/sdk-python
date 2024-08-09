@@ -1,0 +1,11 @@
+# EntityOperation
+
+
+## Fields
+
+| Field                                                               | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `entity`                                                            | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 |                                                                     |
+| `operation`                                                         | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 | updateEntity                                                        |
+| `params`                                                            | [Optional[models.Params]](../models/params.md)                      | :heavy_minus_sign:                                                  | N/A                                                                 | {<br/>"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",<br/>"slug": "contact"<br/>} |
+| `payload`                                                           | Dict[str, *Any*]                                                    | :heavy_minus_sign:                                                  | N/A                                                                 | {<br/>"_schema": "contact",<br/>"_org": "123",<br/>"status": "Inactive"<br/>} |
