@@ -1,0 +1,11 @@
+# ExportEntitiesRequest
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `entity_search_params`                                                 | [Optional[models.EntitySearchParams]](../models/entitysearchparams.md) | :heavy_minus_sign:                                                     | N/A                                                                    |                                                                        |
+| `is_template`                                                          | *Optional[bool]*                                                       | :heavy_minus_sign:                                                     | Pass 'true' to generate import template                                |                                                                        |
+| `job_id`                                                               | *Optional[str]*                                                        | :heavy_minus_sign:                                                     | Export Job Id to get the result                                        | abc123                                                                 |
+| `language`                                                             | *Optional[str]*                                                        | :heavy_minus_sign:                                                     | Export headers translation language                                    |                                                                        |

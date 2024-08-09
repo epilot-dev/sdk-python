@@ -1,9 +1,0 @@
-# ActivityCallerContext
-
-
-## Fields
-
-| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `additional_properties`                                                                             | Dict[str, *Any*]                                                                                    | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
-| `epilot_auth`                                                                                       | [Optional[ActivityCallerContextEpilotAuth]](../../models/shared/activitycallercontextepilotauth.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |

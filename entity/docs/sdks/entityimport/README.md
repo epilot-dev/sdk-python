@@ -15,41 +15,40 @@ This API will return the `job_id`` which can be used to fetch the status of the 
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.ImportEntitiesRequest(
-    entity_import_params=shared.EntityImportParams(
-        s3_reference=shared.EntityImportParamsS3Reference(
-            bucket='my-bucket',
-            key='imports/my-import.json',
-        ),
-        schema='contact',
-    ),
-    job_id='abc123',
-)
 
-res = s.entity_import.import_entities(req)
+s.entity_import.import_entities(request={
+    "entity_import_params": {
+        "s3_reference": {
+            "bucket": "my-bucket",
+            "key": "imports/my-import.json",
+        },
+        "schema_": "contact",
+    },
+    "job_id": "abc123",
+})
 
-if res.status_code == 200:
-    # handle response
-    pass
+# Use the SDK ...
+
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.ImportEntitiesRequest](../../models/operations/importentitiesrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.ImportEntitiesRequest](../../models/importentitiesrequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
 
+### Errors
 
-### Response
-
-**[operations.ImportEntitiesResponse](../../models/operations/importentitiesresponse.md)**
-
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
