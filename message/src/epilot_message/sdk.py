@@ -8,8 +8,6 @@ from .utils.retries import RetryConfig
 from epilot_message import models, utils
 from epilot_message._hooks import SDKHooks
 from epilot_message.drafts import Drafts
-from epilot_message.genai import GenAI
-from epilot_message.internal import Internal
 from epilot_message.messages import Messages
 from epilot_message.threads import Threads
 from epilot_message.types import OptionalNullable, UNSET
@@ -22,9 +20,7 @@ class Epilot(BaseSDK):
     """
     drafts: Drafts
     messages: Messages
-    gen_ai: GenAI
     threads: Threads
-    internal: Internal
     def __init__(
         self,
         security: Union[models.Security, Callable[[], models.Security]],
@@ -97,7 +93,5 @@ class Epilot(BaseSDK):
     def _init_sdks(self):
         self.drafts = Drafts(self.sdk_configuration)
         self.messages = Messages(self.sdk_configuration)
-        self.gen_ai = GenAI(self.sdk_configuration)
         self.threads = Threads(self.sdk_configuration)
-        self.internal = Internal(self.sdk_configuration)
     

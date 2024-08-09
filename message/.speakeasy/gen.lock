@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 184b5f97-43a4-4cfc-89c9-dc67c21e9f7c
 management:
-  docChecksum: 289c6b72cc52eb9ed38250723a07c98b
+  docChecksum: 4fa87dd586e9fb34b1acbd37a28d7896
   docVersion: 1.0.0
-  speakeasyVersion: 1.355.0
-  generationVersion: 2.387.0
-  releaseVersion: 1.3.0
-  configChecksum: 500980f5fa54514eff279ef1ce001ccb
+  speakeasyVersion: 1.358.0
+  generationVersion: 2.390.6
+  releaseVersion: 1.3.1
+  configChecksum: 1d09a389089aad03361d42fc438b128a
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: message
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=message
@@ -15,11 +15,11 @@ features:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.0
     constsAndDefaults: 1.0.2
-    core: 5.3.4
+    core: 5.3.7
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.1
     flattening: 3.0.0
-    globalSecurity: 3.0.1
+    globalSecurity: 3.0.2
     globalSecurityCallbacks: 1.0.0
     globalServerURLs: 3.0.0
     nullables: 1.0.0
@@ -30,9 +30,7 @@ generatedFiles:
   - src/epilot_message/sdkconfiguration.py
   - src/epilot_message/drafts.py
   - src/epilot_message/messages.py
-  - src/epilot_message/genai.py
   - src/epilot_message/threads.py
-  - src/epilot_message/internal.py
   - src/epilot_message/sdk.py
   - .vscode/settings.json
   - poetry.toml
@@ -40,6 +38,7 @@ generatedFiles:
   - pylintrc
   - pyproject.toml
   - scripts/compile.sh
+  - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/epilot_message/__init__.py
   - src/epilot_message/basesdk.py
@@ -79,10 +78,6 @@ generatedFiles:
   - src/epilot_message/models/trashmessageop.py
   - src/epilot_message/models/untrashmessageop.py
   - src/epilot_message/models/updatemessageop.py
-  - src/epilot_message/models/generatesuggestedreplyop.py
-  - src/epilot_message/models/getgenaifeedbackop.py
-  - src/epilot_message/models/getinfoop.py
-  - src/epilot_message/models/patchinfoop.py
   - src/epilot_message/models/assignthreadop.py
   - src/epilot_message/models/assignusersop.py
   - src/epilot_message/models/deletethreadop.py
@@ -128,33 +123,6 @@ generatedFiles:
   - docs/models/updatemessagesendstatus.md
   - docs/models/updatemessagetype.md
   - docs/models/updatemessageresponsebody.md
-  - docs/models/generatesuggestedreplyrequest.md
-  - docs/models/generatesuggestedreplystatus.md
-  - docs/models/payload.md
-  - docs/models/generatesuggestedreplytype.md
-  - docs/models/generatesuggestedreplyresponsebody.md
-  - docs/models/getgenaifeedbackrequest.md
-  - docs/models/getgenaifeedbacktype.md
-  - docs/models/getgenaifeedbackresults.md
-  - docs/models/getgenaifeedbackresponsebody.md
-  - docs/models/getinforequest.md
-  - docs/models/getinfogenaistatus.md
-  - docs/models/getinfogenaipayload.md
-  - docs/models/getinfogenaitype.md
-  - docs/models/getinfogenairesponsebody.md
-  - docs/models/getinfostatus.md
-  - docs/models/getinfopayload.md
-  - docs/models/getinfotype.md
-  - docs/models/getinforesponsebody.md
-  - docs/models/getinforesponse.md
-  - docs/models/status.md
-  - docs/models/patchinforequestbody.md
-  - docs/models/patchinforequest.md
-  - docs/models/patchinfogenairesponsebody.md
-  - docs/models/patchinfostatus.md
-  - docs/models/patchinfopayload.md
-  - docs/models/patchinfotype.md
-  - docs/models/patchinforesponsebody.md
   - docs/models/requestbody.md
   - docs/models/assignthreadrequest.md
   - docs/models/assignusersrequestbody.md
@@ -176,9 +144,7 @@ generatedFiles:
   - docs/models/utils/retryconfig.md
   - docs/sdks/drafts/README.md
   - docs/sdks/messages/README.md
-  - docs/sdks/genai/README.md
   - docs/sdks/threads/README.md
-  - docs/sdks/internal/README.md
   - USAGE.md
   - .gitattributes
   - src/epilot_message/_hooks/sdkhooks.py
