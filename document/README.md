@@ -356,7 +356,7 @@ This SDK supports the following security scheme globally:
 | ------------- | ------------- | ------------- |
 | `epilot_auth` | http          | HTTP Bearer   |
 
-To authenticate with the API the `null` parameter must be set when initializing the SDK client instance. For example:
+To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import epilot_document
 from epilot_document import Epilot
@@ -397,6 +397,16 @@ logging.basicConfig(level=logging.DEBUG)
 s = Epilot(debug_logger=logging.getLogger("epilot_document"))
 ```
 <!-- End Debugging [debug] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
