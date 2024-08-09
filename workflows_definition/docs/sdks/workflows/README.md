@@ -29,53 +29,7 @@ s = SDK(
 
 res = s.workflows.create_definition(request={
     "flow": [
-        {
-            "name": "Initial Information Gathering",
-            "order": 1,
-            "steps": [
-                {
-                    "name": "Call client and confirm address and product",
-                    "order": 1,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "123482",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                },
-                {
-                    "name": "Check product availability",
-                    "order": 2,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "123482",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                },
-                {
-                    "name": "Send email confirming contact with the client",
-                    "order": 3,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "123482",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                },
-            ],
-            "type": openapi.ItemType.SECTION,
-        },
-        {
-            "name": "Print and send catalog",
-            "order": 2,
-            "steps": [
-                {
-                    "name": "<value>",
-                    "order": 4108.47,
-                    "type": openapi.ItemType.STEP,
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                },
-            ],
-            "type": openapi.ItemType.STEP,
-        },
+
     ],
     "name": "Lead Qualification",
     "assigned_to": [
@@ -375,58 +329,7 @@ s = SDK(
 
 res = s.workflows.update_definition(definition_id="7hj28a", workflow_definition={
     "flow": [
-        {
-            "name": "Initial Information Gathering",
-            "order": 1,
-            "steps": [
-                {
-                    "name": "Call client and confirm address and product",
-                    "order": 1,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "8988",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                    "id": "2hja82a",
-                },
-                {
-                    "name": "Check product availability",
-                    "order": 2,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "8988",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                    "id": "ga92ha2",
-                },
-                {
-                    "name": "Send email confirming contact with the client",
-                    "order": 3,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "8988",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                    "id": "jga92ha",
-                },
-            ],
-            "type": openapi.ItemType.SECTION,
-            "id": "5892na2",
-        },
-        {
-            "name": "Print and send catalog",
-            "order": 2,
-            "steps": [
-                {
-                    "name": "<value>",
-                    "order": 4279.02,
-                    "type": openapi.ItemType.SECTION,
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                },
-            ],
-            "type": openapi.ItemType.STEP,
-            "id": "0a7g22a",
-        },
+
     ],
     "name": "Lead Qualification",
     "assigned_to": [
@@ -444,7 +347,7 @@ res = s.workflows.update_definition(definition_id="7hj28a", workflow_definition=
     "last_update_time": "2021-08-04T21:13:50.373Z",
     "update_entity_attributes": [
         {
-            "source": openapi.Source.CURRENT_STEP,
+            "source": openapi.Source.CURRENT_SECTION,
             "target": {
                 "entity_attribute": "my_status",
                 "entity_schema": "opportunity",
