@@ -1,0 +1,16 @@
+# CreateAccessTokenResponseBody
+
+The new generated Access Token
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `created_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | N/A                                                                  |                                                                      |
+| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | N/A                                                                  | api_5ZugdRXasLfWBypHi93Fk                                            |
+| `name`                                                               | *str*                                                                | :heavy_check_mark:                                                   | Human readable name for access token                                 | Postman Access Token                                                 |
+| `assignments`                                                        | List[*str*]                                                          | :heavy_minus_sign:                                                   | List of role ids attached to an user                                 |                                                                      |
+| `journey_id`                                                         | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | Journey ID for access token type "journey"                           |                                                                      |
+| `token`                                                              | *Optional[str]*                                                      | :heavy_minus_sign:                                                   | A JWT Access Token                                                   | eyJhbGciOiJIUzI1NiIsInR5cCI6Ikp...                                   |
+| `token_type`                                                         | [Optional[models.AccessTokenType]](../models/accesstokentype.md)     | :heavy_minus_sign:                                                   | Access token type                                                    | api                                                                  |
