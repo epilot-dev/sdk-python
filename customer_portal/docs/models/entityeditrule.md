@@ -1,0 +1,17 @@
+# EntityEditRule
+
+
+## Fields
+
+| Field                                                  | Type                                                   | Required                                               | Description                                            | Example                                                |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `allowed_decrement`                                    | *Optional[str]*                                        | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `allowed_increment`                                    | *Optional[str]*                                        | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `attribute`                                            | *Optional[str]*                                        | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `cadence_period`                                       | *Optional[float]*                                      | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `cadence_period_type`                                  | *Optional[str]*                                        | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `changes_allowed`                                      | *Optional[float]*                                      | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `grace_period`                                         | *Optional[float]*                                      | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `number_of_days_before_restriction`                    | *Optional[float]*                                      | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `rule_type`                                            | *Optional[str]*                                        | :heavy_minus_sign:                                     | N/A                                                    |                                                        |
+| `slug`                                                 | [Optional[models.EntitySlug]](../models/entityslug.md) | :heavy_minus_sign:                                     | URL-friendly identifier for the entity schema          | contact                                                |

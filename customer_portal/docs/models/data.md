@@ -1,0 +1,13 @@
+# Data
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `contact`                                                                | List[[models.ExtraSchemaAttributes](../models/extraschemaattributes.md)] | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `contract`                                                               | List[[models.ExtraSchemaAttributes](../models/extraschemaattributes.md)] | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `meter`                                                                  | List[[models.ExtraSchemaAttributes](../models/extraschemaattributes.md)] | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `meter_counter`                                                          | List[[models.ExtraSchemaAttributes](../models/extraschemaattributes.md)] | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `opportunity`                                                            | List[[models.ExtraSchemaAttributes](../models/extraschemaattributes.md)] | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `order`                                                                  | List[[models.ExtraSchemaAttributes](../models/extraschemaattributes.md)] | :heavy_minus_sign:                                                       | N/A                                                                      |
