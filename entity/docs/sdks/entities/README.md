@@ -11,10 +11,13 @@ CRUD Access for Entities
 * [create_entity](#create_entity) - createEntity
 * [delete_entity](#delete_entity) - deleteEntity
 * [get_entity](#get_entity) - getEntity
+* [get_entity_v2](#get_entity_v2) - getEntityV2
+* [list_entities](#list_entities) - listEntities
 * [patch_entity](#patch_entity) - patchEntity
 * [search_entities](#search_entities) - searchEntities
 * [update_entity](#update_entity) - updateEntity
 * [upsert_entity](#upsert_entity) - upsertEntity
+* [validate_entity](#validate_entity) - validateEntity
 
 ## autocomplete
 
@@ -24,38 +27,43 @@ Autocomplete entity attributes
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.AutocompleteRequest(
-    attribute='_tags',
-    slug='contact',
-)
 
-res = s.entities.autocomplete(req)
+res = s.entities.autocomplete(request={
+    "attribute": "_tags",
+    "slug": "contact",
+})
 
-if res.autocomplete_200_application_json_object is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.AutocompleteRequest](../../models/operations/autocompleterequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.AutocompleteRequest](../../models/autocompleterequest.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.AutocompleteResponse](../../models/operations/autocompleteresponse.md)**
+**[models.AutocompleteResponseBody](../../models/autocompleteresponsebody.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## create_entity
 
@@ -89,93 +97,77 @@ The items in `$relation` support two properties:
 ### Example Usage
 
 ```python
-import epilot
-import dateutil.parser
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.CreateEntityRequest(
-    entity=shared.Entity(
-        additional_properties={
-            "_acl": 'string',
-            "_id": 'string',
-            "_org": 'string',
-            "_owners": 'string',
-            "_schema": 'string',
-            "_tags": 'string',
-            "_created_at": 'string',
-            "_updated_at": 'string',
-        },
-        acl=shared.EntityACL(
-            additional_properties={
-                "key": 'string',
-            },
+
+res = s.entities.create_entity(request={
+    "slug": "contact",
+    "entity": epilot_entity.EntityInput(
+        acl=epilot_entity.EntityACL(
             delete=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
             ],
             edit=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
             ],
             view=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
+                "org:789",
             ],
+            **{
+
+            },
         ),
-        owners=[
-            shared.EntityOwner(
-                org_id='123',
-                user_id='123',
-            ),
-        ],
-        schema='contact',
+        id="3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        schema_="contact",
         tags=[
-            'string',
+            "example",
+            "mock",
         ],
+        **{
+            "_org": "123",
+            "_owners": [
+                {
+                    "org_id": "123",
+                    "user_id": "123",
+                },
+            ],
+            "_created_at": "2021-02-09T12:41:43.662Z",
+            "_updated_at": "2021-02-09T12:41:43.662Z",
+        },
     ),
-    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    slug='contact',
-)
+    "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
 
-res = s.entities.create_entity(req)
-
-if res.entity_item is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.CreateEntityRequest](../../models/operations/createentityrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.CreateEntityRequest](../../models/createentityrequest.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.CreateEntityResponse](../../models/operations/createentityresponse.md)**
+**[models.EntityItem](../../models/entityitem.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## delete_entity
 
@@ -189,39 +181,38 @@ If no `activity_id` query parameter is provided, implicitly creates Activity of 
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.DeleteEntityRequest(
-    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='3b4a567a-853a-474f-8030-3350a9970542',
-    slug='contact',
-)
 
-res = s.entities.delete_entity(req)
+s.entities.delete_entity(request={
+    "id": "3b4a567a-853a-474f-8030-3350a9970542",
+    "slug": "contact",
+    "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
 
-if res.status_code == 200:
-    # handle response
-    pass
+# Use the SDK ...
+
 ```
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.DeleteEntityRequest](../../models/operations/deleteentityrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.DeleteEntityRequest](../../models/deleteentityrequest.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
+### Errors
 
-### Response
-
-**[operations.DeleteEntityResponse](../../models/operations/deleteentityresponse.md)**
-
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## get_entity
 
@@ -293,38 +284,158 @@ Becomes:
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.GetEntityRequest(
-    id='73700929-3a3f-4c9a-8a39-e5abedf44929',
-    slug='contact',
-)
 
-res = s.entities.get_entity(req)
+res = s.entities.get_entity(request={
+    "id": "73700929-3a3f-4c9a-8a39-e5abedf44929",
+    "slug": "contact",
+})
 
-if res.get_entity_200_application_json_object is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [operations.GetEntityRequest](../../models/operations/getentityrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.GetEntityRequest](../../models/getentityrequest.md)         | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.GetEntityResponse](../../models/operations/getentityresponse.md)**
+**[models.GetEntityResponseBody](../../models/getentityresponsebody.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## get_entity_v2
+
+Gets Entity by id.
+
+Supports `hydrate` and `fields` parameters to control the shape of the response.
+
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.entities.get_entity_v2(request={
+    "id": "3289b8c6-6a56-4c12-b3bc-45143354f2a7",
+    "slug": "contact",
+    "fields": [
+        "_id",
+        "_title",
+        "first_name",
+        "account",
+        "!account.*._files",
+        "**._product",
+    ],
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.GetEntityV2Request](../../models/getentityv2request.md)     | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+
+### Response
+
+**[models.EntityItem](../../models/entityitem.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## list_entities
+
+List entities that meet the specified conditions.
+
+Supports the same options as entity search but utilizes filtering using a subset of [Elastic Query DSL](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html) and does not perform scoring.
+
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.entities.list_entities(request={
+    "filter_": [
+
+    ],
+    "aggs": {},
+    "fields": [
+        "_id",
+        "_title",
+        "first_name",
+        "account",
+        "!account.*._files",
+        "**._product",
+    ],
+    "sort": "_created_at:desc",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.EntityListParams](../../models/entitylistparams.md)         | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+
+### Response
+
+**[models.ListEntitiesResponse](../../models/listentitiesresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## patch_entity
 
@@ -360,98 +471,82 @@ The items in `$relation` support two properties:
 ### Example Usage
 
 ```python
-import epilot
-import dateutil.parser
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.PatchEntityRequest(
-    entity=shared.Entity(
-        additional_properties={
-            "_updated_at": 'string',
-            "_acl": 'string',
-            "_id": 'string',
-            "_org": 'string',
-            "_owners": 'string',
-            "_schema": 'string',
-            "_tags": 'string',
-            "_created_at": 'string',
-        },
-        acl=shared.EntityACL(
-            additional_properties={
-                "key": 'string',
-            },
+
+res = s.entities.patch_entity(request={
+    "entity": epilot_entity.EntityInput(
+        acl=epilot_entity.EntityACL(
             delete=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
             ],
             edit=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
             ],
             view=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
+                "org:789",
             ],
+            **{
+
+            },
         ),
-        owners=[
-            shared.EntityOwner(
-                org_id='123',
-                user_id='123',
-            ),
-        ],
-        schema='contact',
+        id="3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        schema_="contact",
         tags=[
-            'string',
+            "example",
+            "mock",
         ],
+        **{
+            "_org": "123",
+            "_owners": [
+                {
+                    "org_id": "123",
+                    "user_id": "123",
+                },
+            ],
+            "_created_at": "2021-02-09T12:41:43.662Z",
+            "_updated_at": "2021-02-09T12:41:43.662Z",
+        },
     ),
-    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='cd6dc474-9915-44f5-99d5-806e999b7231',
-    slug='contact',
-)
+    "id": "cd6dc474-9915-44f5-99d5-806e999b7231",
+    "slug": "contact",
+    "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
 
-res = s.entities.patch_entity(req)
-
-if res.entity_item is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.PatchEntityRequest](../../models/operations/patchentityrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.PatchEntityRequest](../../models/patchentityrequest.md)     | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.PatchEntityResponse](../../models/operations/patchentityresponse.md)**
+**[models.EntityItem](../../models/entityitem.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## search_entities
 
-Search for entities. Supports ordering and pagination. Lucene query syntax supported for complex querying.
+Search for entities. Supports ordering and pagination. [Lucene query syntax](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-string-syntax) supported for complex querying.
 
 Passing comma-separated `x-epilot-org-id` is supported for cross-org entity search.
 
@@ -521,44 +616,52 @@ Becomes:
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = shared.EntitySearchParams(
-    aggs=shared.EntitySearchParamsAggs(),
-    fields=[
-        '_id',
-        '_title',
-        'first_name',
+
+res = s.entities.search_entities(request={
+    "q": "_schema:contact AND status:active",
+    "aggs": {},
+    "fields": [
+        "_id",
+        "_title",
+        "first_name",
+        "account",
+        "!account.*._files",
+        "**._product",
     ],
-    q='_schema:contact AND status:active',
-    sort='_created_at:desc',
-)
+    "sort": "_created_at:desc",
+})
 
-res = s.entities.search_entities(req)
-
-if res.entity_search_results is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `request`                                                              | [shared.EntitySearchParams](../../models/shared/entitysearchparams.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.EntitySearchParams](../../models/entitysearchparams.md)     | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.SearchEntitiesResponse](../../models/operations/searchentitiesresponse.md)**
+**[models.SearchEntitiesResponse](../../models/searchentitiesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## update_entity
 
@@ -592,94 +695,78 @@ The items in `$relation` support two properties:
 ### Example Usage
 
 ```python
-import epilot
-import dateutil.parser
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.UpdateEntityRequest(
-    entity=shared.Entity(
-        additional_properties={
-            "_schema": 'string',
-            "_tags": 'string',
-            "_created_at": 'string',
-            "_updated_at": 'string',
-            "_acl": 'string',
-            "_id": 'string',
-            "_org": 'string',
-            "_owners": 'string',
-        },
-        acl=shared.EntityACL(
-            additional_properties={
-                "key": 'string',
-            },
+
+res = s.entities.update_entity(request={
+    "id": "2d5d17df-5520-4987-bd5a-6b1d12df7446",
+    "slug": "contact",
+    "entity": epilot_entity.EntityInput(
+        acl=epilot_entity.EntityACL(
             delete=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
             ],
             edit=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
             ],
             view=[
-                'o',
-                'r',
-                'g',
-                ':',
-                '4',
-                '5',
-                '6',
+                "org:456",
+                "org:789",
             ],
+            **{
+
+            },
         ),
-        owners=[
-            shared.EntityOwner(
-                org_id='123',
-                user_id='123',
-            ),
-        ],
-        schema='contact',
+        id="3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        schema_="contact",
         tags=[
-            'string',
+            "example",
+            "mock",
         ],
+        **{
+            "_org": "123",
+            "_owners": [
+                {
+                    "org_id": "123",
+                    "user_id": "123",
+                },
+            ],
+            "_created_at": "2021-02-09T12:41:43.662Z",
+            "_updated_at": "2021-02-09T12:41:43.662Z",
+        },
     ),
-    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='2d5d17df-5520-4987-bd5a-6b1d12df7446',
-    slug='contact',
-)
+    "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
 
-res = s.entities.update_entity(req)
-
-if res.entity_item is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.UpdateEntityRequest](../../models/operations/updateentityrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.UpdateEntityRequest](../../models/updateentityrequest.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.UpdateEntityResponse](../../models/operations/updateentityresponse.md)**
+**[models.EntityItem](../../models/entityitem.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## upsert_entity
 
@@ -687,7 +774,6 @@ Create or update an entity using `unique_key`
 
 - If no entities are matched, a new entity is created.
 - If exactly one entity is matched, a `PATCH`-style update is applied to the existing entity.
-- If more than one entity is matched a `409` Error is returned
 
 ## Activity
 
@@ -697,95 +783,158 @@ If no `activity_id` query parameter is provided, implicitly creates Activity of 
 ### Example Usage
 
 ```python
-import epilot
-import dateutil.parser
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.UpsertEntityRequest(
-    request_body=operations.UpsertEntityRequestBody(
-        entity=shared.Entity(
-            additional_properties={
-                "_tags": 'string',
-                "_created_at": 'string',
-                "_updated_at": 'string',
-                "_acl": 'string',
-                "_id": 'string',
-                "_org": 'string',
-                "_owners": 'string',
-                "_schema": 'string',
-            },
-            acl=shared.EntityACL(
-                additional_properties={
-                    "key": 'string',
-                },
+
+res = s.entities.upsert_entity(request={
+    "slug": "contact",
+    "request_body": {
+        "entity": epilot_entity.EntityInput(
+            acl=epilot_entity.EntityACL(
                 delete=[
-                    'o',
-                    'r',
-                    'g',
-                    ':',
-                    '4',
-                    '5',
-                    '6',
+                    "org:456",
                 ],
                 edit=[
-                    'o',
-                    'r',
-                    'g',
-                    ':',
-                    '4',
-                    '5',
-                    '6',
+                    "org:456",
                 ],
                 view=[
-                    'o',
-                    'r',
-                    'g',
-                    ':',
-                    '4',
-                    '5',
-                    '6',
+                    "org:456",
+                    "org:789",
                 ],
+                **{
+
+                },
             ),
-            owners=[
-                shared.EntityOwner(
-                    org_id='123',
-                    user_id='123',
-                ),
-            ],
-            schema='contact',
+            id="3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            schema_="contact",
             tags=[
-                'string',
+                "example",
+                "mock",
             ],
+            **{
+                "_org": "123",
+                "_owners": [
+                    {
+                        "org_id": "123",
+                        "user_id": "123",
+                    },
+                ],
+                "_created_at": "2021-02-09T12:41:43.662Z",
+                "_updated_at": "2021-02-09T12:41:43.662Z",
+            },
         ),
-        unique_key=[
-            '_id',
+        "unique_key": [
+            "_id",
         ],
-    ),
-    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    slug='contact',
-)
+    },
+    "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
 
-res = s.entities.upsert_entity(req)
-
-if res.entity_item is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.UpsertEntityRequest](../../models/operations/upsertentityrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.UpsertEntityRequest](../../models/upsertentityrequest.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.UpsertEntityResponse](../../models/operations/upsertentityresponse.md)**
+**[models.EntityItem](../../models/entityitem.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## validate_entity
+
+Validates an entity against the schema.
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.entities.validate_entity(request={
+    "slug": "contact",
+    "entity": epilot_entity.EntityInput(
+        acl=epilot_entity.EntityACL(
+            delete=[
+                "org:456",
+            ],
+            edit=[
+                "org:456",
+            ],
+            view=[
+                "org:456",
+                "org:789",
+            ],
+            **{
+
+            },
+        ),
+        id="3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        schema_="contact",
+        tags=[
+            "example",
+            "mock",
+        ],
+        **{
+            "_org": "123",
+            "_owners": [
+                {
+                    "org_id": "123",
+                    "user_id": "123",
+                },
+            ],
+            "_created_at": "2021-02-09T12:41:43.662Z",
+            "_updated_at": "2021-02-09T12:41:43.662Z",
+        },
+    ),
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.ValidateEntityRequest](../../models/validateentityrequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
+
+
+### Response
+
+**[models.EntityValidationResultSuccess](../../models/entityvalidationresultsuccess.md)**
+### Errors
+
+| Error Object                       | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| models.EntityValidationResultError | 422                                | application/json                   |
+| models.SDKError                    | 4xx-5xx                            | */*                                |
