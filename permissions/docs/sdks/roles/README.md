@@ -201,34 +201,7 @@ s = Epilot(
 
 res = s.roles.put_role(role_id="123:owner", role_payload={
     "grants": [
-        {
-            "action": "entity-read",
-            "conditions": [
-                {
-                    "attribute": "workflows.primary.task_name",
-                    "operation": epilot_permissions.Operation.EQUALS,
-                    "values": [
-                        "Qualification",
-                    ],
-                },
-            ],
-            "dependencies": [
-                {
-                    "action": "entity-read",
-                    "conditions": [
-                        {
-                            "attribute": "workflows.primary.task_name",
-                            "operation": epilot_permissions.Operation.EQUALS,
-                            "values": [
-                                "Qualification",
-                            ],
-                        },
-                    ],
-                    "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
-                },
-            ],
-            "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
-        },
+
     ],
     "id": "123:owner",
     "name": "Owner",
