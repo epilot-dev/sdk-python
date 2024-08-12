@@ -8,12 +8,23 @@ Model Entities
 ### Available Operations
 
 * [delete_schema](#delete_schema) - deleteSchema
+* [delete_schema_attribute](#delete_schema_attribute) - deleteSchemaAttribute
+* [delete_schema_capability](#delete_schema_capability) - deleteSchemaCapability
+* [delete_schema_group](#delete_schema_group) - deleteSchemaGroup
+* [get_json_schema](#get_json_schema) - getJsonSchema
 * [get_schema](#get_schema) - getSchema
+* [get_schema_attribute](#get_schema_attribute) - getSchemaAttribute
+* [get_schema_capability](#get_schema_capability) - getSchemaCapability
+* [get_schema_example](#get_schema_example) - getSchemaExample
+* [get_schema_group](#get_schema_group) - getSchemaGroup
 * [get_schema_versions](#get_schema_versions) - getSchemaVersions
 * [list_schema_blueprints](#list_schema_blueprints) - listSchemaBlueprints
 * [list_schemas](#list_schemas) - listSchemas
 * [list_taxonomy_classifications_for_schema](#list_taxonomy_classifications_for_schema) - listTaxonomyClassificationsForSchema
 * [put_schema](#put_schema) - putSchema
+* [put_schema_attribute](#put_schema_attribute) - putSchemaAttribute
+* [put_schema_capability](#put_schema_capability) - putSchemaCapability
+* [put_schema_group](#put_schema_group) - putSchemaGroup
 
 ## delete_schema
 
@@ -22,37 +33,212 @@ Delete a schema, or a specific version of a schema
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.DeleteSchemaRequest(
-    slug='contact',
-)
 
-res = s.schemas.delete_schema(req)
+s.schemas.delete_schema(request={
+    "slug": "contact",
+})
 
-if res.status_code == 200:
-    # handle response
-    pass
+# Use the SDK ...
+
 ```
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.DeleteSchemaRequest](../../models/operations/deleteschemarequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.DeleteSchemaRequest](../../models/deleteschemarequest.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## delete_schema_attribute
+
+Deletes an attribute from a schema
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.delete_schema_attribute(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [models.DeleteSchemaAttributeRequest](../../models/deleteschemaattributerequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| `retries`                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                    | :heavy_minus_sign:                                                                  | Configuration to override the default retry behavior of the client.                 |
 
 
 ### Response
 
-**[operations.DeleteSchemaResponse](../../models/operations/deleteschemaresponse.md)**
+**[models.AttributeWithCompositeID](../../models/attributewithcompositeid.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## delete_schema_capability
+
+Deletes a Capability from a schema
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.delete_schema_capability(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [models.DeleteSchemaCapabilityRequest](../../models/deleteschemacapabilityrequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| `retries`                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                      | :heavy_minus_sign:                                                                    | Configuration to override the default retry behavior of the client.                   |
+
+
+### Response
+
+**[models.EntityCapabilityWithCompositeID](../../models/entitycapabilitywithcompositeid.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## delete_schema_group
+
+Deletes a Capability from a schema
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.delete_schema_group(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [models.DeleteSchemaGroupRequest](../../models/deleteschemagrouprequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| `retries`                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)            | :heavy_minus_sign:                                                          | Configuration to override the default retry behavior of the client.         |
+
+
+### Response
+
+**[models.EntitySchemaGroupWithCompositeID](../../models/entityschemagroupwithcompositeid.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## get_json_schema
+
+Get formal JSON schema definition draft 2020-12 for the given epilot schema
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.get_json_schema(request={
+    "slug": "contact",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.GetJSONSchemaRequest](../../models/getjsonschemarequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+
+### Response
+
+**[models.GetJSONSchemaResponseBody](../../models/getjsonschemaresponsebody.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## get_schema
 
@@ -61,37 +247,218 @@ By default gets the latest version of the Schema and to get the specific version
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.GetSchemaRequest(
-    slug='contact',
-)
 
-res = s.schemas.get_schema(req)
+res = s.schemas.get_schema(request={
+    "slug": "contact",
+})
 
-if res.entity_schema_item is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [operations.GetSchemaRequest](../../models/operations/getschemarequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.GetSchemaRequest](../../models/getschemarequest.md)         | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.GetSchemaResponse](../../models/operations/getschemaresponse.md)**
+**[models.EntitySchemaItem](../../models/entityschemaitem.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## get_schema_attribute
+
+Get a schema attribute from given attribute ID
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.get_schema_attribute(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [models.GetSchemaAttributeRequest](../../models/getschemaattributerequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| `retries`                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)              | :heavy_minus_sign:                                                            | Configuration to override the default retry behavior of the client.           |
+
+
+### Response
+
+**[models.AttributeWithCompositeID](../../models/attributewithcompositeid.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## get_schema_capability
+
+Get a schema capability from given capability ID
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.get_schema_capability(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [models.GetSchemaCapabilityRequest](../../models/getschemacapabilityrequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| `retries`                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                | :heavy_minus_sign:                                                              | Configuration to override the default retry behavior of the client.             |
+
+
+### Response
+
+**[models.EntityCapabilityWithCompositeID](../../models/entitycapabilitywithcompositeid.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## get_schema_example
+
+Get a full example entity for the given schema
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.get_schema_example(request={
+    "slug": "contact",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [models.GetSchemaExampleRequest](../../models/getschemaexamplerequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| `retries`                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)          | :heavy_minus_sign:                                                        | Configuration to override the default retry behavior of the client.       |
+
+
+### Response
+
+**[models.GetSchemaExampleResponseBody](../../models/getschemaexampleresponsebody.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## get_schema_group
+
+Get a schema group from given group composite ID
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.get_schema_group(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.GetSchemaGroupRequest](../../models/getschemagrouprequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
+
+
+### Response
+
+**[models.EntitySchemaGroupWithCompositeID](../../models/entityschemagroupwithcompositeid.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## get_schema_versions
 
@@ -100,37 +467,47 @@ Get all versions of this schema ordered by the latest versions including drafts.
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.GetSchemaVersionsRequest(
-    slug='contact',
-)
 
-res = s.schemas.get_schema_versions(req)
+res = s.schemas.get_schema_versions(request={
+    "slug": "contact",
+    "fields": [
+        "id",
+        "attributes",
+        "capabilites",
+    ],
+})
 
-if res.get_schema_versions_200_application_json_object is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetSchemaVersionsRequest](../../models/operations/getschemaversionsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [models.GetSchemaVersionsRequest](../../models/getschemaversionsrequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| `retries`                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)            | :heavy_minus_sign:                                                          | Configuration to override the default retry behavior of the client.         |
 
 
 ### Response
 
-**[operations.GetSchemaVersionsResponse](../../models/operations/getschemaversionsresponse.md)**
+**[models.GetSchemaVersionsResponseBody](../../models/getschemaversionsresponsebody.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## list_schema_blueprints
 
@@ -139,28 +516,39 @@ List canonical versions of all available schemas
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
 res = s.schemas.list_schema_blueprints()
 
-if res.list_schema_blueprints_200_application_json_object is not None:
+if res is not None:
     # handle response
     pass
+
 ```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.ListSchemaBlueprintsResponse](../../models/operations/listschemablueprintsresponse.md)**
+**[models.ListSchemaBlueprintsResponseBody](../../models/listschemablueprintsresponsebody.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## list_schemas
 
@@ -169,35 +557,40 @@ Get the latest versions of all schemas
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.ListSchemasRequest()
 
-res = s.schemas.list_schemas(req)
+res = s.schemas.list_schemas()
 
-if res.list_schemas_200_application_json_object is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.ListSchemasRequest](../../models/operations/listschemasrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.ListSchemasRequest](../../models/listschemasrequest.md)     | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.ListSchemasResponse](../../models/operations/listschemasresponse.md)**
+**[models.ListSchemasResponseBody](../../models/listschemasresponsebody.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## list_taxonomy_classifications_for_schema
 
@@ -206,38 +599,43 @@ List taxonomy classifications for a given schema
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.ListTaxonomyClassificationsForSchemaRequest(
-    slug='contact',
-    taxonomy_slug='string',
-)
 
-res = s.schemas.list_taxonomy_classifications_for_schema(req)
+res = s.schemas.list_taxonomy_classifications_for_schema(request={
+    "slug": "contact",
+    "taxonomy_slug": "<value>",
+})
 
-if res.list_taxonomy_classifications_for_schema_200_application_json_object is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.ListTaxonomyClassificationsForSchemaRequest](../../models/operations/listtaxonomyclassificationsforschemarequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                         | [models.ListTaxonomyClassificationsForSchemaRequest](../../models/listtaxonomyclassificationsforschemarequest.md) | :heavy_check_mark:                                                                                                | The request object to use for the request.                                                                        |
+| `retries`                                                                                                         | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                  | :heavy_minus_sign:                                                                                                | Configuration to override the default retry behavior of the client.                                               |
 
 
 ### Response
 
-**[operations.ListTaxonomyClassificationsForSchemaResponse](../../models/operations/listtaxonomyclassificationsforschemaresponse.md)**
+**[models.ListTaxonomyClassificationsForSchemaResponseBody](../../models/listtaxonomyclassificationsforschemaresponsebody.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ## put_schema
 
@@ -246,283 +644,307 @@ Create or update a schema with a new version
 ### Example Usage
 
 ```python
-import epilot
-import dateutil.parser
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.PutSchemaRequest(
-    entity_schema=shared.EntitySchema(
-        attributes=[
-            shared.TextAttribute(
-                purpose=[
-                    'a93c7b74-037c-43b9-94a9-6166aa0e2336',
-                ],
-                constraints=shared.TextAttributeConstraints(),
-                feature_flag='FF_MY_FEATURE_FLAG',
-                info_helpers=shared.TextAttributeInfoHelpers(
-                    hint_tooltip_placement='top',
-                ),
-                label='string',
-                layout='full_width',
-                name='string',
-                order=0,
-                setting_flag='MY_SETTING',
-            ),
-            shared.TextAttribute(
-                purpose=[
-                    '535d6bf8-fcc1-4de0-b32d-65715210cf50',
-                ],
-                constraints=shared.TextAttributeConstraints(),
-                feature_flag='FF_MY_FEATURE_FLAG',
-                info_helpers=shared.TextAttributeInfoHelpers(
-                    hint_tooltip_placement='top',
-                ),
-                label='string',
-                layout='full_width',
-                name='string',
-                order=0,
-                setting_flag='MY_SETTING',
-            ),
-            shared.TextAttribute(
-                purpose=[
-                    '4680eaf6-fd6b-4ef2-8dd2-87b615b3e0e2',
-                ],
-                constraints=shared.TextAttributeConstraints(),
-                feature_flag='FF_MY_FEATURE_FLAG',
-                info_helpers=shared.TextAttributeInfoHelpers(
-                    hint_tooltip_placement='top',
-                ),
-                label='string',
-                layout='full_width',
-                name='string',
-                order=0,
-                setting_flag='MY_SETTING',
-            ),
-            shared.TextAttribute(
-                purpose=[
-                    '8c6d1668-543e-44eb-a42b-720a7fd081cb',
-                ],
-                constraints=shared.TextAttributeConstraints(),
-                feature_flag='FF_MY_FEATURE_FLAG',
-                info_helpers=shared.TextAttributeInfoHelpers(
-                    hint_tooltip_placement='top',
-                ),
-                label='string',
-                layout='full_width',
-                name='string',
-                order=0,
-                setting_flag='MY_SETTING',
-            ),
-            shared.TextAttribute(
-                purpose=[
-                    '030766bc-3807-45c8-837b-1710c2601905',
-                ],
-                constraints=shared.TextAttributeConstraints(),
-                feature_flag='FF_MY_FEATURE_FLAG',
-                info_helpers=shared.TextAttributeInfoHelpers(
-                    hint_tooltip_placement='top',
-                ),
-                label='string',
-                layout='full_width',
-                name='string',
-                order=0,
-                setting_flag='MY_SETTING',
-            ),
-            shared.TextAttribute(
-                purpose=[
-                    'e25fbb37-949e-45c6-b657-647c7479d9c5',
-                ],
-                constraints=shared.TextAttributeConstraints(),
-                feature_flag='FF_MY_FEATURE_FLAG',
-                info_helpers=shared.TextAttributeInfoHelpers(
-                    hint_tooltip_placement='top',
-                ),
-                label='string',
-                layout='full_width',
-                name='string',
-                order=0,
-                setting_flag='MY_SETTING',
-            ),
-            shared.TextAttribute(
-                purpose=[
-                    '60ea7969-366d-4774-ba49-a55907519da9',
-                ],
-                constraints=shared.TextAttributeConstraints(),
-                feature_flag='FF_MY_FEATURE_FLAG',
-                info_helpers=shared.TextAttributeInfoHelpers(
-                    hint_tooltip_placement='top',
-                ),
-                label='string',
-                layout='full_width',
-                name='string',
-                order=0,
-                setting_flag='MY_SETTING',
-            ),
+
+res = s.schemas.put_schema(request={
+    "slug": "contact",
+    "entity_schema": {
+        "attributes": [
+
         ],
-        capabilities=[
-            shared.EntityCapability(
-                purpose=[
-                    'b2682a9b-a9cc-4095-b674-af53c32a28a3',
-                ],
-                attributes=[
-                    shared.PartnerOrganisationAttribute(
-                        purpose=[
-                            'aa88fab2-463c-4780-a75f-efd4fb709f43',
-                        ],
-                        constraints=shared.PartnerOrganisationAttributeConstraints(),
-                        feature_flag='FF_MY_FEATURE_FLAG',
-                        info_helpers=shared.PartnerOrganisationAttributeInfoHelpers(
-                            hint_tooltip_placement='top',
-                        ),
-                        label='string',
-                        layout='full_width',
-                        name='string',
-                        order=0,
-                        setting_flag='MY_SETTING',
-                    ),
-                ],
-                feature_flag='FF_MY_FEATURE_FLAG',
-                name='customer_messaging',
-                setting_flag='MY_SETTING',
-                title='Messaging',
-                ui_hooks=[
-                    shared.EntityCapabilityUIHooks(
-                        additional_properties={
-                            "key": 'string',
-                        },
-                        component='PricingItems',
-                        hook='EntityDetailsV2:Tab',
-                        icon='email',
-                        import_='@epilot360/notes',
-                        order=10,
-                        render_condition='_is_composite_price = "false"',
-                        required_permission=shared.EntityCapabilityUIHooksRequiredPermission(
-                            action='note:view',
-                            resource='123',
-                        ),
-                        route='notes',
-                        title='Notes',
-                    ),
-                ],
-            ),
+        "capabilities": [
+
         ],
-        dialog_config={
-            "key": 'string',
-        },
-        draft=False,
-        enable_setting=[
-            '3',
-            '6',
-            '0',
-            '_',
-            'f',
-            'e',
-            'a',
-            't',
-            'u',
-            'r',
-            'e',
-            's',
+        "name": "Contact",
+        "plural": "Contacts",
+        "slug": "contact",
+        "draft": False,
+        "enable_setting": [
+            "360_features",
         ],
-        explicit_search_mappings={
-            "image": shared.SearchMappings(
-                fields={
-                    "key": 'string',
-                },
-            ),
-        },
-        feature_flag='FF_MY_FEATURE_FLAG',
-        group_settings=[
-            shared.EntitySchemaGroupSettings(
-                purpose=[
-                    'acc8e6b9-335e-475d-bf77-f76391618236',
-                ],
-                feature_flag='FF_MY_FEATURE_FLAG',
-                id='<ID>',
-                info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(),
-                label='string',
-                render_condition='_is_composite_price = "false"',
-                setting_flag='MY_SETTING',
-            ),
-            shared.EntitySchemaGroupSettings(
-                purpose=[
-                    '09a0d8c5-8211-4d87-949e-87e05451ea97',
-                ],
-                feature_flag='FF_MY_FEATURE_FLAG',
-                id='<ID>',
-                info_tooltip_title=shared.EntitySchemaGroupSettingsInfoTooltipTitle(),
-                label='string',
-                render_condition='_is_composite_price = "false"',
-                setting_flag='MY_SETTING',
-            ),
-        ],
-        icon='person',
-        layout_settings=shared.EntitySchemaLayoutSettings(
-            additional_properties={
-                "key": 'string',
+        "explicit_search_mappings": {
+            "image": {
+                "index": False,
+                "type": epilot_entity.SearchMappingsType.KEYWORD,
             },
-        ),
-        name='Contact',
-        plural='Contacts',
-        published=False,
-        slug='contact',
-        title_template='{{first_name}} {{last_name}}',
-        ui_config=shared.EntitySchemaUIConfig(
-            shared.RedirectEntityView(
-                route='/app/pricing-hub/product/:entityId',
-            ),
-            shared.EntityViewDisabled(),
-            list_item=shared.EntitySchemaUIConfigListItem(
-                quick_actions=[
-                    shared.EntityAction(
-                        action='preview_file',
-                        icon='visibility',
-                        label='Preview File',
-                        permission='entity:edit',
-                    ),
+        },
+        "feature_flag": "FF_MY_FEATURE_FLAG",
+        "group_settings": [
+            {
+                "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14",
+                "label": "Contact Details",
+                "purpose": [
+                    "taxonomy-slug:classification-slug",
                 ],
-                summary_attributes=[
-                    shared.SummaryAttribute(
-                        label='string',
-                        value='string',
-                    ),
+                "expanded": True,
+                "feature_flag": "FF_MY_FEATURE_FLAG",
+                "order": 1,
+                "render_condition": "_is_composite_price = \"false\"",
+            },
+            {
+                "id": "e9a1ae28-27ba-4fa0-a79c-e279cc5c4a6e",
+                "label": "Address Details",
+                "purpose": [
+                    "taxonomy-slug:classification-slug",
                 ],
-            ),
-            sharing=shared.EntitySchemaUIConfigSharing(
-                show_sharing_button=True,
-            ),
-            shared.RedirectEntityView(
-                route='/app/pricing-hub/product/:entityId',
-            ),
-            shared.RedirectEntityView(
-                route='/app/pricing-hub/product/:entityId',
-            ),
-        ),
-    ),
-    slug='contact',
-)
+                "expanded": False,
+                "feature_flag": "FF_MY_FEATURE_FLAG",
+                "info_tooltip_title": {
+                    "default": "These informations are provided by the partner company and cannot be edited.",
+                    "key": "partner.partner_information_group_tooltip",
+                },
+                "order": 2,
+                "render_condition": "_is_composite_price = \"false\"",
+            },
+        ],
+        "icon": "person",
+        "published": False,
+        "title_template": "{{first_name}} {{last_name}}",
+        "ui_config": {
+            "create_view": {
+                "route": "/app/pricing-hub/product/:entityId",
+            },
+            "edit_view": {
+                "route": "/app/pricing-hub/product/:entityId",
+            },
+            "list_item": {
+                "quick_actions": [
+                    {
+                        "action": "preview_file",
+                        "label": "Preview File",
+                        "icon": "visibility",
+                        "permission": "entity:edit",
+                    },
+                ],
+                "summary_attributes": [
+                    {
+                        "label": "<value>",
+                        "value": "<value>",
+                    },
+                ],
+            },
+            "sharing": {
+                "show_sharing_button": True,
+            },
+            "single_view": {},
+            "table_view": {
+                "route": "/app/pricing-hub/product/:entityId",
+            },
+        },
+    },
+})
 
-res = s.schemas.put_schema(req)
-
-if res.entity_schema_item is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [operations.PutSchemaRequest](../../models/operations/putschemarequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.PutSchemaRequest](../../models/putschemarequest.md)         | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 
 ### Response
 
-**[operations.PutSchemaResponse](../../models/operations/putschemaresponse.md)**
+**[models.EntitySchemaItem](../../models/entityschemaitem.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## put_schema_attribute
+
+Updates an attribute in the schema
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.put_schema_attribute(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+    "attribute_with_composite_id": {
+        "label": "<value>",
+        "name": "<value>",
+        "purpose": [
+            "taxonomy-slug:classification-slug",
+        ],
+        "constraints": {},
+        "feature_flag": "FF_MY_FEATURE_FLAG",
+        "id": "d5839b94-ba20-4225-a78e-76951d352bd6",
+        "info_helpers": {
+            "hint_tooltip_placement": "top",
+        },
+        "layout": "full_width",
+        "order": 0,
+    },
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [models.PutSchemaAttributeRequest](../../models/putschemaattributerequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| `retries`                                                                     | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)              | :heavy_minus_sign:                                                            | Configuration to override the default retry behavior of the client.           |
+
+
+### Response
+
+**[models.AttributeWithCompositeID](../../models/attributewithcompositeid.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## put_schema_capability
+
+Adds or updates an capability in the schema
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.put_schema_capability(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+    "entity_capability_with_composite_id": {
+        "name": "customer_messaging",
+        "purpose": [
+            "taxonomy-slug:classification-slug",
+        ],
+        "attributes": [
+
+        ],
+        "feature_flag": "FF_MY_FEATURE_FLAG",
+        "id": "d5839b94-ba20-4225-a78e-76951d352bd6",
+        "title": "Messaging",
+        "ui_hooks": [
+            epilot_entity.EntityCapabilityWithCompositeIDUIHooks(
+                hook="EntityDetailsV2:Tab",
+                component="PricingItems",
+                icon="email",
+                import_="@epilot360/notes",
+                order=10,
+                render_condition="_is_composite_price = \"false\"",
+                required_permission={
+                    "action": "note:view",
+                    "resource": "123",
+                },
+                route="notes",
+                title="Notes",
+            ),
+        ],
+    },
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [models.PutSchemaCapabilityRequest](../../models/putschemacapabilityrequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| `retries`                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                | :heavy_minus_sign:                                                              | Configuration to override the default retry behavior of the client.             |
+
+
+### Response
+
+**[models.EntityCapabilityWithCompositeID](../../models/entitycapabilitywithcompositeid.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
+
+## put_schema_group
+
+Adds or updates an capability in the schema
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+
+res = s.schemas.put_schema_group(request={
+    "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d",
+    "entity_schema_group_with_composite_id": {
+        "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14",
+        "label": "Contact Details",
+        "purpose": [
+            "taxonomy-slug:classification-slug",
+        ],
+        "feature_flag": "FF_MY_FEATURE_FLAG",
+        "render_condition": "_is_composite_price = \"false\"",
+    },
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.PutSchemaGroupRequest](../../models/putschemagrouprequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
+
+
+### Response
+
+**[models.EntitySchemaGroupWithCompositeID](../../models/entityschemagroupwithcompositeid.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
