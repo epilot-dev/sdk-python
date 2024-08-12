@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "epilot-permissions"
-version = "1.3.0"
+version = "1.3.1"
 description = "Python Client SDK for Epilot"
 authors = ["Speakeasy",]
-readme = "README.md"
+readme = "README-PYPI.md"
 repository = "https://github.com/epilot-dev/sdk-python.git"
 packages = [
     { include = "epilot_permissions", from = "src" }
@@ -18,6 +18,7 @@ in-project = true
 
 [tool.poetry.dependencies]
 python = "^3.8"
+eval-type-backport = "^0.2.0"
 httpx = "^0.27.0"
 jsonpath-python = "^1.0.6"
 pydantic = "~2.8.2"
