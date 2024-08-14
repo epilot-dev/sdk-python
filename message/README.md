@@ -176,13 +176,6 @@ asyncio.run(main())
 * [untrash_message](docs/sdks/messages/README.md#untrash_message) - untrashMessage
 * [update_message](docs/sdks/messages/README.md#update_message) - updateMessage
 
-### [gen_ai](docs/sdks/genai/README.md)
-
-* [generate_suggested_reply](docs/sdks/genai/README.md#generate_suggested_reply) - generateSuggestedReply
-* [get_gen_ai_feedback](docs/sdks/genai/README.md#get_gen_ai_feedback) - getGenAIFeedback
-* [get_info](docs/sdks/genai/README.md#get_info) - getInfo
-* [patch_info](docs/sdks/genai/README.md#patch_info) - patchInfo
-
 ### [threads](docs/sdks/threads/README.md)
 
 * [assign_thread](docs/sdks/threads/README.md#assign_thread) - assignThread
@@ -194,10 +187,6 @@ asyncio.run(main())
 * [trash_thread](docs/sdks/threads/README.md#trash_thread) - trashThread
 * [untrash_thread](docs/sdks/threads/README.md#untrash_thread) - untrashThread
 * [update_thread](docs/sdks/threads/README.md#update_thread) - updateThread
-
-### [internal](docs/sdks/internal/README.md)
-
-* [get_gen_ai_feedback](docs/sdks/internal/README.md#get_gen_ai_feedback) - getGenAIFeedback
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Retries [retries] -->
@@ -349,10 +338,9 @@ if res is not None:
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
-| Error Object                      | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| models.PatchInfoGenAIResponseBody | 500                               | application/json                  |
-| models.SDKError                   | 4xx-5xx                           | */*                               |
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
 
 ### Example
 
@@ -368,32 +356,55 @@ s = Epilot(
 
 res = None
 try:
-    res = s.gen_ai.patch_info(message_id="<value>", thread_id="<value>", request_body={
-    "created_at": 1612900000000,
-    "error": "Failed to generate summary",
-    "feedback": "Good summary",
-    "next_steps": [
-        "The agent should approve the refund",
+    res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
+    from_={
+        "address": "messaging@epilot.cloud",
+        "name": "epilot",
+    },
+    subject="Request for solar panel price",
+    bcc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
-    "progress": 100,
-    "rating": "positive",
-    "status": epilot_message.Status.COMPLETED,
-    "summary": [
-        "Customer is interested in solar panels",
+    cc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
-    "tags": [
-        "solar",
-        "quote",
+    file={
+        "dollar_relation": [
+            {
+                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+            },
+        ],
+    },
+    html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
+    parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
+    reply_to={
+        "address": "messaging@epilot.cloud",
+        "name": "epilot",
+    },
+    text="We at ABC GmbH would like to request a price quote for the solar panel.",
+    thread={
+        "topic": "CUSTOMER_MESSAGE",
+        "assigned_to": [
+            "206801",
+            "200109",
+        ],
+    },
+    to=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
-    "topics": [
-        "Product enquiry",
-    ],
-    "updated_at": 1612900000000,
-})
+))
 
-except models.PatchInfoGenAIResponseBody as e:
-    # handle exception
-    raise(e)
 except models.SDKError as e:
     # handle exception
     raise(e)
@@ -731,6 +742,16 @@ logging.basicConfig(level=logging.DEBUG)
 s = Epilot(debug_logger=logging.getLogger("epilot_message"))
 ```
 <!-- End Debugging [debug] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
