@@ -62,6 +62,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -100,6 +102,8 @@ s.workflows.delete_definition(definition_id="CustomerRequest")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -135,6 +139,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -177,6 +183,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -216,6 +224,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -254,6 +264,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -297,6 +309,8 @@ s.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_i
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
@@ -361,6 +375,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 

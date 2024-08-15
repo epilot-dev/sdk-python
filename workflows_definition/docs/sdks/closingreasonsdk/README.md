@@ -27,6 +27,8 @@ s.closing_reason.change_reason_status(reason_id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
@@ -68,6 +70,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -106,6 +110,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
