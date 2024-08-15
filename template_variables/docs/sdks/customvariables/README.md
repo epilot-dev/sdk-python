@@ -155,6 +155,8 @@ s.custom_variables.create_custom_variable(request={
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -190,6 +192,8 @@ s.custom_variables.delete_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
@@ -228,6 +232,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -270,6 +276,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -311,6 +319,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -472,6 +482,8 @@ s.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
