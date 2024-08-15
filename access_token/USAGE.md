@@ -1,24 +1,53 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+import epilot_access_token
+from epilot_access_token import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+s = Epilot(
+    security=epilot_access_token.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
 
-req = shared.JourneyTokenParameters(
-    journey_id="deserunt",
-    name="Postman Access Token",
-    token_type="journey",
-)
-    
-res = s.access_tokens.create_access_token(req)
+res = s.access_tokens.create_access_token(request={
+    "name": "Postman Access Token",
+    "assignments": [
+        "123:owner",
+    ],
+})
 
-if res.create_access_token_201_application_json_object is not None:
+if res is not None:
     # handle response
+    pass
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_access_token
+from epilot_access_token import Epilot
+
+async def main():
+    s = Epilot(
+        security=epilot_access_token.Security(
+            epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+        ),
+    )
+    res = await s.access_tokens.create_access_token_async(request={
+        "name": "Postman Access Token",
+        "assignments": [
+            "123:owner",
+        ],
+    })
+    if res is not None:
+        # handle response
+        pass
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
