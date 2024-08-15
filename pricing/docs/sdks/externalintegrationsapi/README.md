@@ -42,6 +42,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
@@ -84,6 +86,8 @@ s.external_integrations_api.dollar_delete_credentials(integration_id=epilot_pric
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -120,6 +124,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -163,6 +169,8 @@ s.external_integrations_api.dollar_save_credentials(integration_id=epilot_pricin
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           | Example                                                                                               |
@@ -203,6 +211,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -248,6 +258,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
