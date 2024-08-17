@@ -36,6 +36,8 @@ s.messages.delete_message(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -73,6 +75,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -126,6 +130,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -166,6 +172,8 @@ s.messages.mark_read_message(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -201,6 +209,8 @@ s.messages.mark_unread_message(id="<value>")
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
@@ -287,6 +297,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
@@ -328,6 +340,8 @@ s.messages.trash_message(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -363,6 +377,8 @@ s.messages.untrash_message(id="<value>")
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
@@ -401,6 +417,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
