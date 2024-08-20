@@ -307,8 +307,9 @@ s.closing_reason.change_reason_status(reason_id="<value>")
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from openapi import SDK
 import logging
