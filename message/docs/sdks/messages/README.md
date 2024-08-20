@@ -36,6 +36,8 @@ s.messages.delete_message(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -73,6 +75,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -126,6 +130,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -166,6 +172,8 @@ s.messages.mark_read_message(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -201,6 +209,8 @@ s.messages.mark_unread_message(id="<value>")
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
@@ -265,6 +275,7 @@ res = s.messages.send_message(message_request_params=epilot_message.MessageReque
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -286,6 +297,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
@@ -328,6 +341,8 @@ s.messages.trash_message(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -363,6 +378,8 @@ s.messages.untrash_message(id="<value>")
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
@@ -401,6 +418,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
