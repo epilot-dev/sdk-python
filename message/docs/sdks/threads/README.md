@@ -42,6 +42,8 @@ s.threads.assign_thread(id="<value>", request_body=[
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -85,6 +87,8 @@ s.threads.assign_users(id="<value>", request_body={
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -122,6 +126,8 @@ s.threads.delete_thread(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -158,6 +164,8 @@ s.threads.mark_read_thread(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -193,6 +201,8 @@ s.threads.mark_unread_thread(id="<value>")
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
@@ -239,6 +249,8 @@ if res is not None:
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -279,6 +291,8 @@ s.threads.trash_thread(id="<value>")
 
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -314,6 +328,8 @@ s.threads.untrash_thread(id="<value>")
 # Use the SDK ...
 
 ```
+
+
 
 ### Parameters
 
@@ -352,6 +368,8 @@ if res is not None:
     pass
 
 ```
+
+
 
 ### Parameters
 
