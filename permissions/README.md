@@ -345,8 +345,9 @@ if res is not None:
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from epilot_permissions import Epilot
 import logging
@@ -355,6 +356,16 @@ logging.basicConfig(level=logging.DEBUG)
 s = Epilot(debug_logger=logging.getLogger("epilot_permissions"))
 ```
 <!-- End Debugging [debug] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
