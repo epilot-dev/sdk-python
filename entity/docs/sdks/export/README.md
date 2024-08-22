@@ -16,44 +16,46 @@ create export file of entities
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.ExportEntitiesRequest(
-    entity_search_params=shared.EntitySearchParams(
-        aggs=shared.EntitySearchParamsAggs(),
-        fields=[
-            '_id',
-            '_title',
-            'first_name',
+
+s.export.export_entities(request={
+    "entity_search_params": {
+        "q": "_schema:contact AND status:active",
+        "aggs": {},
+        "fields": [
+            "_id",
+            "_title",
+            "first_name",
+            "account",
+            "!account.*._files",
+            "**._product",
         ],
-        q='_schema:contact AND status:active',
-        sort='_created_at:desc',
-    ),
-    job_id='abc123',
-)
+        "sort": "_created_at:desc",
+    },
+    "job_id": "abc123",
+})
 
-res = s.export.export_entities(req)
+# Use the SDK ...
 
-if res.status_code == 200:
-    # handle response
-    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.ExportEntitiesRequest](../../models/operations/exportentitiesrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.ExportEntitiesRequest](../../models/exportentitiesrequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
 
+### Errors
 
-### Response
-
-**[operations.ExportEntitiesResponse](../../models/operations/exportentitiesresponse.md)**
-
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4xx-5xx         | */*             |
