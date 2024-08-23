@@ -3,13 +3,11 @@
 from .basesdk import BaseSDK
 from .httpclient import AsyncHttpClient, HttpClient
 from .sdkconfiguration import SDKConfiguration
-from .utils.logger import Logger, NoOpLogger
+from .utils.logger import Logger, get_default_logger
 from .utils.retries import RetryConfig
 from epilot_message import models, utils
 from epilot_message._hooks import SDKHooks
 from epilot_message.drafts import Drafts
-from epilot_message.genai import GenAI
-from epilot_message.internal import Internal
 from epilot_message.messages import Messages
 from epilot_message.threads import Threads
 from epilot_message.types import OptionalNullable, UNSET
@@ -22,9 +20,7 @@ class Epilot(BaseSDK):
     """
     drafts: Drafts
     messages: Messages
-    gen_ai: GenAI
     threads: Threads
-    internal: Internal
     def __init__(
         self,
         security: Union[models.Security, Callable[[], models.Security]],
@@ -59,7 +55,7 @@ class Epilot(BaseSDK):
             async_client = httpx.AsyncClient()
 
         if debug_logger is None:
-            debug_logger = NoOpLogger()
+            debug_logger = get_default_logger()
 
         assert issubclass(
             type(async_client), AsyncHttpClient
@@ -97,7 +93,5 @@ class Epilot(BaseSDK):
     def _init_sdks(self):
         self.drafts = Drafts(self.sdk_configuration)
         self.messages = Messages(self.sdk_configuration)
-        self.gen_ai = GenAI(self.sdk_configuration)
         self.threads = Threads(self.sdk_configuration)
-        self.internal = Internal(self.sdk_configuration)
     
