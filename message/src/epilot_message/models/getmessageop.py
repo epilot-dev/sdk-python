@@ -82,6 +82,8 @@ class GetMessageResponseBodyTypedDict(TypedDict):
     """
     sender: NotRequired[str]
     r"""Ivy User ID of user sends the message."""
+    template_id: NotRequired[str]
+    r"""Template ID used for sending message."""
     text: NotRequired[str]
     r"""Text body"""
     to: NotRequired[List[AddressTypedDict]]
@@ -139,6 +141,8 @@ class GetMessageResponseBody(BaseModel):
     """
     sender: Optional[str] = None
     r"""Ivy User ID of user sends the message."""
+    template_id: Optional[str] = None
+    r"""Template ID used for sending message."""
     text: Optional[str] = None
     r"""Text body"""
     to: Optional[List[Address]] = None

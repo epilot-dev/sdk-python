@@ -49,6 +49,8 @@ class MessageRequestParamsTypedDict(TypedDict):
 
     """
     reply_to: NotRequired[AddressTypedDict]
+    template_id: NotRequired[str]
+    r"""Template ID used for sending message."""
     text: NotRequired[str]
     r"""Text body. If not provided, text body is converted from HTML body using [html-to-text](https://www.npmjs.com/package/html-to-text)"""
     thread: NotRequired[ThreadTypedDict]
@@ -79,6 +81,8 @@ class MessageRequestParams(BaseModel):
 
     """
     reply_to: Optional[Address] = None
+    template_id: Optional[str] = None
+    r"""Template ID used for sending message."""
     text: Optional[str] = None
     r"""Text body. If not provided, text body is converted from HTML body using [html-to-text](https://www.npmjs.com/package/html-to-text)"""
     thread: Optional[Thread] = None
