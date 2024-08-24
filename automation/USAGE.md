@@ -1,22 +1,37 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+from epilot_automation import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
+s = Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-req = operations.CancelExecutionRequest(
-    execution_id="9baf184f-bc81-4128-bca3-d974c90a12c4",
-)
-    
-res = s.executions.cancel_execution(req)
+res = s.executions.cancel_execution(execution_id="9baf184f-bc81-4128-bca3-d974c90a12c4")
 
-if res.automation_execution is not None:
+if res is not None:
     # handle response
+    pass
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+from epilot_automation import Epilot
+
+async def main():
+    s = Epilot(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    )
+    res = await s.executions.cancel_execution_async(execution_id="9baf184f-bc81-4128-bca3-d974c90a12c4")
+    if res is not None:
+        # handle response
+        pass
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
