@@ -1,21 +1,47 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+import epilot_customer_portal
+from epilot_customer_portal import Epilot
 
-s = epilot.Epilot()
-
-
-req = operations.AddEndCustomerRelationToEntityRequest(
-    id="unde",
-    slug="contact",
+s = Epilot(
+    security=epilot_customer_portal.Security(
+        either_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
 )
-    
-res = s.ecp.add_end_customer_relation_to_entity(req, operations.AddEndCustomerRelationToEntitySecurity(
-    portal_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-))
 
-if res.add_end_customer_relation_to_entity_200_application_json_object is not None:
+
+res = s.ecp_admin.can_trigger_portal_flow(origin=epilot_customer_portal.Origin.END_CUSTOMER_PORTAL, trigger_portal_flow={
+    "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
+
+if res is not None:
     # handle response
+    pass
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_customer_portal
+from epilot_customer_portal import Epilot
+
+async def main():
+    s = Epilot(
+        security=epilot_customer_portal.Security(
+            either_auth="<YOUR_BEARER_TOKEN_HERE>",
+        ),
+    )
+    res = await s.ecp_admin.can_trigger_portal_flow_async(origin=epilot_customer_portal.Origin.END_CUSTOMER_PORTAL, trigger_portal_flow={
+        "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+    })
+    if res is not None:
+        # handle response
+        pass
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
