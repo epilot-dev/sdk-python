@@ -28,13 +28,13 @@ class OrderCustomer(BaseModel):
     dollar_relation: Annotated[Optional[List[EntityRelation]], pydantic.Field(alias="$relation")] = None
     
 
-class PricesTypedDict(TypedDict):
+class OrderPricesTypedDict(TypedDict):
     r"""The price entities referenced from within `line_items`"""
     
     dollar_relation: NotRequired[List[EntityRelationTypedDict]]
     
 
-class Prices(BaseModel):
+class OrderPrices(BaseModel):
     r"""The price entities referenced from within `line_items`"""
     
     dollar_relation: Annotated[Optional[List[EntityRelation]], pydantic.Field(alias="$relation")] = None
@@ -99,7 +99,7 @@ class OrderTypedDict(TypedDict):
     r"""The order number (customer facing)"""
     payment_method: NotRequired[List[PaymentMethodTypedDict]]
     r"""The payment method details for the order"""
-    prices: NotRequired[PricesTypedDict]
+    prices: NotRequired[OrderPricesTypedDict]
     r"""The price entities referenced from within `line_items`"""
     products: NotRequired[ProductsTypedDict]
     r"""The product entities referenced from within `line_items`"""
@@ -173,7 +173,7 @@ class Order(BaseModel):
     r"""The order number (customer facing)"""
     payment_method: Optional[List[PaymentMethod]] = None
     r"""The payment method details for the order"""
-    prices: Optional[Prices] = None
+    prices: Optional[OrderPrices] = None
     r"""The price entities referenced from within `line_items`"""
     products: Optional[Products] = None
     r"""The product entities referenced from within `line_items`"""

@@ -45,8 +45,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
@@ -56,16 +54,17 @@ if res is not None:
 | `security`                                                                                          | [Optional[models.DollarAvailabilityCheckSecurity]](../../models/dollaravailabilitychecksecurity.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
 | `retries`                                                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                    | :heavy_minus_sign:                                                                                  | Configuration to override the default retry behavior of the client.                                 |
 
-
 ### Response
 
 **[models.AvailabilityResult](../../models/availabilityresult.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## dollar_validate_availability_file
 
@@ -89,8 +88,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -99,10 +96,10 @@ if res is not None:
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Product ID that the Availability File is attached to                | 72c803b2-2e5d-4bd6-bffc-fad998bbbe36                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.ValidateAvailabilityFileResult](../../models/validateavailabilityfileresult.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |

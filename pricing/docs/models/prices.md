@@ -1,10 +1,19 @@
 # Prices
 
-The price entities referenced from within `line_items`
+The prices associated with the coupon. Will hold price entities if hydrated, relations otherwise.
 
 
-## Fields
+## Supported Types
 
-| Field                                                      | Type                                                       | Required                                                   | Description                                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `dollar_relation`                                          | List[[models.EntityRelation](../models/entityrelation.md)] | :heavy_minus_sign:                                         | N/A                                                        |
+### `models.One`
+
+```python
+value: models.One = /* values here */
+```
+
+### `List[models.Price]`
+
+```python
+value: List[models.Price] = /* values here */
+```
+

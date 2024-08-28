@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 05558e61-9d4c-4c49-92eb-67c6a23fbbe1
 management:
-  docChecksum: e9f8197cf98e2d6700f05b16f30fb405
+  docChecksum: 313b636b0535decc5e6dd252a5ea3e80
   docVersion: 1.0.0
-  speakeasyVersion: 1.376.0
-  generationVersion: 2.402.5
-  releaseVersion: 1.3.0
-  configChecksum: e23e2ea17a58101bc131236d205c41e7
+  speakeasyVersion: 1.381.0
+  generationVersion: 2.404.9
+  releaseVersion: 1.3.1
+  configChecksum: 333cb1caedba652a681d26c2b9bc78ae
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: pricing
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=pricing
@@ -87,6 +87,7 @@ generatedFiles:
   - src/epilot_pricing/models/gasconcessiontype.py
   - src/epilot_pricing/models/productcategory.py
   - src/epilot_pricing/models/billingperiod.py
+  - src/epilot_pricing/models/coupon.py
   - src/epilot_pricing/models/error.py
   - src/epilot_pricing/models/catalogsearch.py
   - src/epilot_pricing/models/availabilityfilters.py
@@ -198,6 +199,11 @@ generatedFiles:
   - docs/models/gasconcessiontype.md
   - docs/models/productcategory.md
   - docs/models/billingperiod.md
+  - docs/models/schema.md
+  - docs/models/one.md
+  - docs/models/prices.md
+  - docs/models/coupontype.md
+  - docs/models/coupon.md
   - docs/models/error.md
   - docs/models/catalogsearch.md
   - docs/models/availabilityfilters.md
@@ -262,7 +268,7 @@ generatedFiles:
   - docs/models/pricingmodel.md
   - docs/models/priceinputmappingfrequencyunit.md
   - docs/models/priceinputmapping.md
-  - docs/models/one.md
+  - docs/models/metadata1.md
   - docs/models/metadata.md
   - docs/models/two.md
   - docs/models/pricecomponents.md
@@ -284,7 +290,7 @@ generatedFiles:
   - docs/models/externalfeemapping.md
   - docs/models/compositepriceitemdto.md
   - docs/models/ordercustomer.md
-  - docs/models/prices.md
+  - docs/models/orderprices.md
   - docs/models/products.md
   - docs/models/order.md
   - docs/models/orderstatus.md

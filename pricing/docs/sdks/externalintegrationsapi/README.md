@@ -42,8 +42,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               | Example                                                                                   |
@@ -54,16 +52,17 @@ if res is not None:
 | `security`                                                                                | [Optional[models.DollarComputePriceSecurity]](../../models/dollarcomputepricesecurity.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |                                                                                           |
 | `retries`                                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                          | :heavy_minus_sign:                                                                        | Configuration to override the default retry behavior of the client.                       |                                                                                           |
 
-
 ### Response
 
 **[models.ComputePriceResult](../../models/computepriceresult.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400,403          | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## dollar_delete_credentials
 
@@ -86,8 +85,6 @@ s.external_integrations_api.dollar_delete_credentials(integration_id=epilot_pric
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -101,6 +98,7 @@ s.external_integrations_api.dollar_delete_credentials(integration_id=epilot_pric
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## dollar_get_credentials
 
@@ -125,8 +123,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -134,16 +130,17 @@ if res is not None:
 | `integration_id`                                                    | [models.IntegrationID](../../models/integrationid.md)               | :heavy_check_mark:                                                  | The integration identifier                                          | getag                                                               |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.IntegrationCredentialsResult](../../models/integrationcredentialsresult.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400,404          | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## dollar_save_credentials
 
@@ -169,8 +166,6 @@ s.external_integrations_api.dollar_save_credentials(integration_id=epilot_pricin
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           | Example                                                                                               |
@@ -185,6 +180,7 @@ s.external_integrations_api.dollar_save_credentials(integration_id=epilot_pricin
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## dollar_search_providers
 
@@ -212,8 +208,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     | Example                                                                                         |
@@ -224,16 +218,17 @@ if res is not None:
 | `security`                                                                                      | [Optional[models.DollarSearchProvidersSecurity]](../../models/dollarsearchproviderssecurity.md) | :heavy_minus_sign:                                                                              | N/A                                                                                             |                                                                                                 |
 | `retries`                                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                | :heavy_minus_sign:                                                                              | Configuration to override the default retry behavior of the client.                             |                                                                                                 |
 
-
 ### Response
 
 **[List[models.Provider]](../../models/.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400,403          | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## dollar_search_streets
 
@@ -259,8 +254,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 | Example                                                                                     |
@@ -271,10 +264,10 @@ if res is not None:
 | `security`                                                                                  | [Optional[models.DollarSearchStreetsSecurity]](../../models/dollarsearchstreetssecurity.md) | :heavy_minus_sign:                                                                          | N/A                                                                                         |                                                                                             |
 | `retries`                                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                            | :heavy_minus_sign:                                                                          | Configuration to override the default retry behavior of the client.                         |                                                                                             |
 
-
 ### Response
 
 **[List[models.Street]](../../models/.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |

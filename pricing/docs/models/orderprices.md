@@ -1,4 +1,6 @@
-# One
+# OrderPrices
+
+The price entities referenced from within `line_items`
 
 
 ## Fields

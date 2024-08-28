@@ -6,7 +6,7 @@ from typing import Optional, TypedDict
 from typing_extensions import NotRequired
 
 
-class OneTypedDict(TypedDict):
+class MetaData1TypedDict(TypedDict):
     r"""Key value pair entry"""
     
     key: NotRequired[str]
@@ -15,7 +15,7 @@ class OneTypedDict(TypedDict):
     r"""Item value"""
     
 
-class One(BaseModel):
+class MetaData1(BaseModel):
     r"""Key value pair entry"""
     
     key: Optional[str] = None
@@ -24,8 +24,8 @@ class One(BaseModel):
     r"""Item value"""
     
 
-MetaDataTypedDict = OneTypedDict
+MetaDataTypedDict = MetaData1TypedDict
 
 
-MetaData = One
+MetaData = MetaData1
 

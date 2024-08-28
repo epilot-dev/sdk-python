@@ -53,35 +53,11 @@ res = s.cart_api.dollar_checkout_cart(x_ivy_org_id="<value>", checkout_cart={
             tags=[
                 "billing",
             ],
-            additional_info="headquarters office",
-            city="new york city",
-            country="united states",
-            **{
-                "street1": "wallstreet",
-                "street2": 1,
-                "country_code": "US",
-            },
         ),
-        "customer": {
-            "company_name": "company limited",
-            "email": "johndoe@company.com",
-            "first_name": "john",
-            "last_name": "doe",
-            "phone": "+44233242423",
-            "vat_id": "123892321",
-        },
         "delivery_address": epilot_pricing.Address(
             tags=[
                 "billing",
             ],
-            additional_info="remote cowork place",
-            city="berverly hills",
-            country="california",
-            **{
-                "street1": "berverly hills avenue",
-                "street2": "block 1",
-                "country_code": "CA",
-            },
         ),
         "source": {
             "http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939",
@@ -99,8 +75,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
@@ -110,10 +84,10 @@ if res is not None:
 | `security`                                                                                | [Optional[models.DollarCheckoutCartSecurity]](../../models/dollarcheckoutcartsecurity.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
 | `retries`                                                                                 | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                          | :heavy_minus_sign:                                                                        | Configuration to override the default retry behavior of the client.                       |
 
-
 ### Response
 
 **[models.CheckoutCartResult](../../models/checkoutcartresult.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |

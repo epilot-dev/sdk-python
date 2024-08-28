@@ -15,3 +15,9 @@ value: models.Product = /* values here */
 value: models.Price = /* values here */
 ```
 
+### `models.Coupon`
+
+```python
+value: models.Coupon = /* values here */
+```
+

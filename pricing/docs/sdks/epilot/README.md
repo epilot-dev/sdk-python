@@ -1,6 +1,5 @@
 # Epilot SDK
 
-
 ## Overview
 
 Pricing API: The `pricing-api` hub sets the foundations for the following Pricing APIs:
@@ -24,7 +23,3 @@ Provides endpoints for querying products availability by a set of predefined dim
 
 ### External Integrations API
 Provides endpoints for external integrations (e.g. Enet / GetAG).
-
-
-### Available Operations
-

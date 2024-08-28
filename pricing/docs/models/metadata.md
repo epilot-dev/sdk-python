@@ -3,9 +3,9 @@
 
 ## Supported Types
 
-### `models.One`
+### `models.MetaData1`
 
 ```python
-value: models.One = /* values here */
+value: models.MetaData1 = /* values here */
 ```
 

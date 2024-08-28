@@ -40,8 +40,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
@@ -49,16 +47,17 @@ if res is not None:
 | `request`                                                                                                   | [models.DollarCalculatePricingDetailsRequestBody](../../models/dollarcalculatepricingdetailsrequestbody.md) | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
 | `retries`                                                                                                   | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                            | :heavy_minus_sign:                                                                                          | Configuration to override the default retry behavior of the client.                                         |
 
-
 ### Response
 
 **[models.PricingDetailsResponse](../../models/pricingdetailsresponse.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## create_order
 
@@ -147,8 +146,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -156,16 +153,17 @@ if res is not None:
 | `request`                                                           | [models.OrderPayload](../../models/orderpayload.md)                 | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.Order](../../models/order.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## put_order
 
@@ -254,8 +252,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -264,10 +260,10 @@ if res is not None:
 | `order_payload`                                                     | [models.OrderPayload](../../models/orderpayload.md)                 | :heavy_check_mark:                                                  | N/A                                                                 |                                                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Order](../../models/order.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |

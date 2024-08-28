@@ -43,8 +43,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -52,16 +50,17 @@ if res is not None:
 | `request`                                                           | [models.CatalogSearch](../../models/catalogsearch.md)               | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.CatalogSearchResult](../../models/catalogsearchresult.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.Error     | 400              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## dollar_search_catalog
 
@@ -93,8 +92,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                | Example                                                                                                    |
@@ -104,10 +101,10 @@ if res is not None:
 | `security`                                                                                                 | [Optional[models.DollarSearchCatalogSecurity]](../../models/dollarsearchcatalogsecurity.md)                | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |                                                                                                            |
 | `retries`                                                                                                  | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                           | :heavy_minus_sign:                                                                                         | Configuration to override the default retry behavior of the client.                                        |                                                                                                            |
 
-
 ### Response
 
 **[models.CatalogSearchResult](../../models/catalogsearchresult.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
