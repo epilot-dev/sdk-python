@@ -1,6 +1,8 @@
 # CustomVariables
 (*custom_variables*)
 
+## Overview
+
 ### Available Operations
 
 * [create_custom_variable](#create_custom_variable) - Create custom variable
@@ -155,8 +157,6 @@ s.custom_variables.create_custom_variable(request={
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -169,6 +169,7 @@ s.custom_variables.create_custom_variable(request={
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## delete_custom_variable
 
@@ -193,8 +194,6 @@ s.custom_variables.delete_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -207,6 +206,7 @@ s.custom_variables.delete_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_blue_print_table_config
 
@@ -233,23 +233,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.CustomVariable](../../models/customvariable.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_custom_variable
 
@@ -276,8 +275,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -285,15 +282,16 @@ if res is not None:
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Custom vairable ID                                                  | rbse777b-3cf8-4bff-bb0c-253fd1123250                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.CustomVariable](../../models/customvariable.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_custom_variables
 
@@ -320,23 +318,22 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[List[models.CustomVariable]](../../models/.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_custom_variable
 
@@ -482,8 +479,6 @@ s.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
 # Use the SDK ...
 
 ```
-
-
 
 ### Parameters
 

@@ -37,8 +37,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -46,15 +44,16 @@ if res is not None:
 | `lang`                                                              | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | N/A                                                                 |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[List[models.CategoryResult]](../../models/.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_variable_context
 
@@ -99,8 +98,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
@@ -108,15 +105,16 @@ if res is not None:
 | `request`                                                                             | [models.GetVariableContextRequestBody](../../models/getvariablecontextrequestbody.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 | `retries`                                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                      | :heavy_minus_sign:                                                                    | Configuration to override the default retry behavior of the client.                   |
 
-
 ### Response
 
 **[models.VariableContext](../../models/variablecontext.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## replace_templates
 
@@ -167,8 +165,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
@@ -176,15 +172,16 @@ if res is not None:
 | `request`                                                                         | [models.ReplaceTemplatesRequestBody](../../models/replacetemplatesrequestbody.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 | `retries`                                                                         | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                  | :heavy_minus_sign:                                                                | Configuration to override the default retry behavior of the client.               |
 
-
 ### Response
 
 **[models.ReplaceTemplatesResponseBody](../../models/replacetemplatesresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## search_variables
 
@@ -217,8 +214,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
@@ -226,10 +221,10 @@ if res is not None:
 | `request`                                                                       | [models.SearchVariablesRequestBody](../../models/searchvariablesrequestbody.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 | `retries`                                                                       | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                | :heavy_minus_sign:                                                              | Configuration to override the default retry behavior of the client.             |
 
-
 ### Response
 
 **[List[models.VariableResult]](../../models/.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
