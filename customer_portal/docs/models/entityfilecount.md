@@ -1,0 +1,11 @@
+# EntityFileCount
+
+
+## Fields
+
+| Field                                                                  | Type                                                                   | Required                                                               | Description                                                            | Example                                                                |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `schema_`                                                              | [models.EntitySlug](../models/entityslug.md)                           | :heavy_check_mark:                                                     | URL-friendly identifier for the entity schema                          | contact                                                                |
+| `entity_id`                                                            | *str*                                                                  | :heavy_check_mark:                                                     | Entity ID                                                              | 5da0a718-c822-403d-9f5d-20d4584e0528                                   |
+| `file_count`                                                           | *int*                                                                  | :heavy_check_mark:                                                     | Number of files associated with the entity and shared with portal user | 2                                                                      |
+| `title`                                                                | *Optional[str]*                                                        | :heavy_minus_sign:                                                     | The title of the parent entity                                         | Opportunity ABC                                                        |
