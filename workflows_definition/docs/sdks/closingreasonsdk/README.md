@@ -1,6 +1,8 @@
 # ClosingReasonSDK
 (*closing_reason*)
 
+## Overview
+
 ### Available Operations
 
 * [change_reason_status](#change_reason_status) - changeReasonStatus
@@ -27,8 +29,6 @@ s.closing_reason.change_reason_status(reason_id="<value>")
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
@@ -43,6 +43,7 @@ s.closing_reason.change_reason_status(reason_id="<value>")
 | ---------------- | ---------------- | ---------------- |
 | models.ErrorResp | 400,500          | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## create_closing_reason
 
@@ -70,8 +71,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -79,15 +78,16 @@ if res is not None:
 | `request`                                                           | [models.ClosingReason](../../models/closingreason.md)               | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.ClosingReason](../../models/closingreason.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_all_closing_reasons
 
@@ -111,8 +111,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -120,10 +118,10 @@ if res is not None:
 | `include_inactive`                                                  | *Optional[bool]*                                                    | :heavy_minus_sign:                                                  | Filter Closing Reasons by status like active inactiv                | true                                                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.ClosingReasons](../../models/closingreasons.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

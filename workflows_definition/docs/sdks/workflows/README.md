@@ -1,6 +1,8 @@
 # Workflows
 (*workflows*)
 
+## Overview
+
 ### Available Operations
 
 * [create_definition](#create_definition) - createDefinition
@@ -62,8 +64,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -71,16 +71,17 @@ if res is not None:
 | `request`                                                           | [models.WorkflowDefinition](../../models/workflowdefinition.md)     | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.WorkflowDefinition](../../models/workflowdefinition.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.ErrorResp | 400,401,500      | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## delete_definition
 
@@ -102,8 +103,6 @@ s.workflows.delete_definition(definition_id="CustomerRequest")
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -117,6 +116,7 @@ s.workflows.delete_definition(definition_id="CustomerRequest")
 | ---------------- | ---------------- | ---------------- |
 | models.ErrorResp | 401              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## get_definition
 
@@ -140,8 +140,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -149,10 +147,10 @@ if res is not None:
 | `definition_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | Short uuid (length 8) to identify the Workflow Definition.          | 7hj28a                                                              |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.WorkflowDefinition](../../models/workflowdefinition.md)**
+
 ### Errors
 
 | Error Object                  | Status Code                   | Content Type                  |
@@ -160,6 +158,7 @@ if res is not None:
 | models.ErrorResp              | 400,401,500                   | application/json              |
 | models.DefinitionNotFoundResp | 404                           | application/json              |
 | models.SDKError               | 4xx-5xx                       | */*                           |
+
 
 ## get_definitions
 
@@ -183,24 +182,23 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[List[models.WorkflowDefinition]](../../models/.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.ErrorResp | 500              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## get_max_allowed_limit
 
@@ -224,24 +222,23 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.MaxAllowedLimit](../../models/maxallowedlimit.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
 | models.ErrorResp | 500              | application/json |
 | models.SDKError  | 4xx-5xx          | */*              |
+
 
 ## get_workflow_closing_reasons
 
@@ -265,8 +262,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -274,15 +269,16 @@ if res is not None:
 | `definition_id`                                                     | *str*                                                               | :heavy_check_mark:                                                  | ID of a workflow definition                                         | fxcwfw                                                              |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.ClosingReasonsIds](../../models/closingreasonsids.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## set_workflow_closing_reasons
 
@@ -310,8 +306,6 @@ s.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_i
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -325,6 +319,7 @@ s.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_i
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## update_definition
 
@@ -376,8 +371,6 @@ if res is not None:
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         | Example                                                             |
@@ -386,10 +379,10 @@ if res is not None:
 | `workflow_definition`                                               | [models.WorkflowDefinition](../../models/workflowdefinition.md)     | :heavy_check_mark:                                                  | Workflow Definition payload                                         |                                                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.WorkflowDefinition](../../models/workflowdefinition.md)**
+
 ### Errors
 
 | Error Object     | Status Code      | Content Type     |
