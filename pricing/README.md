@@ -3,12 +3,20 @@
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=pricing
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=pricing
 ```
@@ -207,7 +215,7 @@ try:
 })
 
 except models.Error as e:
-    # handle exception
+    # handle e.data: models.ErrorData
     raise(e)
 except models.SDKError as e:
     # handle exception
@@ -464,6 +472,47 @@ Generally, the SDK will work well with most IDEs out of the box. However, when u
 
 - [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
 <!-- End IDE Support [idesupport] -->
+
+<!-- Start Summary [summary] -->
+## Summary
+
+Pricing API: The `pricing-api` hub sets the foundations for the following Pricing APIs:
+
+### Order API
+This api enables the management of orders in epilot 360, providing features such as:
+ - Automatic calculation of totals and price breakdowns for taxes on the Order entity
+ - Product and pricing data validation
+
+### Shopping Cart API
+Used to interact with a cart during a customer's checkout session, providing:
+ - An unified data model to model a Shopping Cart
+ - Product and pricing data validation
+ - Checkout a cart into an order or quote
+
+### Catalog API
+Provides a way to query the entire catalog of products and prices.
+
+### Availability API
+Provides endpoints for querying products availability by a set of predefined dimensions.
+
+### External Integrations API
+Provides endpoints for external integrations (e.g. Enet / GetAG).
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [IDE Support](#ide-support)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
