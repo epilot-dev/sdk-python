@@ -64,8 +64,6 @@ s.submissions.create_submission(request={
 
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
