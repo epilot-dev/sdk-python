@@ -1,6 +1,8 @@
 # Threads
 (*threads*)
 
+## Overview
+
 ### Available Operations
 
 * [assign_thread](#assign_thread) - assignThread
@@ -56,6 +58,7 @@ s.threads.assign_thread(id="<value>", request_body=[
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
+
 ## assign_users
 
 Assign users to thread for receiving notifications.
@@ -99,6 +102,7 @@ s.threads.assign_users(id="<value>", request_body={
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
+
 ## delete_thread
 
 Immediately and permanently delete a thread. This operation cannot be undone.
@@ -134,6 +138,7 @@ s.threads.delete_thread(id="<value>")
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## mark_read_thread
 
@@ -171,6 +176,7 @@ s.threads.mark_read_thread(id="<value>")
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
+
 ## mark_unread_thread
 
 Mark thread as unread
@@ -206,6 +212,7 @@ s.threads.mark_unread_thread(id="<value>")
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## search_threads
 
@@ -246,15 +253,16 @@ if res is not None:
 | `request`                                                           | [models.SearchParams](../../models/searchparams.md)                 | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.SearchThreadsResponseBody](../../models/searchthreadsresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## trash_thread
 
@@ -292,6 +300,7 @@ s.threads.trash_thread(id="<value>")
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
+
 ## untrash_thread
 
 Restore a trashed thread
@@ -328,6 +337,7 @@ s.threads.untrash_thread(id="<value>")
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
+
 ## update_thread
 
 Modify thread metadata
@@ -359,10 +369,10 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.UpdateThreadResponseBody](../../models/updatethreadresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
