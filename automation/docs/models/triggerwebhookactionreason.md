@@ -1,0 +1,9 @@
+# TriggerWebhookActionReason
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          | Example                                                                              |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `message`                                                                            | *Optional[str]*                                                                      | :heavy_minus_sign:                                                                   | Why the action has to be skipped/failed                                              | There are no registered portal users for the given emails, hence skipping the action |
+| `payload`                                                                            | Dict[str, *Any*]                                                                     | :heavy_minus_sign:                                                                   | Extra metadata about the skipping reason - such as a certain condition not met, etc. |                                                                                      |
