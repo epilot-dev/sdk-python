@@ -1,18 +1,59 @@
 # epilot-document
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Document API: A document generation API that allows you to generate documents from templates with variables.
+
+[Feature Documentation](https://docs.epilot.io/docs/files/document-generation)
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [IDE Support](#ide-support)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=document
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=document
 ```
 <!-- End SDK Installation [installation] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
 
 <!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
@@ -356,7 +397,7 @@ This SDK supports the following security scheme globally:
 | ------------- | ------------- | ------------- |
 | `epilot_auth` | http          | HTTP Bearer   |
 
-To authenticate with the API the `null` parameter must be set when initializing the SDK client instance. For example:
+To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import epilot_document
 from epilot_document import Epilot
@@ -387,8 +428,9 @@ if res is not None:
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from epilot_document import Epilot
 import logging
