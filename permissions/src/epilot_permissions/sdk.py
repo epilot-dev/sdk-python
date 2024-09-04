@@ -3,14 +3,13 @@
 from .basesdk import BaseSDK
 from .httpclient import AsyncHttpClient, HttpClient
 from .sdkconfiguration import SDKConfiguration
-from .utils.logger import Logger, NoOpLogger
+from .utils.logger import Logger, get_default_logger
 from .utils.retries import RetryConfig
-from epilot_permissions import models
+from epilot_permissions import models, utils
 from epilot_permissions._hooks import SDKHooks
 from epilot_permissions.assignments import Assignments
 from epilot_permissions.roles import Roles
 from epilot_permissions.types import OptionalNullable, UNSET
-import epilot_permissions.utils as utils
 import httpx
 from typing import Callable, Dict, Optional, Union
 
@@ -54,7 +53,7 @@ class Epilot(BaseSDK):
             async_client = httpx.AsyncClient()
 
         if debug_logger is None:
-            debug_logger = NoOpLogger()
+            debug_logger = get_default_logger()
 
         assert issubclass(
             type(async_client), AsyncHttpClient
