@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 02056ef4-33bb-4494-9d26-5cec9ca37e38
 management:
-  docChecksum: 54703d64df72ed498ad03376ecd4b21f
+  docChecksum: 2455db8cc2e6ddb52f168e756bca7b24
   docVersion: 1.0.0
-  speakeasyVersion: 1.355.0
-  generationVersion: 2.387.0
-  releaseVersion: 1.3.0
-  configChecksum: 79066fa1e09c11f2aefedb883dff7263
+  speakeasyVersion: 1.390.1
+  generationVersion: 2.409.0
+  releaseVersion: 1.4.0
+  configChecksum: c81fd11561268fce64f24a4ae2589a78
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: document
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=document
@@ -15,17 +15,18 @@ features:
     additionalDependencies: 1.0.0
     additionalProperties: 1.0.0
     constsAndDefaults: 1.0.2
-    core: 5.3.4
+    core: 5.4.2
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.1
     flattening: 3.0.0
-    globalSecurity: 3.0.1
+    globalSecurity: 3.0.2
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.0.0
     responseFormat: 1.0.0
     retries: 3.0.0
     sdkHooks: 1.0.0
+    unions: 3.0.2
 generatedFiles:
   - src/epilot_document/sdkconfiguration.py
   - src/epilot_document/documents.py
@@ -36,6 +37,7 @@ generatedFiles:
   - pylintrc
   - pyproject.toml
   - scripts/compile.sh
+  - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/epilot_document/__init__.py
   - src/epilot_document/basesdk.py
@@ -66,6 +68,9 @@ generatedFiles:
   - src/epilot_document/models/templatesettings.py
   - src/epilot_document/models/erroroutput.py
   - src/epilot_document/models/invalidcustomvariableerrordetail.py
+  - src/epilot_document/models/internalerrordetails.py
+  - src/epilot_document/models/internalerrordetail.py
+  - src/epilot_document/models/docxtemplatererrordetail.py
   - src/epilot_document/models/errorcode.py
   - src/epilot_document/models/generatedocumentv2op.py
   - src/epilot_document/models/documentgenerationv2request.py
@@ -87,13 +92,18 @@ generatedFiles:
   - docs/models/custommargins.md
   - docs/models/suggestedmargins.md
   - docs/models/templatesettings.md
+  - docs/models/errordetails.md
   - docs/models/erroroutput.md
   - docs/models/invalidvariables.md
   - docs/models/context.md
   - docs/models/invalidcustomvariableerrordetail.md
+  - docs/models/internalerrordetails.md
+  - docs/models/internalerrordetail.md
+  - docs/models/docxtemplatererrordetail.md
   - docs/models/errorcode.md
   - docs/models/mode.md
   - docs/models/generatedocumentv2request.md
+  - docs/models/contextdata.md
   - docs/models/templatedocument.md
   - docs/models/variablepayload.md
   - docs/models/documentgenerationv2request.md

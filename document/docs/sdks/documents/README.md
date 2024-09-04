@@ -56,15 +56,16 @@ if res is not None:
 | `request`                                                               | [models.ConvertDocumentRequest](../../models/convertdocumentrequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 | `retries`                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)        | :heavy_minus_sign:                                                      | Configuration to override the default retry behavior of the client.     |
 
-
 ### Response
 
 **[models.ConvertDocumentResponse](../../models/convertdocumentresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## generate_document_v2
 
@@ -133,10 +134,10 @@ if res is not None:
 | `document_generation_v2_request`                                                                                                                                                                                                                                                        | [Optional[models.DocumentGenerationV2Request]](../../models/documentgenerationv2request.md)                                                                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                                                                                                      | N/A                                                                                                                                                                                                                                                                                     |
 | `retries`                                                                                                                                                                                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                      | Configuration to override the default retry behavior of the client.                                                                                                                                                                                                                     |
 
-
 ### Response
 
 **[models.DocumentGenerationV2Response](../../models/documentgenerationv2response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
