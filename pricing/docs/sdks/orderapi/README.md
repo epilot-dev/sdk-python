@@ -27,7 +27,6 @@ s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.order_api.dollar_calculate_pricing_details(request={
     "line_items": [
 
@@ -72,7 +71,6 @@ from epilot_pricing import Epilot
 s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.order_api.create_order(request=epilot_pricing.OrderPayload(
     billing_address=[
@@ -178,7 +176,6 @@ from epilot_pricing import Epilot
 s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.order_api.put_order(id="9d4602d3-03be-4d85-86b2-f3c6555fc606", order_payload=epilot_pricing.OrderPayload(
     billing_address=[

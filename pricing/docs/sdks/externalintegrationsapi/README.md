@@ -27,7 +27,6 @@ from epilot_pricing import Epilot
 
 s = Epilot()
 
-
 res = s.external_integrations_api.dollar_compute_price(x_epilot_org_id="739224", integration_id=epilot_pricing.IntegrationID.GETAG, compute_price_params={
     "postal_code": "04109",
     "type": epilot_pricing.ComputePriceParamsPowerType.POWER,
@@ -78,7 +77,6 @@ s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 s.external_integrations_api.dollar_delete_credentials(integration_id=epilot_pricing.IntegrationID.GETAG)
 
 # Use the SDK ...
@@ -113,7 +111,6 @@ from epilot_pricing import Epilot
 s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.external_integrations_api.dollar_get_credentials(integration_id=epilot_pricing.IntegrationID.GETAG)
 
@@ -156,7 +153,6 @@ s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 s.external_integrations_api.dollar_save_credentials(integration_id=epilot_pricing.IntegrationID.GETAG, save_integration_credentials_params={
     "password": "password",
     "username": "username",
@@ -193,7 +189,6 @@ import epilot_pricing
 from epilot_pricing import Epilot
 
 s = Epilot()
-
 
 res = s.external_integrations_api.dollar_search_providers(x_epilot_org_id="739224", integration_id=epilot_pricing.IntegrationID.GETAG, search_providers_params={
     "postal_code": "04109",
@@ -241,7 +236,6 @@ import epilot_pricing
 from epilot_pricing import Epilot
 
 s = Epilot()
-
 
 res = s.external_integrations_api.dollar_search_streets(x_epilot_org_id="739224", integration_id=epilot_pricing.IntegrationID.GETAG, search_streets_params={
     "city": "Leipzig",

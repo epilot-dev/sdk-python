@@ -25,7 +25,6 @@ s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.catalog_api.dollar_private_search_catalog(request={
     "q": "_id:1233432 OR _id:123432454 OR _id:23445433",
     "availability": {
@@ -73,7 +72,6 @@ import dateutil.parser
 from epilot_pricing import Epilot
 
 s = Epilot()
-
 
 res = s.catalog_api.dollar_search_catalog(catalog_search={
     "q": "_id:1233432 OR _id:123432454 OR _id:23445433",

@@ -61,7 +61,7 @@ class CouponTypedDict(TypedDict):
     r"""Use if type is set to fixed. Three-letter ISO currency code, in lowercase."""
     fixed_value_decimal: NotRequired[str]
     r"""Use if type is set to fixed. The unit amount in cents to be discounted, represented as a decimal string with at most 12 decimal places."""
-    percentage_value: NotRequired[float]
+    percentage_value: NotRequired[str]
     r"""Use if type is set to percentage. The percentage to be discounted, represented as a whole integer."""
     prices: NotRequired[PricesTypedDict]
     r"""The prices associated with the coupon. Will hold price entities if hydrated, relations otherwise."""
@@ -94,7 +94,7 @@ class Coupon(BaseModel):
     r"""Use if type is set to fixed. Three-letter ISO currency code, in lowercase."""
     fixed_value_decimal: Optional[str] = None
     r"""Use if type is set to fixed. The unit amount in cents to be discounted, represented as a decimal string with at most 12 decimal places."""
-    percentage_value: Optional[float] = None
+    percentage_value: Optional[str] = None
     r"""Use if type is set to percentage. The percentage to be discounted, represented as a whole integer."""
     prices: Optional[Prices] = None
     r"""The prices associated with the coupon. Will hold price entities if hydrated, relations otherwise."""

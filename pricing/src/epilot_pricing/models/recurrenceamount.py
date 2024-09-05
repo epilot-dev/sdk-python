@@ -28,6 +28,10 @@ class RecurrenceAmountTypedDict(TypedDict):
     r"""Total of all items after (discounts and) taxes are applied, as a string with all the decimal places."""
     amount_tax: NotRequired[int]
     r"""Total of all items taxes, with same recurrence."""
+    before_discount_amount_total: NotRequired[int]
+    r"""Total amount before discount is applied."""
+    before_discount_amount_total_decimal: NotRequired[str]
+    r"""Total amount before discount is applied as a string with all the decimal places."""
     billing_period: NotRequired[RecurrenceAmountBillingPeriod]
     r"""The price billing period."""
     currency: NotRequired[str]
@@ -35,6 +39,12 @@ class RecurrenceAmountTypedDict(TypedDict):
     ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
 
     """
+    discount_amount: NotRequired[int]
+    r"""The discount amount."""
+    discount_amount_decimal: NotRequired[str]
+    r"""The discount amount as a string with all the decimal places."""
+    discount_percentage: NotRequired[int]
+    r"""The discount percentage, if the applied coupon had a percentage type."""
     type: NotRequired[str]
     r"""The price type."""
     unit_amount_gross: NotRequired[int]
@@ -56,6 +66,10 @@ class RecurrenceAmount(BaseModel):
     r"""Total of all items after (discounts and) taxes are applied, as a string with all the decimal places."""
     amount_tax: Optional[int] = None
     r"""Total of all items taxes, with same recurrence."""
+    before_discount_amount_total: Optional[int] = None
+    r"""Total amount before discount is applied."""
+    before_discount_amount_total_decimal: Optional[str] = None
+    r"""Total amount before discount is applied as a string with all the decimal places."""
     billing_period: Optional[RecurrenceAmountBillingPeriod] = None
     r"""The price billing period."""
     currency: Optional[str] = None
@@ -63,6 +77,12 @@ class RecurrenceAmount(BaseModel):
     ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
 
     """
+    discount_amount: Optional[int] = None
+    r"""The discount amount."""
+    discount_amount_decimal: Optional[str] = None
+    r"""The discount amount as a string with all the decimal places."""
+    discount_percentage: Optional[int] = None
+    r"""The discount percentage, if the applied coupon had a percentage type."""
     type: Optional[str] = None
     r"""The price type."""
     unit_amount_gross: Optional[int] = None

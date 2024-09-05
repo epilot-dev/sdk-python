@@ -55,6 +55,10 @@ class CompositePriceItemTypedDict(TypedDict):
     r"""Total of all items after (discounts and) taxes are applied."""
     amount_total_decimal: NotRequired[str]
     r"""Total of all items after (discounts and) taxes are applied, as a string with all the decimal places."""
+    before_discount_amount_total: NotRequired[int]
+    r"""Total amount before discount is applied."""
+    before_discount_amount_total_decimal: NotRequired[str]
+    r"""Total amount before discount is applied as a string with all the decimal places."""
     currency: NotRequired[str]
     r"""Three-letter ISO currency code, in lowercase. Must be a supported currency.
     ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
@@ -62,6 +66,12 @@ class CompositePriceItemTypedDict(TypedDict):
     """
     description: NotRequired[str]
     r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
+    discount_amount: NotRequired[int]
+    r"""The discount amount."""
+    discount_amount_decimal: NotRequired[str]
+    r"""The discount amount as a string with all the decimal places."""
+    discount_percentage: NotRequired[int]
+    r"""The discount percentage, if the applied coupon had a percentage type."""
     is_composite_price: NotRequired[bool]
     r"""The flag for prices that contain price components."""
     is_tax_inclusive: NotRequired[bool]
@@ -118,6 +128,10 @@ class CompositePriceItem(BaseModel):
     r"""Total of all items after (discounts and) taxes are applied."""
     amount_total_decimal: Optional[str] = None
     r"""Total of all items after (discounts and) taxes are applied, as a string with all the decimal places."""
+    before_discount_amount_total: Optional[int] = None
+    r"""Total amount before discount is applied."""
+    before_discount_amount_total_decimal: Optional[str] = None
+    r"""Total amount before discount is applied as a string with all the decimal places."""
     currency: Optional[str] = None
     r"""Three-letter ISO currency code, in lowercase. Must be a supported currency.
     ISO 4217 CURRENCY CODES as specified in the documentation: https://www.iso.org/iso-4217-currency-codes.html
@@ -125,6 +139,12 @@ class CompositePriceItem(BaseModel):
     """
     description: Optional[str] = None
     r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
+    discount_amount: Optional[int] = None
+    r"""The discount amount."""
+    discount_amount_decimal: Optional[str] = None
+    r"""The discount amount as a string with all the decimal places."""
+    discount_percentage: Optional[int] = None
+    r"""The discount percentage, if the applied coupon had a percentage type."""
     is_composite_price: Optional[bool] = None
     r"""The flag for prices that contain price components."""
     is_tax_inclusive: Optional[bool] = None

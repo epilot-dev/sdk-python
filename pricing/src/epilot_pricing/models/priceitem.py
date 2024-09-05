@@ -79,6 +79,10 @@ class PriceItemTypedDict(TypedDict):
     r"""Total of all items after (discounts and) taxes are applied."""
     amount_total_decimal: NotRequired[str]
     r"""Total of all items after (discounts and) taxes are applied, as a string with all the decimal places."""
+    before_discount_amount_total: NotRequired[int]
+    r"""Total amount before discount is applied."""
+    before_discount_amount_total_decimal: NotRequired[str]
+    r"""Total amount before discount is applied as a string with all the decimal places."""
     billing_period: NotRequired[PriceItemBillingPeriod]
     r"""The price billing period."""
     currency: NotRequired[str]
@@ -88,6 +92,12 @@ class PriceItemTypedDict(TypedDict):
     """
     description: NotRequired[str]
     r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
+    discount_amount: NotRequired[int]
+    r"""The discount amount."""
+    discount_amount_decimal: NotRequired[str]
+    r"""The discount amount as a string with all the decimal places."""
+    discount_percentage: NotRequired[int]
+    r"""The discount percentage, if the applied coupon had a percentage type."""
     get_ag: NotRequired[PriceGetAgTypedDict]
     is_composite_price: NotRequired[bool]
     r"""The flag for prices that contain price components."""
@@ -153,6 +163,10 @@ class PriceItem(BaseModel):
     r"""Total of all items after (discounts and) taxes are applied."""
     amount_total_decimal: Optional[str] = None
     r"""Total of all items after (discounts and) taxes are applied, as a string with all the decimal places."""
+    before_discount_amount_total: Optional[int] = None
+    r"""Total amount before discount is applied."""
+    before_discount_amount_total_decimal: Optional[str] = None
+    r"""Total amount before discount is applied as a string with all the decimal places."""
     billing_period: Optional[PriceItemBillingPeriod] = None
     r"""The price billing period."""
     currency: Optional[str] = None
@@ -162,6 +176,12 @@ class PriceItem(BaseModel):
     """
     description: Optional[str] = None
     r"""An arbitrary string attached to the price item. Often useful for displaying to users. Defaults to product name."""
+    discount_amount: Optional[int] = None
+    r"""The discount amount."""
+    discount_amount_decimal: Optional[str] = None
+    r"""The discount amount as a string with all the decimal places."""
+    discount_percentage: Optional[int] = None
+    r"""The discount percentage, if the applied coupon had a percentage type."""
     get_ag: Optional[PriceGetAg] = None
     is_composite_price: Optional[bool] = None
     r"""The flag for prices that contain price components."""

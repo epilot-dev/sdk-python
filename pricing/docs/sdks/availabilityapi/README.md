@@ -23,7 +23,6 @@ from epilot_pricing import Epilot
 
 s = Epilot()
 
-
 res = s.availability_api.dollar_availability_check(x_ivy_org_id="<value>", availability_check_params={
     "filters": {
         "location": {
@@ -78,7 +77,6 @@ from epilot_pricing import Epilot
 s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.availability_api.dollar_validate_availability_file(x_epilot_org_id="739224", id="72c803b2-2e5d-4bd6-bffc-fad998bbbe36")
 

@@ -36,7 +36,6 @@ from epilot_pricing import Epilot
 
 s = Epilot()
 
-
 res = s.cart_api.dollar_checkout_cart(x_ivy_org_id="<value>", checkout_cart={
     "cart": {
         "line_items": [
