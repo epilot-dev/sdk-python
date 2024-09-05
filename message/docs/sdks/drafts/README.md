@@ -1,6 +1,8 @@
 # Drafts
 (*drafts*)
 
+## Overview
+
 ### Available Operations
 
 * [create_draft](#create_draft) - createDraft
@@ -21,7 +23,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     from_={
@@ -56,6 +57,7 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -85,15 +87,16 @@ if res is not None:
 | `request`                                                           | [models.MessageRequestParams](../../models/messagerequestparams.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.CreateDraftResponseBody](../../models/createdraftresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## send_draft
 
@@ -111,7 +114,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.drafts.send_draft()
 
 if res is not None:
@@ -126,10 +128,10 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.SendDraftResponseBody](../../models/senddraftresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
