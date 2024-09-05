@@ -1,0 +1,13 @@
+# EntityWidget
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `id`                                                                             | *str*                                                                            | :heavy_check_mark:                                                               | N/A                                                                              |
+| `list_index`                                                                     | *int*                                                                            | :heavy_check_mark:                                                               | Index of the widget in the list, used for ordering (left or right)               |
+| `type`                                                                           | [models.EntityWidgetType](../models/entitywidgettype.md)                         | :heavy_check_mark:                                                               | N/A                                                                              |
+| `headline`                                                                       | [Optional[models.EntityWidgetHeadline]](../models/entitywidgetheadline.md)       | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `schema_`                                                                        | *Optional[str]*                                                                  | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `sub_headline`                                                                   | [Optional[models.EntityWidgetSubHeadline]](../models/entitywidgetsubheadline.md) | :heavy_minus_sign:                                                               | N/A                                                                              |
