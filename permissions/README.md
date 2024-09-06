@@ -1,18 +1,57 @@
 # epilot-permissions
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Permissions API: Flexible Role-based Access Control for epilot
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [IDE Support](#ide-support)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=permissions
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=permissions
 ```
 <!-- End SDK Installation [installation] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
 
 <!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
@@ -29,7 +68,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
 
@@ -101,7 +139,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.assignments.add_assignment(role_id="123:owner", user_id="1",
     RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
@@ -123,7 +160,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
 
@@ -159,14 +195,13 @@ res = None
 try:
     res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
 
+    if res is not None:
+        # handle response
+        pass
+
 except models.SDKError as e:
     # handle exception
     raise(e)
-
-if res is not None:
-    # handle response
-    pass
-
 ```
 <!-- End Error Handling [errors] -->
 
@@ -194,7 +229,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
 
 if res is not None:
@@ -217,7 +251,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
 
@@ -332,7 +365,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
 
 if res is not None:
@@ -345,8 +377,9 @@ if res is not None:
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from epilot_permissions import Epilot
 import logging
