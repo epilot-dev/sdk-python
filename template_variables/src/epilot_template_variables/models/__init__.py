@@ -2,6 +2,7 @@
 
 from .categoryresult import CategoryResult, CategoryResultTypedDict
 from .customvariable import Config, ConfigTypedDict, CustomVariable, CustomVariableTypedDict, Type
+from .customvariablessearchparams import CustomVariablesSearchParams, CustomVariablesSearchParamsType, CustomVariablesSearchParamsTypedDict
 from .deletecustomvariableop import DeleteCustomVariableRequest, DeleteCustomVariableRequestTypedDict
 from .externalcustomvariable import ExternalCustomVariable, ExternalCustomVariableTypedDict
 from .getcategoriesop import GetCategoriesRequest, GetCategoriesRequestTypedDict
@@ -9,6 +10,7 @@ from .getcustomvariableop import GetCustomVariableRequest, GetCustomVariableRequ
 from .getvariablecontextop import GetVariableContextRequestBody, GetVariableContextRequestBodyTypedDict
 from .replacetemplatesop import ReplaceTemplatesRequestBody, ReplaceTemplatesRequestBodyTypedDict, ReplaceTemplatesResponseBody, ReplaceTemplatesResponseBodyTypedDict
 from .sdkerror import SDKError
+from .searchcustomvariablesop import SearchCustomVariablesResponseBody, SearchCustomVariablesResponseBodyTypedDict
 from .searchvariablesop import SearchVariablesRequestBody, SearchVariablesRequestBodyTypedDict
 from .security import Security, SecurityTypedDict
 from .templatetype import TemplateType
@@ -17,4 +19,4 @@ from .variablecontext import VariableContext, VariableContextTypedDict
 from .variableparameters import ContextData, ContextDataTypedDict, VariableParameters, VariableParametersTypedDict
 from .variableresult import VariableResult, VariableResultType, VariableResultTypedDict
 
-__all__ = ["CategoryResult", "CategoryResultTypedDict", "Config", "ConfigTypedDict", "ContextData", "ContextDataTypedDict", "CustomVariable", "CustomVariableTypedDict", "DeleteCustomVariableRequest", "DeleteCustomVariableRequestTypedDict", "ExternalCustomVariable", "ExternalCustomVariableTypedDict", "GetCategoriesRequest", "GetCategoriesRequestTypedDict", "GetCustomVariableRequest", "GetCustomVariableRequestTypedDict", "GetVariableContextRequestBody", "GetVariableContextRequestBodyTypedDict", "ReplaceTemplatesRequestBody", "ReplaceTemplatesRequestBodyTypedDict", "ReplaceTemplatesResponseBody", "ReplaceTemplatesResponseBodyTypedDict", "SDKError", "SearchVariablesRequestBody", "SearchVariablesRequestBodyTypedDict", "Security", "SecurityTypedDict", "TemplateType", "Type", "UpdateCustomVariableRequest", "UpdateCustomVariableRequestTypedDict", "VariableContext", "VariableContextTypedDict", "VariableParameters", "VariableParametersTypedDict", "VariableResult", "VariableResultType", "VariableResultTypedDict"]
+__all__ = ["CategoryResult", "CategoryResultTypedDict", "Config", "ConfigTypedDict", "ContextData", "ContextDataTypedDict", "CustomVariable", "CustomVariableTypedDict", "CustomVariablesSearchParams", "CustomVariablesSearchParamsType", "CustomVariablesSearchParamsTypedDict", "DeleteCustomVariableRequest", "DeleteCustomVariableRequestTypedDict", "ExternalCustomVariable", "ExternalCustomVariableTypedDict", "GetCategoriesRequest", "GetCategoriesRequestTypedDict", "GetCustomVariableRequest", "GetCustomVariableRequestTypedDict", "GetVariableContextRequestBody", "GetVariableContextRequestBodyTypedDict", "ReplaceTemplatesRequestBody", "ReplaceTemplatesRequestBodyTypedDict", "ReplaceTemplatesResponseBody", "ReplaceTemplatesResponseBodyTypedDict", "SDKError", "SearchCustomVariablesResponseBody", "SearchCustomVariablesResponseBodyTypedDict", "SearchVariablesRequestBody", "SearchVariablesRequestBodyTypedDict", "Security", "SecurityTypedDict", "TemplateType", "Type", "UpdateCustomVariableRequest", "UpdateCustomVariableRequestTypedDict", "VariableContext", "VariableContextTypedDict", "VariableParameters", "VariableParametersTypedDict", "VariableResult", "VariableResultType", "VariableResultTypedDict"]

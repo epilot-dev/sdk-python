@@ -28,7 +28,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.variables.get_categories()
 
 if res is not None:
@@ -73,7 +72,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 res = s.variables.get_variable_context(request={
     "parameters": {
@@ -135,13 +133,12 @@ s = Epilot(
     ),
 )
 
-
 res = s.variables.replace_templates(request={
     "inputs": [
-        "Hello, {{contact.first_name}}!
-
-        {{{brand.signature}}}
-        ",
+        "Hello, {{contact.first_name}}!\n" +
+        "\n" +
+        "{{{brand.signature}}}\n" +
+        "",
     ],
     "parameters": {
         "template_type": epilot_template_variables.TemplateType.EMAIL,
@@ -198,7 +195,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 res = s.variables.search_variables(request={
     "query": "logo",

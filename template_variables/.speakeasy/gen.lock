@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 5c509d65-b892-4e49-8160-6842e685ee9c
 management:
-  docChecksum: 9efe370082758b9cf2fd0a2bcf412e38
+  docChecksum: cdfc5ef3c6d19ffb25d7edc590889353
   docVersion: 1.0.0
-  speakeasyVersion: 1.383.2
-  generationVersion: 2.407.0
-  releaseVersion: 1.4.1
-  configChecksum: 4345436959d927e3338210e1cdd75be5
+  speakeasyVersion: 1.390.7
+  generationVersion: 2.409.8
+  releaseVersion: 1.4.2
+  configChecksum: 97b91b59a2dfd86d828cebba2d82da47
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: template_variables
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
@@ -63,6 +63,8 @@ generatedFiles:
   - src/epilot_template_variables/models/customvariable.py
   - src/epilot_template_variables/models/deletecustomvariableop.py
   - src/epilot_template_variables/models/getcustomvariableop.py
+  - src/epilot_template_variables/models/searchcustomvariablesop.py
+  - src/epilot_template_variables/models/customvariablessearchparams.py
   - src/epilot_template_variables/models/updatecustomvariableop.py
   - src/epilot_template_variables/models/categoryresult.py
   - src/epilot_template_variables/models/getcategoriesop.py
@@ -81,6 +83,9 @@ generatedFiles:
   - docs/models/customvariable.md
   - docs/models/deletecustomvariablerequest.md
   - docs/models/getcustomvariablerequest.md
+  - docs/models/searchcustomvariablesresponsebody.md
+  - docs/models/customvariablessearchparamstype.md
+  - docs/models/customvariablessearchparams.md
   - docs/models/updatecustomvariablerequest.md
   - docs/models/categoryresult.md
   - docs/models/getcategoriesrequest.md
