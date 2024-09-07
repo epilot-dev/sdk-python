@@ -3,18 +3,18 @@ id: 33caae79-0482-46e7-9dea-4e7a337d182e
 management:
   docChecksum: 2ff9f6c43afde1839bb320502ba37d3a
   docVersion: 1.0.0
-  speakeasyVersion: 1.383.2
-  generationVersion: 2.407.0
-  releaseVersion: 1.4.1
-  configChecksum: af4656bd57f57b362436263455612576
+  speakeasyVersion: 1.392.1
+  generationVersion: 2.411.9
+  releaseVersion: 1.4.2
+  configChecksum: 61c0bf066046d3a0a88794ef75dfa71e
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: submission
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=submission
 features:
   python:
     additionalDependencies: 1.0.0
-    additionalProperties: 1.0.0
-    core: 5.4.2
+    additionalProperties: 1.0.1
+    core: 5.4.4
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     envVarSecurityUsage: 0.3.1
@@ -23,13 +23,23 @@ features:
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.0.0
     responseFormat: 1.0.0
-    retries: 3.0.0
+    retries: 3.0.2
     sdkHooks: 1.0.0
 generatedFiles:
-  - src/epilot_submission/sdkconfiguration.py
-  - src/epilot_submission/submissions.py
-  - src/epilot_submission/sdk.py
+  - .gitattributes
   - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/files.md
+  - docs/models/optin.md
+  - docs/models/s3reference.md
+  - docs/models/schema.md
+  - docs/models/security.md
+  - docs/models/submissionentity.md
+  - docs/models/submissionpayload.md
+  - docs/models/utils/retryconfig.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/submissions/README.md
   - poetry.toml
   - py.typed
   - pylintrc
@@ -38,9 +48,22 @@ generatedFiles:
   - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/epilot_submission/__init__.py
+  - src/epilot_submission/_hooks/__init__.py
+  - src/epilot_submission/_hooks/sdkhooks.py
+  - src/epilot_submission/_hooks/types.py
   - src/epilot_submission/basesdk.py
   - src/epilot_submission/httpclient.py
+  - src/epilot_submission/models/__init__.py
+  - src/epilot_submission/models/optin.py
+  - src/epilot_submission/models/s3reference.py
+  - src/epilot_submission/models/sdkerror.py
+  - src/epilot_submission/models/security.py
+  - src/epilot_submission/models/submissionentity.py
+  - src/epilot_submission/models/submissionpayload.py
   - src/epilot_submission/py.typed
+  - src/epilot_submission/sdk.py
+  - src/epilot_submission/sdkconfiguration.py
+  - src/epilot_submission/submissions.py
   - src/epilot_submission/types/__init__.py
   - src/epilot_submission/types/basemodel.py
   - src/epilot_submission/utils/__init__.py
@@ -58,26 +81,8 @@ generatedFiles:
   - src/epilot_submission/utils/serializers.py
   - src/epilot_submission/utils/url.py
   - src/epilot_submission/utils/values.py
-  - src/epilot_submission/models/sdkerror.py
-  - src/epilot_submission/models/submissionpayload.py
-  - src/epilot_submission/models/optin.py
-  - src/epilot_submission/models/submissionentity.py
-  - src/epilot_submission/models/s3reference.py
-  - src/epilot_submission/models/security.py
-  - src/epilot_submission/models/__init__.py
-  - docs/models/submissionpayload.md
-  - docs/models/optin.md
-  - docs/models/schema.md
-  - docs/models/files.md
-  - docs/models/submissionentity.md
-  - docs/models/s3reference.md
-  - docs/models/security.md
-  - docs/sdks/epilot/README.md
-  - docs/models/utils/retryconfig.md
-  - docs/sdks/submissions/README.md
-  - USAGE.md
-  - .gitattributes
-  - src/epilot_submission/_hooks/sdkhooks.py
-  - src/epilot_submission/_hooks/types.py
-  - src/epilot_submission/_hooks/__init__.py
-  - CONTRIBUTING.md
+examples:
+  createSubmission:
+    speakeasy-default-create-submission:
+      requestBody:
+        application/json: {"entities": [{"_schema": "submission", "description": "Submission created via API", "files": [{"filename": "document.pdf", "s3ref": {"bucket": "epilot-user-content", "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf"}}], "contact_first_name": "First", "contact_last_name": "Last", "contact_email": "example@submission.com", "request": "I would like to know more about electric vehicles"}], "journey_submit_id": "123", "opt_ins": [], "organization_id": "123", "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey"}

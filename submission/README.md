@@ -34,7 +34,6 @@ from epilot_submission import Epilot
 
 s = Epilot()
 
-
 s.submissions.create_submission(request={
     "entities": [
         epilot_submission.SubmissionEntity(
@@ -99,7 +98,7 @@ async def main():
                         },
                         filename="document.pdf",
                         **{
-    
+
                         },
                     ),
                 ],
@@ -148,7 +147,6 @@ import epilot_submission
 from epilot_submission import Epilot
 
 s = Epilot()
-
 
 s.submissions.create_submission(request={
     "entities": [
@@ -201,7 +199,6 @@ from epilot_submission import Epilot
 s = Epilot(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
 )
-
 
 s.submissions.create_submission(request={
     "entities": [
@@ -265,48 +262,47 @@ s = Epilot()
 
 try:
     s.submissions.create_submission(request={
-    "entities": [
-        epilot_submission.SubmissionEntity(
-            schema_=epilot_submission.Schema.SUBMISSION,
-            description="Submission created via API",
-            files=[
-                epilot_submission.Files(
-                    s3ref={
-                        "bucket": "epilot-user-content",
-                        "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-                    },
-                    filename="document.pdf",
-                    **{
+        "entities": [
+            epilot_submission.SubmissionEntity(
+                schema_=epilot_submission.Schema.SUBMISSION,
+                description="Submission created via API",
+                files=[
+                    epilot_submission.Files(
+                        s3ref={
+                            "bucket": "epilot-user-content",
+                            "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+                        },
+                        filename="document.pdf",
+                        **{
 
-                    },
-                ),
-            ],
-            **{
-                "contact_first_name": "First",
-                "contact_last_name": "Last",
-                "contact_email": "example@submission.com",
-                "request": "I would like to know more about electric vehicles",
+                        },
+                    ),
+                ],
+                **{
+                    "contact_first_name": "First",
+                    "contact_last_name": "Last",
+                    "contact_email": "example@submission.com",
+                    "request": "I would like to know more about electric vehicles",
+                },
+            ),
+        ],
+        "organization_id": "123",
+        "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
+        "source_type": "journey",
+        "journey_submit_id": "123",
+        "opt_ins": [
+            {
+                "identifier": "example@email.com",
+                "topic": "EMAIL_MARKETING",
             },
-        ),
-    ],
-    "organization_id": "123",
-    "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
-    "source_type": "journey",
-    "journey_submit_id": "123",
-    "opt_ins": [
-        {
-            "identifier": "example@email.com",
-            "topic": "EMAIL_MARKETING",
-        },
-    ],
-})
+        ],
+    })
+
+    # Use the SDK ...
 
 except models.SDKError as e:
     # handle exception
     raise(e)
-
-# Use the SDK ...
-
 ```
 <!-- End Error Handling [errors] -->
 
@@ -330,7 +326,6 @@ from epilot_submission import Epilot
 s = Epilot(
     server_idx=0,
 )
-
 
 s.submissions.create_submission(request={
     "entities": [
@@ -384,7 +379,6 @@ from epilot_submission import Epilot
 s = Epilot(
     server_url="https://submission.sls.epilot.io",
 )
-
 
 s.submissions.create_submission(request={
     "entities": [
@@ -528,7 +522,6 @@ from epilot_submission import Epilot
 s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 s.submissions.create_submission(request={
     "entities": [

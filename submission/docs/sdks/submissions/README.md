@@ -22,7 +22,6 @@ from epilot_submission import Epilot
 
 s = Epilot()
 
-
 s.submissions.create_submission(request={
     "entities": [
         epilot_submission.SubmissionEntity(
