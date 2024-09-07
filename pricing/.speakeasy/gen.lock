@@ -3,19 +3,19 @@ id: 05558e61-9d4c-4c49-92eb-67c6a23fbbe1
 management:
   docChecksum: b45199eea4b1e8d3e87e8e9ee182e3d9
   docVersion: 1.0.0
-  speakeasyVersion: 1.390.5
-  generationVersion: 2.409.3
-  releaseVersion: 1.3.3
-  configChecksum: aff4b5a5b8b71d885f8020e751d408ee
+  speakeasyVersion: 1.392.1
+  generationVersion: 2.411.9
+  releaseVersion: 1.3.4
+  configChecksum: caee25e2440f829a4b9f31a1f076ee31
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: pricing
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=pricing
 features:
   python:
     additionalDependencies: 1.0.0
-    additionalProperties: 1.0.0
+    additionalProperties: 1.0.1
     constsAndDefaults: 1.0.2
-    core: 5.4.2
+    core: 5.4.4
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     envVarSecurityUsage: 0.3.1
@@ -28,18 +28,183 @@ features:
     methodSecurity: 3.0.0
     nullables: 1.0.0
     responseFormat: 1.0.0
-    retries: 3.0.0
+    retries: 3.0.2
     sdkHooks: 1.0.0
     unions: 3.0.2
 generatedFiles:
-  - src/epilot_pricing/sdkconfiguration.py
-  - src/epilot_pricing/catalog_api.py
-  - src/epilot_pricing/external_integrations_api.py
-  - src/epilot_pricing/order_api.py
-  - src/epilot_pricing/availability_api.py
-  - src/epilot_pricing/cart_api.py
-  - src/epilot_pricing/sdk.py
+  - .gitattributes
   - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/address.md
+  - docs/models/availabilitycheckparams.md
+  - docs/models/availabilityfilters.md
+  - docs/models/availabilitylocation.md
+  - docs/models/availabilityresult.md
+  - docs/models/billingdurationunit.md
+  - docs/models/billingperiod.md
+  - docs/models/breakdown.md
+  - docs/models/cart.md
+  - docs/models/cartdto.md
+  - docs/models/catalogsearch.md
+  - docs/models/catalogsearchresult.md
+  - docs/models/checkoutcart.md
+  - docs/models/checkoutcartresult.md
+  - docs/models/checkoutmode.md
+  - docs/models/checkresults.md
+  - docs/models/compositeprice.md
+  - docs/models/compositepriceitem.md
+  - docs/models/compositepriceitemdto.md
+  - docs/models/compositepriceitemprice.md
+  - docs/models/computedbaseprice.md
+  - docs/models/computedpricebreakdown.md
+  - docs/models/computepriceparams.md
+  - docs/models/computepriceparamsgas.md
+  - docs/models/computepriceparamsgasbillingperiod.md
+  - docs/models/computepriceparamspower.md
+  - docs/models/computepriceparamspowerbillingperiod.md
+  - docs/models/computepriceparamspowerconsumptiontype.md
+  - docs/models/computepriceparamspowertype.md
+  - docs/models/computepriceresult.md
+  - docs/models/computepriceresultbillingperiod.md
+  - docs/models/concessiontype.md
+  - docs/models/consumptiontype.md
+  - docs/models/consumptiontypegetag.md
+  - docs/models/coupon.md
+  - docs/models/coupontype.md
+  - docs/models/crosssellableproducts.md
+  - docs/models/customer.md
+  - docs/models/dollaravailabilitycheckrequest.md
+  - docs/models/dollaravailabilitychecksecurity.md
+  - docs/models/dollarcalculatepricingdetailsrequestbody.md
+  - docs/models/dollarcheckoutcartrequest.md
+  - docs/models/dollarcheckoutcartsecurity.md
+  - docs/models/dollarcomputepricerequest.md
+  - docs/models/dollarcomputepricesecurity.md
+  - docs/models/dollardeletecredentialsrequest.md
+  - docs/models/dollargetcredentialsrequest.md
+  - docs/models/dollarsavecredentialsrequest.md
+  - docs/models/dollarsearchcatalogrequest.md
+  - docs/models/dollarsearchcatalogsecurity.md
+  - docs/models/dollarsearchprovidersrequest.md
+  - docs/models/dollarsearchproviderssecurity.md
+  - docs/models/dollarsearchstreetsrequest.md
+  - docs/models/dollarsearchstreetssecurity.md
+  - docs/models/dollarvalidateavailabilityfilerequest.md
+  - docs/models/entityrelation.md
+  - docs/models/error.md
+  - docs/models/externalfeemapping.md
+  - docs/models/externalfeemetadata.md
+  - docs/models/externalfeemetadatabillingperiod.md
+  - docs/models/feature.md
+  - docs/models/file.md
+  - docs/models/frequencyunit.md
+  - docs/models/gasconcessiontype.md
+  - docs/models/integrationcredentialsresult.md
+  - docs/models/integrationid.md
+  - docs/models/items.md
+  - docs/models/markuppricingmodel.md
+  - docs/models/metadata.md
+  - docs/models/metadata1.md
+  - docs/models/metertype.md
+  - docs/models/noticetimeunit.md
+  - docs/models/one.md
+  - docs/models/order.md
+  - docs/models/ordercustomer.md
+  - docs/models/orderpayload.md
+  - docs/models/orderprices.md
+  - docs/models/ordersource.md
+  - docs/models/orderstatus.md
+  - docs/models/paymentmethod.md
+  - docs/models/powermetertype.md
+  - docs/models/price.md
+  - docs/models/price1.md
+  - docs/models/pricebillingperiod.md
+  - docs/models/pricecomponentrelation.md
+  - docs/models/pricecomponents.md
+  - docs/models/pricedisplayinjourneys.md
+  - docs/models/pricegetag.md
+  - docs/models/priceinputmapping.md
+  - docs/models/priceinputmappingfrequencyunit.md
+  - docs/models/priceitem.md
+  - docs/models/priceitembillingperiod.md
+  - docs/models/priceitemdto.md
+  - docs/models/priceitemdtobillingperiod.md
+  - docs/models/priceitemdtopricingmodel.md
+  - docs/models/priceitemdtotype.md
+  - docs/models/priceitemprice.md
+  - docs/models/priceitemrecurrences.md
+  - docs/models/priceitems.md
+  - docs/models/priceitemsdto.md
+  - docs/models/priceitemtaxes.md
+  - docs/models/priceitemtype.md
+  - docs/models/priceoptions.md
+  - docs/models/pricepricingmodel.md
+  - docs/models/prices.md
+  - docs/models/pricesalestax.md
+  - docs/models/priceschemas1.md
+  - docs/models/pricetax.md
+  - docs/models/pricetier.md
+  - docs/models/pricetierdisplaymode.md
+  - docs/models/pricetype.md
+  - docs/models/pricingdetailsresponse.md
+  - docs/models/pricingmodel.md
+  - docs/models/product.md
+  - docs/models/productcategory.md
+  - docs/models/productdownloads.md
+  - docs/models/productimages.md
+  - docs/models/products.md
+  - docs/models/producttype.md
+  - docs/models/provider.md
+  - docs/models/putorderrequest.md
+  - docs/models/recurrenceamount.md
+  - docs/models/recurrenceamountbillingperiod.md
+  - docs/models/recurrenceamountwithtax.md
+  - docs/models/recurrenceamountwithtaxbillingperiod.md
+  - docs/models/recurrenceamountwithtaxtax.md
+  - docs/models/recurrences.md
+  - docs/models/recurrencesbytax.md
+  - docs/models/renewaldurationunit.md
+  - docs/models/results.md
+  - docs/models/s3ref.md
+  - docs/models/salestax.md
+  - docs/models/saveintegrationcredentialsparams.md
+  - docs/models/schema.md
+  - docs/models/searchprovidersparams.md
+  - docs/models/searchprovidersparamstype.md
+  - docs/models/searchstreetsparams.md
+  - docs/models/security.md
+  - docs/models/signaturemeta.md
+  - docs/models/status.md
+  - docs/models/street.md
+  - docs/models/tarifftypegetag.md
+  - docs/models/tax.md
+  - docs/models/taxamount.md
+  - docs/models/taxamountbreakdown.md
+  - docs/models/taxamounttax.md
+  - docs/models/taxbreakdowninfo.md
+  - docs/models/taxbreakdowninfotype.md
+  - docs/models/taxes.md
+  - docs/models/taxtype.md
+  - docs/models/terminationtimeunit.md
+  - docs/models/tierdetails.md
+  - docs/models/totaldetails.md
+  - docs/models/totaldetailsrecurrences.md
+  - docs/models/totaldetailstaxes.md
+  - docs/models/two.md
+  - docs/models/type.md
+  - docs/models/typegetag.md
+  - docs/models/unit.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/validateavailabilityfileerror.md
+  - docs/models/validateavailabilityfileresult.md
+  - docs/models/versions.md
+  - docs/sdks/availabilityapi/README.md
+  - docs/sdks/cartapi/README.md
+  - docs/sdks/catalogapi/README.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/externalintegrationsapi/README.md
+  - docs/sdks/orderapi/README.md
   - poetry.toml
   - py.typed
   - pylintrc
@@ -48,9 +213,107 @@ generatedFiles:
   - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/epilot_pricing/__init__.py
+  - src/epilot_pricing/_hooks/__init__.py
+  - src/epilot_pricing/_hooks/sdkhooks.py
+  - src/epilot_pricing/_hooks/types.py
+  - src/epilot_pricing/availability_api.py
   - src/epilot_pricing/basesdk.py
+  - src/epilot_pricing/cart_api.py
+  - src/epilot_pricing/catalog_api.py
+  - src/epilot_pricing/external_integrations_api.py
   - src/epilot_pricing/httpclient.py
+  - src/epilot_pricing/models/__init__.py
+  - src/epilot_pricing/models/address.py
+  - src/epilot_pricing/models/availabilitycheckparams.py
+  - src/epilot_pricing/models/availabilityfilters.py
+  - src/epilot_pricing/models/availabilitylocation.py
+  - src/epilot_pricing/models/availabilityresult.py
+  - src/epilot_pricing/models/billingperiod.py
+  - src/epilot_pricing/models/cartdto.py
+  - src/epilot_pricing/models/catalogsearch.py
+  - src/epilot_pricing/models/catalogsearchresult.py
+  - src/epilot_pricing/models/checkoutcart.py
+  - src/epilot_pricing/models/checkoutcartresult.py
+  - src/epilot_pricing/models/checkoutmode.py
+  - src/epilot_pricing/models/compositeprice.py
+  - src/epilot_pricing/models/compositepriceitem.py
+  - src/epilot_pricing/models/compositepriceitemdto.py
+  - src/epilot_pricing/models/computedbaseprice.py
+  - src/epilot_pricing/models/computedpricebreakdown.py
+  - src/epilot_pricing/models/computepriceparams.py
+  - src/epilot_pricing/models/computepriceparamsgas.py
+  - src/epilot_pricing/models/computepriceparamspower.py
+  - src/epilot_pricing/models/computepriceresult.py
+  - src/epilot_pricing/models/consumptiontypegetag.py
+  - src/epilot_pricing/models/coupon.py
+  - src/epilot_pricing/models/customer.py
+  - src/epilot_pricing/models/dollar_availabilitycheckop.py
+  - src/epilot_pricing/models/dollar_calculatepricingdetailsop.py
+  - src/epilot_pricing/models/dollar_checkoutcartop.py
+  - src/epilot_pricing/models/dollar_computepriceop.py
+  - src/epilot_pricing/models/dollar_deletecredentialsop.py
+  - src/epilot_pricing/models/dollar_getcredentialsop.py
+  - src/epilot_pricing/models/dollar_savecredentialsop.py
+  - src/epilot_pricing/models/dollar_searchcatalogop.py
+  - src/epilot_pricing/models/dollar_searchprovidersop.py
+  - src/epilot_pricing/models/dollar_searchstreetsop.py
+  - src/epilot_pricing/models/dollar_validateavailabilityfileop.py
+  - src/epilot_pricing/models/entityrelation.py
+  - src/epilot_pricing/models/error.py
+  - src/epilot_pricing/models/externalfeemapping.py
+  - src/epilot_pricing/models/externalfeemetadata.py
+  - src/epilot_pricing/models/file.py
+  - src/epilot_pricing/models/gasconcessiontype.py
+  - src/epilot_pricing/models/integrationcredentialsresult.py
+  - src/epilot_pricing/models/integrationid.py
+  - src/epilot_pricing/models/markuppricingmodel.py
+  - src/epilot_pricing/models/metadata.py
+  - src/epilot_pricing/models/order.py
+  - src/epilot_pricing/models/orderpayload.py
+  - src/epilot_pricing/models/ordersource.py
+  - src/epilot_pricing/models/orderstatus.py
+  - src/epilot_pricing/models/paymentmethod.py
+  - src/epilot_pricing/models/powermetertype.py
+  - src/epilot_pricing/models/price.py
+  - src/epilot_pricing/models/pricecomponentrelation.py
+  - src/epilot_pricing/models/pricegetag.py
+  - src/epilot_pricing/models/priceinputmapping.py
+  - src/epilot_pricing/models/priceitem.py
+  - src/epilot_pricing/models/priceitemdto.py
+  - src/epilot_pricing/models/priceitems.py
+  - src/epilot_pricing/models/priceitemsdto.py
+  - src/epilot_pricing/models/pricetier.py
+  - src/epilot_pricing/models/pricetierdisplaymode.py
+  - src/epilot_pricing/models/pricingdetailsresponse.py
+  - src/epilot_pricing/models/pricingmodel.py
+  - src/epilot_pricing/models/product.py
+  - src/epilot_pricing/models/productcategory.py
+  - src/epilot_pricing/models/provider.py
+  - src/epilot_pricing/models/putorderop.py
+  - src/epilot_pricing/models/recurrenceamount.py
+  - src/epilot_pricing/models/recurrenceamountwithtax.py
+  - src/epilot_pricing/models/salestax.py
+  - src/epilot_pricing/models/saveintegrationcredentialsparams.py
+  - src/epilot_pricing/models/sdkerror.py
+  - src/epilot_pricing/models/searchprovidersparams.py
+  - src/epilot_pricing/models/searchstreetsparams.py
+  - src/epilot_pricing/models/security.py
+  - src/epilot_pricing/models/signaturemeta.py
+  - src/epilot_pricing/models/street.py
+  - src/epilot_pricing/models/tarifftypegetag.py
+  - src/epilot_pricing/models/tax.py
+  - src/epilot_pricing/models/taxamount.py
+  - src/epilot_pricing/models/taxamountbreakdown.py
+  - src/epilot_pricing/models/taxbreakdowninfo.py
+  - src/epilot_pricing/models/tierdetails.py
+  - src/epilot_pricing/models/totaldetails.py
+  - src/epilot_pricing/models/typegetag.py
+  - src/epilot_pricing/models/validateavailabilityfileerror.py
+  - src/epilot_pricing/models/validateavailabilityfileresult.py
+  - src/epilot_pricing/order_api.py
   - src/epilot_pricing/py.typed
+  - src/epilot_pricing/sdk.py
+  - src/epilot_pricing/sdkconfiguration.py
   - src/epilot_pricing/types/__init__.py
   - src/epilot_pricing/types/basemodel.py
   - src/epilot_pricing/utils/__init__.py
@@ -68,266 +331,318 @@ generatedFiles:
   - src/epilot_pricing/utils/serializers.py
   - src/epilot_pricing/utils/url.py
   - src/epilot_pricing/utils/values.py
-  - src/epilot_pricing/models/sdkerror.py
-  - src/epilot_pricing/models/catalogsearchresult.py
-  - src/epilot_pricing/models/product.py
-  - src/epilot_pricing/models/entityrelation.py
-  - src/epilot_pricing/models/file.py
-  - src/epilot_pricing/models/price.py
-  - src/epilot_pricing/models/pricetier.py
-  - src/epilot_pricing/models/pricetierdisplaymode.py
-  - src/epilot_pricing/models/tax.py
-  - src/epilot_pricing/models/salestax.py
-  - src/epilot_pricing/models/pricegetag.py
-  - src/epilot_pricing/models/typegetag.py
-  - src/epilot_pricing/models/tarifftypegetag.py
-  - src/epilot_pricing/models/powermetertype.py
-  - src/epilot_pricing/models/markuppricingmodel.py
-  - src/epilot_pricing/models/consumptiontypegetag.py
-  - src/epilot_pricing/models/gasconcessiontype.py
-  - src/epilot_pricing/models/productcategory.py
-  - src/epilot_pricing/models/billingperiod.py
-  - src/epilot_pricing/models/coupon.py
-  - src/epilot_pricing/models/error.py
-  - src/epilot_pricing/models/catalogsearch.py
-  - src/epilot_pricing/models/availabilityfilters.py
-  - src/epilot_pricing/models/availabilitylocation.py
-  - src/epilot_pricing/models/dollar_searchcatalogop.py
-  - src/epilot_pricing/models/computepriceresult.py
-  - src/epilot_pricing/models/computedpricebreakdown.py
-  - src/epilot_pricing/models/computedbaseprice.py
-  - src/epilot_pricing/models/signaturemeta.py
-  - src/epilot_pricing/models/dollar_computepriceop.py
-  - src/epilot_pricing/models/integrationid.py
-  - src/epilot_pricing/models/computepriceparams.py
-  - src/epilot_pricing/models/computepriceparamspower.py
-  - src/epilot_pricing/models/computepriceparamsgas.py
-  - src/epilot_pricing/models/dollar_deletecredentialsop.py
-  - src/epilot_pricing/models/integrationcredentialsresult.py
-  - src/epilot_pricing/models/dollar_getcredentialsop.py
-  - src/epilot_pricing/models/dollar_savecredentialsop.py
-  - src/epilot_pricing/models/saveintegrationcredentialsparams.py
-  - src/epilot_pricing/models/provider.py
-  - src/epilot_pricing/models/dollar_searchprovidersop.py
-  - src/epilot_pricing/models/searchprovidersparams.py
-  - src/epilot_pricing/models/street.py
-  - src/epilot_pricing/models/dollar_searchstreetsop.py
-  - src/epilot_pricing/models/searchstreetsparams.py
-  - src/epilot_pricing/models/pricingdetailsresponse.py
-  - src/epilot_pricing/models/totaldetails.py
-  - src/epilot_pricing/models/taxamountbreakdown.py
-  - src/epilot_pricing/models/taxbreakdowninfo.py
-  - src/epilot_pricing/models/recurrenceamountwithtax.py
-  - src/epilot_pricing/models/recurrenceamount.py
-  - src/epilot_pricing/models/priceitem.py
-  - src/epilot_pricing/models/tierdetails.py
-  - src/epilot_pricing/models/taxamount.py
-  - src/epilot_pricing/models/pricingmodel.py
-  - src/epilot_pricing/models/priceinputmapping.py
-  - src/epilot_pricing/models/metadata.py
-  - src/epilot_pricing/models/compositeprice.py
-  - src/epilot_pricing/models/pricecomponentrelation.py
-  - src/epilot_pricing/models/compositepriceitem.py
-  - src/epilot_pricing/models/dollar_calculatepricingdetailsop.py
-  - src/epilot_pricing/models/priceitemsdto.py
-  - src/epilot_pricing/models/priceitemdto.py
-  - src/epilot_pricing/models/externalfeemetadata.py
-  - src/epilot_pricing/models/externalfeemapping.py
-  - src/epilot_pricing/models/compositepriceitemdto.py
-  - src/epilot_pricing/models/order.py
-  - src/epilot_pricing/models/orderstatus.py
-  - src/epilot_pricing/models/ordersource.py
-  - src/epilot_pricing/models/paymentmethod.py
-  - src/epilot_pricing/models/priceitems.py
-  - src/epilot_pricing/models/address.py
-  - src/epilot_pricing/models/orderpayload.py
-  - src/epilot_pricing/models/putorderop.py
-  - src/epilot_pricing/models/availabilityresult.py
-  - src/epilot_pricing/models/dollar_availabilitycheckop.py
-  - src/epilot_pricing/models/availabilitycheckparams.py
-  - src/epilot_pricing/models/validateavailabilityfileresult.py
-  - src/epilot_pricing/models/validateavailabilityfileerror.py
-  - src/epilot_pricing/models/dollar_validateavailabilityfileop.py
-  - src/epilot_pricing/models/checkoutcartresult.py
-  - src/epilot_pricing/models/dollar_checkoutcartop.py
-  - src/epilot_pricing/models/checkoutcart.py
-  - src/epilot_pricing/models/checkoutmode.py
-  - src/epilot_pricing/models/cartdto.py
-  - src/epilot_pricing/models/customer.py
-  - src/epilot_pricing/models/security.py
-  - src/epilot_pricing/models/__init__.py
-  - docs/models/results.md
-  - docs/models/catalogsearchresult.md
-  - docs/models/crosssellableproducts.md
-  - docs/models/feature.md
-  - docs/models/priceoptions.md
-  - docs/models/productdownloads.md
-  - docs/models/productimages.md
-  - docs/models/producttype.md
-  - docs/models/product.md
-  - docs/models/entityrelation.md
-  - docs/models/s3ref.md
-  - docs/models/versions.md
-  - docs/models/file.md
-  - docs/models/billingdurationunit.md
-  - docs/models/pricebillingperiod.md
-  - docs/models/noticetimeunit.md
-  - docs/models/pricedisplayinjourneys.md
-  - docs/models/pricepricingmodel.md
-  - docs/models/renewaldurationunit.md
-  - docs/models/pricesalestax.md
-  - docs/models/price1.md
-  - docs/models/pricetax.md
-  - docs/models/terminationtimeunit.md
-  - docs/models/pricetype.md
-  - docs/models/priceschemas1.md
-  - docs/models/unit.md
-  - docs/models/price.md
-  - docs/models/pricetier.md
-  - docs/models/pricetierdisplaymode.md
-  - docs/models/taxtype.md
-  - docs/models/tax.md
-  - docs/models/salestax.md
-  - docs/models/concessiontype.md
-  - docs/models/metertype.md
-  - docs/models/pricegetag.md
-  - docs/models/typegetag.md
-  - docs/models/tarifftypegetag.md
-  - docs/models/powermetertype.md
-  - docs/models/markuppricingmodel.md
-  - docs/models/consumptiontypegetag.md
-  - docs/models/gasconcessiontype.md
-  - docs/models/productcategory.md
-  - docs/models/billingperiod.md
-  - docs/models/schema.md
-  - docs/models/one.md
-  - docs/models/prices.md
-  - docs/models/coupontype.md
-  - docs/models/coupon.md
-  - docs/models/error.md
-  - docs/models/catalogsearch.md
-  - docs/models/availabilityfilters.md
-  - docs/models/availabilitylocation.md
-  - docs/models/dollarsearchcatalogsecurity.md
-  - docs/models/dollarsearchcatalogrequest.md
-  - docs/models/computepriceresultbillingperiod.md
-  - docs/models/computepriceresult.md
-  - docs/models/computedpricebreakdown.md
-  - docs/models/computedbaseprice.md
-  - docs/models/signaturemeta.md
-  - docs/models/dollarcomputepricesecurity.md
-  - docs/models/dollarcomputepricerequest.md
-  - docs/models/integrationid.md
-  - docs/models/computepriceparams.md
-  - docs/models/computepriceparamspowerbillingperiod.md
-  - docs/models/computepriceparamspowerconsumptiontype.md
-  - docs/models/computepriceparamspowertype.md
-  - docs/models/computepriceparamspower.md
-  - docs/models/computepriceparamsgasbillingperiod.md
-  - docs/models/consumptiontype.md
-  - docs/models/type.md
-  - docs/models/computepriceparamsgas.md
-  - docs/models/dollardeletecredentialsrequest.md
-  - docs/models/integrationcredentialsresult.md
-  - docs/models/dollargetcredentialsrequest.md
-  - docs/models/dollarsavecredentialsrequest.md
-  - docs/models/saveintegrationcredentialsparams.md
-  - docs/models/provider.md
-  - docs/models/dollarsearchproviderssecurity.md
-  - docs/models/dollarsearchprovidersrequest.md
-  - docs/models/searchprovidersparamstype.md
-  - docs/models/searchprovidersparams.md
-  - docs/models/street.md
-  - docs/models/dollarsearchstreetssecurity.md
-  - docs/models/dollarsearchstreetsrequest.md
-  - docs/models/searchstreetsparams.md
-  - docs/models/items.md
-  - docs/models/pricingdetailsresponse.md
-  - docs/models/totaldetailsrecurrences.md
-  - docs/models/recurrencesbytax.md
-  - docs/models/totaldetailstaxes.md
-  - docs/models/breakdown.md
-  - docs/models/totaldetails.md
-  - docs/models/taxamountbreakdown.md
-  - docs/models/taxbreakdowninfotype.md
-  - docs/models/taxbreakdowninfo.md
-  - docs/models/recurrenceamountwithtaxbillingperiod.md
-  - docs/models/recurrenceamountwithtaxtax.md
-  - docs/models/recurrenceamountwithtax.md
-  - docs/models/recurrenceamountbillingperiod.md
-  - docs/models/recurrenceamount.md
-  - docs/models/priceitemprice.md
-  - docs/models/priceitembillingperiod.md
-  - docs/models/priceitemrecurrences.md
-  - docs/models/priceitemtaxes.md
-  - docs/models/priceitemtype.md
-  - docs/models/priceitem.md
-  - docs/models/tierdetails.md
-  - docs/models/taxamounttax.md
-  - docs/models/taxamount.md
-  - docs/models/pricingmodel.md
-  - docs/models/priceinputmappingfrequencyunit.md
-  - docs/models/priceinputmapping.md
-  - docs/models/metadata1.md
-  - docs/models/metadata.md
-  - docs/models/two.md
-  - docs/models/pricecomponents.md
-  - docs/models/compositeprice.md
-  - docs/models/pricecomponentrelation.md
-  - docs/models/compositepriceitemprice.md
-  - docs/models/recurrences.md
-  - docs/models/taxes.md
-  - docs/models/compositepriceitem.md
-  - docs/models/dollarcalculatepricingdetailsrequestbody.md
-  - docs/models/priceitemsdto.md
-  - docs/models/priceitemdtobillingperiod.md
-  - docs/models/priceitemdtopricingmodel.md
-  - docs/models/priceitemdtotype.md
-  - docs/models/priceitemdto.md
-  - docs/models/externalfeemetadatabillingperiod.md
-  - docs/models/externalfeemetadata.md
-  - docs/models/frequencyunit.md
-  - docs/models/externalfeemapping.md
-  - docs/models/compositepriceitemdto.md
-  - docs/models/ordercustomer.md
-  - docs/models/orderprices.md
-  - docs/models/products.md
-  - docs/models/order.md
-  - docs/models/orderstatus.md
-  - docs/models/ordersource.md
-  - docs/models/paymentmethod.md
-  - docs/models/priceitems.md
-  - docs/models/address.md
-  - docs/models/orderpayload.md
-  - docs/models/putorderrequest.md
-  - docs/models/checkresults.md
-  - docs/models/availabilityresult.md
-  - docs/models/dollaravailabilitychecksecurity.md
-  - docs/models/dollaravailabilitycheckrequest.md
-  - docs/models/availabilitycheckparams.md
-  - docs/models/status.md
-  - docs/models/validateavailabilityfileresult.md
-  - docs/models/validateavailabilityfileerror.md
-  - docs/models/dollarvalidateavailabilityfilerequest.md
-  - docs/models/checkoutcartresult.md
-  - docs/models/dollarcheckoutcartsecurity.md
-  - docs/models/dollarcheckoutcartrequest.md
-  - docs/models/cart.md
-  - docs/models/checkoutcart.md
-  - docs/models/checkoutmode.md
-  - docs/models/cartdto.md
-  - docs/models/customer.md
-  - docs/models/security.md
-  - docs/sdks/epilot/README.md
-  - docs/models/utils/retryconfig.md
-  - docs/sdks/catalogapi/README.md
-  - docs/sdks/externalintegrationsapi/README.md
-  - docs/sdks/orderapi/README.md
-  - docs/sdks/availabilityapi/README.md
-  - docs/sdks/cartapi/README.md
-  - USAGE.md
-  - .gitattributes
-  - src/epilot_pricing/_hooks/sdkhooks.py
-  - src/epilot_pricing/_hooks/types.py
-  - src/epilot_pricing/_hooks/__init__.py
-  - CONTRIBUTING.md
+examples:
+  $privateSearchCatalog:
+    speakeasy-default-$private-search-catalog:
+      requestBody:
+        application/json: {"availability": {"available_date": "2017-07-21"}, "from": 0, "q": "_id:1233432 OR _id:123432454 OR _id:23445433", "size": 200, "sort": "description ASC"}
+      responses:
+        "200":
+          application/json: {"hits": 2, "results": [{"_created_at": "2024-01-15T10:00:00.000Z", "_id": "123e4567-e89b-12d3-a456-426614174000", "_org": "org_12345", "_schema": "coupon", "_title": "Sample Coupon", "_updated_at": "2024-01-20T12:00:00.000Z", "active": true, "fixed_value": 555, "fixed_value_currency": "USD", "fixed_value_decimal": "5.55", "name": "Sample Coupon", "prices": [{"pricing_model": "external_getag", "tax": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_org": "123", "_schema": "tax", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z", "active": "true", "description": "Tax description", "rate": "6236.49", "region": "DE", "region_label": "Germany", "type": "VAT"}], "unit_amount_currency": "EUR", "$ref": "#/components/examples/price"}], "type": "fixed"}, {"_created_at": "2024-01-15T10:00:00.000Z", "_id": "123e4567-e89b-12d3-a456-426614174000", "_org": "org_12345", "_schema": "coupon", "_title": "Sample Coupon", "_updated_at": "2024-01-20T12:00:00.000Z", "active": true, "fixed_value": 555, "fixed_value_currency": "USD", "fixed_value_decimal": "5.55", "name": "Sample Coupon", "prices": [{"pricing_model": "tiered_graduated", "unit_amount_currency": "EUR", "$ref": "#/components/examples/price"}], "type": "fixed"}]}
+        "400": {}
+  $searchCatalog:
+    "":
+      parameters:
+        header:
+          X-Ivy-Org-ID: "739224"
+      requestBody:
+        application/json: {"availability": {"available_date": "2017-07-21"}, "from": 0, "q": "_id:1233432 OR _id:123432454 OR _id:23445433", "size": 200, "sort": "description ASC"}
+      responses:
+        "200":
+          application/json: {"hits": 2, "results": [{"_created_at": "2024-01-15T10:00:00.000Z", "_id": "123e4567-e89b-12d3-a456-426614174000", "_org": "org_12345", "_schema": "coupon", "_title": "Sample Coupon", "_updated_at": "2024-01-20T12:00:00.000Z", "active": true, "fixed_value": 555, "fixed_value_currency": "USD", "fixed_value_decimal": "5.55", "name": "Sample Coupon", "prices": [{"pricing_model": "tiered_volume", "tax": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_org": "123", "_schema": "tax", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z", "active": "true", "description": "Tax description", "rate": "8748.08", "region": "DE", "region_label": "Germany", "type": "VAT"}], "unit_amount_currency": "EUR", "$ref": "#/components/examples/price"}], "type": "fixed"}, {"_created_at": "2024-01-15T10:00:00.000Z", "_id": "123e4567-e89b-12d3-a456-426614174000", "_org": "org_12345", "_schema": "coupon", "_title": "Sample Coupon", "_updated_at": "2024-01-20T12:00:00.000Z", "active": true, "fixed_value": 555, "fixed_value_currency": "USD", "fixed_value_decimal": "5.55", "name": "Sample Coupon", "prices": [{"pricing_model": "tiered_volume", "unit_amount_currency": "EUR", "$ref": "#/components/examples/price"}], "type": "fixed"}]}
+        "400": {}
+  $computePrice:
+    Compute price:
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      requestBody:
+        application/json: {"association_id": "123456789", "billing_period": "monthly", "consumption": 3500, "postal_code": "04109", "type": "power"}
+      responses:
+        "200":
+          application/json: {"amount_total": "485.52", "amount_total_decimal": "<value>", "billing_period": "weekly", "currency": "EUR"}
+        "400": {}
+    "":
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      responses:
+        "200":
+          application/json: {"amount_total": "7559.78", "amount_total_decimal": "<value>", "billing_period": "every_6_months", "currency": "EUR"}
+        "400": {}
+    Response of computed price:
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      responses:
+        "200":
+          application/json: {"amount_static": 500, "amount_static_decimal": "50.00", "amount_total": 100, "amount_total_decimal": "100.00", "billing_period": "monthly", "breakdown": {"static": {"maintenance_fee": {"amount": 50, "amount_decimal": "50.00"}}, "variable": {"offshore_liability_fee": {"amount": 50, "amount_decimal": "50.00"}}}, "currency": "EUR"}
+        "400": {}
+  $deleteCredentials:
+    "":
+      parameters:
+        path:
+          integrationId: "getag"
+  $getCredentials:
+    "":
+      parameters:
+        path:
+          integrationId: "getag"
+      responses:
+        "200":
+          application/json: {"password": "123456", "username": "username"}
+        "400": {}
+    Response when credentials:
+      parameters:
+        path:
+          integrationId: "getag"
+      responses:
+        "200":
+          application/json: {"password": "password", "username": "username"}
+        "400": {}
+  $saveCredentials:
+    Save credentials:
+      parameters:
+        path:
+          integrationId: "getag"
+      requestBody:
+        application/json: {"password": "password", "username": "username"}
+    "":
+      parameters:
+        path:
+          integrationId: "getag"
+      requestBody:
+        application/json: {"password": "123456", "username": "username"}
+  $searchProviders:
+    Search providers (power):
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      requestBody:
+        application/json: {"city": "Leipzig", "postal_code": "04109", "street": "Willy-Brandt-Platz", "type": "power"}
+    Search providers (gas):
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      requestBody:
+        application/json: {"city": "Cologne", "postal_code": "57008", "street": "Media Park", "street_number": "8a", "type": "gas"}
+    "":
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      requestBody:
+        application/json: {"postal_code": "28676-7820", "type": "gas"}
+    Response with available providers:
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      requestBody:
+        application/json: {"postal_code": "31046", "type": "power"}
+      responses:
+        "200":
+          application/json: [{"code": "code#1", "name": "Provider 1"}, {"code": "code#2", "name": "Provider 2"}]
+        "400": {}
+  $searchStreets:
+    Search streets:
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      requestBody:
+        application/json: {"city": "Leipzig", "postal_code": "04109"}
+    "":
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      requestBody:
+        application/json: {"city": "Yuma", "postal_code": "95455"}
+    Response with available streets:
+      parameters:
+        path:
+          integrationId: "getag"
+        header:
+          X-Epilot-Org-ID: "739224"
+      requestBody:
+        application/json: {"city": "Kuphalport", "postal_code": "74004-1648"}
+      responses:
+        "200":
+          application/json: [{"street": "Tiana Ridge"}, {"street": "Donny Walks"}]
+        "400": {}
+  $calculatePricingDetails:
+    Compute price:
+      requestBody:
+        application/json: {"line_items": [{"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "4744.81", "amount_total_decimal": "<value>", "billing_period": "yearly", "currency": "EUR"}, "item_components": [], "price_id": "396cb5f3-ea0b-4629-99ca-303661de5a9b", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "c5695fb5-f02d-4e46-9fb2-a36dc4e9876f", "quantity": 2}, {"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "384.55", "amount_total_decimal": "<value>", "billing_period": "weekly", "currency": "EUR"}, "item_components": [], "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}]}]}
+      responses:
+        "200":
+          application/json: {"currency": "EUR", "items": [], "total_details": {"breakdown": {"recurrences": []}}}
+        "400": {}
+    "":
+      requestBody:
+        application/json: {"line_items": []}
+      responses:
+        "200":
+          application/json: {"amount_subtotal": 1000, "amount_tax": 0, "amount_total": 1000, "currency": "EUR", "items": [], "total_details": {"amount_tax": 0, "breakdown": {"recurrences": [{"amount_subtotal": 1000, "amount_subtotal_decimal": "10", "amount_tax": 0, "amount_total": 1000, "amount_total_decimal": "10", "currency": "EUR", "type": "one_time", "unit_amount_gross": 1000, "unit_amount_net": 1000}], "recurrencesByTax": [{"amount_subtotal": 255475, "amount_total": 280405}], "taxes": [{"amount": 0, "tax": {"rate": 0}}]}}}
+        "400": {}
+  createOrder:
+    Order with Simple Prices:
+      requestBody:
+        application/json: {"billing_address": [{"_tags": [], "additional_info": "", "city": "Cologne", "country": "DE", "postal_code": "52000", "street": "Im Media Park", "street_number": "8a"}], "billing_company_name": "epilot cloud", "billing_email": "j.pinho@epilot.cloud", "billing_first_name": "Joao", "billing_last_name": "Pinho", "currency": "EUR", "delivery_address": [], "line_items": [{"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "6720.96", "amount_total_decimal": "<value>", "billing_period": "weekly", "currency": "EUR"}, "item_components": [], "price_id": "7e24ff5d-d580-4136-a32f-19191eed039a", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "6241487f-b7fd-428b-ab92-24ee0b37fd84", "quantity": 16}, {"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "1385.54", "amount_total_decimal": "<value>", "billing_period": "monthly", "currency": "EUR"}, "item_components": [], "price_id": "7e24ff5d-d580-4136-a32f-19191eed039a", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "6241487f-b7fd-428b-ab92-24ee0b37fd84", "quantity": 4}, {"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "5678.05", "amount_total_decimal": "<value>", "billing_period": "every_6_months", "currency": "EUR"}, "item_components": [], "price_id": "7e24ff5d-d580-4136-a32f-19191eed039a", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "6241487f-b7fd-428b-ab92-24ee0b37fd84", "quantity": 1}, {"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "8379.78", "amount_total_decimal": "<value>", "billing_period": "yearly", "currency": "EUR"}, "item_components": [], "price_id": "7e24ff5d-d580-4136-a32f-19191eed039a", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "6241487f-b7fd-428b-ab92-24ee0b37fd84", "quantity": 1}], "payment_method": [{"details": {}, "type": "IBAN"}], "source_type": "manual", "status": "quote", "expires_at": "2022-06-30T16:17:00.000Z", "billing_contact": {"$relation": [{"entity_id": "1834a54e-b68f-4f7f-a98a-fe16f11bc2a5", "_tags": []}]}, "dates": [{"_tags": ["Instalation Date"], "dates": "", "value": "2022-06-30T16:29:00.000Z"}]}
+      responses:
+        "201":
+          application/json: {"billing_address": [], "currency": "EUR", "delivery_address": [], "line_items": [], "source": {"http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939", "title": "Journey: PH Journey"}, "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey", "total_details": {"breakdown": {"recurrences": []}}, "$ref": "#/components/examples/order-with-simple-prices"}
+        "400": {}
+    Order with Simple Prices and Dynamic Pricing:
+      requestBody:
+        application/json: {"billing_address": [{"_tags": [], "additional_info": "", "city": "Cologne", "country": "DE", "postal_code": "52000", "street": "Im Media Park", "street_number": "8a"}], "billing_company_name": "epilot cloud", "billing_email": "j.pinho@epilot.cloud", "billing_first_name": "Joao", "billing_last_name": "Pinho", "currency": "EUR", "delivery_address": [], "line_items": [{"_price": {"pricing_model": "tiered_flatfee", "tax": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_org": "123", "_schema": "tax", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z", "active": "true", "description": "Tax description", "rate": "9831.59", "region": "DE", "region_label": "Germany", "type": "VAT"}], "unit_amount_currency": "EUR", "$ref": "#/components/examples/price"}, "_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "5897.96", "amount_total_decimal": "<value>", "billing_period": "yearly", "currency": "EUR"}, "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "pricing_model": "external_getag", "unit_amount_currency": "EUR"}], "payment_method": [{"details": {}, "type": "IBAN"}], "source_type": "manual", "status": "quote", "expires_at": "2022-06-30T16:17:00.000Z", "billing_contact": {"$relation": [{"entity_id": "1834a54e-b68f-4f7f-a98a-fe16f11bc2a5", "_tags": []}]}, "dates": [{"_tags": ["Instalation Date"], "dates": "", "value": "2022-06-30T16:29:00.000Z"}]}
+      responses:
+        "201":
+          application/json: {"billing_address": [], "currency": "EUR", "delivery_address": [], "line_items": [], "source": {"http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939", "title": "Journey: PH Journey"}, "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey", "total_details": {"breakdown": {"recurrences": []}}, "$ref": "#/components/examples/order-with-simple-prices"}
+        "400": {}
+    Order with Composite Prices and Dynamic Pricing:
+      requestBody:
+        application/json: {"billing_address": [{"_tags": [], "additional_info": "", "city": "Cologne", "country": "DE", "postal_code": "52000", "street": "Im Media Park", "street_number": "8a"}], "billing_company_name": "epilot cloud", "billing_email": "j.pinho@epilot.cloud", "billing_first_name": "Joao", "billing_last_name": "Pinho", "currency": "EUR", "delivery_address": [], "line_items": [{"_price": {"pricing_model": "per_unit", "tax": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_org": "123", "_schema": "tax", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z", "active": "true", "description": "Tax description", "rate": "2661.98", "region": "DE", "region_label": "Germany", "type": "VAT"}], "unit_amount_currency": "EUR", "$ref": "#/components/examples/price"}, "_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "9875.24", "amount_total_decimal": "<value>", "billing_period": "weekly", "currency": "EUR"}, "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "pricing_model": "external_getag", "unit_amount_currency": "EUR"}], "payment_method": [{"details": {}, "type": "IBAN"}], "source_type": "manual", "status": "quote", "expires_at": "2022-06-30T16:17:00.000Z", "billing_contact": {"$relation": [{"entity_id": "1834a54e-b68f-4f7f-a98a-fe16f11bc2a5", "_tags": []}]}, "dates": [{"_tags": ["Instalation Date"], "dates": "", "value": "2022-06-30T16:29:00.000Z"}]}
+      responses:
+        "201":
+          application/json: {"billing_address": [], "currency": "EUR", "delivery_address": [], "line_items": [], "source": {"http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939", "title": "Journey: PH Journey"}, "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey", "total_details": {"breakdown": {"recurrences": []}}, "$ref": "#/components/examples/order-with-simple-prices"}
+        "400": {}
+  putOrder:
+    Order with Simple Prices:
+      parameters:
+        path:
+          id: "9d4602d3-03be-4d85-86b2-f3c6555fc606"
+      requestBody:
+        application/json: {"billing_address": [{"_tags": [], "additional_info": "", "city": "Cologne", "country": "DE", "postal_code": "52000", "street": "Im Media Park", "street_number": "8a"}], "billing_company_name": "epilot cloud", "billing_email": "j.pinho@epilot.cloud", "billing_first_name": "Joao", "billing_last_name": "Pinho", "currency": "EUR", "delivery_address": [], "line_items": [{"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "8639.88", "amount_total_decimal": "<value>", "billing_period": "monthly", "currency": "EUR"}, "item_components": [], "price_id": "7e24ff5d-d580-4136-a32f-19191eed039a", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "6241487f-b7fd-428b-ab92-24ee0b37fd84", "quantity": 16}, {"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "4014.49", "amount_total_decimal": "<value>", "billing_period": "yearly", "currency": "EUR"}, "item_components": [], "price_id": "7e24ff5d-d580-4136-a32f-19191eed039a", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "6241487f-b7fd-428b-ab92-24ee0b37fd84", "quantity": 4}, {"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "1687.36", "amount_total_decimal": "<value>", "billing_period": "weekly", "currency": "EUR"}, "item_components": [], "price_id": "7e24ff5d-d580-4136-a32f-19191eed039a", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "6241487f-b7fd-428b-ab92-24ee0b37fd84", "quantity": 1}, {"_product": {"$ref": "#/components/examples/product"}, "external_fees_mappings": [{"amount_total": 1000, "amount_total_decimal": "10.00", "frequency_unit": "weekly", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F"}], "external_fees_metadata": {"amount_total": "316.36", "amount_total_decimal": "<value>", "billing_period": "weekly", "currency": "EUR"}, "item_components": [], "price_id": "7e24ff5d-d580-4136-a32f-19191eed039a", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "product_id": "6241487f-b7fd-428b-ab92-24ee0b37fd84", "quantity": 1}], "payment_method": [{"details": {}, "type": "IBAN"}], "source_type": "manual", "status": "quote", "expires_at": "2022-06-30T16:17:00.000Z", "billing_contact": {"$relation": [{"entity_id": "1834a54e-b68f-4f7f-a98a-fe16f11bc2a5", "_tags": []}]}, "dates": [{"_tags": ["Instalation Date"], "dates": "", "value": "2022-06-30T16:29:00.000Z"}]}
+      responses:
+        "200":
+          application/json: {"billing_address": [], "currency": "EUR", "delivery_address": [], "line_items": [], "source": {"http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939", "title": "Journey: PH Journey"}, "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey", "total_details": {"breakdown": {"recurrences": []}}, "$ref": "#/components/examples/order-with-simple-prices"}
+        "400": {}
+    "":
+      parameters:
+        path:
+          id: "9d4602d3-03be-4d85-86b2-f3c6555fc606"
+      requestBody:
+        application/json: {"billing_address": [], "currency": "EUR", "delivery_address": [], "line_items": [], "source_type": "journey"}
+      responses:
+        "200":
+          application/json: {"billing_address": [], "currency": "EUR", "delivery_address": [], "line_items": [], "source": {"http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939", "title": "Journey: PH Journey"}, "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey", "total_details": {"breakdown": {"recurrences": []}}, "$ref": "#/components/examples/order-with-simple-prices"}
+        "400": {}
+  $availabilityCheck:
+    Check availability with location dimension:
+      parameters:
+        header:
+          X-Ivy-Org-ID: "<value>"
+      requestBody:
+        application/json: {"filters": {"available_date": "2017-07-21", "location": {"city": "Cologne", "postal_code": "57008", "street": "Media Park", "street_number": "8a"}}, "products": ["cd75456a-30e4-4912-95be-e743d5ea175b"]}
+      responses:
+        "200":
+          application/json: {"available_products": [], "check_results": [{"matching_hits": 0, "product_id": "my-product-id-123-1"}, {"matching_hits": 0, "product_id": "my-product-id-123-2"}]}
+        "400": {}
+    Check availability with location & available date dimension:
+      parameters:
+        header:
+          X-Ivy-Org-ID: "<value>"
+      requestBody:
+        application/json: {"filters": {"available_date": "2022-05-01", "location": {"city": "Cologne", "postal_code": "57008", "street": "Media Park", "street_number": "8a"}}, "products": ["cd75456a-30e4-4912-95be-e743d5ea175b"]}
+      responses:
+        "200":
+          application/json: {"available_products": [], "check_results": [{"matching_hits": 0, "product_id": "my-product-id-123-1"}, {"matching_hits": 0, "product_id": "my-product-id-123-2"}]}
+        "400": {}
+    Response with available products:
+      parameters:
+        header:
+          X-Ivy-Org-ID: "<value>"
+      requestBody:
+        application/json: {"filters": {"available_date": "2017-07-21"}, "products": []}
+      responses:
+        "200":
+          application/json: {"available_products": ["cd75456a-30e4-4912-95be-e743d5ea175b"], "check_results": [{"matching_hits": 1, "product_id": "cd75456a-30e4-4912-95be-e743d5ea175b"}]}
+        "400": {}
+    Response with no available products:
+      parameters:
+        header:
+          X-Ivy-Org-ID: "<value>"
+      requestBody:
+        application/json: {"filters": {"available_date": "2017-07-21"}, "products": []}
+      responses:
+        "200":
+          application/json: {"available_products": []}
+        "400": {}
+    Response with available and unavailable products:
+      parameters:
+        header:
+          X-Ivy-Org-ID: "<value>"
+      requestBody:
+        application/json: {"filters": {"available_date": "2017-07-21"}, "products": []}
+      responses:
+        "200":
+          application/json: {"available_products": []}
+        "400": {}
+  $validateAvailabilityFile:
+    "":
+      parameters:
+        path:
+          id: "72c803b2-2e5d-4bd6-bffc-fad998bbbe36"
+        header:
+          X-Epilot-Org-ID: "739224"
+      responses:
+        "200":
+          application/json: {"errors": [{"msg": "<value>"}, {"msg": "<value>"}, {"msg": "<value>"}], "rules_parsed_count": 8, "status": "success"}
+        "400": {}
+    Response when file has no errors:
+      parameters:
+        path:
+          id: "72c803b2-2e5d-4bd6-bffc-fad998bbbe36"
+        header:
+          X-Epilot-Org-ID: "739224"
+      responses:
+        "200":
+          application/json: {"errors": [], "rules_parsed_count": "4411.88", "status": "error"}
+        "400": {}
+    Response when file has errors:
+      parameters:
+        path:
+          id: "72c803b2-2e5d-4bd6-bffc-fad998bbbe36"
+        header:
+          X-Epilot-Org-ID: "739224"
+      responses:
+        "200":
+          application/json: {"errors": [{"msg": "<value>"}, {"msg": "<value>"}], "rules_parsed_count": "9852.54", "status": "success"}
+        "400": {}
+  $checkoutCart:
+    Checkout with a transient Cart:
+      parameters:
+        header:
+          X-Ivy-Org-ID: "<value>"
+      requestBody:
+        application/json: {"cart": {"additional_addresses": [], "billing_address": {"_tags": ["billing"]}, "delivery_address": {"_tags": ["billing"]}, "line_items": [], "source": {"http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939", "title": "Journey: PH Journey"}, "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey"}, "mode": "create_order"}
+      responses:
+        "200":
+          application/json: {"order": {"billing_address": [], "currency": "EUR", "delivery_address": [], "line_items": [], "source": {"http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939", "title": "Journey: PH Journey"}, "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey", "total_details": {"breakdown": {"recurrences": []}}, "$ref": "#/components/examples/order-with-simple-prices"}}
+        "400": {}
+    Checkout with created order:
+      parameters:
+        header:
+          X-Ivy-Org-ID: "<value>"
+      requestBody:
+        application/json: {"cart": "<value>"}
+      responses:
+        "200":
+          application/json: {"order": {"_created_at": "2021-11-10T18:02:58.318Z", "_id": "d1ZoC1FwZ6", "_org_id": "123", "_updated_at": "2021-11-10T18:02:58.318Z", "amount_subtotal": 100000, "amount_total": 115000, "billing_address": [{"0": "w", "1": "a", "2": "l", "3": "l", "4": "s", "5": "t", "6": "r", "7": "e", "8": "e", "9": "t", "10": ",", "11": " ", "12": "1", "_tags": ["billing"]}], "billing_company_name": "i me and myself", "billing_email": "johndoe@nowhere.com", "billing_first_name": "john", "billing_last_name": "doe", "billing_phone": "+1234234545", "billing_vat": "234823948", "cart_id": "p0ZoB1FwH6", "currency": "EUR", "delivery_address": [], "line_items": [{"_price": {"pricing_model": "tiered_volume", "tax": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_org": "123", "_schema": "tax", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z", "active": "true", "description": "Tax description", "rate": "4721.73", "region": "DE", "region_label": "Germany", "type": "VAT"}], "unit_amount_currency": "EUR", "$ref": "#/components/examples/price"}, "_product": {"$ref": "#/components/examples/product"}, "currency": "EUR", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "pricing_model": "per_unit", "recurrences": [], "taxes": []}, {"_price": {"unit_amount_currency": "EUR", "$ref": "#/components/examples/composite-price"}, "_product": {"$ref": "#/components/examples/product"}, "currency": "EUR", "item_components": [{"_price": {"price_components": [{"pricing_model": "external_getag", "unit_amount_currency": "EUR", "$ref": "#/components/examples/price"}], "unit_amount_currency": "EUR", "$ref": "#/components/examples/composite-price"}, "_product": {"$ref": "#/components/examples/product"}, "currency": "EUR", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "pricing_model": "tiered_volume", "recurrences": [], "taxes": []}, {"_price": {"unit_amount_currency": "EUR", "$ref": "#/components/examples/composite-price"}, "_product": {"$ref": "#/components/examples/product"}, "currency": "EUR", "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "pricing_model": "tiered_flatfee", "recurrences": [], "taxes": []}], "price_mappings": [{"frequency_unit": "weekly", "metadata": {"journey_title": "energy journey", "step_name": "avg consumption picker"}, "name": "avg consumption", "price_id": "589B011B-F8D9-4F8E-AD71-BACE4B543C0F", "value": 1000.245}], "recurrences": [], "taxes": [], "total_details": {"breakdown": {"recurrences": []}}}], "metadata": [{"key": "journey-id", "value": "8d0a2235-97ce-42d0-88a3-e374634ca44e"}], "order_number": "20201021-234324", "source": {"http": "/app/v2/journey-builder/editor/db7f6940-994b-11ec-a46d-9f1824ff2939", "title": "Journey: PH Journey"}, "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey", "total_details": {"amount_shipping": 10000, "amount_tax": 15000, "breakdown": {"recurrences": []}}, "type": "Draft", "billing_contact": "villy or zilly"}}
+        "400": {}
