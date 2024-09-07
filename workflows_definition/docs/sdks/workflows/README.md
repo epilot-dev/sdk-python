@@ -28,7 +28,6 @@ s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.workflows.create_definition(request={
     "flow": [
 
@@ -96,7 +95,6 @@ s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 s.workflows.delete_definition(definition_id="CustomerRequest")
 
 # Use the SDK ...
@@ -130,7 +128,6 @@ from openapi import SDK
 s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.workflows.get_definition(definition_id="7hj28a")
 
@@ -173,7 +170,6 @@ s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.workflows.get_definitions()
 
 if res is not None:
@@ -212,7 +208,6 @@ from openapi import SDK
 s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.workflows.get_max_allowed_limit()
 
@@ -253,7 +248,6 @@ s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.workflows.get_workflow_closing_reasons(definition_id="fxcwfw")
 
 if res is not None:
@@ -292,7 +286,6 @@ from openapi import SDK
 s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 s.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_ids={
     "reasons": [
@@ -334,7 +327,6 @@ from openapi import SDK
 s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
-
 
 res = s.workflows.update_definition(definition_id="7hj28a", workflow_definition={
     "flow": [

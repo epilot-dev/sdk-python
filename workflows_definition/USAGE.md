@@ -7,7 +7,6 @@ s = SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 s.closing_reason.change_reason_status(reason_id="<value>")
 
 # Use the SDK ...
