@@ -31,7 +31,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.roles.delete_role(role_id="123:owner")
 
 if res is not None:
@@ -47,15 +46,16 @@ if res is not None:
 | `role_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 123:owner                                                           |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Role](../../models/role.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_role
 
@@ -73,7 +73,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.roles.get_role(role_id="123:owner")
 
 if res is not None:
@@ -89,15 +88,16 @@ if res is not None:
 | `role_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 123:owner                                                           |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Role](../../models/role.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## list_all_roles
 
@@ -115,7 +115,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.roles.list_all_roles()
 
 if res is not None:
@@ -130,15 +129,16 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.ListAllRolesResponseBody](../../models/listallrolesresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## list_current_roles
 
@@ -156,7 +156,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.roles.list_current_roles()
 
 if res is not None:
@@ -171,15 +170,16 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.ListCurrentRolesResponseBody](../../models/listcurrentrolesresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## put_role
 
@@ -198,37 +198,9 @@ s = Epilot(
     ),
 )
 
-
 res = s.roles.put_role(role_id="123:owner", role_payload={
     "grants": [
-        {
-            "action": "entity-read",
-            "conditions": [
-                {
-                    "attribute": "workflows.primary.task_name",
-                    "operation": epilot_permissions.Operation.EQUALS,
-                    "values": [
-                        "Qualification",
-                    ],
-                },
-            ],
-            "dependencies": [
-                {
-                    "action": "entity-read",
-                    "conditions": [
-                        {
-                            "attribute": "workflows.primary.task_name",
-                            "operation": epilot_permissions.Operation.EQUALS,
-                            "values": [
-                                "Qualification",
-                            ],
-                        },
-                    ],
-                    "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
-                },
-            ],
-            "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
-        },
+
     ],
     "id": "123:owner",
     "name": "Owner",
@@ -252,15 +224,16 @@ if res is not None:
 | `role_payload`                                                      | [Optional[models.RolePayload]](../../models/rolepayload.md)         | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Role](../../models/role.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## refresh_permissions
 
@@ -277,7 +250,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 s.roles.refresh_permissions()
 
@@ -297,6 +269,7 @@ s.roles.refresh_permissions()
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
 
+
 ## search_roles
 
 Search Roles
@@ -312,7 +285,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 res = s.roles.search_roles(request={
     "limit": 1,
@@ -345,10 +317,10 @@ if res is not None:
 | `request`                                                           | [models.RoleSearchInput](../../models/rolesearchinput.md)           | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.SearchRolesResponseBody](../../models/searchrolesresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
