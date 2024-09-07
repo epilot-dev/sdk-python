@@ -3,10 +3,10 @@ id: 5c509d65-b892-4e49-8160-6842e685ee9c
 management:
   docChecksum: cdfc5ef3c6d19ffb25d7edc590889353
   docVersion: 1.0.0
-  speakeasyVersion: 1.390.7
-  generationVersion: 2.409.8
-  releaseVersion: 1.4.2
-  configChecksum: 97b91b59a2dfd86d828cebba2d82da47
+  speakeasyVersion: 1.392.1
+  generationVersion: 2.411.9
+  releaseVersion: 1.4.3
+  configChecksum: f86b465dc7e9c64c20ac310a3748e4bd
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: template_variables
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
@@ -14,7 +14,7 @@ features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.2
-    core: 5.4.2
+    core: 5.4.4
     defaultEnabledRetries: 0.2.0
     envVarSecurityUsage: 0.3.1
     flattening: 3.0.0
@@ -23,14 +23,40 @@ features:
     globalServerURLs: 3.0.0
     nullables: 1.0.0
     responseFormat: 1.0.0
-    retries: 3.0.0
+    retries: 3.0.2
     sdkHooks: 1.0.0
 generatedFiles:
-  - src/epilot_template_variables/sdkconfiguration.py
-  - src/epilot_template_variables/custom_variables.py
-  - src/epilot_template_variables/variables.py
-  - src/epilot_template_variables/sdk.py
+  - .gitattributes
   - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/categoryresult.md
+  - docs/models/config.md
+  - docs/models/contextdata.md
+  - docs/models/customvariable.md
+  - docs/models/customvariablessearchparams.md
+  - docs/models/customvariablessearchparamstype.md
+  - docs/models/deletecustomvariablerequest.md
+  - docs/models/externalcustomvariable.md
+  - docs/models/getcategoriesrequest.md
+  - docs/models/getcustomvariablerequest.md
+  - docs/models/getvariablecontextrequestbody.md
+  - docs/models/replacetemplatesrequestbody.md
+  - docs/models/replacetemplatesresponsebody.md
+  - docs/models/searchcustomvariablesresponsebody.md
+  - docs/models/searchvariablesrequestbody.md
+  - docs/models/security.md
+  - docs/models/templatetype.md
+  - docs/models/type.md
+  - docs/models/updatecustomvariablerequest.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/variablecontext.md
+  - docs/models/variableparameters.md
+  - docs/models/variableresult.md
+  - docs/models/variableresulttype.md
+  - docs/sdks/customvariables/README.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/variables/README.md
   - poetry.toml
   - py.typed
   - pylintrc
@@ -39,9 +65,34 @@ generatedFiles:
   - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/epilot_template_variables/__init__.py
+  - src/epilot_template_variables/_hooks/__init__.py
+  - src/epilot_template_variables/_hooks/sdkhooks.py
+  - src/epilot_template_variables/_hooks/types.py
   - src/epilot_template_variables/basesdk.py
+  - src/epilot_template_variables/custom_variables.py
   - src/epilot_template_variables/httpclient.py
+  - src/epilot_template_variables/models/__init__.py
+  - src/epilot_template_variables/models/categoryresult.py
+  - src/epilot_template_variables/models/customvariable.py
+  - src/epilot_template_variables/models/customvariablessearchparams.py
+  - src/epilot_template_variables/models/deletecustomvariableop.py
+  - src/epilot_template_variables/models/externalcustomvariable.py
+  - src/epilot_template_variables/models/getcategoriesop.py
+  - src/epilot_template_variables/models/getcustomvariableop.py
+  - src/epilot_template_variables/models/getvariablecontextop.py
+  - src/epilot_template_variables/models/replacetemplatesop.py
+  - src/epilot_template_variables/models/sdkerror.py
+  - src/epilot_template_variables/models/searchcustomvariablesop.py
+  - src/epilot_template_variables/models/searchvariablesop.py
+  - src/epilot_template_variables/models/security.py
+  - src/epilot_template_variables/models/templatetype.py
+  - src/epilot_template_variables/models/updatecustomvariableop.py
+  - src/epilot_template_variables/models/variablecontext.py
+  - src/epilot_template_variables/models/variableparameters.py
+  - src/epilot_template_variables/models/variableresult.py
   - src/epilot_template_variables/py.typed
+  - src/epilot_template_variables/sdk.py
+  - src/epilot_template_variables/sdkconfiguration.py
   - src/epilot_template_variables/types/__init__.py
   - src/epilot_template_variables/types/basemodel.py
   - src/epilot_template_variables/utils/__init__.py
@@ -59,55 +110,72 @@ generatedFiles:
   - src/epilot_template_variables/utils/serializers.py
   - src/epilot_template_variables/utils/url.py
   - src/epilot_template_variables/utils/values.py
-  - src/epilot_template_variables/models/sdkerror.py
-  - src/epilot_template_variables/models/customvariable.py
-  - src/epilot_template_variables/models/deletecustomvariableop.py
-  - src/epilot_template_variables/models/getcustomvariableop.py
-  - src/epilot_template_variables/models/searchcustomvariablesop.py
-  - src/epilot_template_variables/models/customvariablessearchparams.py
-  - src/epilot_template_variables/models/updatecustomvariableop.py
-  - src/epilot_template_variables/models/categoryresult.py
-  - src/epilot_template_variables/models/getcategoriesop.py
-  - src/epilot_template_variables/models/variablecontext.py
-  - src/epilot_template_variables/models/getvariablecontextop.py
-  - src/epilot_template_variables/models/variableparameters.py
-  - src/epilot_template_variables/models/templatetype.py
-  - src/epilot_template_variables/models/externalcustomvariable.py
-  - src/epilot_template_variables/models/replacetemplatesop.py
-  - src/epilot_template_variables/models/variableresult.py
-  - src/epilot_template_variables/models/searchvariablesop.py
-  - src/epilot_template_variables/models/security.py
-  - src/epilot_template_variables/models/__init__.py
-  - docs/models/config.md
-  - docs/models/type.md
-  - docs/models/customvariable.md
-  - docs/models/deletecustomvariablerequest.md
-  - docs/models/getcustomvariablerequest.md
-  - docs/models/searchcustomvariablesresponsebody.md
-  - docs/models/customvariablessearchparamstype.md
-  - docs/models/customvariablessearchparams.md
-  - docs/models/updatecustomvariablerequest.md
-  - docs/models/categoryresult.md
-  - docs/models/getcategoriesrequest.md
-  - docs/models/variablecontext.md
-  - docs/models/getvariablecontextrequestbody.md
-  - docs/models/contextdata.md
-  - docs/models/variableparameters.md
-  - docs/models/templatetype.md
-  - docs/models/externalcustomvariable.md
-  - docs/models/replacetemplatesrequestbody.md
-  - docs/models/replacetemplatesresponsebody.md
-  - docs/models/variableresulttype.md
-  - docs/models/variableresult.md
-  - docs/models/searchvariablesrequestbody.md
-  - docs/models/security.md
-  - docs/sdks/epilot/README.md
-  - docs/models/utils/retryconfig.md
-  - docs/sdks/customvariables/README.md
-  - docs/sdks/variables/README.md
-  - USAGE.md
-  - .gitattributes
-  - src/epilot_template_variables/_hooks/sdkhooks.py
-  - src/epilot_template_variables/_hooks/types.py
-  - src/epilot_template_variables/_hooks/__init__.py
-  - CONTRIBUTING.md
+  - src/epilot_template_variables/variables.py
+examples:
+  createCustomVariable:
+    speakeasy-default-create-custom-variable:
+      requestBody:
+        application/json: {"created_at": "2022-04-19T12:41:43.662Z", "created_by": "100042", "helper_logic": "return param1 * param2;", "helper_params": ["param1", "param2"], "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250", "key": "my_custom_table", "name": "My Custom table", "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n  <thead>\n    <tr style=\"height: 48px;border-bottom: 1px solid #D5E1ED;\">\n      {{#each table_config.header.columns as |column|}}\n        {{#if column.enable}}\n          <th style=\"{{makeStyle @root.table_config.header.style}};{{makeStyle column.style}};\">{{column._label}}</th>\n        {{/if}}\n      {{/each}}\n    </tr>\n  </thead>\n  <tbody style=\"vertical-align: baseline  !important;font-weight: 400;font-size: 12px;position: relative;\">\n    <!-- Start rendering products -->\n    {{#each order.products as |product|}}\n      {{#if @last}}\n        <tr style=\"height: 48px;;font-size:14px;border-bottom: 1px solid #D5E1ED;\">\n      {{else}}\n        <tr style=\"height: 48px;;font-size:14px;\">\n      {{/if}}\n        {{#each @root.table_config.header.columns as |column|}}\n          {{#if column.enable}}\n            {{#if (eq column.id 'item')}}\n              <!-- Item -->\n              <td style=\"{{makeStyle @root.table_config.body.product_name.style}}\">\n                {{#if @root.table_config.body.product_name.enable}}\n                  {{product.name}}\n                {{/if}}\n                {{#if @root.table_config.body.price_description.enable}}\n                  <br>\n                  <span style=\"{{makeStyle @root.table_config.body.price_description.style}}\">{{product.price.description}}</span>\n                {{/if}}\n                {{#if @root.table_config.body.product_description.enable}}\n                  <br>\n                  <span style=\"{{makeStyle @root.table_config.body.product_description.style}}\">{{product.description}}</span>\n                {{/if}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'quantity')}}\n              <!-- Quantity -->\n              <td style=\"{{makeStyle @root.table_config.body.quantity.style}}\">{{product.price.quantity}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'tax')}}\n              <!-- Tax -->\n              <td style=\"{{makeStyle @root.table_config.body.tax.style}}\">\n                {{product.price.tax_rate}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'unit_amount')}}\n              <!-- Unit amount -->\n              <td style=\"{{makeStyle @root.table_config.body.unit_amount.style}}\">\n                {{product.price.unit_amount_net}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'net_total')}}\n              <!-- Amount Subtotal -->\n              <td style=\"{{makeStyle @root.table_config.body.net_total.style}}\">\n                {{product.price.amount_subtotal}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'amount_tax')}}\n              <!-- Tax amount-->\n              <td style=\"{{makeStyle @root.table_config.body.amount_tax.style}}\">\n                {{product.price.amount_tax}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'gross_total')}}\n              <!-- Gross total -->\n              <td style=\"{{makeStyle @root.table_config.body.gross_total.style}}\">\n                {{product.price.amount_total}}\n                {{#if @root.table_config.body.payment_type.enable}}\n                  {{#if (eq product.price.type 'recurring')}}\n                    <br>\n                    <span style=\"{{makeStyle @root.table_config.body.payment_type.style}}\">{{product.price.billing_period}}</span>\n                  {{/if}}\n                {{/if}}\n              </td>\n            {{/if}}\n          {{/if}}\n        {{/each}}\n        </tr>\n    {{/each}}\n    <!-- Finish rendering products -->\n    {{#if table_config.footer.gross_total.enable}}\n      {{#each order.total_details.recurrences as |item|}}\n        <tr style=\"height: 48px;font-size: 14px;\">\n          <td style=\"padding-top: 16px; padding-bottom: 8px; border: none !important; vertical-align: top;\" colspan=\"{{calculate_colspan @root.table_config}}\"></td>\n          {{#if @root.table_config.footer.payment_type.enable}}\n            <td style=\"{{makeStyle @root.table_config.footer.payment_type.style}}\" colspan=\"2\">{{item.billing_period}}</td>\n          {{/if}}\n          {{#if (isColumnEnabled @root.table_config 'net_total')}}\n            {{#if @root.table_config.footer.net_total.enable}}\n              <td style=\"{{makeStyle @root.table_config.footer.net_total.style}}\">{{item.amount_subtotal}}</td>\n            {{/if}}\n          {{/if}}\n          <td style=\"{{makeStyle @root.table_config.footer.gross_total.style}}\">{{item.amount_total}}\n            {{#if @root.table_config.footer.amount_tax.enable}}\n              <br>\n              <span style=\"{{makeStyle @root.table_config.footer.amount_tax.style}}\">{{item.full_amount_tax}}</span>\n            {{/if}}\n          </td>\n        </tr>\n      {{/each}}\n    {{/if}}\n    <tr style=\"height:16px !important;\"></tr>\n  </tbody>\n</table>\n", "type": "custom", "updated_at": "2022-04-20T12:41:43.662Z", "updated_by": "100042"}
+  deleteCustomVariable:
+    "":
+      parameters:
+        path:
+          id: "rbse777b-3cf8-4bff-bb0c-253fd1123250"
+  getBluePrintTableConfig:
+    speakeasy-default-get-blue-print-table-config:
+      responses:
+        "200":
+          application/json: {"created_at": "2022-04-19T12:41:43.662Z", "created_by": "100042", "helper_logic": "return param1 * param2;", "helper_params": ["param1", "param2"], "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250", "key": "my_custom_table", "name": "My Custom table", "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n  <thead>\n    <tr style=\"height: 48px;border-bottom: 1px solid #D5E1ED;\">\n      {{#each table_config.header.columns as |column|}}\n        {{#if column.enable}}\n          <th style=\"{{makeStyle @root.table_config.header.style}};{{makeStyle column.style}};\">{{column._label}}</th>\n        {{/if}}\n      {{/each}}\n    </tr>\n  </thead>\n  <tbody style=\"vertical-align: baseline  !important;font-weight: 400;font-size: 12px;position: relative;\">\n    <!-- Start rendering products -->\n    {{#each order.products as |product|}}\n      {{#if @last}}\n        <tr style=\"height: 48px;;font-size:14px;border-bottom: 1px solid #D5E1ED;\">\n      {{else}}\n        <tr style=\"height: 48px;;font-size:14px;\">\n      {{/if}}\n        {{#each @root.table_config.header.columns as |column|}}\n          {{#if column.enable}}\n            {{#if (eq column.id 'item')}}\n              <!-- Item -->\n              <td style=\"{{makeStyle @root.table_config.body.product_name.style}}\">\n                {{#if @root.table_config.body.product_name.enable}}\n                  {{product.name}}\n                {{/if}}\n                {{#if @root.table_config.body.price_description.enable}}\n                  <br>\n                  <span style=\"{{makeStyle @root.table_config.body.price_description.style}}\">{{product.price.description}}</span>\n                {{/if}}\n                {{#if @root.table_config.body.product_description.enable}}\n                  <br>\n                  <span style=\"{{makeStyle @root.table_config.body.product_description.style}}\">{{product.description}}</span>\n                {{/if}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'quantity')}}\n              <!-- Quantity -->\n              <td style=\"{{makeStyle @root.table_config.body.quantity.style}}\">{{product.price.quantity}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'tax')}}\n              <!-- Tax -->\n              <td style=\"{{makeStyle @root.table_config.body.tax.style}}\">\n                {{product.price.tax_rate}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'unit_amount')}}\n              <!-- Unit amount -->\n              <td style=\"{{makeStyle @root.table_config.body.unit_amount.style}}\">\n                {{product.price.unit_amount_net}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'net_total')}}\n              <!-- Amount Subtotal -->\n              <td style=\"{{makeStyle @root.table_config.body.net_total.style}}\">\n                {{product.price.amount_subtotal}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'amount_tax')}}\n              <!-- Tax amount-->\n              <td style=\"{{makeStyle @root.table_config.body.amount_tax.style}}\">\n                {{product.price.amount_tax}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'gross_total')}}\n              <!-- Gross total -->\n              <td style=\"{{makeStyle @root.table_config.body.gross_total.style}}\">\n                {{product.price.amount_total}}\n                {{#if @root.table_config.body.payment_type.enable}}\n                  {{#if (eq product.price.type 'recurring')}}\n                    <br>\n                    <span style=\"{{makeStyle @root.table_config.body.payment_type.style}}\">{{product.price.billing_period}}</span>\n                  {{/if}}\n                {{/if}}\n              </td>\n            {{/if}}\n          {{/if}}\n        {{/each}}\n        </tr>\n    {{/each}}\n    <!-- Finish rendering products -->\n    {{#if table_config.footer.gross_total.enable}}\n      {{#each order.total_details.recurrences as |item|}}\n        <tr style=\"height: 48px;font-size: 14px;\">\n          <td style=\"padding-top: 16px; padding-bottom: 8px; border: none !important; vertical-align: top;\" colspan=\"{{calculate_colspan @root.table_config}}\"></td>\n          {{#if @root.table_config.footer.payment_type.enable}}\n            <td style=\"{{makeStyle @root.table_config.footer.payment_type.style}}\" colspan=\"2\">{{item.billing_period}}</td>\n          {{/if}}\n          {{#if (isColumnEnabled @root.table_config 'net_total')}}\n            {{#if @root.table_config.footer.net_total.enable}}\n              <td style=\"{{makeStyle @root.table_config.footer.net_total.style}}\">{{item.amount_subtotal}}</td>\n            {{/if}}\n          {{/if}}\n          <td style=\"{{makeStyle @root.table_config.footer.gross_total.style}}\">{{item.amount_total}}\n            {{#if @root.table_config.footer.amount_tax.enable}}\n              <br>\n              <span style=\"{{makeStyle @root.table_config.footer.amount_tax.style}}\">{{item.full_amount_tax}}</span>\n            {{/if}}\n          </td>\n        </tr>\n      {{/each}}\n    {{/if}}\n    <tr style=\"height:16px !important;\"></tr>\n  </tbody>\n</table>\n", "type": "custom", "updated_at": "2022-04-20T12:41:43.662Z", "updated_by": "100042"}
+  getCustomVariable:
+    "":
+      parameters:
+        path:
+          id: "rbse777b-3cf8-4bff-bb0c-253fd1123250"
+      responses:
+        "200":
+          application/json: {"created_at": "2022-04-19T12:41:43.662Z", "created_by": "100042", "helper_logic": "return param1 * param2;", "helper_params": ["param1", "param2"], "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250", "key": "my_custom_table", "name": "My Custom table", "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n  <thead>\n    <tr style=\"height: 48px;border-bottom: 1px solid #D5E1ED;\">\n      {{#each table_config.header.columns as |column|}}\n        {{#if column.enable}}\n          <th style=\"{{makeStyle @root.table_config.header.style}};{{makeStyle column.style}};\">{{column._label}}</th>\n        {{/if}}\n      {{/each}}\n    </tr>\n  </thead>\n  <tbody style=\"vertical-align: baseline  !important;font-weight: 400;font-size: 12px;position: relative;\">\n    <!-- Start rendering products -->\n    {{#each order.products as |product|}}\n      {{#if @last}}\n        <tr style=\"height: 48px;;font-size:14px;border-bottom: 1px solid #D5E1ED;\">\n      {{else}}\n        <tr style=\"height: 48px;;font-size:14px;\">\n      {{/if}}\n        {{#each @root.table_config.header.columns as |column|}}\n          {{#if column.enable}}\n            {{#if (eq column.id 'item')}}\n              <!-- Item -->\n              <td style=\"{{makeStyle @root.table_config.body.product_name.style}}\">\n                {{#if @root.table_config.body.product_name.enable}}\n                  {{product.name}}\n                {{/if}}\n                {{#if @root.table_config.body.price_description.enable}}\n                  <br>\n                  <span style=\"{{makeStyle @root.table_config.body.price_description.style}}\">{{product.price.description}}</span>\n                {{/if}}\n                {{#if @root.table_config.body.product_description.enable}}\n                  <br>\n                  <span style=\"{{makeStyle @root.table_config.body.product_description.style}}\">{{product.description}}</span>\n                {{/if}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'quantity')}}\n              <!-- Quantity -->\n              <td style=\"{{makeStyle @root.table_config.body.quantity.style}}\">{{product.price.quantity}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'tax')}}\n              <!-- Tax -->\n              <td style=\"{{makeStyle @root.table_config.body.tax.style}}\">\n                {{product.price.tax_rate}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'unit_amount')}}\n              <!-- Unit amount -->\n              <td style=\"{{makeStyle @root.table_config.body.unit_amount.style}}\">\n                {{product.price.unit_amount_net}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'net_total')}}\n              <!-- Amount Subtotal -->\n              <td style=\"{{makeStyle @root.table_config.body.net_total.style}}\">\n                {{product.price.amount_subtotal}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'amount_tax')}}\n              <!-- Tax amount-->\n              <td style=\"{{makeStyle @root.table_config.body.amount_tax.style}}\">\n                {{product.price.amount_tax}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'gross_total')}}\n              <!-- Gross total -->\n              <td style=\"{{makeStyle @root.table_config.body.gross_total.style}}\">\n                {{product.price.amount_total}}\n                {{#if @root.table_config.body.payment_type.enable}}\n                  {{#if (eq product.price.type 'recurring')}}\n                    <br>\n                    <span style=\"{{makeStyle @root.table_config.body.payment_type.style}}\">{{product.price.billing_period}}</span>\n                  {{/if}}\n                {{/if}}\n              </td>\n            {{/if}}\n          {{/if}}\n        {{/each}}\n        </tr>\n    {{/each}}\n    <!-- Finish rendering products -->\n    {{#if table_config.footer.gross_total.enable}}\n      {{#each order.total_details.recurrences as |item|}}\n        <tr style=\"height: 48px;font-size: 14px;\">\n          <td style=\"padding-top: 16px; padding-bottom: 8px; border: none !important; vertical-align: top;\" colspan=\"{{calculate_colspan @root.table_config}}\"></td>\n          {{#if @root.table_config.footer.payment_type.enable}}\n            <td style=\"{{makeStyle @root.table_config.footer.payment_type.style}}\" colspan=\"2\">{{item.billing_period}}</td>\n          {{/if}}\n          {{#if (isColumnEnabled @root.table_config 'net_total')}}\n            {{#if @root.table_config.footer.net_total.enable}}\n              <td style=\"{{makeStyle @root.table_config.footer.net_total.style}}\">{{item.amount_subtotal}}</td>\n            {{/if}}\n          {{/if}}\n          <td style=\"{{makeStyle @root.table_config.footer.gross_total.style}}\">{{item.amount_total}}\n            {{#if @root.table_config.footer.amount_tax.enable}}\n              <br>\n              <span style=\"{{makeStyle @root.table_config.footer.amount_tax.style}}\">{{item.full_amount_tax}}</span>\n            {{/if}}\n          </td>\n        </tr>\n      {{/each}}\n    {{/if}}\n    <tr style=\"height:16px !important;\"></tr>\n  </tbody>\n</table>\n", "type": "order_table", "updated_at": "2022-04-20T12:41:43.662Z", "updated_by": "100042"}
+  getCustomVariables:
+    speakeasy-default-get-custom-variables:
+      responses:
+        "200":
+          application/json: []
+  searchCustomVariables:
+    speakeasy-default-search-custom-variables:
+      requestBody:
+        application/json: {"query": "logo", "sort_by": "[\"created_at\",\"created_at:desc\",\"name\",\"name:desc\",\"key\"]"}
+      responses:
+        "200":
+          application/json: {"hits": 100, "results": []}
+  updateCustomVariable:
+    "":
+      parameters:
+        path:
+          id: "rbse777b-3cf8-4bff-bb0c-253fd1123250"
+      requestBody:
+        application/json: {"created_at": "2022-04-19T12:41:43.662Z", "created_by": "100042", "helper_logic": "return param1 * param2;", "helper_params": ["param1", "param2"], "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250", "key": "my_custom_table", "name": "My Custom table", "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n  <thead>\n    <tr style=\"height: 48px;border-bottom: 1px solid #D5E1ED;\">\n      {{#each table_config.header.columns as |column|}}\n        {{#if column.enable}}\n          <th style=\"{{makeStyle @root.table_config.header.style}};{{makeStyle column.style}};\">{{column._label}}</th>\n        {{/if}}\n      {{/each}}\n    </tr>\n  </thead>\n  <tbody style=\"vertical-align: baseline  !important;font-weight: 400;font-size: 12px;position: relative;\">\n    <!-- Start rendering products -->\n    {{#each order.products as |product|}}\n      {{#if @last}}\n        <tr style=\"height: 48px;;font-size:14px;border-bottom: 1px solid #D5E1ED;\">\n      {{else}}\n        <tr style=\"height: 48px;;font-size:14px;\">\n      {{/if}}\n        {{#each @root.table_config.header.columns as |column|}}\n          {{#if column.enable}}\n            {{#if (eq column.id 'item')}}\n              <!-- Item -->\n              <td style=\"{{makeStyle @root.table_config.body.product_name.style}}\">\n                {{#if @root.table_config.body.product_name.enable}}\n                  {{product.name}}\n                {{/if}}\n                {{#if @root.table_config.body.price_description.enable}}\n                  <br>\n                  <span style=\"{{makeStyle @root.table_config.body.price_description.style}}\">{{product.price.description}}</span>\n                {{/if}}\n                {{#if @root.table_config.body.product_description.enable}}\n                  <br>\n                  <span style=\"{{makeStyle @root.table_config.body.product_description.style}}\">{{product.description}}</span>\n                {{/if}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'quantity')}}\n              <!-- Quantity -->\n              <td style=\"{{makeStyle @root.table_config.body.quantity.style}}\">{{product.price.quantity}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'tax')}}\n              <!-- Tax -->\n              <td style=\"{{makeStyle @root.table_config.body.tax.style}}\">\n                {{product.price.tax_rate}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'unit_amount')}}\n              <!-- Unit amount -->\n              <td style=\"{{makeStyle @root.table_config.body.unit_amount.style}}\">\n                {{product.price.unit_amount_net}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'net_total')}}\n              <!-- Amount Subtotal -->\n              <td style=\"{{makeStyle @root.table_config.body.net_total.style}}\">\n                {{product.price.amount_subtotal}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'amount_tax')}}\n              <!-- Tax amount-->\n              <td style=\"{{makeStyle @root.table_config.body.amount_tax.style}}\">\n                {{product.price.amount_tax}}\n              </td>\n            {{/if}}\n            {{#if (eq column.id 'gross_total')}}\n              <!-- Gross total -->\n              <td style=\"{{makeStyle @root.table_config.body.gross_total.style}}\">\n                {{product.price.amount_total}}\n                {{#if @root.table_config.body.payment_type.enable}}\n                  {{#if (eq product.price.type 'recurring')}}\n                    <br>\n                    <span style=\"{{makeStyle @root.table_config.body.payment_type.style}}\">{{product.price.billing_period}}</span>\n                  {{/if}}\n                {{/if}}\n              </td>\n            {{/if}}\n          {{/if}}\n        {{/each}}\n        </tr>\n    {{/each}}\n    <!-- Finish rendering products -->\n    {{#if table_config.footer.gross_total.enable}}\n      {{#each order.total_details.recurrences as |item|}}\n        <tr style=\"height: 48px;font-size: 14px;\">\n          <td style=\"padding-top: 16px; padding-bottom: 8px; border: none !important; vertical-align: top;\" colspan=\"{{calculate_colspan @root.table_config}}\"></td>\n          {{#if @root.table_config.footer.payment_type.enable}}\n            <td style=\"{{makeStyle @root.table_config.footer.payment_type.style}}\" colspan=\"2\">{{item.billing_period}}</td>\n          {{/if}}\n          {{#if (isColumnEnabled @root.table_config 'net_total')}}\n            {{#if @root.table_config.footer.net_total.enable}}\n              <td style=\"{{makeStyle @root.table_config.footer.net_total.style}}\">{{item.amount_subtotal}}</td>\n            {{/if}}\n          {{/if}}\n          <td style=\"{{makeStyle @root.table_config.footer.gross_total.style}}\">{{item.amount_total}}\n            {{#if @root.table_config.footer.amount_tax.enable}}\n              <br>\n              <span style=\"{{makeStyle @root.table_config.footer.amount_tax.style}}\">{{item.full_amount_tax}}</span>\n            {{/if}}\n          </td>\n        </tr>\n      {{/each}}\n    {{/if}}\n    <tr style=\"height:16px !important;\"></tr>\n  </tbody>\n</table>\n", "type": "custom", "updated_at": "2022-04-20T12:41:43.662Z", "updated_by": "100042"}
+  getCategories:
+    "":
+      responses:
+        "200":
+          application/json: [{"category": "contact", "description": "Contact"}, {"category": "account", "description": "Account"}, {"category": "organization", "description": "Organization"}]
+  getVariableContext:
+    speakeasy-default-get-variable-context:
+      requestBody:
+        application/json: {"parameters": {"brand_id": 123451, "custom_variables": [], "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561", "template_type": "email", "user_id": "50001", "user_org_id": "729224", "variables_version": "2"}}
+      responses:
+        "200":
+          application/json: {"brand": {"$ref": "#/components/examples/ExampleBrand/value"}, "contact": {"$ref": "#/components/examples/ExampleContactEntity/value"}, "main": {"$ref": "#/components/examples/ExampleMain/value"}, "unsubscribe_url": "https://consent.sls.epilot.io/v1/unsubscribe?token=abc123"}
+  replaceTemplates:
+    speakeasy-default-replace-templates:
+      requestBody:
+        application/json: {"inputs": ["Hello, {{contact.first_name}}!\n\n{{{brand.signature}}}\n"], "parameters": {"brand_id": 123451, "custom_variables": [], "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561", "template_type": "email", "user_id": "50001", "user_org_id": "729224", "variables_version": "2"}}
+      responses:
+        "200":
+          application/json: {"outputs": ["\"[Brand Name GmbH] Order confirmation\",\n\"Hello Customer Name \n\n<span color=\"#ccc\">Brand Name GmbH</span>\n<img src=\"https://logobucket.s3.amazonaws.com/brandlogo.png\" alt=\"Brand Name\"/>\n<a href=\"https://company.com/imprint\">imprint</a>\n\"]\n"]}
+  searchVariables:
+    "":
+      requestBody:
+        application/json: {"entity_schemas": ["contact"], "query": "logo", "template_type": "document"}
+      responses:
+        "200":
+          application/json: [{"description": "Company name", "group": "Personal Details", "insert": "{{account.name}}", "type": "simple"}, {"description": "Tax ID", "group": "Personal Details", "insert": "{{account.tax_id}}", "type": "simple"}, {"description": "Address Details", "group": "Address details", "qrdata": "{{account.address_details}}", "type": "partial"}, {"description": "Address - Street name", "group": "Address Details", "insert": "{{account.address.street}}", "type": "simple"}, {"description": "Address - Street number", "group": "Address Details", "insert": "{{account.address.street_number}}", "type": "simple"}, {"description": "Address - Postal code", "group": "Address Details", "insert": "{{account.address.postal_code}}", "type": "simple"}, {"description": "Address - City", "group": "Address Details", "insert": "{{account.address.city}}", "type": "simple"}]
