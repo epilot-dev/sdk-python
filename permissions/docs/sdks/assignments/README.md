@@ -32,7 +32,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
 
 if res is not None:
@@ -49,15 +48,16 @@ if res is not None:
 | `user_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 1                                                                   |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Assignment](../../models/assignment.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## assign_roles
 
@@ -74,7 +74,6 @@ s = Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
-
 
 res = s.assignments.assign_roles(user_id="1", request_body=[
     "123:owner",
@@ -94,15 +93,16 @@ if res is not None:
 | `request_body`                                                      | List[*str*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[List[str]](../../models/.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## get_assigned_roles_for_user
 
@@ -120,7 +120,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.assignments.get_assigned_roles_for_user(user_id="1")
 
 if res is not None:
@@ -136,15 +135,16 @@ if res is not None:
 | `user_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 1                                                                   |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[List[str]](../../models/.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## list_all_assignments
 
@@ -162,7 +162,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.assignments.list_all_assignments()
 
 if res is not None:
@@ -177,15 +176,16 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.ListAllAssignmentsResponseBody](../../models/listallassignmentsresponsebody.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## remove_assignment
 
@@ -203,7 +203,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.assignments.remove_assignment(role_id="123:owner", user_id="1")
 
 if res is not None:
@@ -220,10 +219,10 @@ if res is not None:
 | `user_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 1                                                                   |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Assignment](../../models/assignment.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
