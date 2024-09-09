@@ -9,6 +9,18 @@ from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
 
+class ContextDataTypedDict(TypedDict):
+    r"""Custom values for variables in the template. Takes the higher precedence than others."""
+    
+    additional_properties: NotRequired[str]
+    
+
+class ContextData(BaseModel):
+    r"""Custom values for variables in the template. Takes the higher precedence than others."""
+    
+    additional_properties: Annotated[Optional[str], pydantic.Field(alias="additionalProperties")] = None
+    
+
 class TemplateDocumentTypedDict(TypedDict):
     r"""Input template document"""
     
@@ -40,6 +52,8 @@ class VariablePayload(BaseModel):
 class DocumentGenerationV2RequestTypedDict(TypedDict):
     template_document: TemplateDocumentTypedDict
     r"""Input template document"""
+    context_data: NotRequired[ContextDataTypedDict]
+    r"""Custom values for variables in the template. Takes the higher precedence than others."""
     context_entity_id: NotRequired[str]
     r"""Entity to use for variable context"""
     template_settings: NotRequired[TemplateSettingsTypedDict]
@@ -53,6 +67,8 @@ class DocumentGenerationV2RequestTypedDict(TypedDict):
 class DocumentGenerationV2Request(BaseModel):
     template_document: TemplateDocument
     r"""Input template document"""
+    context_data: Optional[ContextData] = None
+    r"""Custom values for variables in the template. Takes the higher precedence than others."""
     context_entity_id: Optional[str] = None
     r"""Entity to use for variable context"""
     template_settings: Optional[TemplateSettings] = None
