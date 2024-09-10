@@ -13,11 +13,14 @@ from epilot_template_variables.variables import Variables
 import httpx
 from typing import Callable, Dict, Optional, Union
 
+
 class Epilot(BaseSDK):
     r"""Template Variables API: API to provide variables for email and document templates."""
+
     custom_variables: CustomVariables
     variables: Variables
     r"""Variables"""
+
     def __init__(
         self,
         security: Union[models.Security, Callable[[], models.Security]],
@@ -28,7 +31,7 @@ class Epilot(BaseSDK):
         async_client: Optional[AsyncHttpClient] = None,
         retry_config: OptionalNullable[RetryConfig] = UNSET,
         timeout_ms: Optional[int] = None,
-        debug_logger: Optional[Logger] = None
+        debug_logger: Optional[Logger] = None,
     ) -> None:
         r"""Instantiates the SDK configuring it with the provided parameters.
 
@@ -61,23 +64,27 @@ class Epilot(BaseSDK):
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
-    
 
-        BaseSDK.__init__(self, SDKConfiguration(
-            client=client,
-            async_client=async_client,
-            security=security,
-            server_url=server_url,
-            server_idx=server_idx,
-            retry_config=retry_config,
-            timeout_ms=timeout_ms,
-            debug_logger=debug_logger
-        ))
+        BaseSDK.__init__(
+            self,
+            SDKConfiguration(
+                client=client,
+                async_client=async_client,
+                security=security,
+                server_url=server_url,
+                server_idx=server_idx,
+                retry_config=retry_config,
+                timeout_ms=timeout_ms,
+                debug_logger=debug_logger,
+            ),
+        )
 
         hooks = SDKHooks()
 
         current_server_url, *_ = self.sdk_configuration.get_server_details()
-        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        server_url, self.sdk_configuration.client = hooks.sdk_init(
+            current_server_url, self.sdk_configuration.client
+        )
         if current_server_url != server_url:
             self.sdk_configuration.server_url = server_url
 
@@ -86,8 +93,6 @@ class Epilot(BaseSDK):
 
         self._init_sdks()
 
-
     def _init_sdks(self):
         self.custom_variables = CustomVariables(self.sdk_configuration)
         self.variables = Variables(self.sdk_configuration)
-    

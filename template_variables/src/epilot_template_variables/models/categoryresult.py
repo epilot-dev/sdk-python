@@ -9,9 +9,9 @@ from typing_extensions import NotRequired
 class CategoryResultTypedDict(TypedDict):
     category: NotRequired[str]
     description: NotRequired[str]
-    
+
 
 class CategoryResult(BaseModel):
     category: Optional[str] = None
+
     description: Optional[str] = None
-    

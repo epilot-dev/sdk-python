@@ -10,8 +10,10 @@ from typing_extensions import Annotated, NotRequired
 
 class CustomVariablesSearchParamsType(str, Enum):
     r"""Variable type"""
+
     ORDER_TABLE = "order_table"
     CUSTOM = "custom"
+
 
 class CustomVariablesSearchParamsTypedDict(TypedDict):
     fields: NotRequired[List[str]]
@@ -24,17 +26,21 @@ class CustomVariablesSearchParamsTypedDict(TypedDict):
     r"""Sort by field"""
     type: NotRequired[CustomVariablesSearchParamsType]
     r"""Variable type"""
-    
+
 
 class CustomVariablesSearchParams(BaseModel):
     fields: Optional[List[str]] = None
     r"""Fields to return"""
+
     from_: Annotated[Optional[int], pydantic.Field(alias="from")] = 0
+
     query: Optional[str] = None
     r"""Search string"""
+
     size: Optional[int] = 25
+
     sort_by: Optional[str] = None
     r"""Sort by field"""
+
     type: Optional[CustomVariablesSearchParamsType] = None
     r"""Variable type"""
-    

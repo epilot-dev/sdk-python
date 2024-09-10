@@ -6,12 +6,14 @@ from epilot_template_variables._hooks import HookContext
 from epilot_template_variables.types import BaseModel, OptionalNullable, UNSET
 from typing import List, Optional, Union, cast
 
+
 class CustomVariables(BaseSDK):
-    
-    
     def create_custom_variable(
-        self, *,
-        request: Optional[Union[models.CustomVariable, models.CustomVariableTypedDict]] = None,
+        self,
+        *,
+        request: Optional[
+            Union[models.CustomVariable, models.CustomVariableTypedDict]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -29,14 +31,14 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         if not isinstance(request, BaseModel) and request is not None:
             request = utils.unmarshal(request, models.CustomVariable)
         request = cast(models.CustomVariable, request)
-        
+
         req = self.build_request(
             method="POST",
             path="/v1/custom-variables",
@@ -49,44 +51,52 @@ class CustomVariables(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="*/*",
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[models.CustomVariable]),
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request, False, True, "json", Optional[models.CustomVariable]
+            ),
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = self.do_request(
-            hook_ctx=HookContext(operation_id="createCustomVariable", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="createCustomVariable",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "201", "*"):
             return
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     async def create_custom_variable_async(
-        self, *,
-        request: Optional[Union[models.CustomVariable, models.CustomVariableTypedDict]] = None,
+        self,
+        *,
+        request: Optional[
+            Union[models.CustomVariable, models.CustomVariableTypedDict]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -104,15 +114,15 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         if not isinstance(request, BaseModel) and request is not None:
             request = utils.unmarshal(request, models.CustomVariable)
         request = cast(models.CustomVariable, request)
-        
-        req = self.build_request(
+
+        req = self.build_request_async(
             method="POST",
             path="/v1/custom-variables",
             base_url=base_url,
@@ -124,43 +134,49 @@ class CustomVariables(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="*/*",
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[models.CustomVariable]),
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request, False, True, "json", Optional[models.CustomVariable]
+            ),
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = await self.do_request_async(
-            hook_ctx=HookContext(operation_id="createCustomVariable", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="createCustomVariable",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "201", "*"):
             return
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     def delete_custom_variable(
-        self, *,
+        self,
+        *,
         id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -179,14 +195,14 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         request = models.DeleteCustomVariableRequest(
             id=id,
         )
-        
+
         req = self.build_request(
             method="DELETE",
             path="/v1/custom-variables/{id}",
@@ -201,40 +217,44 @@ class CustomVariables(BaseSDK):
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = self.do_request(
-            hook_ctx=HookContext(operation_id="deleteCustomVariable", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="deleteCustomVariable",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "204", "*"):
             return
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     async def delete_custom_variable_async(
-        self, *,
+        self,
+        *,
         id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -253,15 +273,15 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         request = models.DeleteCustomVariableRequest(
             id=id,
         )
-        
-        req = self.build_request(
+
+        req = self.build_request_async(
             method="DELETE",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
@@ -275,40 +295,44 @@ class CustomVariables(BaseSDK):
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = await self.do_request_async(
-            hook_ctx=HookContext(operation_id="deleteCustomVariable", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="deleteCustomVariable",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "204", "*"):
             return
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     def get_blue_print_table_config(
-        self, *,
+        self,
+        *,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -325,7 +349,7 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
         req = self.build_request(
@@ -342,40 +366,44 @@ class CustomVariables(BaseSDK):
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = self.do_request(
-            hook_ctx=HookContext(operation_id="getBluePrintTableConfig", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="getBluePrintTableConfig",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, Optional[models.CustomVariable])
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     async def get_blue_print_table_config_async(
-        self, *,
+        self,
+        *,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -392,10 +420,10 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        req = self.build_request(
+        req = self.build_request_async(
             method="GET",
             path="/v1/custom-variables/order-table-blueprint",
             base_url=base_url,
@@ -409,40 +437,44 @@ class CustomVariables(BaseSDK):
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = await self.do_request_async(
-            hook_ctx=HookContext(operation_id="getBluePrintTableConfig", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="getBluePrintTableConfig",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, Optional[models.CustomVariable])
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     def get_custom_variable(
-        self, *,
+        self,
+        *,
         id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -461,14 +493,14 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         request = models.GetCustomVariableRequest(
             id=id,
         )
-        
+
         req = self.build_request(
             method="GET",
             path="/v1/custom-variables/{id}",
@@ -483,40 +515,44 @@ class CustomVariables(BaseSDK):
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = self.do_request(
-            hook_ctx=HookContext(operation_id="getCustomVariable", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="getCustomVariable",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","404","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "404", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, Optional[models.CustomVariable])
-        if utils.match_response(http_res, ["403","404","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "404", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     async def get_custom_variable_async(
-        self, *,
+        self,
+        *,
         id: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -535,15 +571,15 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         request = models.GetCustomVariableRequest(
             id=id,
         )
-        
-        req = self.build_request(
+
+        req = self.build_request_async(
             method="GET",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
@@ -557,40 +593,44 @@ class CustomVariables(BaseSDK):
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = await self.do_request_async(
-            hook_ctx=HookContext(operation_id="getCustomVariable", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="getCustomVariable",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","404","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "404", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, Optional[models.CustomVariable])
-        if utils.match_response(http_res, ["403","404","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "404", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     def get_custom_variables(
-        self, *,
+        self,
+        *,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -607,7 +647,7 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
         req = self.build_request(
@@ -624,40 +664,46 @@ class CustomVariables(BaseSDK):
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
-        http_res = self.do_request(
-            hook_ctx=HookContext(operation_id="getCustomVariables", oauth2_scopes=[], security_source=self.sdk_configuration.security),
-            request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
-        )
-        
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, Optional[List[models.CustomVariable]])
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
 
-    
-    
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                operation_id="getCustomVariables",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, Optional[List[models.CustomVariable]]
+            )
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
+
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     async def get_custom_variables_async(
-        self, *,
+        self,
+        *,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -674,10 +720,10 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        req = self.build_request(
+        req = self.build_request_async(
             method="GET",
             path="/v1/custom-variables",
             base_url=base_url,
@@ -691,41 +737,52 @@ class CustomVariables(BaseSDK):
             security=self.sdk_configuration.security,
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
-        http_res = await self.do_request_async(
-            hook_ctx=HookContext(operation_id="getCustomVariables", oauth2_scopes=[], security_source=self.sdk_configuration.security),
-            request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
-        )
-        
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, Optional[List[models.CustomVariable]])
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
 
-    
-    
+        http_res = await self.do_request_async(
+            hook_ctx=HookContext(
+                operation_id="getCustomVariables",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, Optional[List[models.CustomVariable]]
+            )
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
+
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     def search_custom_variables(
-        self, *,
-        request: Optional[Union[models.CustomVariablesSearchParams, models.CustomVariablesSearchParamsTypedDict]] = None,
+        self,
+        *,
+        request: Optional[
+            Union[
+                models.CustomVariablesSearchParams,
+                models.CustomVariablesSearchParamsTypedDict,
+            ]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -743,14 +800,14 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         if not isinstance(request, BaseModel) and request is not None:
             request = utils.unmarshal(request, models.CustomVariablesSearchParams)
         request = cast(models.CustomVariablesSearchParams, request)
-        
+
         req = self.build_request(
             method="POST",
             path="/v1/custom-variables:search",
@@ -763,44 +820,61 @@ class CustomVariables(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[models.CustomVariablesSearchParams]),
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request,
+                False,
+                True,
+                "json",
+                Optional[models.CustomVariablesSearchParams],
+            ),
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
-        http_res = self.do_request(
-            hook_ctx=HookContext(operation_id="searchCustomVariables", oauth2_scopes=[], security_source=self.sdk_configuration.security),
-            request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
-        )
-        
-        if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, Optional[models.SearchCustomVariablesResponseBody])
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
 
-    
-    
+        http_res = self.do_request(
+            hook_ctx=HookContext(
+                operation_id="searchCustomVariables",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
+            request=req,
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
+        )
+
+        if utils.match_response(http_res, "200", "application/json"):
+            return utils.unmarshal_json(
+                http_res.text, Optional[models.SearchCustomVariablesResponseBody]
+            )
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
+
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     async def search_custom_variables_async(
-        self, *,
-        request: Optional[Union[models.CustomVariablesSearchParams, models.CustomVariablesSearchParamsTypedDict]] = None,
+        self,
+        *,
+        request: Optional[
+            Union[
+                models.CustomVariablesSearchParams,
+                models.CustomVariablesSearchParamsTypedDict,
+            ]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -818,15 +892,15 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         if not isinstance(request, BaseModel) and request is not None:
             request = utils.unmarshal(request, models.CustomVariablesSearchParams)
         request = cast(models.CustomVariablesSearchParams, request)
-        
-        req = self.build_request(
+
+        req = self.build_request_async(
             method="POST",
             path="/v1/custom-variables:search",
             base_url=base_url,
@@ -838,45 +912,59 @@ class CustomVariables(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(request, False, True, "json", Optional[models.CustomVariablesSearchParams]),
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request,
+                False,
+                True,
+                "json",
+                Optional[models.CustomVariablesSearchParams],
+            ),
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = await self.do_request_async(
-            hook_ctx=HookContext(operation_id="searchCustomVariables", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="searchCustomVariables",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "200", "application/json"):
-            return utils.unmarshal_json(http_res.text, Optional[models.SearchCustomVariablesResponseBody])
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+            return utils.unmarshal_json(
+                http_res.text, Optional[models.SearchCustomVariablesResponseBody]
+            )
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     def update_custom_variable(
-        self, *,
+        self,
+        *,
         id: str,
-        custom_variable: Optional[Union[models.CustomVariable, models.CustomVariableTypedDict]] = None,
+        custom_variable: Optional[
+            Union[models.CustomVariable, models.CustomVariableTypedDict]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -886,7 +974,7 @@ class CustomVariables(BaseSDK):
         Update custom variable
 
         :param id: Custom variable ID
-        :param custom_variable: 
+        :param custom_variable:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -895,15 +983,17 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         request = models.UpdateCustomVariableRequest(
             id=id,
-            custom_variable=utils.get_pydantic_model(custom_variable, Optional[models.CustomVariable]),
+            custom_variable=utils.get_pydantic_model(
+                custom_variable, Optional[models.CustomVariable]
+            ),
         )
-        
+
         req = self.build_request(
             method="PUT",
             path="/v1/custom-variables/{id}",
@@ -916,45 +1006,57 @@ class CustomVariables(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="*/*",
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(request.custom_variable, False, True, "json", Optional[models.CustomVariable]),
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.custom_variable,
+                False,
+                True,
+                "json",
+                Optional[models.CustomVariable],
+            ),
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = self.do_request(
-            hook_ctx=HookContext(operation_id="updateCustomVariable", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="updateCustomVariable",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "200", "*"):
             return
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )
+
     async def update_custom_variable_async(
-        self, *,
+        self,
+        *,
         id: str,
-        custom_variable: Optional[Union[models.CustomVariable, models.CustomVariableTypedDict]] = None,
+        custom_variable: Optional[
+            Union[models.CustomVariable, models.CustomVariableTypedDict]
+        ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -964,7 +1066,7 @@ class CustomVariables(BaseSDK):
         Update custom variable
 
         :param id: Custom variable ID
-        :param custom_variable: 
+        :param custom_variable:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -973,16 +1075,18 @@ class CustomVariables(BaseSDK):
         url_variables = None
         if timeout_ms is None:
             timeout_ms = self.sdk_configuration.timeout_ms
-        
+
         if server_url is not None:
             base_url = server_url
-        
+
         request = models.UpdateCustomVariableRequest(
             id=id,
-            custom_variable=utils.get_pydantic_model(custom_variable, Optional[models.CustomVariable]),
+            custom_variable=utils.get_pydantic_model(
+                custom_variable, Optional[models.CustomVariable]
+            ),
         )
-        
-        req = self.build_request(
+
+        req = self.build_request_async(
             method="PUT",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
@@ -994,37 +1098,46 @@ class CustomVariables(BaseSDK):
             user_agent_header="user-agent",
             accept_header_value="*/*",
             security=self.sdk_configuration.security,
-            get_serialized_body=lambda: utils.serialize_request_body(request.custom_variable, False, True, "json", Optional[models.CustomVariable]),
+            get_serialized_body=lambda: utils.serialize_request_body(
+                request.custom_variable,
+                False,
+                True,
+                "json",
+                Optional[models.CustomVariable],
+            ),
             timeout_ms=timeout_ms,
         )
-        
+
         if retries == UNSET:
             if self.sdk_configuration.retry_config is not UNSET:
                 retries = self.sdk_configuration.retry_config
 
         retry_config = None
         if isinstance(retries, utils.RetryConfig):
-            retry_config = (retries, [
-                "429",
-                "500",
-                "502",
-                "503",
-                "504"
-            ])                
-        
+            retry_config = (retries, ["429", "500", "502", "503", "504"])
+
         http_res = await self.do_request_async(
-            hook_ctx=HookContext(operation_id="updateCustomVariable", oauth2_scopes=[], security_source=self.sdk_configuration.security),
+            hook_ctx=HookContext(
+                operation_id="updateCustomVariable",
+                oauth2_scopes=[],
+                security_source=self.sdk_configuration.security,
+            ),
             request=req,
-            error_status_codes=["403","4XX","5XX"],
-            retry_config=retry_config
+            error_status_codes=["403", "4XX", "5XX"],
+            retry_config=retry_config,
         )
-        
+
         if utils.match_response(http_res, "200", "*"):
             return
-        if utils.match_response(http_res, ["403","4XX","5XX"], "*"):
-            raise models.SDKError("API error occurred", http_res.status_code, http_res.text, http_res)
-        
-        content_type = http_res.headers.get("Content-Type")
-        raise models.SDKError(f"Unexpected response received (code: {http_res.status_code}, type: {content_type})", http_res.status_code, http_res.text, http_res)
+        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+            raise models.SDKError(
+                "API error occurred", http_res.status_code, http_res.text, http_res
+            )
 
-    
+        content_type = http_res.headers.get("Content-Type")
+        raise models.SDKError(
+            f"Unexpected response received (code: {http_res.status_code}, type: {content_type})",
+            http_res.status_code,
+            http_res.text,
+            http_res,
+        )

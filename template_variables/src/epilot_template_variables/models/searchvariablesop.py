@@ -17,15 +17,19 @@ class SearchVariablesRequestBodyTypedDict(TypedDict):
     lang: NotRequired[str]
     r"""2-letter language code (ISO 639-1)"""
     size: NotRequired[int]
-    
+
 
 class SearchVariablesRequestBody(BaseModel):
     query: str
     r"""Search string"""
+
     template_type: TemplateType
+
     entity_schemas: Optional[List[str]] = None
+
     from_: Annotated[Optional[int], pydantic.Field(alias="from")] = 0
+
     lang: Optional[str] = "de"
     r"""2-letter language code (ISO 639-1)"""
+
     size: Optional[int] = 25
-    

@@ -11,6 +11,7 @@ class VariableResultType(str, Enum):
     SIMPLE = "simple"
     PARTIAL = "partial"
 
+
 class VariableResultTypedDict(TypedDict):
     description: NotRequired[str]
     r"""Variable description"""
@@ -21,16 +22,19 @@ class VariableResultTypedDict(TypedDict):
     qrdata: NotRequired[str]
     r"""Payload for the QR data"""
     type: NotRequired[VariableResultType]
-    
+
 
 class VariableResult(BaseModel):
     description: Optional[str] = None
     r"""Variable description"""
+
     group: Optional[str] = None
     r"""Variable group"""
+
     insert: Optional[str] = None
     r"""The value which is used to insert to template"""
+
     qrdata: Optional[str] = None
     r"""Payload for the QR data"""
+
     type: Optional[VariableResultType] = None
-    

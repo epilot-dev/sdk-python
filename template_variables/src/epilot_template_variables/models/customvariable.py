@@ -9,18 +9,18 @@ from typing_extensions import NotRequired
 
 class ConfigTypedDict(TypedDict):
     r"""Variable configuration"""
-    
-    
+
 
 class Config(BaseModel):
     r"""Variable configuration"""
-    
-    
+
 
 class Type(str, Enum):
     r"""Custom variable type"""
+
     ORDER_TABLE = "order_table"
     CUSTOM = "custom"
+
 
 class CustomVariableTypedDict(TypedDict):
     config: NotRequired[ConfigTypedDict]
@@ -47,31 +47,41 @@ class CustomVariableTypedDict(TypedDict):
     r"""Last update time"""
     updated_by: NotRequired[str]
     r"""Updated by"""
-    
+
 
 class CustomVariable(BaseModel):
     config: Optional[Config] = None
     r"""Variable configuration"""
+
     created_at: Optional[str] = None
     r"""Creation time"""
+
     created_by: Optional[str] = None
     r"""Created by"""
+
     helper_logic: Optional[str] = None
     r"""The helper function logic"""
+
     helper_params: Optional[List[str]] = None
     r"""The helper function parameter's names"""
+
     id: Optional[str] = None
     r"""ID"""
+
     key: Optional[str] = None
     r"""The key which is used for Handlebar variable syntax {{key}}"""
+
     name: Optional[str] = None
     r"""Custom variable name"""
+
     template: Optional[str] = None
     r"""Handlebar template that used to generate the variable content"""
+
     type: Optional[Type] = None
     r"""Custom variable type"""
+
     updated_at: Optional[str] = None
     r"""Last update time"""
+
     updated_by: Optional[str] = None
     r"""Updated by"""
-    

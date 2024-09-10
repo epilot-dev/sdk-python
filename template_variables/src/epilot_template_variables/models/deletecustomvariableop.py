@@ -10,9 +10,10 @@ from typing_extensions import Annotated
 class DeleteCustomVariableRequestTypedDict(TypedDict):
     id: str
     r"""Custom vairable ID"""
-    
+
 
 class DeleteCustomVariableRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
     r"""Custom vairable ID"""
-    

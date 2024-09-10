@@ -10,21 +10,21 @@ from typing_extensions import NotRequired
 class ReplaceTemplatesRequestBodyTypedDict(TypedDict):
     inputs: NotRequired[List[str]]
     parameters: NotRequired[VariableParametersTypedDict]
-    
+
 
 class ReplaceTemplatesRequestBody(BaseModel):
     inputs: Optional[List[str]] = None
+
     parameters: Optional[VariableParameters] = None
-    
+
 
 class ReplaceTemplatesResponseBodyTypedDict(TypedDict):
     r"""ok"""
-    
+
     outputs: NotRequired[List[str]]
-    
+
 
 class ReplaceTemplatesResponseBody(BaseModel):
     r"""ok"""
-    
+
     outputs: Optional[List[str]] = None
-    

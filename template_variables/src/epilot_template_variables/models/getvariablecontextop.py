@@ -9,8 +9,7 @@ from typing_extensions import NotRequired
 
 class GetVariableContextRequestBodyTypedDict(TypedDict):
     parameters: NotRequired[VariableParametersTypedDict]
-    
+
 
 class GetVariableContextRequestBody(BaseModel):
     parameters: Optional[VariableParameters] = None
-    

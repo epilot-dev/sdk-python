@@ -9,8 +9,10 @@ from typing_extensions import Annotated, NotRequired
 
 class GetCategoriesRequestTypedDict(TypedDict):
     lang: NotRequired[str]
-    
+
 
 class GetCategoriesRequest(BaseModel):
-    lang: Annotated[Optional[str], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = "de"
-    
+    lang: Annotated[
+        Optional[str],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = "de"

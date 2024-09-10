@@ -9,16 +9,16 @@ from typing_extensions import NotRequired
 
 class SearchCustomVariablesResponseBodyTypedDict(TypedDict):
     r"""Success"""
-    
+
     hits: NotRequired[int]
     r"""Total number of results"""
     results: NotRequired[List[CustomVariableTypedDict]]
-    
+
 
 class SearchCustomVariablesResponseBody(BaseModel):
     r"""Success"""
-    
+
     hits: Optional[int] = None
     r"""Total number of results"""
+
     results: Optional[List[CustomVariable]] = None
-    

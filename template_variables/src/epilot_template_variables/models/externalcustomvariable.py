@@ -9,9 +9,9 @@ from typing_extensions import NotRequired
 class ExternalCustomVariableTypedDict(TypedDict):
     value: NotRequired[str]
     variable: NotRequired[str]
-    
+
 
 class ExternalCustomVariable(BaseModel):
     value: Optional[str] = None
+
     variable: Optional[str] = None
-    

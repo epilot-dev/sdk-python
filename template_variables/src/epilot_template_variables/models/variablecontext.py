@@ -11,11 +11,13 @@ class VariableContextTypedDict(TypedDict):
     contact: NotRequired[Dict[str, Any]]
     main: NotRequired[Dict[str, Any]]
     unsubscribe_url: NotRequired[str]
-    
+
 
 class VariableContext(BaseModel):
     brand: Optional[Dict[str, Any]] = None
+
     contact: Optional[Dict[str, Any]] = None
+
     main: Optional[Dict[str, Any]] = None
+
     unsubscribe_url: Optional[str] = None
-    

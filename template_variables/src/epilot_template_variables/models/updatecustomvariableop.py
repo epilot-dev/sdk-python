@@ -3,7 +3,11 @@
 from __future__ import annotations
 from .customvariable import CustomVariable, CustomVariableTypedDict
 from epilot_template_variables.types import BaseModel
-from epilot_template_variables.utils import FieldMetadata, PathParamMetadata, RequestMetadata
+from epilot_template_variables.utils import (
+    FieldMetadata,
+    PathParamMetadata,
+    RequestMetadata,
+)
 from typing import Optional, TypedDict
 from typing_extensions import Annotated, NotRequired
 
@@ -12,10 +16,15 @@ class UpdateCustomVariableRequestTypedDict(TypedDict):
     id: str
     r"""Custom variable ID"""
     custom_variable: NotRequired[CustomVariableTypedDict]
-    
+
 
 class UpdateCustomVariableRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
     r"""Custom variable ID"""
-    custom_variable: Annotated[Optional[CustomVariable], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+
+    custom_variable: Annotated[
+        Optional[CustomVariable],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None

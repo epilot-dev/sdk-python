@@ -10,9 +10,29 @@ from typing_extensions import Annotated, NotRequired
 class SecurityTypedDict(TypedDict):
     epilot_auth: NotRequired[str]
     epilot_org: NotRequired[str]
-    
+
 
 class Security(BaseModel):
-    epilot_auth: Annotated[Optional[str], FieldMetadata(security=SecurityMetadata(scheme=True, scheme_type="http", sub_type="bearer", field_name="Authorization"))] = None
-    epilot_org: Annotated[Optional[str], FieldMetadata(security=SecurityMetadata(scheme=True, scheme_type="apiKey", sub_type="header", field_name="x-ivy-org-id"))] = None
-    
+    epilot_auth: Annotated[
+        Optional[str],
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True,
+                scheme_type="http",
+                sub_type="bearer",
+                field_name="Authorization",
+            )
+        ),
+    ] = None
+
+    epilot_org: Annotated[
+        Optional[str],
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True,
+                scheme_type="apiKey",
+                sub_type="header",
+                field_name="x-ivy-org-id",
+            )
+        ),
+    ] = None
