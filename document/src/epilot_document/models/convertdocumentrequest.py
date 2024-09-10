@@ -10,19 +10,21 @@ from typing_extensions import NotRequired
 
 class InputDocumentTypedDict(TypedDict):
     r"""Input document"""
-    
+
     s3ref: S3ReferenceTypedDict
-    
+
 
 class InputDocument(BaseModel):
     r"""Input document"""
-    
+
     s3ref: S3Reference
-    
+
 
 class OutputFormat(str, Enum):
     r"""Output format of the document"""
+
     PDF = "pdf"
+
 
 class ConvertDocumentRequestTypedDict(TypedDict):
     input_document: InputDocumentTypedDict
@@ -31,13 +33,14 @@ class ConvertDocumentRequestTypedDict(TypedDict):
     r"""Output format of the document"""
     output_filename: NotRequired[str]
     r"""Filename of the output document (optional)"""
-    
+
 
 class ConvertDocumentRequest(BaseModel):
     input_document: InputDocument
     r"""Input document"""
+
     output_format: OutputFormat
     r"""Output format of the document"""
+
     output_filename: Optional[str] = None
     r"""Filename of the output document (optional)"""
-    
