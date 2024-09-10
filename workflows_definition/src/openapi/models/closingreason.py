@@ -10,20 +10,25 @@ from typing_extensions import Annotated, NotRequired
 
 class ClosingReasonTypedDict(TypedDict):
     r"""One Closing reason for a workflow"""
-    
+
     status: ClosingReasonsStatus
     title: str
     creation_time: NotRequired[str]
     id: NotRequired[str]
     last_update_time: NotRequired[str]
-    
+
 
 class ClosingReason(BaseModel):
     r"""One Closing reason for a workflow"""
-    
+
     status: ClosingReasonsStatus
+
     title: str
+
     creation_time: Annotated[Optional[str], pydantic.Field(alias="creationTime")] = None
+
     id: Optional[str] = None
-    last_update_time: Annotated[Optional[str], pydantic.Field(alias="lastUpdateTime")] = None
-    
+
+    last_update_time: Annotated[
+        Optional[str], pydantic.Field(alias="lastUpdateTime")
+    ] = None

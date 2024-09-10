@@ -7,8 +7,7 @@ from typing import TypedDict
 
 class ClosingReasonIDTypedDict(TypedDict):
     id: str
-    
+
 
 class ClosingReasonID(BaseModel):
     id: str
-    

@@ -8,8 +8,7 @@ from typing import List, TypedDict
 
 class ClosingReasonsTypedDict(TypedDict):
     reasons: List[ClosingReasonTypedDict]
-    
+
 
 class ClosingReasons(BaseModel):
     reasons: List[ClosingReason]
-    

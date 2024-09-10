@@ -3,17 +3,17 @@ id: 8727d4ad-f9cf-4aa1-993f-c90fc6591190
 management:
   docChecksum: 8a2ff4be25db818a35891d602baa4a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.392.1
-  generationVersion: 2.411.9
-  releaseVersion: 1.4.2
-  configChecksum: 91d9bf8d6f57eb0d480b089d36284b90
+  speakeasyVersion: 1.394.0
+  generationVersion: 2.413.0
+  releaseVersion: 1.5.0
+  configChecksum: 1ea69eb71332690176ffdedbea53466a
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.4.4
+    core: 5.5.0
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     envVarSecurityUsage: 0.3.1
@@ -145,11 +145,17 @@ examples:
     "":
       requestBody:
         application/json: {"status": "ACTIVE", "title": "better offer"}
+      responses:
+        "201":
+          application/json: {"status": "ACTIVE", "title": "<value>"}
   getAllClosingReasons:
     "":
       parameters:
         query:
           includeInactive: true
+      responses:
+        "200":
+          application/json: {"reasons": []}
   createDefinition:
     "":
       requestBody:

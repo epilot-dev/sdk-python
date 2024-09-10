@@ -13,22 +13,24 @@ class Source(str, Enum):
     CURRENT_SECTION = "current_section"
     CURRENT_STEP = "current_step"
 
+
 class TargetTypedDict(TypedDict):
     entity_attribute: str
     entity_schema: str
-    
+
 
 class Target(BaseModel):
     entity_attribute: Annotated[str, pydantic.Field(alias="entityAttribute")]
+
     entity_schema: Annotated[str, pydantic.Field(alias="entitySchema")]
-    
+
 
 class UpdateEntityAttributesTypedDict(TypedDict):
     source: Source
     target: TargetTypedDict
-    
+
 
 class UpdateEntityAttributes(BaseModel):
     source: Source
+
     target: Target
-    

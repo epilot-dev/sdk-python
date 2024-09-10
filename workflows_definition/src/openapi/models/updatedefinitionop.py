@@ -14,11 +14,18 @@ class UpdateDefinitionRequestTypedDict(TypedDict):
     r"""Workflow Definition payload"""
     definition_id: str
     r"""Short uuid (length 8) to identify the Workflow Definition."""
-    
+
 
 class UpdateDefinitionRequest(BaseModel):
-    workflow_definition: Annotated[WorkflowDefinition, FieldMetadata(request=RequestMetadata(media_type="application/json"))]
+    workflow_definition: Annotated[
+        WorkflowDefinition,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
     r"""Workflow Definition payload"""
-    definition_id: Annotated[str, pydantic.Field(alias="definitionId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+
+    definition_id: Annotated[
+        str,
+        pydantic.Field(alias="definitionId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
     r"""Short uuid (length 8) to identify the Workflow Definition."""
-    

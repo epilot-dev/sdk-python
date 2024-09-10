@@ -11,9 +11,12 @@ from typing_extensions import Annotated
 class GetDefinitionRequestTypedDict(TypedDict):
     definition_id: str
     r"""Short uuid (length 8) to identify the Workflow Definition."""
-    
+
 
 class GetDefinitionRequest(BaseModel):
-    definition_id: Annotated[str, pydantic.Field(alias="definitionId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    definition_id: Annotated[
+        str,
+        pydantic.Field(alias="definitionId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
     r"""Short uuid (length 8) to identify the Workflow Definition."""
-    

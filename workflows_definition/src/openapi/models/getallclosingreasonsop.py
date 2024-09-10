@@ -11,9 +11,12 @@ from typing_extensions import Annotated, NotRequired
 class GetAllClosingReasonsRequestTypedDict(TypedDict):
     include_inactive: NotRequired[bool]
     r"""Filter Closing Reasons by status like active inactiv"""
-    
+
 
 class GetAllClosingReasonsRequest(BaseModel):
-    include_inactive: Annotated[Optional[bool], pydantic.Field(alias="includeInactive"), FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = None
+    include_inactive: Annotated[
+        Optional[bool],
+        pydantic.Field(alias="includeInactive"),
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = None
     r"""Filter Closing Reasons by status like active inactiv"""
-    

@@ -5,7 +5,10 @@ from .closingreasonid import ClosingReasonID, ClosingReasonIDTypedDict
 from .dynamicduedate import DynamicDueDate, DynamicDueDateTypedDict
 from .section import Section, SectionTypedDict
 from .step import Step, StepTypedDict
-from .updateentityattributes import UpdateEntityAttributes, UpdateEntityAttributesTypedDict
+from .updateentityattributes import (
+    UpdateEntityAttributes,
+    UpdateEntityAttributesTypedDict,
+)
 from openapi.types import BaseModel
 import pydantic
 from typing import List, Optional, TypedDict, Union
@@ -37,25 +40,55 @@ class WorkflowDefinitionTypedDict(TypedDict):
     update_entity_attributes: NotRequired[List[UpdateEntityAttributesTypedDict]]
     user_ids: NotRequired[List[float]]
     r"""This field is deprecated. Please use assignedTo"""
-    
+
 
 class WorkflowDefinition(BaseModel):
     flow: List[Flow]
+
     name: str
-    assigned_to: Annotated[Optional[List[str]], pydantic.Field(alias="assignedTo")] = None
-    closing_reasons: Annotated[Optional[List[ClosingReasonID]], pydantic.Field(alias="closingReasons")] = None
+
+    assigned_to: Annotated[Optional[List[str]], pydantic.Field(alias="assignedTo")] = (
+        None
+    )
+
+    closing_reasons: Annotated[
+        Optional[List[ClosingReasonID]], pydantic.Field(alias="closingReasons")
+    ] = None
+
     creation_time: Annotated[Optional[str], pydantic.Field(alias="creationTime")] = None
     r"""ISO String Date & Time"""
+
     description: Optional[str] = None
+
     due_date: Annotated[Optional[str], pydantic.Field(alias="dueDate")] = None
-    dynamic_due_date: Annotated[Optional[DynamicDueDate], pydantic.Field(alias="dynamicDueDate")] = None
+
+    dynamic_due_date: Annotated[
+        Optional[DynamicDueDate], pydantic.Field(alias="dynamicDueDate")
+    ] = None
     r"""set a Duedate for a step then a specific"""
-    enable_ecp_workflow: Annotated[Optional[bool], pydantic.Field(alias="enableECPWorkflow")] = None
+
+    enable_ecp_workflow: Annotated[
+        Optional[bool], pydantic.Field(alias="enableECPWorkflow")
+    ] = None
     r"""Indicates whether this workflow is available for End Customer Portal or not. By default it's not."""
+
     id: Optional[str] = None
-    last_update_time: Annotated[Optional[str], pydantic.Field(alias="lastUpdateTime")] = None
+
+    last_update_time: Annotated[
+        Optional[str], pydantic.Field(alias="lastUpdateTime")
+    ] = None
     r"""ISO String Date & Time"""
-    update_entity_attributes: Annotated[Optional[List[UpdateEntityAttributes]], pydantic.Field(alias="updateEntityAttributes")] = None
-    user_ids: Annotated[Optional[List[float]], pydantic.Field(deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.", alias="userIds")] = None
+
+    update_entity_attributes: Annotated[
+        Optional[List[UpdateEntityAttributes]],
+        pydantic.Field(alias="updateEntityAttributes"),
+    ] = None
+
+    user_ids: Annotated[
+        Optional[List[float]],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.",
+            alias="userIds",
+        ),
+    ] = None
     r"""This field is deprecated. Please use assignedTo"""
-    

@@ -14,11 +14,18 @@ class SetWorkflowClosingReasonsRequestTypedDict(TypedDict):
     r"""set all closing reasons for a specific definition"""
     definition_id: str
     r"""ID of a workflow definition"""
-    
+
 
 class SetWorkflowClosingReasonsRequest(BaseModel):
-    closing_reasons_ids: Annotated[ClosingReasonsIds, FieldMetadata(request=RequestMetadata(media_type="application/json"))]
+    closing_reasons_ids: Annotated[
+        ClosingReasonsIds,
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
     r"""set all closing reasons for a specific definition"""
-    definition_id: Annotated[str, pydantic.Field(alias="definitionId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+
+    definition_id: Annotated[
+        str,
+        pydantic.Field(alias="definitionId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
     r"""ID of a workflow definition"""
-    

@@ -10,20 +10,23 @@ from typing_extensions import NotRequired
 
 class SectionTypedDict(TypedDict):
     r"""A group of Steps that define the progress of the Workflow"""
-    
+
     name: str
     order: float
     steps: List[StepTypedDict]
     type: ItemType
     id: NotRequired[str]
-    
+
 
 class Section(BaseModel):
     r"""A group of Steps that define the progress of the Workflow"""
-    
+
     name: str
+
     order: float
+
     steps: List[Step]
+
     type: ItemType
+
     id: Optional[str] = None
-    

@@ -8,8 +8,7 @@ from typing import TypedDict
 
 class ChangeReasonStatusReqTypedDict(TypedDict):
     status: ClosingReasonsStatus
-    
+
 
 class ChangeReasonStatusReq(BaseModel):
     status: ClosingReasonsStatus
-    

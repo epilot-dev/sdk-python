@@ -11,9 +11,12 @@ from typing_extensions import Annotated
 class DeleteDefinitionRequestTypedDict(TypedDict):
     definition_id: str
     r"""Id of the definition to de deleted."""
-    
+
 
 class DeleteDefinitionRequest(BaseModel):
-    definition_id: Annotated[str, pydantic.Field(alias="definitionId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    definition_id: Annotated[
+        str,
+        pydantic.Field(alias="definitionId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
     r"""Id of the definition to de deleted."""
-    

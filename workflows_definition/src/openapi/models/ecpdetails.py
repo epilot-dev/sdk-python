@@ -9,18 +9,20 @@ from typing_extensions import NotRequired
 
 class ECPDetailsTypedDict(TypedDict):
     r"""Details regarding ECP for the workflow step"""
-    
+
     description: NotRequired[str]
     enabled: NotRequired[bool]
     journey: NotRequired[StepJourneyTypedDict]
     label: NotRequired[str]
-    
+
 
 class ECPDetails(BaseModel):
     r"""Details regarding ECP for the workflow step"""
-    
+
     description: Optional[str] = None
+
     enabled: Optional[bool] = None
+
     journey: Optional[StepJourney] = None
+
     label: Optional[str] = None
-    

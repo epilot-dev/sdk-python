@@ -10,9 +10,11 @@ from typing_extensions import Annotated, NotRequired
 class MaxAllowedLimitTypedDict(TypedDict):
     current_no_of_workflows: NotRequired[float]
     max_allowed: NotRequired[float]
-    
+
 
 class MaxAllowedLimit(BaseModel):
-    current_no_of_workflows: Annotated[Optional[float], pydantic.Field(alias="currentNoOfWorkflows")] = None
+    current_no_of_workflows: Annotated[
+        Optional[float], pydantic.Field(alias="currentNoOfWorkflows")
+    ] = None
+
     max_allowed: Annotated[Optional[float], pydantic.Field(alias="maxAllowed")] = None
-    

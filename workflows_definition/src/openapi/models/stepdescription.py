@@ -8,14 +8,14 @@ from typing_extensions import NotRequired
 
 class StepDescriptionTypedDict(TypedDict):
     r"""Longer information regarding Task"""
-    
+
     enabled: NotRequired[bool]
     value: NotRequired[str]
-    
+
 
 class StepDescription(BaseModel):
     r"""Longer information regarding Task"""
-    
+
     enabled: Optional[bool] = None
+
     value: Optional[str] = None
-    

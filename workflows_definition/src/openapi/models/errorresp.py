@@ -5,13 +5,14 @@ from openapi import utils
 from openapi.types import BaseModel
 from typing import Optional
 
+
 class ErrorRespData(BaseModel):
     message: Optional[str] = None
-    
 
 
 class ErrorResp(Exception):
     r"""Other errors"""
+
     data: ErrorRespData
 
     def __init__(self, data: ErrorRespData):
@@ -19,4 +20,3 @@ class ErrorResp(Exception):
 
     def __str__(self) -> str:
         return utils.marshal_json(self.data, ErrorRespData)
-

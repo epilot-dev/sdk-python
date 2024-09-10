@@ -11,10 +11,11 @@ class StepJourneyTypedDict(TypedDict):
     id: NotRequired[str]
     journey_id: NotRequired[str]
     name: NotRequired[str]
-    
+
 
 class StepJourney(BaseModel):
     id: Optional[str] = None
+
     journey_id: Annotated[Optional[str], pydantic.Field(alias="journeyId")] = None
+
     name: Optional[str] = None
-    

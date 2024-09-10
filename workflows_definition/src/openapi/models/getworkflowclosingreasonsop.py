@@ -11,9 +11,12 @@ from typing_extensions import Annotated
 class GetWorkflowClosingReasonsRequestTypedDict(TypedDict):
     definition_id: str
     r"""ID of a workflow definition"""
-    
+
 
 class GetWorkflowClosingReasonsRequest(BaseModel):
-    definition_id: Annotated[str, pydantic.Field(alias="definitionId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    definition_id: Annotated[
+        str,
+        pydantic.Field(alias="definitionId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
     r"""ID of a workflow definition"""
-    

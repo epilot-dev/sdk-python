@@ -5,13 +5,14 @@ from openapi import utils
 from openapi.types import BaseModel
 from typing import Optional
 
+
 class DefinitionNotFoundRespData(BaseModel):
     message: Optional[str] = None
-    
 
 
 class DefinitionNotFoundResp(Exception):
     r"""Definition could be not found"""
+
     data: DefinitionNotFoundRespData
 
     def __init__(self, data: DefinitionNotFoundRespData):
@@ -19,4 +20,3 @@ class DefinitionNotFoundResp(Exception):
 
     def __str__(self) -> str:
         return utils.marshal_json(self.data, DefinitionNotFoundRespData)
-
