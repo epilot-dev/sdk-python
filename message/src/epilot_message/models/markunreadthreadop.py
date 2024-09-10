@@ -10,9 +10,10 @@ from typing_extensions import Annotated
 class MarkUnreadThreadRequestTypedDict(TypedDict):
     id: str
     r"""Thread ID"""
-    
+
 
 class MarkUnreadThreadRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
     r"""Thread ID"""
-    

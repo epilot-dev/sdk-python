@@ -10,9 +10,10 @@ from typing_extensions import Annotated
 class TrashThreadRequestTypedDict(TypedDict):
     id: str
     r"""Thread ID"""
-    
+
 
 class TrashThreadRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
     r"""Thread ID"""
-    

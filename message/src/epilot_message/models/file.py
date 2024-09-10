@@ -19,27 +19,36 @@ class FileTypedDict(TypedDict):
     """
     is_message_attachment: NotRequired[bool]
     r"""To indicate this file relation is message attachment. If false then this file will not be sent and simply kept as a file relation."""
+    may_be_signature_attachment: NotRequired[bool]
+    r"""To indicate this file relation may be signature attachment. If true then this file will be sent as signature attachment and not related to any entity."""
     send_as_link: NotRequired[bool]
     r"""If true then this attachment is sent via link. The link have to be inserted to email body by API caller.            In this case, service doesn't process this attachment.
 
     """
-    
+
 
 class File(BaseModel):
     entity_id: str
     r"""File entity ID"""
+
     cid: Optional[str] = None
     r"""Content ID (for inline)"""
+
     filename: Optional[str] = None
     r"""File name"""
+
     inline: Optional[bool] = False
     r"""If true then this attachment should not be offered for download (at least not in the main attachments list).            The usecase is CID embedded image (aka inline image).
 
     """
+
     is_message_attachment: Optional[bool] = None
     r"""To indicate this file relation is message attachment. If false then this file will not be sent and simply kept as a file relation."""
+
+    may_be_signature_attachment: Optional[bool] = None
+    r"""To indicate this file relation may be signature attachment. If true then this file will be sent as signature attachment and not related to any entity."""
+
     send_as_link: Optional[bool] = False
     r"""If true then this attachment is sent via link. The link have to be inserted to email body by API caller.            In this case, service doesn't process this attachment.
 
     """
-    
