@@ -11,11 +11,12 @@ class OptInTypedDict(TypedDict):
     r"""Consent identifier"""
     meta: NotRequired[Dict[str, Any]]
     topic: NotRequired[str]
-    
+
 
 class OptIn(BaseModel):
     identifier: Optional[str] = None
     r"""Consent identifier"""
+
     meta: Optional[Dict[str, Any]] = None
+
     topic: Optional[str] = None
-    

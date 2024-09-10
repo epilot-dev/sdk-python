@@ -11,7 +11,7 @@ from typing_extensions import Annotated, NotRequired
 
 class SubmissionPayloadTypedDict(TypedDict):
     r"""Holds content and meta information"""
-    
+
     entities: List[SubmissionEntityTypedDict]
     r"""Entities to create from submission
 
@@ -30,27 +30,38 @@ class SubmissionPayloadTypedDict(TypedDict):
     r"""Opt-ins to create from submission
 
     """
-    
+
 
 class SubmissionPayload(BaseModel):
     r"""Holds content and meta information"""
-    
+
     entities: List[SubmissionEntity]
     r"""Entities to create from submission
 
     """
+
     organization_id: str
     r"""organization id"""
+
     source_id: str
     r"""identifier for source e.g. journey ID or frontend ID"""
+
     source_type: str
     r"""type of source, e.g. journey or frontend"""
-    ivy_opportunity_ids: Annotated[Optional[List[str]], pydantic.Field(deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.", alias="_ivy_opportunity_ids")] = None
+
+    ivy_opportunity_ids: Annotated[
+        Optional[List[str]],
+        pydantic.Field(
+            deprecated="warning: ** DEPRECATED ** - This will be removed in a future release, please migrate away from it as soon as possible.",
+            alias="_ivy_opportunity_ids",
+        ),
+    ] = None
     r"""Related Ivy Opportunity Ids"""
+
     journey_submit_id: Optional[str] = None
     r"""journey submit uid"""
+
     opt_ins: Optional[List[OptIn]] = None
     r"""Opt-ins to create from submission
 
     """
-    

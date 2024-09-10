@@ -4,7 +4,28 @@ from .optin import OptIn, OptInTypedDict
 from .s3reference import S3Reference, S3ReferenceTypedDict
 from .sdkerror import SDKError
 from .security import Security, SecurityTypedDict
-from .submissionentity import Files, FilesTypedDict, Schema, SubmissionEntity, SubmissionEntityTypedDict
+from .submissionentity import (
+    Files,
+    FilesTypedDict,
+    Schema,
+    SubmissionEntity,
+    SubmissionEntityTypedDict,
+)
 from .submissionpayload import SubmissionPayload, SubmissionPayloadTypedDict
 
-__all__ = ["Files", "FilesTypedDict", "OptIn", "OptInTypedDict", "S3Reference", "S3ReferenceTypedDict", "SDKError", "Schema", "Security", "SecurityTypedDict", "SubmissionEntity", "SubmissionEntityTypedDict", "SubmissionPayload", "SubmissionPayloadTypedDict"]
+__all__ = [
+    "Files",
+    "FilesTypedDict",
+    "OptIn",
+    "OptInTypedDict",
+    "S3Reference",
+    "S3ReferenceTypedDict",
+    "SDKError",
+    "Schema",
+    "Security",
+    "SecurityTypedDict",
+    "SubmissionEntity",
+    "SubmissionEntityTypedDict",
+    "SubmissionPayload",
+    "SubmissionPayloadTypedDict",
+]

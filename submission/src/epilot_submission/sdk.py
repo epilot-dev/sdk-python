@@ -12,12 +12,13 @@ from epilot_submission.types import OptionalNullable, UNSET
 import httpx
 from typing import Any, Callable, Dict, Optional, Union
 
-class Epilot(BaseSDK):
-    r"""Submission API: Use this API to handle submissions entities from external sources e.g. journeys and frontends
 
-    """
+class Epilot(BaseSDK):
+    r"""Submission API: Use this API to handle submissions entities from external sources e.g. journeys and frontends"""
+
     submissions: Submissions
     r"""Journey Submission"""
+
     def __init__(
         self,
         epilot_auth: Optional[Union[Optional[str], Callable[[], Optional[str]]]] = None,
@@ -28,7 +29,7 @@ class Epilot(BaseSDK):
         async_client: Optional[AsyncHttpClient] = None,
         retry_config: OptionalNullable[RetryConfig] = UNSET,
         timeout_ms: Optional[int] = None,
-        debug_logger: Optional[Logger] = None
+        debug_logger: Optional[Logger] = None,
     ) -> None:
         r"""Instantiates the SDK configuring it with the provided parameters.
 
@@ -57,33 +58,37 @@ class Epilot(BaseSDK):
         assert issubclass(
             type(async_client), AsyncHttpClient
         ), "The provided async_client must implement the AsyncHttpClient protocol."
-        
+
         security: Any = None
         if callable(epilot_auth):
-            security = lambda: models.Security(epilot_auth = epilot_auth()) # pylint: disable=unnecessary-lambda-assignment
+            security = lambda: models.Security(epilot_auth=epilot_auth())  # pylint: disable=unnecessary-lambda-assignment
         else:
-            security = models.Security(epilot_auth = epilot_auth)
+            security = models.Security(epilot_auth=epilot_auth)
 
         if server_url is not None:
             if url_params is not None:
                 server_url = utils.template_url(server_url, url_params)
-    
 
-        BaseSDK.__init__(self, SDKConfiguration(
-            client=client,
-            async_client=async_client,
-            security=security,
-            server_url=server_url,
-            server_idx=server_idx,
-            retry_config=retry_config,
-            timeout_ms=timeout_ms,
-            debug_logger=debug_logger
-        ))
+        BaseSDK.__init__(
+            self,
+            SDKConfiguration(
+                client=client,
+                async_client=async_client,
+                security=security,
+                server_url=server_url,
+                server_idx=server_idx,
+                retry_config=retry_config,
+                timeout_ms=timeout_ms,
+                debug_logger=debug_logger,
+            ),
+        )
 
         hooks = SDKHooks()
 
         current_server_url, *_ = self.sdk_configuration.get_server_details()
-        server_url, self.sdk_configuration.client = hooks.sdk_init(current_server_url, self.sdk_configuration.client)
+        server_url, self.sdk_configuration.client = hooks.sdk_init(
+            current_server_url, self.sdk_configuration.client
+        )
         if current_server_url != server_url:
             self.sdk_configuration.server_url = server_url
 
@@ -92,7 +97,5 @@ class Epilot(BaseSDK):
 
         self._init_sdks()
 
-
     def _init_sdks(self):
         self.submissions = Submissions(self.sdk_configuration)
-    

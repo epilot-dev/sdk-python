@@ -13,6 +13,7 @@ from typing_extensions import Annotated, NotRequired
 class Schema(str, Enum):
     SUBMISSION = "submission"
 
+
 class FilesTypedDict(TypedDict):
     s3ref: S3ReferenceTypedDict
     r"""S3 Reference from File API"""
@@ -22,33 +23,38 @@ class FilesTypedDict(TypedDict):
     r"""Override the file name"""
     relation_tags: NotRequired[List[str]]
     r"""List of relation labels for File attachments"""
-    
+
 
 class Files(BaseModel):
-    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, extra="allow")
-    __pydantic_extra__:  Dict[str, Any] = pydantic.Field(init=False)
-    
+    model_config = ConfigDict(
+        populate_by_name=True, arbitrary_types_allowed=True, extra="allow"
+    )
+    __pydantic_extra__: Dict[str, Any] = pydantic.Field(init=False)
+
     s3ref: S3Reference
     r"""S3 Reference from File API"""
+
     tags: Annotated[Optional[List[str]], pydantic.Field(alias="_tags")] = None
     r"""List of tags for File entities"""
+
     filename: Optional[str] = None
     r"""Override the file name"""
+
     relation_tags: Optional[List[str]] = None
     r"""List of relation labels for File attachments"""
-    
+
     @property
     def additional_properties(self):
         return self.__pydantic_extra__
 
     @additional_properties.setter
     def additional_properties(self, value):
-        self.__pydantic_extra__ = value # pyright: ignore[reportIncompatibleVariableOverride]
-    
+        self.__pydantic_extra__ = value  # pyright: ignore[reportIncompatibleVariableOverride]
+
 
 class SubmissionEntityTypedDict(TypedDict):
     r"""The submission entity to create"""
-    
+
     schema_: Schema
     description: NotRequired[str]
     r"""Readable description of the submission. Will be used as the title if passed"""
@@ -56,26 +62,30 @@ class SubmissionEntityTypedDict(TypedDict):
     r"""Files to attach to Submission Entity as a relation (s3refs from File API)
 
     """
-    
+
 
 class SubmissionEntity(BaseModel):
     r"""The submission entity to create"""
-    model_config = ConfigDict(populate_by_name=True, arbitrary_types_allowed=True, extra="allow")
-    __pydantic_extra__:  Dict[str, Any] = pydantic.Field(init=False)
-    
+
+    model_config = ConfigDict(
+        populate_by_name=True, arbitrary_types_allowed=True, extra="allow"
+    )
+    __pydantic_extra__: Dict[str, Any] = pydantic.Field(init=False)
+
     schema_: Annotated[Schema, pydantic.Field(alias="_schema")]
+
     description: Optional[str] = None
     r"""Readable description of the submission. Will be used as the title if passed"""
+
     files: Optional[List[Files]] = None
     r"""Files to attach to Submission Entity as a relation (s3refs from File API)
 
     """
-    
+
     @property
     def additional_properties(self):
         return self.__pydantic_extra__
 
     @additional_properties.setter
     def additional_properties(self, value):
-        self.__pydantic_extra__ = value # pyright: ignore[reportIncompatibleVariableOverride]
-    
+        self.__pydantic_extra__ = value  # pyright: ignore[reportIncompatibleVariableOverride]
