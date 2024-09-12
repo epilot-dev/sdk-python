@@ -10,7 +10,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     from_={
         "address": "messaging@epilot.cloud",
@@ -44,6 +43,7 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -58,6 +58,9 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
             "name": "epilot",
         },
     ],
+    **{
+
+    },
 ))
 
 if res is not None:
@@ -113,6 +116,7 @@ async def main():
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
         text="We at ABC GmbH would like to request a price quote for the solar panel.",
         thread={
             "topic": "CUSTOMER_MESSAGE",
@@ -127,6 +131,9 @@ async def main():
                 "name": "epilot",
             },
         ],
+        **{
+
+        },
     ))
     if res is not None:
         # handle response
