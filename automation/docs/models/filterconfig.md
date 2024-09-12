@@ -1,0 +1,9 @@
+# FilterConfig
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `activity`                                                                                       | [Optional[models.Activity]](../models/activity.md)                                               | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `operation`                                                                                      | [Optional[models.EntityOperationTriggerOperation]](../models/entityoperationtriggeroperation.md) | :heavy_minus_sign:                                                                               | N/A                                                                                              |
