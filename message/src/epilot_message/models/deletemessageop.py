@@ -10,9 +10,10 @@ from typing_extensions import Annotated
 class DeleteMessageRequestTypedDict(TypedDict):
     id: str
     r"""Message ID"""
-    
+
 
 class DeleteMessageRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
     r"""Message ID"""
-    
