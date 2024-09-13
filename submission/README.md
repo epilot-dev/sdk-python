@@ -130,9 +130,15 @@ asyncio.run(main())
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+<details open>
+<summary>Available methods</summary>
+
+
 ### [submissions](docs/sdks/submissions/README.md)
 
 * [create_submission](docs/sdks/submissions/README.md#create_submission) - createSubmission
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Retries [retries] -->
