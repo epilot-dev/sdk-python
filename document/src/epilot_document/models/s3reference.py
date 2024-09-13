@@ -8,9 +8,9 @@ from typing import TypedDict
 class S3ReferenceTypedDict(TypedDict):
     bucket: str
     key: str
-    
+
 
 class S3Reference(BaseModel):
     bucket: str
+
     key: str
-    
