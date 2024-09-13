@@ -62,11 +62,15 @@ asyncio.run(main())
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+<details open>
+<summary>Available methods</summary>
+
 ### [closing_reason](docs/sdks/closingreasonsdk/README.md)
 
 * [change_reason_status](docs/sdks/closingreasonsdk/README.md#change_reason_status) - changeReasonStatus
 * [create_closing_reason](docs/sdks/closingreasonsdk/README.md#create_closing_reason) - createClosingReason
 * [get_all_closing_reasons](docs/sdks/closingreasonsdk/README.md#get_all_closing_reasons) - getAllClosingReasons
+
 
 ### [workflows](docs/sdks/workflows/README.md)
 
@@ -78,6 +82,8 @@ asyncio.run(main())
 * [get_workflow_closing_reasons](docs/sdks/workflows/README.md#get_workflow_closing_reasons) - getWorkflowClosingReasons
 * [set_workflow_closing_reasons](docs/sdks/workflows/README.md#set_workflow_closing_reasons) - setWorkflowClosingReasons
 * [update_definition](docs/sdks/workflows/README.md#update_definition) - updateDefinition
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Retries [retries] -->
