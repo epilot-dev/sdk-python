@@ -24,6 +24,8 @@ class CustomVariablesSearchParamsTypedDict(TypedDict):
     size: NotRequired[int]
     sort_by: NotRequired[str]
     r"""Sort by field"""
+    tags: NotRequired[List[str]]
+    r"""The tags of custom variable"""
     type: NotRequired[CustomVariablesSearchParamsType]
     r"""Variable type"""
 
@@ -41,6 +43,9 @@ class CustomVariablesSearchParams(BaseModel):
 
     sort_by: Optional[str] = None
     r"""Sort by field"""
+
+    tags: Optional[List[str]] = None
+    r"""The tags of custom variable"""
 
     type: Optional[CustomVariablesSearchParamsType] = None
     r"""Variable type"""

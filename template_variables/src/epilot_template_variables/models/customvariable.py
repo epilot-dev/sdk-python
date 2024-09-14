@@ -3,8 +3,9 @@
 from __future__ import annotations
 from enum import Enum
 from epilot_template_variables.types import BaseModel
+import pydantic
 from typing import List, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing_extensions import Annotated, NotRequired
 
 
 class ConfigTypedDict(TypedDict):
@@ -23,6 +24,8 @@ class Type(str, Enum):
 
 
 class CustomVariableTypedDict(TypedDict):
+    tags: NotRequired[List[str]]
+    r"""The tags of custom variable"""
     config: NotRequired[ConfigTypedDict]
     r"""Variable configuration"""
     created_at: NotRequired[str]
@@ -50,6 +53,9 @@ class CustomVariableTypedDict(TypedDict):
 
 
 class CustomVariable(BaseModel):
+    tags: Annotated[Optional[List[str]], pydantic.Field(alias="_tags")] = None
+    r"""The tags of custom variable"""
+
     config: Optional[Config] = None
     r"""Variable configuration"""
 
