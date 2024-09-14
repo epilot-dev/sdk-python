@@ -13,6 +13,7 @@ class GrantWithDependenciesEffect(str, Enum):
     ALLOW = "allow"
     DENY = "deny"
 
+
 class GrantWithDependenciesTypedDict(TypedDict):
     action: str
     conditions: NotRequired[List[GrantConditionTypedDict]]
@@ -20,13 +21,16 @@ class GrantWithDependenciesTypedDict(TypedDict):
     r"""Provided additional dependencies, exploded when storing the role"""
     effect: NotRequired[GrantWithDependenciesEffect]
     resource: NotRequired[str]
-    
+
 
 class GrantWithDependencies(BaseModel):
     action: str
+
     conditions: Optional[List[GrantCondition]] = None
+
     dependencies: Optional[List[Grant]] = None
     r"""Provided additional dependencies, exploded when storing the role"""
+
     effect: Optional[GrantWithDependenciesEffect] = GrantWithDependenciesEffect.ALLOW
+
     resource: Optional[str] = None
-    
