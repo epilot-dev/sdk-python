@@ -31,7 +31,6 @@ s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.documents.convert_document(request={
     "input_document": {
         "s3ref": {
@@ -56,15 +55,16 @@ if res is not None:
 | `request`                                                               | [models.ConvertDocumentRequest](../../models/convertdocumentrequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 | `retries`                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)        | :heavy_minus_sign:                                                      | Configuration to override the default retry behavior of the client.     |
 
-
 ### Response
 
 **[models.ConvertDocumentResponse](../../models/convertdocumentresponse.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | models.SDKError | 4xx-5xx         | */*             |
+
 
 ## generate_document_v2
 
@@ -89,7 +89,6 @@ s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.documents.generate_document_v2(document_generation_v2_request={
     "template_document": {
         "filename": "my-template-{{order.order_number}}.docx",
@@ -99,6 +98,7 @@ res = s.documents.generate_document_v2(document_generation_v2_request={
         },
     },
     "context_entity_id": "bcd0aab9-b544-42b0-8bfb-6d449d02eacc",
+    "language": "en",
     "template_settings": {
         "custom_margins": {
             "bottom": 2.54,
@@ -133,10 +133,10 @@ if res is not None:
 | `document_generation_v2_request`                                                                                                                                                                                                                                                        | [Optional[models.DocumentGenerationV2Request]](../../models/documentgenerationv2request.md)                                                                                                                                                                                             | :heavy_minus_sign:                                                                                                                                                                                                                                                                      | N/A                                                                                                                                                                                                                                                                                     |
 | `retries`                                                                                                                                                                                                                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                                                                                                                                                                                        | :heavy_minus_sign:                                                                                                                                                                                                                                                                      | Configuration to override the default retry behavior of the client.                                                                                                                                                                                                                     |
 
-
 ### Response
 
 **[models.DocumentGenerationV2Response](../../models/documentgenerationv2response.md)**
+
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

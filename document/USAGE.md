@@ -8,7 +8,6 @@ s = Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-
 res = s.documents.convert_document(request={
     "input_document": {
         "s3ref": {

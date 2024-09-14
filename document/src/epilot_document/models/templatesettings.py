@@ -8,43 +8,45 @@ from typing_extensions import NotRequired
 
 class CustomMarginsTypedDict(TypedDict):
     r"""Custom margins for the document"""
-    
+
     bottom: NotRequired[float]
     r"""Bottom margin in cm"""
     top: NotRequired[float]
     r"""Top margin in cm"""
-    
+
 
 class CustomMargins(BaseModel):
     r"""Custom margins for the document"""
-    
+
     bottom: Optional[float] = None
     r"""Bottom margin in cm"""
+
     top: Optional[float] = None
     r"""Top margin in cm"""
-    
+
 
 class SuggestedMarginsTypedDict(TypedDict):
     r"""Suggested margins for the document"""
-    
+
     bottom: NotRequired[float]
     r"""Bottom margin in cm"""
     top: NotRequired[float]
     r"""Top margin in cm"""
-    
+
 
 class SuggestedMargins(BaseModel):
     r"""Suggested margins for the document"""
-    
+
     bottom: Optional[float] = None
     r"""Bottom margin in cm"""
+
     top: Optional[float] = None
     r"""Top margin in cm"""
-    
+
 
 class TemplateSettingsTypedDict(TypedDict):
     r"""Template Settings for document generation"""
-    
+
     custom_margins: NotRequired[CustomMarginsTypedDict]
     r"""Custom margins for the document"""
     display_margin_guidelines: NotRequired[bool]
@@ -61,25 +63,31 @@ class TemplateSettingsTypedDict(TypedDict):
     r"""Suggested margins for the document"""
     template_with_datatable: NotRequired[bool]
     r"""A flag that indicates whether the template has 1 or more data tables in it"""
-    
+
 
 class TemplateSettings(BaseModel):
     r"""Template Settings for document generation"""
-    
+
     custom_margins: Optional[CustomMargins] = None
     r"""Custom margins for the document"""
+
     display_margin_guidelines: Optional[bool] = None
     r"""Display margin guidelines (applicable to partial generation only)"""
+
     enable_data_table_margin_autofix: Optional[bool] = None
     r"""Enable data table margin autofix"""
+
     enabled_template_settings_persistence: Optional[bool] = None
     r"""Enables the persistance of template settings"""
+
     file_entity_id: Optional[str] = None
     r"""The file entity id, used when persisting a new template version with updated settings"""
+
     misconfigured_margins: Optional[bool] = None
     r"""An indication that the page margins are misconfigured"""
+
     suggested_margins: Optional[SuggestedMargins] = None
     r"""Suggested margins for the document"""
+
     template_with_datatable: Optional[bool] = None
     r"""A flag that indicates whether the template has 1 or more data tables in it"""
-    
