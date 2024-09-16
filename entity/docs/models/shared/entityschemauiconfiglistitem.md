@@ -1,9 +1,0 @@
-# EntitySchemaUIConfigListItem
-
-
-## Fields
-
-| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `quick_actions`                                                                                            | List[[EntityAction](../../models/shared/entityaction.md)]                                                  | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
-| `summary_attributes`                                                                                       | List[[Union[SummaryAttribute, str]](../../models/shared/entityschemauiconfiglistitemsummaryattributes.md)] | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
