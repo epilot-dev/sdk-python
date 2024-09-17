@@ -1,46 +1,106 @@
 lockVersion: 2.0.0
 id: 02056ef4-33bb-4494-9d26-5cec9ca37e38
 management:
-  docChecksum: 54703d64df72ed498ad03376ecd4b21f
+  docChecksum: 2dde98175f8982326831aad146bbdef2
   docVersion: 1.0.0
-  speakeasyVersion: 1.355.0
-  generationVersion: 2.387.0
-  releaseVersion: 1.3.0
-  configChecksum: 79066fa1e09c11f2aefedb883dff7263
+  speakeasyVersion: 1.398.0
+  generationVersion: 2.415.8
+  releaseVersion: 1.4.0
+  configChecksum: c81fd11561268fce64f24a4ae2589a78
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: document
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=document
 features:
   python:
     additionalDependencies: 1.0.0
-    additionalProperties: 1.0.0
+    additionalProperties: 1.0.1
     constsAndDefaults: 1.0.2
-    core: 5.3.4
+    core: 5.5.3
     defaultEnabledRetries: 0.2.0
+    enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.1
     flattening: 3.0.0
-    globalSecurity: 3.0.1
+    globalSecurity: 3.0.2
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.0.0
     responseFormat: 1.0.0
-    retries: 3.0.0
+    retries: 3.0.2
     sdkHooks: 1.0.0
+    unions: 3.0.2
 generatedFiles:
-  - src/epilot_document/sdkconfiguration.py
-  - src/epilot_document/documents.py
-  - src/epilot_document/sdk.py
+  - .gitattributes
   - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/context.md
+  - docs/models/contextdata.md
+  - docs/models/convertdocumentrequest.md
+  - docs/models/convertdocumentresponse.md
+  - docs/models/custommargins.md
+  - docs/models/documentgenerationv2request.md
+  - docs/models/documentgenerationv2response.md
+  - docs/models/documentgenerationv2responseoutputdocument.md
+  - docs/models/documentgenerationv2responseschemasoutputdocument.md
+  - docs/models/documentgenerationv2responsevariablepayload.md
+  - docs/models/docxoutput.md
+  - docs/models/docxtemplatererrordetail.md
+  - docs/models/errorcode.md
+  - docs/models/errordetails.md
+  - docs/models/erroroutput.md
+  - docs/models/generatedocumentv2request.md
+  - docs/models/inputdocument.md
+  - docs/models/internalerrordetail.md
+  - docs/models/internalerrordetails.md
+  - docs/models/invalidcustomvariableerrordetail.md
+  - docs/models/invalidvariables.md
+  - docs/models/jobstatus.md
+  - docs/models/mode.md
+  - docs/models/outputdocument.md
+  - docs/models/outputformat.md
+  - docs/models/pdfoutput.md
+  - docs/models/s3reference.md
+  - docs/models/security.md
+  - docs/models/suggestedmargins.md
+  - docs/models/templatedocument.md
+  - docs/models/templatesettings.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/variablepayload.md
+  - docs/sdks/documents/README.md
+  - docs/sdks/epilot/README.md
   - poetry.toml
   - py.typed
   - pylintrc
   - pyproject.toml
   - scripts/compile.sh
+  - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/epilot_document/__init__.py
+  - src/epilot_document/_hooks/__init__.py
+  - src/epilot_document/_hooks/sdkhooks.py
+  - src/epilot_document/_hooks/types.py
   - src/epilot_document/basesdk.py
+  - src/epilot_document/documents.py
   - src/epilot_document/httpclient.py
+  - src/epilot_document/models/__init__.py
+  - src/epilot_document/models/convertdocumentrequest.py
+  - src/epilot_document/models/convertdocumentresponse.py
+  - src/epilot_document/models/documentgenerationv2request.py
+  - src/epilot_document/models/documentgenerationv2response.py
+  - src/epilot_document/models/docxtemplatererrordetail.py
+  - src/epilot_document/models/errorcode.py
+  - src/epilot_document/models/erroroutput.py
+  - src/epilot_document/models/generatedocumentv2op.py
+  - src/epilot_document/models/internalerrordetail.py
+  - src/epilot_document/models/internalerrordetails.py
+  - src/epilot_document/models/invalidcustomvariableerrordetail.py
+  - src/epilot_document/models/s3reference.py
+  - src/epilot_document/models/sdkerror.py
+  - src/epilot_document/models/security.py
+  - src/epilot_document/models/templatesettings.py
   - src/epilot_document/py.typed
+  - src/epilot_document/sdk.py
+  - src/epilot_document/sdkconfiguration.py
   - src/epilot_document/types/__init__.py
   - src/epilot_document/types/basemodel.py
   - src/epilot_document/utils/__init__.py
@@ -58,52 +118,18 @@ generatedFiles:
   - src/epilot_document/utils/serializers.py
   - src/epilot_document/utils/url.py
   - src/epilot_document/utils/values.py
-  - src/epilot_document/models/sdkerror.py
-  - src/epilot_document/models/convertdocumentresponse.py
-  - src/epilot_document/models/s3reference.py
-  - src/epilot_document/models/convertdocumentrequest.py
-  - src/epilot_document/models/documentgenerationv2response.py
-  - src/epilot_document/models/templatesettings.py
-  - src/epilot_document/models/erroroutput.py
-  - src/epilot_document/models/invalidcustomvariableerrordetail.py
-  - src/epilot_document/models/errorcode.py
-  - src/epilot_document/models/generatedocumentv2op.py
-  - src/epilot_document/models/documentgenerationv2request.py
-  - src/epilot_document/models/security.py
-  - src/epilot_document/models/__init__.py
-  - docs/models/outputdocument.md
-  - docs/models/convertdocumentresponse.md
-  - docs/models/s3reference.md
-  - docs/models/inputdocument.md
-  - docs/models/outputformat.md
-  - docs/models/convertdocumentrequest.md
-  - docs/models/documentgenerationv2responseoutputdocument.md
-  - docs/models/docxoutput.md
-  - docs/models/jobstatus.md
-  - docs/models/documentgenerationv2responseschemasoutputdocument.md
-  - docs/models/pdfoutput.md
-  - docs/models/documentgenerationv2responsevariablepayload.md
-  - docs/models/documentgenerationv2response.md
-  - docs/models/custommargins.md
-  - docs/models/suggestedmargins.md
-  - docs/models/templatesettings.md
-  - docs/models/erroroutput.md
-  - docs/models/invalidvariables.md
-  - docs/models/context.md
-  - docs/models/invalidcustomvariableerrordetail.md
-  - docs/models/errorcode.md
-  - docs/models/mode.md
-  - docs/models/generatedocumentv2request.md
-  - docs/models/templatedocument.md
-  - docs/models/variablepayload.md
-  - docs/models/documentgenerationv2request.md
-  - docs/models/security.md
-  - docs/sdks/epilot/README.md
-  - docs/models/utils/retryconfig.md
-  - docs/sdks/documents/README.md
-  - USAGE.md
-  - .gitattributes
-  - src/epilot_document/_hooks/sdkhooks.py
-  - src/epilot_document/_hooks/types.py
-  - src/epilot_document/_hooks/__init__.py
-  - CONTRIBUTING.md
+examples:
+  convertDocument:
+    speakeasy-default-convert-document:
+      requestBody:
+        application/json: {"input_document": {"s3ref": {"bucket": "document-api-prod", "key": "uploads/my-template.pdf"}}, "output_filename": "converted.pdf", "output_format": "pdf"}
+      responses:
+        "200":
+          application/json: {"output_document": {"preview_url": "https://document-api-prod.s3.eu-central-1.amazonaws.com/preview/converted.pdf", "s3ref": {"bucket": "document-api-prod", "key": "uploads/my-template.pdf"}}}
+  generateDocumentV2:
+    speakeasy-default-generate-document-v2:
+      requestBody:
+        application/json: {"context_entity_id": "bcd0aab9-b544-42b0-8bfb-6d449d02eacc", "language": "en", "template_document": {"filename": "my-template-{{order.order_number}}.docx", "s3ref": {"bucket": "document-api-prod", "key": "uploads/my-template.pdf"}}, "template_settings": {"custom_margins": {"bottom": 2.54, "top": 2.54}, "display_margin_guidelines": true, "enable_data_table_margin_autofix": false, "enabled_template_settings_persistence": false, "file_entity_id": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p", "misconfigured_margins": false, "suggested_margins": {"bottom": 2.54, "top": 2.54}, "template_with_datatable": false}, "user_id": "100321"}
+      responses:
+        "200":
+          application/json: {"docx_output": {"output_document": {"filename": "my-template-OR-001.docx", "s3ref": {"bucket": "document-api-preview-prod", "key": "preview/my-template.docx"}}, "preview_url": "https://document-api-prod.s3.eu-central-1.amazonaws.com/preview/my-template-OR-001.docx"}, "pdf_output": {"output_document": {"filename": "my-template-OR-001.pdf", "s3ref": {"bucket": "document-api-preview-prod", "key": "preview/my-template.pdf"}}, "preview_url": "https://document-api-prod.s3.eu-central-1.amazonaws.com/preview/my-template-OR-001.pdf"}, "template_settings": {"custom_margins": {"bottom": 2.54, "top": 2.54}, "display_margin_guidelines": true, "enable_data_table_margin_autofix": false, "enabled_template_settings_persistence": false, "file_entity_id": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p", "misconfigured_margins": false, "suggested_margins": {"bottom": 2.54, "top": 2.54}, "template_with_datatable": false}}
