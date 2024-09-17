@@ -9,18 +9,20 @@ from typing import Any, List, TypedDict
 class Operation(str, Enum):
     EQUALS = "equals"
 
+
 class EqualsConditionTypedDict(TypedDict):
     r"""Check if attribute equals to any of the values"""
-    
+
     attribute: str
     operation: Operation
     values: List[Any]
-    
+
 
 class EqualsCondition(BaseModel):
     r"""Check if attribute equals to any of the values"""
-    
+
     attribute: str
+
     operation: Operation
+
     values: List[Any]
-    
