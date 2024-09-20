@@ -9,12 +9,11 @@ from typing_extensions import NotRequired
 
 class ListCurrentRolesResponseBodyTypedDict(TypedDict):
     r"""ok"""
-    
+
     roles: NotRequired[List[RoleTypedDict]]
-    
+
 
 class ListCurrentRolesResponseBody(BaseModel):
     r"""ok"""
-    
+
     roles: Optional[List[Role]] = None
-    
