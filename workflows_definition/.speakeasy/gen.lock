@@ -3,17 +3,17 @@ id: 8727d4ad-f9cf-4aa1-993f-c90fc6591190
 management:
   docChecksum: 8a2ff4be25db818a35891d602baa4a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.396.6
-  generationVersion: 2.415.6
-  releaseVersion: 1.6.0
-  configChecksum: 751e8040c0927a9ef1ccecd206d523ee
+  speakeasyVersion: 1.400.1
+  generationVersion: 2.420.2
+  releaseVersion: 1.7.0
+  configChecksum: 32f2dc59c88e326cd8e3a699b10e7064
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.5.3
+    core: 5.5.4
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     enumUnions: 0.1.0
@@ -23,6 +23,7 @@ features:
     globalSecurityCallbacks: 1.0.0
     globalSecurityFlattening: 1.0.0
     globalServerURLs: 3.0.0
+    methodArguments: 1.0.1
     responseFormat: 1.0.0
     retries: 3.0.2
     sdkHooks: 1.0.0
@@ -184,7 +185,7 @@ examples:
     "":
       responses:
         "200":
-          application/json: [{"assignedTo": ["18625", "90252"], "closingReasons": [], "creationTime": "2021-08-04T21:13:50.373Z", "description": "Lead Qualification description", "dueDate": "2021-08-04T21:13:50.373Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}]
+          application/json: [{"assignedTo": ["18625", "90252"], "closingReasons": [{"id": "x739cew"}, {"id": "x739cew"}, {"id": "x739cew"}], "creationTime": "2021-08-04T21:13:50.373Z", "description": "Lead Qualification description", "dueDate": "2021-08-04T21:13:50.373Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}]
         "500": {}
   getMaxAllowedLimit:
     "":
