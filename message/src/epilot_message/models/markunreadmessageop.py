@@ -10,9 +10,10 @@ from typing_extensions import Annotated
 class MarkUnreadMessageRequestTypedDict(TypedDict):
     id: str
     r"""Message ID"""
-    
+
 
 class MarkUnreadMessageRequest(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
     r"""Message ID"""
-    
