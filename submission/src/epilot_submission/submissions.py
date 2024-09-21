@@ -38,9 +38,9 @@ class Submissions(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.SubmissionPayload)
-        request = cast(models.SubmissionPayload, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(request, Optional[models.SubmissionPayload])
+        request = cast(Optional[models.SubmissionPayload], request)
 
         req = self.build_request(
             method="POST",
@@ -122,9 +122,9 @@ class Submissions(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.SubmissionPayload)
-        request = cast(models.SubmissionPayload, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(request, Optional[models.SubmissionPayload])
+        request = cast(Optional[models.SubmissionPayload], request)
 
         req = self.build_request_async(
             method="POST",
