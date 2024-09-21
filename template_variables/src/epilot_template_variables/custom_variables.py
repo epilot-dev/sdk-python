@@ -35,9 +35,9 @@ class CustomVariables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.CustomVariable)
-        request = cast(models.CustomVariable, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(request, Optional[models.CustomVariable])
+        request = cast(Optional[models.CustomVariable], request)
 
         req = self.build_request(
             method="POST",
@@ -118,9 +118,9 @@ class CustomVariables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.CustomVariable)
-        request = cast(models.CustomVariable, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(request, Optional[models.CustomVariable])
+        request = cast(Optional[models.CustomVariable], request)
 
         req = self.build_request_async(
             method="POST",
@@ -804,9 +804,11 @@ class CustomVariables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.CustomVariablesSearchParams)
-        request = cast(models.CustomVariablesSearchParams, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.CustomVariablesSearchParams]
+            )
+        request = cast(Optional[models.CustomVariablesSearchParams], request)
 
         req = self.build_request(
             method="POST",
@@ -896,9 +898,11 @@ class CustomVariables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.CustomVariablesSearchParams)
-        request = cast(models.CustomVariablesSearchParams, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.CustomVariablesSearchParams]
+            )
+        request = cast(Optional[models.CustomVariablesSearchParams], request)
 
         req = self.build_request_async(
             method="POST",

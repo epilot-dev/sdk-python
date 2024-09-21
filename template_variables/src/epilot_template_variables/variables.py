@@ -203,9 +203,11 @@ class Variables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.GetVariableContextRequestBody)
-        request = cast(models.GetVariableContextRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.GetVariableContextRequestBody]
+            )
+        request = cast(Optional[models.GetVariableContextRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -296,9 +298,11 @@ class Variables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.GetVariableContextRequestBody)
-        request = cast(models.GetVariableContextRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.GetVariableContextRequestBody]
+            )
+        request = cast(Optional[models.GetVariableContextRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
@@ -389,9 +393,11 @@ class Variables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.ReplaceTemplatesRequestBody)
-        request = cast(models.ReplaceTemplatesRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.ReplaceTemplatesRequestBody]
+            )
+        request = cast(Optional[models.ReplaceTemplatesRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -484,9 +490,11 @@ class Variables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.ReplaceTemplatesRequestBody)
-        request = cast(models.ReplaceTemplatesRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.ReplaceTemplatesRequestBody]
+            )
+        request = cast(Optional[models.ReplaceTemplatesRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
@@ -576,9 +584,11 @@ class Variables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.SearchVariablesRequestBody)
-        request = cast(models.SearchVariablesRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.SearchVariablesRequestBody]
+            )
+        request = cast(Optional[models.SearchVariablesRequestBody], request)
 
         req = self.build_request(
             method="POST",
@@ -668,9 +678,11 @@ class Variables(BaseSDK):
         if server_url is not None:
             base_url = server_url
 
-        if not isinstance(request, BaseModel) and request is not None:
-            request = utils.unmarshal(request, models.SearchVariablesRequestBody)
-        request = cast(models.SearchVariablesRequestBody, request)
+        if not isinstance(request, BaseModel):
+            request = utils.unmarshal(
+                request, Optional[models.SearchVariablesRequestBody]
+            )
+        request = cast(Optional[models.SearchVariablesRequestBody], request)
 
         req = self.build_request_async(
             method="POST",
