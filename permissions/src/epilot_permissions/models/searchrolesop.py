@@ -9,14 +9,14 @@ from typing_extensions import NotRequired
 
 class SearchRolesResponseBodyTypedDict(TypedDict):
     r"""ok"""
-    
+
     hits: NotRequired[float]
     results: NotRequired[List[RoleTypedDict]]
-    
+
 
 class SearchRolesResponseBody(BaseModel):
     r"""ok"""
-    
+
     hits: Optional[float] = None
+
     results: Optional[List[Role]] = None
-    
