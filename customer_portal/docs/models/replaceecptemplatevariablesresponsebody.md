@@ -1,0 +1,11 @@
+# ReplaceECPTemplateVariablesResponseBody
+
+Replaced portal template variables successfully.
+
+
+## Fields
+
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `customer_portal`                                                                                                      | [Optional[models.CustomerPortal]](../models/customerportal.md)                                                         | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
+| `installer_portal`                                                                                                     | [Optional[models.ReplaceECPTemplateVariablesInstallerPortal]](../models/replaceecptemplatevariablesinstallerportal.md) | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
