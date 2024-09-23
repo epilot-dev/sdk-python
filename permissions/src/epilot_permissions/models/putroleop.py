@@ -12,9 +12,16 @@ from typing_extensions import Annotated, NotRequired
 class PutRoleRequestTypedDict(TypedDict):
     role_id: str
     role_payload: NotRequired[RolePayloadTypedDict]
-    
+
 
 class PutRoleRequest(BaseModel):
-    role_id: Annotated[str, pydantic.Field(alias="roleId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    role_payload: Annotated[Optional[RolePayload], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    role_id: Annotated[
+        str,
+        pydantic.Field(alias="roleId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
+
+    role_payload: Annotated[
+        Optional[RolePayload],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None

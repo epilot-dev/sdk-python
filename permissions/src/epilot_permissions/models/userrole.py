@@ -12,9 +12,10 @@ from typing_extensions import NotRequired
 class UserRoleType(str, Enum):
     USER_ROLE = "user_role"
 
+
 class UserRoleTypedDict(TypedDict):
     r"""A standard user role. Must be explicitly assigned to users."""
-    
+
     grants: List[GrantTypedDict]
     r"""List of grants (permissions) applied to the role"""
     id: str
@@ -28,22 +29,27 @@ class UserRoleTypedDict(TypedDict):
     type: UserRoleType
     expires_at: NotRequired[datetime]
     r"""date and time then the role will expire"""
-    
+
 
 class UserRole(BaseModel):
     r"""A standard user role. Must be explicitly assigned to users."""
-    
+
     grants: List[Grant]
     r"""List of grants (permissions) applied to the role"""
+
     id: str
     r"""Format: <organization_id>:<slug>"""
+
     name: str
     r"""Human-friendly name for the role"""
+
     organization_id: str
     r"""Id of an organization"""
+
     slug: str
     r"""URL-friendly name for the role"""
+
     type: UserRoleType
+
     expires_at: Optional[datetime] = None
     r"""date and time then the role will expire"""
-    
