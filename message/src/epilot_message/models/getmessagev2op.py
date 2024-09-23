@@ -10,9 +10,10 @@ from typing_extensions import Annotated
 class GetMessageV2RequestTypedDict(TypedDict):
     id: str
     r"""Message ID"""
-    
+
 
 class GetMessageV2Request(BaseModel):
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
     r"""Message ID"""
-    
