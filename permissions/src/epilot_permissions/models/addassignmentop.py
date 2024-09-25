@@ -11,9 +11,17 @@ from typing_extensions import Annotated
 class AddAssignmentRequestTypedDict(TypedDict):
     role_id: str
     user_id: str
-    
+
 
 class AddAssignmentRequest(BaseModel):
-    role_id: Annotated[str, pydantic.Field(alias="roleId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    user_id: Annotated[str, pydantic.Field(alias="userId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
+    role_id: Annotated[
+        str,
+        pydantic.Field(alias="roleId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
+
+    user_id: Annotated[
+        str,
+        pydantic.Field(alias="userId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
