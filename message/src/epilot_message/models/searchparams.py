@@ -12,11 +12,12 @@ class SearchParamsTypedDict(TypedDict):
     r"""Lucene query syntax supported with ElasticSearch"""
     from_: NotRequired[int]
     size: NotRequired[int]
-    
+
 
 class SearchParams(BaseModel):
     q: str
     r"""Lucene query syntax supported with ElasticSearch"""
+
     from_: Annotated[Optional[int], pydantic.Field(alias="from")] = 0
+
     size: Optional[int] = 10
-    
