@@ -11,18 +11,18 @@ class OutputDocumentTypedDict(TypedDict):
     preview_url: NotRequired[str]
     r"""Pre-signed URL for the converted document"""
     s3ref: NotRequired[S3ReferenceTypedDict]
-    
+
 
 class OutputDocument(BaseModel):
     preview_url: Optional[str] = None
     r"""Pre-signed URL for the converted document"""
+
     s3ref: Optional[S3Reference] = None
-    
+
 
 class ConvertDocumentResponseTypedDict(TypedDict):
     output_document: NotRequired[OutputDocumentTypedDict]
-    
+
 
 class ConvertDocumentResponse(BaseModel):
     output_document: Optional[OutputDocument] = None
-    
