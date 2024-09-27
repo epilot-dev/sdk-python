@@ -129,10 +129,10 @@ s.closing_reason.change_reason_status(reason_id="<value>")
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
 
-| Error Object     | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 400,500          | application/json |
-| models.SDKError  | 4xx-5xx          | */*              |
+| Error Object          | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| models.ErrorRespError | 400,500               | application/json      |
+| models.SDKError       | 4xx-5xx               | */*                   |
 
 ### Example
 
@@ -149,8 +149,8 @@ try:
 
     # Use the SDK ...
 
-except models.ErrorResp as e:
-    # handle e.data: models.ErrorRespData
+except models.ErrorRespError as e:
+    # handle e.data: models.ErrorRespErrorData
     raise(e)
 except models.SDKError as e:
     # handle exception

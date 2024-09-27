@@ -80,8 +80,8 @@ class Workflows(BaseSDK):
                 http_res.text, Optional[models.WorkflowDefinition]
             )
         if utils.match_response(http_res, ["400", "401", "500"], "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -167,8 +167,8 @@ class Workflows(BaseSDK):
                 http_res.text, Optional[models.WorkflowDefinition]
             )
         if utils.match_response(http_res, ["400", "401", "500"], "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -249,8 +249,8 @@ class Workflows(BaseSDK):
         if utils.match_response(http_res, "204", "*"):
             return
         if utils.match_response(http_res, "401", "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["404", "4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -331,8 +331,8 @@ class Workflows(BaseSDK):
         if utils.match_response(http_res, "204", "*"):
             return
         if utils.match_response(http_res, "401", "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["404", "4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -415,8 +415,8 @@ class Workflows(BaseSDK):
                 http_res.text, Optional[models.WorkflowDefinition]
             )
         if utils.match_response(http_res, ["400", "401", "500"], "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, "404", "application/json"):
             data = utils.unmarshal_json(
                 http_res.text, models.DefinitionNotFoundRespData
@@ -504,8 +504,8 @@ class Workflows(BaseSDK):
                 http_res.text, Optional[models.WorkflowDefinition]
             )
         if utils.match_response(http_res, ["400", "401", "500"], "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, "404", "application/json"):
             data = utils.unmarshal_json(
                 http_res.text, models.DefinitionNotFoundRespData
@@ -586,8 +586,8 @@ class Workflows(BaseSDK):
                 http_res.text, Optional[List[models.WorkflowDefinition]]
             )
         if utils.match_response(http_res, "500", "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -663,8 +663,8 @@ class Workflows(BaseSDK):
                 http_res.text, Optional[List[models.WorkflowDefinition]]
             )
         if utils.match_response(http_res, "500", "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -738,8 +738,8 @@ class Workflows(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, Optional[models.MaxAllowedLimit])
         if utils.match_response(http_res, "500", "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -813,8 +813,8 @@ class Workflows(BaseSDK):
         if utils.match_response(http_res, "200", "application/json"):
             return utils.unmarshal_json(http_res.text, Optional[models.MaxAllowedLimit])
         if utils.match_response(http_res, "500", "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -1255,8 +1255,8 @@ class Workflows(BaseSDK):
                 http_res.text, Optional[models.WorkflowDefinition]
             )
         if utils.match_response(http_res, ["400", "401", "500"], "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
@@ -1353,8 +1353,8 @@ class Workflows(BaseSDK):
                 http_res.text, Optional[models.WorkflowDefinition]
             )
         if utils.match_response(http_res, ["400", "401", "500"], "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
-            raise models.ErrorResp(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
+            raise models.ErrorRespError(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res

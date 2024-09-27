@@ -1,6 +1,4 @@
-# ErrorResp
-
-Other errors
+# ErrorRespError
 
 
 ## Fields

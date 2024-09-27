@@ -6,17 +6,15 @@ from openapi.types import BaseModel
 from typing import Optional
 
 
-class ErrorRespData(BaseModel):
+class ErrorRespErrorData(BaseModel):
     message: Optional[str] = None
 
 
-class ErrorResp(Exception):
-    r"""Other errors"""
+class ErrorRespError(Exception):
+    data: ErrorRespErrorData
 
-    data: ErrorRespData
-
-    def __init__(self, data: ErrorRespData):
+    def __init__(self, data: ErrorRespErrorData):
         self.data = data
 
     def __str__(self) -> str:
-        return utils.marshal_json(self.data, ErrorRespData)
+        return utils.marshal_json(self.data, ErrorRespErrorData)

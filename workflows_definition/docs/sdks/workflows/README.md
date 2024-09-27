@@ -118,10 +118,10 @@ if res is not None:
 
 ### Errors
 
-| Error Object     | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 400,401,500      | application/json |
-| models.SDKError  | 4xx-5xx          | */*              |
+| Error Object          | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| models.ErrorRespError | 400,401,500           | application/json      |
+| models.SDKError       | 4xx-5xx               | */*                   |
 
 
 ## delete_definition
@@ -152,10 +152,10 @@ s.workflows.delete_definition(definition_id="CustomerRequest")
 
 ### Errors
 
-| Error Object     | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 401              | application/json |
-| models.SDKError  | 4xx-5xx          | */*              |
+| Error Object          | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| models.ErrorRespError | 401                   | application/json      |
+| models.SDKError       | 4xx-5xx               | */*                   |
 
 
 ## get_definition
@@ -194,7 +194,7 @@ if res is not None:
 
 | Error Object                  | Status Code                   | Content Type                  |
 | ----------------------------- | ----------------------------- | ----------------------------- |
-| models.ErrorResp              | 400,401,500                   | application/json              |
+| models.ErrorRespError         | 400,401,500                   | application/json              |
 | models.DefinitionNotFoundResp | 404                           | application/json              |
 | models.SDKError               | 4xx-5xx                       | */*                           |
 
@@ -232,10 +232,10 @@ if res is not None:
 
 ### Errors
 
-| Error Object     | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 500              | application/json |
-| models.SDKError  | 4xx-5xx          | */*              |
+| Error Object          | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| models.ErrorRespError | 500                   | application/json      |
+| models.SDKError       | 4xx-5xx               | */*                   |
 
 
 ## get_max_allowed_limit
@@ -271,10 +271,10 @@ if res is not None:
 
 ### Errors
 
-| Error Object     | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 500              | application/json |
-| models.SDKError  | 4xx-5xx          | */*              |
+| Error Object          | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| models.ErrorRespError | 500                   | application/json      |
+| models.SDKError       | 4xx-5xx               | */*                   |
 
 
 ## get_workflow_closing_reasons
@@ -466,7 +466,7 @@ if res is not None:
 
 ### Errors
 
-| Error Object     | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 400,401,500      | application/json |
-| models.SDKError  | 4xx-5xx          | */*              |
+| Error Object          | Status Code           | Content Type          |
+| --------------------- | --------------------- | --------------------- |
+| models.ErrorRespError | 400,401,500           | application/json      |
+| models.SDKError       | 4xx-5xx               | */*                   |
