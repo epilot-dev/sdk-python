@@ -1,0 +1,9 @@
+# SaveFileRequest
+
+
+## Fields
+
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      | Example                                                          |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `save_file_payload`                                              | [Optional[models.SaveFilePayload]](../models/savefilepayload.md) | :heavy_minus_sign:                                               | N/A                                                              |                                                                  |
+| `activity_id`                                                    | *Optional[str]*                                                  | :heavy_minus_sign:                                               | Activity to include in event feed                                | 01F130Q52Q6MWSNS8N2AVXV4JN                                       |
