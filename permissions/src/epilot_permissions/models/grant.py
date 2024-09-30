@@ -12,16 +12,19 @@ class Effect(str, Enum):
     ALLOW = "allow"
     DENY = "deny"
 
+
 class GrantTypedDict(TypedDict):
     action: str
     conditions: NotRequired[List[GrantConditionTypedDict]]
     effect: NotRequired[Effect]
     resource: NotRequired[str]
-    
+
 
 class Grant(BaseModel):
     action: str
+
     conditions: Optional[List[GrantCondition]] = None
+
     effect: Optional[Effect] = Effect.ALLOW
+
     resource: Optional[str] = None
-    
