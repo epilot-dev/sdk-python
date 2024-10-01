@@ -3,10 +3,10 @@ id: 5c509d65-b892-4e49-8160-6842e685ee9c
 management:
   docChecksum: 19642ac9925cfbd898583408571f7a7f
   docVersion: 1.0.0
-  speakeasyVersion: 1.401.2
-  generationVersion: 2.421.3
-  releaseVersion: 1.7.0
-  configChecksum: a371a8eaf5a6be86f15d7156a15ecf0a
+  speakeasyVersion: 1.405.6
+  generationVersion: 2.428.1
+  releaseVersion: 1.7.1
+  configChecksum: 63d04a976d3914f093e2df010d126ab1
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: template_variables
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
@@ -14,7 +14,7 @@ features:
   python:
     additionalDependencies: 1.0.0
     constsAndDefaults: 1.0.3
-    core: 5.5.4
+    core: 5.5.7
     defaultEnabledRetries: 0.2.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.1
@@ -24,7 +24,7 @@ features:
     globalServerURLs: 3.0.0
     methodArguments: 1.0.2
     nullables: 1.0.0
-    responseFormat: 1.0.0
+    responseFormat: 1.0.1
     retries: 3.0.2
     sdkHooks: 1.0.0
 generatedFiles:

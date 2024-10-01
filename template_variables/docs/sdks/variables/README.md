@@ -49,10 +49,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_variable_context
 
@@ -109,10 +108,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## replace_templates
 
@@ -175,10 +173,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## search_variables
 
@@ -223,6 +220,6 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |

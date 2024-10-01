@@ -166,10 +166,9 @@ s.custom_variables.create_custom_variable(request={
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## delete_custom_variable
 
@@ -202,10 +201,9 @@ s.custom_variables.delete_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_blue_print_table_config
 
@@ -243,10 +241,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_custom_variable
 
@@ -285,10 +282,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_custom_variables
 
@@ -326,10 +322,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## search_custom_variables
 
@@ -371,10 +366,9 @@ if res is not None:
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
-
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## update_custom_variable
 
@@ -530,6 +524,6 @@ s.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
