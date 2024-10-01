@@ -9,12 +9,11 @@ from typing_extensions import NotRequired
 
 class ListAllAssignmentsResponseBodyTypedDict(TypedDict):
     r"""ok"""
-    
+
     assignments: NotRequired[List[AssignmentTypedDict]]
-    
+
 
 class ListAllAssignmentsResponseBody(BaseModel):
     r"""ok"""
-    
+
     assignments: Optional[List[Assignment]] = None
-    

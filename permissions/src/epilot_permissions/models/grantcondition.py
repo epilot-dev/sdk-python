@@ -10,4 +10,3 @@ r"""An additional condition that must be met for the grant"""
 
 GrantCondition = EqualsCondition
 r"""An additional condition that must be met for the grant"""
-
