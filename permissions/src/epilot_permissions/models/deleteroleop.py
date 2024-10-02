@@ -10,8 +10,11 @@ from typing_extensions import Annotated
 
 class DeleteRoleRequestTypedDict(TypedDict):
     role_id: str
-    
+
 
 class DeleteRoleRequest(BaseModel):
-    role_id: Annotated[str, pydantic.Field(alias="roleId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
+    role_id: Annotated[
+        str,
+        pydantic.Field(alias="roleId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]

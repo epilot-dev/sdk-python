@@ -10,8 +10,11 @@ from typing_extensions import Annotated
 
 class GetAssignedRolesForUserRequestTypedDict(TypedDict):
     user_id: str
-    
+
 
 class GetAssignedRolesForUserRequest(BaseModel):
-    user_id: Annotated[str, pydantic.Field(alias="userId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
+    user_id: Annotated[
+        str,
+        pydantic.Field(alias="userId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
