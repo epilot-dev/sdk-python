@@ -10,14 +10,15 @@ from typing_extensions import Annotated, NotRequired
 
 class AttachmentsRelationTypedDict(TypedDict):
     r"""Message attachments"""
-    
+
     dollar_relation: NotRequired[List[FileTypedDict]]
     r"""It's normal entity relation with some additional properties for sending message attachment."""
-    
+
 
 class AttachmentsRelation(BaseModel):
     r"""Message attachments"""
-    
-    dollar_relation: Annotated[Optional[List[File]], pydantic.Field(alias="$relation")] = None
+
+    dollar_relation: Annotated[
+        Optional[List[File]], pydantic.Field(alias="$relation")
+    ] = None
     r"""It's normal entity relation with some additional properties for sending message attachment."""
-    
