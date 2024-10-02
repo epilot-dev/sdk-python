@@ -1,0 +1,11 @@
+lockVersion: 2.0.0
+id: 14f69015-6d4d-4251-bf10-93ce61328ede
+management:
+  docChecksum: 0c38c5e4341d7eb39afb394a855c5a8a
+  docVersion: 1.0.0
+  speakeasyVersion: 1.19.2
+  generationVersion: 2.16.5
+  releaseVersion: 1.1.2
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: pricing
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=pricing
