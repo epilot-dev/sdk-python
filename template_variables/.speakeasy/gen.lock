@@ -3,22 +3,22 @@ id: 5c509d65-b892-4e49-8160-6842e685ee9c
 management:
   docChecksum: 19642ac9925cfbd898583408571f7a7f
   docVersion: 1.0.0
-  speakeasyVersion: 1.405.6
-  generationVersion: 2.428.1
-  releaseVersion: 1.7.1
-  configChecksum: 63d04a976d3914f093e2df010d126ab1
+  speakeasyVersion: 1.406.0
+  generationVersion: 2.429.0
+  releaseVersion: 1.8.0
+  configChecksum: 7fa439757e919d8de42b28d0389d15ba
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: template_variables
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
 features:
   python:
     additionalDependencies: 1.0.0
-    constsAndDefaults: 1.0.3
-    core: 5.5.7
+    constsAndDefaults: 1.0.4
+    core: 5.5.8
     defaultEnabledRetries: 0.2.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.3.1
-    flattening: 3.0.0
+    flattening: 3.1.0
     globalSecurity: 3.0.2
     globalSecurityCallbacks: 1.0.0
     globalServerURLs: 3.0.0
@@ -29,6 +29,7 @@ features:
     sdkHooks: 1.0.0
 generatedFiles:
   - .gitattributes
+  - .python-version
   - .vscode/settings.json
   - CONTRIBUTING.md
   - USAGE.md

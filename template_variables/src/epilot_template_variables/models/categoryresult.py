@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 from epilot_template_variables.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class CategoryResultTypedDict(TypedDict):

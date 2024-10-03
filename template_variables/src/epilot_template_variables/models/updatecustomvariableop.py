@@ -8,8 +8,8 @@ from epilot_template_variables.utils import (
     PathParamMetadata,
     RequestMetadata,
 )
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class UpdateCustomVariableRequestTypedDict(TypedDict):

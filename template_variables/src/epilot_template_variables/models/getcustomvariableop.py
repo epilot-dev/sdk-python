@@ -3,8 +3,7 @@
 from __future__ import annotations
 from epilot_template_variables.types import BaseModel
 from epilot_template_variables.utils import FieldMetadata, PathParamMetadata
-from typing import TypedDict
-from typing_extensions import Annotated
+from typing_extensions import Annotated, TypedDict
 
 
 class GetCustomVariableRequestTypedDict(TypedDict):

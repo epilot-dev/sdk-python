@@ -3,8 +3,8 @@
 from __future__ import annotations
 from epilot_template_variables.types import BaseModel
 from epilot_template_variables.utils import FieldMetadata, QueryParamMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GetCategoriesRequestTypedDict(TypedDict):

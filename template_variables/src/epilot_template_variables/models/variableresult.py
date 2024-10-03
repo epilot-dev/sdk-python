@@ -3,8 +3,8 @@
 from __future__ import annotations
 from enum import Enum
 from epilot_template_variables.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class VariableResultType(str, Enum):
