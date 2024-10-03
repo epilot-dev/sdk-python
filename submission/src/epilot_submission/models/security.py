@@ -3,8 +3,8 @@
 from __future__ import annotations
 from epilot_submission.types import BaseModel
 from epilot_submission.utils import FieldMetadata, SecurityMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class SecurityTypedDict(TypedDict):

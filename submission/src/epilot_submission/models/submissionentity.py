@@ -6,8 +6,8 @@ from enum import Enum
 from epilot_submission.types import BaseModel
 import pydantic
 from pydantic import ConfigDict
-from typing import Any, Dict, List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Any, Dict, List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class Schema(str, Enum):
