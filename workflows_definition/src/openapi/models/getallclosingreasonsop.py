@@ -4,8 +4,8 @@ from __future__ import annotations
 from openapi.types import BaseModel
 from openapi.utils import FieldMetadata, QueryParamMetadata
 import pydantic
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class GetAllClosingReasonsRequestTypedDict(TypedDict):

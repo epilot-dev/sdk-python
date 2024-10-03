@@ -5,8 +5,7 @@ from .workflowdefinition import WorkflowDefinition, WorkflowDefinitionTypedDict
 from openapi.types import BaseModel
 from openapi.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 import pydantic
-from typing import TypedDict
-from typing_extensions import Annotated
+from typing_extensions import Annotated, TypedDict
 
 
 class UpdateDefinitionRequestTypedDict(TypedDict):

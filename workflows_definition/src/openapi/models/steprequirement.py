@@ -5,8 +5,7 @@ from .itemtype import ItemType
 from enum import Enum
 from openapi.types import BaseModel
 import pydantic
-from typing import TypedDict
-from typing_extensions import Annotated
+from typing_extensions import Annotated, TypedDict
 
 
 class Condition(str, Enum):

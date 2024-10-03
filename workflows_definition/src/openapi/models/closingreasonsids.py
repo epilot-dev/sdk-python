@@ -3,7 +3,8 @@
 from __future__ import annotations
 from .closingreasonid import ClosingReasonID, ClosingReasonIDTypedDict
 from openapi.types import BaseModel
-from typing import List, TypedDict
+from typing import List
+from typing_extensions import TypedDict
 
 
 class ClosingReasonsIdsTypedDict(TypedDict):

@@ -3,7 +3,7 @@
 from __future__ import annotations
 from .closingreasonsstatus import ClosingReasonsStatus
 from openapi.types import BaseModel
-from typing import TypedDict
+from typing_extensions import TypedDict
 
 
 class ChangeReasonStatusReqTypedDict(TypedDict):

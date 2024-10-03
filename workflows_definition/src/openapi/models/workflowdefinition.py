@@ -11,8 +11,8 @@ from .updateentityattributes import (
 )
 from openapi.types import BaseModel
 import pydantic
-from typing import List, Optional, TypedDict, Union
-from typing_extensions import Annotated, NotRequired
+from typing import List, Optional, Union
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 FlowTypedDict = Union[SectionTypedDict, StepTypedDict]
