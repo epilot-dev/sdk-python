@@ -3,8 +3,8 @@
 from __future__ import annotations
 from epilot_message.types import BaseModel
 import pydantic
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class SearchParamsTypedDict(TypedDict):
@@ -12,11 +12,12 @@ class SearchParamsTypedDict(TypedDict):
     r"""Lucene query syntax supported with ElasticSearch"""
     from_: NotRequired[int]
     size: NotRequired[int]
-    
+
 
 class SearchParams(BaseModel):
     q: str
     r"""Lucene query syntax supported with ElasticSearch"""
+
     from_: Annotated[Optional[int], pydantic.Field(alias="from")] = 0
+
     size: Optional[int] = 10
-    

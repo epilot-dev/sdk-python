@@ -43,3 +43,11 @@ Based on:
 - Speakeasy CLI 1.355.0 (2.387.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.3.0] message
+
+## 2024-10-06 00:17:19
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/message.yaml
+- Speakeasy CLI 1.409.0 (2.429.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.4.0] message
