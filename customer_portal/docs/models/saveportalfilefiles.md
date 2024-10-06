@@ -1,0 +1,11 @@
+# SavePortalFileFiles
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `file_type`                                                              | *str*                                                                    | :heavy_check_mark:                                                       | File type                                                                | orderRightTeaser                                                         |
+| `tags`                                                                   | List[*str*]                                                              | :heavy_minus_sign:                                                       | Array of file tags                                                       | 12345                                                                    |
+| `filename`                                                               | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | File name                                                                | 12345                                                                    |
+| `s3ref`                                                                  | [Optional[models.SavePortalFileS3ref]](../models/saveportalfiles3ref.md) | :heavy_minus_sign:                                                       | N/A                                                                      |                                                                          |
