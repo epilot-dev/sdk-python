@@ -4,20 +4,21 @@ from __future__ import annotations
 from .file import File, FileTypedDict
 from epilot_message.types import BaseModel
 import pydantic
-from typing import List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AttachmentsRelationTypedDict(TypedDict):
     r"""Message attachments"""
-    
+
     dollar_relation: NotRequired[List[FileTypedDict]]
     r"""It's normal entity relation with some additional properties for sending message attachment."""
-    
+
 
 class AttachmentsRelation(BaseModel):
     r"""Message attachments"""
-    
-    dollar_relation: Annotated[Optional[List[File]], pydantic.Field(alias="$relation")] = None
+
+    dollar_relation: Annotated[
+        Optional[List[File]], pydantic.Field(alias="$relation")
+    ] = None
     r"""It's normal entity relation with some additional properties for sending message attachment."""
-    
