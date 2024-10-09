@@ -29,7 +29,7 @@ s = Epilot(
     ),
 )
 
-s.custom_variables.create_custom_variable(request={
+res = s.custom_variables.create_custom_variable(request={
     "config": {},
     "created_at": "2022-04-19T12:41:43.662Z",
     "created_by": "100042",
@@ -153,7 +153,9 @@ s.custom_variables.create_custom_variable(request={
     "updated_by": "100042",
 })
 
-# Use the SDK ...
+if res is not None:
+    # handle response
+    pass
 
 ```
 
@@ -163,6 +165,10 @@ s.custom_variables.create_custom_variable(request={
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `request`                                                           | [models.CustomVariable](../../models/customvariable.md)             | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.CustomVariable](../../models/customvariable.md)**
 
 ### Errors
 
@@ -386,7 +392,7 @@ s = Epilot(
     ),
 )
 
-s.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250", custom_variable={
+res = s.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250", custom_variable={
     "config": {},
     "created_at": "2022-04-19T12:41:43.662Z",
     "created_by": "100042",
@@ -510,7 +516,9 @@ s.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
     "updated_by": "100042",
 })
 
-# Use the SDK ...
+if res is not None:
+    # handle response
+    pass
 
 ```
 
@@ -521,6 +529,10 @@ s.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd11232
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Custom variable ID                                                  | rbse777b-3cf8-4bff-bb0c-253fd1123250                                |
 | `custom_variable`                                                   | [Optional[models.CustomVariable]](../../models/customvariable.md)   | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
+
+### Response
+
+**[models.CustomVariable](../../models/customvariable.md)**
 
 ### Errors
 

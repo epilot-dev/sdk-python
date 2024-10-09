@@ -10,7 +10,7 @@ s = Epilot(
     ),
 )
 
-s.custom_variables.create_custom_variable(request={
+res = s.custom_variables.create_custom_variable(request={
     "config": {},
     "created_at": "2022-04-19T12:41:43.662Z",
     "created_by": "100042",
@@ -134,7 +134,9 @@ s.custom_variables.create_custom_variable(request={
     "updated_by": "100042",
 })
 
-# Use the SDK ...
+if res is not None:
+    # handle response
+    pass
 ```
 
 </br>
@@ -152,7 +154,7 @@ async def main():
             epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
         ),
     )
-    await s.custom_variables.create_custom_variable_async(request={
+    res = await s.custom_variables.create_custom_variable_async(request={
         "config": {},
         "created_at": "2022-04-19T12:41:43.662Z",
         "created_by": "100042",
@@ -275,7 +277,9 @@ async def main():
         "updated_at": "2022-04-20T12:41:43.662Z",
         "updated_by": "100042",
     })
-    # Use the SDK ...
+    if res is not None:
+        # handle response
+        pass
 
 asyncio.run(main())
 ```

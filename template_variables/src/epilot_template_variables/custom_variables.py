@@ -17,7 +17,7 @@ class CustomVariables(BaseSDK):
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ):
+    ) -> Optional[models.CustomVariable]:
         r"""Create custom variable
 
         Create custom variable
@@ -49,7 +49,7 @@ class CustomVariables(BaseSDK):
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="*/*",
+            accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.CustomVariable]
@@ -72,13 +72,13 @@ class CustomVariables(BaseSDK):
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
-            error_status_codes=["403", "4XX", "5XX"],
+            error_status_codes=["403", "409", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
-        if utils.match_response(http_res, "201", "*"):
-            return
-        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+        if utils.match_response(http_res, "201", "application/json"):
+            return utils.unmarshal_json(http_res.text, Optional[models.CustomVariable])
+        if utils.match_response(http_res, ["403", "409", "4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
             )
@@ -100,7 +100,7 @@ class CustomVariables(BaseSDK):
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ):
+    ) -> Optional[models.CustomVariable]:
         r"""Create custom variable
 
         Create custom variable
@@ -132,7 +132,7 @@ class CustomVariables(BaseSDK):
             request_has_path_params=False,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="*/*",
+            accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.CustomVariable]
@@ -155,13 +155,13 @@ class CustomVariables(BaseSDK):
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
-            error_status_codes=["403", "4XX", "5XX"],
+            error_status_codes=["403", "409", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
-        if utils.match_response(http_res, "201", "*"):
-            return
-        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+        if utils.match_response(http_res, "201", "application/json"):
+            return utils.unmarshal_json(http_res.text, Optional[models.CustomVariable])
+        if utils.match_response(http_res, ["403", "409", "4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
             )
@@ -972,7 +972,7 @@ class CustomVariables(BaseSDK):
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ):
+    ) -> Optional[models.CustomVariable]:
         r"""Update custom variable
 
         Update custom variable
@@ -1008,7 +1008,7 @@ class CustomVariables(BaseSDK):
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="*/*",
+            accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.custom_variable,
@@ -1035,13 +1035,13 @@ class CustomVariables(BaseSDK):
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
-            error_status_codes=["403", "4XX", "5XX"],
+            error_status_codes=["403", "409", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
-        if utils.match_response(http_res, "200", "*"):
-            return
-        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+        if utils.match_response(http_res, "200", "application/json"):
+            return utils.unmarshal_json(http_res.text, Optional[models.CustomVariable])
+        if utils.match_response(http_res, ["403", "409", "4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
             )
@@ -1064,7 +1064,7 @@ class CustomVariables(BaseSDK):
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
-    ):
+    ) -> Optional[models.CustomVariable]:
         r"""Update custom variable
 
         Update custom variable
@@ -1100,7 +1100,7 @@ class CustomVariables(BaseSDK):
             request_has_path_params=True,
             request_has_query_params=True,
             user_agent_header="user-agent",
-            accept_header_value="*/*",
+            accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
                 request.custom_variable,
@@ -1127,13 +1127,13 @@ class CustomVariables(BaseSDK):
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
-            error_status_codes=["403", "4XX", "5XX"],
+            error_status_codes=["403", "409", "4XX", "5XX"],
             retry_config=retry_config,
         )
 
-        if utils.match_response(http_res, "200", "*"):
-            return
-        if utils.match_response(http_res, ["403", "4XX", "5XX"], "*"):
+        if utils.match_response(http_res, "200", "application/json"):
+            return utils.unmarshal_json(http_res.text, Optional[models.CustomVariable])
+        if utils.match_response(http_res, ["403", "409", "4XX", "5XX"], "*"):
             raise models.SDKError(
                 "API error occurred", http_res.status_code, http_res.text, http_res
             )

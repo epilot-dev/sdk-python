@@ -21,6 +21,7 @@ class Type(str, Enum):
 
     ORDER_TABLE = "order_table"
     CUSTOM = "custom"
+    JOURNEY_LINK = "journey_link"
 
 
 class CustomVariableTypedDict(TypedDict):
