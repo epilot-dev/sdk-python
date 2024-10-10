@@ -7,35 +7,30 @@ from typing import List, Optional
 from typing_extensions import Annotated, NotRequired, TypedDict
 
 
-class RequestBodyTypedDict(TypedDict):
+class UnassignThreadRequestBodyTypedDict(TypedDict):
     entity_id: NotRequired[str]
     r"""Entity ID"""
-    is_main_entity: NotRequired[bool]
-    r"""To indicate this is main entity"""
     slug: NotRequired[str]
     r"""Entity slug"""
 
 
-class RequestBody(BaseModel):
+class UnassignThreadRequestBody(BaseModel):
     entity_id: Optional[str] = None
     r"""Entity ID"""
-
-    is_main_entity: Optional[bool] = None
-    r"""To indicate this is main entity"""
 
     slug: Optional[str] = None
     r"""Entity slug"""
 
 
-class AssignThreadRequestTypedDict(TypedDict):
-    request_body: List[RequestBodyTypedDict]
+class UnassignThreadRequestTypedDict(TypedDict):
+    request_body: List[UnassignThreadRequestBodyTypedDict]
     id: str
     r"""Thread ID"""
 
 
-class AssignThreadRequest(BaseModel):
+class UnassignThreadRequest(BaseModel):
     request_body: Annotated[
-        List[RequestBody],
+        List[UnassignThreadRequestBody],
         FieldMetadata(request=RequestMetadata(media_type="application/json")),
     ]
 
