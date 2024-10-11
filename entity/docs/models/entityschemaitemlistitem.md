@@ -1,0 +1,9 @@
+# EntitySchemaItemListItem
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `quick_actions`                                                                                  | List[[models.EntityAction](../models/entityaction.md)]                                           | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `summary_attributes`                                                                             | List[[models.EntitySchemaItemSummaryAttributes](../models/entityschemaitemsummaryattributes.md)] | :heavy_minus_sign:                                                                               | N/A                                                                                              |
