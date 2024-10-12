@@ -5,13 +5,14 @@ from .grant import Grant, GrantTypedDict
 from .grantcondition import GrantCondition, GrantConditionTypedDict
 from enum import Enum
 from epilot_permissions.types import BaseModel
-from typing import List, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import List, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class GrantWithDependenciesEffect(str, Enum):
     ALLOW = "allow"
     DENY = "deny"
+
 
 class GrantWithDependenciesTypedDict(TypedDict):
     action: str
@@ -20,13 +21,16 @@ class GrantWithDependenciesTypedDict(TypedDict):
     r"""Provided additional dependencies, exploded when storing the role"""
     effect: NotRequired[GrantWithDependenciesEffect]
     resource: NotRequired[str]
-    
+
 
 class GrantWithDependencies(BaseModel):
     action: str
+
     conditions: Optional[List[GrantCondition]] = None
+
     dependencies: Optional[List[Grant]] = None
     r"""Provided additional dependencies, exploded when storing the role"""
+
     effect: Optional[GrantWithDependenciesEffect] = GrantWithDependenciesEffect.ALLOW
+
     resource: Optional[str] = None
-    
