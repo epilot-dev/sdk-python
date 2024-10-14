@@ -5,16 +5,23 @@ from .rolepayload import RolePayload, RolePayloadTypedDict
 from epilot_permissions.types import BaseModel
 from epilot_permissions.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 import pydantic
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class PutRoleRequestTypedDict(TypedDict):
     role_id: str
     role_payload: NotRequired[RolePayloadTypedDict]
-    
+
 
 class PutRoleRequest(BaseModel):
-    role_id: Annotated[str, pydantic.Field(alias="roleId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    role_payload: Annotated[Optional[RolePayload], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    role_id: Annotated[
+        str,
+        pydantic.Field(alias="roleId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
+
+    role_payload: Annotated[
+        Optional[RolePayload],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
