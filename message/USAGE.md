@@ -10,7 +10,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     from_={
         "address": "messaging@epilot.cloud",
@@ -18,6 +17,10 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     },
     subject="Request for solar panel price",
     bcc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
         {
             "address": "messaging@epilot.cloud",
             "name": "epilot",
@@ -36,6 +39,11 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
                 "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
                 "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
             },
+            {
+                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+            },
         ],
     },
     html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
@@ -44,6 +52,7 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -57,7 +66,18 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
+    **{
+
+    },
 ))
 
 if res is not None:
@@ -91,6 +111,10 @@ async def main():
                 "address": "messaging@epilot.cloud",
                 "name": "epilot",
             },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
         ],
         cc=[
             {
@@ -105,6 +129,11 @@ async def main():
                     "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
                     "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
                 },
+                {
+                    "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                    "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                    "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                },
             ],
         },
         html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
@@ -113,6 +142,7 @@ async def main():
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
         text="We at ABC GmbH would like to request a price quote for the solar panel.",
         thread={
             "topic": "CUSTOMER_MESSAGE",
@@ -126,7 +156,18 @@ async def main():
                 "address": "messaging@epilot.cloud",
                 "name": "epilot",
             },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
         ],
+        **{
+
+        },
     ))
     if res is not None:
         # handle response
