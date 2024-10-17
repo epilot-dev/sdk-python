@@ -1,0 +1,10 @@
+# Call
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `headers`                                                         | Dict[str, *str*]                                                  | :heavy_check_mark:                                                | Headers to use. Supports variable interpolation.                  |
+| `url`                                                             | *str*                                                             | :heavy_check_mark:                                                | URL to call. Supports variable interpolation.                     |
+| `params`                                                          | Dict[str, *str*]                                                  | :heavy_minus_sign:                                                | Parameters to append to the URL. Supports variable interpolation. |
