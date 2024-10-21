@@ -1,0 +1,16 @@
+# Schemas
+
+Hook that replaces the built-in registration identifiers check. This hook makes a POST call whenever a user is trying to register to find the corresponding contact. The expected response to the call is:
+  - 200 with body `{ "contactId": "uuid" }` if exactly one contact is found
+  - 404 if no contact is found or more than contact is found
+
+
+
+## Fields
+
+| Field                                                      | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `call`                                                     | [models.Call](../models/call.md)                           | :heavy_check_mark:                                         | N/A                                                        |
+| `type`                                                     | [models.Type](../models/type.md)                           | :heavy_check_mark:                                         | N/A                                                        |
+| `auth`                                                     | [Optional[models.Auth]](../models/auth.md)                 | :heavy_minus_sign:                                         | N/A                                                        |
+| `id`                                                       | *Optional[str]*                                            | :heavy_minus_sign:                                         | Identifier of the hook. Should not change between updates. |
