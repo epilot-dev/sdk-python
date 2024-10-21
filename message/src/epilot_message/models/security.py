@@ -3,16 +3,36 @@
 from __future__ import annotations
 from epilot_message.types import BaseModel
 from epilot_message.utils import FieldMetadata, SecurityMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class SecurityTypedDict(TypedDict):
     epilot_auth: NotRequired[str]
     epilot_org: NotRequired[str]
-    
+
 
 class Security(BaseModel):
-    epilot_auth: Annotated[Optional[str], FieldMetadata(security=SecurityMetadata(scheme=True, scheme_type="http", sub_type="bearer", field_name="Authorization"))] = None
-    epilot_org: Annotated[Optional[str], FieldMetadata(security=SecurityMetadata(scheme=True, scheme_type="apiKey", sub_type="header", field_name="x-epilot-org-id"))] = None
-    
+    epilot_auth: Annotated[
+        Optional[str],
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True,
+                scheme_type="http",
+                sub_type="bearer",
+                field_name="Authorization",
+            )
+        ),
+    ] = None
+
+    epilot_org: Annotated[
+        Optional[str],
+        FieldMetadata(
+            security=SecurityMetadata(
+                scheme=True,
+                scheme_type="apiKey",
+                sub_type="header",
+                field_name="x-epilot-org-id",
+            )
+        ),
+    ] = None
