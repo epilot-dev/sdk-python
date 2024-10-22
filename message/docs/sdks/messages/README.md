@@ -1,6 +1,8 @@
 # Messages
 (*messages*)
 
+## Overview
+
 ### Available Operations
 
 * [delete_message](#delete_message) - deleteMessage
@@ -29,8 +31,7 @@ s = Epilot(
     ),
 )
 
-
-s.messages.delete_message(id="<value>")
+s.messages.delete_message(id="<id>")
 
 # Use the SDK ...
 
@@ -45,9 +46,9 @@ s.messages.delete_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_message
 
@@ -65,7 +66,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.messages.get_message(id="4d74976d-fb64-47fd-85e2-65eea140f5eb")
 
 if res is not None:
@@ -81,15 +81,15 @@ if res is not None:
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Message ID                                                          | 4d74976d-fb64-47fd-85e2-65eea140f5eb                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.GetMessageResponse](../../models/getmessageresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_message_v2
 
@@ -117,7 +117,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.messages.get_message_v2(id="4d74976d-fb64-47fd-85e2-65eea140f5eb")
 
 if res is not None:
@@ -133,15 +132,15 @@ if res is not None:
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Message ID                                                          | 4d74976d-fb64-47fd-85e2-65eea140f5eb                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.MessageV2](../../models/messagev2.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## mark_read_message
 
@@ -159,8 +158,7 @@ s = Epilot(
     ),
 )
 
-
-s.messages.mark_read_message(id="<value>")
+s.messages.mark_read_message(id="<id>")
 
 # Use the SDK ...
 
@@ -175,9 +173,9 @@ s.messages.mark_read_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## mark_unread_message
 
@@ -195,8 +193,7 @@ s = Epilot(
     ),
 )
 
-
-s.messages.mark_unread_message(id="<value>")
+s.messages.mark_unread_message(id="<id>")
 
 # Use the SDK ...
 
@@ -211,9 +208,9 @@ s.messages.mark_unread_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## send_message
 
@@ -231,7 +228,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.messages.send_message(message_request_params=epilot_message.MessageRequestParams(
     from_={
         "address": "messaging@epilot.cloud",
@@ -245,6 +241,10 @@ res = s.messages.send_message(message_request_params=epilot_message.MessageReque
         },
     ],
     cc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
         {
             "address": "messaging@epilot.cloud",
             "name": "epilot",
@@ -265,6 +265,7 @@ res = s.messages.send_message(message_request_params=epilot_message.MessageReque
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -278,7 +279,18 @@ res = s.messages.send_message(message_request_params=epilot_message.MessageReque
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
+    **{
+
+    },
 ))
 
 if res is not None:
@@ -295,15 +307,15 @@ if res is not None:
 | `message_request_params`                                                                                          | [Optional[models.MessageRequestParams]](../../models/messagerequestparams.md)                                     | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
 | `retries`                                                                                                         | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                  | :heavy_minus_sign:                                                                                                | Configuration to override the default retry behavior of the client.                                               |
 
-
 ### Response
 
 **[models.MessageRequestParams](../../models/messagerequestparams.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## trash_message
 
@@ -321,8 +333,7 @@ s = Epilot(
     ),
 )
 
-
-s.messages.trash_message(id="<value>")
+s.messages.trash_message(id="<id>")
 
 # Use the SDK ...
 
@@ -337,9 +348,9 @@ s.messages.trash_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## untrash_message
 
@@ -357,8 +368,7 @@ s = Epilot(
     ),
 )
 
-
-s.messages.untrash_message(id="<value>")
+s.messages.untrash_message(id="<id>")
 
 # Use the SDK ...
 
@@ -373,9 +383,9 @@ s.messages.untrash_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## update_message
 
@@ -393,7 +403,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.messages.update_message()
 
 if res is not None:
@@ -408,12 +417,12 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.UpdateMessageResponseBody](../../models/updatemessageresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
