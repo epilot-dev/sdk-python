@@ -4,16 +4,23 @@ from __future__ import annotations
 from epilot_permissions.types import BaseModel
 from epilot_permissions.utils import FieldMetadata, PathParamMetadata, RequestMetadata
 import pydantic
-from typing import List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class AssignRolesRequestTypedDict(TypedDict):
     user_id: str
     request_body: NotRequired[List[str]]
-    
+
 
 class AssignRolesRequest(BaseModel):
-    user_id: Annotated[str, pydantic.Field(alias="userId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    request_body: Annotated[Optional[List[str]], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    
+    user_id: Annotated[
+        str,
+        pydantic.Field(alias="userId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
+
+    request_body: Annotated[
+        Optional[List[str]],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None

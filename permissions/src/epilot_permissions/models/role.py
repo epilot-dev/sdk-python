@@ -9,8 +9,13 @@ from .userrole import UserRole, UserRoleTypedDict
 from typing import Union
 
 
-RoleTypedDict = Union[UserRoleTypedDict, ShareRoleTypedDict, PortalRoleTypedDict, OrgRoleTypedDict, PartnerRoleTypedDict]
+RoleTypedDict = Union[
+    UserRoleTypedDict,
+    ShareRoleTypedDict,
+    PortalRoleTypedDict,
+    OrgRoleTypedDict,
+    PartnerRoleTypedDict,
+]
 
 
 Role = Union[UserRole, ShareRole, PortalRole, OrgRole, PartnerRole]
-
