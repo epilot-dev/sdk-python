@@ -1,0 +1,12 @@
+# EntityDefaultTable
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `bulk_actions`                                                                         | List[[models.BulkActions](../models/bulkactions.md)]                                   | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `enable_thumbnails`                                                                    | *Optional[bool]*                                                                       | :heavy_minus_sign:                                                                     | Enable the thumbnail column                                                            |
+| `navbar_actions`                                                                       | List[[models.NavbarActions](../models/navbaractions.md)]                               | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `row_actions`                                                                          | List[[models.RowActions](../models/rowactions.md)]                                     | :heavy_minus_sign:                                                                     | N/A                                                                                    |
+| `view_type`                                                                            | [Optional[models.EntityDefaultTableViewType]](../models/entitydefaulttableviewtype.md) | :heavy_minus_sign:                                                                     | N/A                                                                                    |
