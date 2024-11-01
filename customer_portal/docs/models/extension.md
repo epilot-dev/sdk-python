@@ -1,0 +1,14 @@
+# Extension
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `description`                                                                | [models.Description](../models/description.md)                               | :heavy_check_mark:                                                           | Name of the extension.                                                       |
+| `name`                                                                       | [models.Name](../models/name.md)                                             | :heavy_check_mark:                                                           | Name of the extension.                                                       |
+| `version`                                                                    | *str*                                                                        | :heavy_check_mark:                                                           | Version of the extension.                                                    |
+| `hooks`                                                                      | List[[models.Hooks](../models/hooks.md)]                                     | :heavy_minus_sign:                                                           | Hooks that influence the behavior of Portal.                                 |
+| `id`                                                                         | *Optional[str]*                                                              | :heavy_minus_sign:                                                           | Identifier of the extension. Should not change between updates.              |
+| `links`                                                                      | List[[models.ExtensionSeamlessLink](../models/extensionseamlesslink.md)]     | :heavy_minus_sign:                                                           | External links added to the portal.                                          |
+| `options`                                                                    | List[[models.Options](../models/options.md)]                                 | :heavy_minus_sign:                                                           | Options available to the extension configurable by the portal administrator. |
