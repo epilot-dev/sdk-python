@@ -1,0 +1,269 @@
+lockVersion: 2.0.0
+id: d844e8a9-4025-4269-979c-f03df913bc2e
+management:
+  docChecksum: 04890e5c10201073f28bee20897aef86
+  docVersion: 1.0.0
+  speakeasyVersion: 1.424.0
+  generationVersion: 2.445.1
+  releaseVersion: 1.3.0
+  configChecksum: 81589defc6c71085a27d828296f2beaa
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: workflows_execution
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_execution
+features:
+  python:
+    additionalDependencies: 1.0.0
+    constsAndDefaults: 1.0.4
+    core: 5.6.1
+    defaultEnabledRetries: 0.2.0
+    deprecations: 3.0.0
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.1
+    flattening: 3.1.0
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.0.0
+    methodArguments: 1.0.2
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+    tests: 1.6.0
+    unions: 3.0.2
+generatedFiles:
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/actiontypecondition.md
+  - docs/models/automationconfig.md
+  - docs/models/closingreason.md
+  - docs/models/closingreasonresp.md
+  - docs/models/condition.md
+  - docs/models/createstepreq.md
+  - docs/models/createsteprequest.md
+  - docs/models/deleteexecutionrequest.md
+  - docs/models/deletesteprequest.md
+  - docs/models/dynamicduedate.md
+  - docs/models/ecpdetails.md
+  - docs/models/errorresperror.md
+  - docs/models/executionpaginationdynamo.md
+  - docs/models/flow.md
+  - docs/models/getclosingreasonexecutionrequest.md
+  - docs/models/getexecutionrequest.md
+  - docs/models/getexecutionsrequest.md
+  - docs/models/itemtype.md
+  - docs/models/lastevaluatedkey.md
+  - docs/models/searchexecutionsreq.md
+  - docs/models/searchexecutionsresp.md
+  - docs/models/searchpagination.md
+  - docs/models/searchsorting.md
+  - docs/models/searchstepsreq.md
+  - docs/models/searchstepsresp.md
+  - docs/models/section.md
+  - docs/models/sectionstatus.md
+  - docs/models/security.md
+  - docs/models/source.md
+  - docs/models/status.md
+  - docs/models/step.md
+  - docs/models/stepdescription.md
+  - docs/models/stepextended.md
+  - docs/models/stepid.md
+  - docs/models/stepjourney.md
+  - docs/models/steppositionat.md
+  - docs/models/steprequirement.md
+  - docs/models/stepstatus.md
+  - docs/models/steptype.md
+  - docs/models/target.md
+  - docs/models/timeperiod.md
+  - docs/models/triggertype.md
+  - docs/models/updateentityattributes.md
+  - docs/models/updateexecutionrequest.md
+  - docs/models/updatestepreq.md
+  - docs/models/updatesteprequest.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/workflowcontext.md
+  - docs/models/workflowexecution.md
+  - docs/models/workflowexecutioncreatereq.md
+  - docs/models/workflowexecutionslim.md
+  - docs/models/workflowexecutionslimflow.md
+  - docs/models/workflowexecutionupdatereq.md
+  - docs/models/workflowstatus.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/workflows/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/compile.sh
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/epilot_workflows_execution/__init__.py
+  - src/epilot_workflows_execution/_hooks/__init__.py
+  - src/epilot_workflows_execution/_hooks/sdkhooks.py
+  - src/epilot_workflows_execution/_hooks/types.py
+  - src/epilot_workflows_execution/_version.py
+  - src/epilot_workflows_execution/basesdk.py
+  - src/epilot_workflows_execution/httpclient.py
+  - src/epilot_workflows_execution/models/__init__.py
+  - src/epilot_workflows_execution/models/automationconfig.py
+  - src/epilot_workflows_execution/models/closingreason.py
+  - src/epilot_workflows_execution/models/closingreasonresp.py
+  - src/epilot_workflows_execution/models/createstepop.py
+  - src/epilot_workflows_execution/models/createstepreq.py
+  - src/epilot_workflows_execution/models/deleteexecutionop.py
+  - src/epilot_workflows_execution/models/deletestepop.py
+  - src/epilot_workflows_execution/models/dynamicduedate.py
+  - src/epilot_workflows_execution/models/ecpdetails.py
+  - src/epilot_workflows_execution/models/errorresp_error.py
+  - src/epilot_workflows_execution/models/executionpaginationdynamo.py
+  - src/epilot_workflows_execution/models/getclosingreasonexecutionop.py
+  - src/epilot_workflows_execution/models/getexecutionop.py
+  - src/epilot_workflows_execution/models/getexecutionsop.py
+  - src/epilot_workflows_execution/models/itemtype.py
+  - src/epilot_workflows_execution/models/lastevaluatedkey.py
+  - src/epilot_workflows_execution/models/sdkerror.py
+  - src/epilot_workflows_execution/models/searchexecutionsreq.py
+  - src/epilot_workflows_execution/models/searchexecutionsresp.py
+  - src/epilot_workflows_execution/models/searchpagination.py
+  - src/epilot_workflows_execution/models/searchsorting.py
+  - src/epilot_workflows_execution/models/searchstepsreq.py
+  - src/epilot_workflows_execution/models/searchstepsresp.py
+  - src/epilot_workflows_execution/models/section.py
+  - src/epilot_workflows_execution/models/sectionstatus.py
+  - src/epilot_workflows_execution/models/security.py
+  - src/epilot_workflows_execution/models/step.py
+  - src/epilot_workflows_execution/models/stepdescription.py
+  - src/epilot_workflows_execution/models/stepextended.py
+  - src/epilot_workflows_execution/models/stepid.py
+  - src/epilot_workflows_execution/models/stepjourney.py
+  - src/epilot_workflows_execution/models/steppositionat.py
+  - src/epilot_workflows_execution/models/steprequirement.py
+  - src/epilot_workflows_execution/models/stepstatus.py
+  - src/epilot_workflows_execution/models/steptype.py
+  - src/epilot_workflows_execution/models/triggertype.py
+  - src/epilot_workflows_execution/models/updateentityattributes.py
+  - src/epilot_workflows_execution/models/updateexecutionop.py
+  - src/epilot_workflows_execution/models/updatestepop.py
+  - src/epilot_workflows_execution/models/updatestepreq.py
+  - src/epilot_workflows_execution/models/workflowcontext.py
+  - src/epilot_workflows_execution/models/workflowexecution.py
+  - src/epilot_workflows_execution/models/workflowexecutioncreatereq.py
+  - src/epilot_workflows_execution/models/workflowexecutionslim.py
+  - src/epilot_workflows_execution/models/workflowexecutionupdatereq.py
+  - src/epilot_workflows_execution/models/workflowstatus.py
+  - src/epilot_workflows_execution/py.typed
+  - src/epilot_workflows_execution/sdk.py
+  - src/epilot_workflows_execution/sdkconfiguration.py
+  - src/epilot_workflows_execution/types/__init__.py
+  - src/epilot_workflows_execution/types/basemodel.py
+  - src/epilot_workflows_execution/utils/__init__.py
+  - src/epilot_workflows_execution/utils/annotations.py
+  - src/epilot_workflows_execution/utils/enums.py
+  - src/epilot_workflows_execution/utils/eventstreaming.py
+  - src/epilot_workflows_execution/utils/forms.py
+  - src/epilot_workflows_execution/utils/headers.py
+  - src/epilot_workflows_execution/utils/logger.py
+  - src/epilot_workflows_execution/utils/metadata.py
+  - src/epilot_workflows_execution/utils/queryparams.py
+  - src/epilot_workflows_execution/utils/requestbodies.py
+  - src/epilot_workflows_execution/utils/retries.py
+  - src/epilot_workflows_execution/utils/security.py
+  - src/epilot_workflows_execution/utils/serializers.py
+  - src/epilot_workflows_execution/utils/url.py
+  - src/epilot_workflows_execution/utils/values.py
+  - src/epilot_workflows_execution/workflows.py
+examples:
+  createExecution:
+    speakeasy-default-create-execution:
+      requestBody:
+        application/json: {"contexts": [{"id": "3fa3fa86-0907-4642-a57e-0fe30a19874d", "schema": "contact", "title": "<value>"}, {"id": "3a6d42fa-5070-4723-b90f-41ead4303e33", "schema": "opportunity", "title": "<value>"}], "trigger": "AUTOMATIC", "workflowId": "j3f23fh23uif98"}
+      responses:
+        "201":
+          application/json: {"assignedTo": ["252", "29052"], "creationTime": "2021-04-27T12:01:13.000Z", "dueDate": "2021-04-27T12:01:13.000Z", "flow": [{"id": "<id>", "name": "<value>", "type": "STEP"}, {"id": "<id>", "name": "Lead Qualification", "steps": [], "type": "STEP"}], "id": "8gja72h6kas6h", "lastUpdateTime": "2021-04-27T12:01:13.000Z", "name": "Lead Qualification", "status": "STARTED", "trigger": "MANUAL", "updateEntityAttributes": []}
+        "400": {}
+  createStep:
+    "":
+      parameters:
+        path:
+          executionId: "wd56125gah"
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "201":
+          application/json: {"id": "<id>", "name": "<value>", "type": "STEP"}
+        "400": {}
+  deleteExecution:
+    "":
+      parameters:
+        path:
+          executionId: "CustomerRequest"
+  deleteStep:
+    "":
+      parameters:
+        path:
+          executionId: "wd56125gah"
+          stepId: "7hj28a"
+  getClosingReasonExecution:
+    "":
+      parameters:
+        path:
+          executionId: "wd561"
+  getExecution:
+    "":
+      parameters:
+        path:
+          executionId: "wd561"
+      responses:
+        "200":
+          application/json: {"assignedTo": ["252", "29052"], "creationTime": "2021-04-27T12:01:13.000Z", "dueDate": "2021-04-27T12:01:13.000Z", "flow": [{"id": "<id>", "name": "<value>", "type": "STEP"}, {"id": "<id>", "name": "<value>", "type": "STEP"}], "id": "8gja72h6kas6h", "lastUpdateTime": "2021-04-27T12:01:13.000Z", "name": "Lead Qualification", "status": "STARTED", "trigger": "MANUAL", "updateEntityAttributes": []}
+        "500": {}
+  getExecutions:
+    "":
+      parameters:
+        query:
+          context: "2843c005-c5b0-4df2-94ee-1ca2ddd998ac"
+          schema: "contact"
+      responses:
+        "200":
+          application/json: [{"creationTime": "2021-04-27T12:01:13.000Z", "dueDate": "2021-04-27T12:01:13.000Z", "flow": [{"id": "<id>", "name": "<value>", "type": "SECTION"}, {"id": "<id>", "name": "<value>", "type": "STEP"}], "id": "8gja72h6kas6h", "lastUpdateTime": "2021-04-27T12:01:13.000Z", "name": "Lead Qualification", "status": "STARTED", "trigger": "MANUAL", "updateEntityAttributes": []}]
+        "500": {}
+  searchExecutions:
+    speakeasy-default-search-executions:
+      responses:
+        "200":
+          application/json: {"executions": [{"creationTime": "2021-04-27T12:01:13.000Z", "dueDate": "2021-04-27T12:01:13.000Z", "flow": [{"id": "<id>", "name": "Lead Qualification", "steps": [{"id": "<id>", "name": "<value>", "type": "SECTION"}, {"id": "<id>", "name": "<value>", "type": "SECTION"}], "type": "STEP"}, {"id": "<id>", "name": "<value>", "type": "SECTION"}], "id": "8gja72h6kas6h", "lastUpdateTime": "2021-04-27T12:01:13.000Z", "name": "Lead Qualification", "status": "STARTED", "trigger": "MANUAL", "updateEntityAttributes": [{"source": "current_step", "target": {"entityAttribute": "my_status", "entitySchema": "opportunity"}}, {"source": "current_step", "target": {"entityAttribute": "my_status", "entitySchema": "opportunity"}}]}]}
+        "400": {}
+  searchSteps:
+    speakeasy-default-search-steps:
+      responses:
+        "200":
+          application/json: {"hits": 50}
+        "400": {}
+  updateExecution:
+    "":
+      parameters:
+        path:
+          executionId: "wd561"
+  updateStep:
+    dynamicDueDate:
+      parameters:
+        path:
+          executionId: "wd56125gah"
+          stepId: "7hj28a"
+      requestBody:
+        application/json: {"assignedTo": ["10010730"], "dynamicDueDate": {"actionTypeCondition": "STEP_CLOSED", "numberOfUnits": 2, "stepId": "optional", "timePeriod": "weeks"}, "name": "Static Duedate", "position": {"index": 0}, "status": "UNASSIGNED", "stepId": "string"}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>", "type": "SECTION"}
+        "400": {}
+    "":
+      parameters:
+        path:
+          executionId: "wd56125gah"
+          stepId: "7hj28a"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>", "type": "SECTION"}
+        "400": {}
