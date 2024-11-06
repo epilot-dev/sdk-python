@@ -22,7 +22,7 @@ from .dynamicduedate import (
     TimePeriod,
 )
 from .ecpdetails import ECPDetails, ECPDetailsTypedDict
-from .errorresp_error import ErrorRespError, ErrorRespErrorData
+from .errorresp import ErrorResp, ErrorRespData
 from .getallclosingreasonsop import (
     GetAllClosingReasonsRequest,
     GetAllClosingReasonsRequestTypedDict,
@@ -90,8 +90,8 @@ __all__ = [
     "DynamicDueDateTypedDict",
     "ECPDetails",
     "ECPDetailsTypedDict",
-    "ErrorRespError",
-    "ErrorRespErrorData",
+    "ErrorResp",
+    "ErrorRespData",
     "Flow",
     "FlowTypedDict",
     "GetAllClosingReasonsRequest",

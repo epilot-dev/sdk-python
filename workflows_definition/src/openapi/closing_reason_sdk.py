@@ -89,8 +89,8 @@ class ClosingReasonSDK(BaseSDK):
         if utils.match_response(http_res, "202", "*"):
             return
         if utils.match_response(http_res, ["400", "500"], "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
-            raise models.ErrorRespError(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
+            raise models.ErrorResp(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = utils.stream_to_text(http_res)
             raise models.SDKError(
@@ -187,8 +187,8 @@ class ClosingReasonSDK(BaseSDK):
         if utils.match_response(http_res, "202", "*"):
             return
         if utils.match_response(http_res, ["400", "500"], "application/json"):
-            data = utils.unmarshal_json(http_res.text, models.ErrorRespErrorData)
-            raise models.ErrorRespError(data=data)
+            data = utils.unmarshal_json(http_res.text, models.ErrorRespData)
+            raise models.ErrorResp(data=data)
         if utils.match_response(http_res, ["4XX", "5XX"], "*"):
             http_res_text = await utils.stream_to_text_async(http_res)
             raise models.SDKError(

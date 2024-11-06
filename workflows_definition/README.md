@@ -140,10 +140,10 @@ By default, an API error will raise a models.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `change_reason_status_async` method may raise the following exceptions:
 
-| Error Type            | Status Code           | Content Type          |
-| --------------------- | --------------------- | --------------------- |
-| models.ErrorRespError | 400, 500              | application/json      |
-| models.SDKError       | 4XX, 5XX              | \*/\*                 |
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| models.ErrorResp | 400, 500         | application/json |
+| models.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ### Example
 
@@ -160,8 +160,8 @@ try:
 
     # Use the SDK ...
 
-except models.ErrorRespError as e:
-    # handle e.data: models.ErrorRespErrorData
+except models.ErrorResp as e:
+    # handle e.data: models.ErrorRespData
     raise(e)
 except models.SDKError as e:
     # handle exception

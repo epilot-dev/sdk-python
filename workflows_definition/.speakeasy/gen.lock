@@ -3,17 +3,17 @@ id: 8727d4ad-f9cf-4aa1-993f-c90fc6591190
 management:
   docChecksum: 8a2ff4be25db818a35891d602baa4a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.426.0
-  generationVersion: 2.446.5
-  releaseVersion: 1.10.1
-  configChecksum: eb4e880f40e7402860b2dfb5f57849a2
+  speakeasyVersion: 1.431.0
+  generationVersion: 2.451.0
+  releaseVersion: 1.10.2
+  configChecksum: 874c8feb34d26a7b70b5d994d58d4b62
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.6.3
+    core: 5.6.4
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     enumUnions: 0.1.0
@@ -28,7 +28,7 @@ features:
     retries: 3.0.2
     sdkHooks: 1.0.0
     tests: 1.6.0
-    unions: 3.0.2
+    unions: 3.0.3
 generatedFiles:
   - .gitattributes
   - .python-version
@@ -49,7 +49,7 @@ generatedFiles:
   - docs/models/deletedefinitionrequest.md
   - docs/models/dynamicduedate.md
   - docs/models/ecpdetails.md
-  - docs/models/errorresperror.md
+  - docs/models/errorresp.md
   - docs/models/flow.md
   - docs/models/getallclosingreasonsrequest.md
   - docs/models/getdefinitionrequest.md
@@ -100,7 +100,7 @@ generatedFiles:
   - src/openapi/models/deletedefinitionop.py
   - src/openapi/models/dynamicduedate.py
   - src/openapi/models/ecpdetails.py
-  - src/openapi/models/errorresp_error.py
+  - src/openapi/models/errorresp.py
   - src/openapi/models/getallclosingreasonsop.py
   - src/openapi/models/getdefinitionop.py
   - src/openapi/models/getworkflowclosingreasonsop.py

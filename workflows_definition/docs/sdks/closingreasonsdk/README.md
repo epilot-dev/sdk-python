@@ -38,10 +38,10 @@ s.closing_reason.change_reason_status(reason_id="<value>")
 
 ### Errors
 
-| Error Type            | Status Code           | Content Type          |
-| --------------------- | --------------------- | --------------------- |
-| models.ErrorRespError | 400, 500              | application/json      |
-| models.SDKError       | 4XX, 5XX              | \*/\*                 |
+| Error Type       | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| models.ErrorResp | 400, 500         | application/json |
+| models.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## create_closing_reason
 
