@@ -1,50 +1,90 @@
 # epilot-entity
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=entity
 ```
-<!-- End SDK Installation -->
 
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
+```bash
+poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=entity
+```
+<!-- End SDK Installation [installation] -->
+
+<!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
-<!-- Start SDK Example Usage -->
-```python
-import epilot
-from epilot.models import operations, shared
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+### Example
+
+```python
+# Synchronous Example
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 )
 
-req = operations.AttachActivityRequest(
-    entities=[
-        'ee1dee63-2954-4671-8246-751c43fec091',
-    ],
-    id='01F130Q52Q6MWSNS8N2AVXV4JN',
-)
+res = s.activity.attach_activity(request={
+    "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
 
-res = s.activity.attach_activity(req)
-
-if res.activity_item is not None:
+if res is not None:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
 
-<!-- Start SDK Available Operations -->
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_entity
+from epilot_entity import Epilot
+
+async def main():
+    s = Epilot(
+        security=epilot_entity.Security(
+            epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+        ),
+    )
+    res = await s.activity.attach_activity_async(request={
+        "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+    })
+    if res is not None:
+        # handle response
+        pass
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
+
+<!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+<details open>
+<summary>Available methods</summary>
 
-### [activity](docs/sdks/activity/README.md)
+### [activity](docs/sdks/activitysdk/README.md)
 
-* [attach_activity](docs/sdks/activity/README.md#attach_activity) - attachActivity
-* [create_activity](docs/sdks/activity/README.md#create_activity) - createActivity
-* [get_activity](docs/sdks/activity/README.md#get_activity) - getActivity
-* [get_entity_activity_feed](docs/sdks/activity/README.md#get_entity_activity_feed) - getEntityActivityFeed
+* [attach_activity](docs/sdks/activitysdk/README.md#attach_activity) - attachActivity
+* [create_activity](docs/sdks/activitysdk/README.md#create_activity) - createActivity
+* [get_activity](docs/sdks/activitysdk/README.md#get_activity) - getActivity
+* [get_entity_activity_feed](docs/sdks/activitysdk/README.md#get_entity_activity_feed) - getEntityActivityFeed
 
 ### [entities](docs/sdks/entities/README.md)
 
@@ -52,18 +92,21 @@ if res.activity_item is not None:
 * [create_entity](docs/sdks/entities/README.md#create_entity) - createEntity
 * [delete_entity](docs/sdks/entities/README.md#delete_entity) - deleteEntity
 * [get_entity](docs/sdks/entities/README.md#get_entity) - getEntity
+* [get_entity_v2](docs/sdks/entities/README.md#get_entity_v2) - getEntityV2
+* [list_entities](docs/sdks/entities/README.md#list_entities) - listEntities
 * [patch_entity](docs/sdks/entities/README.md#patch_entity) - patchEntity
+* [restore_entity](docs/sdks/entities/README.md#restore_entity) - restoreEntity
 * [search_entities](docs/sdks/entities/README.md#search_entities) - searchEntities
 * [update_entity](docs/sdks/entities/README.md#update_entity) - updateEntity
 * [upsert_entity](docs/sdks/entities/README.md#upsert_entity) - upsertEntity
+* [validate_entity](docs/sdks/entities/README.md#validate_entity) - validateEntity
+* [validate_entity_v2](docs/sdks/entities/README.md#validate_entity_v2) - validateEntityV2
 
-### [entity_import](docs/sdks/entityimport/README.md)
 
-* [import_entities](docs/sdks/entityimport/README.md#import_entities) - Import Entities
+### [import_export](docs/sdks/importexport/README.md)
 
-### [export](docs/sdks/export/README.md)
-
-* [export_entities](docs/sdks/export/README.md#export_entities) - exportEntities
+* [export_entities](docs/sdks/importexport/README.md#export_entities) - exportEntities
+* [import_entities](docs/sdks/importexport/README.md#import_entities) - Import Entities
 
 ### [relations](docs/sdks/relations/README.md)
 
@@ -73,6 +116,7 @@ if res.activity_item is not None:
 * [get_relations](docs/sdks/relations/README.md#get_relations) - getRelations
 * [get_relations_v2](docs/sdks/relations/README.md#get_relations_v2) - getRelationsV2
 * [get_relations_v3](docs/sdks/relations/README.md#get_relations_v3) - getRelationsV3
+* [remove_relations](docs/sdks/relations/README.md#remove_relations) - removeRelations
 * [update_relation](docs/sdks/relations/README.md#update_relation) - updateRelation
 
 ### [saved_views](docs/sdks/savedviews/README.md)
@@ -86,55 +130,227 @@ if res.activity_item is not None:
 
 ### [schemas](docs/sdks/schemas/README.md)
 
+* [create_schema_attribute](docs/sdks/schemas/README.md#create_schema_attribute) - createSchemaAttribute
+* [create_schema_capability](docs/sdks/schemas/README.md#create_schema_capability) - createSchemaCapability
+* [create_schema_group](docs/sdks/schemas/README.md#create_schema_group) - createSchemaGroup
+* [create_schema_group_headline](docs/sdks/schemas/README.md#create_schema_group_headline) - createSchemaGroupHeadline
 * [delete_schema](docs/sdks/schemas/README.md#delete_schema) - deleteSchema
+* [delete_schema_attribute](docs/sdks/schemas/README.md#delete_schema_attribute) - deleteSchemaAttribute
+* [delete_schema_capability](docs/sdks/schemas/README.md#delete_schema_capability) - deleteSchemaCapability
+* [delete_schema_group](docs/sdks/schemas/README.md#delete_schema_group) - deleteSchemaGroup
+* [delete_schema_group_headline](docs/sdks/schemas/README.md#delete_schema_group_headline) - deleteSchemaGroupHeadline
+* [get_json_schema](docs/sdks/schemas/README.md#get_json_schema) - getJsonSchema
 * [get_schema](docs/sdks/schemas/README.md#get_schema) - getSchema
+* [get_schema_attribute](docs/sdks/schemas/README.md#get_schema_attribute) - getSchemaAttribute
+* [get_schema_capability](docs/sdks/schemas/README.md#get_schema_capability) - getSchemaCapability
+* [get_schema_example](docs/sdks/schemas/README.md#get_schema_example) - getSchemaExample
+* [get_schema_group](docs/sdks/schemas/README.md#get_schema_group) - getSchemaGroup
+* [get_schema_group_headline](docs/sdks/schemas/README.md#get_schema_group_headline) - getSchemaGroupHeadline
 * [get_schema_versions](docs/sdks/schemas/README.md#get_schema_versions) - getSchemaVersions
 * [list_schema_blueprints](docs/sdks/schemas/README.md#list_schema_blueprints) - listSchemaBlueprints
 * [list_schemas](docs/sdks/schemas/README.md#list_schemas) - listSchemas
 * [list_taxonomy_classifications_for_schema](docs/sdks/schemas/README.md#list_taxonomy_classifications_for_schema) - listTaxonomyClassificationsForSchema
 * [put_schema](docs/sdks/schemas/README.md#put_schema) - putSchema
+* [put_schema_attribute](docs/sdks/schemas/README.md#put_schema_attribute) - putSchemaAttribute
+* [put_schema_capability](docs/sdks/schemas/README.md#put_schema_capability) - putSchemaCapability
+* [put_schema_group](docs/sdks/schemas/README.md#put_schema_group) - putSchemaGroup
+* [put_schema_group_headline](docs/sdks/schemas/README.md#put_schema_group_headline) - putSchemaGroupHeadline
 
-### [taxonomy](docs/sdks/taxonomy/README.md)
+### [taxonomy](docs/sdks/taxonomysdk/README.md)
 
-* [get_taxonomy](docs/sdks/taxonomy/README.md#get_taxonomy) - getTaxonomy
-* [list_taxonomies](docs/sdks/taxonomy/README.md#list_taxonomies) - listTaxonomies
-* [taxonomies_classifications_search](docs/sdks/taxonomy/README.md#taxonomies_classifications_search) - taxonomiesClassificationsSearch
-* [taxonomy_autocomplete](docs/sdks/taxonomy/README.md#taxonomy_autocomplete) - taxonomyAutocomplete
-* [update_classifications_for_taxonomy](docs/sdks/taxonomy/README.md#update_classifications_for_taxonomy) - updateClassificationsForTaxonomy
-<!-- End SDK Available Operations -->
+* [bulk_delete_classifications](docs/sdks/taxonomysdk/README.md#bulk_delete_classifications) - bulkDeleteClassifications
+* [bulk_move_classifications](docs/sdks/taxonomysdk/README.md#bulk_move_classifications) - bulkMoveClassifications
+* [create_taxonomy](docs/sdks/taxonomysdk/README.md#create_taxonomy) - createTaxonomy
+* [delete_taxonomy](docs/sdks/taxonomysdk/README.md#delete_taxonomy) - deleteTaxonomy
+* [delete_taxonomy_classification](docs/sdks/taxonomysdk/README.md#delete_taxonomy_classification) - deleteTaxonomyClassification
+* [get_jobs](docs/sdks/taxonomysdk/README.md#get_jobs) - getJobs
+* [get_taxonomy](docs/sdks/taxonomysdk/README.md#get_taxonomy) - getTaxonomy
+* [get_taxonomy_classification](docs/sdks/taxonomysdk/README.md#get_taxonomy_classification) - getTaxonomyClassification
+* [list_taxonomies](docs/sdks/taxonomysdk/README.md#list_taxonomies) - listTaxonomies
+* [taxonomies_classifications_search](docs/sdks/taxonomysdk/README.md#taxonomies_classifications_search) - taxonomiesClassificationsSearch
+* [taxonomy_autocomplete](docs/sdks/taxonomysdk/README.md#taxonomy_autocomplete) - taxonomyAutocomplete
+* [update_classifications_for_taxonomy](docs/sdks/taxonomysdk/README.md#update_classifications_for_taxonomy) - updateClassificationsForTaxonomy
+* [update_taxonomy](docs/sdks/taxonomysdk/README.md#update_taxonomy) - updateTaxonomy
+* [update_taxonomy_classification](docs/sdks/taxonomysdk/README.md#update_taxonomy_classification) - updateTaxonomyClassification
 
-
-
-<!-- Start Dev Containers -->
-
-<!-- End Dev Containers -->
-
-
-
-<!-- Start Pagination -->
-# Pagination
-
-Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
-returned response object will have a `Next` method that can be called to pull down the next group of results. If the
-return value of `Next` is `None`, then there are no more pages to be fetched.
-
-Here's an example of one such pagination call:
-<!-- End Pagination -->
+</details>
+<!-- End Available Resources and Operations [operations] -->
 
 
 
-<!-- Start Error Handling -->
-# Error Handling
-
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-<!-- End Error Handling -->
 
 
 
-<!-- Start Server Selection -->
-# Server Selection
 
-## Select Server by Index
+<!-- Start Error Handling [errors] -->
+## Error Handling
+
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+
+By default, an API error will raise a models.SDKError exception, which has the following properties:
+
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_entity_async` method may raise the following exceptions:
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| models.EntityValidationV2ResultError | 422                                  | application/json                     |
+| models.SDKError                      | 4XX, 5XX                             | \*/\*                                |
+
+### Example
+
+```python
+import epilot_entity
+from epilot_entity import Epilot, models
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+res = None
+try:
+    res = s.entities.create_entity(request={
+        "slug": "contact",
+        "entity": epilot_entity.EntityInput(
+            acl=epilot_entity.EntityACL(
+                delete=[
+                    "org:456",
+                ],
+                edit=[
+                    "org:456",
+                ],
+                view=[
+                    "org:456",
+                ],
+                **{
+
+                },
+            ),
+            manifest=[
+                "123e4567-e89b-12d3-a456-426614174000",
+            ],
+            schema_="contact",
+            **{
+                "status": "Active",
+                "customer_number": "abc123",
+                "first_name": "First",
+                "middle_name": "Middle",
+                "last_name": "Last",
+                "title": "Herr Prof. Dr.",
+                "email": [
+                    {
+                        "email": "user@example.com",
+                        "_tags": [
+                            "work",
+                        ],
+                    },
+                ],
+                "phone": [
+                    {
+                        "phone": "+49123456789",
+                        "_tags": [
+                            "personal",
+                            "mobile",
+                        ],
+                    },
+                ],
+                "address": [
+                    {
+                        "country": "Germany",
+                        "city": "Koln",
+                        "postal_code": 81475,
+                        "street": "Melatengürtel",
+                        "street_number": 71,
+                        "additional_info": "5. Etage",
+                        "_tags": [
+                            "billing",
+                            "delivery",
+                        ],
+                    },
+                ],
+                "birthdate": "2019-08-24",
+                "account": {
+                    "$relation": [
+                        {
+                            "entity_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                            "_tags": [
+                                "company",
+                            ],
+                        },
+                    ],
+                },
+                "consent_email_marketing": {
+                    "status": "OPTED_IN",
+                    "events": [
+                        {
+                            "type": "OPT_IN",
+                            "organization_id": "123",
+                            "created_at": "2021-07-05T09:12:29.352Z",
+                            "topic": "EMAIL_MARKETING",
+                            "identifier": "user@example.com",
+                            "source": "https://consent.sls.epilot.io/optin?token=abc123",
+                            "meta": {
+                                "ip_address": "1.1.1.1",
+                                "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+                            },
+                        },
+                        {
+                            "type": "DOUBLE_OPT_IN_REQUEST",
+                            "organization_id": "123",
+                            "created_at": "2021-07-05T08:12:29.352Z",
+                            "topic": "EMAIL_MARKETING",
+                            "identifier": "user@example.com",
+                            "source": "consent-api",
+                            "meta": {
+                                "token": "abc123",
+                            },
+                        },
+                        {
+                            "type": "OPT_IN",
+                            "organization_id": "123",
+                            "created_at": "2021-07-04T09:12:29.352Z",
+                            "topic": "EMAIL_MARKETING",
+                            "identifier": "user@example.com",
+                            "source": "https://frontend.epilot.cloud",
+                            "meta": {
+                                "ip_address": "1.1.1.1",
+                                "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+                            },
+                        },
+                    ],
+                },
+            },
+        ),
+        "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+    })
+
+    if res is not None:
+        # handle response
+        pass
+
+except models.EntityValidationV2ResultError as e:
+    # handle e.data: models.EntityValidationV2ResultErrorData
+    raise(e)
+except models.SDKError as e:
+    # handle exception
+    raise(e)
+```
+<!-- End Error Handling [errors] -->
+
+
+
+<!-- Start Server Selection [server] -->
+## Server Selection
+
+### Select Server by Index
 
 You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
@@ -142,85 +358,273 @@ You can override the default server globally by passing a server index to the `s
 | - | ------ | --------- |
 | 0 | `https://entity.sls.epilot.io` | None |
 
-For example:
-
+#### Example
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    server_idx=0,
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-    server_idx=0
 )
 
-req = operations.AttachActivityRequest(
-    entities=[
-        'ee1dee63-2954-4671-8246-751c43fec091',
-    ],
-    id='01F130Q52Q6MWSNS8N2AVXV4JN',
-)
+res = s.activity.attach_activity(request={
+    "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
 
-res = s.activity.attach_activity(req)
-
-if res.activity_item is not None:
+if res is not None:
     # handle response
     pass
+
 ```
 
 
-## Override Server URL Per-Client
+### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
-
-
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+s = Epilot(
+    server_url="https://entity.sls.epilot.io",
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-    server_url="https://entity.sls.epilot.io"
 )
 
-req = operations.AttachActivityRequest(
-    entities=[
-        'ee1dee63-2954-4671-8246-751c43fec091',
-    ],
-    id='01F130Q52Q6MWSNS8N2AVXV4JN',
-)
+res = s.activity.attach_activity(request={
+    "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
 
-res = s.activity.attach_activity(req)
-
-if res.activity_item is not None:
+if res is not None:
     # handle response
     pass
+
 ```
-<!-- End Server Selection -->
+<!-- End Server Selection [server] -->
 
 
 
-<!-- Start Custom HTTP Client -->
-# Custom HTTP Client
+<!-- Start Custom HTTP Client [http-client] -->
+## Custom HTTP Client
 
-The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+The Python SDK makes API calls using the [httpx](https://www.python-httpx.org/) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with your own HTTP client instance.
+Depending on whether you are using the sync or async version of the SDK, you can pass an instance of `HttpClient` or `AsyncHttpClient` respectively, which are Protocol's ensuring that the client has the necessary methods to make API calls.
+This allows you to wrap the client with your own custom logic, such as adding custom headers, logging, or error handling, or you can just pass an instance of `httpx.Client` or `httpx.AsyncClient` directly.
 
-
-For example, you could specify a header for every request that your sdk makes as follows:
-
+For example, you could specify a header for every request that this sdk makes as follows:
 ```python
-import epilot
-import requests
+from epilot_entity import Epilot
+import httpx
 
-http_client = requests.Session()
-http_client.headers.update({'x-custom-header': 'someValue'})
-s = epilot.Epilot(client: http_client)
+http_client = httpx.Client(headers={"x-custom-header": "someValue"})
+s = Epilot(client=http_client)
 ```
-<!-- End Custom HTTP Client -->
+
+or you could wrap the client with your own custom logic:
+```python
+from epilot_entity import Epilot
+from epilot_entity.httpclient import AsyncHttpClient
+import httpx
+
+class CustomClient(AsyncHttpClient):
+    client: AsyncHttpClient
+
+    def __init__(self, client: AsyncHttpClient):
+        self.client = client
+
+    async def send(
+        self,
+        request: httpx.Request,
+        *,
+        stream: bool = False,
+        auth: Union[
+            httpx._types.AuthTypes, httpx._client.UseClientDefault, None
+        ] = httpx.USE_CLIENT_DEFAULT,
+        follow_redirects: Union[
+            bool, httpx._client.UseClientDefault
+        ] = httpx.USE_CLIENT_DEFAULT,
+    ) -> httpx.Response:
+        request.headers["Client-Level-Header"] = "added by client"
+
+        return await self.client.send(
+            request, stream=stream, auth=auth, follow_redirects=follow_redirects
+        )
+
+    def build_request(
+        self,
+        method: str,
+        url: httpx._types.URLTypes,
+        *,
+        content: Optional[httpx._types.RequestContent] = None,
+        data: Optional[httpx._types.RequestData] = None,
+        files: Optional[httpx._types.RequestFiles] = None,
+        json: Optional[Any] = None,
+        params: Optional[httpx._types.QueryParamTypes] = None,
+        headers: Optional[httpx._types.HeaderTypes] = None,
+        cookies: Optional[httpx._types.CookieTypes] = None,
+        timeout: Union[
+            httpx._types.TimeoutTypes, httpx._client.UseClientDefault
+        ] = httpx.USE_CLIENT_DEFAULT,
+        extensions: Optional[httpx._types.RequestExtensions] = None,
+    ) -> httpx.Request:
+        return self.client.build_request(
+            method,
+            url,
+            content=content,
+            data=data,
+            files=files,
+            json=json,
+            params=params,
+            headers=headers,
+            cookies=cookies,
+            timeout=timeout,
+            extensions=extensions,
+        )
+
+s = Epilot(async_client=CustomClient(httpx.AsyncClient()))
+```
+<!-- End Custom HTTP Client [http-client] -->
+
+<!-- Start Summary [summary] -->
+## Summary
+
+Entity API: Flexible data layer for epilot Entities.
+
+Use this API configure and access your business objects like Contacts, Opportunities and Products.
+
+[Feature Documentation](https://docs.epilot.io/docs/entities/flexible-entities)
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [IDE Support](#ide-support)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
+
+<!-- Start Retries [retries] -->
+## Retries
+
+Some of the endpoints in this SDK support retries. If you use the SDK without any configuration, it will fall back to the default retry strategy provided by the API. However, the default retry strategy can be overridden on a per-operation basis, or across the entire SDK.
+
+To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
+```python
+from epilot.utils import BackoffStrategy, RetryConfig
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+res = s.activity.attach_activity(request={
+    "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+},
+    RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
+
+if res is not None:
+    # handle response
+    pass
+
+```
+
+If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
+```python
+from epilot.utils import BackoffStrategy, RetryConfig
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+res = s.activity.attach_activity(request={
+    "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+<!-- End Retries [retries] -->
+
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security schemes globally:
+
+| Name          | Type          | Scheme        |
+| ------------- | ------------- | ------------- |
+| `epilot_auth` | http          | HTTP Bearer   |
+| `epilot_org`  | apiKey        | API key       |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+s = Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+)
+
+res = s.activity.attach_activity(request={
+    "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+})
+
+if res is not None:
+    # handle response
+    pass
+
+```
+<!-- End Authentication [security] -->
+
+<!-- Start Debugging [debug] -->
+## Debugging
+
+You can setup your SDK to emit debug logs for SDK requests and responses.
+
+You can pass your own logger class directly into your SDK.
+```python
+from epilot_entity import Epilot
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+s = Epilot(debug_logger=logging.getLogger("epilot_entity"))
+```
+<!-- End Debugging [debug] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

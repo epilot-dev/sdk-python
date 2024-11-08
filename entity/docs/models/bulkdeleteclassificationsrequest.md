@@ -1,0 +1,9 @@
+# BulkDeleteClassificationsRequest
+
+
+## Fields
+
+| Field                                                                                                      | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request_body`                                                                                             | [Optional[models.BulkDeleteClassificationsRequestBody]](../models/bulkdeleteclassificationsrequestbody.md) | :heavy_minus_sign:                                                                                         | N/A                                                                                                        |
+| `permanent`                                                                                                | *Optional[bool]*                                                                                           | :heavy_minus_sign:                                                                                         | Whether to permanently delete the classifications or just archive them                                     |
