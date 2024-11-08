@@ -3,18 +3,17 @@
 from __future__ import annotations
 from .assignment import Assignment, AssignmentTypedDict
 from epilot_permissions.types import BaseModel
-from typing import List, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import List, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class ListAllAssignmentsResponseBodyTypedDict(TypedDict):
     r"""ok"""
-    
+
     assignments: NotRequired[List[AssignmentTypedDict]]
-    
+
 
 class ListAllAssignmentsResponseBody(BaseModel):
     r"""ok"""
-    
+
     assignments: Optional[List[Assignment]] = None
-    
