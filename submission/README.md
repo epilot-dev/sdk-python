@@ -264,9 +264,9 @@ By default, an API error will raise a models.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_submission_async` method may raise the following exceptions:
 
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| models.SDKError | 4XX, 5XX        | \*/\*           |
+| Error Type      | Status Code | Content Type |
+| --------------- | ----------- | ------------ |
+| models.SDKError | 4XX, 5XX    | \*/\*        |
 
 ### Example
 
@@ -325,66 +325,6 @@ except models.SDKError as e:
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://submission.sls.epilot.io` | None |
-
-#### Example
-
-```python
-import epilot_submission
-from epilot_submission import Epilot
-
-s = Epilot(
-    server_idx=0,
-)
-
-s.submissions.create_submission(request={
-    "entities": [
-        epilot_submission.SubmissionEntity(
-            schema_=epilot_submission.Schema.SUBMISSION,
-            description="Submission created via API",
-            files=[
-                epilot_submission.Files(
-                    s3ref={
-                        "bucket": "epilot-user-content",
-                        "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-                    },
-                    filename="document.pdf",
-                    **{
-
-                    },
-                ),
-            ],
-            **{
-                "contact_first_name": "First",
-                "contact_last_name": "Last",
-                "contact_email": "example@submission.com",
-                "request": "I would like to know more about electric vehicles",
-            },
-        ),
-    ],
-    "organization_id": "123",
-    "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
-    "source_type": "journey",
-    "journey_submit_id": "123",
-    "opt_ins": [
-        {
-            "identifier": "example@email.com",
-            "topic": "EMAIL_MARKETING",
-        },
-    ],
-})
-
-# Use the SDK ...
-
-```
-
 
 ### Override Server URL Per-Client
 
@@ -527,9 +467,9 @@ s = Epilot(async_client=CustomClient(httpx.AsyncClient()))
 
 This SDK supports the following security scheme globally:
 
-| Name          | Type          | Scheme        |
-| ------------- | ------------- | ------------- |
-| `epilot_auth` | http          | HTTP Bearer   |
+| Name          | Type | Scheme      |
+| ------------- | ---- | ----------- |
+| `epilot_auth` | http | HTTP Bearer |
 
 To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
