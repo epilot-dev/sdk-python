@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 from epilot_permissions.types import BaseModel
-from typing import List, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import List, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class RoleSearchInputTypedDict(TypedDict):
@@ -19,19 +19,23 @@ class RoleSearchInputTypedDict(TypedDict):
     r"""List of role ids to filter by"""
     slugs: NotRequired[List[str]]
     r"""List of role slugs to filter by"""
-    
+
 
 class RoleSearchInput(BaseModel):
     limit: Optional[float] = 50
     r"""The Number of roles to return"""
+
     offset: Optional[float] = 0
     r"""The number of roles to skip before starting to collect the result set"""
+
     org_ids: Optional[List[str]] = None
     r"""List of organization ids to filter by"""
+
     query: Optional[str] = None
     r"""Input to search across fields"""
+
     role_ids: Optional[List[str]] = None
     r"""List of role ids to filter by"""
+
     slugs: Optional[List[str]] = None
     r"""List of role slugs to filter by"""
-    
