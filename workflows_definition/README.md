@@ -140,10 +140,10 @@ By default, an API error will raise a models.SDKError exception, which has the f
 
 When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `change_reason_status_async` method may raise the following exceptions:
 
-| Error Type       | Status Code      | Content Type     |
-| ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 400, 500         | application/json |
-| models.SDKError  | 4XX, 5XX         | \*/\*            |
+| Error Type       | Status Code | Content Type     |
+| ---------------- | ----------- | ---------------- |
+| models.ErrorResp | 400, 500    | application/json |
+| models.SDKError  | 4XX, 5XX    | \*/\*            |
 
 ### Example
 
@@ -171,31 +171,6 @@ except models.SDKError as e:
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://workflows-definition.sls.epilot.io` | None |
-
-#### Example
-
-```python
-from openapi import SDK
-
-s = SDK(
-    server_idx=0,
-    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-s.closing_reason.change_reason_status(reason_id="<value>")
-
-# Use the SDK ...
-
-```
-
 
 ### Override Server URL Per-Client
 
@@ -303,9 +278,9 @@ s = SDK(async_client=CustomClient(httpx.AsyncClient()))
 
 This SDK supports the following security scheme globally:
 
-| Name          | Type          | Scheme        |
-| ------------- | ------------- | ------------- |
-| `bearer_auth` | http          | HTTP Bearer   |
+| Name          | Type | Scheme      |
+| ------------- | ---- | ----------- |
+| `bearer_auth` | http | HTTP Bearer |
 
 To authenticate with the API the `bearer_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
