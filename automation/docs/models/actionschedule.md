@@ -1,0 +1,13 @@
+# ActionSchedule
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `id`                                                                             | *str*                                                                            | :heavy_check_mark:                                                               | Schedule Id                                                                      |
+| `source`                                                                         | [models.ActionScheduleSource](../models/actionschedulesource.md)                 | :heavy_check_mark:                                                               | The source of the schedule_at timestamp that will be used to schedule the action |
+| `configured_schedule_id`                                                         | *Optional[str]*                                                                  | :heavy_minus_sign:                                                               | The id of the configured scheduler which will be added on automation triggered   |
+| `number_of_units`                                                                | *Optional[float]*                                                                | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `time_period`                                                                    | [Optional[models.TimePeriod]](../models/timeperiod.md)                           | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `time_relation`                                                                  | [Optional[models.TimeRelation]](../models/timerelation.md)                       | :heavy_minus_sign:                                                               | N/A                                                                              |
