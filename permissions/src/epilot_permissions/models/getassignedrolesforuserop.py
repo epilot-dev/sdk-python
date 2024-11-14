@@ -4,14 +4,16 @@ from __future__ import annotations
 from epilot_permissions.types import BaseModel
 from epilot_permissions.utils import FieldMetadata, PathParamMetadata
 import pydantic
-from typing import TypedDict
-from typing_extensions import Annotated
+from typing_extensions import Annotated, TypedDict
 
 
 class GetAssignedRolesForUserRequestTypedDict(TypedDict):
     user_id: str
-    
+
 
 class GetAssignedRolesForUserRequest(BaseModel):
-    user_id: Annotated[str, pydantic.Field(alias="userId"), FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
-    
+    user_id: Annotated[
+        str,
+        pydantic.Field(alias="userId"),
+        FieldMetadata(path=PathParamMetadata(style="simple", explode=False)),
+    ]
