@@ -3,44 +3,129 @@ id: e5cfd20b-f8be-4594-b69d-562b2d361141
 management:
   docChecksum: a0eeed3cfdea16b280c0906629448e71
   docVersion: 1.0.0
-  speakeasyVersion: 1.352.2
-  generationVersion: 2.385.2
-  releaseVersion: 1.3.0
-  configChecksum: 7db05397b1def4c1a8e44640b46a075d
+  speakeasyVersion: 1.440.0
+  generationVersion: 2.457.9
+  releaseVersion: 1.4.0
+  configChecksum: e898e6bc8c7244336f042ac93d8c3971
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: permissions
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=permissions
 features:
   python:
     additionalDependencies: 1.0.0
-    constsAndDefaults: 1.0.1
-    core: 5.3.3
+    constsAndDefaults: 1.0.4
+    core: 5.6.5
     defaultEnabledRetries: 0.2.0
-    envVarSecurityUsage: 0.3.1
-    flattening: 3.0.0
-    globalSecurity: 3.0.1
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.2
+    flattening: 3.1.0
+    globalSecurity: 3.0.2
     globalSecurityCallbacks: 1.0.0
     globalServerURLs: 3.0.0
-    responseFormat: 1.0.0
-    retries: 3.0.0
+    methodArguments: 1.0.2
+    responseFormat: 1.0.1
+    retries: 3.0.2
     sdkHooks: 1.0.0
-    unions: 3.0.1
+    tests: 1.6.0
+    unions: 3.0.3
 generatedFiles:
-  - src/epilot_permissions/sdkconfiguration.py
-  - src/epilot_permissions/assignments.py
-  - src/epilot_permissions/roles.py
-  - src/epilot_permissions/sdk.py
+  - .gitattributes
+  - .python-version
   - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/addassignmentrequest.md
+  - docs/models/assignment.md
+  - docs/models/assignrolesrequest.md
+  - docs/models/deleterolerequest.md
+  - docs/models/effect.md
+  - docs/models/equalscondition.md
+  - docs/models/getassignedrolesforuserrequest.md
+  - docs/models/getrolerequest.md
+  - docs/models/grant.md
+  - docs/models/grantcondition.md
+  - docs/models/grantwithdependencies.md
+  - docs/models/grantwithdependencieseffect.md
+  - docs/models/listallassignmentsresponsebody.md
+  - docs/models/listallrolesresponsebody.md
+  - docs/models/listcurrentrolesresponsebody.md
+  - docs/models/operation.md
+  - docs/models/orgrole.md
+  - docs/models/orgroletype.md
+  - docs/models/partnerrole.md
+  - docs/models/partnerroleschemas.md
+  - docs/models/partnerroletype.md
+  - docs/models/portalrole.md
+  - docs/models/portalroleschemas.md
+  - docs/models/portalroletype.md
+  - docs/models/putrolerequest.md
+  - docs/models/removeassignmentrequest.md
+  - docs/models/role.md
+  - docs/models/rolepayload.md
+  - docs/models/rolesearchinput.md
+  - docs/models/schemas.md
+  - docs/models/schemasportalroletype.md
+  - docs/models/schemasshareroletype.md
+  - docs/models/schemastype.md
+  - docs/models/schemasuserroletype.md
+  - docs/models/searchrolesresponsebody.md
+  - docs/models/security.md
+  - docs/models/sharerole.md
+  - docs/models/shareroleschemas.md
+  - docs/models/shareroletype.md
+  - docs/models/type.md
+  - docs/models/userrole.md
+  - docs/models/userroleschemas.md
+  - docs/models/userroletype.md
+  - docs/models/utils/retryconfig.md
+  - docs/sdks/assignments/README.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/roles/README.md
   - poetry.toml
   - py.typed
   - pylintrc
   - pyproject.toml
-  - scripts/compile.sh
+  - scripts/prepare-readme.py
   - scripts/publish.sh
   - src/epilot_permissions/__init__.py
+  - src/epilot_permissions/_hooks/__init__.py
+  - src/epilot_permissions/_hooks/sdkhooks.py
+  - src/epilot_permissions/_hooks/types.py
+  - src/epilot_permissions/_version.py
+  - src/epilot_permissions/assignments.py
   - src/epilot_permissions/basesdk.py
   - src/epilot_permissions/httpclient.py
+  - src/epilot_permissions/models/__init__.py
+  - src/epilot_permissions/models/addassignmentop.py
+  - src/epilot_permissions/models/assignment.py
+  - src/epilot_permissions/models/assignrolesop.py
+  - src/epilot_permissions/models/deleteroleop.py
+  - src/epilot_permissions/models/equalscondition.py
+  - src/epilot_permissions/models/getassignedrolesforuserop.py
+  - src/epilot_permissions/models/getroleop.py
+  - src/epilot_permissions/models/grant.py
+  - src/epilot_permissions/models/grantcondition.py
+  - src/epilot_permissions/models/grantwithdependencies.py
+  - src/epilot_permissions/models/listallassignmentsop.py
+  - src/epilot_permissions/models/listallrolesop.py
+  - src/epilot_permissions/models/listcurrentrolesop.py
+  - src/epilot_permissions/models/orgrole.py
+  - src/epilot_permissions/models/partnerrole.py
+  - src/epilot_permissions/models/portalrole.py
+  - src/epilot_permissions/models/putroleop.py
+  - src/epilot_permissions/models/removeassignmentop.py
+  - src/epilot_permissions/models/role.py
+  - src/epilot_permissions/models/rolepayload.py
+  - src/epilot_permissions/models/rolesearchinput.py
+  - src/epilot_permissions/models/sdkerror.py
+  - src/epilot_permissions/models/searchrolesop.py
+  - src/epilot_permissions/models/security.py
+  - src/epilot_permissions/models/sharerole.py
+  - src/epilot_permissions/models/userrole.py
   - src/epilot_permissions/py.typed
+  - src/epilot_permissions/roles.py
+  - src/epilot_permissions/sdk.py
+  - src/epilot_permissions/sdkconfiguration.py
   - src/epilot_permissions/types/__init__.py
   - src/epilot_permissions/types/basemodel.py
   - src/epilot_permissions/utils/__init__.py
@@ -58,83 +143,89 @@ generatedFiles:
   - src/epilot_permissions/utils/serializers.py
   - src/epilot_permissions/utils/url.py
   - src/epilot_permissions/utils/values.py
-  - src/epilot_permissions/models/sdkerror.py
-  - src/epilot_permissions/models/assignment.py
-  - src/epilot_permissions/models/addassignmentop.py
-  - src/epilot_permissions/models/assignrolesop.py
-  - src/epilot_permissions/models/getassignedrolesforuserop.py
-  - src/epilot_permissions/models/listallassignmentsop.py
-  - src/epilot_permissions/models/removeassignmentop.py
-  - src/epilot_permissions/models/role.py
-  - src/epilot_permissions/models/userrole.py
-  - src/epilot_permissions/models/grant.py
-  - src/epilot_permissions/models/grantcondition.py
-  - src/epilot_permissions/models/equalscondition.py
-  - src/epilot_permissions/models/orgrole.py
-  - src/epilot_permissions/models/sharerole.py
-  - src/epilot_permissions/models/partnerrole.py
-  - src/epilot_permissions/models/portalrole.py
-  - src/epilot_permissions/models/deleteroleop.py
-  - src/epilot_permissions/models/getroleop.py
-  - src/epilot_permissions/models/listallrolesop.py
-  - src/epilot_permissions/models/listcurrentrolesop.py
-  - src/epilot_permissions/models/putroleop.py
-  - src/epilot_permissions/models/rolepayload.py
-  - src/epilot_permissions/models/grantwithdependencies.py
-  - src/epilot_permissions/models/searchrolesop.py
-  - src/epilot_permissions/models/rolesearchinput.py
-  - src/epilot_permissions/models/security.py
-  - src/epilot_permissions/models/__init__.py
-  - docs/models/assignment.md
-  - docs/models/addassignmentrequest.md
-  - docs/models/assignrolesrequest.md
-  - docs/models/getassignedrolesforuserrequest.md
-  - docs/models/listallassignmentsresponsebody.md
-  - docs/models/removeassignmentrequest.md
-  - docs/models/role.md
-  - docs/models/userroletype.md
-  - docs/models/userrole.md
-  - docs/models/effect.md
-  - docs/models/grant.md
-  - docs/models/grantcondition.md
-  - docs/models/operation.md
-  - docs/models/equalscondition.md
-  - docs/models/orgroletype.md
-  - docs/models/orgrole.md
-  - docs/models/shareroletype.md
-  - docs/models/sharerole.md
-  - docs/models/partnerroletype.md
-  - docs/models/partnerrole.md
-  - docs/models/portalroletype.md
-  - docs/models/portalrole.md
-  - docs/models/deleterolerequest.md
-  - docs/models/getrolerequest.md
-  - docs/models/listallrolesresponsebody.md
-  - docs/models/listcurrentrolesresponsebody.md
-  - docs/models/putrolerequest.md
-  - docs/models/schemasportalroletype.md
-  - docs/models/portalroleschemas.md
-  - docs/models/schemastype.md
-  - docs/models/partnerroleschemas.md
-  - docs/models/schemasshareroletype.md
-  - docs/models/shareroleschemas.md
-  - docs/models/type.md
-  - docs/models/schemas.md
-  - docs/models/schemasuserroletype.md
-  - docs/models/userroleschemas.md
-  - docs/models/rolepayload.md
-  - docs/models/grantwithdependencieseffect.md
-  - docs/models/grantwithdependencies.md
-  - docs/models/searchrolesresponsebody.md
-  - docs/models/rolesearchinput.md
-  - docs/models/security.md
-  - docs/sdks/epilot/README.md
-  - docs/models/utils/retryconfig.md
-  - docs/sdks/assignments/README.md
-  - docs/sdks/roles/README.md
-  - USAGE.md
-  - .gitattributes
-  - src/epilot_permissions/_hooks/sdkhooks.py
-  - src/epilot_permissions/_hooks/types.py
-  - src/epilot_permissions/_hooks/__init__.py
-  - CONTRIBUTING.md
+examples:
+  addAssignment:
+    speakeasy-default-add-assignment:
+      parameters:
+        path:
+          userId: "1"
+          roleId: "123:owner"
+      responses:
+        "201":
+          application/json: {"roles": ["123:owner"], "user_id": "1"}
+  assignRoles:
+    speakeasy-default-assign-roles:
+      parameters:
+        path:
+          userId: "1"
+      requestBody:
+        application/json: ["123:owner"]
+      responses:
+        "200":
+          application/json: ["123:owner"]
+  getAssignedRolesForUser:
+    speakeasy-default-get-assigned-roles-for-user:
+      parameters:
+        path:
+          userId: "1"
+      responses:
+        "200":
+          application/json: ["123:owner"]
+  listAllAssignments:
+    speakeasy-default-list-all-assignments:
+      responses:
+        "200":
+          application/json: {"assignments": [{"roles": ["123:owner"], "user_id": "1"}, {"roles": ["123:owner"], "user_id": "1"}, {"roles": ["123:owner"], "user_id": "1"}]}
+  removeAssignment:
+    speakeasy-default-remove-assignment:
+      parameters:
+        path:
+          userId: "1"
+          roleId: "123:owner"
+      responses:
+        "200":
+          application/json: {"roles": ["123:owner"], "user_id": "1"}
+  deleteRole:
+    speakeasy-default-delete-role:
+      parameters:
+        path:
+          roleId: "123:owner"
+      responses:
+        "200":
+          application/json: {"expires_at": "2028-07-21T17:32:28Z", "grants": [], "id": "123:owner", "name": "Owner", "organization_id": "123", "slug": "owner", "type": "user_role"}
+  getRole:
+    speakeasy-default-get-role:
+      parameters:
+        path:
+          roleId: "123:owner"
+      responses:
+        "200":
+          application/json: {"expires_at": "2028-07-21T17:32:28Z", "grants": [], "id": "123:owner", "name": "Owner", "organization_id": "123", "partner_org_id": "123", "slug": "owner", "type": "partner_role"}
+  listAllRoles:
+    speakeasy-default-list-all-roles:
+      responses:
+        "200":
+          application/json: {"roles": [{"expires_at": "2028-07-21T17:32:28Z", "grants": [], "id": "123:owner", "name": "Owner", "organization_id": "123", "slug": "owner", "type": "share_role"}, {"expires_at": "2028-07-21T17:32:28Z", "grants": [], "id": "123:owner", "name": "Owner", "organization_id": "123", "slug": "owner", "type": "user_role"}, {"expires_at": "2028-07-21T17:32:28Z", "grants": [], "id": "123:owner", "name": "Owner", "organization_id": "123", "pricing_tier": "Professional", "slug": "owner", "type": "org_role"}]}
+  listCurrentRoles:
+    speakeasy-default-list-current-roles:
+      responses:
+        "200":
+          application/json: {"roles": []}
+  putRole:
+    speakeasy-default-put-role:
+      parameters:
+        path:
+          roleId: "123:owner"
+      requestBody:
+        application/json: {"expires_at": "2028-07-21T17:32:28Z", "grants": [{"action": "entity-read", "conditions": [], "dependencies": [{"action": "entity-read", "conditions": [{"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}, {"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}, {"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "conditions": [{"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}, {"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "conditions": [{"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}, {"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}], "dependencies": [{"action": "entity-read", "conditions": [{"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "conditions": [], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "conditions": [{"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}], "dependencies": [{"action": "entity-read", "conditions": [{"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "id": "123:owner", "name": "Owner", "organization_id": "123", "slug": "owner", "type": "user_role"}
+      responses:
+        "200":
+          application/json: {"expires_at": "2028-07-21T17:32:28Z", "grants": [], "id": "123:owner", "name": "Owner", "organization_id": "123", "pricing_tier": "Professional", "slug": "owner", "type": "org_role"}
+  refreshPermissions: {}
+  searchRoles:
+    speakeasy-default-search-roles:
+      requestBody:
+        application/json: {"limit": 1, "offset": 1, "org_ids": ["123"], "query": "Administrator", "role_ids": ["123:owner"], "slugs": ["owner"]}
+      responses:
+        "200":
+          application/json: {"results": [{"expires_at": "2028-07-21T17:32:28Z", "grants": [{"action": "entity-read", "conditions": [], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "conditions": [{"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}, {"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "id": "123:owner", "name": "Owner", "organization_id": "123", "slug": "owner", "type": "portal_role"}, {"expires_at": "2028-07-21T17:32:28Z", "grants": [{"action": "entity-read", "conditions": [{"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}, {"attribute": "workflows.primary.task_name", "operation": "equals", "values": ["Qualification"]}], "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "id": "123:owner", "name": "Owner", "organization_id": "123", "slug": "owner", "type": "portal_role"}]}
