@@ -1,18 +1,57 @@
 # epilot-message
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Message API: Send and receive email messages via your epilot organization
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [IDE Support](#ide-support)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Retries](#retries)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Custom HTTP Client](#custom-http-client)
+* [Authentication](#authentication)
+* [Debugging](#debugging)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=message
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=message
 ```
 <!-- End SDK Installation [installation] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
 
 <!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
@@ -30,7 +69,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     from_={
         "address": "messaging@epilot.cloud",
@@ -38,6 +76,10 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     },
     subject="Request for solar panel price",
     bcc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
         {
             "address": "messaging@epilot.cloud",
             "name": "epilot",
@@ -56,6 +98,11 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
                 "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
                 "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
             },
+            {
+                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+            },
         ],
     },
     html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
@@ -64,6 +111,7 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -77,7 +125,18 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
+    **{
+
+    },
 ))
 
 if res is not None:
@@ -111,6 +170,10 @@ async def main():
                 "address": "messaging@epilot.cloud",
                 "name": "epilot",
             },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
         ],
         cc=[
             {
@@ -125,6 +188,11 @@ async def main():
                     "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
                     "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
                 },
+                {
+                    "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                    "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                    "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                },
             ],
         },
         html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
@@ -133,6 +201,7 @@ async def main():
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
         text="We at ABC GmbH would like to request a price quote for the solar panel.",
         thread={
             "topic": "CUSTOMER_MESSAGE",
@@ -146,7 +215,18 @@ async def main():
                 "address": "messaging@epilot.cloud",
                 "name": "epilot",
             },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
         ],
+        **{
+
+        },
     ))
     if res is not None:
         # handle response
@@ -159,10 +239,14 @@ asyncio.run(main())
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+<details open>
+<summary>Available methods</summary>
+
 ### [drafts](docs/sdks/drafts/README.md)
 
 * [create_draft](docs/sdks/drafts/README.md#create_draft) - createDraft
 * [send_draft](docs/sdks/drafts/README.md#send_draft) - sendDraft
+
 
 ### [messages](docs/sdks/messages/README.md)
 
@@ -170,18 +254,13 @@ asyncio.run(main())
 * [get_message](docs/sdks/messages/README.md#get_message) - getMessage
 * [get_message_v2](docs/sdks/messages/README.md#get_message_v2) - getMessageV2
 * [mark_read_message](docs/sdks/messages/README.md#mark_read_message) - markReadMessage
+* [mark_read_message_v2](docs/sdks/messages/README.md#mark_read_message_v2) - markReadMessageV2
 * [mark_unread_message](docs/sdks/messages/README.md#mark_unread_message) - markUnreadMessage
+* [mark_unread_message_v2](docs/sdks/messages/README.md#mark_unread_message_v2) - markUnreadMessageV2
 * [send_message](docs/sdks/messages/README.md#send_message) - sendMessage
 * [trash_message](docs/sdks/messages/README.md#trash_message) - trashMessage
 * [untrash_message](docs/sdks/messages/README.md#untrash_message) - untrashMessage
 * [update_message](docs/sdks/messages/README.md#update_message) - updateMessage
-
-### [gen_ai](docs/sdks/genai/README.md)
-
-* [generate_suggested_reply](docs/sdks/genai/README.md#generate_suggested_reply) - generateSuggestedReply
-* [get_gen_ai_feedback](docs/sdks/genai/README.md#get_gen_ai_feedback) - getGenAIFeedback
-* [get_info](docs/sdks/genai/README.md#get_info) - getInfo
-* [patch_info](docs/sdks/genai/README.md#patch_info) - patchInfo
 
 ### [threads](docs/sdks/threads/README.md)
 
@@ -189,15 +268,16 @@ asyncio.run(main())
 * [assign_users](docs/sdks/threads/README.md#assign_users) - assignUsers
 * [delete_thread](docs/sdks/threads/README.md#delete_thread) - deleteThread
 * [mark_read_thread](docs/sdks/threads/README.md#mark_read_thread) - markReadThread
+* [mark_read_thread_v2](docs/sdks/threads/README.md#mark_read_thread_v2) - markReadThreadV2
 * [mark_unread_thread](docs/sdks/threads/README.md#mark_unread_thread) - markUnreadThread
+* [mark_unread_thread_v2](docs/sdks/threads/README.md#mark_unread_thread_v2) - markUnreadThreadV2
 * [search_threads](docs/sdks/threads/README.md#search_threads) - searchThreads
 * [trash_thread](docs/sdks/threads/README.md#trash_thread) - trashThread
+* [unassign_thread](docs/sdks/threads/README.md#unassign_thread) - unassignThread
 * [untrash_thread](docs/sdks/threads/README.md#untrash_thread) - untrashThread
 * [update_thread](docs/sdks/threads/README.md#update_thread) - updateThread
 
-### [internal](docs/sdks/internal/README.md)
-
-* [get_gen_ai_feedback](docs/sdks/internal/README.md#get_gen_ai_feedback) - getGenAIFeedback
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Retries [retries] -->
@@ -217,7 +297,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     from_={
         "address": "messaging@epilot.cloud",
@@ -225,6 +304,10 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     },
     subject="Request for solar panel price",
     bcc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
         {
             "address": "messaging@epilot.cloud",
             "name": "epilot",
@@ -243,6 +326,11 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
                 "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
                 "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
             },
+            {
+                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+            },
         ],
     },
     html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
@@ -251,6 +339,7 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -264,7 +353,18 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
+    **{
+
+    },
 ),
     RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
@@ -287,7 +387,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     from_={
         "address": "messaging@epilot.cloud",
@@ -295,6 +394,10 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     },
     subject="Request for solar panel price",
     bcc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
         {
             "address": "messaging@epilot.cloud",
             "name": "epilot",
@@ -313,6 +416,11 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
                 "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
                 "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
             },
+            {
+                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+            },
         ],
     },
     html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
@@ -321,6 +429,7 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -334,7 +443,18 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
+    **{
+
+    },
 ))
 
 if res is not None:
@@ -347,12 +467,22 @@ if res is not None:
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
 
-| Error Object                      | Status Code                       | Content Type                      |
-| --------------------------------- | --------------------------------- | --------------------------------- |
-| models.PatchInfoGenAIResponseBody | 500                               | application/json                  |
-| models.SDKError                   | 4xx-5xx                           | */*                               |
+By default, an API error will raise a models.SDKError exception, which has the following properties:
+
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_draft_async` method may raise the following exceptions:
+
+| Error Type      | Status Code | Content Type |
+| --------------- | ----------- | ------------ |
+| models.SDKError | 4XX, 5XX    | \*/\*        |
 
 ### Example
 
@@ -368,123 +498,88 @@ s = Epilot(
 
 res = None
 try:
-    res = s.gen_ai.patch_info(message_id="<value>", thread_id="<value>", request_body={
-    "created_at": 1612900000000,
-    "error": "Failed to generate summary",
-    "feedback": "Good summary",
-    "next_steps": [
-        "The agent should approve the refund",
-    ],
-    "progress": 100,
-    "rating": "positive",
-    "status": epilot_message.Status.COMPLETED,
-    "summary": [
-        "Customer is interested in solar panels",
-    ],
-    "tags": [
-        "solar",
-        "quote",
-    ],
-    "topics": [
-        "Product enquiry",
-    ],
-    "updated_at": 1612900000000,
-})
+    res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
+        from_={
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        subject="Request for solar panel price",
+        bcc=[
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+        ],
+        cc=[
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+        ],
+        file={
+            "dollar_relation": [
+                {
+                    "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                    "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                    "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                },
+                {
+                    "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                    "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                    "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                },
+            ],
+        },
+        html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
+        parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
+        reply_to={
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
+        text="We at ABC GmbH would like to request a price quote for the solar panel.",
+        thread={
+            "topic": "CUSTOMER_MESSAGE",
+            "assigned_to": [
+                "206801",
+                "200109",
+            ],
+        },
+        to=[
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+        ],
+        **{
 
-except models.PatchInfoGenAIResponseBody as e:
-    # handle exception
-    raise(e)
+        },
+    ))
+
+    if res is not None:
+        # handle response
+        pass
+
 except models.SDKError as e:
     # handle exception
     raise(e)
-
-if res is not None:
-    # handle response
-    pass
-
 ```
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://message.sls.epilot.io` | None |
-
-#### Example
-
-```python
-import epilot_message
-from epilot_message import Epilot
-
-s = Epilot(
-    server_idx=0,
-    security=epilot_message.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
-
-
-res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
-    from_={
-        "address": "messaging@epilot.cloud",
-        "name": "epilot",
-    },
-    subject="Request for solar panel price",
-    bcc=[
-        {
-            "address": "messaging@epilot.cloud",
-            "name": "epilot",
-        },
-    ],
-    cc=[
-        {
-            "address": "messaging@epilot.cloud",
-            "name": "epilot",
-        },
-    ],
-    file={
-        "dollar_relation": [
-            {
-                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
-                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
-                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
-            },
-        ],
-    },
-    html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
-    parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
-    reply_to={
-        "address": "messaging@epilot.cloud",
-        "name": "epilot",
-    },
-    text="We at ABC GmbH would like to request a price quote for the solar panel.",
-    thread={
-        "topic": "CUSTOMER_MESSAGE",
-        "assigned_to": [
-            "206801",
-            "200109",
-        ],
-    },
-    to=[
-        {
-            "address": "messaging@epilot.cloud",
-            "name": "epilot",
-        },
-    ],
-))
-
-if res is not None:
-    # handle response
-    pass
-
-```
-
 
 ### Override Server URL Per-Client
 
@@ -500,7 +595,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     from_={
         "address": "messaging@epilot.cloud",
@@ -508,6 +602,10 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     },
     subject="Request for solar panel price",
     bcc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
         {
             "address": "messaging@epilot.cloud",
             "name": "epilot",
@@ -526,6 +624,11 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
                 "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
                 "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
             },
+            {
+                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+            },
         ],
     },
     html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
@@ -534,6 +637,7 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -547,7 +651,18 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
+    **{
+
+    },
 ))
 
 if res is not None:
@@ -645,10 +760,10 @@ s = Epilot(async_client=CustomClient(httpx.AsyncClient()))
 
 This SDK supports the following security schemes globally:
 
-| Name          | Type          | Scheme        |
-| ------------- | ------------- | ------------- |
-| `epilot_auth` | http          | HTTP Bearer   |
-| `epilot_org`  | apiKey        | API key       |
+| Name          | Type   | Scheme      |
+| ------------- | ------ | ----------- |
+| `epilot_auth` | http   | HTTP Bearer |
+| `epilot_org`  | apiKey | API key     |
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
@@ -661,7 +776,6 @@ s = Epilot(
     ),
 )
 
-
 res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     from_={
         "address": "messaging@epilot.cloud",
@@ -669,6 +783,10 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
     },
     subject="Request for solar panel price",
     bcc=[
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
         {
             "address": "messaging@epilot.cloud",
             "name": "epilot",
@@ -687,6 +805,11 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
                 "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
                 "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
             },
+            {
+                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+            },
         ],
     },
     html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
@@ -695,6 +818,7 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
         "address": "messaging@epilot.cloud",
         "name": "epilot",
     },
+    template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
     text="We at ABC GmbH would like to request a price quote for the solar panel.",
     thread={
         "topic": "CUSTOMER_MESSAGE",
@@ -708,7 +832,18 @@ res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
+        {
+            "address": "messaging@epilot.cloud",
+            "name": "epilot",
+        },
     ],
+    **{
+
+    },
 ))
 
 if res is not None:
@@ -721,8 +856,9 @@ if res is not None:
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from epilot_message import Epilot
 import logging
