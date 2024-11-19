@@ -4,18 +4,24 @@ from __future__ import annotations
 from .messagerequestparams import MessageRequestParams, MessageRequestParamsTypedDict
 from epilot_message.types import BaseModel
 from epilot_message.utils import FieldMetadata, QueryParamMetadata, RequestMetadata
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class SendMessageRequestTypedDict(TypedDict):
     message_request_params: NotRequired[MessageRequestParamsTypedDict]
     do_not_create_entities: NotRequired[bool]
     r"""When true, this flag lets the caller to send only the message and by-pass creating the thread & message entities."""
-    
+
 
 class SendMessageRequest(BaseModel):
-    message_request_params: Annotated[Optional[MessageRequestParams], FieldMetadata(request=RequestMetadata(media_type="application/json"))] = None
-    do_not_create_entities: Annotated[Optional[bool], FieldMetadata(query=QueryParamMetadata(style="form", explode=True))] = False
+    message_request_params: Annotated[
+        Optional[MessageRequestParams],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ] = None
+
+    do_not_create_entities: Annotated[
+        Optional[bool],
+        FieldMetadata(query=QueryParamMetadata(style="form", explode=True)),
+    ] = False
     r"""When true, this flag lets the caller to send only the message and by-pass creating the thread & message entities."""
-    
