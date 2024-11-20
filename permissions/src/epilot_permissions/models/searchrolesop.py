@@ -3,20 +3,20 @@
 from __future__ import annotations
 from .role import Role, RoleTypedDict
 from epilot_permissions.types import BaseModel
-from typing import List, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import List, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class SearchRolesResponseBodyTypedDict(TypedDict):
     r"""ok"""
-    
+
     hits: NotRequired[float]
     results: NotRequired[List[RoleTypedDict]]
-    
+
 
 class SearchRolesResponseBody(BaseModel):
     r"""ok"""
-    
+
     hits: Optional[float] = None
+
     results: Optional[List[Role]] = None
-    
