@@ -5,19 +5,19 @@ import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
-class AccessTokenParametersTokenTypeEnum(str, Enum):
-    API = "api"
+class AccessTokenParametersTokenType(str, Enum):
+    API = 'api'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class AccessTokenParameters:
-    
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    r"""Human readable name for access token"""  
-    assignments: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
-    r"""List of role ids attached to an user"""  
-    token_type: Optional[AccessTokenParametersTokenTypeEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})  
+    r"""Human readable name for access token"""
+    assignments: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assignments'), 'exclude': lambda f: f is None }})
+    r"""List of role ids attached to an user"""
+    token_type: Optional[AccessTokenParametersTokenType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token_type'), 'exclude': lambda f: f is None }})
     
+

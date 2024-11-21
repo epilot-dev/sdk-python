@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class AccessTokenTypeEnum(str, Enum):
+class AccessTokenType(str, Enum):
     r"""Access token type"""
-    API = "api"
-    JOURNEY = "journey"
+    API = 'api'
+    JOURNEY = 'journey'
