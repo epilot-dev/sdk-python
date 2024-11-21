@@ -2,15 +2,27 @@ configVersion: 1.0.0
 management:
   docChecksum: 0c38c5e4341d7eb39afb394a855c5a8a
   docVersion: 1.0.0
-  speakeasyVersion: 1.19.2
-  generationVersion: 2.16.5
+  speakeasyVersion: 1.109.0
+  generationVersion: 2.173.0
 generation:
-  telemetryEnabled: false
+  repoURL: https://github.com/epilot-dev/sdk-python.git
   sdkClassName: epilot
-  sdkFlattening: true
   singleTagPerOp: false
+  telemetryEnabled: false
+features:
+  python:
+    additionalProperties: 0.1.0
+    core: 3.3.1
+    deprecations: 2.81.1
+    globalSecurity: 2.82.0
+    globalServerURLs: 2.82.0
+    inputOutputModels: 2.81.1
 python:
-  version: 1.1.2
+  version: 2.1.1
   author: epilot
   description: Python Client SDK for Epilot
+  flattenGlobalSecurity: false
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=pricing
+  maxMethodParams: 0
   packageName: epilot-pricing
+  repoSubDirectory: pricing

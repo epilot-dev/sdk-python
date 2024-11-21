@@ -1,0 +1,12 @@
+# AvailabilityLocation
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `city`                                                                                 | *Optional[str]*                                                                        | :heavy_minus_sign:                                                                     | The name of the city, district, village, or town.                                      |
+| `country`                                                                              | *Optional[str]*                                                                        | :heavy_minus_sign:                                                                     | The name of the country.                                                               |
+| `postal_code`                                                                          | *Optional[str]*                                                                        | :heavy_minus_sign:                                                                     | The postal code for the address.                                                       |
+| `street`                                                                               | *Optional[str]*                                                                        | :heavy_minus_sign:                                                                     | The first line of the address. Typically the street address or PO Box number.          |
+| `street_number`                                                                        | *Optional[str]*                                                                        | :heavy_minus_sign:                                                                     | The second line of the address. Typically the number of the apartment, suite, or unit. |
