@@ -1,0 +1,479 @@
+lockVersion: 2.0.0
+id: 47c57cad-fe19-4da5-bd87-1e025ee23d01
+management:
+  docChecksum: cd029a8c5d47d00161cfbfcea0478e8e
+  docVersion: 1.0.0
+  speakeasyVersion: 1.441.1
+  generationVersion: 2.461.2
+  releaseVersion: 1.3.0
+  configChecksum: edc184dea570c2a21cec965aca00713f
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: automation
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=automation
+features:
+  python:
+    additionalDependencies: 1.0.0
+    additionalProperties: 1.0.1
+    constsAndDefaults: 1.0.5
+    core: 5.6.5
+    defaultEnabledRetries: 0.2.0
+    deprecations: 3.0.0
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.2
+    flattening: 3.1.0
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.0.0
+    inputOutputModels: 3.0.0
+    methodArguments: 1.0.2
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+    tests: 1.6.0
+    unions: 3.0.3
+generatedFiles:
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/action.md
+  - docs/models/actioncondition.md
+  - docs/models/actionschedule.md
+  - docs/models/actionschedulesource.md
+  - docs/models/activity.md
+  - docs/models/activitytrigger.md
+  - docs/models/anyaction.md
+  - docs/models/anyactionconfig.md
+  - docs/models/anythingbutcondition.md
+  - docs/models/anytrigger.md
+  - docs/models/anytriggerinput.md
+  - docs/models/apicallercontext.md
+  - docs/models/apisubmissiontrigger.md
+  - docs/models/apisubmissiontriggerconfiguration.md
+  - docs/models/apisubmissiontriggertype.md
+  - docs/models/appendvaluemapper.md
+  - docs/models/assignuserstostep.md
+  - docs/models/attachments.md
+  - docs/models/attributeoperation.md
+  - docs/models/attributetype.md
+  - docs/models/automationaction.md
+  - docs/models/automationactionconfig.md
+  - docs/models/automationactionconfigreason.md
+  - docs/models/automationexecution.md
+  - docs/models/automationflow.md
+  - docs/models/automationflowinput.md
+  - docs/models/bulktriggerjob.md
+  - docs/models/bulktriggerrequest.md
+  - docs/models/cancelexecutionrequest.md
+  - docs/models/cartcheckoutaction.md
+  - docs/models/cartcheckoutactionconfig.md
+  - docs/models/cartcheckoutactionconfigreason.md
+  - docs/models/cartcheckoutactionconfigtype.md
+  - docs/models/cartcheckoutactionreason.md
+  - docs/models/cartcheckoutactiontype.md
+  - docs/models/cartcheckoutconfig.md
+  - docs/models/claims.md
+  - docs/models/comparison.md
+  - docs/models/conditionstatement.md
+  - docs/models/conditionstatementorigin.md
+  - docs/models/configuration.md
+  - docs/models/copyvaluemapper.md
+  - docs/models/createdocumentaction.md
+  - docs/models/createdocumentactionconfig.md
+  - docs/models/createdocumentactionconfigreason.md
+  - docs/models/createdocumentactionconfigtype.md
+  - docs/models/createdocumentactionreason.md
+  - docs/models/createdocumentactiontype.md
+  - docs/models/createdocumentconfig.md
+  - docs/models/deleteflowrequest.md
+  - docs/models/diff.md
+  - docs/models/diffadded.md
+  - docs/models/diffdeleted.md
+  - docs/models/diffdeleted2.md
+  - docs/models/diffupdated.md
+  - docs/models/diffupdated2.md
+  - docs/models/documenttype.md
+  - docs/models/dollaror.md
+  - docs/models/ecpconfig.md
+  - docs/models/entityitemsnapshot.md
+  - docs/models/entitymanualtrigger.md
+  - docs/models/entitymanualtriggerconfiguration.md
+  - docs/models/entitymanualtriggertype.md
+  - docs/models/entityoperation.md
+  - docs/models/entityoperationtrigger.md
+  - docs/models/entityoperationtrigger2.md
+  - docs/models/entityoperationtriggerconfiguration.md
+  - docs/models/entityoperationtriggeroperation.md
+  - docs/models/entityoperationtriggerschemastype.md
+  - docs/models/entityoperationtriggertype.md
+  - docs/models/entityref.md
+  - docs/models/epilotauth.md
+  - docs/models/equalsignorecasecondition.md
+  - docs/models/errorcode.md
+  - docs/models/errordetail.md
+  - docs/models/errorinfo.md
+  - docs/models/erroroutput.md
+  - docs/models/execitem.md
+  - docs/models/executionstatus.md
+  - docs/models/existscondition.md
+  - docs/models/fileconfig.md
+  - docs/models/filterconditiononevent.md
+  - docs/models/filterconditiononevent2.md
+  - docs/models/filterconfig.md
+  - docs/models/frontendsubmittrigger.md
+  - docs/models/frontendsubmittriggerconfiguration.md
+  - docs/models/frontendsubmittriggertype.md
+  - docs/models/getbulkjobrequest.md
+  - docs/models/getexecutionrequest.md
+  - docs/models/getexecutionsrequest.md
+  - docs/models/getexecutionsresp.md
+  - docs/models/getflowrequest.md
+  - docs/models/journeysubmittrigger.md
+  - docs/models/journeysubmittriggerconfiguration.md
+  - docs/models/journeysubmittriggertype.md
+  - docs/models/languagecode.md
+  - docs/models/mapentityaction.md
+  - docs/models/mapentityactionconfig.md
+  - docs/models/mapentityactionconfigreason.md
+  - docs/models/mapentityactionconfigtype.md
+  - docs/models/mapentityactionreason.md
+  - docs/models/mapentityactiontype.md
+  - docs/models/mapentityconfig.md
+  - docs/models/mapentityconfigmappingattributes.md
+  - docs/models/mappingattribute.md
+  - docs/models/mappingattributemode.md
+  - docs/models/mappingattributes.md
+  - docs/models/mappingattributev2.md
+  - docs/models/mappingconfigref.md
+  - docs/models/messagetype.md
+  - docs/models/mode.md
+  - docs/models/numeric.md
+  - docs/models/numericcondition.md
+  - docs/models/one.md
+  - docs/models/operation.md
+  - docs/models/operationnode.md
+  - docs/models/operationobjectnode.md
+  - docs/models/orcondition.md
+  - docs/models/orcondition1.md
+  - docs/models/orconditionfordiff.md
+  - docs/models/origin.md
+  - docs/models/origintype.md
+  - docs/models/patchbulkjobrequest.md
+  - docs/models/patchbulkjobrequest1.md
+  - docs/models/prefixcondition.md
+  - docs/models/putflowrequest.md
+  - docs/models/reason.md
+  - docs/models/receivedemailtrigger.md
+  - docs/models/receivedemailtriggerconfiguration.md
+  - docs/models/receivedemailtriggertype.md
+  - docs/models/relationattribute.md
+  - docs/models/resumereq.md
+  - docs/models/resumeresp.md
+  - docs/models/retriggeractionrequest.md
+  - docs/models/retryreq.md
+  - docs/models/retrystrategy.md
+  - docs/models/searchautomationsresp.md
+  - docs/models/searchflowsrequest.md
+  - docs/models/security.md
+  - docs/models/sendemailaction.md
+  - docs/models/sendemailactionconfig.md
+  - docs/models/sendemailactionconfigreason.md
+  - docs/models/sendemailactionconfigtype.md
+  - docs/models/sendemailactionreason.md
+  - docs/models/sendemailactiontype.md
+  - docs/models/sendemailconfig.md
+  - docs/models/sendemailconfigsourcefilter.md
+  - docs/models/setvaluemapper.md
+  - docs/models/source.md
+  - docs/models/sourcefilter.md
+  - docs/models/startexecutionrequest.md
+  - docs/models/status.md
+  - docs/models/suffixcondition.md
+  - docs/models/timeperiod.md
+  - docs/models/timerelation.md
+  - docs/models/triggercondition.md
+  - docs/models/triggerevent.md
+  - docs/models/triggerevententityactivity.md
+  - docs/models/triggerevententityactivitytype.md
+  - docs/models/triggerevententityoperation.md
+  - docs/models/triggerevententityoperationtype.md
+  - docs/models/triggereventmanual.md
+  - docs/models/triggereventmanualtype.md
+  - docs/models/triggerwebhookaction.md
+  - docs/models/triggerwebhookactionconfig.md
+  - docs/models/triggerwebhookactionconfigreason.md
+  - docs/models/triggerwebhookactionconfigtype.md
+  - docs/models/triggerwebhookactionreason.md
+  - docs/models/triggerwebhookactiontype.md
+  - docs/models/triggerwebhookconfig.md
+  - docs/models/triggerworkflowaction.md
+  - docs/models/triggerworkflowactionconfig.md
+  - docs/models/triggerworkflowactionconfigreason.md
+  - docs/models/triggerworkflowactionconfigtype.md
+  - docs/models/triggerworkflowactionreason.md
+  - docs/models/triggerworkflowactiontype.md
+  - docs/models/triggerworkflowcondition.md
+  - docs/models/triggerworkflowconditionvalue.md
+  - docs/models/triggerworkflowconfig.md
+  - docs/models/two.md
+  - docs/models/type.md
+  - docs/models/types.md
+  - docs/models/uniq.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/value.md
+  - docs/models/wildcardcondition.md
+  - docs/sdks/bulk/README.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/executions/README.md
+  - docs/sdks/flows/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/epilot_automation/__init__.py
+  - src/epilot_automation/_hooks/__init__.py
+  - src/epilot_automation/_hooks/sdkhooks.py
+  - src/epilot_automation/_hooks/types.py
+  - src/epilot_automation/_version.py
+  - src/epilot_automation/basesdk.py
+  - src/epilot_automation/bulk.py
+  - src/epilot_automation/executions.py
+  - src/epilot_automation/flows.py
+  - src/epilot_automation/httpclient.py
+  - src/epilot_automation/models/__init__.py
+  - src/epilot_automation/models/actioncondition.py
+  - src/epilot_automation/models/actionschedule.py
+  - src/epilot_automation/models/actionschedulesource.py
+  - src/epilot_automation/models/activitytrigger.py
+  - src/epilot_automation/models/anyaction.py
+  - src/epilot_automation/models/anyactionconfig.py
+  - src/epilot_automation/models/anythingbutcondition.py
+  - src/epilot_automation/models/anytrigger.py
+  - src/epilot_automation/models/anytrigger_input.py
+  - src/epilot_automation/models/apicallercontext.py
+  - src/epilot_automation/models/apierror.py
+  - src/epilot_automation/models/apisubmissiontrigger.py
+  - src/epilot_automation/models/appendvaluemapper.py
+  - src/epilot_automation/models/assignuserstostep.py
+  - src/epilot_automation/models/automationaction.py
+  - src/epilot_automation/models/automationactionconfig.py
+  - src/epilot_automation/models/automationexecution.py
+  - src/epilot_automation/models/automationflow.py
+  - src/epilot_automation/models/automationflow_input.py
+  - src/epilot_automation/models/bulktriggerjob.py
+  - src/epilot_automation/models/bulktriggerrequest.py
+  - src/epilot_automation/models/cancelexecutionop.py
+  - src/epilot_automation/models/cartcheckoutaction.py
+  - src/epilot_automation/models/cartcheckoutactionconfig.py
+  - src/epilot_automation/models/cartcheckoutconfig.py
+  - src/epilot_automation/models/comparison.py
+  - src/epilot_automation/models/conditionstatement.py
+  - src/epilot_automation/models/copyvaluemapper.py
+  - src/epilot_automation/models/createdocumentaction.py
+  - src/epilot_automation/models/createdocumentactionconfig.py
+  - src/epilot_automation/models/createdocumentconfig.py
+  - src/epilot_automation/models/deleteflowop.py
+  - src/epilot_automation/models/diffadded.py
+  - src/epilot_automation/models/diffdeleted.py
+  - src/epilot_automation/models/diffupdated.py
+  - src/epilot_automation/models/entityitemsnapshot.py
+  - src/epilot_automation/models/entitymanualtrigger.py
+  - src/epilot_automation/models/entityoperation.py
+  - src/epilot_automation/models/entityoperationtrigger.py
+  - src/epilot_automation/models/entityref.py
+  - src/epilot_automation/models/equalsignorecasecondition.py
+  - src/epilot_automation/models/errorcode.py
+  - src/epilot_automation/models/errordetail.py
+  - src/epilot_automation/models/erroroutput.py
+  - src/epilot_automation/models/execitem.py
+  - src/epilot_automation/models/executionstatus.py
+  - src/epilot_automation/models/existscondition.py
+  - src/epilot_automation/models/filterconditiononevent.py
+  - src/epilot_automation/models/frontendsubmittrigger.py
+  - src/epilot_automation/models/getbulkjobop.py
+  - src/epilot_automation/models/getexecutionop.py
+  - src/epilot_automation/models/getexecutionsop.py
+  - src/epilot_automation/models/getexecutionsresp.py
+  - src/epilot_automation/models/getflowop.py
+  - src/epilot_automation/models/journeysubmittrigger.py
+  - src/epilot_automation/models/mapentityaction.py
+  - src/epilot_automation/models/mapentityactionconfig.py
+  - src/epilot_automation/models/mapentityconfig.py
+  - src/epilot_automation/models/mappingattribute.py
+  - src/epilot_automation/models/mappingattributemode.py
+  - src/epilot_automation/models/mappingattributev2.py
+  - src/epilot_automation/models/mappingconfigref.py
+  - src/epilot_automation/models/numericcondition.py
+  - src/epilot_automation/models/operationnode.py
+  - src/epilot_automation/models/operationobjectnode.py
+  - src/epilot_automation/models/orcondition.py
+  - src/epilot_automation/models/orcondition1.py
+  - src/epilot_automation/models/orconditionfordiff.py
+  - src/epilot_automation/models/patchbulkjobop.py
+  - src/epilot_automation/models/patchbulkjobrequest.py
+  - src/epilot_automation/models/prefixcondition.py
+  - src/epilot_automation/models/putflowop.py
+  - src/epilot_automation/models/receivedemailtrigger.py
+  - src/epilot_automation/models/relationattribute.py
+  - src/epilot_automation/models/resumereq.py
+  - src/epilot_automation/models/resumeresp.py
+  - src/epilot_automation/models/retriggeractionop.py
+  - src/epilot_automation/models/retryreq.py
+  - src/epilot_automation/models/retrystrategy.py
+  - src/epilot_automation/models/searchautomationsresp.py
+  - src/epilot_automation/models/searchflowsop.py
+  - src/epilot_automation/models/security.py
+  - src/epilot_automation/models/sendemailaction.py
+  - src/epilot_automation/models/sendemailactionconfig.py
+  - src/epilot_automation/models/sendemailconfig.py
+  - src/epilot_automation/models/setvaluemapper.py
+  - src/epilot_automation/models/startexecutionrequest.py
+  - src/epilot_automation/models/suffixcondition.py
+  - src/epilot_automation/models/triggercondition.py
+  - src/epilot_automation/models/triggerevententityactivity.py
+  - src/epilot_automation/models/triggerevententityoperation.py
+  - src/epilot_automation/models/triggereventmanual.py
+  - src/epilot_automation/models/triggerwebhookaction.py
+  - src/epilot_automation/models/triggerwebhookactionconfig.py
+  - src/epilot_automation/models/triggerwebhookconfig.py
+  - src/epilot_automation/models/triggerworkflowaction.py
+  - src/epilot_automation/models/triggerworkflowactionconfig.py
+  - src/epilot_automation/models/triggerworkflowcondition.py
+  - src/epilot_automation/models/triggerworkflowconfig.py
+  - src/epilot_automation/models/wildcardcondition.py
+  - src/epilot_automation/py.typed
+  - src/epilot_automation/sdk.py
+  - src/epilot_automation/sdkconfiguration.py
+  - src/epilot_automation/types/__init__.py
+  - src/epilot_automation/types/basemodel.py
+  - src/epilot_automation/utils/__init__.py
+  - src/epilot_automation/utils/annotations.py
+  - src/epilot_automation/utils/enums.py
+  - src/epilot_automation/utils/eventstreaming.py
+  - src/epilot_automation/utils/forms.py
+  - src/epilot_automation/utils/headers.py
+  - src/epilot_automation/utils/logger.py
+  - src/epilot_automation/utils/metadata.py
+  - src/epilot_automation/utils/queryparams.py
+  - src/epilot_automation/utils/requestbodies.py
+  - src/epilot_automation/utils/retries.py
+  - src/epilot_automation/utils/security.py
+  - src/epilot_automation/utils/serializers.py
+  - src/epilot_automation/utils/url.py
+  - src/epilot_automation/utils/values.py
+examples:
+  cancelExecution:
+    speakeasy-default-cancel-execution:
+      parameters:
+        path:
+          execution_id: "9baf184f-bc81-4128-bca3-d974c90a12c4"
+      responses:
+        "200":
+          application/json: {"actions": [{"flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "outputs": {}, "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}, {"config": {"mapping_attributes": [{"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}], "target_schema": "<value>"}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "outputs": {}, "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}, {"config": {"attachments": [{"source_filter": {"attribute": "_files", "filename_regex": ".*", "limit": 1, "relation_tag": "contract"}}, {"source_filter": {"attribute": "_files", "filename_regex": ".*", "limit": 1, "relation_tag": "contract"}}, {"source_filter": {"attribute": "_files", "filename_regex": ".*", "limit": 1, "relation_tag": "contract"}}]}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "outputs": {}, "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}], "activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "conditions": [{"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}], "current_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_snapshot": {"_created_at": "2023-09-03T18:21:10.476Z", "_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "_org": "<value>", "_schema": "<value>", "_title": "<value>", "_updated_at": "2024-10-01T15:48:32.172Z"}, "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "flow_name": "Handle contact form", "id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "resume_token": "eyJraWQiOiJrZXkifQ==", "trigger_event": {"caller": {"EpilotAuth": {"claims": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce", "userId": "10006129"}, "organizationId": "739224", "token": "eyJraWQiOi...", "userId": "10006129"}, "key": "<value>", "key1": "<value>", "key2": "<value>"}, "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "org_id": "123"}, "version": 2}
+  getExecution:
+    speakeasy-default-get-execution:
+      parameters:
+        path:
+          execution_id: "9baf184f-bc81-4128-bca3-d974c90a12c4"
+      responses:
+        "200":
+          application/json: {"actions": [{"config": {"conditions": [{"comparison": "not_empty", "schema": "<value>", "source": "billing_contact.email"}, {"comparison": "equals", "schema": "contact", "source": "email", "value": "test@epilot.cloud"}]}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "outputs": {}, "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}, {"flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "outputs": {}, "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}], "activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "conditions": [], "current_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_snapshot": {"_created_at": "2022-07-06T20:33:41.402Z", "_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "_org": "<value>", "_schema": "<value>", "_title": "<value>", "_updated_at": "2023-08-07T20:59:34.519Z", "key": "<value>", "key1": "<value>", "key2": "<value>"}, "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "flow_name": "Handle contact form", "id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "resume_token": "eyJraWQiOiJrZXkifQ==", "trigger_event": {"activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "operation_type": "deleteEntity", "org_id": "123"}, "version": 2}
+  getExecutions:
+    speakeasy-default-get-executions:
+      parameters:
+        query:
+          entity_id: "e3d3ebac-baab-4395-abf4-50b5bf1f8b74"
+      responses:
+        "200":
+          application/json: {"results": [{"actions": [{"flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "outputs": {}, "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}, {"flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "outputs": {}, "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}], "activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "conditions": [], "current_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_snapshot": {"_created_at": "2022-07-18T20:33:24.247Z", "_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "_org": "<value>", "_schema": "<value>", "_title": "<value>", "_updated_at": "2022-01-28T09:12:23.189Z", "key": "<value>"}, "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "flow_name": "Handle contact form", "id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "resume_token": "eyJraWQiOiJrZXkifQ==", "trigger_event": {"activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "activity_type": "<value>", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "org_id": "123"}, "version": 2}, {"actions": [], "activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "conditions": [{"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}], "current_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_snapshot": {"_created_at": "2023-09-09T02:42:31.106Z", "_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "_org": "<value>", "_schema": "<value>", "_title": "<value>", "_updated_at": "2023-11-08T11:03:18.230Z"}, "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "flow_name": "Handle contact form", "id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "resume_token": "eyJraWQiOiJrZXkifQ==", "trigger_event": {"activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "activity_type": "<value>", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "org_id": "123"}, "version": 2}, {"actions": [], "activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "conditions": [], "current_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_snapshot": {"_created_at": "2022-06-13T00:14:35.579Z", "_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "_org": "<value>", "_schema": "<value>", "_title": "<value>", "_updated_at": "2024-05-25T16:51:41.394Z"}, "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "flow_name": "Handle contact form", "id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "resume_token": "eyJraWQiOiJrZXkifQ==", "trigger_event": {"activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "operation_type": "deleteEntity", "org_id": "123"}, "version": 2}], "total": "851.04"}
+  resumeExecutionWithToken:
+    speakeasy-default-resume-execution-with-token:
+      requestBody:
+        application/json: {"resume_token": "eyJraWQiOiJrZXkifQ=="}
+      responses:
+        "200":
+          application/json: {"execution": {"actions": [], "activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "conditions": [], "current_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_snapshot": {"_created_at": "2022-08-17T01:44:25.239Z", "_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "_org": "<value>", "_schema": "<value>", "_title": "<value>", "_updated_at": "2024-07-29T22:57:28.447Z", "key": "<value>", "key1": "<value>"}, "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "flow_name": "Handle contact form", "id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "resume_token": "eyJraWQiOiJrZXkifQ==", "trigger_event": {"caller": {"EpilotAuth": {"claims": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce", "userId": "10006129"}, "organizationId": "739224", "token": "eyJraWQiOi...", "userId": "10006129"}, "key": "<value>", "key1": "<value>", "key2": "<value>"}, "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "org_id": "123"}, "version": 2}, "resumedAction": {"flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "outputs": {}, "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}}
+  retriggerAction:
+    speakeasy-default-retrigger-action:
+      parameters:
+        path:
+          execution_id: "9baf184f-bc81-4128-bca3-d974c90a12c4"
+          action_id: "9ec3711b-db63-449c-b894-54d5bb622a8f"
+  startExecution:
+    speakeasy-default-start-execution:
+      requestBody:
+        application/json: {"entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74"}
+      responses:
+        "201":
+          application/json: {"actions": [], "activity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "conditions": [{"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}], "current_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_snapshot": {"_created_at": "2023-07-13T03:06:46.168Z", "_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "_org": "<value>", "_schema": "<value>", "_title": "<value>", "_updated_at": "2022-02-10T03:00:29.598Z", "key": "<value>", "key1": "<value>", "key2": "<value>"}, "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "flow_name": "Handle contact form", "id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "resume_token": "eyJraWQiOiJrZXkifQ==", "trigger_event": {"caller": {"EpilotAuth": {"claims": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce", "userId": "10006129"}, "organizationId": "739224", "token": "eyJraWQiOi...", "userId": "10006129"}, "key": "<value>"}, "entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "org_id": "123"}, "version": 2}
+  bulkTriggerExecutions:
+    "":
+      requestBody:
+        application/json: {"entities_refs": [{"entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_schema": "<value>"}, {"entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "entity_schema": "<value>"}]}
+      responses:
+        "202":
+          application/json: {"created_at": "2022-08-25T22:08:56.556Z", "created_by": "1234", "execution_summary": [], "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "job_id": "8c086140-f33e-4bb7-a993-50c0f2402c7b", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "status": "failed", "task_token": "8c086140-f33e-4bb7-a993-50c0f2402c7b", "updated_at": "2022-11-13T20:13:52.960Z"}
+  getBulkJob:
+    speakeasy-default-get-bulk-job:
+      parameters:
+        path:
+          job_id: "8c086140-f33e-4bb7-a993-50c0f2402c7b"
+      responses:
+        "200":
+          application/json: {"created_at": "2022-10-20T07:12:52.689Z", "created_by": "1234", "execution_summary": [{"entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "execution_id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "execution_status": "in_progress"}, {"entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "execution_id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "execution_status": "scheduled"}], "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "job_id": "8c086140-f33e-4bb7-a993-50c0f2402c7b", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "status": "cancelled", "task_token": "8c086140-f33e-4bb7-a993-50c0f2402c7b", "updated_at": "2022-12-07T03:34:02.948Z"}
+  patchBulkJob:
+    "":
+      parameters:
+        path:
+          job_id: "8c086140-f33e-4bb7-a993-50c0f2402c7b"
+      requestBody:
+        application/json: {"action": "APPROVE", "task_token": "b35a6c51-2a15-4ef1-9623-20db37b0744f"}
+      responses:
+        "200":
+          application/json: {"created_at": "2023-07-22T04:56:17.349Z", "created_by": "1234", "execution_summary": [{"entity_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "execution_id": "9baf184f-bc81-4128-bca3-d974c90a12c4", "execution_status": "in_progress"}], "flow_id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "job_id": "8c086140-f33e-4bb7-a993-50c0f2402c7b", "org_id": "e3d3ebac-baab-4395-abf4-50b5bf1f8b74", "status": "approval", "task_token": "8c086140-f33e-4bb7-a993-50c0f2402c7b", "updated_at": "2023-09-11T13:29:03.417Z"}
+  createFlow:
+    speakeasy-default-create-flow:
+      requestBody:
+        application/json: {"conditions": [], "entity_schema": "submission", "flow_name": "Handle contact form", "runs": 7, "trigger_conditions": [{"comparison": "any_of", "source": "billing_contact.email"}], "triggers": [{"id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "received_email"}, {"configuration": {"schema": "submission"}, "id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "entity_manual"}, {"configuration": {"source_id": "83bc4369-781d-433f-b28d-d336efe9a018"}, "id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "journey_submission"}], "version": 2}
+      responses:
+        "201":
+          application/json: {"actions": [{"config": {"mapping_attributes": []}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}, {"config": {"mapping_attributes": []}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}], "conditions": [{"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}], "created_by": "user:123", "entity_schema": "submission", "flow_name": "Handle contact form", "id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "last_updated_by": "user:123", "org_id": "123", "runs": 7, "trigger_conditions": [{"comparison": "equals", "source": "billing_contact.email"}], "triggers": [{"id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "received_email"}], "version": 2}
+  deleteFlow:
+    speakeasy-default-delete-flow:
+      parameters:
+        path:
+          flow_id: "7791b04a-16d2-44a2-9af9-2d59c25c512f"
+      responses:
+        "200":
+          application/json: {"actions": [{"config": {"attachments": [{"source_filter": {"attribute": "_files", "filename_regex": ".*", "limit": 1, "relation_tag": "contract"}}, {"source_filter": {"attribute": "_files", "filename_regex": ".*", "limit": 1, "relation_tag": "contract"}}], "email_template_id": "gasj02-29ug9asgm-29t9gsaghg2g-pkmbhx2", "language_code": "de"}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "name": "Send Email", "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}, "type": "send-email"}, {"config": {"mapping_attributes": [{"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_set": "customer", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}], "relation_attributes": [{"mode": "append", "source_filter": {"limit": 1, "schema": "account"}, "target": "company"}], "target_schema": "contact", "target_unique": ["email.0.email"]}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "name": "Map Entity", "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}, "type": "map-entity"}], "conditions": [{"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}], "created_by": "user:123", "entity_schema": "submission", "flow_name": "Handle contact form", "id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "last_updated_by": "user:123", "org_id": "123", "runs": 7, "trigger_conditions": [{"comparison": "equals", "source": "billing_contact.email"}], "triggers": [], "version": 2}
+  getFlow:
+    speakeasy-default-get-flow:
+      parameters:
+        path:
+          flow_id: "7791b04a-16d2-44a2-9af9-2d59c25c512f"
+      responses:
+        "200":
+          application/json: {"actions": [{"flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}], "conditions": [{"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}], "created_by": "user:123", "entity_schema": "submission", "flow_name": "Handle contact form", "id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "last_updated_by": "user:123", "org_id": "123", "runs": 7, "trigger_conditions": [{"comparison": "any_of", "source": "billing_contact.email"}], "triggers": [{"configuration": {"source_id": "c56064b6-a744-424c-9cbf-0f49e353dd8a"}, "id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "journey_submission"}, {"configuration": {"source_id": "c1aea265-390e-4bb3-84e5-f4b762aa9204"}, "id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "journey_submission"}], "version": 2}
+  putFlow:
+    speakeasy-default-put-flow:
+      parameters:
+        path:
+          flow_id: "7791b04a-16d2-44a2-9af9-2d59c25c512f"
+      requestBody:
+        application/json: {"conditions": [{"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}, {"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}], "entity_schema": "submission", "flow_name": "Handle contact form", "runs": 7, "trigger_conditions": [{"comparison": "equals", "source": "billing_contact.email"}], "triggers": [], "version": 2}
+      responses:
+        "200":
+          application/json: {"actions": [{"config": {"mapping_attributes": [{"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"mode": "append_if_exists", "target": "<value>", "value": "<value>"}]}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}}], "conditions": [{"statements": [{"id": "1c8d3d9c-6d4c-4a83-aa22-aa0d630cbc2d", "operation": "equals", "source": {"attribute": "email", "attributeType": "text", "id": "trigger-id", "origin": "trigger", "originType": "entity", "schema": "contact"}, "values": ["hello@epilot.cloud"]}]}], "created_by": "user:123", "entity_schema": "submission", "flow_name": "Handle contact form", "id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "last_updated_by": "user:123", "org_id": "123", "runs": 7, "trigger_conditions": [{"comparison": "not_empty", "source": "billing_contact.email"}], "triggers": [{"configuration": {"source_id": "99"}, "id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "frontend_submission"}, {"configuration": {"source_id": "99"}, "id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "frontend_submission"}], "version": 2}
+  searchFlows:
+    speakeasy-default-search-flows:
+      parameters:
+        query:
+          schema: "submission"
+          trigger_source_id: "600945fe-212e-4b97-acf7-391d64648384"
+      responses:
+        "200":
+          application/json: {"results": [{"actions": [{"config": {"mapping_attributes": [{"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_set": "customer", "_uniq": true}, "target": "_tags"}, {"operation": {"_append": ["new", "tags"], "_copy": "contact.first_name", "_uniq": true}, "target": "_tags"}], "relation_attributes": [{"mode": "append", "source_filter": {"limit": 1, "schema": "account"}, "target": "company"}], "target_schema": "contact", "target_unique": ["email.0.email"]}, "flow_action_id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "id": "9ec3711b-db63-449c-b894-54d5bb622a8f", "name": "Map Entity", "reason": {"message": "There are no registered portal users for the given emails, hence skipping the action"}, "type": "map-entity"}], "conditions": [], "created_by": "user:123", "entity_schema": "submission", "flow_name": "Handle contact form", "id": "7791b04a-16d2-44a2-9af9-2d59c25c512f", "last_updated_by": "user:123", "org_id": "123", "runs": 7, "trigger_conditions": [{"comparison": "is_empty", "source": "billing_contact.email"}], "triggers": [{"configuration": {"source_id": "14ad770c-d986-4ab0-9817-6619ca56ec4a"}, "id": "12d4f45a-1883-4841-a94c-5928cb338a94", "type": "journey_submission"}], "version": 2}], "total": "618.94"}
