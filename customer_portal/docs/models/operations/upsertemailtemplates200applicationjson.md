@@ -1,0 +1,11 @@
+# UpsertEmailTemplates200ApplicationJSON
+
+Upserted email templates of the portal successfully.
+
+
+## Fields
+
+| Field                                                                                                                     | Type                                                                                                                      | Required                                                                                                                  | Description                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `email_templates`                                                                                                         | [shared.EmailTemplates](../../models/shared/emailtemplates.md)                                                            | :heavy_check_mark:                                                                                                        | Email templates used for authentication and internal processes                                                            |
+| `message`                                                                                                                 | [UpsertEmailTemplates200ApplicationJSONMessage](../../models/operations/upsertemailtemplates200applicationjsonmessage.md) | :heavy_check_mark:                                                                                                        | N/A                                                                                                                       |

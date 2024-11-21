@@ -3,24 +3,45 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import contact as shared_contact
+from ..shared import entityitem as shared_entityitem
 from ..shared import errorresp as shared_errorresp
-from typing import Any, Optional
+from ..shared import file as shared_file
+from dataclasses_json import Undefined, dataclass_json
+from epilot import utils
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetContactSecurity:
+    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})
     
-    portal_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'http', 'sub_type': 'bearer', 'field_name': 'Authorization' }})  
+
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class GetContact200ApplicationJSON:
+    r"""Retrieves the mapped contact of the logged in user successfully."""
+    entity: Optional[shared_contact.Contact] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity'), 'exclude': lambda f: f is None }})
+    r"""The mapped contact of the portal user"""
+    files: Optional[List[shared_file.File]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files'), 'exclude': lambda f: f is None }})
+    relations: Optional[List[shared_entityitem.EntityItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('relations'), 'exclude': lambda f: f is None }})
     
+
+
 
 @dataclasses.dataclass
 class GetContactResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    entity_item: Optional[dict[str, Any]] = dataclasses.field(default=None)
-    r"""The returned contact"""  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Could not authenticate the user"""
+    get_contact_200_application_json_object: Optional[GetContact200ApplicationJSON] = dataclasses.field(default=None)
+    r"""Retrieves the mapped contact of the logged in user successfully."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
