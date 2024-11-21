@@ -3,35 +3,46 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import externalcustomvariable as shared_externalcustomvariable
-from ..shared import templatetype_enum as shared_templatetype_enum
+from ..shared import templatetype as shared_templatetype
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Any, Optional
+from typing import List, Optional
 
-class VariableParametersLanguageEnum(str, Enum):
-    EN = "en"
-    DE = "de"
+
+@dataclasses.dataclass
+class VariableParametersContextData:
+    r"""If context data is avaialble, this data will be used for variable replace."""
+    
+
+
+class VariableParametersLanguage(str, Enum):
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class VariableParameters:
-    
-    template_type: shared_templatetype_enum.TemplateTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})  
-    brand_id: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('brand_id'), 'exclude': lambda f: f is None }})
-    r"""Brand ID"""  
-    context_data: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_data'), 'exclude': lambda f: f is None }})
-    r"""If context data is avaialble, this data will be used for variable replace."""  
-    custom_variables: Optional[list[shared_externalcustomvariable.ExternalCustomVariable]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_variables'), 'exclude': lambda f: f is None }})
-    r"""Custom variables with specified values form other services."""  
-    language: Optional[VariableParametersLanguageEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})  
+    template_type: shared_templatetype.TemplateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})
+    brand_id: Optional[float] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('brand_id') }})
+    r"""Brand ID"""
+    context_data: Optional[VariableParametersContextData] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context_data'), 'exclude': lambda f: f is None }})
+    r"""If context data is avaialble, this data will be used for variable replace."""
+    custom_variables: Optional[List[shared_externalcustomvariable.ExternalCustomVariable]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom_variables'), 'exclude': lambda f: f is None }})
+    r"""Custom variables with specified values form other services."""
+    language: Optional[VariableParametersLanguage] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('language'), 'exclude': lambda f: f is None }})
     main_entity_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('main_entity_id'), 'exclude': lambda f: f is None }})
-    r"""The main entity ID. Use main entity in order to use the variable without schema slug prefix - or just pass directly to other object ID."""  
+    r"""The main entity ID. Use main entity in order to use the variable without schema slug prefix - or just pass directly to other object ID."""
     template_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_name'), 'exclude': lambda f: f is None }})
-    r"""The name of email template"""  
-    template_tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_tags'), 'exclude': lambda f: f is None }})
-    r"""The tags of email template"""  
-    user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id'), 'exclude': lambda f: f is None }})
-    r"""User ID"""  
+    r"""The name of email template"""
+    template_tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_tags'), 'exclude': lambda f: f is None }})
+    r"""The tags of email template"""
+    user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_id') }})
+    r"""User ID"""
+    user_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user_org_id') }})
+    r"""Organization ID of the user"""
+    variables_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('variables_version'), 'exclude': lambda f: f is None }})
+    r"""The version of the variables syntax supported. Default is 1.0"""
     
+

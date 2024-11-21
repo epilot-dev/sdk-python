@@ -1,0 +1,9 @@
+# ReplaceTemplatesRequestBody
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      | Example                                                                          |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `inputs`                                                                         | List[*str*]                                                                      | :heavy_minus_sign:                                                               | N/A                                                                              | Hello, {{contact.first_name}}!<br/><br/>{{{brand.signature}}}<br/>               |
+| `parameters`                                                                     | [Optional[shared.VariableParameters]](../../models/shared/variableparameters.md) | :heavy_minus_sign:                                                               | N/A                                                                              |                                                                                  |

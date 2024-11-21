@@ -3,37 +3,41 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import templatetype_enum as shared_templatetype_enum
+from ..shared import templatetype as shared_templatetype
 from ..shared import variableresult as shared_variableresult
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
-class SearchVariablesRequestBodyLangEnum(str, Enum):
-    EN = "en"
-    DE = "de"
+class SearchVariablesRequestBodyLang(str, Enum):
+    EN = 'en'
+    DE = 'de'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SearchVariablesRequestBody:
-    
     query: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query') }})
-    r"""Search string"""  
-    template_type: shared_templatetype_enum.TemplateTypeEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})  
-    entity_schemas: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schemas'), 'exclude': lambda f: f is None }})  
-    from_: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})  
-    lang: Optional[SearchVariablesRequestBodyLangEnum] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lang'), 'exclude': lambda f: f is None }})  
-    size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})  
+    r"""Search string"""
+    template_type: shared_templatetype.TemplateType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template_type') }})
+    entity_schemas: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('entity_schemas'), 'exclude': lambda f: f is None }})
+    from_: Optional[int] = dataclasses.field(default=0, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from'), 'exclude': lambda f: f is None }})
+    lang: Optional[SearchVariablesRequestBodyLang] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lang'), 'exclude': lambda f: f is None }})
+    size: Optional[int] = dataclasses.field(default=25, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size'), 'exclude': lambda f: f is None }})
     
+
+
 
 @dataclasses.dataclass
 class SearchVariablesResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    variable_results: Optional[List[shared_variableresult.VariableResult]] = dataclasses.field(default=None)
+    r"""ok"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    variable_results: Optional[list[shared_variableresult.VariableResult]] = dataclasses.field(default=None)
-    r"""ok"""  
-    
+
