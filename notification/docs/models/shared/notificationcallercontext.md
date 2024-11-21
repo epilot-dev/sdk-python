@@ -1,0 +1,9 @@
+# NotificationCallerContext
+
+
+## Fields
+
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `additional_properties`                                                                                     | Dict[str, *Any*]                                                                                            | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
+| `epilot_auth`                                                                                               | [Optional[NotificationCallerContextEpilotAuth]](../../models/shared/notificationcallercontextepilotauth.md) | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
