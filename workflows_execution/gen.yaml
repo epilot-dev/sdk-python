@@ -1,16 +1,26 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 1aa929c361245dd2b795156709743b6a
+  docChecksum: 4111adf1684fd3890f128a4a6df2a55c
   docVersion: 1.0.0
-  speakeasyVersion: 1.19.2
-  generationVersion: 2.16.5
+  speakeasyVersion: 1.109.0
+  generationVersion: 2.173.0
 generation:
-  telemetryEnabled: false
+  repoURL: https://github.com/epilot-dev/sdk-python.git
   sdkClassName: epilot
-  sdkFlattening: true
   singleTagPerOp: false
+  telemetryEnabled: false
+features:
+  python:
+    core: 3.3.1
+    deprecations: 2.81.1
+    globalSecurity: 2.82.0
+    globalServerURLs: 2.82.0
 python:
-  version: 1.2.2
+  version: 2.1.1
   author: epilot
   description: Python Client SDK for Epilot
+  flattenGlobalSecurity: false
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_execution
+  maxMethodParams: 0
   packageName: epilot-workflows-execution
+  repoSubDirectory: workflows_execution

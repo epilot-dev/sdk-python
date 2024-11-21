@@ -3,7 +3,7 @@
 from __future__ import annotations
 from enum import Enum
 
-class WorkflowStatusEnum(str, Enum):
-    STARTED = "STARTED"
-    DONE = "DONE"
-    CLOSED = "CLOSED"
+class SectionStatus(str, Enum):
+    OPEN = 'OPEN'
+    IN_PROGRESS = 'IN_PROGRESS'
+    COMPLETED = 'COMPLETED'
