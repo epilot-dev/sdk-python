@@ -10,12 +10,15 @@ from typing import Optional
 
 @dataclasses.dataclass
 class GetMaxAllowedLimitResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     error_resp: Optional[shared_errorresp.ErrorResp] = dataclasses.field(default=None)
-    r"""Other errors"""  
+    r"""Other errors"""
     max_allowed_limit: Optional[shared_maxallowedlimit.MaxAllowedLimit] = dataclasses.field(default=None)
-    r"""A combo of current number of workflows, and the max allowed number of workflows."""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""A combo of current number of workflows, and the max allowed number of workflows."""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
