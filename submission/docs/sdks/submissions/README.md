@@ -1,5 +1,20 @@
-<!-- Start SDK Example Usage -->
+# Submissions
+(*submissions*)
 
+## Overview
+
+Journey Submission
+
+### Available Operations
+
+* [create_submission](#create_submission) - createSubmission
+
+## create_submission
+
+Creates a submission from a public facing Journey
+
+
+### Example Usage
 
 ```python
 import epilot
@@ -14,13 +29,13 @@ req = shared.SubmissionPayload(
     entities=[
         shared.SubmissionEntity(
             additional_properties={
-                "request": 'string',
-                "files": 'string',
-                "_schema": 'string',
                 "description": 'string',
                 "contact_first_name": 'string',
                 "contact_last_name": 'string',
                 "contact_email": 'string',
+                "request": 'string',
+                "files": 'string',
+                "_schema": 'string',
             },
             schema=shared.SubmissionEntitySchema.SUBMISSION,
             files=[
@@ -63,4 +78,15 @@ if res.status_code == 200:
     # handle response
     pass
 ```
-<!-- End SDK Example Usage -->
+
+### Parameters
+
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.SubmissionPayload](../../models/shared/submissionpayload.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+
+
+### Response
+
+**[operations.CreateSubmissionResponse](../../models/operations/createsubmissionresponse.md)**
+

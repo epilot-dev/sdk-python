@@ -1,0 +1,13 @@
+# SubmissionEntity
+
+The submission entity to create
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 | Example                                                                     |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `additional_properties`                                                     | Dict[str, *Any*]                                                            | :heavy_minus_sign:                                                          | N/A                                                                         | [object Object]                                                             |
+| `schema`                                                                    | [SubmissionEntitySchema](../../models/shared/submissionentityschema.md)     | :heavy_check_mark:                                                          | N/A                                                                         |                                                                             |
+| `description`                                                               | *Optional[str]*                                                             | :heavy_minus_sign:                                                          | Readable description of the submission. Will be used as the title if passed |                                                                             |
+| `files`                                                                     | List[[SubmissionEntityFiles](../../models/shared/submissionentityfiles.md)] | :heavy_minus_sign:                                                          | Files to attach to Submission Entity as a relation (s3refs from File API)<br/> |                                                                             |
