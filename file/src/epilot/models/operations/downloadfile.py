@@ -10,28 +10,33 @@ from typing import Optional
 
 @dataclasses.dataclass
 class DownloadFileRequest:
+    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
+    attachment: Optional[bool] = dataclasses.field(default=True, metadata={'query_param': { 'field_name': 'attachment', 'style': 'form', 'explode': True }})
+    r"""Controls the Content-Disposition header to control browser behaviour. Set to true to trigger download."""
+    version: Optional[int] = dataclasses.field(default=0, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
+    r"""index of file version"""
     
-    id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})  
-    attachment: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'attachment', 'style': 'form', 'explode': True }})
-    r"""Controls the Content-Disposition header to control browser behaviour. Set to true to trigger download."""  
-    version: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'version', 'style': 'form', 'explode': True }})
-    r"""index of file version"""  
-    
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DownloadFile200ApplicationJSON:
     r"""Generated thumbnail image"""
+    download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('download_url'), 'exclude': lambda f: f is None }})
     
-    download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('download_url'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class DownloadFileResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     download_file_200_application_json_object: Optional[DownloadFile200ApplicationJSON] = dataclasses.field(default=None)
-    r"""Generated thumbnail image"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""Generated thumbnail image"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+

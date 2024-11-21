@@ -9,18 +9,22 @@ from typing import Optional
 
 @dataclasses.dataclass
 class PreviewS3FileRequest:
-    
     h: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'h', 'style': 'form', 'explode': True }})
-    r"""height"""  
-    s3_reference: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    r"""height"""
+    s3_reference: Optional[shared_s3reference.S3Reference] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     w: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'w', 'style': 'form', 'explode': True }})
-    r"""width"""  
+    r"""width"""
     
+
+
 
 @dataclasses.dataclass
 class PreviewS3FileResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+
