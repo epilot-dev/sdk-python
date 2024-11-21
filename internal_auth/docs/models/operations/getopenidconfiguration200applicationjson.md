@@ -1,0 +1,11 @@
+# GetOpenIDConfiguration200ApplicationJSON
+
+OpenID Configuration
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          | Example                                                                                              |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `issuer`                                                                                             | *Optional[str]*                                                                                      | :heavy_minus_sign:                                                                                   | N/A                                                                                                  | https://h2d2syd0a4.execute-api.eu-central-1.amazonaws.com/dev/v1/internal-auth                       |
+| `jwks_uri`                                                                                           | *Optional[str]*                                                                                      | :heavy_minus_sign:                                                                                   | N/A                                                                                                  | https://h2d2syd0a4.execute-api.eu-central-1.amazonaws.com/dev/v1/internal-auth/.well-known/jwks.json |
