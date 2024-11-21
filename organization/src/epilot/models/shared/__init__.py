@@ -3,4 +3,4 @@
 from .organization import *
 from .security import *
 
-__all__ = ["Organization","OrganizationAddress","OrganizationTypeEnum","Security"]
+__all__ = ["Organization","OrganizationAddress","OrganizationType","Security"]
