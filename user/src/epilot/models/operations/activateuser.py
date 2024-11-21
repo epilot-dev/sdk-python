@@ -9,16 +9,20 @@ from typing import Optional
 
 @dataclasses.dataclass
 class ActivateUserRequest:
-    
     token: str = dataclasses.field(metadata={'query_param': { 'field_name': 'token', 'style': 'form', 'explode': True }})
-    r"""Invite Token"""  
-    user_activation_payload: Optional[shared_useractivationpayload.UserActivationPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})  
+    r"""Invite Token"""
+    user_activation_payload: Optional[shared_useractivationpayload.UserActivationPayload] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     
+
+
 
 @dataclasses.dataclass
 class ActivateUserResponse:
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
-    
+

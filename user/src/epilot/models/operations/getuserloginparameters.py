@@ -6,30 +6,35 @@ import requests as requests_http
 from ..shared import loginparameters as shared_loginparameters
 from dataclasses_json import Undefined, dataclass_json
 from epilot import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclasses.dataclass
 class GetUserLoginParametersRequest:
-    
     username: str = dataclasses.field(metadata={'path_param': { 'field_name': 'username', 'style': 'simple', 'explode': False }})
-    r"""Username"""  
+    r"""Username"""
     
+
+
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetUserLoginParameters200ApplicationJSON:
     r"""User"""
+    login_parameters: Optional[List[shared_loginparameters.LoginParameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login_parameters'), 'exclude': lambda f: f is None }})
     
-    login_parameters: Optional[list[shared_loginparameters.LoginParameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('login_parameters'), 'exclude': lambda f: f is None }})  
-    
+
+
 
 @dataclasses.dataclass
 class GetUserLoginParametersResponse:
-    
-    content_type: str = dataclasses.field()  
-    status_code: int = dataclasses.field()  
+    content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_user_login_parameters_200_application_json_object: Optional[GetUserLoginParameters200ApplicationJSON] = dataclasses.field(default=None)
-    r"""User"""  
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)  
+    r"""User"""
+    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
