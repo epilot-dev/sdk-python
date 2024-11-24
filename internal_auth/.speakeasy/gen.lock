@@ -1,0 +1,109 @@
+lockVersion: 2.0.0
+id: 7ce2da34-3114-4559-a4cd-3df0dc46e0f8
+management:
+  docChecksum: 88153a048a37af0988ef5bd002336a5e
+  docVersion: 0.0.1
+  speakeasyVersion: 1.444.1
+  generationVersion: 2.461.4
+  releaseVersion: 1.3.0
+  configChecksum: d5a88ccea72c7c6d84bc16a744fee5aa
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: internal_auth
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=internal_auth
+features:
+  python:
+    additionalDependencies: 1.0.0
+    additionalProperties: 1.0.1
+    core: 5.6.6
+    defaultEnabledRetries: 0.2.0
+    envVarSecurityUsage: 0.3.2
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.0.0
+    methodArguments: 1.0.2
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+    tests: 1.6.0
+    unions: 3.0.3
+generatedFiles:
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/authrequest.md
+  - docs/models/expires.md
+  - docs/models/getjwksresponsebody.md
+  - docs/models/getopenidconfigurationresponsebody.md
+  - docs/models/gettokenresponsebody.md
+  - docs/models/gettokenv2responsebody.md
+  - docs/models/keys.md
+  - docs/models/security.md
+  - docs/models/utils/retryconfig.md
+  - docs/sdks/epilot/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/epilot_internal_auth/__init__.py
+  - src/epilot_internal_auth/_hooks/__init__.py
+  - src/epilot_internal_auth/_hooks/sdkhooks.py
+  - src/epilot_internal_auth/_hooks/types.py
+  - src/epilot_internal_auth/_version.py
+  - src/epilot_internal_auth/basesdk.py
+  - src/epilot_internal_auth/httpclient.py
+  - src/epilot_internal_auth/models/__init__.py
+  - src/epilot_internal_auth/models/apierror.py
+  - src/epilot_internal_auth/models/authrequest.py
+  - src/epilot_internal_auth/models/getjwksop.py
+  - src/epilot_internal_auth/models/getopenidconfigurationop.py
+  - src/epilot_internal_auth/models/gettokenop.py
+  - src/epilot_internal_auth/models/gettokenv2op.py
+  - src/epilot_internal_auth/models/security.py
+  - src/epilot_internal_auth/py.typed
+  - src/epilot_internal_auth/sdk.py
+  - src/epilot_internal_auth/sdkconfiguration.py
+  - src/epilot_internal_auth/types/__init__.py
+  - src/epilot_internal_auth/types/basemodel.py
+  - src/epilot_internal_auth/utils/__init__.py
+  - src/epilot_internal_auth/utils/annotations.py
+  - src/epilot_internal_auth/utils/enums.py
+  - src/epilot_internal_auth/utils/eventstreaming.py
+  - src/epilot_internal_auth/utils/forms.py
+  - src/epilot_internal_auth/utils/headers.py
+  - src/epilot_internal_auth/utils/logger.py
+  - src/epilot_internal_auth/utils/metadata.py
+  - src/epilot_internal_auth/utils/queryparams.py
+  - src/epilot_internal_auth/utils/requestbodies.py
+  - src/epilot_internal_auth/utils/retries.py
+  - src/epilot_internal_auth/utils/security.py
+  - src/epilot_internal_auth/utils/serializers.py
+  - src/epilot_internal_auth/utils/url.py
+  - src/epilot_internal_auth/utils/values.py
+examples:
+  getJwks:
+    speakeasy-default-get-jwks:
+      responses:
+        "200":
+          application/json: {"keys": [{"alg": "RS256", "e": "AQAB", "kid": "tXWU5mPMbRPczpbQwi6vbhLF4GgF3wlMDSyqo7pfeiw=", "kty": "RSA", "n": "h_QDoCjZ8W_trtYXaP7_S22wf5r5Wd9XBLED78oT44bJjQXn8ddcFV8Hik65_4IYXVX_hTTU4zpxe3H8vx2j7-Zz3O59mYMp5S0MzODNEdf5Y_2o19eis0brmAJniixsNlQ9LlYkdrVamrgaxHu3ZpP_99zkfFybYeuYoQNzb3PyrT8xVnz_USs_nlFMHpGUxvvz7gfKPqxcLvgLJr4cwI9yzaSY9CD4qW181QVcnL_WzpQ8xx6AuhhHZQ1l_3GG4InTk8ahE7U2ZHVu8RrX6d01pMgc3piEcet9RgFLnhbTg3YIiKGoAbN42wJn_x3lgIAC42T9mbmTsHyUdS6nUQ", "use": "sig"}, {"alg": "RS256", "e": "AQAB", "kid": "tXWU5mPMbRPczpbQwi6vbhLF4GgF3wlMDSyqo7pfeiw=", "kty": "RSA", "n": "h_QDoCjZ8W_trtYXaP7_S22wf5r5Wd9XBLED78oT44bJjQXn8ddcFV8Hik65_4IYXVX_hTTU4zpxe3H8vx2j7-Zz3O59mYMp5S0MzODNEdf5Y_2o19eis0brmAJniixsNlQ9LlYkdrVamrgaxHu3ZpP_99zkfFybYeuYoQNzb3PyrT8xVnz_USs_nlFMHpGUxvvz7gfKPqxcLvgLJr4cwI9yzaSY9CD4qW181QVcnL_WzpQ8xx6AuhhHZQ1l_3GG4InTk8ahE7U2ZHVu8RrX6d01pMgc3piEcet9RgFLnhbTg3YIiKGoAbN42wJn_x3lgIAC42T9mbmTsHyUdS6nUQ", "use": "sig"}, {"alg": "RS256", "e": "AQAB", "kid": "tXWU5mPMbRPczpbQwi6vbhLF4GgF3wlMDSyqo7pfeiw=", "kty": "RSA", "n": "h_QDoCjZ8W_trtYXaP7_S22wf5r5Wd9XBLED78oT44bJjQXn8ddcFV8Hik65_4IYXVX_hTTU4zpxe3H8vx2j7-Zz3O59mYMp5S0MzODNEdf5Y_2o19eis0brmAJniixsNlQ9LlYkdrVamrgaxHu3ZpP_99zkfFybYeuYoQNzb3PyrT8xVnz_USs_nlFMHpGUxvvz7gfKPqxcLvgLJr4cwI9yzaSY9CD4qW181QVcnL_WzpQ8xx6AuhhHZQ1l_3GG4InTk8ahE7U2ZHVu8RrX6d01pMgc3piEcet9RgFLnhbTg3YIiKGoAbN42wJn_x3lgIAC42T9mbmTsHyUdS6nUQ", "use": "sig"}]}
+  getOpenIDConfiguration:
+    speakeasy-default-get-open-ID-configuration:
+      responses:
+        "200":
+          application/json: {"issuer": "https://internal-auth.sls.epilot.io/v1/internal-auth", "jwks_uri": "https://internal-auth.sls.epilot.io/v1/internal-auth/.well-known/jwks.json"}
+  getToken:
+    speakeasy-default-get-token:
+      responses:
+        "200":
+          application/json: {"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0IiwibmFtZSI6IkhlbGxvIGVwaWxvdCIsImlhdCI6MTUxNjIzOTAyMn0.FhoeinGX4X3wh6K4KFJbdIJ3JAG12Ezi-s6BhT-ngK4"}
+  getTokenV2:
+    speakeasy-default-get-token-v2:
+      requestBody:
+        application/json: {"assume_roles": ["org_id:root"], "expires": 163927, "org_id": "12345"}
+      responses:
+        "200":
+          application/json: {"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0IiwibmFtZSI6IkhlbGxvIGVwaWxvdCIsImlhdCI6MTUxNjIzOTAyMn0.FhoeinGX4X3wh6K4KFJbdIJ3JAG12Ezi-s6BhT-ngK4"}
