@@ -32,60 +32,8 @@ poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=submiss
 import epilot_submission
 from epilot_submission import Epilot
 
-s = Epilot()
-
-s.submissions.create_submission(request={
-    "entities": [
-        epilot_submission.SubmissionEntity(
-            schema_=epilot_submission.Schema.SUBMISSION,
-            description="Submission created via API",
-            files=[
-                epilot_submission.Files(
-                    s3ref={
-                        "bucket": "epilot-user-content",
-                        "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-                    },
-                    filename="document.pdf",
-                    **{
-
-                    },
-                ),
-            ],
-            **{
-                "contact_first_name": "First",
-                "contact_last_name": "Last",
-                "contact_email": "example@submission.com",
-                "request": "I would like to know more about electric vehicles",
-            },
-        ),
-    ],
-    "organization_id": "123",
-    "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
-    "source_type": "journey",
-    "journey_submit_id": "123",
-    "opt_ins": [
-        {
-            "identifier": "example@email.com",
-            "topic": "EMAIL_MARKETING",
-        },
-    ],
-})
-
-# Use the SDK ...
-```
-
-</br>
-
-The same SDK client can also be used to make asychronous requests by importing asyncio.
-```python
-# Asynchronous Example
-import asyncio
-import epilot_submission
-from epilot_submission import Epilot
-
-async def main():
-    s = Epilot()
-    await s.submissions.create_submission_async(request={
+with Epilot() as s:
+    s.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
                 schema_=epilot_submission.Schema.SUBMISSION,
@@ -121,7 +69,59 @@ async def main():
             },
         ],
     })
+
     # Use the SDK ...
+```
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_submission
+from epilot_submission import Epilot
+
+async def main():
+    async with Epilot() as s:
+        await s.submissions.create_submission_async(request={
+            "entities": [
+                epilot_submission.SubmissionEntity(
+                    schema_=epilot_submission.Schema.SUBMISSION,
+                    description="Submission created via API",
+                    files=[
+                        epilot_submission.Files(
+                            s3ref={
+                                "bucket": "epilot-user-content",
+                                "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+                            },
+                            filename="document.pdf",
+                            **{
+
+                            },
+                        ),
+                    ],
+                    **{
+                        "contact_first_name": "First",
+                        "contact_last_name": "Last",
+                        "contact_email": "example@submission.com",
+                        "request": "I would like to know more about electric vehicles",
+                    },
+                ),
+            ],
+            "organization_id": "123",
+            "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
+            "source_type": "journey",
+            "journey_submit_id": "123",
+            "opt_ins": [
+                {
+                    "identifier": "example@email.com",
+                    "topic": "EMAIL_MARKETING",
+                },
+            ],
+        })
+
+        # Use the SDK ...
 
 asyncio.run(main())
 ```
@@ -152,47 +152,46 @@ from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_submission
 from epilot_submission import Epilot
 
-s = Epilot()
+with Epilot() as s:
+    s.submissions.create_submission(request={
+        "entities": [
+            epilot_submission.SubmissionEntity(
+                schema_=epilot_submission.Schema.SUBMISSION,
+                description="Submission created via API",
+                files=[
+                    epilot_submission.Files(
+                        s3ref={
+                            "bucket": "epilot-user-content",
+                            "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+                        },
+                        filename="document.pdf",
+                        **{
 
-s.submissions.create_submission(request={
-    "entities": [
-        epilot_submission.SubmissionEntity(
-            schema_=epilot_submission.Schema.SUBMISSION,
-            description="Submission created via API",
-            files=[
-                epilot_submission.Files(
-                    s3ref={
-                        "bucket": "epilot-user-content",
-                        "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-                    },
-                    filename="document.pdf",
-                    **{
-
-                    },
-                ),
-            ],
-            **{
-                "contact_first_name": "First",
-                "contact_last_name": "Last",
-                "contact_email": "example@submission.com",
-                "request": "I would like to know more about electric vehicles",
+                        },
+                    ),
+                ],
+                **{
+                    "contact_first_name": "First",
+                    "contact_last_name": "Last",
+                    "contact_email": "example@submission.com",
+                    "request": "I would like to know more about electric vehicles",
+                },
+            ),
+        ],
+        "organization_id": "123",
+        "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
+        "source_type": "journey",
+        "journey_submit_id": "123",
+        "opt_ins": [
+            {
+                "identifier": "example@email.com",
+                "topic": "EMAIL_MARKETING",
             },
-        ),
-    ],
-    "organization_id": "123",
-    "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
-    "source_type": "journey",
-    "journey_submit_id": "123",
-    "opt_ins": [
-        {
-            "identifier": "example@email.com",
-            "topic": "EMAIL_MARKETING",
-        },
-    ],
-},
-    RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
+        ],
+    },
+        RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -202,82 +201,9 @@ from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_submission
 from epilot_submission import Epilot
 
-s = Epilot(
+with Epilot(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
-)
-
-s.submissions.create_submission(request={
-    "entities": [
-        epilot_submission.SubmissionEntity(
-            schema_=epilot_submission.Schema.SUBMISSION,
-            description="Submission created via API",
-            files=[
-                epilot_submission.Files(
-                    s3ref={
-                        "bucket": "epilot-user-content",
-                        "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-                    },
-                    filename="document.pdf",
-                    **{
-
-                    },
-                ),
-            ],
-            **{
-                "contact_first_name": "First",
-                "contact_last_name": "Last",
-                "contact_email": "example@submission.com",
-                "request": "I would like to know more about electric vehicles",
-            },
-        ),
-    ],
-    "organization_id": "123",
-    "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
-    "source_type": "journey",
-    "journey_submit_id": "123",
-    "opt_ins": [
-        {
-            "identifier": "example@email.com",
-            "topic": "EMAIL_MARKETING",
-        },
-    ],
-})
-
-# Use the SDK ...
-
-```
-<!-- End Retries [retries] -->
-
-<!-- Start Error Handling [errors] -->
-## Error Handling
-
-Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
-
-By default, an API error will raise a models.SDKError exception, which has the following properties:
-
-| Property        | Type             | Description           |
-|-----------------|------------------|-----------------------|
-| `.status_code`  | *int*            | The HTTP status code  |
-| `.message`      | *str*            | The error message     |
-| `.raw_response` | *httpx.Response* | The raw HTTP response |
-| `.body`         | *str*            | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_submission_async` method may raise the following exceptions:
-
-| Error Type      | Status Code | Content Type |
-| --------------- | ----------- | ------------ |
-| models.SDKError | 4XX, 5XX    | \*/\*        |
-
-### Example
-
-```python
-import epilot_submission
-from epilot_submission import Epilot, models
-
-s = Epilot()
-
-
-try:
+) as s:
     s.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
@@ -317,9 +243,80 @@ try:
 
     # Use the SDK ...
 
-except models.SDKError as e:
-    # handle exception
-    raise(e)
+```
+<!-- End Retries [retries] -->
+
+<!-- Start Error Handling [errors] -->
+## Error Handling
+
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
+
+By default, an API error will raise a models.SDKError exception, which has the following properties:
+
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `create_submission_async` method may raise the following exceptions:
+
+| Error Type      | Status Code | Content Type |
+| --------------- | ----------- | ------------ |
+| models.SDKError | 4XX, 5XX    | \*/\*        |
+
+### Example
+
+```python
+import epilot_submission
+from epilot_submission import Epilot, models
+
+with Epilot() as s:
+
+    try:
+        s.submissions.create_submission(request={
+            "entities": [
+                epilot_submission.SubmissionEntity(
+                    schema_=epilot_submission.Schema.SUBMISSION,
+                    description="Submission created via API",
+                    files=[
+                        epilot_submission.Files(
+                            s3ref={
+                                "bucket": "epilot-user-content",
+                                "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+                            },
+                            filename="document.pdf",
+                            **{
+
+                            },
+                        ),
+                    ],
+                    **{
+                        "contact_first_name": "First",
+                        "contact_last_name": "Last",
+                        "contact_email": "example@submission.com",
+                        "request": "I would like to know more about electric vehicles",
+                    },
+                ),
+            ],
+            "organization_id": "123",
+            "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
+            "source_type": "journey",
+            "journey_submit_id": "123",
+            "opt_ins": [
+                {
+                    "identifier": "example@email.com",
+                    "topic": "EMAIL_MARKETING",
+                },
+            ],
+        })
+
+        # Use the SDK ...
+
+    except models.SDKError as e:
+        # handle exception
+        raise(e)
 ```
 <!-- End Error Handling [errors] -->
 
@@ -333,48 +330,47 @@ The default server can also be overridden globally by passing a URL to the `serv
 import epilot_submission
 from epilot_submission import Epilot
 
-s = Epilot(
+with Epilot(
     server_url="https://submission.sls.epilot.io",
-)
+) as s:
+    s.submissions.create_submission(request={
+        "entities": [
+            epilot_submission.SubmissionEntity(
+                schema_=epilot_submission.Schema.SUBMISSION,
+                description="Submission created via API",
+                files=[
+                    epilot_submission.Files(
+                        s3ref={
+                            "bucket": "epilot-user-content",
+                            "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+                        },
+                        filename="document.pdf",
+                        **{
 
-s.submissions.create_submission(request={
-    "entities": [
-        epilot_submission.SubmissionEntity(
-            schema_=epilot_submission.Schema.SUBMISSION,
-            description="Submission created via API",
-            files=[
-                epilot_submission.Files(
-                    s3ref={
-                        "bucket": "epilot-user-content",
-                        "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-                    },
-                    filename="document.pdf",
-                    **{
-
-                    },
-                ),
-            ],
-            **{
-                "contact_first_name": "First",
-                "contact_last_name": "Last",
-                "contact_email": "example@submission.com",
-                "request": "I would like to know more about electric vehicles",
+                        },
+                    ),
+                ],
+                **{
+                    "contact_first_name": "First",
+                    "contact_last_name": "Last",
+                    "contact_email": "example@submission.com",
+                    "request": "I would like to know more about electric vehicles",
+                },
+            ),
+        ],
+        "organization_id": "123",
+        "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
+        "source_type": "journey",
+        "journey_submit_id": "123",
+        "opt_ins": [
+            {
+                "identifier": "example@email.com",
+                "topic": "EMAIL_MARKETING",
             },
-        ),
-    ],
-    "organization_id": "123",
-    "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
-    "source_type": "journey",
-    "journey_submit_id": "123",
-    "opt_ins": [
-        {
-            "identifier": "example@email.com",
-            "topic": "EMAIL_MARKETING",
-        },
-    ],
-})
+        ],
+    })
 
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 <!-- End Server Selection [server] -->
@@ -476,48 +472,47 @@ To authenticate with the API the `epilot_auth` parameter must be set when initia
 import epilot_submission
 from epilot_submission import Epilot
 
-s = Epilot(
+with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.submissions.create_submission(request={
+        "entities": [
+            epilot_submission.SubmissionEntity(
+                schema_=epilot_submission.Schema.SUBMISSION,
+                description="Submission created via API",
+                files=[
+                    epilot_submission.Files(
+                        s3ref={
+                            "bucket": "epilot-user-content",
+                            "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
+                        },
+                        filename="document.pdf",
+                        **{
 
-s.submissions.create_submission(request={
-    "entities": [
-        epilot_submission.SubmissionEntity(
-            schema_=epilot_submission.Schema.SUBMISSION,
-            description="Submission created via API",
-            files=[
-                epilot_submission.Files(
-                    s3ref={
-                        "bucket": "epilot-user-content",
-                        "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-                    },
-                    filename="document.pdf",
-                    **{
-
-                    },
-                ),
-            ],
-            **{
-                "contact_first_name": "First",
-                "contact_last_name": "Last",
-                "contact_email": "example@submission.com",
-                "request": "I would like to know more about electric vehicles",
+                        },
+                    ),
+                ],
+                **{
+                    "contact_first_name": "First",
+                    "contact_last_name": "Last",
+                    "contact_email": "example@submission.com",
+                    "request": "I would like to know more about electric vehicles",
+                },
+            ),
+        ],
+        "organization_id": "123",
+        "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
+        "source_type": "journey",
+        "journey_submit_id": "123",
+        "opt_ins": [
+            {
+                "identifier": "example@email.com",
+                "topic": "EMAIL_MARKETING",
             },
-        ),
-    ],
-    "organization_id": "123",
-    "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051",
-    "source_type": "journey",
-    "journey_submit_id": "123",
-    "opt_ins": [
-        {
-            "identifier": "example@email.com",
-            "topic": "EMAIL_MARKETING",
-        },
-    ],
-})
+        ],
+    })
 
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 <!-- End Authentication [security] -->

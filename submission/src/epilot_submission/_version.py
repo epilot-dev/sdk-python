@@ -3,7 +3,7 @@
 import importlib.metadata
 
 __title__: str = "epilot-submission"
-__version__: str = "1.9.3"
+__version__: str = "1.10.0"
 
 try:
     if __package__ is not None:
