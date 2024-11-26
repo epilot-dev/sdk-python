@@ -22,17 +22,16 @@ Get all template variable categories
 import epilot_template_variables
 from epilot_template_variables import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.variables.get_categories()
 
-res = s.variables.get_categories()
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -66,32 +65,31 @@ Calls Entity API, User API, Brand API and others to construct full context objec
 import epilot_template_variables
 from epilot_template_variables import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.variables.get_variable_context(request={
+        "parameters": {
+            "template_type": epilot_template_variables.TemplateType.EMAIL,
+            "brand_id": 123451,
+            "custom_variables": [
+                {
+                    "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
+                    "variable": "{{craftsmen.invitation_link}}",
+                },
+            ],
+            "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561",
+            "user_id": "50001",
+            "user_org_id": "729224",
+            "variables_version": "2",
+        },
+    })
 
-res = s.variables.get_variable_context(request={
-    "parameters": {
-        "template_type": epilot_template_variables.TemplateType.EMAIL,
-        "brand_id": 123451,
-        "custom_variables": [
-            {
-                "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                "variable": "{{craftsmen.invitation_link}}",
-            },
-        ],
-        "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561",
-        "user_id": "50001",
-        "user_org_id": "729224",
-        "variables_version": "2",
-    },
-})
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -125,38 +123,37 @@ Takes in an array of input templates and outputs the output text with replaced v
 import epilot_template_variables
 from epilot_template_variables import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
-
-res = s.variables.replace_templates(request={
-    "inputs": [
-        "Hello, {{contact.first_name}}!\n" +
-        "\n" +
-        "{{{brand.signature}}}\n" +
-        "",
-    ],
-    "parameters": {
-        "template_type": epilot_template_variables.TemplateType.EMAIL,
-        "brand_id": 123451,
-        "custom_variables": [
-            {
-                "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                "variable": "{{craftsmen.invitation_link}}",
-            },
+) as s:
+    res = s.variables.replace_templates(request={
+        "inputs": [
+            "Hello, {{contact.first_name}}!\n" +
+            "\n" +
+            "{{{brand.signature}}}\n" +
+            "",
         ],
-        "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561",
-        "user_id": "50001",
-        "user_org_id": "729224",
-        "variables_version": "2",
-    },
-})
+        "parameters": {
+            "template_type": epilot_template_variables.TemplateType.EMAIL,
+            "brand_id": 123451,
+            "custom_variables": [
+                {
+                    "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
+                    "variable": "{{craftsmen.invitation_link}}",
+                },
+            ],
+            "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561",
+            "user_id": "50001",
+            "user_org_id": "729224",
+            "variables_version": "2",
+        },
+    })
 
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -187,23 +184,22 @@ Search variables
 import epilot_template_variables
 from epilot_template_variables import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.variables.search_variables(request={
+        "query": "logo",
+        "template_type": epilot_template_variables.TemplateType.DOCUMENT,
+        "entity_schemas": [
+            "contact",
+        ],
+    })
 
-res = s.variables.search_variables(request={
-    "query": "logo",
-    "template_type": epilot_template_variables.TemplateType.DOCUMENT,
-    "entity_schemas": [
-        "contact",
-    ],
-})
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
