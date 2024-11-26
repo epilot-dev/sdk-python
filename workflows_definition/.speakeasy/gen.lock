@@ -3,17 +3,17 @@ id: 8727d4ad-f9cf-4aa1-993f-c90fc6591190
 management:
   docChecksum: 8a2ff4be25db818a35891d602baa4a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.443.0
-  generationVersion: 2.461.4
-  releaseVersion: 1.10.4
-  configChecksum: 05dc1a1216e423efa471d5b87b6c01d2
+  speakeasyVersion: 1.446.0
+  generationVersion: 2.462.0
+  releaseVersion: 1.11.0
+  configChecksum: 78e4c5e0d11d656bef8ff3d71f792b9c
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.6.6
+    core: 5.6.8
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     enumUnions: 0.1.0
@@ -27,8 +27,7 @@ features:
     responseFormat: 1.0.1
     retries: 3.0.2
     sdkHooks: 1.0.0
-    tests: 1.6.0
-    unions: 3.0.3
+    unions: 3.0.4
 generatedFiles:
   - .gitattributes
   - .python-version
@@ -163,10 +162,10 @@ examples:
   createDefinition:
     "":
       requestBody:
-        application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [], "creationTime": "2021-04-27T12:01:13.000Z", "description": "Lead Qualification description", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "lastUpdateTime": "2021-04-27T12:01:13.000Z", "name": "Lead Qualification", "updateEntityAttributes": []}
+        application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [], "creationTime": "2021-04-27T12:01:13.000Z", "description": "Lead Qualification description", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["123482"], "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["123482"], "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["123482"], "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["123482"], "name": "Print and send catalog", "order": 2, "type": "STEP"}], "lastUpdateTime": "2021-04-27T12:01:13.000Z", "name": "Lead Qualification", "updateEntityAttributes": []}
       responses:
         "200":
-          application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [], "creationTime": "2021-08-04T21:13:50.373Z", "description": "Lead Qualification description", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["48829"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["45390"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["8230"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8239"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}
+          application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [], "creationTime": "2021-08-04T21:13:50.373Z", "description": "Lead Qualification description", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["48829"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["45390"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["8230"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8239"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}
         "400": {}
   deleteDefinition:
     "":
@@ -180,14 +179,14 @@ examples:
           definitionId: "7hj28a"
       responses:
         "200":
-          application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [{"id": "ffoowef"}, {"id": "hebwoeu"}, {"id": "mbnoenq"}], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["923432"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["45488"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["45488"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8988"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}
+          application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [{"id": "ffoowef"}, {"id": "hebwoeu"}, {"id": "mbnoenq"}], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["923432"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["45488"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["45488"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8988"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}
         "400": {}
         "404": {}
   getDefinitions:
     "":
       responses:
         "200":
-          application/json: [{"assignedTo": ["18625", "90252"], "closingReasons": [{"id": "x739cew"}, {"id": "x739cew"}, {"id": "x739cew"}], "creationTime": "2021-08-04T21:13:50.373Z", "description": "Lead Qualification description", "dueDate": "2021-08-04T21:13:50.373Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["123482"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}]
+          application/json: [{"assignedTo": ["18625", "90252"], "creationTime": "2021-08-04T21:13:50.373Z", "description": "Lead Qualification description", "dueDate": "2021-08-04T21:13:50.373Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["123482"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["123482"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["123482"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["123482"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification"}]
         "500": {}
   getMaxAllowedLimit:
     "":
@@ -216,8 +215,9 @@ examples:
         path:
           definitionId: "7hj28a"
       requestBody:
-        application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["8988"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["8988"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["8988"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8988"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}
+        application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["8988"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["8988"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["8988"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8988"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}
       responses:
         "200":
-          application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["1"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["56645"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["949923"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["156645"], "dueDate": "2021-04-27T12:00:00.000Z", "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}
+          application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["1"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["56645"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["949923"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["156645"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification", "updateEntityAttributes": []}
         "400": {}
+generatedTests: {}

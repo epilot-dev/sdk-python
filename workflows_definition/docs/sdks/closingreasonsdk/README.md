@@ -18,13 +18,12 @@ Change the status of a Closing Reason (eg. ACTIVE to INACTIVE).
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.closing_reason.change_reason_status(reason_id="<value>")
 
-s.closing_reason.change_reason_status(reason_id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -53,18 +52,17 @@ A created Closing Reason is stored for the organization and will be displayed in
 import openapi
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.closing_reason.create_closing_reason(request={
+        "status": openapi.ClosingReasonsStatus.ACTIVE,
+        "title": "better offer",
+    })
 
-res = s.closing_reason.create_closing_reason(request={
-    "status": openapi.ClosingReasonsStatus.ACTIVE,
-    "title": "better offer",
-})
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -94,15 +92,14 @@ Get all Closing Reasons defined in the organization by default all Active.
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.closing_reason.get_all_closing_reasons(include_inactive=True)
 
-res = s.closing_reason.get_all_closing_reasons(include_inactive=True)
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 

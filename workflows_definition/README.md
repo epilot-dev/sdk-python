@@ -31,13 +31,12 @@ poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=workflo
 # Synchronous Example
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.closing_reason.change_reason_status(reason_id="<value>")
 
-s.closing_reason.change_reason_status(reason_id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 ```
 
 </br>
@@ -49,11 +48,12 @@ import asyncio
 from openapi import SDK
 
 async def main():
-    s = SDK(
+    async with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-    )
-    await s.closing_reason.change_reason_status_async(reason_id="<value>")
-    # Use the SDK ...
+    ) as s:
+        await s.closing_reason.change_reason_status_async(reason_id="<value>")
+
+        # Use the SDK ...
 
 asyncio.run(main())
 ```
@@ -96,14 +96,13 @@ To change the default retry strategy for a single API call, simply provide a `Re
 from openapi import SDK
 from sdk.utils import BackoffStrategy, RetryConfig
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.closing_reason.change_reason_status(reason_id="<value>",
+        RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-s.closing_reason.change_reason_status(reason_id="<value>",
-    RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -112,14 +111,13 @@ If you'd like to override the default retry strategy for all operations that sup
 from openapi import SDK
 from sdk.utils import BackoffStrategy, RetryConfig
 
-s = SDK(
+with SDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.closing_reason.change_reason_status(reason_id="<value>")
 
-s.closing_reason.change_reason_status(reason_id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 <!-- End Retries [retries] -->
@@ -150,22 +148,21 @@ When custom error responses are specified for an operation, the SDK may also rai
 ```python
 from openapi import SDK, models
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
 
+    try:
+        s.closing_reason.change_reason_status(reason_id="<value>")
 
-try:
-    s.closing_reason.change_reason_status(reason_id="<value>")
+        # Use the SDK ...
 
-    # Use the SDK ...
-
-except models.ErrorResp as e:
-    # handle e.data: models.ErrorRespData
-    raise(e)
-except models.SDKError as e:
-    # handle exception
-    raise(e)
+    except models.ErrorResp as e:
+        # handle e.data: models.ErrorRespData
+        raise(e)
+    except models.SDKError as e:
+        # handle exception
+        raise(e)
 ```
 <!-- End Error Handling [errors] -->
 
@@ -178,14 +175,13 @@ The default server can also be overridden globally by passing a URL to the `serv
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     server_url="https://workflows-definition.sls.epilot.io",
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.closing_reason.change_reason_status(reason_id="<value>")
 
-s.closing_reason.change_reason_status(reason_id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 <!-- End Server Selection [server] -->
@@ -286,13 +282,12 @@ To authenticate with the API the `bearer_auth` parameter must be set when initia
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.closing_reason.change_reason_status(reason_id="<value>")
 
-s.closing_reason.change_reason_status(reason_id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 <!-- End Authentication [security] -->

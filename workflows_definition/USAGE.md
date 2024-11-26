@@ -3,13 +3,12 @@
 # Synchronous Example
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.closing_reason.change_reason_status(reason_id="<value>")
 
-s.closing_reason.change_reason_status(reason_id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 ```
 
 </br>
@@ -21,11 +20,12 @@ import asyncio
 from openapi import SDK
 
 async def main():
-    s = SDK(
+    async with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-    )
-    await s.closing_reason.change_reason_status_async(reason_id="<value>")
-    # Use the SDK ...
+    ) as s:
+        await s.closing_reason.change_reason_status_async(reason_id="<value>")
+
+        # Use the SDK ...
 
 asyncio.run(main())
 ```

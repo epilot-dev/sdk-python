@@ -12,13 +12,13 @@ from .updateentityattributes import (
 from openapi.types import BaseModel
 import pydantic
 from typing import List, Optional, Union
-from typing_extensions import Annotated, NotRequired, TypedDict
+from typing_extensions import Annotated, NotRequired, TypeAliasType, TypedDict
 
 
-FlowTypedDict = Union[SectionTypedDict, StepTypedDict]
+FlowTypedDict = TypeAliasType("FlowTypedDict", Union[SectionTypedDict, StepTypedDict])
 
 
-Flow = Union[Section, Step]
+Flow = TypeAliasType("Flow", Union[Section, Step])
 
 
 class WorkflowDefinitionTypedDict(TypedDict):

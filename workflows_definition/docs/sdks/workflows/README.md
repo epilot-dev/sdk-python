@@ -24,84 +24,79 @@ Create a Workflow Definition.
 import openapi
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-res = s.workflows.create_definition(request={
-    "flow": [
-        {
-            "name": "Initial Information Gathering",
-            "order": 1,
-            "steps": [
-                {
-                    "name": "Call client and confirm address and product",
-                    "order": 1,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "123482",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                },
-                {
-                    "name": "Check product availability",
-                    "order": 2,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "123482",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                },
-                {
-                    "name": "Send email confirming contact with the client",
-                    "order": 3,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "123482",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                },
-            ],
-            "type": openapi.ItemType.SECTION,
-        },
-        {
-            "name": "Print and send catalog",
-            "order": 2,
-            "type": openapi.ItemType.STEP,
-            "assigned_to": [
-                "123482",
-            ],
-            "due_date": "2021-04-27T12:00:00.000Z",
-        },
-    ],
-    "name": "Lead Qualification",
-    "assigned_to": [
-        "952802",
-        "80225",
-    ],
-    "closing_reasons": [
-        {
-            "id": "x739cew",
-        },
-    ],
-    "creation_time": "2021-04-27T12:01:13.000Z",
-    "description": "Lead Qualification description",
-    "due_date": "2022-08-04T12:00:00.000Z",
-    "last_update_time": "2021-04-27T12:01:13.000Z",
-    "update_entity_attributes": [
-        {
-            "source": openapi.Source.CURRENT_SECTION,
-            "target": {
-                "entity_attribute": "my_status",
-                "entity_schema": "opportunity",
+) as s:
+    res = s.workflows.create_definition(request={
+        "flow": [
+            {
+                "name": "Initial Information Gathering",
+                "order": 1,
+                "steps": [
+                    {
+                        "name": "Call client and confirm address and product",
+                        "order": 1,
+                        "type": openapi.ItemType.STEP,
+                        "assigned_to": [
+                            "123482",
+                        ],
+                    },
+                    {
+                        "name": "Check product availability",
+                        "order": 2,
+                        "type": openapi.ItemType.STEP,
+                        "assigned_to": [
+                            "123482",
+                        ],
+                    },
+                    {
+                        "name": "Send email confirming contact with the client",
+                        "order": 3,
+                        "type": openapi.ItemType.STEP,
+                        "assigned_to": [
+                            "123482",
+                        ],
+                    },
+                ],
+                "type": openapi.ItemType.SECTION,
             },
-        },
-    ],
-})
+            {
+                "name": "Print and send catalog",
+                "order": 2,
+                "type": openapi.ItemType.STEP,
+                "assigned_to": [
+                    "123482",
+                ],
+            },
+        ],
+        "name": "Lead Qualification",
+        "assigned_to": [
+            "952802",
+            "80225",
+        ],
+        "closing_reasons": [
+            {
+                "id": "x739cew",
+            },
+        ],
+        "creation_time": "2021-04-27T12:01:13.000Z",
+        "description": "Lead Qualification description",
+        "due_date": "2022-08-04T12:00:00.000Z",
+        "last_update_time": "2021-04-27T12:01:13.000Z",
+        "update_entity_attributes": [
+            {
+                "source": openapi.Source.CURRENT_SECTION,
+                "target": {
+                    "entity_attribute": "my_status",
+                    "entity_schema": "opportunity",
+                },
+            },
+        ],
+    })
 
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -132,13 +127,12 @@ Delete Workflow Definition.
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.workflows.delete_definition(definition_id="CustomerRequest")
 
-s.workflows.delete_definition(definition_id="CustomerRequest")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -165,15 +159,14 @@ Get specific Definition by id from the Organization.
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.workflows.get_definition(definition_id="7hj28a")
 
-res = s.workflows.get_definition(definition_id="7hj28a")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -205,15 +198,14 @@ Retrieve all Workflow Definitions from an Organization
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.workflows.get_definitions()
 
-res = s.workflows.get_definitions()
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -243,15 +235,14 @@ Get limits and number of created executions for an Organization.
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.workflows.get_max_allowed_limit()
 
-res = s.workflows.get_max_allowed_limit()
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -281,15 +272,14 @@ Returns all closing reasons defined for the workflow.
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    res = s.workflows.get_workflow_closing_reasons(definition_id="fxcwfw")
 
-res = s.workflows.get_workflow_closing_reasons(definition_id="fxcwfw")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -319,19 +309,18 @@ Sets which closing reasons are defined for this workflow, based on the entire cl
 ```python
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as s:
+    s.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_ids={
+        "reasons": [
+            {
+                "id": "x739cew",
+            },
+        ],
+    })
 
-s.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_ids={
-    "reasons": [
-        {
-            "id": "x739cew",
-        },
-    ],
-})
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -359,89 +348,84 @@ Update Workflow Definition.
 import openapi
 from openapi import SDK
 
-s = SDK(
+with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-res = s.workflows.update_definition(definition_id="7hj28a", workflow_definition={
-    "flow": [
-        {
-            "name": "Initial Information Gathering",
-            "order": 1,
-            "steps": [
-                {
-                    "name": "Call client and confirm address and product",
-                    "order": 1,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "8988",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                    "id": "2hja82a",
-                },
-                {
-                    "name": "Check product availability",
-                    "order": 2,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "8988",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                    "id": "ga92ha2",
-                },
-                {
-                    "name": "Send email confirming contact with the client",
-                    "order": 3,
-                    "type": openapi.ItemType.STEP,
-                    "assigned_to": [
-                        "8988",
-                    ],
-                    "due_date": "2021-04-27T12:00:00.000Z",
-                    "id": "jga92ha",
-                },
-            ],
-            "type": openapi.ItemType.SECTION,
-            "id": "5892na2",
-        },
-        {
-            "name": "Print and send catalog",
-            "order": 2,
-            "type": openapi.ItemType.STEP,
-            "assigned_to": [
-                "8988",
-            ],
-            "due_date": "2021-04-27T12:00:00.000Z",
-            "id": "0a7g22a",
-        },
-    ],
-    "name": "Lead Qualification",
-    "assigned_to": [
-        "952802",
-        "80225",
-    ],
-    "closing_reasons": [
-        {
-            "id": "x739cew",
-        },
-    ],
-    "creation_time": "2021-08-04T21:13:50.373Z",
-    "due_date": "2022-08-04T12:00:00.000Z",
-    "id": "25n2k52ja",
-    "last_update_time": "2021-08-04T21:13:50.373Z",
-    "update_entity_attributes": [
-        {
-            "source": openapi.Source.CURRENT_SECTION,
-            "target": {
-                "entity_attribute": "my_status",
-                "entity_schema": "opportunity",
+) as s:
+    res = s.workflows.update_definition(definition_id="7hj28a", workflow_definition={
+        "flow": [
+            {
+                "name": "Initial Information Gathering",
+                "order": 1,
+                "steps": [
+                    {
+                        "name": "Call client and confirm address and product",
+                        "order": 1,
+                        "type": openapi.ItemType.STEP,
+                        "assigned_to": [
+                            "8988",
+                        ],
+                        "id": "2hja82a",
+                    },
+                    {
+                        "name": "Check product availability",
+                        "order": 2,
+                        "type": openapi.ItemType.STEP,
+                        "assigned_to": [
+                            "8988",
+                        ],
+                        "id": "ga92ha2",
+                    },
+                    {
+                        "name": "Send email confirming contact with the client",
+                        "order": 3,
+                        "type": openapi.ItemType.STEP,
+                        "assigned_to": [
+                            "8988",
+                        ],
+                        "id": "jga92ha",
+                    },
+                ],
+                "type": openapi.ItemType.SECTION,
+                "id": "5892na2",
             },
-        },
-    ],
-})
+            {
+                "name": "Print and send catalog",
+                "order": 2,
+                "type": openapi.ItemType.STEP,
+                "assigned_to": [
+                    "8988",
+                ],
+                "id": "0a7g22a",
+            },
+        ],
+        "name": "Lead Qualification",
+        "assigned_to": [
+            "952802",
+            "80225",
+        ],
+        "closing_reasons": [
+            {
+                "id": "x739cew",
+            },
+        ],
+        "creation_time": "2021-08-04T21:13:50.373Z",
+        "due_date": "2022-08-04T12:00:00.000Z",
+        "id": "25n2k52ja",
+        "last_update_time": "2021-08-04T21:13:50.373Z",
+        "update_entity_attributes": [
+            {
+                "source": openapi.Source.CURRENT_SECTION,
+                "target": {
+                    "entity_attribute": "my_status",
+                    "entity_schema": "opportunity",
+                },
+            },
+        ],
+    })
 
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
