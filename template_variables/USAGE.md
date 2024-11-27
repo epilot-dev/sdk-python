@@ -10,16 +10,7 @@ with Epilot(
     ),
 ) as s:
     res = s.custom_variables.create_custom_variable(request={
-        "created_at": "2022-04-19T12:41:43.662Z",
-        "created_by": "100042",
-        "helper_logic": "return param1 * param2;",
-        "helper_params": [
-            "param1",
-            "param2",
-        ],
-        "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250",
         "key": "my_custom_table",
-        "name": "My Custom table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +
         "    <tr style=\"height: 48px;border-bottom: 1px solid #D5E1ED;\">\n" +
@@ -127,9 +118,13 @@ with Epilot(
         "  </tbody>\n" +
         "</table>\n" +
         "",
+        "helper_logic": "return param1 * param2;",
+        "helper_params": [
+            "param1",
+            "param2",
+        ],
+        "name": "My Custom table",
         "type": epilot_template_variables.Type.CUSTOM,
-        "updated_at": "2022-04-20T12:41:43.662Z",
-        "updated_by": "100042",
     })
 
     if res is not None:
@@ -153,16 +148,7 @@ async def main():
         ),
     ) as s:
         res = await s.custom_variables.create_custom_variable_async(request={
-            "created_at": "2022-04-19T12:41:43.662Z",
-            "created_by": "100042",
-            "helper_logic": "return param1 * param2;",
-            "helper_params": [
-                "param1",
-                "param2",
-            ],
-            "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250",
             "key": "my_custom_table",
-            "name": "My Custom table",
             "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
             "  <thead>\n" +
             "    <tr style=\"height: 48px;border-bottom: 1px solid #D5E1ED;\">\n" +
@@ -270,9 +256,13 @@ async def main():
             "  </tbody>\n" +
             "</table>\n" +
             "",
+            "helper_logic": "return param1 * param2;",
+            "helper_params": [
+                "param1",
+                "param2",
+            ],
+            "name": "My Custom table",
             "type": epilot_template_variables.Type.CUSTOM,
-            "updated_at": "2022-04-20T12:41:43.662Z",
-            "updated_by": "100042",
         })
 
         if res is not None:

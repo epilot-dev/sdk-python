@@ -12,7 +12,7 @@ class CustomVariables(BaseSDK):
         self,
         *,
         request: Optional[
-            Union[models.CustomVariable, models.CustomVariableTypedDict]
+            Union[models.CustomVariableInput, models.CustomVariableInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -36,8 +36,8 @@ class CustomVariables(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.CustomVariable])
-        request = cast(Optional[models.CustomVariable], request)
+            request = utils.unmarshal(request, Optional[models.CustomVariableInput])
+        request = cast(Optional[models.CustomVariableInput], request)
 
         req = self.build_request(
             method="POST",
@@ -52,7 +52,7 @@ class CustomVariables(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.CustomVariable]
+                request, False, True, "json", Optional[models.CustomVariableInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -97,7 +97,7 @@ class CustomVariables(BaseSDK):
         self,
         *,
         request: Optional[
-            Union[models.CustomVariable, models.CustomVariableTypedDict]
+            Union[models.CustomVariableInput, models.CustomVariableInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -121,8 +121,8 @@ class CustomVariables(BaseSDK):
             base_url = server_url
 
         if not isinstance(request, BaseModel):
-            request = utils.unmarshal(request, Optional[models.CustomVariable])
-        request = cast(Optional[models.CustomVariable], request)
+            request = utils.unmarshal(request, Optional[models.CustomVariableInput])
+        request = cast(Optional[models.CustomVariableInput], request)
 
         req = self.build_request_async(
             method="POST",
@@ -137,7 +137,7 @@ class CustomVariables(BaseSDK):
             accept_header_value="application/json",
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
-                request, False, True, "json", Optional[models.CustomVariable]
+                request, False, True, "json", Optional[models.CustomVariableInput]
             ),
             timeout_ms=timeout_ms,
         )
@@ -991,7 +991,7 @@ class CustomVariables(BaseSDK):
         *,
         id: str,
         custom_variable: Optional[
-            Union[models.CustomVariable, models.CustomVariableTypedDict]
+            Union[models.CustomVariableInput, models.CustomVariableInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1018,7 +1018,7 @@ class CustomVariables(BaseSDK):
         request = models.UpdateCustomVariableRequest(
             id=id,
             custom_variable=utils.get_pydantic_model(
-                custom_variable, Optional[models.CustomVariable]
+                custom_variable, Optional[models.CustomVariableInput]
             ),
         )
 
@@ -1039,7 +1039,7 @@ class CustomVariables(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.CustomVariable],
+                Optional[models.CustomVariableInput],
             ),
             timeout_ms=timeout_ms,
         )
@@ -1085,7 +1085,7 @@ class CustomVariables(BaseSDK):
         *,
         id: str,
         custom_variable: Optional[
-            Union[models.CustomVariable, models.CustomVariableTypedDict]
+            Union[models.CustomVariableInput, models.CustomVariableInputTypedDict]
         ] = None,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
@@ -1112,7 +1112,7 @@ class CustomVariables(BaseSDK):
         request = models.UpdateCustomVariableRequest(
             id=id,
             custom_variable=utils.get_pydantic_model(
-                custom_variable, Optional[models.CustomVariable]
+                custom_variable, Optional[models.CustomVariableInput]
             ),
         )
 
@@ -1133,7 +1133,7 @@ class CustomVariables(BaseSDK):
                 False,
                 True,
                 "json",
-                Optional[models.CustomVariable],
+                Optional[models.CustomVariableInput],
             ),
             timeout_ms=timeout_ms,
         )

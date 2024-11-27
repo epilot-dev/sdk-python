@@ -25,6 +25,10 @@ class Type(str, Enum):
 
 
 class CustomVariableTypedDict(TypedDict):
+    key: str
+    r"""The key which is used for Handlebar variable syntax {{key}}"""
+    template: str
+    r"""Handlebar template that used to generate the variable content"""
     tags: NotRequired[List[str]]
     r"""The tags of custom variable"""
     config: NotRequired[ConfigTypedDict]
@@ -39,12 +43,8 @@ class CustomVariableTypedDict(TypedDict):
     r"""The helper function parameter's names"""
     id: NotRequired[str]
     r"""ID"""
-    key: NotRequired[str]
-    r"""The key which is used for Handlebar variable syntax {{key}}"""
     name: NotRequired[str]
     r"""Custom variable name"""
-    template: NotRequired[str]
-    r"""Handlebar template that used to generate the variable content"""
     type: NotRequired[Type]
     r"""Custom variable type"""
     updated_at: NotRequired[str]
@@ -54,6 +54,12 @@ class CustomVariableTypedDict(TypedDict):
 
 
 class CustomVariable(BaseModel):
+    key: str
+    r"""The key which is used for Handlebar variable syntax {{key}}"""
+
+    template: str
+    r"""Handlebar template that used to generate the variable content"""
+
     tags: Annotated[Optional[List[str]], pydantic.Field(alias="_tags")] = None
     r"""The tags of custom variable"""
 
@@ -75,14 +81,8 @@ class CustomVariable(BaseModel):
     id: Optional[str] = None
     r"""ID"""
 
-    key: Optional[str] = None
-    r"""The key which is used for Handlebar variable syntax {{key}}"""
-
     name: Optional[str] = None
     r"""Custom variable name"""
-
-    template: Optional[str] = None
-    r"""Handlebar template that used to generate the variable content"""
 
     type: Optional[Type] = None
     r"""Custom variable type"""
@@ -92,3 +92,48 @@ class CustomVariable(BaseModel):
 
     updated_by: Optional[str] = None
     r"""Updated by"""
+
+
+class CustomVariableInputTypedDict(TypedDict):
+    key: str
+    r"""The key which is used for Handlebar variable syntax {{key}}"""
+    template: str
+    r"""Handlebar template that used to generate the variable content"""
+    tags: NotRequired[List[str]]
+    r"""The tags of custom variable"""
+    config: NotRequired[ConfigTypedDict]
+    r"""Variable configuration"""
+    helper_logic: NotRequired[str]
+    r"""The helper function logic"""
+    helper_params: NotRequired[List[str]]
+    r"""The helper function parameter's names"""
+    name: NotRequired[str]
+    r"""Custom variable name"""
+    type: NotRequired[Type]
+    r"""Custom variable type"""
+
+
+class CustomVariableInput(BaseModel):
+    key: str
+    r"""The key which is used for Handlebar variable syntax {{key}}"""
+
+    template: str
+    r"""Handlebar template that used to generate the variable content"""
+
+    tags: Annotated[Optional[List[str]], pydantic.Field(alias="_tags")] = None
+    r"""The tags of custom variable"""
+
+    config: Optional[Config] = None
+    r"""Variable configuration"""
+
+    helper_logic: Optional[str] = None
+    r"""The helper function logic"""
+
+    helper_params: Optional[List[str]] = None
+    r"""The helper function parameter's names"""
+
+    name: Optional[str] = None
+    r"""Custom variable name"""
+
+    type: Optional[Type] = None
+    r"""Custom variable type"""

@@ -5,6 +5,8 @@ from .customvariable import (
     Config,
     ConfigTypedDict,
     CustomVariable,
+    CustomVariableInput,
+    CustomVariableInputTypedDict,
     CustomVariableTypedDict,
     Type,
 )
@@ -68,6 +70,8 @@ __all__ = [
     "ContextData",
     "ContextDataTypedDict",
     "CustomVariable",
+    "CustomVariableInput",
+    "CustomVariableInputTypedDict",
     "CustomVariableTypedDict",
     "CustomVariablesSearchParams",
     "CustomVariablesSearchParamsType",
