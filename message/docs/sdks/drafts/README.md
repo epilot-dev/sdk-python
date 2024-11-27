@@ -1,6 +1,8 @@
 # Drafts
 (*drafts*)
 
+## Overview
+
 ### Available Operations
 
 * [create_draft](#create_draft) - createDraft
@@ -16,65 +18,84 @@ Create a new draft
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
-
-
-res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
-    from_={
-        "address": "messaging@epilot.cloud",
-        "name": "epilot",
-    },
-    subject="Request for solar panel price",
-    bcc=[
-        {
+) as s:
+    res = s.drafts.create_draft(request=epilot_message.MessageRequestParams(
+        from_={
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
-    ],
-    cc=[
-        {
-            "address": "messaging@epilot.cloud",
-            "name": "epilot",
-        },
-    ],
-    file={
-        "dollar_relation": [
+        subject="Request for solar panel price",
+        bcc=[
             {
-                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
-                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
-                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
             },
         ],
-    },
-    html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
-    parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
-    reply_to={
-        "address": "messaging@epilot.cloud",
-        "name": "epilot",
-    },
-    text="We at ABC GmbH would like to request a price quote for the solar panel.",
-    thread={
-        "topic": "CUSTOMER_MESSAGE",
-        "assigned_to": [
-            "206801",
-            "200109",
+        cc=[
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
         ],
-    },
-    to=[
-        {
+        file={
+            "dollar_relation": [
+                {
+                    "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                    "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                    "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                },
+                {
+                    "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                    "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                    "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                },
+            ],
+        },
+        html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
+        parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
+        reply_to={
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
-    ],
-))
+        template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
+        text="We at ABC GmbH would like to request a price quote for the solar panel.",
+        thread={
+            "topic": "CUSTOMER_MESSAGE",
+            "assigned_to": [
+                "206801",
+                "200109",
+            ],
+        },
+        to=[
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+        ],
+        **{
 
-if res is not None:
-    # handle response
-    pass
+        },
+    ))
+
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -85,15 +106,15 @@ if res is not None:
 | `request`                                                           | [models.MessageRequestParams](../../models/messagerequestparams.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.CreateDraftResponseBody](../../models/createdraftresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## send_draft
 
@@ -105,18 +126,16 @@ Send the existing draft to the recipients
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.drafts.send_draft()
 
-
-res = s.drafts.send_draft()
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -126,12 +145,12 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.SendDraftResponseBody](../../models/senddraftresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
