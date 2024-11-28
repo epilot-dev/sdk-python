@@ -3,10 +3,10 @@ id: 5c509d65-b892-4e49-8160-6842e685ee9c
 management:
   docChecksum: 483e5d5c024ed6ac75b0006ff36d774d
   docVersion: 1.0.0
-  speakeasyVersion: 1.448.0
-  generationVersion: 2.466.0
-  releaseVersion: 1.12.0
-  configChecksum: 18df9d0e0129612aab1927aec0de9323
+  speakeasyVersion: 1.448.2
+  generationVersion: 2.467.4
+  releaseVersion: 1.12.1
+  configChecksum: 1cce65e0c9b82d5133e9d276ed45e841
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: template_variables
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables

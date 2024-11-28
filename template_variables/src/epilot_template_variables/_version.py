@@ -3,7 +3,7 @@
 import importlib.metadata
 
 __title__: str = "epilot-template-variables"
-__version__: str = "1.12.0"
+__version__: str = "1.12.1"
 
 try:
     if __package__ is not None:
