@@ -5,60 +5,90 @@ from .s3reference import S3Reference, S3ReferenceTypedDict
 from .templatesettings import TemplateSettings, TemplateSettingsTypedDict
 from epilot_document.types import BaseModel
 import pydantic
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
+
+
+class ContextDataTypedDict(TypedDict):
+    r"""Custom values for variables in the template. Takes the higher precedence than others."""
+
+    additional_properties: NotRequired[str]
+
+
+class ContextData(BaseModel):
+    r"""Custom values for variables in the template. Takes the higher precedence than others."""
+
+    additional_properties: Annotated[
+        Optional[str], pydantic.Field(alias="additionalProperties")
+    ] = None
 
 
 class TemplateDocumentTypedDict(TypedDict):
     r"""Input template document"""
-    
+
     filename: NotRequired[str]
     r"""Document original filename"""
     s3ref: NotRequired[S3ReferenceTypedDict]
-    
+
 
 class TemplateDocument(BaseModel):
     r"""Input template document"""
-    
+
     filename: Optional[str] = None
     r"""Document original filename"""
+
     s3ref: Optional[S3Reference] = None
-    
+
 
 class VariablePayloadTypedDict(TypedDict):
     r"""Custom values for variables in the template. Takes the higher precedence than others."""
-    
+
     additional_properties: NotRequired[str]
-    
+
 
 class VariablePayload(BaseModel):
     r"""Custom values for variables in the template. Takes the higher precedence than others."""
-    
-    additional_properties: Annotated[Optional[str], pydantic.Field(alias="additionalProperties")] = None
-    
+
+    additional_properties: Annotated[
+        Optional[str], pydantic.Field(alias="additionalProperties")
+    ] = None
+
 
 class DocumentGenerationV2RequestTypedDict(TypedDict):
     template_document: TemplateDocumentTypedDict
     r"""Input template document"""
+    context_data: NotRequired[ContextDataTypedDict]
+    r"""Custom values for variables in the template. Takes the higher precedence than others."""
     context_entity_id: NotRequired[str]
     r"""Entity to use for variable context"""
+    language: NotRequired[str]
+    r"""Language"""
     template_settings: NotRequired[TemplateSettingsTypedDict]
     r"""Template Settings for document generation"""
     user_id: NotRequired[str]
     r"""User Id for variable context"""
     variable_payload: NotRequired[VariablePayloadTypedDict]
     r"""Custom values for variables in the template. Takes the higher precedence than others."""
-    
+
 
 class DocumentGenerationV2Request(BaseModel):
     template_document: TemplateDocument
     r"""Input template document"""
+
+    context_data: Optional[ContextData] = None
+    r"""Custom values for variables in the template. Takes the higher precedence than others."""
+
     context_entity_id: Optional[str] = None
     r"""Entity to use for variable context"""
+
+    language: Optional[str] = None
+    r"""Language"""
+
     template_settings: Optional[TemplateSettings] = None
     r"""Template Settings for document generation"""
+
     user_id: Optional[str] = None
     r"""User Id for variable context"""
+
     variable_payload: Optional[VariablePayload] = None
     r"""Custom values for variables in the template. Takes the higher precedence than others."""
-    
