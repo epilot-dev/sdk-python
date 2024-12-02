@@ -25,18 +25,16 @@ Delete role by id
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.roles.delete_role(role_id="123:owner")
 
-
-res = s.roles.delete_role(role_id="123:owner")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -47,15 +45,15 @@ if res is not None:
 | `role_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 123:owner                                                           |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Role](../../models/role.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_role
 
@@ -67,18 +65,16 @@ Get role by id
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.roles.get_role(role_id="123:owner")
 
-
-res = s.roles.get_role(role_id="123:owner")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -89,15 +85,15 @@ if res is not None:
 | `role_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 123:owner                                                           |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Role](../../models/role.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list_all_roles
 
@@ -109,18 +105,16 @@ Returns list of all roles in organization
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.roles.list_all_roles()
 
-
-res = s.roles.list_all_roles()
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -130,15 +124,15 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.ListAllRolesResponseBody](../../models/listallrolesresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list_current_roles
 
@@ -150,18 +144,16 @@ Returns roles and grants assigned to current user
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.roles.list_current_roles()
 
-
-res = s.roles.list_current_roles()
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -171,15 +163,15 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.ListCurrentRolesResponseBody](../../models/listcurrentrolesresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## put_role
 
@@ -192,55 +184,163 @@ import dateutil.parser
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.roles.put_role(role_id="123:owner", role_payload={
+        "grants": [
+            {
+                "action": "entity-read",
+                "conditions": [
+                    {
+                        "attribute": "workflows.primary.task_name",
+                        "operation": epilot_permissions.Operation.EQUALS,
+                        "values": [
+                            "Qualification",
+                        ],
+                    },
+                ],
+                "dependencies": [
+                    {
+                        "action": "entity-read",
+                        "conditions": [
+                            {
+                                "attribute": "workflows.primary.task_name",
+                                "operation": epilot_permissions.Operation.EQUALS,
+                                "values": [
+                                    "Qualification",
+                                ],
+                            },
+                            {
+                                "attribute": "workflows.primary.task_name",
+                                "operation": epilot_permissions.Operation.EQUALS,
+                                "values": [
+                                    "Qualification",
+                                ],
+                            },
+                            {
+                                "attribute": "workflows.primary.task_name",
+                                "operation": epilot_permissions.Operation.EQUALS,
+                                "values": [
+                                    "Qualification",
+                                ],
+                            },
+                        ],
+                        "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                    },
+                    {
+                        "action": "entity-read",
+                        "conditions": [
+                            {
+                                "attribute": "workflows.primary.task_name",
+                                "operation": epilot_permissions.Operation.EQUALS,
+                                "values": [
+                                    "Qualification",
+                                ],
+                            },
+                            {
+                                "attribute": "workflows.primary.task_name",
+                                "operation": epilot_permissions.Operation.EQUALS,
+                                "values": [
+                                    "Qualification",
+                                ],
+                            },
+                        ],
+                        "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                    },
+                ],
+                "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+            },
+            {
+                "action": "entity-read",
+                "conditions": [
+                    {
+                        "attribute": "workflows.primary.task_name",
+                        "operation": epilot_permissions.Operation.EQUALS,
+                        "values": [
+                            "Qualification",
+                        ],
+                    },
+                    {
+                        "attribute": "workflows.primary.task_name",
+                        "operation": epilot_permissions.Operation.EQUALS,
+                        "values": [
+                            "Qualification",
+                        ],
+                    },
+                ],
+                "dependencies": [
+                    {
+                        "action": "entity-read",
+                        "conditions": [
+                            {
+                                "attribute": "workflows.primary.task_name",
+                                "operation": epilot_permissions.Operation.EQUALS,
+                                "values": [
+                                    "Qualification",
+                                ],
+                            },
+                        ],
+                        "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                    },
+                    {
+                        "action": "entity-read",
+                        "conditions": [
+                            {
+                                "attribute": "workflows.primary.task_name",
+                                "operation": epilot_permissions.Operation.EQUALS,
+                                "values": [
+                                    "Qualification",
+                                ],
+                            },
+                        ],
+                        "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                    },
+                ],
+                "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+            },
+            {
+                "action": "entity-read",
+                "conditions": [
+                    {
+                        "attribute": "workflows.primary.task_name",
+                        "operation": epilot_permissions.Operation.EQUALS,
+                        "values": [
+                            "Qualification",
+                        ],
+                    },
+                ],
+                "dependencies": [
+                    {
+                        "action": "entity-read",
+                        "conditions": [
+                            {
+                                "attribute": "workflows.primary.task_name",
+                                "operation": epilot_permissions.Operation.EQUALS,
+                                "values": [
+                                    "Qualification",
+                                ],
+                            },
+                        ],
+                        "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+                    },
+                ],
+                "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
+            },
+        ],
+        "id": "123:owner",
+        "name": "Owner",
+        "organization_id": "123",
+        "slug": "owner",
+        "type": epilot_permissions.SchemasUserRoleType.USER_ROLE,
+        "expires_at": dateutil.parser.isoparse("2028-07-21T17:32:28Z"),
+    })
 
-
-res = s.roles.put_role(role_id="123:owner", role_payload={
-    "grants": [
-        {
-            "action": "entity-read",
-            "conditions": [
-                {
-                    "attribute": "workflows.primary.task_name",
-                    "operation": epilot_permissions.Operation.EQUALS,
-                    "values": [
-                        "Qualification",
-                    ],
-                },
-            ],
-            "dependencies": [
-                {
-                    "action": "entity-read",
-                    "conditions": [
-                        {
-                            "attribute": "workflows.primary.task_name",
-                            "operation": epilot_permissions.Operation.EQUALS,
-                            "values": [
-                                "Qualification",
-                            ],
-                        },
-                    ],
-                    "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
-                },
-            ],
-            "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947",
-        },
-    ],
-    "id": "123:owner",
-    "name": "Owner",
-    "organization_id": "123",
-    "slug": "owner",
-    "type": epilot_permissions.SchemasUserRoleType.USER_ROLE,
-    "expires_at": dateutil.parser.isoparse("2028-07-21T17:32:28Z"),
-})
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -252,15 +352,15 @@ if res is not None:
 | `role_payload`                                                      | [Optional[models.RolePayload]](../../models/rolepayload.md)         | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Role](../../models/role.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## refresh_permissions
 
@@ -272,16 +372,14 @@ Makes sure the user has a role in the organization
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    s.roles.refresh_permissions()
 
-
-s.roles.refresh_permissions()
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -293,9 +391,9 @@ s.roles.refresh_permissions()
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## search_roles
 
@@ -307,34 +405,29 @@ Search Roles
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as s:
+    res = s.roles.search_roles(request={
+        "limit": 1,
+        "offset": 1,
+        "org_ids": [
+            "123",
+        ],
+        "query": "Administrator",
+        "role_ids": [
+            "123:owner",
+        ],
+        "slugs": [
+            "owner",
+        ],
+    })
 
-
-res = s.roles.search_roles(request={
-    "limit": 1,
-    "offset": 1,
-    "org_ids": [
-        "123",
-        "456",
-    ],
-    "query": "Administrator",
-    "role_ids": [
-        "123:manager",
-        "456:owner",
-    ],
-    "slugs": [
-        "manager",
-        "owner",
-    ],
-})
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -345,12 +438,12 @@ if res is not None:
 | `request`                                                           | [models.RoleSearchInput](../../models/rolesearchinput.md)           | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.SearchRolesResponseBody](../../models/searchrolesresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
