@@ -4,25 +4,27 @@ from __future__ import annotations
 from .s3reference import S3Reference, S3ReferenceTypedDict
 from enum import Enum
 from epilot_document.types import BaseModel
-from typing import Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class InputDocumentTypedDict(TypedDict):
     r"""Input document"""
-    
+
     s3ref: S3ReferenceTypedDict
-    
+
 
 class InputDocument(BaseModel):
     r"""Input document"""
-    
+
     s3ref: S3Reference
-    
+
 
 class OutputFormat(str, Enum):
     r"""Output format of the document"""
+
     PDF = "pdf"
+
 
 class ConvertDocumentRequestTypedDict(TypedDict):
     input_document: InputDocumentTypedDict
@@ -31,13 +33,14 @@ class ConvertDocumentRequestTypedDict(TypedDict):
     r"""Output format of the document"""
     output_filename: NotRequired[str]
     r"""Filename of the output document (optional)"""
-    
+
 
 class ConvertDocumentRequest(BaseModel):
     input_document: InputDocument
     r"""Input document"""
+
     output_format: OutputFormat
     r"""Output format of the document"""
+
     output_filename: Optional[str] = None
     r"""Filename of the output document (optional)"""
-    
