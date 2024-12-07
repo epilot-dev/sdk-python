@@ -12,6 +12,7 @@ class ErrorCode(str, Enum):
     - INVALID_TEMPLATE_FORMAT - Invalid template format (only .docx is supported). This can happen due to a bad word file or an unsupported file extension.
 
     """
+
     PARSE_ERROR = "PARSE_ERROR"
     DOC_TO_PDF_CONVERT_ERROR = "DOC_TO_PDF_CONVERT_ERROR"
     INTERNAL_ERROR = "INTERNAL_ERROR"
