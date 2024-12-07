@@ -107,6 +107,8 @@ class CustomVariableInputTypedDict(TypedDict):
     r"""The helper function logic"""
     helper_params: NotRequired[List[str]]
     r"""The helper function parameter's names"""
+    id: NotRequired[str]
+    r"""ID"""
     name: NotRequired[str]
     r"""Custom variable name"""
     type: NotRequired[Type]
@@ -131,6 +133,9 @@ class CustomVariableInput(BaseModel):
 
     helper_params: Optional[List[str]] = None
     r"""The helper function parameter's names"""
+
+    id: Optional[str] = None
+    r"""ID"""
 
     name: Optional[str] = None
     r"""Custom variable name"""

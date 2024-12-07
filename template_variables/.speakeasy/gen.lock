@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 5c509d65-b892-4e49-8160-6842e685ee9c
 management:
-  docChecksum: 483e5d5c024ed6ac75b0006ff36d774d
+  docChecksum: 1e2f77de9758edec12251b5884ee4d6f
   docVersion: 1.0.0
-  speakeasyVersion: 1.451.5
-  generationVersion: 2.471.2
-  releaseVersion: 1.12.2
-  configChecksum: 464ced91c83a86e7c161e6bb671166d0
+  speakeasyVersion: 1.453.1
+  generationVersion: 2.474.4
+  releaseVersion: 1.12.3
+  configChecksum: b482a7877ab70cb2723e56b15a260cfd
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: template_variables
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=template_variables
