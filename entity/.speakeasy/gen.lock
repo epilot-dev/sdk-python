@@ -1,0 +1,1587 @@
+lockVersion: 2.0.0
+id: fe394016-f094-41c9-bb30-264833db4d9f
+management:
+  docChecksum: 2f5d72964a71aa3cd80fe8f69127be40
+  docVersion: 1.0.0
+  speakeasyVersion: 1.453.3
+  generationVersion: 2.474.6
+  releaseVersion: 3.0.0
+  configChecksum: 54313cb4d2a8d335c5fab925d42151da
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: entity
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=entity
+features:
+  python:
+    acceptHeaders: 3.0.0
+    additionalDependencies: 1.0.0
+    additionalProperties: 1.0.1
+    constsAndDefaults: 1.0.5
+    core: 5.6.9
+    defaultEnabledRetries: 0.2.0
+    deprecations: 3.0.0
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.2
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalServerURLs: 3.0.0
+    inputOutputModels: 3.0.0
+    methodArguments: 1.0.2
+    nullables: 1.0.0
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+    unions: 3.0.4
+generatedFiles:
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/actions.md
+  - docs/models/actiontype.md
+  - docs/models/activity.md
+  - docs/models/activitycallercontext.md
+  - docs/models/activityidqueryparam.md
+  - docs/models/activityidqueryparam2.md
+  - docs/models/activityitem.md
+  - docs/models/addrelationsrequest.md
+  - docs/models/addressattribute.md
+  - docs/models/addressattributeconstraints.md
+  - docs/models/addressattributeinfohelpers.md
+  - docs/models/addressattributetype.md
+  - docs/models/addressrelationattribute.md
+  - docs/models/addressrelationattributeconstraints.md
+  - docs/models/addressrelationattributeinfohelpers.md
+  - docs/models/addressrelationattributeschemasmodel.md
+  - docs/models/addressrelationattributeschemasmodelinput.md
+  - docs/models/addressrelationattributetype.md
+  - docs/models/aggregations.md
+  - docs/models/aggs.md
+  - docs/models/attachactivityrequest.md
+  - docs/models/attribute.md
+  - docs/models/attributeinput.md
+  - docs/models/attributewithcompositeid.md
+  - docs/models/attributewithcompositeidinput.md
+  - docs/models/autocompleterequest.md
+  - docs/models/autocompleteresponsebody.md
+  - docs/models/automationattribute.md
+  - docs/models/automationattributeconstraints.md
+  - docs/models/automationattributeinfohelpers.md
+  - docs/models/automationattributeschemasmodel.md
+  - docs/models/automationattributeschemasmodelinput.md
+  - docs/models/automationattributetype.md
+  - docs/models/baseactivityitem.md
+  - docs/models/booleanattribute.md
+  - docs/models/booleanattributeconstraints.md
+  - docs/models/booleanattributeinfohelpers.md
+  - docs/models/booleanattributeschemasmodel.md
+  - docs/models/booleanattributeschemasmodelinput.md
+  - docs/models/booleanattributetype.md
+  - docs/models/bulkactions.md
+  - docs/models/bulkdeleteclassificationsrequestbody.md
+  - docs/models/bulkmoveclassificationsrequestbody.md
+  - docs/models/classificationsupdate.md
+  - docs/models/computedattribute.md
+  - docs/models/computedattributeconstraints.md
+  - docs/models/computedattributeinfohelpers.md
+  - docs/models/computedattributeschemasmodel.md
+  - docs/models/computedattributeschemasmodelinput.md
+  - docs/models/computedattributetype.md
+  - docs/models/consentattribute.md
+  - docs/models/consentattributeconstraints.md
+  - docs/models/consentattributeinfohelpers.md
+  - docs/models/consentattributeschemasmodel.md
+  - docs/models/consentattributeschemasmodelinput.md
+  - docs/models/consentattributetype.md
+  - docs/models/constraints.md
+  - docs/models/countryattribute.md
+  - docs/models/countryattributeconstraints.md
+  - docs/models/countryattributeinfohelpers.md
+  - docs/models/countryattributeschemasmodel.md
+  - docs/models/countryattributeschemasmodelinput.md
+  - docs/models/countryattributetype.md
+  - docs/models/createactivityrequest.md
+  - docs/models/createdby.md
+  - docs/models/createentityrequest.md
+  - docs/models/createview.md
+  - docs/models/currency.md
+  - docs/models/currencyattribute.md
+  - docs/models/currencyattribute1.md
+  - docs/models/currencyattributeconstraints.md
+  - docs/models/currencyattributecurrency.md
+  - docs/models/currencyattributeinfohelpers.md
+  - docs/models/currencyattributeschemasmodel.md
+  - docs/models/currencyattributeschemasmodelinput.md
+  - docs/models/currencyattributetype.md
+  - docs/models/dateattribute.md
+  - docs/models/dateattributeconstraints.md
+  - docs/models/dateattributeinfohelpers.md
+  - docs/models/dateattributeschemasmodel.md
+  - docs/models/dateattributeschemasmodelinput.md
+  - docs/models/dateattributetype.md
+  - docs/models/defaultaccesscontrol.md
+  - docs/models/defaultaddressfields.md
+  - docs/models/deleted.md
+  - docs/models/deleteentityrequest.md
+  - docs/models/deleterelationrequest.md
+  - docs/models/deletesavedviewrequest.md
+  - docs/models/deleteschemaattributerequest.md
+  - docs/models/deleteschemacapabilityrequest.md
+  - docs/models/deleteschemagroupheadlinerequest.md
+  - docs/models/deleteschemagrouprequest.md
+  - docs/models/deleteschemarequest.md
+  - docs/models/deletetaxonomyclassificationrequest.md
+  - docs/models/deletetaxonomyrequest.md
+  - docs/models/diff.md
+  - docs/models/divider.md
+  - docs/models/drawersize.md
+  - docs/models/editmode.md
+  - docs/models/editview.md
+  - docs/models/entity.md
+  - docs/models/entityacl.md
+  - docs/models/entityaction.md
+  - docs/models/entitycapability.md
+  - docs/models/entitycapabilityinput.md
+  - docs/models/entitycapabilitywithcompositeid.md
+  - docs/models/entitycapabilitywithcompositeidinput.md
+  - docs/models/entitycapabilitywithcompositeidrequiredpermission.md
+  - docs/models/entitycapabilitywithcompositeiduihooks.md
+  - docs/models/entitydefaultcreate.md
+  - docs/models/entitydefaultedit.md
+  - docs/models/entitydefaulteditviewtype.md
+  - docs/models/entitydefaulttable.md
+  - docs/models/entitydefaulttableoptions.md
+  - docs/models/entitydefaulttableparams.md
+  - docs/models/entitydefaulttableviewtype.md
+  - docs/models/entityimportparams.md
+  - docs/models/entityinput.md
+  - docs/models/entityitem.md
+  - docs/models/entitylistparams.md
+  - docs/models/entityoperation.md
+  - docs/models/entityowner.md
+  - docs/models/entityrelationsmodequeryparam.md
+  - docs/models/entityschema.md
+  - docs/models/entityschemagroup.md
+  - docs/models/entityschemagroupwithcompositeid.md
+  - docs/models/entityschemagroupwithcompositeidinfotooltiptitle.md
+  - docs/models/entityschemagroupwithcompositeidinput.md
+  - docs/models/entityschemaitem.md
+  - docs/models/entityschemaitemcreateview.md
+  - docs/models/entityschemaitemeditview.md
+  - docs/models/entityschemaitemlayoutsettings.md
+  - docs/models/entityschemaitemlistitem.md
+  - docs/models/entityschemaitemsharing.md
+  - docs/models/entityschemaitemsingleview.md
+  - docs/models/entityschemaitemsummaryattributes.md
+  - docs/models/entityschemaitemtableview.md
+  - docs/models/entityschemaitemuiconfig.md
+  - docs/models/entitysearchincludedeletedparam.md
+  - docs/models/entitysearchparams.md
+  - docs/models/entitysearchparamsaggs.md
+  - docs/models/entitysearchparamssort.md
+  - docs/models/entitysearchresults.md
+  - docs/models/entityvalidationerror.md
+  - docs/models/entityvalidationerrorparams.md
+  - docs/models/entityvalidationresulterror.md
+  - docs/models/entityvalidationresultsuccess.md
+  - docs/models/entityvalidationv2error.md
+  - docs/models/entityvalidationv2resulterror.md
+  - docs/models/entityvalidationv2resultsuccess.md
+  - docs/models/entityvalidationv2resultsuccessstatus.md
+  - docs/models/entityviewdisabled.md
+  - docs/models/entityviewdisabledviewtype.md
+  - docs/models/epilotauth.md
+  - docs/models/exists.md
+  - docs/models/exportentitiesrequest.md
+  - docs/models/fileattribute.md
+  - docs/models/fileattributeconstraints.md
+  - docs/models/fileattributedefaultaccesscontrol.md
+  - docs/models/fileattributeinfohelpers.md
+  - docs/models/fileattributeschemasmodel.md
+  - docs/models/fileattributeschemasmodelinput.md
+  - docs/models/fileattributetype.md
+  - docs/models/getactivityrequest.md
+  - docs/models/getentityactivityfeedrequest.md
+  - docs/models/getentityactivityfeedresponsebody.md
+  - docs/models/getentityrequest.md
+  - docs/models/getentityresponsebody.md
+  - docs/models/getentityv2request.md
+  - docs/models/getjsonschemarequest.md
+  - docs/models/getjsonschemaresponsebody.md
+  - docs/models/getrelatedentitiescount.md
+  - docs/models/getrelatedentitiescountrequest.md
+  - docs/models/getrelationsrequest.md
+  - docs/models/getrelationsresp.md
+  - docs/models/getrelationsrespwithpagination.md
+  - docs/models/getrelationsv2request.md
+  - docs/models/getrelationsv3request.md
+  - docs/models/getsavedviewrequest.md
+  - docs/models/getschemaattributerequest.md
+  - docs/models/getschemacapabilityrequest.md
+  - docs/models/getschemaexamplerequest.md
+  - docs/models/getschemaexampleresponsebody.md
+  - docs/models/getschemagroupheadlinerequest.md
+  - docs/models/getschemagrouprequest.md
+  - docs/models/getschemarequest.md
+  - docs/models/getschemaversionsrequest.md
+  - docs/models/getschemaversionsresponsebody.md
+  - docs/models/gettaxonomybulkactionjobbyidrequest.md
+  - docs/models/gettaxonomybulkactionjobsrequest.md
+  - docs/models/gettaxonomyclassificationrequest.md
+  - docs/models/gettaxonomyrequest.md
+  - docs/models/groupheadline.md
+  - docs/models/groupheadlinetype.md
+  - docs/models/groupheadlinewithcompositeid.md
+  - docs/models/groupheadlinewithcompositeiddivider.md
+  - docs/models/groupheadlinewithcompositeidinput.md
+  - docs/models/groupheadlinewithcompositeidtype.md
+  - docs/models/ids.md
+  - docs/models/importentitiesrequest.md
+  - docs/models/infohelpers.md
+  - docs/models/infotooltiptitle.md
+  - docs/models/internalattribute.md
+  - docs/models/internalattributeconstraints.md
+  - docs/models/internalattributeinfohelpers.md
+  - docs/models/internalattributeschemasmodel.md
+  - docs/models/internalattributeschemasmodelinput.md
+  - docs/models/internalattributetype.md
+  - docs/models/internaluserattribute.md
+  - docs/models/internaluserattributeconstraints.md
+  - docs/models/internaluserattributeinfohelpers.md
+  - docs/models/internaluserattributeschemasmodel.md
+  - docs/models/internaluserattributeschemasmodelinput.md
+  - docs/models/internaluserattributetype.md
+  - docs/models/invitationemailattribute.md
+  - docs/models/invitationemailattributeconstraints.md
+  - docs/models/invitationemailattributeinfohelpers.md
+  - docs/models/invitationemailattributeschemasmodel.md
+  - docs/models/invitationemailattributeschemasmodelinput.md
+  - docs/models/invitationemailattributetype.md
+  - docs/models/kind.md
+  - docs/models/layoutsettings.md
+  - docs/models/linkattribute.md
+  - docs/models/linkattributeconstraints.md
+  - docs/models/linkattributeinfohelpers.md
+  - docs/models/linkattributeschemasmodel.md
+  - docs/models/linkattributeschemasmodelinput.md
+  - docs/models/linkattributetype.md
+  - docs/models/listentitiesresponse.md
+  - docs/models/listfavoriteviewsforuserresponsebody.md
+  - docs/models/listitem.md
+  - docs/models/listsavedviewsrequest.md
+  - docs/models/listsavedviewsresults.md
+  - docs/models/listschemablueprintsresponsebody.md
+  - docs/models/listschemasrequest.md
+  - docs/models/listschemasresponsebody.md
+  - docs/models/listtaxonomiesrequest.md
+  - docs/models/listtaxonomiesresponsebody.md
+  - docs/models/listtaxonomyclassificationsforschemarequest.md
+  - docs/models/listtaxonomyclassificationsforschemaresponsebody.md
+  - docs/models/multiselectattribute.md
+  - docs/models/multiselectattribute2.md
+  - docs/models/multiselectattributeconstraints.md
+  - docs/models/multiselectattributeinfohelpers.md
+  - docs/models/multiselectattributeoptions.md
+  - docs/models/multiselectattributeschemasmodel.md
+  - docs/models/multiselectattributeschemasmodelinput.md
+  - docs/models/multiselectattributetype.md
+  - docs/models/navbaractions.md
+  - docs/models/newentityitem.md
+  - docs/models/numberattribute.md
+  - docs/models/numberattributeconstraints.md
+  - docs/models/numberattributeinfohelpers.md
+  - docs/models/numberattributeschemasmodel.md
+  - docs/models/numberattributeschemasmodelinput.md
+  - docs/models/numberattributetype.md
+  - docs/models/one.md
+  - docs/models/operation.md
+  - docs/models/options.md
+  - docs/models/orderedlistattribute.md
+  - docs/models/orderedlistattributeconstraints.md
+  - docs/models/orderedlistattributeinfohelpers.md
+  - docs/models/orderedlistattributeschemasmodel.md
+  - docs/models/orderedlistattributeschemasmodelinput.md
+  - docs/models/orderedlistattributetype.md
+  - docs/models/output.md
+  - docs/models/params.md
+  - docs/models/partnerorganisationattribute.md
+  - docs/models/partnerorganisationattributeconstraints.md
+  - docs/models/partnerorganisationattributeinfohelpers.md
+  - docs/models/partnerorganisationattributeschemasmodel.md
+  - docs/models/partnerorganisationattributeschemasmodelinput.md
+  - docs/models/partnerorganisationattributetype.md
+  - docs/models/partnerstatusattribute.md
+  - docs/models/partnerstatusattributeconstraints.md
+  - docs/models/partnerstatusattributeinfohelpers.md
+  - docs/models/partnerstatusattributeschemasmodel.md
+  - docs/models/partnerstatusattributeschemasmodelinput.md
+  - docs/models/partnerstatusattributetype.md
+  - docs/models/patchentityrequest.md
+  - docs/models/payload.md
+  - docs/models/paymentmethodrelationattribute.md
+  - docs/models/paymentmethodrelationattributeconstraints.md
+  - docs/models/paymentmethodrelationattributeinfohelpers.md
+  - docs/models/paymentmethodrelationattributeschemasmodel.md
+  - docs/models/paymentmethodrelationattributeschemasmodelinput.md
+  - docs/models/paymentmethodrelationattributetype.md
+  - docs/models/purposeattribute.md
+  - docs/models/purposeattributeconstraints.md
+  - docs/models/purposeattributeinfohelpers.md
+  - docs/models/purposeattributeschemasmodel.md
+  - docs/models/purposeattributeschemasmodelinput.md
+  - docs/models/purposeattributetype.md
+  - docs/models/putschemaattributerequest.md
+  - docs/models/putschemacapabilityrequest.md
+  - docs/models/putschemagroupheadlinerequest.md
+  - docs/models/putschemagrouprequest.md
+  - docs/models/putschemarequest.md
+  - docs/models/range.md
+  - docs/models/redirectentityview.md
+  - docs/models/redirectentityviewviewtype.md
+  - docs/models/relation.md
+  - docs/models/relationaffinitymode.md
+  - docs/models/relationattribute.md
+  - docs/models/relationattributeactions.md
+  - docs/models/relationattributeactionsinput.md
+  - docs/models/relationattributeactiontype.md
+  - docs/models/relationattributeconstraints.md
+  - docs/models/relationattributedrawersize.md
+  - docs/models/relationattributeeditmode.md
+  - docs/models/relationattributeinfohelpers.md
+  - docs/models/relationattributeinput.md
+  - docs/models/relationattributenewentityitem.md
+  - docs/models/relationattributenewentityiteminput.md
+  - docs/models/relationattributerelationaffinitymode.md
+  - docs/models/relationattributerelationtype.md
+  - docs/models/relationattributeschemasmodel.md
+  - docs/models/relationattributeschemasmodelinput.md
+  - docs/models/relationattributesummaryfields.md
+  - docs/models/relationattributetype.md
+  - docs/models/relationentity.md
+  - docs/models/relationitem.md
+  - docs/models/relationtype.md
+  - docs/models/removerelationsrequest.md
+  - docs/models/repeatableattribute.md
+  - docs/models/repeatableattributeconstraints.md
+  - docs/models/repeatableattributeinfohelpers.md
+  - docs/models/repeatableattributerelationaffinitymode.md
+  - docs/models/repeatableattributeschemasmodel.md
+  - docs/models/repeatableattributeschemasmodelinput.md
+  - docs/models/repeatableattributetype.md
+  - docs/models/request.md
+  - docs/models/requiredpermission.md
+  - docs/models/restoreentityrequest.md
+  - docs/models/restoreentityrequestbody.md
+  - docs/models/results.md
+  - docs/models/rowactions.md
+  - docs/models/s3reference.md
+  - docs/models/savedview.md
+  - docs/models/savedview1.md
+  - docs/models/savedview2.md
+  - docs/models/savedviewitem.md
+  - docs/models/savedviewitem1.md
+  - docs/models/savedviewitem2.md
+  - docs/models/savedviewitemcreatedby.md
+  - docs/models/savedviewitemsource.md
+  - docs/models/savedviewsource.md
+  - docs/models/schema.md
+  - docs/models/schemas1.md
+  - docs/models/schemas2.md
+  - docs/models/schemasactions.md
+  - docs/models/schemasautomationattributeconstraints.md
+  - docs/models/schemasautomationattributeinfohelpers.md
+  - docs/models/schemasautomationattributetype.md
+  - docs/models/schemasbooleanattributeconstraints.md
+  - docs/models/schemasbooleanattributeinfohelpers.md
+  - docs/models/schemasbooleanattributetype.md
+  - docs/models/schemascomputedattributeconstraints.md
+  - docs/models/schemascomputedattributeinfohelpers.md
+  - docs/models/schemascomputedattributetype.md
+  - docs/models/schemasconsentattributeconstraints.md
+  - docs/models/schemasconsentattributeinfohelpers.md
+  - docs/models/schemasconsentattributetype.md
+  - docs/models/schemasconstraints.md
+  - docs/models/schemascountryattributeconstraints.md
+  - docs/models/schemascountryattributeinfohelpers.md
+  - docs/models/schemascountryattributetype.md
+  - docs/models/schemascurrencyattributeconstraints.md
+  - docs/models/schemascurrencyattributeinfohelpers.md
+  - docs/models/schemascurrencyattributetype.md
+  - docs/models/schemasdateattributeconstraints.md
+  - docs/models/schemasdateattributeinfohelpers.md
+  - docs/models/schemasdateattributetype.md
+  - docs/models/schemasentityvalidationresulterrorstatus.md
+  - docs/models/schemasfileattributeconstraints.md
+  - docs/models/schemasfileattributeinfohelpers.md
+  - docs/models/schemasfileattributetype.md
+  - docs/models/schemasinfohelpers.md
+  - docs/models/schemasinternalattributeconstraints.md
+  - docs/models/schemasinternalattributeinfohelpers.md
+  - docs/models/schemasinternalattributetype.md
+  - docs/models/schemasinternaluserattributeconstraints.md
+  - docs/models/schemasinternaluserattributeinfohelpers.md
+  - docs/models/schemasinternaluserattributetype.md
+  - docs/models/schemasinvitationemailattributeconstraints.md
+  - docs/models/schemasinvitationemailattributeinfohelpers.md
+  - docs/models/schemasinvitationemailattributetype.md
+  - docs/models/schemaslinkattributeconstraints.md
+  - docs/models/schemaslinkattributeinfohelpers.md
+  - docs/models/schemaslinkattributetype.md
+  - docs/models/schemasmodel.md
+  - docs/models/schemasmodelinput.md
+  - docs/models/schemasmultiselectattributeconstraints.md
+  - docs/models/schemasmultiselectattributeinfohelpers.md
+  - docs/models/schemasmultiselectattributetype.md
+  - docs/models/schemasnewentityitem.md
+  - docs/models/schemasnumberattributeconstraints.md
+  - docs/models/schemasnumberattributeinfohelpers.md
+  - docs/models/schemasnumberattributetype.md
+  - docs/models/schemasoptions.md
+  - docs/models/schemasorderedlistattributeconstraints.md
+  - docs/models/schemasorderedlistattributeinfohelpers.md
+  - docs/models/schemasorderedlistattributetype.md
+  - docs/models/schemaspartnerorganisationattributeconstraints.md
+  - docs/models/schemaspartnerorganisationattributeinfohelpers.md
+  - docs/models/schemaspartnerorganisationattributetype.md
+  - docs/models/schemaspartnerstatusattributeconstraints.md
+  - docs/models/schemaspartnerstatusattributeinfohelpers.md
+  - docs/models/schemaspartnerstatusattributetype.md
+  - docs/models/schemaspaymentmethodrelationattributeconstraints.md
+  - docs/models/schemaspaymentmethodrelationattributeinfohelpers.md
+  - docs/models/schemaspaymentmethodrelationattributetype.md
+  - docs/models/schemaspurposeattributeconstraints.md
+  - docs/models/schemaspurposeattributeinfohelpers.md
+  - docs/models/schemaspurposeattributetype.md
+  - docs/models/schemasrelationaffinitymode.md
+  - docs/models/schemasrelationattributeconstraints.md
+  - docs/models/schemasrelationattributeinfohelpers.md
+  - docs/models/schemasrelationattributetype.md
+  - docs/models/schemasrepeatableattributeconstraints.md
+  - docs/models/schemasrepeatableattributeinfohelpers.md
+  - docs/models/schemasrepeatableattributetype.md
+  - docs/models/schemasselectattributeconstraints.md
+  - docs/models/schemasselectattributeinfohelpers.md
+  - docs/models/schemasselectattributetype.md
+  - docs/models/schemassequenceattributeconstraints.md
+  - docs/models/schemassequenceattributeinfohelpers.md
+  - docs/models/schemassequenceattributetype.md
+  - docs/models/schemasstatus.md
+  - docs/models/schemasstatusattributeconstraints.md
+  - docs/models/schemasstatusattributeinfohelpers.md
+  - docs/models/schemasstatusattributeoptions.md
+  - docs/models/schemasstatusattributetype.md
+  - docs/models/schemastagsattributeconstraints.md
+  - docs/models/schemastagsattributeinfohelpers.md
+  - docs/models/schemastagsattributetype.md
+  - docs/models/schemastextattributeconstraints.md
+  - docs/models/schemastextattributeinfohelpers.md
+  - docs/models/schemastextattributetype.md
+  - docs/models/schemastype.md
+  - docs/models/schemasuserrelationattributeconstraints.md
+  - docs/models/schemasuserrelationattributeinfohelpers.md
+  - docs/models/schemasuserrelationattributetype.md
+  - docs/models/searchentitiesresponse.md
+  - docs/models/searchfilter.md
+  - docs/models/searchfiltervalue.md
+  - docs/models/searchmappings.md
+  - docs/models/searchmappingstype.md
+  - docs/models/security.md
+  - docs/models/selectattribute.md
+  - docs/models/selectattribute1.md
+  - docs/models/selectattributeconstraints.md
+  - docs/models/selectattributeinfohelpers.md
+  - docs/models/selectattributeoptions.md
+  - docs/models/selectattributeschemasmodel.md
+  - docs/models/selectattributeschemasmodelinput.md
+  - docs/models/selectattributetype.md
+  - docs/models/sequenceattribute.md
+  - docs/models/sequenceattributeconstraints.md
+  - docs/models/sequenceattributeinfohelpers.md
+  - docs/models/sequenceattributeschemasmodel.md
+  - docs/models/sequenceattributeschemasmodelinput.md
+  - docs/models/sequenceattributetype.md
+  - docs/models/settingflag.md
+  - docs/models/sharing.md
+  - docs/models/singleview.md
+  - docs/models/sort.md
+  - docs/models/source.md
+  - docs/models/status.md
+  - docs/models/statusattribute.md
+  - docs/models/statusattribute2.md
+  - docs/models/statusattributeconstraints.md
+  - docs/models/statusattributeinfohelpers.md
+  - docs/models/statusattributeoptions.md
+  - docs/models/statusattributeschemasmodel.md
+  - docs/models/statusattributeschemasmodelinput.md
+  - docs/models/statusattributetype.md
+  - docs/models/summaryattribute.md
+  - docs/models/summaryattributes.md
+  - docs/models/summaryfield.md
+  - docs/models/summaryfields.md
+  - docs/models/tableview.md
+  - docs/models/tagsattribute.md
+  - docs/models/tagsattributeconstraints.md
+  - docs/models/tagsattributeinfohelpers.md
+  - docs/models/tagsattributeschemasmodel.md
+  - docs/models/tagsattributeschemasmodelinput.md
+  - docs/models/tagsattributetype.md
+  - docs/models/taxonomiesclassificationssearchrequest.md
+  - docs/models/taxonomiesclassificationssearchrequestbody.md
+  - docs/models/taxonomiesclassificationssearchresponsebody.md
+  - docs/models/taxonomy.md
+  - docs/models/taxonomyautocompleterequest.md
+  - docs/models/taxonomyautocompleteresponsebody.md
+  - docs/models/taxonomybulkjob.md
+  - docs/models/taxonomybulkjobactiontype.md
+  - docs/models/taxonomybulkjobstatus.md
+  - docs/models/taxonomybulkjobtriggerresponse.md
+  - docs/models/taxonomyclassification.md
+  - docs/models/taxonomyinput.md
+  - docs/models/taxonomylocationid.md
+  - docs/models/textattribute.md
+  - docs/models/textattributeconstraints.md
+  - docs/models/textattributeinfohelpers.md
+  - docs/models/textattributeschemasmodel.md
+  - docs/models/textattributeschemasmodelinput.md
+  - docs/models/textattributetype.md
+  - docs/models/token.md
+  - docs/models/two.md
+  - docs/models/type.md
+  - docs/models/uiconfig.md
+  - docs/models/uihooks.md
+  - docs/models/updateclassificationsfortaxonomyrequest.md
+  - docs/models/updateclassificationsfortaxonomyresponsebody.md
+  - docs/models/updateentityrequest.md
+  - docs/models/updaterelationrequest.md
+  - docs/models/updaterelationrequestbody.md
+  - docs/models/updatesavedviewrequest.md
+  - docs/models/updatetaxonomyclassificationrequest.md
+  - docs/models/updatetaxonomyrequest.md
+  - docs/models/upsertentityrequest.md
+  - docs/models/upsertentityrequestbody.md
+  - docs/models/userrelationattribute.md
+  - docs/models/userrelationattributeconstraints.md
+  - docs/models/userrelationattributeinfohelpers.md
+  - docs/models/userrelationattributeschemasmodel.md
+  - docs/models/userrelationattributeschemasmodelinput.md
+  - docs/models/userrelationattributetype.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/validateentityrequest.md
+  - docs/models/validateentityv2request.md
+  - docs/models/viewtype.md
+  - docs/sdks/activitysdk/README.md
+  - docs/sdks/entities/README.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/importexport/README.md
+  - docs/sdks/relations/README.md
+  - docs/sdks/savedviews/README.md
+  - docs/sdks/schemas/README.md
+  - docs/sdks/taxonomysdk/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/epilot_entity/__init__.py
+  - src/epilot_entity/_hooks/__init__.py
+  - src/epilot_entity/_hooks/sdkhooks.py
+  - src/epilot_entity/_hooks/types.py
+  - src/epilot_entity/_version.py
+  - src/epilot_entity/activity_sdk.py
+  - src/epilot_entity/basesdk.py
+  - src/epilot_entity/entities.py
+  - src/epilot_entity/httpclient.py
+  - src/epilot_entity/import_export.py
+  - src/epilot_entity/models/__init__.py
+  - src/epilot_entity/models/activity.py
+  - src/epilot_entity/models/activitycallercontext.py
+  - src/epilot_entity/models/activityidqueryparam.py
+  - src/epilot_entity/models/activityitem.py
+  - src/epilot_entity/models/addrelationsop.py
+  - src/epilot_entity/models/addressattribute.py
+  - src/epilot_entity/models/addressrelationattribute.py
+  - src/epilot_entity/models/attachactivityop.py
+  - src/epilot_entity/models/attribute.py
+  - src/epilot_entity/models/attribute_input.py
+  - src/epilot_entity/models/attributewithcompositeid.py
+  - src/epilot_entity/models/autocompleteop.py
+  - src/epilot_entity/models/automationattribute.py
+  - src/epilot_entity/models/baseactivityitem.py
+  - src/epilot_entity/models/booleanattribute.py
+  - src/epilot_entity/models/bulkdeleteclassificationsop.py
+  - src/epilot_entity/models/bulkmoveclassificationsop.py
+  - src/epilot_entity/models/classificationsupdate.py
+  - src/epilot_entity/models/computedattribute.py
+  - src/epilot_entity/models/consentattribute.py
+  - src/epilot_entity/models/countryattribute.py
+  - src/epilot_entity/models/createactivityop.py
+  - src/epilot_entity/models/createentityop.py
+  - src/epilot_entity/models/currencyattribute.py
+  - src/epilot_entity/models/dateattribute.py
+  - src/epilot_entity/models/defaultaddressfields.py
+  - src/epilot_entity/models/deleteentityop.py
+  - src/epilot_entity/models/deleterelationop.py
+  - src/epilot_entity/models/deletesavedviewop.py
+  - src/epilot_entity/models/deleteschemaattributeop.py
+  - src/epilot_entity/models/deleteschemacapabilityop.py
+  - src/epilot_entity/models/deleteschemagroupheadlineop.py
+  - src/epilot_entity/models/deleteschemagroupop.py
+  - src/epilot_entity/models/deleteschemaop.py
+  - src/epilot_entity/models/deletetaxonomyclassificationop.py
+  - src/epilot_entity/models/deletetaxonomyop.py
+  - src/epilot_entity/models/entity.py
+  - src/epilot_entity/models/entity_input.py
+  - src/epilot_entity/models/entityacl.py
+  - src/epilot_entity/models/entityaction.py
+  - src/epilot_entity/models/entitycapability.py
+  - src/epilot_entity/models/entitycapabilitywithcompositeid.py
+  - src/epilot_entity/models/entitydefaultcreate.py
+  - src/epilot_entity/models/entitydefaultedit.py
+  - src/epilot_entity/models/entitydefaulttable.py
+  - src/epilot_entity/models/entityimportparams.py
+  - src/epilot_entity/models/entityitem.py
+  - src/epilot_entity/models/entitylistparams.py
+  - src/epilot_entity/models/entityoperation.py
+  - src/epilot_entity/models/entityowner.py
+  - src/epilot_entity/models/entityrelationsmodequeryparam.py
+  - src/epilot_entity/models/entityschema.py
+  - src/epilot_entity/models/entityschemagroup.py
+  - src/epilot_entity/models/entityschemagroupwithcompositeid.py
+  - src/epilot_entity/models/entityschemaitem.py
+  - src/epilot_entity/models/entitysearchincludedeletedparam.py
+  - src/epilot_entity/models/entitysearchparams.py
+  - src/epilot_entity/models/entitysearchresults.py
+  - src/epilot_entity/models/entityvalidationerror.py
+  - src/epilot_entity/models/entityvalidationresulterror.py
+  - src/epilot_entity/models/entityvalidationresultsuccess.py
+  - src/epilot_entity/models/entityvalidationv2error.py
+  - src/epilot_entity/models/entityvalidationv2resulterror.py
+  - src/epilot_entity/models/entityvalidationv2resultsuccess.py
+  - src/epilot_entity/models/entityviewdisabled.py
+  - src/epilot_entity/models/exportentitiesop.py
+  - src/epilot_entity/models/fileattribute.py
+  - src/epilot_entity/models/getactivityop.py
+  - src/epilot_entity/models/getentityactivityfeedop.py
+  - src/epilot_entity/models/getentityop.py
+  - src/epilot_entity/models/getentityv2op.py
+  - src/epilot_entity/models/getjsonschemaop.py
+  - src/epilot_entity/models/getrelatedentitiescount.py
+  - src/epilot_entity/models/getrelatedentitiescountop.py
+  - src/epilot_entity/models/getrelationsop.py
+  - src/epilot_entity/models/getrelationsresp.py
+  - src/epilot_entity/models/getrelationsrespwithpagination.py
+  - src/epilot_entity/models/getrelationsv2op.py
+  - src/epilot_entity/models/getrelationsv3op.py
+  - src/epilot_entity/models/getsavedviewop.py
+  - src/epilot_entity/models/getschemaattributeop.py
+  - src/epilot_entity/models/getschemacapabilityop.py
+  - src/epilot_entity/models/getschemaexampleop.py
+  - src/epilot_entity/models/getschemagroupheadlineop.py
+  - src/epilot_entity/models/getschemagroupop.py
+  - src/epilot_entity/models/getschemaop.py
+  - src/epilot_entity/models/getschemaversionsop.py
+  - src/epilot_entity/models/gettaxonomybulkactionjobbyidop.py
+  - src/epilot_entity/models/gettaxonomybulkactionjobsop.py
+  - src/epilot_entity/models/gettaxonomyclassificationop.py
+  - src/epilot_entity/models/gettaxonomyop.py
+  - src/epilot_entity/models/groupheadline.py
+  - src/epilot_entity/models/groupheadlinewithcompositeid.py
+  - src/epilot_entity/models/importentitiesop.py
+  - src/epilot_entity/models/internalattribute.py
+  - src/epilot_entity/models/internaluserattribute.py
+  - src/epilot_entity/models/invitationemailattribute.py
+  - src/epilot_entity/models/linkattribute.py
+  - src/epilot_entity/models/listentitiesop.py
+  - src/epilot_entity/models/listfavoriteviewsforuserop.py
+  - src/epilot_entity/models/listsavedviewsop.py
+  - src/epilot_entity/models/listsavedviewsresults.py
+  - src/epilot_entity/models/listschemablueprintsop.py
+  - src/epilot_entity/models/listschemasop.py
+  - src/epilot_entity/models/listtaxonomiesop.py
+  - src/epilot_entity/models/listtaxonomyclassificationsforschemaop.py
+  - src/epilot_entity/models/multiselectattribute.py
+  - src/epilot_entity/models/numberattribute.py
+  - src/epilot_entity/models/orderedlistattribute.py
+  - src/epilot_entity/models/partnerorganisationattribute.py
+  - src/epilot_entity/models/partnerstatusattribute.py
+  - src/epilot_entity/models/patchentityop.py
+  - src/epilot_entity/models/paymentmethodrelationattribute.py
+  - src/epilot_entity/models/purposeattribute.py
+  - src/epilot_entity/models/putschemaattributeop.py
+  - src/epilot_entity/models/putschemacapabilityop.py
+  - src/epilot_entity/models/putschemagroupheadlineop.py
+  - src/epilot_entity/models/putschemagroupop.py
+  - src/epilot_entity/models/putschemaop.py
+  - src/epilot_entity/models/redirectentityview.py
+  - src/epilot_entity/models/relationattribute.py
+  - src/epilot_entity/models/relationentity.py
+  - src/epilot_entity/models/relationitem.py
+  - src/epilot_entity/models/removerelationsop.py
+  - src/epilot_entity/models/repeatableattribute.py
+  - src/epilot_entity/models/restoreentityop.py
+  - src/epilot_entity/models/savedview.py
+  - src/epilot_entity/models/savedviewitem.py
+  - src/epilot_entity/models/sdkerror.py
+  - src/epilot_entity/models/searchentitiesop.py
+  - src/epilot_entity/models/searchfilter.py
+  - src/epilot_entity/models/searchfiltervalue.py
+  - src/epilot_entity/models/searchmappings.py
+  - src/epilot_entity/models/security.py
+  - src/epilot_entity/models/selectattribute.py
+  - src/epilot_entity/models/sequenceattribute.py
+  - src/epilot_entity/models/settingflag.py
+  - src/epilot_entity/models/statusattribute.py
+  - src/epilot_entity/models/summaryattribute.py
+  - src/epilot_entity/models/summaryfield.py
+  - src/epilot_entity/models/tagsattribute.py
+  - src/epilot_entity/models/taxonomiesclassificationssearchop.py
+  - src/epilot_entity/models/taxonomy.py
+  - src/epilot_entity/models/taxonomy_input.py
+  - src/epilot_entity/models/taxonomyautocompleteop.py
+  - src/epilot_entity/models/taxonomybulkjob.py
+  - src/epilot_entity/models/taxonomybulkjobactiontype.py
+  - src/epilot_entity/models/taxonomybulkjobstatus.py
+  - src/epilot_entity/models/taxonomybulkjobtriggerresponse.py
+  - src/epilot_entity/models/taxonomyclassification.py
+  - src/epilot_entity/models/taxonomylocationid.py
+  - src/epilot_entity/models/textattribute.py
+  - src/epilot_entity/models/updateclassificationsfortaxonomyop.py
+  - src/epilot_entity/models/updateentityop.py
+  - src/epilot_entity/models/updaterelationop.py
+  - src/epilot_entity/models/updatesavedviewop.py
+  - src/epilot_entity/models/updatetaxonomyclassificationop.py
+  - src/epilot_entity/models/updatetaxonomyop.py
+  - src/epilot_entity/models/upsertentityop.py
+  - src/epilot_entity/models/userrelationattribute.py
+  - src/epilot_entity/models/validateentityop.py
+  - src/epilot_entity/models/validateentityv2op.py
+  - src/epilot_entity/py.typed
+  - src/epilot_entity/relations.py
+  - src/epilot_entity/saved_views.py
+  - src/epilot_entity/schemas.py
+  - src/epilot_entity/sdk.py
+  - src/epilot_entity/sdkconfiguration.py
+  - src/epilot_entity/taxonomy_sdk.py
+  - src/epilot_entity/types/__init__.py
+  - src/epilot_entity/types/basemodel.py
+  - src/epilot_entity/utils/__init__.py
+  - src/epilot_entity/utils/annotations.py
+  - src/epilot_entity/utils/enums.py
+  - src/epilot_entity/utils/eventstreaming.py
+  - src/epilot_entity/utils/forms.py
+  - src/epilot_entity/utils/headers.py
+  - src/epilot_entity/utils/logger.py
+  - src/epilot_entity/utils/metadata.py
+  - src/epilot_entity/utils/queryparams.py
+  - src/epilot_entity/utils/requestbodies.py
+  - src/epilot_entity/utils/retries.py
+  - src/epilot_entity/utils/security.py
+  - src/epilot_entity/utils/serializers.py
+  - src/epilot_entity/utils/url.py
+  - src/epilot_entity/utils/values.py
+examples:
+  attachActivity:
+    speakeasy-default-attach-activity:
+      parameters:
+        path:
+          id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+        query: {}
+      responses:
+        "200":
+          application/json: {"_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>", "key1": "<value>", "key2": "<value>"}, "message": "{{caller}} did something with {{entity payload.entity.id}}.", "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "title": "My custom activity", "type": "MyCustomActivity"}
+  createActivity:
+    speakeasy-default-create-activity:
+      requestBody:
+        application/json: {"message": "{{caller}} did something with {{entity payload.entity.id}}.", "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "title": "My custom activity", "type": "MyCustomActivity"}
+      responses:
+        "200":
+          application/json: {"_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>", "key1": "<value>", "key2": "<value>"}, "message": "{{caller}} did something with {{entity payload.entity.id}}.", "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "title": "My custom activity", "type": "MyCustomActivity"}
+  getActivity:
+    speakeasy-default-get-activity:
+      parameters:
+        path:
+          id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+        query: {}
+      responses:
+        "200":
+          application/json: {"_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>", "key1": "<value>", "key2": "<value>"}, "message": "{{caller}} did something with {{entity payload.entity.id}}.", "operations": [{"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "diff": {"added": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "deleted": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "updated": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, "entity": "2f5aea8c-b301-4b81-b255-4fa91b54f5cb", "operation": "createEntity", "org": "123", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, {"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "diff": {"added": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "deleted": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "updated": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, "entity": "679d2550-4ca9-4a26-9e2d-02ae384748b5", "operation": "createEntity", "org": "123", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_org": "123", "_schema": "contact", "status": "Inactive", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_owners": [{"org_id": "123", "user_id": "123"}], "_tags": ["example", "mock"], "_created_at": "2021-02-09T12:41:43.662Z", "_updated_at": "2021-02-09T12:41:43.662Z", "_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_manifest": ["123e4567-e89b-12d3-a456-426614174000"]}}, {"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "diff": {"added": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "deleted": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "updated": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, "entity": "56e86ee8-fdbc-49fa-8d97-eed53329c577", "operation": "updateEntity", "org": "123", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_org": "123", "_schema": "contact", "status": "Inactive"}}], "operations_total": 1, "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "title": "My custom activity", "type": "MyCustomActivity"}
+  getEntityActivityFeed:
+    speakeasy-default-get-entity-activity-feed:
+      parameters:
+        path:
+          slug: "contact"
+          id: "518ad1d0-b9ca-4e17-9ff0-7e4738e5f1ef"
+        query:
+          type: "SyncActivity"
+      responses:
+        "200":
+          application/json: {"results": [{"_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>"}, "message": "{{caller}} did something with {{entity payload.entity.id}}.", "operations": [], "operations_total": 1, "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "title": "My custom activity", "type": "MyCustomActivity"}, {"_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}}, "message": "{{caller}} did something with {{entity payload.entity.id}}.", "operations": [{"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "diff": {"added": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "deleted": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "updated": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, "entity": "6bf37b17-4cb7-4d13-9975-82ab2aeca6d9", "operation": "updateEntity", "org": "123", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_org": "123", "_schema": "contact", "status": "Inactive"}}, {"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "diff": {"added": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "deleted": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "updated": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, "entity": "31af6085-474c-4091-a715-b348a4215762", "operation": "updateEntity", "org": "123", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, {"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "diff": {"added": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "deleted": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "updated": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, "entity": "fdf21b38-6b75-49eb-ab35-19f009c5b874", "operation": "updateEntity", "org": "123", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z", "status": "Inactive"}}], "operations_total": 1, "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "title": "My custom activity", "type": "MyCustomActivity"}, {"_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>"}, "message": "{{caller}} did something with {{entity payload.entity.id}}.", "operations": [{"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "diff": {"added": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "deleted": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "updated": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, "entity": "bb551d1f-4d2a-4bd5-9af2-22b7a36b84b2", "operation": "createEntity", "org": "123", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_org": "123", "_schema": "contact", "status": "Inactive", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_owners": [{"org_id": "123", "user_id": "123"}], "_tags": ["example", "mock"], "_created_at": "2021-02-09T12:41:43.662Z", "_updated_at": "2021-02-09T12:41:43.662Z", "_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_manifest": ["123e4567-e89b-12d3-a456-426614174000"]}}, {"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "diff": {"added": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "deleted": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}, "updated": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z"}}, "entity": "9d16e6d5-b97c-4b9f-986e-4b49a26e46e6", "operation": "updateEntity", "org": "123", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_updated_at": "2021-02-09T12:41:43.662Z", "status": "Inactive"}}], "operations_total": 1, "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "title": "My custom activity", "type": "MyCustomActivity"}], "total": 1}
+  createSchemaAttribute:
+    speakeasy-default-create-schema-attribute:
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "schema": "contact", "topic": "<value>", "type": "consent"}
+      responses:
+        "201":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "schema": "contact", "topic": "<value>", "type": "consent"}
+  createSchemaCapability:
+    speakeasy-default-create-schema-capability:
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "schema": "contact", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}]}
+      responses:
+        "201":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "schema": "contact", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>", "key2": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>", "key2": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}]}
+  createSchemaGroup:
+    speakeasy-default-create-schema-group:
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "render_condition": "_is_composite_price = \"false\"", "schema": "contact"}
+      responses:
+        "201":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "render_condition": "_is_composite_price = \"false\"", "schema": "contact"}
+  createSchemaGroupHeadline:
+    speakeasy-default-create-schema-group-headline:
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "schema": "contact", "type": "headline"}
+      responses:
+        "201":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "group": "<value>", "label": "<value>", "name": "<value>", "schema": "contact", "type": "headline"}
+  deleteSchema:
+    speakeasy-default-delete-schema:
+      parameters:
+        path:
+          slug: "contact"
+  deleteSchemaAttribute:
+    speakeasy-default-delete-schema-attribute:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "schema": "contact"}
+  deleteSchemaCapability:
+    speakeasy-default-delete-schema-capability:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "schema": "contact", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>", "key2": "<value>"}]}
+  deleteSchemaGroup:
+    speakeasy-default-delete-schema-group:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "render_condition": "_is_composite_price = \"false\"", "schema": "contact"}
+  deleteSchemaGroupHeadline:
+    speakeasy-default-delete-schema-group-headline:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "group": "<value>", "label": "<value>", "name": "<value>", "schema": "contact", "type": "headline"}
+  getJsonSchema:
+    speakeasy-default-get-json-schema:
+      parameters:
+        path:
+          slug: "contact"
+  getSchema:
+    speakeasy-default-get-schema:
+      parameters:
+        path:
+          slug: "contact"
+        query: {}
+      responses:
+        "200":
+          application/json: {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"summary_attributes": ["email"]}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": []}, "sharing": {"show_sharing_button": true}, "single_view": {"summary_attributes": ["email"]}}}
+  getSchemaAttribute:
+    speakeasy-default-get-schema-attribute:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "schema": "contact"}
+  getSchemaCapability:
+    speakeasy-default-get-schema-capability:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "allowed_extensions": ["csv"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "type": "image"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "schema": "contact", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}]}
+  getSchemaExample:
+    contact:
+      parameters:
+        path:
+          slug: "contact"
+  getSchemaGroup:
+    speakeasy-default-get-schema-group:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "render_condition": "_is_composite_price = \"false\"", "schema": "contact"}
+  getSchemaGroupHeadline:
+    speakeasy-default-get-schema-group-headline:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "group": "<value>", "label": "<value>", "name": "<value>", "schema": "contact", "type": "headline"}
+  getSchemaVersions:
+    speakeasy-default-get-schema-versions:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          fields: ["id", "attributes", "capabilites"]
+      responses:
+        "200":
+          application/json: {"drafts": [{"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "color": "#FF5733", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "taxonomy-slug:classification-slug", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "Wallbox PV", "order": 0, "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}]}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": ["email", {"label": "<value>", "value": "<value>"}]}, "sharing": {"show_sharing_button": true}, "table_view": {"bulk_actions": ["<value>", {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "row_actions": []}}}, {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"list_item": {"quick_actions": [], "summary_attributes": []}, "sharing": {"show_sharing_button": true}, "table_view": {"bulk_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "row_actions": []}}}, {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"summary_attributes": ["email"]}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": [{"label": "<value>", "value": "<value>"}, "email", "email"]}, "sharing": {"show_sharing_button": true}, "single_view": {"route": "/app/pricing-hub/product/:entityId"}, "table_view": {"bulk_actions": ["<value>"], "row_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, "<value>", {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}]}}}], "versions": [{"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "color": "#FF5733", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "taxonomy-slug:classification-slug", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "Wallbox PV", "order": 0, "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>", "key2": "<value>"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "allowed_extensions": ["csv"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "type": "file"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>", "key2": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>", "key2": "<value>"}]}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"route": "/app/pricing-hub/product/:entityId"}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": [{"label": "<value>", "value": "<value>"}, {"label": "<value>", "value": "<value>"}, {"label": "<value>", "value": "<value>"}]}, "sharing": {"show_sharing_button": true}, "single_view": {"summary_attributes": ["email"]}, "table_view": {"bulk_actions": ["<value>", {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "row_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, "<value>", "<value>"]}}}, {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"route": "/app/pricing-hub/product/:entityId"}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": [{"label": "<value>", "value": "<value>"}]}, "sharing": {"show_sharing_button": true}, "single_view": {"summary_attributes": ["email"]}, "table_view": {"route": "/app/pricing-hub/product/:entityId"}}}, {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"route": "/app/pricing-hub/product/:entityId"}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": [{"label": "<value>", "value": "<value>"}, "email"]}, "sharing": {"show_sharing_button": true}, "table_view": {"route": "/app/pricing-hub/product/:entityId"}}}]}
+  listSchemaBlueprints:
+    speakeasy-default-list-schema-blueprints:
+      responses:
+        "200":
+          application/json: {"results": [{"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}]}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"create_view": {"route": "/app/pricing-hub/product/:entityId"}, "edit_view": {"summary_attributes": ["email"]}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": []}, "sharing": {"show_sharing_button": true}, "table_view": {"bulk_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "row_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}]}}}, {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": []}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"summary_attributes": ["email"]}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": [{"label": "<value>", "value": "<value>"}, "email"]}, "sharing": {"show_sharing_button": true}, "single_view": {"summary_attributes": ["email"]}, "table_view": {"route": "/app/pricing-hub/product/:entityId"}}}, {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "allowedSchemas": ["contact"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "reverse_attributes": {"contact": "contact.account", "opportunity": "contact.account"}}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}]}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"summary_attributes": ["email"]}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": ["email", {"label": "<value>", "value": "<value>"}, "email"]}, "sharing": {"show_sharing_button": true}, "table_view": {"route": "/app/pricing-hub/product/:entityId"}}}]}
+  listSchemas:
+    speakeasy-default-list-schemas:
+      responses:
+        "200":
+          application/json: {"results": [{"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": []}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"route": "/app/pricing-hub/product/:entityId"}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": []}, "sharing": {"show_sharing_button": true}, "single_view": {"route": "/app/pricing-hub/product/:entityId"}}}, {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}]}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": []}, "sharing": {"show_sharing_button": true}, "single_view": {"route": "/app/pricing-hub/product/:entityId"}, "table_view": {"bulk_actions": [], "row_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, "<value>", {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}]}}}, {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}, {"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>", "key1": "<value>"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": []}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "type": "headline"}], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"summary_attributes": ["email"]}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": [{"label": "<value>", "value": "<value>"}, {"label": "<value>", "value": "<value>"}, {"label": "<value>", "value": "<value>"}]}, "sharing": {"show_sharing_button": true}, "table_view": {"route": "/app/pricing-hub/product/:entityId"}}}]}
+  listTaxonomyClassificationsForSchema:
+    speakeasy-default-list-taxonomy-classifications-for-schema:
+      parameters:
+        path:
+          slug: "contact"
+          taxonomySlug: "<value>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"results": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}]}
+  putSchema:
+    speakeasy-default-put-schema:
+      parameters:
+        path:
+          slug: "contact"
+        query: {}
+      requestBody:
+        application/json: {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}]}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"create_view": {"route": "/app/pricing-hub/product/:entityId"}, "edit_view": {"summary_attributes": ["email"]}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}, {"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": []}, "sharing": {"show_sharing_button": true}, "single_view": {"route": "/app/pricing-hub/product/:entityId"}, "table_view": {"route": "/app/pricing-hub/product/:entityId"}}}
+      responses:
+        "200":
+          application/json: {"attributes": [{"label": "Email", "name": "email", "required": true, "type": "email"}, {"label": "First Name", "name": "first_name", "type": "string"}, {"label": "Last Name", "name": "last_name", "type": "string"}, {"label": "Birthdate", "name": "birthdate", "type": "date"}, {"label": "Salutation", "name": "salutation", "options": ["Mr.", "Ms. / Mrs.", "Other"], "type": "select"}, {"label": "Marketing permission", "name": "marketing_permission", "type": "boolean"}, {"label": "Image", "name": "image", "type": "file"}], "capabilities": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}]}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": []}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "color": "#FF5733", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "taxonomy-slug:classification-slug", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "Wallbox PV", "order": 0, "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes", "key": "<value>"}]}], "category": "customer_relations", "description": "Example description", "docs_url": "https://docs.epilot.io/docs/pricing/entities", "draft": false, "enable_setting": ["360_features"], "explicit_search_mappings": {"image": {"index": false, "type": "keyword"}}, "feature_flag": "FF_MY_FEATURE_FLAG", "group_headlines": [], "group_settings": [{"expanded": true, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "order": 1}, {"expanded": false, "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "info_tooltip_title": {"default": "These informations are provided by the partner company and cannot be edited.", "key": "partner.partner_information_group_tooltip"}, "label": "Contact Details", "order": 2}], "icon": "person", "name": "Contact", "plural": "Contacts", "published": false, "slug": "contact", "title_template": "{{first_name}} {{last_name}}", "ui_config": {"edit_view": {"route": "/app/pricing-hub/product/:entityId"}, "list_item": {"quick_actions": [{"action": "preview_file", "icon": "visibility", "label": "Preview File", "permission": "entity:edit"}], "summary_attributes": ["email", "email"]}, "sharing": {"show_sharing_button": true}, "table_view": {"route": "/app/pricing-hub/product/:entityId"}}}
+  putSchemaAttribute:
+    speakeasy-default-put-schema-attribute:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "schema": "contact"}
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0, "schema": "contact"}
+  putSchemaCapability:
+    speakeasy-default-put-schema-capability:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "info_helpers": {"hint_tooltip_placement": "top"}, "label": "<value>", "layout": "full_width", "name": "<value>", "order": 0}], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "schema": "contact", "title": "Messaging", "ui_hooks": []}
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "attributes": [], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "d5839b94-ba20-4225-a78e-76951d352bd6", "name": "customer_messaging", "schema": "contact", "title": "Messaging", "ui_hooks": [{"component": "PricingItems", "hook": "EntityDetailsV2:Tab", "icon": "email", "import": "@epilot360/notes", "order": 10, "render_condition": "_is_composite_price = \"false\"", "requiredPermission": {"action": "note:view", "resource": "123"}, "route": "notes", "title": "Notes"}]}
+  putSchemaGroup:
+    speakeasy-default-put-schema-group:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "feature_flag": "FF_MY_FEATURE_FLAG", "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "render_condition": "_is_composite_price = \"false\"", "schema": "contact"}
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "feature_flag": "FF_MY_FEATURE_FLAG", "id": "e18a532b-ae79-4d86-a6a5-e5dbfb579d14", "label": "Contact Details", "render_condition": "_is_composite_price = \"false\"", "schema": "contact"}
+  putSchemaGroupHeadline:
+    speakeasy-default-put-schema-group-headline:
+      parameters:
+        path:
+          composite_id: "contact:97644baa-083f-4e49-9188-fcff2ecaad7d"
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "group": "<value>", "label": "<value>", "name": "<value>", "schema": "contact", "type": "headline"}
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_purpose": ["taxonomy-slug:classification-slug"], "composite_id": "contact:97644baa-083f-4e49-9188-fcff2ecaad7d", "group": "<value>", "label": "<value>", "name": "<value>", "schema": "contact", "type": "headline"}
+  bulkDeleteClassifications:
+    "":
+      requestBody:
+        application/json: {"classification_ids": ["taxonomy-slug:classification-slug"]}
+      responses:
+        "200":
+          application/json: {"job_id": "123", "status": "PENDING"}
+  bulkMoveClassifications:
+    "":
+      requestBody:
+        application/json: {"classification_ids": ["taxonomy-slug:classification-slug"]}
+      responses:
+        "200":
+          application/json: {"job_id": "123", "status": "PENDING"}
+  createTaxonomy:
+    speakeasy-default-create-taxonomy:
+      requestBody:
+        application/json: {"color": "#FF5733", "enabled": true, "icon": "purpose", "name": "Purpose", "order": 10, "plural": "Purposes", "slug": "purpose"}
+      responses:
+        "201":
+          application/json: {"color": "#FF5733", "created_by": "10598", "enabled": true, "icon": "purpose", "kind": "system", "name": "Purpose", "order": 10, "plural": "Purposes", "slug": "purpose"}
+  deleteTaxonomy:
+    speakeasy-default-delete-taxonomy:
+      parameters:
+        path:
+          taxonomySlug: "<value>"
+        query: {}
+  deleteTaxonomyClassification:
+    "":
+      parameters:
+        path:
+          classificationSlug: "purpose:<name>"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}
+  getTaxonomy:
+    speakeasy-default-get-taxonomy:
+      parameters:
+        path:
+          taxonomySlug: "<value>"
+      responses:
+        "200":
+          application/json: {"color": "#FF5733", "created_by": "10598", "enabled": true, "icon": "purpose", "kind": "system", "name": "Purpose", "order": 10, "plural": "Purposes", "slug": "purpose"}
+  getTaxonomyBulkActionJobById:
+    speakeasy-default-get-taxonomy-bulk-action-job-by-id:
+      parameters:
+        path:
+          job_id: "<id>"
+      responses:
+        "200":
+          application/json: [{"action_type": "DELETE_CLASSIFICATIONS", "created_at": "2024-01-01T00:00:00Z", "created_by": "10598", "job_id": "123e4567-e89b-12d3-a456-426614174000", "org": "66", "progress": 0.5, "updated_at": "2024-01-01T00:00:00Z"}]
+  getTaxonomyBulkActionJobs:
+    speakeasy-default-get-taxonomy-bulk-action-jobs:
+      responses:
+        "200":
+          application/json: [{"action_type": "DELETE_CLASSIFICATIONS", "created_at": "2024-01-01T00:00:00Z", "created_by": "10598", "job_id": "123e4567-e89b-12d3-a456-426614174000", "org": "66", "progress": 0.5, "updated_at": "2024-01-01T00:00:00Z"}]
+  getTaxonomyClassification:
+    "":
+      parameters:
+        path:
+          classificationSlug: "purpose:<name>"
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}
+  listTaxonomies:
+    speakeasy-default-list-taxonomies:
+      responses:
+        "200":
+          application/json: {"results": []}
+  taxonomiesClassificationsSearch:
+    speakeasy-default-taxonomies-classifications-search:
+      parameters:
+        query:
+          query: "sales"
+          archived: false
+      requestBody:
+        application/json: {"classificationIds": ["taxonomy-slug:classification-slug"]}
+      responses:
+        "200":
+          application/json: {"results": []}
+  taxonomyAutocomplete:
+    speakeasy-default-taxonomy-autocomplete:
+      parameters:
+        path:
+          taxonomySlug: "<value>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"results": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}]}
+  updateClassificationsForTaxonomy:
+    speakeasy-default-update-classifications-for-taxonomy:
+      parameters:
+        path:
+          taxonomySlug: "<value>"
+      requestBody:
+        application/json: {"create": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}], "delete": ["taxonomy-slug:classification-slug"], "update": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}]}
+      responses:
+        "200":
+          application/json: {"created": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}], "updated": [{"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}, {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}]}
+  updateTaxonomy:
+    speakeasy-default-update-taxonomy:
+      parameters:
+        path:
+          taxonomySlug: "<value>"
+      requestBody:
+        application/json: {"color": "#FF5733", "enabled": true, "icon": "purpose", "name": "Purpose", "order": 10, "plural": "Purposes", "slug": "purpose"}
+      responses:
+        "200":
+          application/json: {"color": "#FF5733", "created_by": "10598", "enabled": true, "icon": "purpose", "kind": "system", "name": "Purpose", "order": 10, "plural": "Purposes", "slug": "purpose"}
+  updateTaxonomyClassification:
+    "":
+      parameters:
+        path:
+          classificationSlug: "purpose:<name>"
+      requestBody:
+        application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}
+      responses:
+        "200":
+          application/json: {"_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "color": "#FF5733", "id": "taxonomy-slug:classification-slug", "name": "Wallbox PV", "parents": ["taxonomy-slug:classification-slug"], "slug": "wallbox-pv"}
+  createSavedView:
+    speakeasy-default-create-saved-view:
+      requestBody:
+        application/json: {"created_by": {"user_id": "10598"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}
+      responses:
+        "201":
+          application/json: {"created_by": {"user_id": "10598"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}
+  deleteSavedView:
+    speakeasy-default-delete-saved-view:
+      parameters:
+        path:
+          id: "5ec1756f-b01b-4018-acd1-e0758b2e8f6f"
+  getSavedView:
+    speakeasy-default-get-saved-view:
+      parameters:
+        path:
+          id: "688c814e-5284-46ef-a5c7-33ab2e585e63"
+      responses:
+        "200":
+          application/json: {"created_by": {"user_id": "10598"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}
+  listFavoriteViewsForUser:
+    speakeasy-default-list-favorite-views-for-user:
+      responses:
+        "200":
+          application/json: {"results": [{"created_by": {"user_id": "10598"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}, {"created_by": {"user_id": "10598"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}, {"created_by": {"user_id": "10598"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}]}
+  listSavedViews:
+    speakeasy-default-list-saved-views:
+      parameters:
+        query:
+          slug: "contact"
+          fields: ["_id", "_title", "first_name", "account", "!account.*._files", "**._product"]
+      responses:
+        "200":
+          application/json: {"hits": 1, "results": [{"created_by": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}]}
+  updateSavedView:
+    speakeasy-default-update-saved-view:
+      parameters:
+        path:
+          id: "002d716d-5b81-47ee-a0ca-3f6b7849863c"
+      requestBody:
+        application/json: {"created_by": {"user_id": "10598"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}
+      responses:
+        "200":
+          application/json: {"created_by": {"user_id": "10598"}, "isFavoritedBy": ["11701"], "name": "View listing German", "org": "66", "shared": true, "slug": ["contact"], "ui_config": {"filters": {"customer_name": "suresh test", "_tags": "360"}, "table_layout": {"opportunity": {"page": 1, "sort": "_created_at:desc", "pageSize": 25, "columnSettings": []}}}}
+  autocomplete:
+    speakeasy-default-autocomplete:
+      parameters:
+        query:
+          attribute: "_tags"
+          slug: "contact"
+      responses:
+        "200":
+          application/json: {"hits": 1, "results": ["value"]}
+  createEntity:
+    contact:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {"status": "Active", "customer_number": "abc123", "first_name": "First", "middle_name": "Middle", "last_name": "Last", "title": "Herr Prof. Dr.", "email": [{"email": "user@example.com", "_tags": ["work"]}], "phone": [{"phone": "+49123456789", "_tags": ["personal", "mobile"]}], "address": [{"country": "Germany", "city": "Koln", "postal_code": 81475, "street": "Melatengürtel", "street_number": 71, "additional_info": "5. Etage", "_tags": ["billing", "delivery"]}], "birthdate": "2019-08-24", "account": {"$relation": [{"entity_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_tags": ["company"]}]}, "consent_email_marketing": {"status": "OPTED_IN", "events": [{"type": "OPT_IN", "organization_id": "123", "created_at": "2021-07-05T09:12:29.352Z", "topic": "EMAIL_MARKETING", "identifier": "user@example.com", "source": "https://consent.sls.epilot.io/optin?token=abc123", "meta": {"ip_address": "1.1.1.1", "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"}}, {"type": "DOUBLE_OPT_IN_REQUEST", "organization_id": "123", "created_at": "2021-07-05T08:12:29.352Z", "topic": "EMAIL_MARKETING", "identifier": "user@example.com", "source": "consent-api", "meta": {"token": "abc123"}}, {"type": "OPT_IN", "organization_id": "123", "created_at": "2021-07-04T09:12:29.352Z", "topic": "EMAIL_MARKETING", "identifier": "user@example.com", "source": "https://frontend.epilot.cloud", "meta": {"ip_address": "1.1.1.1", "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36"}}]}}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+    account:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {"status": "Active", "name": "Example Company", "tax_id": "DE123456789", "email": [{"email": "user@example.com", "_tags": ["work"]}], "phone": [{"phone": "+49123456789", "_tags": ["personal", "mobile"]}], "address": [{"country": "Germany", "city": "Koln", "postal_code": 81475, "street": "Melatengürtel", "street_number": 71, "additional_info": "5. Etage", "_tags": ["billing", "delivery"]}], "website": "http://company.com", "tax_exemption": "2021-02-23T09:08:57.320Z", "registry_court": "Amtsgericht Köln", "registry_number": "HRB 95505", "company_size": "50-99", "industry": ["ecommerce", "tech"], "annual_revenue": "5000000", "contact": {"$relation": [{"entity_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_tags": ["CEO"]}]}}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [], "status": "error"}
+    product:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {"code": "SunrockSolar375", "type": "Product", "name": "Sunrock Solar Panel", "description": "Sunrock Solar Panel, provide high capacity power generation even at night.", "shippable": "true,", "_files": {"type": "file", "attachments": [{"key": "f001-32123-asdasd-23213", "mime": "application/pdf", "name": "wallbox-premium.pdf", "size": 6933430, "image_url": "https://s3-bucket.epilot.cloud/uid/f001-32123-asdasd-23213", "download_url": "https://s3-bucket.epilot.cloud/uid/f001-32123-asdasd-23213"}]}, "_images": {"type": "image", "attachments": [{"key": "i001-32123-asdasd-23213", "mime": "application/pdf", "name": "wallbox-premium.pdf", "size": 6933430, "image_url": "https://s3-bucket.epilot.cloud/uid/f001-32123-asdasd-23213", "download_url": "https://s3-bucket.epilot.cloud/uid/f001-32123-asdasd-23213"}]}, "prices": {"$relation": [{"entity_id": "a38cca03-18a2-4e9c-8516-0918d81e7830", "_tags": ["price"]}, {"entity_id": "3d10c912-c419-42d7-9270-02b7d05294e5", "_tags": ["price"]}]}}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+    price:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {"code": "MODEL_375KW_PREMIUM", "type": "One Time", "description": "Solar Panel 375 kWp Premium", "internal_description": "Solar Panel 375 kWp Premium", "billing_scheme": "per_unit", "unit_amount": "€ 28500", "tiers_mode": "Standard"}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {}, "schema_path": "<value>"}], "status": "error"}
+    tax:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: ""
+      requestBody:
+        application/json: {"active": true, "type": "VAT", "region": "Germany", "region_label": "All Regions", "rate": 19, "behavior": "Exclusive", "description": "MwSt. 19%"}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+    order:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {"amount_subtotal": 23045, "amount_total": 27424, "billing_address": [{"additional_info": "", "city": "City", "country": "DE", "postal_code": "123", "street": "Street 1", "street_number": "2", "_tags": []}], "billing_company_name": "Epilot", "billing_contact": {"$relation": [{"entity_id": "0691f503-5a3c-4e9e-b036-ffb21ea1d284", "relationText": "Daniel Test", "_schema": "contact", "_tags": []}]}, "billing_email": "x@email.xyz", "billing_first_name": "Paulo", "billing_last_name": "Henriques", "billing_phone": "00351912611099", "billing_vat": "123456789", "currency": "EUR", "delivery_address": [{"additional_info": "", "city": "City", "country": "DE", "postal_code": "123", "street": "Street 1", "street_number": "2", "_tags": []}], "footer_notes": "Footer", "line_items": [{"amount_subtotal": 23045, "amount_total": 27424, "currency": "EUR", "description": "Basic Model - No Wifi", "price_id": "efe9ff76-865c-4287-8de9-422cfc741ff9", "product_id": "beefa9f1-29a8-448e-94d5-ebf1963428f8", "quantity": 1, "taxes": [{"amount": 4379, "rate": "standard"}], "unit_amount": 23045, "_price": {"active": false, "billing_duration_amount": "2", "billing_duration_unit": "years", "billing_period": "monthly", "description": "Basic Model - No Wifi", "notice_time_amount": "1", "notice_time_unit": "months", "price_display_in_journeys": "show_price", "renewal_duration_amount": "1", "renewal_duration_unit": "years", "sales_tax": "standard", "tax_behavior": "exclusive", "termination_time_amount": "1", "termination_time_unit": "months", "type": "recurring", "unit_amount": 23045, "unit_amount_currency": "EUR", "unit_amount_decimal": "230.4524", "_created_at": "2021-12-15T12:34:59.579Z", "_id": "efe9ff76-865c-4287-8de9-422cfc741ff9", "_org": "739224", "_schema": "price", "_tags": ["basic-model", "wifi"], "_title": "Basic Model - No Wifi", "_updated_at": "2021-12-31T13:07:51.392Z"}, "_product": {"active": true, "code": "PWB", "feature": [{"_tags": [], "feature": "Pure Energon Fueled"}, {"_tags": [], "feature": "Mobile App Available"}], "name": "Pinho Walls in a Box", "price_options": {"$relation": [{"entity_id": "efe9ff76-865c-4287-8de9-422cfc741ff9"}]}, "type": "product", "_created_at": "2021-12-15T12:35:08.438Z", "_id": "beefa9f1-29a8-448e-94d5-ebf1963428f8", "_org": "739224", "_schema": "product", "_tags": ["energon", "eco-friendly", "wallbox"], "_title": "Pinho Walls in a Box", "_updated_at": "2022-01-03T17:14:41.042Z"}}], "memo": "Memo", "status": "Paid", "total_details": {"amount_tax": 4379, "breakdown": {"recurrences": [{"amount_subtotal": 23045, "amount_tax": 4379, "amount_total": 27424, "billing_period": "monthly", "type": "recurring"}], "taxes": [{"amount": 4379, "rate": "standard"}]}}}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+    opportunity:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: ""
+      requestBody:
+        application/json: {"amount_subtotal": 23045, "amount_total": 27424, "assignees": {"$relation": [{"entity_id": "66a1a6a3-38ee-4ffe-b68d-ee90e3bb1a77", "relationText": "Claudius Iohannis", "_schema": "contact", "_tags": []}]}, "billing_address": [{"additional_info": "", "city": "City", "country": "DE", "postal_code": "123", "street": "Street 1", "street_number": "2", "_tags": []}], "billing_company_name": "Epilot", "billing_contact": {"$relation": [{"entity_id": "0691f503-5a3c-4e9e-b036-ffb21ea1d284", "relationText": "Daniel Test", "_schema": "contact", "_tags": []}]}, "billing_email": "customer@email.xyz", "billing_first_name": "Customer First Name", "billing_last_name": "Customer Last Name", "billing_phone": "00351912611098", "billing_vat": "123456789", "currency": "EUR", "delivery_address": [{"additional_info": "", "city": "City", "country": "DE", "postal_code": "123", "street": "Street 1", "street_number": "2", "_tags": []}], "line_items": [{"amount_subtotal": 23045, "amount_total": 27424, "currency": "EUR", "description": "Basic Model - No Wifi", "price_id": "efe9ff76-865c-4287-8de9-422cfc741ff9", "product_id": "beefa9f1-29a8-448e-94d5-ebf1963428f8", "quantity": 1, "taxes": [{"amount": 4379, "rate": "standard"}], "unit_amount": 23045, "_price": {"active": false, "billing_duration_amount": "2", "billing_duration_unit": "years", "billing_period": "monthly", "description": "Basic Model - No Wifi", "notice_time_amount": "1", "notice_time_unit": "months", "price_display_in_journeys": "show_price", "renewal_duration_amount": "1", "renewal_duration_unit": "years", "sales_tax": "standard", "tax_behavior": "exclusive", "termination_time_amount": "1", "termination_time_unit": "months", "type": "recurring", "unit_amount": 23045, "unit_amount_currency": "EUR", "unit_amount_decimal": "230.4524", "_created_at": "2021-12-15T12:34:59.579Z", "_id": "efe9ff76-865c-4287-8de9-422cfc741ff9", "_org": "739224", "_schema": "price", "_tags": ["basic-model", "wifi"], "_title": "Basic Model - No Wifi", "_updated_at": "2021-12-31T13:07:51.392Z"}, "_product": {"active": true, "code": "PWB", "feature": [{"_tags": [], "feature": "Pure Energon Fueled"}, {"_tags": [], "feature": "Mobile App Available"}], "name": "Pinho Walls in a Box", "price_options": {"$relation": [{"entity_id": "efe9ff76-865c-4287-8de9-422cfc741ff9"}]}, "type": "product", "_created_at": "2021-12-15T12:35:08.438Z", "_id": "beefa9f1-29a8-448e-94d5-ebf1963428f8", "_org": "739224", "_schema": "product", "_tags": ["energon", "eco-friendly", "wallbox"], "_title": "Pinho Walls in a Box", "_updated_at": "2022-01-03T17:14:41.042Z"}}], "opportunity_number": "20220105-768854819", "participants": {"$relation": [{"entity_id": "9bbfdaa9-22b2-4100-a256-67600202e3f4", "relationText": "Alex Marques", "_schema": "contact", "_tags": []}]}, "status": "Lead", "total_details": {"amount_tax": 4379, "breakdown": {"recurrences": [{"amount_subtotal": 23045, "amount_tax": 4379, "amount_total": 27424, "billing_period": "monthly", "type": "recurring"}], "taxes": [{"amount": 4379, "rate": "standard"}]}}}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {}, "schema_path": "<value>"}], "status": "error"}
+    email template:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {"_tags": ["Bestellung"], "attachments": [], "body": "<p fr-original-style=\"caret-color: rgb(65, 65, 65); color: rgb(65, 65, 65); font-family: sans-serif;\" id=\"isPasted\" style=\"caret-color: rgb(65, 65, 65); color: rgb(65, 65, 65); font-family: sans-serif; box-sizing: inherit; border-color: rgba(229, 231, 235, var(--tw-border-opacity));\"><span fr-original-style=\"font-weight: 700;\" style=\"font-weight: 700; box-sizing: inherit; border-color: rgba(229, 231, 235, var(--tw-border-opacity));\">Variablen - Kontakt</span></p>", "brand_id": 7066103, "from": {"name": "Name", "email": "admin@email.xyz"}, "name": "PH Test", "subject": "Example Subject", "system_template": false, "to": [{"id": "1", "name": "Contact Name", "email": "Contact email"}]}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [], "status": "error"}
+    file:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {"access_control": "private", "filename": "solar_panel_ph.jpeg", "s3ref": {"bucket": "epilot-staging-user-content", "key": "728/temp/6d450fd1-2d63-435f-b598-c605dfb89cbc/solar_panel_ph.jpeg"}}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {}, "schema_path": "<value>"}], "status": "error"}
+    workflow step:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: ""
+      requestBody:
+        application/json: {"name": "Name", "assigned_to\"": ["10000563"], "status": "Unassigned", "order": 123, "tags": ["tag1"]}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+    submission:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: ""
+      requestBody:
+        application/json: {"mapped_entities": {"$relation": [{"entity_id": "4ffb071c-2821-4505-86d0-09b801ffd97a", "relationText": "4ffb071c-2821-4505-86d0-09b801ffd97a", "_schema": "price", "_tags": []}]}}
+      responses:
+        "201":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {}, "schema_path": "<value>"}], "status": "error"}
+  deleteEntity:
+    speakeasy-default-delete-entity:
+      parameters:
+        path:
+          slug: "contact"
+          id: "3457837f-0030-4975-9234-282e40aa2a42"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+  getEntity:
+    speakeasy-default-get-entity:
+      parameters:
+        path:
+          id: "770233ca-a95b-4d49-89be-1cab1d794f7b"
+          slug: "contact"
+        query: {}
+      responses:
+        "200":
+          application/json: {"entity": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}, "relations": [{"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}]}
+  getEntityV2:
+    speakeasy-default-get-entity-v2:
+      parameters:
+        path:
+          id: "38bc65c2-3c54-4342-a7aa-4c456144d61d"
+          slug: "contact"
+        query:
+          fields: ["_id", "_title", "first_name", "account", "!account.*._files", "**._product"]
+      responses:
+        "200":
+          application/json: {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+  listEntities:
+    speakeasy-default-list-entities:
+      requestBody:
+        application/json: {"fields": ["_id", "_title", "first_name", "account", "!account.*._files", "**._product"], "filter": [{"term": {"_schema": "contact"}}, {"terms": {"status": ["active"]}}]}
+      responses:
+        "200":
+          application/json: {"hits": 1, "results": [{"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}]}
+          text/csv: "<value>"
+  patchEntity:
+    "":
+      parameters:
+        path:
+          slug: "contact"
+          id: "c6c79145-950e-49b2-91de-201d914dc176"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+  restoreEntity:
+    speakeasy-default-restore-entity:
+      parameters:
+        path:
+          id: "c831f01c-ddd0-44cd-8e0b-84491bd7a99d"
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      responses:
+        "200":
+          application/json: {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+  searchEntities:
+    speakeasy-default-search-entities:
+      requestBody:
+        application/json: {"fields": ["_id", "_title", "first_name", "account", "!account.*._files", "**._product"], "q": "_schema:contact AND status:active"}
+      responses:
+        "200":
+          application/json: {"hits": 1, "results": [{"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}]}
+          text/csv: "<value>"
+  updateEntity:
+    "":
+      parameters:
+        path:
+          slug: "contact"
+          id: "251d5297-dabd-42f4-a6a8-2fc3ae91327e"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+  upsertEntity:
+    speakeasy-default-upsert-entity:
+      parameters:
+        path:
+          slug: "contact"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: {"entity": {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_schema": "contact", "_tags": ["example", "mock"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_created_at": "2021-02-09T12:41:43.662Z", "_updated_at": "2021-02-09T12:41:43.662Z"}, "unique_key": ["email.0.email"]}
+      responses:
+        "200":
+          application/json: {"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+  validateEntity:
+    Valid Price:
+      parameters:
+        path:
+          slug: "contact"
+      requestBody:
+        application/json: {"code": "MODEL_375KW_PREMIUM", "type": "One Time", "description": "Solar Panel 375 kWp Premium", "internal_description": "Solar Panel 375 kWp Premium", "billing_scheme": "per_unit", "unit_amount": "€ 28500", "tiers_mode": "Standard"}
+      responses:
+        "200":
+          application/json: {"errors": [{"code": "custom", "message": "Invalid input", "params": {"type": "missing_field"}, "path": ["first_name"]}], "status": "success"}
+        "422":
+          application/json: {"errors": [{"code": "custom", "message": "Invalid input", "params": {"type": "missing_field"}, "path": ["first_name"]}], "status": "error"}
+    Invalid Price:
+      parameters:
+        path:
+          slug: "price"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"errors": [{"code": "custom", "message": "Invalid input", "params": {"type": "missing_field"}, "path": ["first_name"]}, {"code": "custom", "message": "Invalid input", "params": {"type": "missing_field"}, "path": ["first_name"]}], "status": "success"}
+        "422":
+          application/json: {"errors": [{"code": "custom", "message": "Invalid input", "params": {"type": "missing_field"}, "path": ["first_name"]}], "status": "error"}
+  validateEntityV2:
+    Valid Price:
+      parameters:
+        path:
+          slug: "price"
+      requestBody:
+        application/json: {"code": "MODEL_375KW_PREMIUM", "type": "One Time", "description": "Solar Panel 375 kWp Premium", "internal_description": "Solar Panel 375 kWp Premium", "billing_scheme": "per_unit", "unit_amount": "€ 28500", "tiers_mode": "Standard"}
+      responses:
+        "200":
+          application/json: {"errors": [], "status": "success"}
+        "422":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>"}, "schema_path": "<value>"}], "status": "error"}
+    Invalid Price:
+      parameters:
+        path:
+          slug: "price"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"errors": [{"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "schema_path": "<value>"}, {"instance_path": "<value>", "keyword": "<value>", "params": {"key": "<value>"}, "schema_path": "<value>"}], "status": "success"}
+        "422":
+          application/json: {"errors": [], "status": "error"}
+  addRelations:
+    "":
+      parameters:
+        path:
+          slug: "contact"
+          id: "adbd394b-69d6-4053-8f30-68e99c0b63b2"
+        query:
+          activity_id: "01F130Q52Q6MWSNS8N2AVXV4JN"
+      requestBody:
+        application/json: [{"_tags": ["billing"], "attribute": "contacts", "entity_id": "e8878f62-2d3d-4c86-bfe7-01a4180ff048"}, {"attribute": "contacts", "entity_id": "ee8a2af9-fb36-4981-b848-4e65275851af"}, {"attribute": "opportunities", "entity_id": "30990430-a53d-41a2-83db-2de072dc4dd4"}]
+      responses:
+        "200":
+          application/json: {"attribute": "<value>", "entity_id": "87d48182-b5a3-4b60-92dd-c969497f8b07"}
+  deleteRelation:
+    speakeasy-default-delete-relation:
+      parameters:
+        path:
+          slug: "contact"
+          id: "8ac911fb-7859-4557-9ed1-64e5e267dbdf"
+          attribute: "<value>"
+          entity_id: "<id>"
+        query:
+          activity_id: ""
+  getRelatedEntitiesCount:
+    "":
+      parameters:
+        path:
+          slug: "contact"
+          id: "355ef164-dc56-4668-bfa4-e3fd7d61cdc2"
+        query:
+          exclude_schemas: ["file,message"]
+      responses:
+        "200":
+          application/json: {"hits": 1}
+  getRelations:
+    "":
+      parameters:
+        path:
+          slug: "contact"
+          id: "e4dbff19-a4be-47f0-968a-88f5588bb2b0"
+        query:
+          include_schemas: ["contact,account"]
+          exclude_schemas: ["file,message"]
+      responses:
+        "200":
+          application/json: [{"_tags": ["primary", "billing"], "attribute": "contacts", "entity_id": "ed27830b-984c-4bca-9b87-2849bb5789ca"}, {"attribute": "contacts", "entity_id": "fadfc950-6e43-4e38-bae0-ffcf4b8b90e1"}, {"attribute": "<value>", "entity_id": "fc5cc8c9-096b-40d0-8785-ddde236c03bf"}]
+  getRelationsV2:
+    speakeasy-default-get-relations-v2:
+      parameters:
+        path:
+          slug: "contact"
+          id: "89238bd4-ec30-412b-b3d2-974896904e1c"
+        query:
+          fields: ["_id", "_title", "first_name", "account", "!account.*._files", "**._product"]
+      responses:
+        "200":
+          application/json: {"hits": 1, "relations": [{"_acl": {"view": ["org:456", "org:789"], "edit": ["org:456"], "delete": ["org:456"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"attribute": "<value>", "entity_id": "cb39c87d-4862-4fe6-8e41-a0ff19e02831"}]}
+  getRelationsV3:
+    "":
+      parameters:
+        path:
+          slug: "contact"
+          id: "63ebd5f4-7cab-457a-a4b6-817ae5a085c2"
+        query:
+          include_schemas: ["contact,account"]
+          exclude_schemas: ["file,message"]
+      responses:
+        "200":
+          application/json: {"hits": 1, "relations": [{"attribute": "<value>", "entity_id": "c262c3fe-eb56-4378-bfbf-d28501369862"}, {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_acl": {"delete": ["org:456"], "edit": ["org:456"], "view": ["org:456", "org:789"]}, "_created_at": "2021-02-09T12:41:43.662Z", "_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "_manifest": ["123e4567-e89b-12d3-a456-426614174000"], "_org": "123", "_owners": [{"org_id": "123", "user_id": "123"}], "_schema": "contact", "_tags": ["example", "mock"], "_title": "<value>", "_updated_at": "2021-02-09T12:41:43.662Z"}]}
+  removeRelations:
+    "":
+      parameters:
+        path:
+          slug: "contact"
+          id: "ae76d146-2553-4e09-b50a-48271be11c68"
+        query:
+          activity_id: ""
+      requestBody:
+        application/json: [{"_tags": ["billing"], "attribute": "contacts", "entity_id": "e8878f62-2d3d-4c86-bfe7-01a4180ff048"}, {"attribute": "contacts", "entity_id": "ee8a2af9-fb36-4981-b848-4e65275851af"}, {"attribute": "opportunities", "entity_id": "30990430-a53d-41a2-83db-2de072dc4dd4"}]
+  updateRelation:
+    "":
+      parameters:
+        path:
+          slug: "contact"
+          id: "9b6bfa4a-b135-4fcb-b213-8032260ae470"
+          attribute: "<value>"
+          entity_id: "<id>"
+        query:
+          activity_id: ""
+      requestBody:
+        application/json: {"_tags": ["billing", "prepaid"]}
+      responses:
+        "200":
+          application/json: {"attribute": "<value>", "entity_id": "338485f3-e903-4c57-b3bd-20ca2a91d969"}
+  exportEntities:
+    speakeasy-default-export-entities:
+      parameters:
+        query:
+          job_id: "abc123"
+      requestBody:
+        application/json: {"fields": ["_id", "_title", "first_name", "account", "!account.*._files", "**._product"], "q": "_schema:contact AND status:active"}
+  importEntities:
+    speakeasy-default-import-entities:
+      parameters:
+        query:
+          job_id: "abc123"
+      requestBody:
+        application/json: {"S3Reference": {"bucket": "my-bucket", "key": "imports/my-import.json"}, "schema": "contact"}
+generatedTests: {}
