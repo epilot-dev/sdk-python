@@ -4,25 +4,23 @@
 import epilot_document
 from epilot_document import Epilot
 
-s = Epilot(
+with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-
-res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
+) as s:
+    res = s.documents.convert_document(request={
+        "input_document": {
+            "s3ref": {
+                "bucket": "document-api-prod",
+                "key": "uploads/my-template.pdf",
+            },
         },
-    },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-})
+        "output_format": epilot_document.OutputFormat.PDF,
+        "output_filename": "converted.pdf",
+    })
 
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 ```
 
 </br>
@@ -35,22 +33,23 @@ import epilot_document
 from epilot_document import Epilot
 
 async def main():
-    s = Epilot(
+    async with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    )
-    res = await s.documents.convert_document_async(request={
-        "input_document": {
-            "s3ref": {
-                "bucket": "document-api-prod",
-                "key": "uploads/my-template.pdf",
+    ) as s:
+        res = await s.documents.convert_document_async(request={
+            "input_document": {
+                "s3ref": {
+                    "bucket": "document-api-prod",
+                    "key": "uploads/my-template.pdf",
+                },
             },
-        },
-        "output_format": epilot_document.OutputFormat.PDF,
-        "output_filename": "converted.pdf",
-    })
-    if res is not None:
-        # handle response
-        pass
+            "output_format": epilot_document.OutputFormat.PDF,
+            "output_filename": "converted.pdf",
+        })
+
+        if res is not None:
+            # handle response
+            pass
 
 asyncio.run(main())
 ```
