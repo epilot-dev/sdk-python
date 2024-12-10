@@ -1,13 +1,17 @@
 # Messages
 (*messages*)
 
+## Overview
+
 ### Available Operations
 
 * [delete_message](#delete_message) - deleteMessage
 * [get_message](#get_message) - getMessage
 * [get_message_v2](#get_message_v2) - getMessageV2
 * [mark_read_message](#mark_read_message) - markReadMessage
+* [mark_read_message_v2](#mark_read_message_v2) - markReadMessageV2
 * [mark_unread_message](#mark_unread_message) - markUnreadMessage
+* [mark_unread_message_v2](#mark_unread_message_v2) - markUnreadMessageV2
 * [send_message](#send_message) - sendMessage
 * [trash_message](#trash_message) - trashMessage
 * [untrash_message](#untrash_message) - untrashMessage
@@ -23,16 +27,14 @@ Immediately and permanently delete a message. This operation cannot be undone.
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    epilot.messages.delete_message(id="<id>")
 
-
-s.messages.delete_message(id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -45,9 +47,9 @@ s.messages.delete_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_message
 
@@ -59,18 +61,16 @@ Get an email message by id
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.messages.get_message(id="4d74976d-fb64-47fd-85e2-65eea140f5eb")
 
-
-res = s.messages.get_message(id="4d74976d-fb64-47fd-85e2-65eea140f5eb")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -81,15 +81,15 @@ if res is not None:
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Message ID                                                          | 4d74976d-fb64-47fd-85e2-65eea140f5eb                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.GetMessageResponse](../../models/getmessageresponse.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_message_v2
 
@@ -111,18 +111,16 @@ if res is not None:
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.messages.get_message_v2(id="4d74976d-fb64-47fd-85e2-65eea140f5eb")
 
-
-res = s.messages.get_message_v2(id="4d74976d-fb64-47fd-85e2-65eea140f5eb")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -133,15 +131,15 @@ if res is not None:
 | `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Message ID                                                          | 4d74976d-fb64-47fd-85e2-65eea140f5eb                                |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.MessageV2](../../models/messagev2.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## mark_read_message
 
@@ -153,16 +151,14 @@ Mark message as read
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    epilot.messages.mark_read_message(id="<id>")
 
-
-s.messages.mark_read_message(id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -175,9 +171,49 @@ s.messages.mark_read_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
+
+## mark_read_message_v2
+
+Mark message as read within a scope
+
+### Example Usage
+
+```python
+import epilot_message
+from epilot_message import Epilot
+
+with Epilot(
+    security=epilot_message.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+) as epilot:
+    epilot.messages.mark_read_message_v2(id="<id>", read_message_payload={
+        "scopes": [
+            epilot_message.ReadingScope.ORGANIZATION,
+            epilot_message.ReadingScope.USER,
+        ],
+    })
+
+    # Use the SDK ...
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Message ID                                                          |
+| `read_message_payload`                                              | [models.ReadMessagePayload](../../models/readmessagepayload.md)     | :heavy_check_mark:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## mark_unread_message
 
@@ -189,16 +225,14 @@ Mark message as unread
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    epilot.messages.mark_unread_message(id="<id>")
 
-
-s.messages.mark_unread_message(id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -211,9 +245,49 @@ s.messages.mark_unread_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
+
+## mark_unread_message_v2
+
+Mark message as unread within a scope
+
+### Example Usage
+
+```python
+import epilot_message
+from epilot_message import Epilot
+
+with Epilot(
+    security=epilot_message.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+) as epilot:
+    epilot.messages.mark_unread_message_v2(id="<id>", read_message_payload={
+        "scopes": [
+            epilot_message.ReadingScope.ORGANIZATION,
+            epilot_message.ReadingScope.USER,
+        ],
+    })
+
+    # Use the SDK ...
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | Message ID                                                          |
+| `read_message_payload`                                              | [models.ReadMessagePayload](../../models/readmessagepayload.md)     | :heavy_check_mark:                                                  | N/A                                                                 |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## send_message
 
@@ -225,65 +299,79 @@ Send an email message
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
-
-
-res = s.messages.send_message(message_request_params=epilot_message.MessageRequestParams(
-    from_={
-        "address": "messaging@epilot.cloud",
-        "name": "epilot",
-    },
-    subject="Request for solar panel price",
-    bcc=[
-        {
+) as epilot:
+    res = epilot.messages.send_message(message_request_params=epilot_message.MessageRequestParams(
+        from_={
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
-    ],
-    cc=[
-        {
-            "address": "messaging@epilot.cloud",
-            "name": "epilot",
-        },
-    ],
-    file={
-        "dollar_relation": [
+        subject="Request for solar panel price",
+        bcc=[
             {
-                "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
-                "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
-                "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
             },
         ],
-    },
-    html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
-    parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
-    reply_to={
-        "address": "messaging@epilot.cloud",
-        "name": "epilot",
-    },
-    text="We at ABC GmbH would like to request a price quote for the solar panel.",
-    thread={
-        "topic": "CUSTOMER_MESSAGE",
-        "assigned_to": [
-            "206801",
-            "200109",
+        cc=[
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
         ],
-    },
-    to=[
-        {
+        file={
+            "dollar_relation": [
+                {
+                    "entity_id": "f820ce3b-07b0-45ae-bcc6-babb2f53f79f",
+                    "cid": "fb222496-a1a5-4639-94f2-07b5e35e4068",
+                    "filename": "Produktinformationen_epilot360_Double_Opt_in.pdf",
+                },
+            ],
+        },
+        html="<div>We at ABC GmbH would like to request a price quote for the solar panel.</div>",
+        parent_id="44d7a3eb-0cce-4bd3-a7cd-0b3e652de0c2",
+        reply_to={
             "address": "messaging@epilot.cloud",
             "name": "epilot",
         },
-    ],
-))
+        template_id="3f34ce73-089c-4d45-a5ee-c161234e41c3",
+        text="We at ABC GmbH would like to request a price quote for the solar panel.",
+        thread={
+            "topic": "CUSTOMER_MESSAGE",
+            "assigned_to": [
+                "206801",
+                "200109",
+            ],
+        },
+        to=[
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+            {
+                "address": "messaging@epilot.cloud",
+                "name": "epilot",
+            },
+        ],
+        **{
 
-if res is not None:
-    # handle response
-    pass
+        },
+    ))
+
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -295,15 +383,15 @@ if res is not None:
 | `message_request_params`                                                                                          | [Optional[models.MessageRequestParams]](../../models/messagerequestparams.md)                                     | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
 | `retries`                                                                                                         | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                                                  | :heavy_minus_sign:                                                                                                | Configuration to override the default retry behavior of the client.                                               |
 
-
 ### Response
 
 **[models.MessageRequestParams](../../models/messagerequestparams.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## trash_message
 
@@ -315,16 +403,14 @@ Move a message to the trash
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    epilot.messages.trash_message(id="<id>")
 
-
-s.messages.trash_message(id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -337,9 +423,9 @@ s.messages.trash_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## untrash_message
 
@@ -351,16 +437,14 @@ Restore a trashed message
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    epilot.messages.untrash_message(id="<id>")
 
-
-s.messages.untrash_message(id="<value>")
-
-# Use the SDK ...
+    # Use the SDK ...
 
 ```
 
@@ -373,9 +457,9 @@ s.messages.untrash_message(id="<value>")
 
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## update_message
 
@@ -387,18 +471,16 @@ Update message metadata
 import epilot_message
 from epilot_message import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_message.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.messages.update_message()
 
-
-res = s.messages.update_message()
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -408,12 +490,12 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.UpdateMessageResponseBody](../../models/updatemessageresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
