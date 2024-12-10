@@ -8,8 +8,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.create_custom_variable(request={
+) as epilot:
+    res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +
@@ -146,8 +146,8 @@ async def main():
         security=epilot_template_variables.Security(
             epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
         ),
-    ) as s:
-        res = await s.custom_variables.create_custom_variable_async(request={
+    ) as epilot:
+        res = await epilot.custom_variables.create_custom_variable_async(request={
             "key": "my_custom_table",
             "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
             "  <thead>\n" +

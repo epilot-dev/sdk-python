@@ -36,8 +36,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.create_custom_variable(request={
+) as epilot:
+    res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +
@@ -174,8 +174,8 @@ async def main():
         security=epilot_template_variables.Security(
             epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
         ),
-    ) as s:
-        res = await s.custom_variables.create_custom_variable_async(request={
+    ) as epilot:
+        res = await epilot.custom_variables.create_custom_variable_async(request={
             "key": "my_custom_table",
             "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
             "  <thead>\n" +
@@ -335,16 +335,16 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_template_variables
 from epilot_template_variables import Epilot
+from epilot_template_variables.utils import BackoffStrategy, RetryConfig
 
 with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.create_custom_variable(request={
+) as epilot:
+    res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +
@@ -471,17 +471,17 @@ with Epilot(
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_template_variables
 from epilot_template_variables import Epilot
+from epilot_template_variables.utils import BackoffStrategy, RetryConfig
 
 with Epilot(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.create_custom_variable(request={
+) as epilot:
+    res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +
@@ -636,10 +636,10 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
+) as epilot:
     res = None
     try:
-        res = s.custom_variables.create_custom_variable(request={
+        res = epilot.custom_variables.create_custom_variable(request={
             "key": "my_custom_table",
             "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
             "  <thead>\n" +
@@ -782,8 +782,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.create_custom_variable(request={
+) as epilot:
+    res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +
@@ -1010,8 +1010,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.create_custom_variable(request={
+) as epilot:
+    res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +

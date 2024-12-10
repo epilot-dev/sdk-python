@@ -26,10 +26,10 @@ class SDKConfiguration:
     server_idx: Optional[int] = 0
     language: str = "python"
     openapi_doc_version: str = "1.0.0"
-    sdk_version: str = "1.12.3"
-    gen_version: str = "2.474.4"
+    sdk_version: str = "1.12.4"
+    gen_version: str = "2.474.15"
     user_agent: str = (
-        "speakeasy-sdk/python 1.12.3 2.474.4 1.0.0 epilot-template-variables"
+        "speakeasy-sdk/python 1.12.4 2.474.15 1.0.0 epilot-template-variables"
     )
     retry_config: OptionalNullable[RetryConfig] = Field(default_factory=lambda: UNSET)
     timeout_ms: Optional[int] = None

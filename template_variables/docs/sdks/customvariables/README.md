@@ -27,8 +27,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.create_custom_variable(request={
+) as epilot:
+    res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +
@@ -183,8 +183,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    s.custom_variables.delete_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250")
+) as epilot:
+    epilot.custom_variables.delete_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250")
 
     # Use the SDK ...
 
@@ -217,8 +217,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.get_blue_print_table_config()
+) as epilot:
+    res = epilot.custom_variables.get_blue_print_table_config()
 
     if res is not None:
         # handle response
@@ -256,8 +256,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.get_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250")
+) as epilot:
+    res = epilot.custom_variables.get_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250")
 
     if res is not None:
         # handle response
@@ -296,8 +296,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.get_custom_variables()
+) as epilot:
+    res = epilot.custom_variables.get_custom_variables()
 
     if res is not None:
         # handle response
@@ -335,8 +335,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.search_custom_variables(request={
+) as epilot:
+    res = epilot.custom_variables.search_custom_variables(request={
         "query": "logo",
         "sort_by": "[\"created_at\",\"created_at:desc\",\"name\",\"name:desc\",\"key\"]",
     })
@@ -378,8 +378,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250", custom_variable={
+) as epilot:
+    res = epilot.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250", custom_variable={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
         "  <thead>\n" +

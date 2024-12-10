@@ -26,8 +26,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.variables.get_categories()
+) as epilot:
+    res = epilot.variables.get_categories()
 
     if res is not None:
         # handle response
@@ -69,8 +69,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.variables.get_variable_context(request={
+) as epilot:
+    res = epilot.variables.get_variable_context(request={
         "parameters": {
             "template_type": epilot_template_variables.TemplateType.EMAIL,
             "brand_id": 123451,
@@ -127,8 +127,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.variables.replace_templates(request={
+) as epilot:
+    res = epilot.variables.replace_templates(request={
         "inputs": [
             "Hello, {{contact.first_name}}!\n" +
             "\n" +
@@ -188,8 +188,8 @@ with Epilot(
     security=epilot_template_variables.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-) as s:
-    res = s.variables.search_variables(request={
+) as epilot:
+    res = epilot.variables.search_variables(request={
         "query": "logo",
         "template_type": epilot_template_variables.TemplateType.DOCUMENT,
         "entity_schemas": [
