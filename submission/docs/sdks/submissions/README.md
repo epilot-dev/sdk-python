@@ -20,8 +20,8 @@ Creates a submission from a public facing Journey
 import epilot_submission
 from epilot_submission import Epilot
 
-with Epilot() as s:
-    s.submissions.create_submission(request={
+with Epilot() as epilot:
+    epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
                 schema_=epilot_submission.Schema.SUBMISSION,

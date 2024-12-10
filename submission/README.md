@@ -32,8 +32,8 @@ poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=submiss
 import epilot_submission
 from epilot_submission import Epilot
 
-with Epilot() as s:
-    s.submissions.create_submission(request={
+with Epilot() as epilot:
+    epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
                 schema_=epilot_submission.Schema.SUBMISSION,
@@ -83,8 +83,8 @@ import epilot_submission
 from epilot_submission import Epilot
 
 async def main():
-    async with Epilot() as s:
-        await s.submissions.create_submission_async(request={
+    async with Epilot() as epilot:
+        await epilot.submissions.create_submission_async(request={
             "entities": [
                 epilot_submission.SubmissionEntity(
                     schema_=epilot_submission.Schema.SUBMISSION,
@@ -148,12 +148,12 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_submission
 from epilot_submission import Epilot
+from epilot_submission.utils import BackoffStrategy, RetryConfig
 
-with Epilot() as s:
-    s.submissions.create_submission(request={
+with Epilot() as epilot:
+    epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
                 schema_=epilot_submission.Schema.SUBMISSION,
@@ -197,14 +197,14 @@ with Epilot() as s:
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_submission
 from epilot_submission import Epilot
+from epilot_submission.utils import BackoffStrategy, RetryConfig
 
 with Epilot(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
-) as s:
-    s.submissions.create_submission(request={
+) as epilot:
+    epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
                 schema_=epilot_submission.Schema.SUBMISSION,
@@ -272,10 +272,10 @@ When custom error responses are specified for an operation, the SDK may also rai
 import epilot_submission
 from epilot_submission import Epilot, models
 
-with Epilot() as s:
+with Epilot() as epilot:
 
     try:
-        s.submissions.create_submission(request={
+        epilot.submissions.create_submission(request={
             "entities": [
                 epilot_submission.SubmissionEntity(
                     schema_=epilot_submission.Schema.SUBMISSION,
@@ -332,8 +332,8 @@ from epilot_submission import Epilot
 
 with Epilot(
     server_url="https://submission.sls.epilot.io",
-) as s:
-    s.submissions.create_submission(request={
+) as epilot:
+    epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
                 schema_=epilot_submission.Schema.SUBMISSION,
@@ -474,8 +474,8 @@ from epilot_submission import Epilot
 
 with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    s.submissions.create_submission(request={
+) as epilot:
+    epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
                 schema_=epilot_submission.Schema.SUBMISSION,

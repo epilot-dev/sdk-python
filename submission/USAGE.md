@@ -4,8 +4,8 @@
 import epilot_submission
 from epilot_submission import Epilot
 
-with Epilot() as s:
-    s.submissions.create_submission(request={
+with Epilot() as epilot:
+    epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
                 schema_=epilot_submission.Schema.SUBMISSION,
@@ -55,8 +55,8 @@ import epilot_submission
 from epilot_submission import Epilot
 
 async def main():
-    async with Epilot() as s:
-        await s.submissions.create_submission_async(request={
+    async with Epilot() as epilot:
+        await epilot.submissions.create_submission_async(request={
             "entities": [
                 epilot_submission.SubmissionEntity(
                     schema_=epilot_submission.Schema.SUBMISSION,
