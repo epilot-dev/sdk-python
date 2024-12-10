@@ -6,6 +6,7 @@ from openapi import models, utils
 from openapi._hooks import AfterErrorContext, AfterSuccessContext, BeforeRequestContext
 from openapi.utils import RetryConfig, SerializedRequestBody, get_body_content
 from typing import Callable, List, Optional, Tuple
+from urllib.parse import parse_qs, urlparse
 
 
 class BaseSDK:
@@ -141,6 +142,12 @@ class BaseSDK:
                 request if request_has_query_params else None,
                 _globals if request_has_query_params else None,
             )
+        else:
+            # Pick up the query parameter from the override so they can be
+            # preserved when building the request later on (necessary as of
+            # httpx 0.28).
+            parsed_override = urlparse(str(url_override))
+            query_params = parse_qs(parsed_override.query, keep_blank_values=True)
 
         headers = utils.get_headers(request, _globals)
         headers["Accept"] = accept_header_value

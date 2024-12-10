@@ -26,8 +26,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.workflows.create_definition(request={
+) as sdk:
+    res = sdk.workflows.create_definition(request={
         "flow": [
             {
                 "name": "Initial Information Gathering",
@@ -129,8 +129,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    s.workflows.delete_definition(definition_id="CustomerRequest")
+) as sdk:
+    sdk.workflows.delete_definition(definition_id="CustomerRequest")
 
     # Use the SDK ...
 
@@ -161,8 +161,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.workflows.get_definition(definition_id="7hj28a")
+) as sdk:
+    res = sdk.workflows.get_definition(definition_id="7hj28a")
 
     if res is not None:
         # handle response
@@ -200,8 +200,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.workflows.get_definitions()
+) as sdk:
+    res = sdk.workflows.get_definitions()
 
     if res is not None:
         # handle response
@@ -237,8 +237,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.workflows.get_max_allowed_limit()
+) as sdk:
+    res = sdk.workflows.get_max_allowed_limit()
 
     if res is not None:
         # handle response
@@ -274,8 +274,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.workflows.get_workflow_closing_reasons(definition_id="fxcwfw")
+) as sdk:
+    res = sdk.workflows.get_workflow_closing_reasons(definition_id="fxcwfw")
 
     if res is not None:
         # handle response
@@ -311,8 +311,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    s.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_ids={
+) as sdk:
+    sdk.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_ids={
         "reasons": [
             {
                 "id": "x739cew",
@@ -350,8 +350,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    res = s.workflows.update_definition(definition_id="7hj28a", workflow_definition={
+) as sdk:
+    res = sdk.workflows.update_definition(definition_id="7hj28a", workflow_definition={
         "flow": [
             {
                 "name": "Initial Information Gathering",

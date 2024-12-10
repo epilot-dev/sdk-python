@@ -3,17 +3,17 @@ id: 8727d4ad-f9cf-4aa1-993f-c90fc6591190
 management:
   docChecksum: 8a2ff4be25db818a35891d602baa4a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.451.5
-  generationVersion: 2.471.2
-  releaseVersion: 1.11.2
-  configChecksum: 623087694613aa87a3e1d881c1dc9b92
+  speakeasyVersion: 1.453.8
+  generationVersion: 2.474.15
+  releaseVersion: 1.11.3
+  configChecksum: e612cc6b5d3c5e58a3267822d11af76e
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.6.9
+    core: 5.6.11
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.0
     enumUnions: 0.1.0

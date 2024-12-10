@@ -33,8 +33,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    s.closing_reason.change_reason_status(reason_id="<value>")
+) as sdk:
+    sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...
 ```
@@ -50,8 +50,8 @@ from openapi import SDK
 async def main():
     async with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ) as s:
-        await s.closing_reason.change_reason_status_async(reason_id="<value>")
+    ) as sdk:
+        await sdk.closing_reason.change_reason_status_async(reason_id="<value>")
 
         # Use the SDK ...
 
@@ -94,12 +94,12 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
 from openapi import SDK
-from sdk.utils import BackoffStrategy, RetryConfig
+from openapi.utils import BackoffStrategy, RetryConfig
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    s.closing_reason.change_reason_status(reason_id="<value>",
+) as sdk:
+    sdk.closing_reason.change_reason_status(reason_id="<value>",
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
     # Use the SDK ...
@@ -109,13 +109,13 @@ with SDK(
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
 from openapi import SDK
-from sdk.utils import BackoffStrategy, RetryConfig
+from openapi.utils import BackoffStrategy, RetryConfig
 
 with SDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    s.closing_reason.change_reason_status(reason_id="<value>")
+) as sdk:
+    sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...
 
@@ -150,10 +150,10 @@ from openapi import SDK, models
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
+) as sdk:
 
     try:
-        s.closing_reason.change_reason_status(reason_id="<value>")
+        sdk.closing_reason.change_reason_status(reason_id="<value>")
 
         # Use the SDK ...
 
@@ -178,8 +178,8 @@ from openapi import SDK
 with SDK(
     server_url="https://workflows-definition.sls.epilot.io",
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    s.closing_reason.change_reason_status(reason_id="<value>")
+) as sdk:
+    sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...
 
@@ -284,8 +284,8 @@ from openapi import SDK
 
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
-) as s:
-    s.closing_reason.change_reason_status(reason_id="<value>")
+) as sdk:
+    sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...
 
