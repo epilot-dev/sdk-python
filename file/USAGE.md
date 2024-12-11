@@ -1,25 +1,42 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+import epilot_file
+from epilot_file import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
+with Epilot(
+    security=epilot_file.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.file.delete_file(id="ef7d985c-2385-44f4-9c71-ae06a52264f8", activity_id="01F130Q52Q6MWSNS8N2AVXV4JN")
 
-
-req = shared.DeleteFilePayload(
-    s3ref=shared.S3Reference(
-        bucket="epilot-files-prod",
-        key="123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-    ),
-)
-    
-res = s.files.delete_file(req)
-
-if res.status_code == 200:
-    # handle response
+    if res is not None:
+        # handle response
+        pass
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_file
+from epilot_file import Epilot
+
+async def main():
+    async with Epilot(
+        security=epilot_file.Security(
+            cookie_auth="<YOUR_API_KEY_HERE>",
+        ),
+    ) as epilot:
+        res = await epilot.file.delete_file_async(id="ef7d985c-2385-44f4-9c71-ae06a52264f8", activity_id="01F130Q52Q6MWSNS8N2AVXV4JN")
+
+        if res is not None:
+            # handle response
+            pass
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
