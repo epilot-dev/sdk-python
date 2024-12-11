@@ -26,18 +26,16 @@ Use the `x-epilot-org-id` header to assign share roles to users in other orgs
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.assignments.add_assignment(role_id="123:owner", user_id="1")
 
-
-res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -49,15 +47,15 @@ if res is not None:
 | `user_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 1                                                                   |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Assignment](../../models/assignment.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## assign_roles
 
@@ -69,20 +67,18 @@ Assign / unassign roles to users.
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.assignments.assign_roles(user_id="1", request_body=[
+        "123:owner",
+    ])
 
-
-res = s.assignments.assign_roles(user_id="1", request_body=[
-    "123:owner",
-])
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -94,15 +90,15 @@ if res is not None:
 | `request_body`                                                      | List[*str*]                                                         | :heavy_minus_sign:                                                  | N/A                                                                 |                                                                     |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[List[str]](../../models/.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## get_assigned_roles_for_user
 
@@ -114,18 +110,16 @@ Get list of assigned roles by user id
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.assignments.get_assigned_roles_for_user(user_id="1")
 
-
-res = s.assignments.get_assigned_roles_for_user(user_id="1")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -136,15 +130,15 @@ if res is not None:
 | `user_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 1                                                                   |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[List[str]](../../models/.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## list_all_assignments
 
@@ -156,18 +150,16 @@ Returns list of all assignments in organization
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.assignments.list_all_assignments()
 
-
-res = s.assignments.list_all_assignments()
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -177,15 +169,15 @@ if res is not None:
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
-
 ### Response
 
 **[models.ListAllAssignmentsResponseBody](../../models/listallassignmentsresponsebody.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## remove_assignment
 
@@ -197,18 +189,16 @@ Remove role assignment from user
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = epilot.assignments.remove_assignment(role_id="123:owner", user_id="1")
 
-
-res = s.assignments.remove_assignment(role_id="123:owner", user_id="1")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 
 ```
 
@@ -220,12 +210,12 @@ if res is not None:
 | `user_id`                                                           | *str*                                                               | :heavy_check_mark:                                                  | N/A                                                                 | 1                                                                   |
 | `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |                                                                     |
 
-
 ### Response
 
 **[models.Assignment](../../models/assignment.md)**
+
 ### Errors
 
-| Error Object    | Status Code     | Content Type    |
+| Error Type      | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+| models.SDKError | 4XX, 5XX        | \*/\*           |
