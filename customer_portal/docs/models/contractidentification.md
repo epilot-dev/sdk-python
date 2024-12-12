@@ -1,0 +1,9 @@
+# ContractIdentification
+
+
+## Fields
+
+| Field                                                                                                    | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `extension`                                                                                              | [Optional[models.PublicExtensionDetails]](../models/publicextensiondetails.md)                           | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
+| `hook`                                                                                                   | [Optional[models.PublicContractIdentificationDetails]](../models/publiccontractidentificationdetails.md) | :heavy_minus_sign:                                                                                       | N/A                                                                                                      |
