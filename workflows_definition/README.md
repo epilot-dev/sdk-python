@@ -34,6 +34,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...
@@ -51,6 +52,7 @@ async def main():
     async with SDK(
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as sdk:
+
         await sdk.closing_reason.change_reason_status_async(reason_id="<value>")
 
         # Use the SDK ...
@@ -99,6 +101,7 @@ from openapi.utils import BackoffStrategy, RetryConfig
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     sdk.closing_reason.change_reason_status(reason_id="<value>",
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
@@ -115,6 +118,7 @@ with SDK(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...
@@ -153,6 +157,7 @@ with SDK(
 ) as sdk:
 
     try:
+
         sdk.closing_reason.change_reason_status(reason_id="<value>")
 
         # Use the SDK ...
@@ -179,6 +184,7 @@ with SDK(
     server_url="https://workflows-definition.sls.epilot.io",
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...
@@ -285,6 +291,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...

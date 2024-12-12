@@ -21,6 +21,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     sdk.closing_reason.change_reason_status(reason_id="<value>")
 
     # Use the SDK ...
@@ -55,6 +56,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     res = sdk.closing_reason.create_closing_reason(request={
         "status": openapi.ClosingReasonsStatus.ACTIVE,
         "title": "better offer",
@@ -95,6 +97,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     res = sdk.closing_reason.get_all_closing_reasons(include_inactive=True)
 
     if res is not None:

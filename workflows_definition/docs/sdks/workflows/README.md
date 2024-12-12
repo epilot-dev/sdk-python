@@ -27,47 +27,48 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     res = sdk.workflows.create_definition(request={
         "flow": [
             {
                 "name": "Initial Information Gathering",
                 "order": 1,
                 "steps": [
-                    {
-                        "name": "Call client and confirm address and product",
-                        "order": 1,
-                        "type": openapi.ItemType.STEP,
-                        "assigned_to": [
+                    openapi.Step(
+                        name="Call client and confirm address and product",
+                        order=1,
+                        type=openapi.ItemType.STEP,
+                        assigned_to=[
                             "123482",
                         ],
-                    },
-                    {
-                        "name": "Check product availability",
-                        "order": 2,
-                        "type": openapi.ItemType.STEP,
-                        "assigned_to": [
+                    ),
+                    openapi.Step(
+                        name="Check product availability",
+                        order=2,
+                        type=openapi.ItemType.STEP,
+                        assigned_to=[
                             "123482",
                         ],
-                    },
-                    {
-                        "name": "Send email confirming contact with the client",
-                        "order": 3,
-                        "type": openapi.ItemType.STEP,
-                        "assigned_to": [
+                    ),
+                    openapi.Step(
+                        name="Send email confirming contact with the client",
+                        order=3,
+                        type=openapi.ItemType.STEP,
+                        assigned_to=[
                             "123482",
                         ],
-                    },
+                    ),
                 ],
                 "type": openapi.ItemType.SECTION,
             },
-            {
-                "name": "Print and send catalog",
-                "order": 2,
-                "type": openapi.ItemType.STEP,
-                "assigned_to": [
+            openapi.Step(
+                name="Print and send catalog",
+                order=2,
+                type=openapi.ItemType.STEP,
+                assigned_to=[
                     "123482",
                 ],
-            },
+            ),
         ],
         "name": "Lead Qualification",
         "assigned_to": [
@@ -130,6 +131,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     sdk.workflows.delete_definition(definition_id="CustomerRequest")
 
     # Use the SDK ...
@@ -162,6 +164,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     res = sdk.workflows.get_definition(definition_id="7hj28a")
 
     if res is not None:
@@ -201,6 +204,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     res = sdk.workflows.get_definitions()
 
     if res is not None:
@@ -238,6 +242,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     res = sdk.workflows.get_max_allowed_limit()
 
     if res is not None:
@@ -275,6 +280,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     res = sdk.workflows.get_workflow_closing_reasons(definition_id="fxcwfw")
 
     if res is not None:
@@ -312,6 +318,7 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     sdk.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_ids={
         "reasons": [
             {
@@ -351,52 +358,53 @@ from openapi import SDK
 with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
+
     res = sdk.workflows.update_definition(definition_id="7hj28a", workflow_definition={
         "flow": [
             {
                 "name": "Initial Information Gathering",
                 "order": 1,
                 "steps": [
-                    {
-                        "name": "Call client and confirm address and product",
-                        "order": 1,
-                        "type": openapi.ItemType.STEP,
-                        "assigned_to": [
+                    openapi.Step(
+                        name="Call client and confirm address and product",
+                        order=1,
+                        type=openapi.ItemType.STEP,
+                        assigned_to=[
                             "8988",
                         ],
-                        "id": "2hja82a",
-                    },
-                    {
-                        "name": "Check product availability",
-                        "order": 2,
-                        "type": openapi.ItemType.STEP,
-                        "assigned_to": [
+                        id="2hja82a",
+                    ),
+                    openapi.Step(
+                        name="Check product availability",
+                        order=2,
+                        type=openapi.ItemType.STEP,
+                        assigned_to=[
                             "8988",
                         ],
-                        "id": "ga92ha2",
-                    },
-                    {
-                        "name": "Send email confirming contact with the client",
-                        "order": 3,
-                        "type": openapi.ItemType.STEP,
-                        "assigned_to": [
+                        id="ga92ha2",
+                    ),
+                    openapi.Step(
+                        name="Send email confirming contact with the client",
+                        order=3,
+                        type=openapi.ItemType.STEP,
+                        assigned_to=[
                             "8988",
                         ],
-                        "id": "jga92ha",
-                    },
+                        id="jga92ha",
+                    ),
                 ],
                 "type": openapi.ItemType.SECTION,
                 "id": "5892na2",
             },
-            {
-                "name": "Print and send catalog",
-                "order": 2,
-                "type": openapi.ItemType.STEP,
-                "assigned_to": [
+            openapi.Step(
+                name="Print and send catalog",
+                order=2,
+                type=openapi.ItemType.STEP,
+                assigned_to=[
                     "8988",
                 ],
-                "id": "0a7g22a",
-            },
+                id="0a7g22a",
+            ),
         ],
         "name": "Lead Qualification",
         "assigned_to": [
