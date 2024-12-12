@@ -4,18 +4,17 @@
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
+    res = epilot.assignments.add_assignment(role_id="123:owner", user_id="1")
 
-res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
-
-if res is not None:
-    # handle response
-    pass
+    if res is not None:
+        # handle response
+        pass
 ```
 
 </br>
@@ -28,15 +27,17 @@ import epilot_permissions
 from epilot_permissions import Epilot
 
 async def main():
-    s = Epilot(
+    async with Epilot(
         security=epilot_permissions.Security(
             epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
         ),
-    )
-    res = await s.assignments.add_assignment_async(role_id="123:owner", user_id="1")
-    if res is not None:
-        # handle response
-        pass
+    ) as epilot:
+
+        res = await epilot.assignments.add_assignment_async(role_id="123:owner", user_id="1")
+
+        if res is not None:
+            # handle response
+            pass
 
 asyncio.run(main())
 ```
