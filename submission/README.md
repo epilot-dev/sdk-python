@@ -33,6 +33,7 @@ import epilot_submission
 from epilot_submission import Epilot
 
 with Epilot() as epilot:
+
     epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
@@ -84,6 +85,7 @@ from epilot_submission import Epilot
 
 async def main():
     async with Epilot() as epilot:
+
         await epilot.submissions.create_submission_async(request={
             "entities": [
                 epilot_submission.SubmissionEntity(
@@ -153,6 +155,7 @@ from epilot_submission import Epilot
 from epilot_submission.utils import BackoffStrategy, RetryConfig
 
 with Epilot() as epilot:
+
     epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
@@ -204,6 +207,7 @@ from epilot_submission.utils import BackoffStrategy, RetryConfig
 with Epilot(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
 ) as epilot:
+
     epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
@@ -275,6 +279,7 @@ from epilot_submission import Epilot, models
 with Epilot() as epilot:
 
     try:
+
         epilot.submissions.create_submission(request={
             "entities": [
                 epilot_submission.SubmissionEntity(
@@ -333,6 +338,7 @@ from epilot_submission import Epilot
 with Epilot(
     server_url="https://submission.sls.epilot.io",
 ) as epilot:
+
     epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
@@ -475,6 +481,7 @@ from epilot_submission import Epilot
 with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as epilot:
+
     epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(

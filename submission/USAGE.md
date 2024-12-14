@@ -5,6 +5,7 @@ import epilot_submission
 from epilot_submission import Epilot
 
 with Epilot() as epilot:
+
     epilot.submissions.create_submission(request={
         "entities": [
             epilot_submission.SubmissionEntity(
@@ -56,6 +57,7 @@ from epilot_submission import Epilot
 
 async def main():
     async with Epilot() as epilot:
+
         await epilot.submissions.create_submission_async(request={
             "entities": [
                 epilot_submission.SubmissionEntity(

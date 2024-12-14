@@ -4,7 +4,7 @@ from .basesdk import BaseSDK
 from epilot_submission import models, utils
 from epilot_submission._hooks import HookContext
 from epilot_submission.types import BaseModel, OptionalNullable, UNSET
-from typing import Optional, Union, cast
+from typing import Mapping, Optional, Union, cast
 
 
 class Submissions(BaseSDK):
@@ -19,6 +19,7 @@ class Submissions(BaseSDK):
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
     ):
         r"""createSubmission
 
@@ -29,6 +30,7 @@ class Submissions(BaseSDK):
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
         """
         base_url = None
         url_variables = None
@@ -53,6 +55,7 @@ class Submissions(BaseSDK):
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="*/*",
+            http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.SubmissionPayload]
@@ -105,6 +108,7 @@ class Submissions(BaseSDK):
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
+        http_headers: Optional[Mapping[str, str]] = None,
     ):
         r"""createSubmission
 
@@ -115,6 +119,7 @@ class Submissions(BaseSDK):
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
+        :param http_headers: Additional headers to set or replace on requests.
         """
         base_url = None
         url_variables = None
@@ -139,6 +144,7 @@ class Submissions(BaseSDK):
             request_has_query_params=True,
             user_agent_header="user-agent",
             accept_header_value="*/*",
+            http_headers=http_headers,
             security=self.sdk_configuration.security,
             get_serialized_body=lambda: utils.serialize_request_body(
                 request, False, True, "json", Optional[models.SubmissionPayload]
