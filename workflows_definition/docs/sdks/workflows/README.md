@@ -95,9 +95,10 @@ with SDK(
         ],
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -167,9 +168,10 @@ with SDK(
 
     res = sdk.workflows.get_definition(definition_id="7hj28a")
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -207,9 +209,10 @@ with SDK(
 
     res = sdk.workflows.get_definitions()
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -245,9 +248,10 @@ with SDK(
 
     res = sdk.workflows.get_max_allowed_limit()
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -283,9 +287,10 @@ with SDK(
 
     res = sdk.workflows.get_workflow_closing_reasons(definition_id="fxcwfw")
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -431,9 +436,10 @@ with SDK(
         ],
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 

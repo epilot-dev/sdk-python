@@ -62,9 +62,10 @@ with SDK(
         "title": "better offer",
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -100,9 +101,10 @@ with SDK(
 
     res = sdk.closing_reason.get_all_closing_reasons(include_inactive=True)
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
