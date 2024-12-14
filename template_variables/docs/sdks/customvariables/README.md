@@ -28,6 +28,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -146,9 +147,10 @@ with Epilot(
         "type": epilot_template_variables.Type.CUSTOM,
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -184,6 +186,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     epilot.custom_variables.delete_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250")
 
     # Use the SDK ...
@@ -218,11 +221,13 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.get_blue_print_table_config()
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -257,11 +262,13 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.get_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250")
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -297,11 +304,13 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.get_custom_variables()
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -336,14 +345,16 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.search_custom_variables(request={
         "query": "logo",
         "sort_by": "[\"created_at\",\"created_at:desc\",\"name\",\"name:desc\",\"key\"]",
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -379,6 +390,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.update_custom_variable(id="rbse777b-3cf8-4bff-bb0c-253fd1123250", custom_variable={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -497,9 +509,10 @@ with Epilot(
         "type": epilot_template_variables.Type.CUSTOM,
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 

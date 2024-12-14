@@ -27,11 +27,13 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.variables.get_categories()
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -70,6 +72,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.variables.get_variable_context(request={
         "parameters": {
             "template_type": epilot_template_variables.TemplateType.EMAIL,
@@ -87,9 +90,10 @@ with Epilot(
         },
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -128,6 +132,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.variables.replace_templates(request={
         "inputs": [
             "Hello, {{contact.first_name}}!\n" +
@@ -151,9 +156,10 @@ with Epilot(
         },
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -189,6 +195,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.variables.search_variables(request={
         "query": "logo",
         "template_type": epilot_template_variables.TemplateType.DOCUMENT,
@@ -197,9 +204,10 @@ with Epilot(
         ],
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 

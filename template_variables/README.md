@@ -37,6 +37,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -155,9 +156,10 @@ with Epilot(
         "type": epilot_template_variables.Type.CUSTOM,
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 ```
 
 </br>
@@ -175,6 +177,7 @@ async def main():
             epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
         ),
     ) as epilot:
+
         res = await epilot.custom_variables.create_custom_variable_async(request={
             "key": "my_custom_table",
             "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -293,9 +296,10 @@ async def main():
             "type": epilot_template_variables.Type.CUSTOM,
         })
 
-        if res is not None:
-            # handle response
-            pass
+        assert res is not None
+
+        # Handle response
+        print(res)
 
 asyncio.run(main())
 ```
@@ -344,6 +348,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -463,9 +468,10 @@ with Epilot(
     },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
@@ -481,6 +487,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -599,9 +606,10 @@ with Epilot(
         "type": epilot_template_variables.Type.CUSTOM,
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 <!-- End Retries [retries] -->
@@ -639,6 +647,7 @@ with Epilot(
 ) as epilot:
     res = None
     try:
+
         res = epilot.custom_variables.create_custom_variable(request={
             "key": "my_custom_table",
             "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -757,9 +766,10 @@ with Epilot(
             "type": epilot_template_variables.Type.CUSTOM,
         })
 
-        if res is not None:
-            # handle response
-            pass
+        assert res is not None
+
+        # Handle response
+        print(res)
 
     except models.SDKError as e:
         # handle exception
@@ -783,6 +793,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -901,9 +912,10 @@ with Epilot(
         "type": epilot_template_variables.Type.CUSTOM,
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 <!-- End Server Selection [server] -->
@@ -1011,6 +1023,7 @@ with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
 ) as epilot:
+
     res = epilot.custom_variables.create_custom_variable(request={
         "key": "my_custom_table",
         "template": "<table style=\"table-layout: fixed;width: 100%;max-width: 1000px;border-collapse: collapse;\">\n" +
@@ -1129,9 +1142,10 @@ with Epilot(
         "type": epilot_template_variables.Type.CUSTOM,
     })
 
-    if res is not None:
-        # handle response
-        pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 <!-- End Authentication [security] -->
