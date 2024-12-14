@@ -3,8 +3,8 @@
 from __future__ import annotations
 from epilot_message.types import BaseModel
 from epilot_message.utils import FieldMetadata, PathParamMetadata, RequestMetadata
-from typing import List, Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import List, Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class RequestBodyTypedDict(TypedDict):
@@ -12,27 +12,39 @@ class RequestBodyTypedDict(TypedDict):
     r"""Entity ID"""
     is_main_entity: NotRequired[bool]
     r"""To indicate this is main entity"""
+    org_id: NotRequired[str]
+    r"""Organization ID"""
     slug: NotRequired[str]
     r"""Entity slug"""
-    
+
 
 class RequestBody(BaseModel):
     entity_id: Optional[str] = None
     r"""Entity ID"""
+
     is_main_entity: Optional[bool] = None
     r"""To indicate this is main entity"""
+
+    org_id: Optional[str] = None
+    r"""Organization ID"""
+
     slug: Optional[str] = None
     r"""Entity slug"""
-    
+
 
 class AssignThreadRequestTypedDict(TypedDict):
     request_body: List[RequestBodyTypedDict]
     id: str
     r"""Thread ID"""
-    
+
 
 class AssignThreadRequest(BaseModel):
-    request_body: Annotated[List[RequestBody], FieldMetadata(request=RequestMetadata(media_type="application/json"))]
-    id: Annotated[str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))]
+    request_body: Annotated[
+        List[RequestBody],
+        FieldMetadata(request=RequestMetadata(media_type="application/json")),
+    ]
+
+    id: Annotated[
+        str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
+    ]
     r"""Thread ID"""
-    
