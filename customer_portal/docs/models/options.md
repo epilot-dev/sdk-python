@@ -1,0 +1,13 @@
+# Options
+
+
+## Fields
+
+| Field                                                                      | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | Identifier of the option. Should not change between updates.               |
+| `name`                                                                     | [models.ExtensionName](../models/extensionname.md)                         | :heavy_check_mark:                                                         | Name of the option.                                                        |
+| `type`                                                                     | [models.ExtensionType](../models/extensiontype.md)                         | :heavy_check_mark:                                                         | Type of the option.                                                        |
+| `default`                                                                  | *Optional[str]*                                                            | :heavy_minus_sign:                                                         | Default value of the option.                                               |
+| `description`                                                              | [Optional[models.ExtensionDescription]](../models/extensiondescription.md) | :heavy_minus_sign:                                                         | Description of the option.                                                 |
+| `required`                                                                 | *Optional[bool]*                                                           | :heavy_minus_sign:                                                         | Indicate whether the option is required.                                   |
