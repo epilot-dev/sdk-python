@@ -1,0 +1,12 @@
+# WidgetBase
+
+
+## Fields
+
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `id`                                                                         | *str*                                                                        | :heavy_check_mark:                                                           | N/A                                                                          |
+| `list_index`                                                                 | *int*                                                                        | :heavy_check_mark:                                                           | Index of the widget in the list, used for ordering (left or right)           |
+| `type`                                                                       | [models.WidgetBaseType](../models/widgetbasetype.md)                         | :heavy_check_mark:                                                           | N/A                                                                          |
+| `headline`                                                                   | [Optional[models.WidgetBaseHeadline]](../models/widgetbaseheadline.md)       | :heavy_minus_sign:                                                           | N/A                                                                          |
+| `sub_headline`                                                               | [Optional[models.WidgetBaseSubHeadline]](../models/widgetbasesubheadline.md) | :heavy_minus_sign:                                                           | N/A                                                                          |
