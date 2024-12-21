@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "epilot-submission"
-version = "1.12.0"
+version = "1.12.1"
 description = "Python Client SDK for Epilot"
 authors = ["Speakeasy",]
 readme = "README-PYPI.md"
