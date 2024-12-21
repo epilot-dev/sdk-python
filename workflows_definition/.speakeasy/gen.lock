@@ -3,10 +3,10 @@ id: 8727d4ad-f9cf-4aa1-993f-c90fc6591190
 management:
   docChecksum: 8a2ff4be25db818a35891d602baa4a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.455.7
-  generationVersion: 2.480.1
-  releaseVersion: 1.13.0
-  configChecksum: 3d107444064eaf33117f7bc99d3ceca5
+  speakeasyVersion: 1.459.2
+  generationVersion: 2.483.1
+  releaseVersion: 1.13.1
+  configChecksum: 8d8690fc3b21761cf0f7ac778e260180
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
@@ -144,6 +144,9 @@ examples:
       parameters:
         path:
           reasonId: "<value>"
+      responses:
+        "400":
+          application/json: {}
   createClosingReason:
     "":
       requestBody:
