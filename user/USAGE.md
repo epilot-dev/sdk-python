@@ -1,18 +1,36 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+from epilot_user import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
-)
+with Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as epilot:
 
-    
-res = s.user_v1.get_me()
+    res = epilot.group.advance_user_assignment(id="<id>")
 
-if res.user is not None:
-    # handle response
+    # Handle response
+    print(res)
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+from epilot_user import Epilot
+
+async def main():
+    async with Epilot(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as epilot:
+
+        res = await epilot.group.advance_user_assignment_async(id="<id>")
+
+        # Handle response
+        print(res)
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
