@@ -41,7 +41,7 @@ class Variables(BaseSDK):
             lang=lang,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/template-variables/categories",
             base_url=base_url,
@@ -126,7 +126,7 @@ class Variables(BaseSDK):
             lang=lang,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/template-variables/categories",
             base_url=base_url,
@@ -221,7 +221,7 @@ class Variables(BaseSDK):
             )
         request = cast(Optional[models.GetVariableContextRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/v1/template-variables:context",
             base_url=base_url,
@@ -321,7 +321,7 @@ class Variables(BaseSDK):
             )
         request = cast(Optional[models.GetVariableContextRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/v1/template-variables:context",
             base_url=base_url,
@@ -421,7 +421,7 @@ class Variables(BaseSDK):
             )
         request = cast(Optional[models.ReplaceTemplatesRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/v1/template-variables:replace",
             base_url=base_url,
@@ -523,7 +523,7 @@ class Variables(BaseSDK):
             )
         request = cast(Optional[models.ReplaceTemplatesRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/v1/template-variables:replace",
             base_url=base_url,
@@ -622,7 +622,7 @@ class Variables(BaseSDK):
             )
         request = cast(Optional[models.SearchVariablesRequestBody], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/v1/template-variables:search",
             base_url=base_url,
@@ -721,7 +721,7 @@ class Variables(BaseSDK):
             )
         request = cast(Optional[models.SearchVariablesRequestBody], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/v1/template-variables:search",
             base_url=base_url,

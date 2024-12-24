@@ -41,7 +41,7 @@ class CustomVariables(BaseSDK):
             request = utils.unmarshal(request, Optional[models.CustomVariableInput])
         request = cast(Optional[models.CustomVariableInput], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/v1/custom-variables",
             base_url=base_url,
@@ -129,7 +129,7 @@ class CustomVariables(BaseSDK):
             request = utils.unmarshal(request, Optional[models.CustomVariableInput])
         request = cast(Optional[models.CustomVariableInput], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/v1/custom-variables",
             base_url=base_url,
@@ -215,7 +215,7 @@ class CustomVariables(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="DELETE",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
@@ -298,7 +298,7 @@ class CustomVariables(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="DELETE",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
@@ -374,7 +374,7 @@ class CustomVariables(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/custom-variables/order-table-blueprint",
             base_url=base_url,
@@ -450,7 +450,7 @@ class CustomVariables(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/custom-variables/order-table-blueprint",
             base_url=base_url,
@@ -533,7 +533,7 @@ class CustomVariables(BaseSDK):
             id=id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
@@ -616,7 +616,7 @@ class CustomVariables(BaseSDK):
             id=id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
@@ -692,7 +692,7 @@ class CustomVariables(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/custom-variables",
             base_url=base_url,
@@ -770,7 +770,7 @@ class CustomVariables(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/custom-variables",
             base_url=base_url,
@@ -862,7 +862,7 @@ class CustomVariables(BaseSDK):
             )
         request = cast(Optional[models.CustomVariablesSearchParams], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/v1/custom-variables:search",
             base_url=base_url,
@@ -961,7 +961,7 @@ class CustomVariables(BaseSDK):
             )
         request = cast(Optional[models.CustomVariablesSearchParams], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/v1/custom-variables:search",
             base_url=base_url,
@@ -1060,7 +1060,7 @@ class CustomVariables(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="PUT",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
@@ -1157,7 +1157,7 @@ class CustomVariables(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="PUT",
             path="/v1/custom-variables/{id}",
             base_url=base_url,
