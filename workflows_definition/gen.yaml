@@ -13,7 +13,7 @@ generation:
   sdkFlattening: true
   telemetryEnabled: false
 python:
-  version: 1.13.1
+  version: 1.13.2
   additionalDependencies:
     dev: {}
     main: {}

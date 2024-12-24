@@ -39,7 +39,7 @@ class Workflows(BaseSDK):
             request = utils.unmarshal(request, models.WorkflowDefinition)
         request = cast(models.WorkflowDefinition, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/v1/workflows/definitions",
             base_url=base_url,
@@ -131,7 +131,7 @@ class Workflows(BaseSDK):
             request = utils.unmarshal(request, models.WorkflowDefinition)
         request = cast(models.WorkflowDefinition, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/v1/workflows/definitions",
             base_url=base_url,
@@ -223,7 +223,7 @@ class Workflows(BaseSDK):
             definition_id=definition_id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="DELETE",
             path="/v1/workflows/definitions/{definitionId}",
             base_url=base_url,
@@ -310,7 +310,7 @@ class Workflows(BaseSDK):
             definition_id=definition_id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="DELETE",
             path="/v1/workflows/definitions/{definitionId}",
             base_url=base_url,
@@ -397,7 +397,7 @@ class Workflows(BaseSDK):
             definition_id=definition_id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/workflows/definitions/{definitionId}",
             base_url=base_url,
@@ -491,7 +491,7 @@ class Workflows(BaseSDK):
             definition_id=definition_id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/workflows/definitions/{definitionId}",
             base_url=base_url,
@@ -578,7 +578,7 @@ class Workflows(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/workflows/definitions",
             base_url=base_url,
@@ -660,7 +660,7 @@ class Workflows(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/workflows/definitions",
             base_url=base_url,
@@ -742,7 +742,7 @@ class Workflows(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/workflows/limits/max-allowed",
             base_url=base_url,
@@ -822,7 +822,7 @@ class Workflows(BaseSDK):
 
         if server_url is not None:
             base_url = server_url
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/workflows/limits/max-allowed",
             base_url=base_url,
@@ -909,7 +909,7 @@ class Workflows(BaseSDK):
             definition_id=definition_id,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/workflows/definitions/{definitionId}/closing-reasons",
             base_url=base_url,
@@ -994,7 +994,7 @@ class Workflows(BaseSDK):
             definition_id=definition_id,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/workflows/definitions/{definitionId}/closing-reasons",
             base_url=base_url,
@@ -1086,7 +1086,7 @@ class Workflows(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="PATCH",
             path="/v1/workflows/definitions/{definitionId}/closing-reasons",
             base_url=base_url,
@@ -1183,7 +1183,7 @@ class Workflows(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="PATCH",
             path="/v1/workflows/definitions/{definitionId}/closing-reasons",
             base_url=base_url,
@@ -1280,7 +1280,7 @@ class Workflows(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="PUT",
             path="/v1/workflows/definitions/{definitionId}",
             base_url=base_url,
@@ -1383,7 +1383,7 @@ class Workflows(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="PUT",
             path="/v1/workflows/definitions/{definitionId}",
             base_url=base_url,

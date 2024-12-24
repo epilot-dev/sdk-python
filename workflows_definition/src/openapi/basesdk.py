@@ -15,7 +15,7 @@ class BaseSDK:
     def __init__(self, sdk_config: SDKConfiguration) -> None:
         self.sdk_configuration = sdk_config
 
-    def get_url(self, base_url, url_variables):
+    def _get_url(self, base_url, url_variables):
         sdk_url, sdk_variables = self.sdk_configuration.get_server_details()
 
         if base_url is None:
@@ -26,7 +26,7 @@ class BaseSDK:
 
         return utils.template_url(base_url, url_variables)
 
-    def build_request_async(
+    def _build_request_async(
         self,
         method,
         path,
@@ -48,7 +48,7 @@ class BaseSDK:
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> httpx.Request:
         client = self.sdk_configuration.async_client
-        return self.build_request_with_client(
+        return self._build_request_with_client(
             client,
             method,
             path,
@@ -68,7 +68,7 @@ class BaseSDK:
             http_headers,
         )
 
-    def build_request(
+    def _build_request(
         self,
         method,
         path,
@@ -90,7 +90,7 @@ class BaseSDK:
         http_headers: Optional[Mapping[str, str]] = None,
     ) -> httpx.Request:
         client = self.sdk_configuration.client
-        return self.build_request_with_client(
+        return self._build_request_with_client(
             client,
             method,
             path,
@@ -110,7 +110,7 @@ class BaseSDK:
             http_headers,
         )
 
-    def build_request_with_client(
+    def _build_request_with_client(
         self,
         client,
         method,
@@ -137,7 +137,7 @@ class BaseSDK:
         url = url_override
         if url is None:
             url = utils.generate_url(
-                self.get_url(base_url, url_variables),
+                self._get_url(base_url, url_variables),
                 path,
                 request if request_has_path_params else None,
                 _globals if request_has_path_params else None,

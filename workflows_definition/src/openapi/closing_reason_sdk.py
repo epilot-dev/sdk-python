@@ -46,7 +46,7 @@ class ClosingReasonSDK(BaseSDK):
             ),
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="PATCH",
             path="/v1/workflows/closing-reasons/{reasonId}",
             base_url=base_url,
@@ -147,7 +147,7 @@ class ClosingReasonSDK(BaseSDK):
             ),
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="PATCH",
             path="/v1/workflows/closing-reasons/{reasonId}",
             base_url=base_url,
@@ -241,7 +241,7 @@ class ClosingReasonSDK(BaseSDK):
             request = utils.unmarshal(request, models.ClosingReason)
         request = cast(models.ClosingReason, request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/v1/workflows/closing-reasons",
             base_url=base_url,
@@ -327,7 +327,7 @@ class ClosingReasonSDK(BaseSDK):
             request = utils.unmarshal(request, models.ClosingReason)
         request = cast(models.ClosingReason, request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/v1/workflows/closing-reasons",
             base_url=base_url,
@@ -413,7 +413,7 @@ class ClosingReasonSDK(BaseSDK):
             include_inactive=include_inactive,
         )
 
-        req = self.build_request(
+        req = self._build_request(
             method="GET",
             path="/v1/workflows/closing-reasons",
             base_url=base_url,
@@ -496,7 +496,7 @@ class ClosingReasonSDK(BaseSDK):
             include_inactive=include_inactive,
         )
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="GET",
             path="/v1/workflows/closing-reasons",
             base_url=base_url,
