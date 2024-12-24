@@ -44,7 +44,7 @@ class Submissions(BaseSDK):
             request = utils.unmarshal(request, Optional[models.SubmissionPayload])
         request = cast(Optional[models.SubmissionPayload], request)
 
-        req = self.build_request(
+        req = self._build_request(
             method="POST",
             path="/v1/submission/submissions",
             base_url=base_url,
@@ -133,7 +133,7 @@ class Submissions(BaseSDK):
             request = utils.unmarshal(request, Optional[models.SubmissionPayload])
         request = cast(Optional[models.SubmissionPayload], request)
 
-        req = self.build_request_async(
+        req = self._build_request_async(
             method="POST",
             path="/v1/submission/submissions",
             base_url=base_url,
