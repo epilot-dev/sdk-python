@@ -7,76 +7,86 @@ from .templatesettings import TemplateSettings, TemplateSettingsTypedDict
 from enum import Enum
 from epilot_document.types import BaseModel
 import pydantic
-from typing import Optional, TypedDict
-from typing_extensions import Annotated, NotRequired
+from typing import Optional
+from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class DocumentGenerationV2ResponseOutputDocumentTypedDict(TypedDict):
     filename: NotRequired[str]
     r"""Generated document filename for DOCX"""
     s3ref: NotRequired[S3ReferenceTypedDict]
-    
+
 
 class DocumentGenerationV2ResponseOutputDocument(BaseModel):
     filename: Optional[str] = None
     r"""Generated document filename for DOCX"""
+
     s3ref: Optional[S3Reference] = None
-    
+
 
 class DocxOutputTypedDict(TypedDict):
     output_document: NotRequired[DocumentGenerationV2ResponseOutputDocumentTypedDict]
     preview_url: NotRequired[str]
     r"""Pre-signed S3 GET URL for DOCX preview"""
-    
+
 
 class DocxOutput(BaseModel):
     output_document: Optional[DocumentGenerationV2ResponseOutputDocument] = None
+
     preview_url: Optional[str] = None
     r"""Pre-signed S3 GET URL for DOCX preview"""
-    
+
 
 class JobStatus(str, Enum):
     r"""Status of the job"""
+
     STARTED = "STARTED"
     PROCESSING = "PROCESSING"
     SUCCESS = "SUCCESS"
     FAILED = "FAILED"
 
+
 class DocumentGenerationV2ResponseSchemasOutputDocumentTypedDict(TypedDict):
     filename: NotRequired[str]
     r"""Generated document filename for PDF"""
     s3ref: NotRequired[S3ReferenceTypedDict]
-    
+
 
 class DocumentGenerationV2ResponseSchemasOutputDocument(BaseModel):
     filename: Optional[str] = None
     r"""Generated document filename for PDF"""
+
     s3ref: Optional[S3Reference] = None
-    
+
 
 class PdfOutputTypedDict(TypedDict):
-    output_document: NotRequired[DocumentGenerationV2ResponseSchemasOutputDocumentTypedDict]
+    output_document: NotRequired[
+        DocumentGenerationV2ResponseSchemasOutputDocumentTypedDict
+    ]
     preview_url: NotRequired[str]
     r"""Pre-signed S3 GET URL for PDF preview"""
-    
+
 
 class PdfOutput(BaseModel):
     output_document: Optional[DocumentGenerationV2ResponseSchemasOutputDocument] = None
+
     preview_url: Optional[str] = None
     r"""Pre-signed S3 GET URL for PDF preview"""
-    
+
 
 class DocumentGenerationV2ResponseVariablePayloadTypedDict(TypedDict):
     r"""List of variables and its corresponding replaced values from the document template"""
-    
+
     additional_properties: NotRequired[str]
-    
+
 
 class DocumentGenerationV2ResponseVariablePayload(BaseModel):
     r"""List of variables and its corresponding replaced values from the document template"""
-    
-    additional_properties: Annotated[Optional[str], pydantic.Field(alias="additionalProperties")] = None
-    
+
+    additional_properties: Annotated[
+        Optional[str], pydantic.Field(alias="additionalProperties")
+    ] = None
+
 
 class DocumentGenerationV2ResponseTypedDict(TypedDict):
     docx_output: NotRequired[DocxOutputTypedDict]
@@ -91,19 +101,25 @@ class DocumentGenerationV2ResponseTypedDict(TypedDict):
     r"""Template Settings for document generation"""
     variable_payload: NotRequired[DocumentGenerationV2ResponseVariablePayloadTypedDict]
     r"""List of variables and its corresponding replaced values from the document template"""
-    
+
 
 class DocumentGenerationV2Response(BaseModel):
     docx_output: Optional[DocxOutput] = None
+
     error_output: Optional[ErrorOutput] = None
+
     job_id: Optional[str] = None
+
     job_status: Optional[JobStatus] = None
     r"""Status of the job"""
+
     message: Optional[str] = None
     r"""A message explaining the progress"""
+
     pdf_output: Optional[PdfOutput] = None
+
     template_settings: Optional[TemplateSettings] = None
     r"""Template Settings for document generation"""
+
     variable_payload: Optional[DocumentGenerationV2ResponseVariablePayload] = None
     r"""List of variables and its corresponding replaced values from the document template"""
-    
