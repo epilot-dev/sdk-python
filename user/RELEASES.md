@@ -35,3 +35,11 @@ Based on:
 Based on:
 - OpenAPI Doc 2.0.0 https://docs.api.epilot.io/user.yaml
 - Speakeasy CLI 1.19.2 (2.16.5) https://github.com/speakeasy-api/speakeasy
+
+## 2024-12-26 00:05:34
+### Changes
+Based on:
+- OpenAPI Doc 2.0.0 https://docs.api.epilot.io/user.yaml
+- Speakeasy CLI 1.460.2 (2.484.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.3.0] user
