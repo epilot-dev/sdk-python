@@ -2,10 +2,70 @@
 
 import re
 import json
-from typing import Callable, TypeVar, Optional, Generator, AsyncGenerator, Tuple
+from typing import (
+    Callable,
+    Generic,
+    TypeVar,
+    Optional,
+    Generator,
+    AsyncGenerator,
+    Tuple,
+)
 import httpx
 
 T = TypeVar("T")
+
+
+class EventStream(Generic[T]):
+    response: httpx.Response
+    generator: Generator[T, None, None]
+
+    def __init__(
+        self,
+        response: httpx.Response,
+        decoder: Callable[[str], T],
+        sentinel: Optional[str] = None,
+    ):
+        self.response = response
+        self.generator = stream_events(response, decoder, sentinel)
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        return next(self.generator)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.response.close()
+
+
+class EventStreamAsync(Generic[T]):
+    response: httpx.Response
+    generator: AsyncGenerator[T, None]
+
+    def __init__(
+        self,
+        response: httpx.Response,
+        decoder: Callable[[str], T],
+        sentinel: Optional[str] = None,
+    ):
+        self.response = response
+        self.generator = stream_events_async(response, decoder, sentinel)
+
+    def __aiter__(self):
+        return self
+
+    async def __anext__(self):
+        return await self.generator.__anext__()
+
+    async def __aenter__(self):
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        await self.response.aclose()
 
 
 class ServerEvent:
@@ -147,15 +207,14 @@ def _parse_event(
         data = data[:-1]
         event.data = data
 
-        if (
-            data.isnumeric()
-            or data == "true"
-            or data == "false"
-            or data == "null"
-            or data.startswith("{")
-            or data.startswith("[")
-            or data.startswith('"')
-        ):
+        data_is_primitive = (
+            data.isnumeric() or data == "true" or data == "false" or data == "null"
+        )
+        data_is_json = (
+            data.startswith("{") or data.startswith("[") or data.startswith('"')
+        )
+
+        if data_is_primitive or data_is_json:
             try:
                 event.data = json.loads(data)
             except Exception:
