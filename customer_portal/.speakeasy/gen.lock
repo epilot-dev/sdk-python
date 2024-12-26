@@ -1,0 +1,1389 @@
+lockVersion: 2.0.0
+id: 98e311d3-ed36-4d5e-ad7c-a80ad8ad9203
+management:
+  docChecksum: 5ca67755ded49e25f1f40c192cbea05a
+  docVersion: 1.0.0
+  speakeasyVersion: 1.460.2
+  generationVersion: 2.484.0
+  releaseVersion: 1.3.0
+  configChecksum: 50502a183dca1704993138ca1798d860
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: customer_portal
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=customer_portal
+features:
+  python:
+    additionalDependencies: 1.0.0
+    additionalProperties: 1.0.1
+    constsAndDefaults: 1.0.5
+    core: 5.7.4
+    defaultEnabledRetries: 0.2.0
+    deprecations: 3.0.0
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.2
+    errorUnions: 1.0.2
+    flatRequests: 1.0.1
+    flattening: 3.1.0
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalServerURLs: 3.1.0
+    methodArguments: 1.0.2
+    nullables: 1.0.0
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+    unions: 3.0.4
+generatedFiles:
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/acceptancedecision.md
+  - docs/models/accesscontrol.md
+  - docs/models/actionlabel.md
+  - docs/models/actionwidget.md
+  - docs/models/actionwidgettype.md
+  - docs/models/activitycallercontext.md
+  - docs/models/activityitem.md
+  - docs/models/addcontractbyidentifiersecpresponsebody.md
+  - docs/models/addcontractbyidentifiersresponsebody.md
+  - docs/models/adminuser.md
+  - docs/models/advancedmfa.md
+  - docs/models/allowedfileextensions.md
+  - docs/models/automationentitymapping.md
+  - docs/models/automationpreview.md
+  - docs/models/balance.md
+  - docs/models/billingevent.md
+  - docs/models/billingperiod.md
+  - docs/models/branch.md
+  - docs/models/button.md
+  - docs/models/cache.md
+  - docs/models/cadenceperiodtype.md
+  - docs/models/call.md
+  - docs/models/canary.md
+  - docs/models/cantriggerportalflowrequest.md
+  - docs/models/cantriggerportalflowresponsebody.md
+  - docs/models/centralinboxpreviewsetting.md
+  - docs/models/certificatedetails.md
+  - docs/models/checkcontactexistsrequest.md
+  - docs/models/checkcontactexistsresponsebody.md
+  - docs/models/cognitodetails.md
+  - docs/models/components.md
+  - docs/models/configuredistributionrequest.md
+  - docs/models/configuredistributionresponsebody.md
+  - docs/models/confirmuserpublicresponsebody.md
+  - docs/models/confirmuserreason.md
+  - docs/models/confirmuserrequest.md
+  - docs/models/confirmuserresponsebody.md
+  - docs/models/confirmuserwithuseridrequest.md
+  - docs/models/consumptions.md
+  - docs/models/contact.md
+  - docs/models/contactexistsrequest.md
+  - docs/models/contactschema.md
+  - docs/models/contentwidget.md
+  - docs/models/contentwidgetheadline.md
+  - docs/models/contentwidgetsubheadline.md
+  - docs/models/contentwidgettype.md
+  - docs/models/contract.md
+  - docs/models/contractidentification.md
+  - docs/models/contractidentifier.md
+  - docs/models/contractspreviewsetting.md
+  - docs/models/costs.md
+  - docs/models/createcustomentityactivityrequest.md
+  - docs/models/createcustomentityactivityrequestbody.md
+  - docs/models/createcustomentityactivitytype.md
+  - docs/models/createmeterreadingecpresponsebody.md
+  - docs/models/createmeterreadingreason.md
+  - docs/models/createmeterreadingrequest.md
+  - docs/models/createmeterreadingresponsebody.md
+  - docs/models/createssouserrequest.md
+  - docs/models/createssouserrequest1.md
+  - docs/models/createssouserresponsebody.md
+  - docs/models/createusermessage.md
+  - docs/models/createuserrequest.md
+  - docs/models/createuserrequest1.md
+  - docs/models/createuserresponsebody.md
+  - docs/models/customerportal.md
+  - docs/models/data.md
+  - docs/models/dataretrievalitem.md
+  - docs/models/decision.md
+  - docs/models/defaultusertonotify.md
+  - docs/models/deleteentityfile.md
+  - docs/models/deleteentityfileresponsebody.md
+  - docs/models/deleteportalrequest.md
+  - docs/models/deleteportalusermessage.md
+  - docs/models/deleteportaluserresponsebody.md
+  - docs/models/description.md
+  - docs/models/direction.md
+  - docs/models/disableivy.md
+  - docs/models/dollarrelation.md
+  - docs/models/doubleoptin.md
+  - docs/models/ecommercecatalogpreview.md
+  - docs/models/ecommerceopportunitiespreview.md
+  - docs/models/ecommercepreview.md
+  - docs/models/ecpconfig.md
+  - docs/models/effect.md
+  - docs/models/emailtemplates.md
+  - docs/models/endcustomerportal.md
+  - docs/models/entity.md
+  - docs/models/entityactions.md
+  - docs/models/entityeditrule.md
+  - docs/models/entityeditrules.md
+  - docs/models/entityfilecount.md
+  - docs/models/entityidentifiers.md
+  - docs/models/entityitem.md
+  - docs/models/entityschemabuilder.md
+  - docs/models/entitysearchparams.md
+  - docs/models/entityslug.md
+  - docs/models/entitywidget.md
+  - docs/models/entitywidgetheadline.md
+  - docs/models/entitywidgetsubheadline.md
+  - docs/models/entitywidgettype.md
+  - docs/models/errorresp.md
+  - docs/models/eventtype.md
+  - docs/models/explanation.md
+  - docs/models/extension.md
+  - docs/models/extensionauthblock.md
+  - docs/models/extensionconfig.md
+  - docs/models/extensionconfigstatus.md
+  - docs/models/extensiondescription.md
+  - docs/models/extensionhookcontractidentificationschemas.md
+  - docs/models/extensionhookcostdataretrievalschemas.md
+  - docs/models/extensionhookmeterreadingplausibilitycheckschemas.md
+  - docs/models/extensionhookpricedataretrievalschemas.md
+  - docs/models/extensionhookregistrationidentifierscheckschemas.md
+  - docs/models/extensionname.md
+  - docs/models/extensionseamlesslink.md
+  - docs/models/extensionseamlesslinkdescription.md
+  - docs/models/extensionseamlesslinkname.md
+  - docs/models/extensionseamlesslinktype.md
+  - docs/models/extensiontype.md
+  - docs/models/externallink.md
+  - docs/models/externallinktype.md
+  - docs/models/extrapermissionattributesresponsebody.md
+  - docs/models/extraschemaattributes.md
+  - docs/models/failedrule.md
+  - docs/models/failedruleerrorresp.md
+  - docs/models/featuresettings.md
+  - docs/models/fetchportalusersbyrelatedentityrequest.md
+  - docs/models/fetchportalusersbyrelatedentityresponsebody.md
+  - docs/models/file.md
+  - docs/models/fileconfig.md
+  - docs/models/fileitem.md
+  - docs/models/fileitemschema.md
+  - docs/models/fileitemtype.md
+  - docs/models/files.md
+  - docs/models/fileschema.md
+  - docs/models/getallcontractsbillingperiod.md
+  - docs/models/getallcontractsbranch.md
+  - docs/models/getallcontractsdata.md
+  - docs/models/getallcontractsnoticetimeunit.md
+  - docs/models/getallcontractsrenewaldurationunit.md
+  - docs/models/getallcontractsrequest.md
+  - docs/models/getallcontractsresponsebody.md
+  - docs/models/getallcontractsstatus.md
+  - docs/models/getallfilesrequest.md
+  - docs/models/getallfilesresponsebody.md
+  - docs/models/getallopportunitiesdata.md
+  - docs/models/getallopportunitiesrequest.md
+  - docs/models/getallopportunitiesresponsebody.md
+  - docs/models/getallopportunitiesschema.md
+  - docs/models/getallordersdata.md
+  - docs/models/getallordersrequest.md
+  - docs/models/getallordersresponsebody.md
+  - docs/models/getallordersschema.md
+  - docs/models/getallportalconfigsresponsebody.md
+  - docs/models/getbillingeventsrequest.md
+  - docs/models/getbillingeventsresponsebody.md
+  - docs/models/getconsumptionrequest.md
+  - docs/models/getconsumptionresponsebody.md
+  - docs/models/getcontactresponsebody.md
+  - docs/models/getcontractrequest.md
+  - docs/models/getcontractresponsebody.md
+  - docs/models/getcostsrequest.md
+  - docs/models/getcostsresponsebody.md
+  - docs/models/getecpcontactrequest.md
+  - docs/models/getecpcontactresponsebody.md
+  - docs/models/getemailtemplatesrequest.md
+  - docs/models/getentityactivityfeedrequest.md
+  - docs/models/getentityactivityfeedresponsebody.md
+  - docs/models/getentityidentifiersdata.md
+  - docs/models/getentityidentifiersrequest.md
+  - docs/models/getentityidentifiersresponsebody.md
+  - docs/models/getexternallinksrequest.md
+  - docs/models/getfilebyidrequest.md
+  - docs/models/getfilebyidresponsebody.md
+  - docs/models/getopportunityrequest.md
+  - docs/models/getopportunityresponsebody.md
+  - docs/models/getorderrequest.md
+  - docs/models/getorderresponsebody.md
+  - docs/models/getorganizationsettingsresponsebody.md
+  - docs/models/getorgportalconfigadvancedmfa.md
+  - docs/models/getorgportalconfigcadenceperiodtype.md
+  - docs/models/getorgportalconfigcanary.md
+  - docs/models/getorgportalconfigcognitodetails.md
+  - docs/models/getorgportalconfigentityeditrules.md
+  - docs/models/getorgportalconfigentityidentifiers.md
+  - docs/models/getorgportalconfigfeaturesettings.md
+  - docs/models/getorgportalconfigimages.md
+  - docs/models/getorgportalconfignotracking.md
+  - docs/models/getorgportalconfigorgsettings.md
+  - docs/models/getorgportalconfigpasswordpolicy.md
+  - docs/models/getorgportalconfigrequest.md
+  - docs/models/getorgportalconfigresponsebody.md
+  - docs/models/getorgportalconfigruletype.md
+  - docs/models/getorgportalconfigselfregistrationsetting.md
+  - docs/models/getorgportalconfigstatus.md
+  - docs/models/getorgportalconfigtriggeredjourneys.md
+  - docs/models/getorgportalconfigtriggername.md
+  - docs/models/getorgportalconfigtype.md
+  - docs/models/getportalconfigbydomainrequest.md
+  - docs/models/getportalconfigrequest.md
+  - docs/models/getportalextensionsrequest.md
+  - docs/models/getportaluserresponsebody.md
+  - docs/models/getportalwidgetsrequest.md
+  - docs/models/getpricesqueryparaminterval.md
+  - docs/models/getpricesrequest.md
+  - docs/models/getpricesresponsebody.md
+  - docs/models/getpricestaxbehavior.md
+  - docs/models/getpublicportalconfigrequest.md
+  - docs/models/getpublicportalextensiondetailsrequest.md
+  - docs/models/getpublicportalwidgetsrequest.md
+  - docs/models/getrecipientstonotifyonautomationrequestbody.md
+  - docs/models/getrecipientstonotifyonautomationresponsebody.md
+  - docs/models/getregistrationidentifiersresponsebody.md
+  - docs/models/getresolvedexternallinkrequest.md
+  - docs/models/getschemasresponsebody.md
+  - docs/models/getsearchableattributesforopportunitiesrequest.md
+  - docs/models/getsearchableattributesforopportunitiesresponsebody.md
+  - docs/models/getsearchresultsforopportunitiesrequest.md
+  - docs/models/getsearchresultsforopportunitiesrequestbody.md
+  - docs/models/getsearchresultsforopportunitiesresponsebody.md
+  - docs/models/getvalidsecondaryattributesdata.md
+  - docs/models/getvalidsecondaryattributesresponsebody.md
+  - docs/models/grant.md
+  - docs/models/headline.md
+  - docs/models/hooks.md
+  - docs/models/icon.md
+  - docs/models/identifierattribute.md
+  - docs/models/images.md
+  - docs/models/imageuri.md
+  - docs/models/installerportal.md
+  - docs/models/installmenteventschemas.md
+  - docs/models/interval.md
+  - docs/models/journeyactions.md
+  - docs/models/label.md
+  - docs/models/logiceditorpreview.md
+  - docs/models/logintoportalasuserrequestbody.md
+  - docs/models/logintoportalasuserresponsebody.md
+  - docs/models/message.md
+  - docs/models/meter.md
+  - docs/models/meterchartwidget.md
+  - docs/models/meterchartwidgetheadline.md
+  - docs/models/meterchartwidgetsubheadline.md
+  - docs/models/meterchartwidgettype.md
+  - docs/models/meterreading.md
+  - docs/models/meterreadingwidget.md
+  - docs/models/meterreadingwidgetheadline.md
+  - docs/models/meterreadingwidgetsubheadline.md
+  - docs/models/meterreadingwidgettype.md
+  - docs/models/meterschema.md
+  - docs/models/name.md
+  - docs/models/newnavigation.md
+  - docs/models/noticetimeunit.md
+  - docs/models/notracking.md
+  - docs/models/opportunity.md
+  - docs/models/opportunityschema.md
+  - docs/models/options.md
+  - docs/models/order.md
+  - docs/models/orderschema.md
+  - docs/models/organizationsettings.md
+  - docs/models/orgsettings.md
+  - docs/models/origin.md
+  - docs/models/partnering.md
+  - docs/models/passwordpolicy.md
+  - docs/models/payload.md
+  - docs/models/portalauth.md
+  - docs/models/portalconfig.md
+  - docs/models/portalconfigtype.md
+  - docs/models/portaluser.md
+  - docs/models/portaluserschema.md
+  - docs/models/postorderacceptancerequest.md
+  - docs/models/postorderacceptanceresponsebody.md
+  - docs/models/prices.md
+  - docs/models/product.md
+  - docs/models/productavailability.md
+  - docs/models/productschema.md
+  - docs/models/publiccontractidentificationdetails.md
+  - docs/models/publiccontractidentificationdetailsexplanation.md
+  - docs/models/publicdataretrievalhookdetails.md
+  - docs/models/publicdataretrievalhookdetailsname.md
+  - docs/models/publicextensioncapabilities.md
+  - docs/models/publicextensiondetails.md
+  - docs/models/publicextensiondetailsname.md
+  - docs/models/queryparaminterval.md
+  - docs/models/readingstatus.md
+  - docs/models/reason.md
+  - docs/models/recipients.md
+  - docs/models/redirect.md
+  - docs/models/reimbursementeventschemas.md
+  - docs/models/relations.md
+  - docs/models/renewaldurationunit.md
+  - docs/models/replaceecptemplatevariablesinstallerportal.md
+  - docs/models/replaceecptemplatevariablesresponsebody.md
+  - docs/models/requestbody.md
+  - docs/models/resendconfirmationemailrequest.md
+  - docs/models/resendconfirmationemailresponsebody.md
+  - docs/models/resolved.md
+  - docs/models/revoketokenmessage.md
+  - docs/models/revoketokenrequestbody.md
+  - docs/models/revoketokenresponsebody.md
+  - docs/models/rule.md
+  - docs/models/rules.md
+  - docs/models/ruletype.md
+  - docs/models/s3ref.md
+  - docs/models/saveentityfile.md
+  - docs/models/saveentityfileaccesscontrol.md
+  - docs/models/saveentityfileresponsebody.md
+  - docs/models/saveportalfile.md
+  - docs/models/saveportalfilefiles.md
+  - docs/models/saveportalfiles3ref.md
+  - docs/models/saveportalfilesresponsebody.md
+  - docs/models/schema.md
+  - docs/models/schemas.md
+  - docs/models/schemascall.md
+  - docs/models/schemascontract.md
+  - docs/models/schemasdollarrelation.md
+  - docs/models/schemasextensionhookcostdataretrievalcall.md
+  - docs/models/schemasextensionhookcostdataretrievaltype.md
+  - docs/models/schemasextensionhookmeterreadingplausibilitycheckcall.md
+  - docs/models/schemasextensionhookmeterreadingplausibilitycheckresolved.md
+  - docs/models/schemasextensionhookmeterreadingplausibilitychecktype.md
+  - docs/models/schemasextensionhookpricedataretrievalcall.md
+  - docs/models/schemasextensionhookpricedataretrievalresolved.md
+  - docs/models/schemasextensionhookpricedataretrievaltype.md
+  - docs/models/schemasextensionhookregistrationidentifierscheckcall.md
+  - docs/models/schemasextensionhookregistrationidentifierschecktype.md
+  - docs/models/schemasinstallmenteventcontract.md
+  - docs/models/schemasinstallmenteventtype.md
+  - docs/models/schemasreimbursementeventtype.md
+  - docs/models/schemasresolved.md
+  - docs/models/schemastype.md
+  - docs/models/searchpaymentrelationsinentitiesrequest.md
+  - docs/models/searchpaymentrelationsinentitiesresponsebody.md
+  - docs/models/searchportaluserentitiesresponsebody.md
+  - docs/models/security.md
+  - docs/models/selfregistrationsetting.md
+  - docs/models/source.md
+  - docs/models/sso.md
+  - docs/models/status.md
+  - docs/models/subheadline.md
+  - docs/models/submissionpreview.md
+  - docs/models/taxbehavior.md
+  - docs/models/teaserwidget.md
+  - docs/models/teaserwidgetheadline.md
+  - docs/models/teaserwidgetlabel.md
+  - docs/models/teaserwidgetsubheadline.md
+  - docs/models/teaserwidgettype.md
+  - docs/models/token.md
+  - docs/models/trackfiledownloadedrequest.md
+  - docs/models/trackfiledownloadedresponsebody.md
+  - docs/models/triggeredjourneys.md
+  - docs/models/triggerentityaccesseventrequest.md
+  - docs/models/triggerentityaccesseventresponsebody.md
+  - docs/models/triggername.md
+  - docs/models/triggerportalflow.md
+  - docs/models/type.md
+  - docs/models/updatecontactecpresponsebody.md
+  - docs/models/updatecontactresponsebody.md
+  - docs/models/updatecontractecpresponsebody.md
+  - docs/models/updatecontractrequest.md
+  - docs/models/updatecontractresponsebody.md
+  - docs/models/updateopportunityrequest.md
+  - docs/models/updateopportunityresponsebody.md
+  - docs/models/updateorderrequest.md
+  - docs/models/updateorderresponsebody.md
+  - docs/models/updateportaluseremailmessage.md
+  - docs/models/updateportaluseremailrequestbody.md
+  - docs/models/updateportaluseremailresponsebody.md
+  - docs/models/updateportaluserresponsebody.md
+  - docs/models/updateworkflowstepasdonerequest.md
+  - docs/models/upsertemailtemplatesmessage.md
+  - docs/models/upsertemailtemplatesrequest.md
+  - docs/models/upsertemailtemplatesresponsebody.md
+  - docs/models/upsertportalconfig.md
+  - docs/models/upsertportalconfigactionlabel.md
+  - docs/models/upsertportalconfigadvancedmfa.md
+  - docs/models/upsertportalconfigcadenceperiodtype.md
+  - docs/models/upsertportalconfigcognitodetails.md
+  - docs/models/upsertportalconfigentityeditrules.md
+  - docs/models/upsertportalconfigentityidentifiers.md
+  - docs/models/upsertportalconfigfeaturesettings.md
+  - docs/models/upsertportalconfigimages.md
+  - docs/models/upsertportalconfigpasswordpolicy.md
+  - docs/models/upsertportalconfigruletype.md
+  - docs/models/upsertportalconfigselfregistrationsetting.md
+  - docs/models/upsertportalconfigtriggeredjourneys.md
+  - docs/models/upsertportalconfigtriggername.md
+  - docs/models/upsertportalconfigtype.md
+  - docs/models/upsertportalrequest.md
+  - docs/models/upsertportalwidget.md
+  - docs/models/upsertportalwidgetrequest.md
+  - docs/models/userexistsrequest.md
+  - docs/models/userexistsresponsebody.md
+  - docs/models/userrolespreview.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/validatecadenceentityeditrulesrequest.md
+  - docs/models/validatecadenceentityeditrulesresponsebody.md
+  - docs/models/widgetaction.md
+  - docs/models/widgetactionrules.md
+  - docs/models/widgetactiontype.md
+  - docs/models/widgetbase.md
+  - docs/models/widgetbaseheadline.md
+  - docs/models/widgetbasesubheadline.md
+  - docs/models/widgetbasetype.md
+  - docs/models/workflows.md
+  - docs/sdks/activity/README.md
+  - docs/sdks/balancesdk/README.md
+  - docs/sdks/ecp/README.md
+  - docs/sdks/ecpadmin/README.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/public/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/epilot_customer_portal/__init__.py
+  - src/epilot_customer_portal/_hooks/__init__.py
+  - src/epilot_customer_portal/_hooks/sdkhooks.py
+  - src/epilot_customer_portal/_hooks/types.py
+  - src/epilot_customer_portal/_version.py
+  - src/epilot_customer_portal/activity.py
+  - src/epilot_customer_portal/balance_sdk.py
+  - src/epilot_customer_portal/basesdk.py
+  - src/epilot_customer_portal/ecp.py
+  - src/epilot_customer_portal/ecp_admin.py
+  - src/epilot_customer_portal/httpclient.py
+  - src/epilot_customer_portal/models/__init__.py
+  - src/epilot_customer_portal/models/acceptancedecision.py
+  - src/epilot_customer_portal/models/actionlabel.py
+  - src/epilot_customer_portal/models/actionwidget.py
+  - src/epilot_customer_portal/models/activitycallercontext.py
+  - src/epilot_customer_portal/models/activityitem.py
+  - src/epilot_customer_portal/models/addcontractbyidentifiersop.py
+  - src/epilot_customer_portal/models/adminuser.py
+  - src/epilot_customer_portal/models/allowedfileextensions.py
+  - src/epilot_customer_portal/models/apierror.py
+  - src/epilot_customer_portal/models/balance.py
+  - src/epilot_customer_portal/models/billingevent.py
+  - src/epilot_customer_portal/models/cantriggerportalflowop.py
+  - src/epilot_customer_portal/models/checkcontactexistsop.py
+  - src/epilot_customer_portal/models/configuredistributionop.py
+  - src/epilot_customer_portal/models/confirmuserop.py
+  - src/epilot_customer_portal/models/confirmuserwithuseridop.py
+  - src/epilot_customer_portal/models/contact.py
+  - src/epilot_customer_portal/models/contactexistsrequest.py
+  - src/epilot_customer_portal/models/contentwidget.py
+  - src/epilot_customer_portal/models/contract.py
+  - src/epilot_customer_portal/models/contractidentifier.py
+  - src/epilot_customer_portal/models/createcustomentityactivityop.py
+  - src/epilot_customer_portal/models/createmeterreadingop.py
+  - src/epilot_customer_portal/models/createssouserop.py
+  - src/epilot_customer_portal/models/createssouserrequest.py
+  - src/epilot_customer_portal/models/createuserop.py
+  - src/epilot_customer_portal/models/createuserrequest.py
+  - src/epilot_customer_portal/models/dataretrievalitem.py
+  - src/epilot_customer_portal/models/deleteentityfile.py
+  - src/epilot_customer_portal/models/deleteentityfileop.py
+  - src/epilot_customer_portal/models/deleteportalop.py
+  - src/epilot_customer_portal/models/deleteportaluserop.py
+  - src/epilot_customer_portal/models/direction.py
+  - src/epilot_customer_portal/models/emailtemplates.py
+  - src/epilot_customer_portal/models/entityeditrule.py
+  - src/epilot_customer_portal/models/entityfilecount.py
+  - src/epilot_customer_portal/models/entityitem.py
+  - src/epilot_customer_portal/models/entitysearchparams.py
+  - src/epilot_customer_portal/models/entityslug.py
+  - src/epilot_customer_portal/models/entitywidget.py
+  - src/epilot_customer_portal/models/errorresp.py
+  - src/epilot_customer_portal/models/extension.py
+  - src/epilot_customer_portal/models/extensionauthblock.py
+  - src/epilot_customer_portal/models/extensionconfig.py
+  - src/epilot_customer_portal/models/extensionseamlesslink.py
+  - src/epilot_customer_portal/models/externallink.py
+  - src/epilot_customer_portal/models/extrapermissionattributesop.py
+  - src/epilot_customer_portal/models/extraschemaattributes.py
+  - src/epilot_customer_portal/models/failedruleerrorresp.py
+  - src/epilot_customer_portal/models/fetchportalusersbyrelatedentityop.py
+  - src/epilot_customer_portal/models/file.py
+  - src/epilot_customer_portal/models/fileitem.py
+  - src/epilot_customer_portal/models/getallcontractsop.py
+  - src/epilot_customer_portal/models/getallfilesop.py
+  - src/epilot_customer_portal/models/getallopportunitiesop.py
+  - src/epilot_customer_portal/models/getallordersop.py
+  - src/epilot_customer_portal/models/getallportalconfigsop.py
+  - src/epilot_customer_portal/models/getbillingeventsop.py
+  - src/epilot_customer_portal/models/getconsumptionop.py
+  - src/epilot_customer_portal/models/getcontactop.py
+  - src/epilot_customer_portal/models/getcontractop.py
+  - src/epilot_customer_portal/models/getcostsop.py
+  - src/epilot_customer_portal/models/getecpcontactop.py
+  - src/epilot_customer_portal/models/getemailtemplatesop.py
+  - src/epilot_customer_portal/models/getentityactivityfeedop.py
+  - src/epilot_customer_portal/models/getentityidentifiersop.py
+  - src/epilot_customer_portal/models/getexternallinksop.py
+  - src/epilot_customer_portal/models/getfilebyidop.py
+  - src/epilot_customer_portal/models/getopportunityop.py
+  - src/epilot_customer_portal/models/getorderop.py
+  - src/epilot_customer_portal/models/getorganizationsettingsop.py
+  - src/epilot_customer_portal/models/getorgportalconfigop.py
+  - src/epilot_customer_portal/models/getportalconfigbydomainop.py
+  - src/epilot_customer_portal/models/getportalconfigop.py
+  - src/epilot_customer_portal/models/getportalextensionsop.py
+  - src/epilot_customer_portal/models/getportaluserop.py
+  - src/epilot_customer_portal/models/getportalwidgetsop.py
+  - src/epilot_customer_portal/models/getpricesop.py
+  - src/epilot_customer_portal/models/getpublicportalconfigop.py
+  - src/epilot_customer_portal/models/getpublicportalextensiondetailsop.py
+  - src/epilot_customer_portal/models/getpublicportalwidgetsop.py
+  - src/epilot_customer_portal/models/getrecipientstonotifyonautomationop.py
+  - src/epilot_customer_portal/models/getregistrationidentifiersop.py
+  - src/epilot_customer_portal/models/getresolvedexternallinkop.py
+  - src/epilot_customer_portal/models/getschemasop.py
+  - src/epilot_customer_portal/models/getsearchableattributesforopportunitiesop.py
+  - src/epilot_customer_portal/models/getsearchresultsforopportunitiesop.py
+  - src/epilot_customer_portal/models/getvalidsecondaryattributesop.py
+  - src/epilot_customer_portal/models/grant.py
+  - src/epilot_customer_portal/models/identifierattribute.py
+  - src/epilot_customer_portal/models/journeyactions.py
+  - src/epilot_customer_portal/models/logintoportalasuserop.py
+  - src/epilot_customer_portal/models/meter.py
+  - src/epilot_customer_portal/models/meterchartwidget.py
+  - src/epilot_customer_portal/models/meterreading.py
+  - src/epilot_customer_portal/models/meterreadingwidget.py
+  - src/epilot_customer_portal/models/opportunity.py
+  - src/epilot_customer_portal/models/order.py
+  - src/epilot_customer_portal/models/organizationsettings.py
+  - src/epilot_customer_portal/models/origin.py
+  - src/epilot_customer_portal/models/portalconfig.py
+  - src/epilot_customer_portal/models/portaluser.py
+  - src/epilot_customer_portal/models/postorderacceptanceop.py
+  - src/epilot_customer_portal/models/product.py
+  - src/epilot_customer_portal/models/publiccontractidentificationdetails.py
+  - src/epilot_customer_portal/models/publicdataretrievalhookdetails.py
+  - src/epilot_customer_portal/models/publicextensioncapabilities.py
+  - src/epilot_customer_portal/models/publicextensiondetails.py
+  - src/epilot_customer_portal/models/readingstatus.py
+  - src/epilot_customer_portal/models/replaceecptemplatevariablesop.py
+  - src/epilot_customer_portal/models/resendconfirmationemailop.py
+  - src/epilot_customer_portal/models/revoketokenop.py
+  - src/epilot_customer_portal/models/rule.py
+  - src/epilot_customer_portal/models/saveentityfile.py
+  - src/epilot_customer_portal/models/saveentityfileop.py
+  - src/epilot_customer_portal/models/saveportalfile.py
+  - src/epilot_customer_portal/models/saveportalfilesop.py
+  - src/epilot_customer_portal/models/schema.py
+  - src/epilot_customer_portal/models/searchpaymentrelationsinentitiesop.py
+  - src/epilot_customer_portal/models/searchportaluserentitiesop.py
+  - src/epilot_customer_portal/models/security.py
+  - src/epilot_customer_portal/models/source.py
+  - src/epilot_customer_portal/models/teaserwidget.py
+  - src/epilot_customer_portal/models/trackfiledownloadedop.py
+  - src/epilot_customer_portal/models/triggerentityaccesseventop.py
+  - src/epilot_customer_portal/models/triggerportalflow.py
+  - src/epilot_customer_portal/models/updatecontactop.py
+  - src/epilot_customer_portal/models/updatecontractop.py
+  - src/epilot_customer_portal/models/updateopportunityop.py
+  - src/epilot_customer_portal/models/updateorderop.py
+  - src/epilot_customer_portal/models/updateportaluseremailop.py
+  - src/epilot_customer_portal/models/updateportaluserop.py
+  - src/epilot_customer_portal/models/updateworkflowstepasdoneop.py
+  - src/epilot_customer_portal/models/upsertemailtemplatesop.py
+  - src/epilot_customer_portal/models/upsertportalconfig.py
+  - src/epilot_customer_portal/models/upsertportalop.py
+  - src/epilot_customer_portal/models/upsertportalwidget.py
+  - src/epilot_customer_portal/models/upsertportalwidgetop.py
+  - src/epilot_customer_portal/models/userexistsop.py
+  - src/epilot_customer_portal/models/validatecadenceentityeditrulesop.py
+  - src/epilot_customer_portal/models/widgetaction.py
+  - src/epilot_customer_portal/models/widgetbase.py
+  - src/epilot_customer_portal/public.py
+  - src/epilot_customer_portal/py.typed
+  - src/epilot_customer_portal/sdk.py
+  - src/epilot_customer_portal/sdkconfiguration.py
+  - src/epilot_customer_portal/types/__init__.py
+  - src/epilot_customer_portal/types/basemodel.py
+  - src/epilot_customer_portal/utils/__init__.py
+  - src/epilot_customer_portal/utils/annotations.py
+  - src/epilot_customer_portal/utils/enums.py
+  - src/epilot_customer_portal/utils/eventstreaming.py
+  - src/epilot_customer_portal/utils/forms.py
+  - src/epilot_customer_portal/utils/headers.py
+  - src/epilot_customer_portal/utils/logger.py
+  - src/epilot_customer_portal/utils/metadata.py
+  - src/epilot_customer_portal/utils/queryparams.py
+  - src/epilot_customer_portal/utils/requestbodies.py
+  - src/epilot_customer_portal/utils/retries.py
+  - src/epilot_customer_portal/utils/security.py
+  - src/epilot_customer_portal/utils/serializers.py
+  - src/epilot_customer_portal/utils/url.py
+  - src/epilot_customer_portal/utils/values.py
+examples:
+  canTriggerPortalFlow:
+    speakeasy-default-can-trigger-portal-flow:
+      parameters:
+        query:
+          origin: "END_CUSTOMER_PORTAL"
+      requestBody:
+        application/json: {"activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "ecp_config": {"file_config": {"_tags": ["example", "mock"]}}}
+      responses:
+        "200":
+          application/json: {"can_trigger": true}
+  configureDistribution:
+    speakeasy-default-configure-distribution:
+      parameters:
+        query:
+          origin: "INSTALLER_PORTAL"
+      responses:
+        "200":
+          application/json: {"domainName": "dsj8op4ha01jha23.cloudfront.net"}
+        "401":
+          application/json: {}
+  createSSOUser:
+    speakeasy-default-create-SSO-user:
+      parameters:
+        query:
+          origin: "END_CUSTOMER_PORTAL"
+      requestBody:
+        application/json: {"email": "testemail921@yopmail.com", "first_name": "John", "last_name": "Doe"}
+      responses:
+        "201":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "portal_user", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}}
+        "400":
+          application/json: {}
+  deletePortal:
+    speakeasy-default-delete-portal:
+      parameters:
+        query:
+          origin: "END_CUSTOMER_PORTAL"
+      responses:
+        "401":
+          application/json: {}
+  extraPermissionAttributes:
+    speakeasy-default-extra-permission-attributes:
+      responses:
+        "200":
+          application/json: {}
+        "500":
+          application/json: {}
+  fetchPortalUsersByRelatedEntity:
+    speakeasy-default-fetch-portal-users-by-related-entity:
+      parameters:
+        query:
+          entity_id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+          slug: "contact"
+      responses:
+        "200":
+          application/json: {"portalUsers": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "portal_user", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}]}
+        "401":
+          application/json: {}
+  getAllPortalConfigs:
+    speakeasy-default-get-all-portal-configs:
+      responses:
+        "200":
+          application/json: {"data": [{"allowed_file_extensions": {"archive": ["zip"], "audioVideo": ["mp4"], "cad": ["cad"], "calendar": ["ics"], "document": ["pdf"], "email": ["eml"], "image": ["jpg"], "other": ["txt"], "presentation": ["ppt"], "spreadsheet": ["xls"]}, "approval_state_attributes": {"contact": ["name", "address"], "contract": ["installment_amount"]}, "cognito_details": {"cognito_user_pool_arn": "arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341", "cognito_user_pool_client_id": "6bsd0jkgoie74k2i8mrhc1vest", "cognito_user_pool_id": "eu-central-1_CUEQRNbUb", "password_policy": {"minimum_length": 8, "require_lowercase": true, "require_numbers": true, "require_symbols": true, "require_uppercase": true}}, "contract_identifiers": [{"name": "email", "schema": "contact"}, {"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "design_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "domain": "abc.com", "email_templates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "entity_edit_rules": [{"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}], "grants": [{"action": "entity-read", "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "images": {"orderLeftTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg", "orderRightTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg", "welcomeBanner": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg"}, "name": "Installer Portal", "org_name": "ABC Company", "organization_id": "12345", "registration_identifiers": [{"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "triggered_journeys": [{"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}]}, {"allowed_file_extensions": {"archive": ["zip"], "audioVideo": ["mp4"], "cad": ["cad"], "calendar": ["ics"], "document": ["pdf"], "email": ["eml"], "image": ["jpg"], "other": ["txt"], "presentation": ["ppt"], "spreadsheet": ["xls"]}, "approval_state_attributes": {"contact": ["name", "address"], "contract": ["installment_amount"]}, "cognito_details": {"cognito_user_pool_arn": "arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341", "cognito_user_pool_client_id": "6bsd0jkgoie74k2i8mrhc1vest", "cognito_user_pool_id": "eu-central-1_CUEQRNbUb", "password_policy": {"minimum_length": 8, "require_lowercase": true, "require_numbers": true, "require_symbols": true, "require_uppercase": true}}, "contract_identifiers": [{"name": "email", "schema": "contact"}, {"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "design_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "domain": "abc.com", "email_templates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "entity_edit_rules": [], "grants": [{"action": "entity-read", "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "images": {"orderLeftTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg", "orderRightTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg", "welcomeBanner": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg"}, "name": "Installer Portal", "org_name": "ABC Company", "organization_id": "12345", "registration_identifiers": [{"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "triggered_journeys": [{"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}]}]}
+        "401":
+          application/json: {}
+  getECPContact:
+    speakeasy-default-get-ECP-contact:
+      parameters:
+        query:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}}
+        "401":
+          application/json: {}
+  getEmailTemplates:
+    speakeasy-default-get-email-templates:
+      parameters:
+        query:
+          origin: "END_CUSTOMER_PORTAL"
+      responses:
+        "200":
+          application/json: {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}
+        "401":
+          application/json: {}
+  getEntityIdentifiers:
+    speakeasy-default-get-entity-identifiers:
+      parameters:
+        path:
+          slug: "contact"
+      responses:
+        "200":
+          application/json: {"data": [{"name": "contract_number", "type": "string"}]}
+        "401":
+          application/json: {}
+  getExternalLinks:
+    speakeasy-default-get-external-links:
+      parameters:
+        query:
+          contactId: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: [{"id": "<id>", "label": {"key": "<value>", "key1": "<value>"}, "link": "<value>", "type": "seamless"}, {"id": "<id>", "label": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "link": "<value>", "type": "link"}, {"id": "<id>", "label": {"key": "<value>"}, "link": "<value>", "type": "link"}]
+        "401":
+          application/json: {}
+  getOrgPortalConfig:
+    speakeasy-default-get-org-portal-config:
+      parameters:
+        query:
+          origin: "INSTALLER_PORTAL"
+      responses:
+        "200":
+          application/json: {"allowed_file_extensions": {"archive": ["zip"], "audioVideo": ["mp4"], "cad": ["cad"], "calendar": ["ics"], "document": ["pdf"], "email": ["eml"], "image": ["jpg"], "other": ["txt"], "presentation": ["ppt"], "spreadsheet": ["xls"]}, "approval_state_attributes": {"contact": ["name", "address"], "contract": ["installment_amount"]}, "certificate_details": {"failed_reason": "CAA_ERROR"}, "cognito_details": {"cognito_user_pool_arn": "arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341", "cognito_user_pool_client_id": "6bsd0jkgoie74k2i8mrhc1vest", "cognito_user_pool_id": "eu-central-1_CUEQRNbUb", "password_policy": {"minimum_length": 8, "require_lowercase": true, "require_numbers": true, "require_symbols": true, "require_uppercase": true}}, "contract_identifiers": [{"name": "email", "schema": "contact"}, {"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "design_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "domain": "abc.com", "email_templates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "entity_edit_rules": [{"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}, {"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}, {"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}], "grants": [], "images": {"orderLeftTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg", "orderRightTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg", "welcomeBanner": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg"}, "name": "Installer Portal", "org_name": "ABC Company", "organization_id": "12345", "registration_identifiers": [{"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "triggered_journeys": [{"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}]}
+        "401":
+          application/json: {}
+  getPortalConfig:
+    speakeasy-default-get-portal-config:
+      responses:
+        "200":
+          application/json: {"allowed_file_extensions": {"archive": ["zip"], "audioVideo": ["mp4"], "cad": ["cad"], "calendar": ["ics"], "document": ["pdf"], "email": ["eml"], "image": ["jpg"], "other": ["txt"], "presentation": ["ppt"], "spreadsheet": ["xls"]}, "approval_state_attributes": {"contact": ["name", "address"], "contract": ["installment_amount"]}, "cognito_details": {"cognito_user_pool_arn": "arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341", "cognito_user_pool_client_id": "6bsd0jkgoie74k2i8mrhc1vest", "cognito_user_pool_id": "eu-central-1_CUEQRNbUb", "password_policy": {"minimum_length": 8, "require_lowercase": true, "require_numbers": true, "require_symbols": true, "require_uppercase": true}}, "contract_identifiers": [{"name": "email", "schema": "contact"}, {"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "design_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "domain": "abc.com", "email_templates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "entity_edit_rules": [], "grants": [{"action": "entity-read", "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "images": {"orderLeftTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg", "orderRightTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg", "welcomeBanner": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg"}, "name": "Installer Portal", "org_name": "ABC Company", "organization_id": "12345", "registration_identifiers": [{"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "triggered_journeys": [{"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}]}
+        "401":
+          application/json: {}
+  getPortalExtensions:
+    speakeasy-default-get-portal-extensions:
+      responses:
+        "200":
+          application/json: []
+        "401":
+          application/json: {}
+  getPortalWidgets:
+    speakeasy-default-get-portal-widgets:
+      responses:
+        "200":
+          application/json: {"widgets": [{"id": "<id>", "listIndex": 233055, "type": "ACTION_WIDGET"}]}
+        "401":
+          application/json: {}
+  getRecipientsToNotifyOnAutomation:
+    speakeasy-default-get-recipients-to-notify-on-automation:
+      requestBody:
+        application/json: {"emails": ["john@doe.com"], "template_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}
+      responses:
+        "200":
+          application/json: {"recipients": [{"email": "john@doe.com", "recipient_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"email": "john@doe.com", "recipient_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"email": "john@doe.com", "recipient_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}]}
+        "500":
+          application/json: {}
+  getRegistrationIdentifiers:
+    speakeasy-default-get-registration-identifiers:
+      responses:
+        "200":
+          application/json: {"data": {"contact": [{"label": "First name", "name": "first_name", "type": "string"}], "contract": [{"label": "Contract number", "name": "contract_number", "type": "string"}]}}
+        "401":
+          application/json: {}
+  getResolvedExternalLink:
+    speakeasy-default-get-resolved-external-link:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+        query:
+          contactId: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "label": {"key": "<value>", "key1": "<value>", "key2": "<value>"}, "link": "<value>", "type": "journey"}
+        "401":
+          application/json: {}
+  getValidSecondaryAttributes:
+    speakeasy-default-get-valid-secondary-attributes:
+      responses:
+        "200":
+          application/json: {"data": [{"name": "first_name", "type": "string"}]}
+        "401":
+          application/json: {}
+  loginToPortalAsUser:
+    speakeasy-default-login-to-portal-as-user:
+      requestBody:
+        application/json: {"email": "portal-customer@email.com"}
+      responses:
+        "200":
+          application/json: {}
+  replaceECPTemplateVariables:
+    speakeasy-default-replace-ECP-template-variables:
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"customerPortal": {"entityLink": "https://end-customer-portal.ecp.dev.epilot.io/requests/opportunities/b8fef220-abe0-4382-a704-26848f60977b", "invitationLink": "https://end-customer-portal.ecp.dev.epilot.io/register?contactId=7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51&email=john@doe.com", "newDocumentLink": "https://end-customer-portal.ecp.dev.epilot.io/requests/opportunities/b8fef220-abe0-4382-a704-26848f60977b", "userEmailsOnEntity": ["john@doe.com", "mary@doe.com"]}, "installerPortal": {"entityLink": "https://installer-portal.ecp.dev.epilot.io/requests/opportunities/b8fef220-abe0-4382-a704-26848f60977b", "invitationLink": "https://installer-portal.ecp.dev.epilot.io/register?contactId=7aa44fb8-d60e-40cc-9a3a-ba09a1ff7f51&email=john@doe.com", "newDocumentLink": "https://installer-portal.ecp.dev.epilot.io/requests/opportunities/b8fef220-abe0-4382-a704-26848f60977b", "userEmailsOnEntity": ["peter@doe.com", "jane@doe.com"]}}
+        "401":
+          application/json: {}
+  resendConfirmationEmail:
+    speakeasy-default-resend-confirmation-email:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {}
+  savePortalFiles:
+    speakeasy-default-save-portal-files:
+      requestBody:
+        application/json: {"files": [{"_tags": ["12345"], "file_type": "orderRightTeaser", "filename": "12345", "s3ref": {"bucket": "12345", "key": "12345"}}, {"_tags": ["12345"], "file_type": "orderRightTeaser", "filename": "12345", "s3ref": {"bucket": "12345", "key": "12345"}}, {"_tags": ["12345"], "file_type": "orderRightTeaser", "filename": "12345", "s3ref": {"bucket": "12345", "key": "12345"}}], "origin": "INSTALLER_PORTAL"}
+      responses:
+        "201":
+          application/json: {"createdFiles": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>", "key2": "<value>"}]}
+        "400":
+          application/json: {}
+  upsertEmailTemplates:
+    speakeasy-default-upsert-email-templates:
+      parameters:
+        query:
+          origin: "END_CUSTOMER_PORTAL"
+      requestBody:
+        application/json: {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}
+      responses:
+        "200":
+          application/json: {"emailTemplates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "message": "Email Templates upserted successfully"}
+        "401":
+          application/json: {}
+  upsertPortal:
+    speakeasy-default-upsert-portal:
+      parameters:
+        query:
+          origin: "INSTALLER_PORTAL"
+      requestBody:
+        application/json: {"allowed_file_extensions": {"archive": ["zip"], "audioVideo": ["mp4"], "cad": ["cad"], "calendar": ["ics"], "document": ["pdf"], "email": ["eml"], "image": ["jpg"], "other": ["txt"], "presentation": ["ppt"], "spreadsheet": ["xls"]}, "approval_state_attributes": {"contact": ["name", "address"], "contract": ["installment_amount"]}, "cognito_details": {"cognito_user_pool_arn": "arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341", "cognito_user_pool_client_id": "6bsd0jkgoie74k2i8mrhc1vest", "cognito_user_pool_id": "eu-central-1_CUEQRNbUb", "password_policy": {"minimum_length": 8, "require_lowercase": true, "require_numbers": true, "require_symbols": true, "require_uppercase": true}}, "config": "<value>", "contract_identifiers": [{"name": "email", "schema": "contact"}, {"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "default_user_to_notify": {"onPendingUser": [{"display_name": "John", "email": "j.doe@epilot.cloud", "image_uri": {"key": "fuafjvoHKsudhfagweucjasdvga", "original": "https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original", "thumbnail_32": "https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original?w=32&h=32", "thumbnail_64": "https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original?w=64&h=64"}, "org_id": "123", "phone": "12345 67890", "type": "user", "user_id": "123456"}, {"display_name": "John", "email": "j.doe@epilot.cloud", "image_uri": {"key": "fuafjvoHKsudhfagweucjasdvga", "original": "https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original", "thumbnail_32": "https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original?w=32&h=32", "thumbnail_64": "https://fuafjvoHKsu.cloudimg.io/v7/e-mage-sam-bucket-dev.s3.eu-central-1.amazonaws.com/files/fuafjvoHKsudhfagweucjasdvga/original?w=64&h=64"}, "org_id": "123", "phone": "12345 67890", "type": "user", "user_id": "123456"}]}, "design_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "domain": "abc.com", "email_templates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "entity_actions": [{"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "slug": "contact"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "slug": "contact"}], "entity_edit_rules": [{"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}, {"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}], "images": {"orderLeftTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg", "orderRightTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg", "welcomeBanner": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg"}, "name": "Installer Portal", "registration_identifiers": [{"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "triggered_journeys": [{"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}]}
+      responses:
+        "201":
+          application/json: {"allowed_file_extensions": {"archive": ["zip"], "audioVideo": ["mp4"], "cad": ["cad"], "calendar": ["ics"], "document": ["pdf"], "email": ["eml"], "image": ["jpg"], "other": ["txt"], "presentation": ["ppt"], "spreadsheet": ["xls"]}, "approval_state_attributes": {"contact": ["name", "address"], "contract": ["installment_amount"]}, "cognito_details": {"cognito_user_pool_arn": "arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341", "cognito_user_pool_client_id": "6bsd0jkgoie74k2i8mrhc1vest", "cognito_user_pool_id": "eu-central-1_CUEQRNbUb", "password_policy": {"minimum_length": 8, "require_lowercase": true, "require_numbers": true, "require_symbols": true, "require_uppercase": true}}, "contract_identifiers": [{"name": "email", "schema": "contact"}, {"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "design_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "domain": "abc.com", "email_templates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "entity_edit_rules": [{"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}, {"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}], "grants": [{"action": "entity-read", "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}, {"action": "entity-read", "resource": "entity:123:contact:f7c22299-ca72-4bca-8538-0a88eeefc947"}], "images": {"orderLeftTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg", "orderRightTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg", "welcomeBanner": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg"}, "name": "Installer Portal", "org_name": "ABC Company", "organization_id": "12345", "registration_identifiers": [{"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "triggered_journeys": [{"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}]}
+        "400":
+          application/json: {}
+  upsertPortalWidget:
+    speakeasy-default-upsert-portal-widget:
+      parameters:
+        query:
+          origin: "INSTALLER_PORTAL"
+      requestBody:
+        application/json: {"widgets": [{"id": "<id>", "listIndex": 253590, "type": "METER_CHART_WIDGET"}, {"id": "<id>", "listIndex": 271617, "type": "PAYMENT_WIDGET"}, {"id": "<id>", "listIndex": 291441, "type": "TEASER_WIDGET"}]}
+      responses:
+        "201":
+          application/json: {"widgets": [{"id": "<id>", "listIndex": 692943, "type": "TEASER_WIDGET"}]}
+        "400":
+          application/json: {}
+  getCustomerBalance:
+    speakeasy-default-get-customer-balance:
+      responses:
+        "200":
+          application/json: {"balance": 8990, "balance_currency": "EUR", "balance_decimal": "89.90"}
+  addContractByIdentifiers:
+    speakeasy-default-add-contract-by-identifiers:
+      requestBody:
+        application/json: {"contract": {"contract_number": "123456"}, "meter": {"meter_number": "123456"}}
+      responses:
+        "200":
+          application/json: {"data": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}], "hits": "4581.83"}
+        "400":
+          application/json: {}
+        "409":
+          application/json: {"reason": "MULTIPLE"}
+  createCustomEntityActivity:
+    speakeasy-default-create-custom-entity-activity:
+      responses:
+        "201":
+          application/json: {"_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "message": "{{caller}} did something with {{entity payload.entity.id}}.", "payload": {"caller": {"PortalAuth": {"token": {"cognito:username": "john@doe.com", "custom:contact_entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "custom:portal_user_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "email": "john@doe.com", "sub": "8cc73157-3dc4-47f3-b163-d3a5039bba72"}}}, "entity": {"id": "5da0a718-c822-403d-9f5d-20d4584e0528"}}, "title": "My custom activity", "type": "MyCustomActivity"}
+        "401":
+          application/json: {}
+  createMeterReading:
+    speakeasy-default-create-meter-reading:
+      requestBody:
+        application/json: {"counter_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "meter_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "read_by": "John Doe", "reason": "Storing the feed-in record", "source": "ERP", "timestamp": "2022-10-10T00:00:00Z", "value": 240}
+      responses:
+        "200":
+          application/json: {"data": {"counter_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "meter_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "read_by": "John Doe", "reason": "Storing the feed-in record", "source": "ERP", "timestamp": "2022-10-10T00:00:00Z", "value": 240}}
+        "400":
+          application/json: {}
+        "401":
+          application/json: {}
+  deleteEntityFile:
+    speakeasy-default-delete-entity-file:
+      requestBody:
+        application/json: {"entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "entity_type": "order", "file_entity_ids": ["5da0a718-c822-403d-9f5d-20d4584e0528"]}
+      responses:
+        "202":
+          application/json: {"deletedFiles": ["5da0a718-c822-403d-9f5d-20d4584e0528"]}
+        "400":
+          application/json: {}
+  deletePortalUser:
+    speakeasy-default-delete-portal-user:
+      responses:
+        "200":
+          application/json: {"data": "5da0a718-c822-403d-9f5d-20d4584e0528"}
+        "401":
+          application/json: {}
+  getAllContracts:
+    speakeasy-default-get-all-contracts:
+      parameters:
+        query:
+          from: 0
+          size: 100
+      responses:
+        "200":
+          application/json: {"data": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "account_number": "67890", "additional_addresses": "789 Oak St, Anytown", "balance": 8990, "balance_currency": "EUR", "billing_address": "123 Main St, Anytown", "billing_due_day": 2, "billing_duration_amount": 30, "billing_period": "monthly", "branch": "power", "contract_name": "Grid Contract", "contract_number": "12345", "delivery_address": "456 Elm St, Anytown", "description": "This contract is for the supply of widgets.", "installment_amount": 10050, "notice_time_amount": 30, "notice_time_unit": "months", "renewal_duration_amount": 365, "renewal_duration_unit": "years", "start_date": "2021-01-01", "status": "approved", "termination_date": "2022-01-01", "termination_reason": "Non-payment", "key": "<value>", "key1": "<value>", "key2": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "account_number": "67890", "additional_addresses": "789 Oak St, Anytown", "balance": 8990, "balance_currency": "EUR", "billing_address": "123 Main St, Anytown", "billing_due_day": 2, "billing_duration_amount": 30, "billing_period": "monthly", "branch": "power", "contract_name": "Grid Contract", "contract_number": "12345", "delivery_address": "456 Elm St, Anytown", "description": "This contract is for the supply of widgets.", "installment_amount": 10050, "notice_time_amount": 30, "notice_time_unit": "months", "renewal_duration_amount": 365, "renewal_duration_unit": "years", "start_date": "2021-01-01", "status": "approved", "termination_date": "2022-01-01", "termination_reason": "Non-payment", "key": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "account_number": "67890", "additional_addresses": "789 Oak St, Anytown", "balance": 8990, "balance_currency": "EUR", "billing_address": "123 Main St, Anytown", "billing_due_day": 2, "billing_duration_amount": 30, "billing_period": "monthly", "branch": "power", "contract_name": "Grid Contract", "contract_number": "12345", "delivery_address": "456 Elm St, Anytown", "description": "This contract is for the supply of widgets.", "installment_amount": 10050, "notice_time_amount": 30, "notice_time_unit": "months", "renewal_duration_amount": 365, "renewal_duration_unit": "years", "start_date": "2021-01-01", "status": "approved", "termination_date": "2022-01-01", "termination_reason": "Non-payment", "key": "<value>", "key1": "<value>"}]}
+        "401":
+          application/json: {}
+  getAllFiles:
+    speakeasy-default-get-all-files:
+      parameters:
+        query:
+          from: 0
+          size: 0
+          entity_ids: ["5da0a718-c822-403d-9f5d-20d4584e0528"]
+      responses:
+        "200":
+          application/json: {"hits": 50, "results": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_relations": [{"_schema": "contact", "_title": "Opportunity ABC", "entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}], "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "file_date": "2021-02-09T12:41:43.662Z", "filename": "document.pdf", "mime_type": "application/pdf", "public_url": "https://epilot-files-prod.s3.eu-central-1.amazonaws.com/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf", "key": "<value>"}]}
+        "401":
+          application/json: {}
+  getAllOpportunities:
+    speakeasy-default-get-all-opportunities:
+      parameters:
+        query:
+          from: 0
+          size: 100
+      responses:
+        "200":
+          application/json: {"data": []}
+        "401":
+          application/json: {}
+  getAllOrders:
+    speakeasy-default-get-all-orders:
+      parameters:
+        query:
+          from: 0
+          size: 100
+      responses:
+        "200":
+          application/json: {"data": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}]}
+        "401":
+          application/json: {}
+  getBillingEvents:
+    speakeasy-default-get-billing-events:
+      parameters:
+        query:
+          from: 0
+          size: 100
+          entity_id: ["5da0a718-c822-403d-9f5d-20d4584e0528"]
+          sort: "due_date:asc"
+      responses:
+        "200":
+          application/json: {"hits": 50, "results": []}
+  getConsumption:
+    speakeasy-default-get-consumption:
+      parameters:
+        query:
+          extensionId: "<id>"
+          hookId: "<id>"
+          meter_id: "<id>"
+          from: "2023-05-13T18:38:28.810Z"
+          to: "2023-10-14T20:40:01.754Z"
+          interval: "P1M"
+      responses:
+        "200":
+          application/json: {}
+        "401":
+          application/json: {}
+  getContact:
+    speakeasy-default-get-contact:
+      responses:
+        "200":
+          application/json: {"entity": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, "files": [], "relations": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}]}
+        "401":
+          application/json: {}
+  getContract:
+    speakeasy-default-get-contract:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"entity": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "account_number": "67890", "additional_addresses": "789 Oak St, Anytown", "balance": 8990, "balance_currency": "EUR", "billing_address": "123 Main St, Anytown", "billing_due_day": 2, "billing_duration_amount": 30, "billing_period": "monthly", "branch": "power", "contract_name": "Grid Contract", "contract_number": "12345", "delivery_address": "456 Elm St, Anytown", "description": "This contract is for the supply of widgets.", "installment_amount": 10050, "notice_time_amount": 30, "notice_time_unit": "months", "renewal_duration_amount": 365, "renewal_duration_unit": "years", "start_date": "2021-01-01", "status": "approved", "termination_date": "2022-01-01", "termination_reason": "Non-payment"}, "files": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}], "meters": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "meter", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "meter", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}], "orders": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>", "key2": "<value>"}], "relations": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>", "key2": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}], "workflow": [{"id": "8gja72h6kas6h", "name": "Lead Qualification", "trigger": "MANUAL", "status": "STARTED", "creationTime": "2021-04-27T12:01:13.000Z", "lastUpdateTime": "2021-04-27T12:01:13.000Z", "dueDate": "2021-04-27T12:01:13.000Z", "assignedTo": ["252", "29052"], "flow": [{"id": "sectionId1", "name": "Initial Information Gathering", "steps": [{"id": "sada5641f3a21", "name": "Call client and confirm address and product", "status": "ASSIGNED", "assignedTo": ["11"]}, {"id": "sada5641f3a22", "name": "Check product availability", "status": "UNASSIGNED"}, {"id": "sada5641f3a23", "name": "Send email confirming contact with the client", "status": "SKIPPED"}]}, {"id": "firstLevelStepId1", "name": "Print and send catalog", "status": "SKIPPED", "dueDate": "2023-01-15T20:00:00"}]}]}
+        "401":
+          application/json: {}
+  getCosts:
+    speakeasy-default-get-costs:
+      parameters:
+        query:
+          extensionId: "<id>"
+          hookId: "<id>"
+          meter_id: "<id>"
+          from: "2022-02-07T07:43:34.088Z"
+          to: "2024-06-10T07:17:02.092Z"
+          interval: "P1D"
+      responses:
+        "200":
+          application/json: {"costs": [{"tax_behavior": "exclusive", "tax_rate": 19, "timestamp": "2022-03-10T11:26:02.423Z", "unit_amount": 1234, "unit_amount_currency": "EUR", "unit_amount_decimal": "12.34"}, {"tax_behavior": "exclusive", "tax_rate": 19, "timestamp": "2022-08-28T19:33:56.994Z", "unit_amount": 1234, "unit_amount_currency": "EUR", "unit_amount_decimal": "12.34"}]}
+        "401":
+          application/json: {}
+  getFileById:
+    speakeasy-default-get-file-by-id:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"file": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_relations": [{"_schema": "contact", "_title": "Opportunity ABC", "entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"_schema": "contact", "_title": "Opportunity ABC", "entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"_schema": "contact", "_title": "Opportunity ABC", "entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}], "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "file_date": "2021-02-09T12:41:43.662Z", "filename": "document.pdf", "mime_type": "application/pdf", "public_url": "https://epilot-files-prod.s3.eu-central-1.amazonaws.com/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf", "key": "<value>", "key1": "<value>"}}
+        "401":
+          application/json: {}
+  getFilesCountByEntity:
+    speakeasy-default-get-files-count-by-entity:
+      responses:
+        "200":
+          application/json: [{"_schema": "contact", "_title": "Opportunity ABC", "entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "file_count": 2}, {"_schema": "contact", "_title": "Opportunity ABC", "entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "file_count": 2}, {"_schema": "contact", "_title": "Opportunity ABC", "entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "file_count": 2}]
+        "401":
+          application/json: {}
+  getOpportunity:
+    speakeasy-default-get-opportunity:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"entity": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "opportunity", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}, "files": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}], "orders": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>", "key2": "<value>"}], "relations": [], "workflow": [{"id": "8gja72h6kas6h", "name": "Lead Qualification", "trigger": "MANUAL", "status": "STARTED", "creationTime": "2021-04-27T12:01:13.000Z", "lastUpdateTime": "2021-04-27T12:01:13.000Z", "dueDate": "2021-04-27T12:01:13.000Z", "assignedTo": ["252", "29052"], "flow": [{"id": "sectionId1", "name": "Initial Information Gathering", "steps": [{"id": "sada5641f3a21", "name": "Call client and confirm address and product", "status": "ASSIGNED", "assignedTo": ["11"]}, {"id": "sada5641f3a22", "name": "Check product availability", "status": "UNASSIGNED"}, {"id": "sada5641f3a23", "name": "Send email confirming contact with the client", "status": "SKIPPED"}]}, {"id": "firstLevelStepId1", "name": "Print and send catalog", "status": "SKIPPED", "dueDate": "2023-01-15T20:00:00"}]}]}
+        "401":
+          application/json: {}
+  getOrder:
+    speakeasy-default-get-order:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"crossSellableProducts": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "product", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "product", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}], "entity": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, "files": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}], "products": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "product", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "product", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "product", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}], "relations": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}], "workflow": [{"id": "8gja72h6kas6h", "name": "Lead Qualification", "trigger": "MANUAL", "status": "STARTED", "creationTime": "2021-04-27T12:01:13.000Z", "lastUpdateTime": "2021-04-27T12:01:13.000Z", "dueDate": "2021-04-27T12:01:13.000Z", "assignedTo": ["252", "29052"], "flow": [{"id": "sectionId1", "name": "Initial Information Gathering", "steps": [{"id": "sada5641f3a21", "name": "Call client and confirm address and product", "status": "ASSIGNED", "assignedTo": ["11"]}, {"id": "sada5641f3a22", "name": "Check product availability", "status": "UNASSIGNED"}, {"id": "sada5641f3a23", "name": "Send email confirming contact with the client", "status": "SKIPPED"}]}, {"id": "firstLevelStepId1", "name": "Print and send catalog", "status": "SKIPPED", "dueDate": "2023-01-15T20:00:00"}]}]}
+        "401":
+          application/json: {}
+  getOrganizationSettings:
+    speakeasy-default-get-organization-settings:
+      responses:
+        "200":
+          application/json: {}
+        "401":
+          application/json: {}
+  getPortalUser:
+    speakeasy-default-get-portal-user:
+      responses:
+        "200":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "portal_user", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}}
+        "401":
+          application/json: {}
+  getPrices:
+    speakeasy-default-get-prices:
+      parameters:
+        query:
+          extensionId: "<id>"
+          hookId: "<id>"
+          meter_id: "<id>"
+          from: "2022-07-16T08:39:13.009Z"
+          to: "2024-08-14T14:51:12.268Z"
+          interval: "PT15M"
+      responses:
+        "200":
+          application/json: {"prices": [{"components": {"auction_price_amount": 1000, "auction_price_amount_decimal": "10.00", "grid_fee_amount": 100, "grid_fee_amount_decimal": "1.00", "margin_amount": 34, "margin_amount_decimal": "0.34", "source_fee_amount": 50, "source_fee_amount_decimal": "0.50", "taxes_levies_amount": 50, "taxes_levies_amount_decimal": "0.50"}, "tax_behavior": "exclusive", "tax_rate": 19, "timestamp": "2022-12-05T17:13:02.570Z", "unit_amount": 1234, "unit_amount_currency": "EUR", "unit_amount_decimal": "12.34"}, {"components": {"auction_price_amount": 1000, "auction_price_amount_decimal": "10.00", "grid_fee_amount": 100, "grid_fee_amount_decimal": "1.00", "margin_amount": 34, "margin_amount_decimal": "0.34", "source_fee_amount": 50, "source_fee_amount_decimal": "0.50", "taxes_levies_amount": 50, "taxes_levies_amount_decimal": "0.50"}, "tax_behavior": "exclusive", "tax_rate": 19, "timestamp": "2022-11-05T12:59:45.855Z", "unit_amount": 1234, "unit_amount_currency": "EUR", "unit_amount_decimal": "12.34"}]}
+        "401":
+          application/json: {}
+  getSchemas:
+    speakeasy-default-get-schemas:
+      responses:
+        "200":
+          application/json: {"schemas": []}
+        "401":
+          application/json: {}
+  getSearchResultsForOpportunities:
+    speakeasy-default-get-search-results-for-opportunities:
+      parameters:
+        query:
+          from: 0
+          size: 1000
+      requestBody:
+        application/json: {"purposes": ["5da0a718-c822-403d-9f5d-20d4584e0528"]}
+      responses:
+        "200":
+          application/json: {"data": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "opportunity", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "opportunity", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}]}
+        "401":
+          application/json: {}
+  getSearchableAttributesForOpportunities:
+    speakeasy-default-get-searchable-attributes-for-opportunities:
+      parameters:
+        query:
+          from: 0
+          size: 1000
+      responses:
+        "200":
+          application/json: {"data": []}
+        "401":
+          application/json: {}
+  postOrderAcceptance:
+    speakeasy-default-post-order-acceptance:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}}
+        "401":
+          application/json: {}
+  revokeToken:
+    speakeasy-default-revoke-token:
+      requestBody:
+        application/json: {"refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"}
+      responses:
+        "200":
+          application/json: {}
+        "401":
+          application/json: {}
+  saveEntityFile:
+    speakeasy-default-save-entity-file:
+      requestBody:
+        application/json: {"entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "entity_type": "order", "files": [{"filename": "document.pdf", "s3ref": {"bucket": "12345", "key": "12345"}}]}
+      responses:
+        "201":
+          application/json: {"createdFiles": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}]}
+        "400":
+          application/json: {}
+  searchPaymentRelationsInEntities:
+    speakeasy-default-search-payment-relations-in-entities:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"hits": 50, "results": []}
+  searchPortalUserEntities:
+    speakeasy-default-search-portal-user-entities:
+      requestBody:
+        application/json: {"fields": ["_id", "_title", "first_name"], "slug": "contact", "sort": "_created_at:desc"}
+      responses:
+        "200":
+          application/json: {"hits": 50, "results": [{"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>", "key2": "<value>"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}, {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}]}
+        "401":
+          application/json: {}
+  trackFileDownloaded:
+    speakeasy-default-track-file-downloaded:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"file": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_relations": [], "_schema": "file", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "file_date": "2021-02-09T12:41:43.662Z", "filename": "document.pdf", "mime_type": "application/pdf", "public_url": "https://epilot-files-prod.s3.eu-central-1.amazonaws.com/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf", "key": "<value>", "key1": "<value>"}}
+        "401":
+          application/json: {}
+  triggerEntityAccessEvent:
+    speakeasy-default-trigger-entity-access-event:
+      parameters:
+        path:
+          schema: "contract"
+        query:
+          entity_id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+          origin: "END_CUSTOMER_PORTAL"
+      responses:
+        "200":
+          application/json: {}
+  updateContact:
+    speakeasy-default-update-contact:
+      responses:
+        "200":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "contact", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}}
+        "401":
+          application/json: {}
+        "403":
+          application/json: {}
+  updateContract:
+    speakeasy-default-update-contract:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "account_number": "67890", "additional_addresses": "789 Oak St, Anytown", "balance": 8990, "balance_currency": "EUR", "billing_address": "123 Main St, Anytown", "billing_due_day": 2, "billing_duration_amount": 30, "billing_period": "monthly", "branch": "power", "contract_name": "Grid Contract", "contract_number": "12345", "delivery_address": "456 Elm St, Anytown", "description": "This contract is for the supply of widgets.", "installment_amount": 10050, "notice_time_amount": 30, "notice_time_unit": "months", "renewal_duration_amount": 365, "renewal_duration_unit": "years", "start_date": "2021-01-01", "status": "approved", "termination_date": "2022-01-01", "termination_reason": "Non-payment"}}
+        "401":
+          application/json: {}
+        "403":
+          application/json: {}
+  updateOpportunity:
+    speakeasy-default-update-opportunity:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      requestBody:
+        application/json: {"key": "<value>", "key1": "<value>"}
+      responses:
+        "200":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "opportunity", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z"}}
+        "401":
+          application/json: {}
+  updateOrder:
+    speakeasy-default-update-order:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+      responses:
+        "200":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "order", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>", "key2": "<value>"}}
+        "401":
+          application/json: {}
+  updatePortalUser:
+    speakeasy-default-update-portal-user:
+      responses:
+        "200":
+          application/json: {"data": {"_created_at": "2021-02-09T12:41:43.662Z", "_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "_org": "123", "_schema": "portal_user", "_tags": ["example", "mock"], "_title": "Example Entity", "_updated_at": "2021-02-09T12:41:43.662Z", "key": "<value>", "key1": "<value>"}}
+        "401":
+          application/json: {}
+  updatePortalUserEmail:
+    speakeasy-default-update-portal-user-email:
+      requestBody:
+        application/json: {"email": "john@doe.com", "password": "XPF599YfftQdi1n"}
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: {}
+  updateWorkflowStepAsDone:
+    speakeasy-default-update-workflow-step-as-done:
+      parameters:
+        path:
+          workflow_id: "0bjwcxc827t"
+          step_id: "q1d6vcbsqvn"
+      responses:
+        "200":
+          application/json: {"startedTime": "2024-01-12T13:29:55.942Z", "requirements": [], "created": "2023-10-20T17:41:10.256Z", "executionType": "MANUAL", "assignedToInProgress": "-", "sectionId": "lzxsw2sblj7", "type": "STEP", "entityRefId": "q1d6vcbsqvn", "assignedTo": ["10014532"], "lastUpdated": "2024-01-13T05:18:43.838Z", "ecp": {}, "userIds": [], "name": "Hinterlege den vereinbarten LIC Termin", "id": "q1d6vcbsqvn", "definitionId": "9UjHKq", "status": "COMPLETED", "manuallyCreated": false, "enabled": true, "completedTime": "2024-01-13T05:18:43.827Z"}
+  validateCadenceEntityEditRules:
+    speakeasy-default-validate-cadence-entity-edit-rules:
+      parameters:
+        path:
+          slug: "contact"
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+        query: {}
+      responses:
+        "200":
+          application/json: {"failedRule": {"slug": "contact"}, "isBlockedByRules": false}
+  validateToken:
+    speakeasy-default-validate-token:
+      responses:
+        "401":
+          application/json: {}
+  getEntityActivityFeed:
+    speakeasy-default-get-entity-activity-feed:
+      parameters:
+        path:
+          slug: "contact"
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+        query:
+          type: "SyncActivity"
+      responses:
+        "200":
+          application/json: {"results": [{"_id": "01F130Q52Q6MWSNS8N2AVXV4JN", "message": "{{caller}} did something with {{entity payload.entity.id}}.", "payload": {"caller": {"PortalAuth": {"token": {"cognito:username": "john@doe.com", "custom:contact_entity_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "custom:portal_user_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "email": "john@doe.com", "sub": "8cc73157-3dc4-47f3-b163-d3a5039bba72"}}}, "entity": {"id": "5da0a718-c822-403d-9f5d-20d4584e0528"}}, "title": "My custom activity", "type": "MyCustomActivity"}], "total": 1}
+  checkContactExists:
+    speakeasy-default-check-contact-exists:
+      parameters:
+        query:
+          origin: "END_CUSTOMER_PORTAL"
+      requestBody:
+        application/json: {"org_id": "728", "registration_identifiers": {"contact": {"email": "john.doe@example.com"}, "contract": {"contract_number": "123456"}}}
+      responses:
+        "200":
+          application/json: {"contactId": "5da0a718-c822-403d-9f5d-20d4584e0528", "exists": true}
+        "400":
+          application/json: {}
+  confirmUser:
+    speakeasy-default-confirm-user:
+      parameters:
+        query:
+          confirmation_link_token: "<value>"
+      responses:
+        "200":
+          application/json: {"confirmed": true}
+        "400":
+          application/json: {"reason": "invalid_token"}
+        "500":
+          application/json: {}
+  confirmUserWithUserId:
+    speakeasy-default-confirm-user-with-user-id:
+      parameters:
+        path:
+          id: "5da0a718-c822-403d-9f5d-20d4584e0528"
+        query:
+          origin: "INSTALLER_PORTAL"
+          org_id: "123"
+      responses:
+        "500":
+          application/json: {}
+  createUser:
+    speakeasy-default-create-user:
+      parameters:
+        query:
+          origin: "INSTALLER_PORTAL"
+      requestBody:
+        application/json: {"contactId": "5da0a718-c822-403d-9f5d-20d4584e0528", "email": "testemail921@yopmail.com", "first_name": "John", "last_name": "Doe", "orgId": "728", "password": "124n$aAJs*d41h4", "registration_identifiers": {"contact": {"email": "john.doe@example.com"}, "contract": {"contract_number": "123456"}}}
+      responses:
+        "201":
+          application/json: {"message": "User created successfully"}
+        "400":
+          application/json: {}
+  getPortalConfigByDomain:
+    speakeasy-default-get-portal-config-by-domain:
+      parameters:
+        query:
+          domain: "example.com"
+      responses:
+        "200":
+          application/json: {"allowed_file_extensions": {"archive": ["zip"], "audioVideo": ["mp4"], "cad": ["cad"], "calendar": ["ics"], "document": ["pdf"], "email": ["eml"], "image": ["jpg"], "other": ["txt"], "presentation": ["ppt"], "spreadsheet": ["xls"]}, "approval_state_attributes": {"contact": ["name", "address"], "contract": ["installment_amount"]}, "cognito_details": {"cognito_user_pool_arn": "arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341", "cognito_user_pool_client_id": "6bsd0jkgoie74k2i8mrhc1vest", "cognito_user_pool_id": "eu-central-1_CUEQRNbUb", "password_policy": {"minimum_length": 8, "require_lowercase": true, "require_numbers": true, "require_symbols": true, "require_uppercase": true}}, "contract_identifiers": [{"name": "email", "schema": "contact"}, {"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "design_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "domain": "abc.com", "email_templates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "entity_edit_rules": [], "grants": [], "images": {"orderLeftTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg", "orderRightTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg", "welcomeBanner": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg"}, "name": "Installer Portal", "org_name": "ABC Company", "organization_id": "12345", "registration_identifiers": [{"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "triggered_journeys": [{"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}, {"journey_id": "5da0a718-c822-403d-9f5d-20d4584e0528"}]}
+        "500":
+          application/json: {}
+  getPublicPortalConfig:
+    speakeasy-default-get-public-portal-config:
+      parameters:
+        query:
+          org_id: "12324"
+          origin: "INSTALLER_PORTAL"
+      responses:
+        "200":
+          application/json: {"allowed_file_extensions": {"archive": ["zip"], "audioVideo": ["mp4"], "cad": ["cad"], "calendar": ["ics"], "document": ["pdf"], "email": ["eml"], "image": ["jpg"], "other": ["txt"], "presentation": ["ppt"], "spreadsheet": ["xls"]}, "approval_state_attributes": {"contact": ["name", "address"], "contract": ["installment_amount"]}, "cognito_details": {"cognito_user_pool_arn": "arn:aws:cognito-idp:us-east-1:123412341234:userpool/us-east-1_123412341", "cognito_user_pool_client_id": "6bsd0jkgoie74k2i8mrhc1vest", "cognito_user_pool_id": "eu-central-1_CUEQRNbUb", "password_policy": {"minimum_length": 8, "require_lowercase": true, "require_numbers": true, "require_symbols": true, "require_uppercase": true}}, "contract_identifiers": [{"name": "email", "schema": "contact"}, {"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "design_id": "5da0a718-c822-403d-9f5d-20d4584e0528", "domain": "abc.com", "email_templates": {"advancedMFA": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmAccount": "5da0a718-c822-403d-9f5d-20d4584e0528", "confirmEmailUpdate": "5da0a718-c822-403d-9f5d-20d4584e0528", "forgotPassword": "5da0a718-c822-403d-9f5d-20d4584e0528", "invitation": "5da0a718-c822-403d-9f5d-20d4584e0528", "onDocUpload": "5da0a718-c822-403d-9f5d-20d4584e0528", "onMapAPendingUser": "5da0a718-c822-403d-9f5d-20d4584e0528", "onNewQuote": "5da0a718-c822-403d-9f5d-20d4584e0528", "onWorkflowStepAssigned": "5da0a718-c822-403d-9f5d-20d4584e0528"}, "entity_edit_rules": [{"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}, {"allowed_decrement": "10%", "allowed_increment": "10%", "attribute": "first_name", "cadence_period": 1, "changes_allowed": 1, "grace_period": 1, "number_of_days_before_restriction": 10, "slug": "contact"}], "grants": [], "images": {"orderLeftTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-left-teaser.jpeg", "orderRightTeaser": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/order-right-teaser.jpeg", "welcomeBanner": "https://epilot-bucket.s3.eu-central-1.amazonaws.com/12344/6538fddb-f0e9-4f0f-af51-6e57891ff20a/welcome-banner.jpeg"}, "name": "Installer Portal", "org_name": "ABC Company", "organization_id": "12345", "registration_identifiers": [{"name": "last_name", "schema": "contact"}, {"name": "contract_number", "schema": "contact"}], "triggered_journeys": []}
+        "500":
+          application/json: {}
+  getPublicPortalExtensionDetails:
+    speakeasy-default-get-public-portal-extension-details:
+      parameters:
+        query:
+          org_id: "12324"
+          origin: "INSTALLER_PORTAL"
+      responses:
+        "200":
+          application/json: {"contractIdentification": {"hook": {"explanation": {"en": "This process will give you access to all Contracts kept", "key": "<value>", "key1": "<value>", "key2": "<value>"}}}}
+        "401":
+          application/json: {}
+  getPublicPortalWidgets:
+    speakeasy-default-get-public-portal-widgets:
+      parameters:
+        query:
+          org_id: "123"
+          origin: "END_CUSTOMER_PORTAL"
+      responses:
+        "200":
+          application/json: {"widgets": []}
+        "401":
+          application/json: {}
+  userExists:
+    speakeasy-default-user-exists:
+      parameters:
+        query:
+          email: "user@example.com"
+          org_id: "123"
+      responses:
+        "200":
+          application/json: {"exists": true}
+        "500":
+          application/json: {}
+generatedTests: {}
