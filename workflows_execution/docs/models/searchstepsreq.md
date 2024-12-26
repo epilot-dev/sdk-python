@@ -1,0 +1,15 @@
+# SearchStepsReq
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `assigned_to`                                                      | *Optional[float]*                                                  | :heavy_minus_sign:                                                 | N/A                                                                |
+| `execution_name`                                                   | *Optional[str]*                                                    | :heavy_minus_sign:                                                 | N/A                                                                |
+| `include_done_workflows`                                           | *Optional[bool]*                                                   | :heavy_minus_sign:                                                 | N/A                                                                |
+| `manually_created`                                                 | *Optional[bool]*                                                   | :heavy_minus_sign:                                                 | N/A                                                                |
+| `pagination`                                                       | [Optional[models.SearchPagination]](../models/searchpagination.md) | :heavy_minus_sign:                                                 | N/A                                                                |
+| `sorting`                                                          | [Optional[models.SearchSorting]](../models/searchsorting.md)       | :heavy_minus_sign:                                                 | N/A                                                                |
+| `status`                                                           | [Optional[models.Status]](../models/status.md)                     | :heavy_minus_sign:                                                 | N/A                                                                |
+| `step_name`                                                        | *Optional[str]*                                                    | :heavy_minus_sign:                                                 | N/A                                                                |
