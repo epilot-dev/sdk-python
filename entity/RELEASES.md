@@ -413,3 +413,11 @@ Based on:
 - Speakeasy CLI 1.109.2 (2.173.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v2.1.5] entity
+
+## 2024-12-27 00:28:04
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/entity.yaml
+- Speakeasy CLI 1.460.3 (2.484.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v3.0.0] entity
