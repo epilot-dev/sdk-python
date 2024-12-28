@@ -5,16 +5,17 @@ from .grant import Grant, GrantTypedDict
 from datetime import datetime
 from enum import Enum
 from epilot_permissions.types import BaseModel
-from typing import List, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import List, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class PortalRoleType(str, Enum):
     PORTAL_ROLE = "portal_role"
 
+
 class PortalRoleTypedDict(TypedDict):
     r"""A role that is applied to end customers and installers using the Portals"""
-    
+
     grants: List[GrantTypedDict]
     r"""List of grants (permissions) applied to the role"""
     id: str
@@ -28,22 +29,27 @@ class PortalRoleTypedDict(TypedDict):
     type: PortalRoleType
     expires_at: NotRequired[datetime]
     r"""date and time then the role will expire"""
-    
+
 
 class PortalRole(BaseModel):
     r"""A role that is applied to end customers and installers using the Portals"""
-    
+
     grants: List[Grant]
     r"""List of grants (permissions) applied to the role"""
+
     id: str
     r"""Format: <organization_id>:<slug>"""
+
     name: str
     r"""Human-friendly name for the role"""
+
     organization_id: str
     r"""Id of an organization"""
+
     slug: str
     r"""URL-friendly name for the role"""
+
     type: PortalRoleType
+
     expires_at: Optional[datetime] = None
     r"""date and time then the role will expire"""
-    
