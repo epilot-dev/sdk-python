@@ -5,16 +5,17 @@ from .grantwithdependencies import GrantWithDependencies, GrantWithDependenciesT
 from datetime import datetime
 from enum import Enum
 from epilot_permissions.types import BaseModel
-from typing import List, Optional, TypedDict, Union
-from typing_extensions import NotRequired
+from typing import List, Optional, Union
+from typing_extensions import NotRequired, TypeAliasType, TypedDict
 
 
 class SchemasPortalRoleType(str, Enum):
     PORTAL_ROLE = "portal_role"
 
+
 class PortalRoleSchemasTypedDict(TypedDict):
     r"""A role that is applied to end customers and installers using the Portals"""
-    
+
     grants: List[GrantWithDependenciesTypedDict]
     id: str
     r"""Format: <organization_id>:<slug>"""
@@ -27,31 +28,38 @@ class PortalRoleSchemasTypedDict(TypedDict):
     type: SchemasPortalRoleType
     expires_at: NotRequired[datetime]
     r"""date and time then the role will expire"""
-    
+
 
 class PortalRoleSchemas(BaseModel):
     r"""A role that is applied to end customers and installers using the Portals"""
-    
+
     grants: List[GrantWithDependencies]
+
     id: str
     r"""Format: <organization_id>:<slug>"""
+
     name: str
     r"""Human-friendly name for the role"""
+
     organization_id: str
     r"""Id of an organization"""
+
     slug: str
     r"""URL-friendly name for the role"""
+
     type: SchemasPortalRoleType
+
     expires_at: Optional[datetime] = None
     r"""date and time then the role will expire"""
-    
+
 
 class SchemasType(str, Enum):
     PARTNER_ROLE = "partner_role"
 
+
 class PartnerRoleSchemasTypedDict(TypedDict):
     r"""A role that appears in another organization's role list that can be assigned but not modified by the partner organization."""
-    
+
     grants: List[GrantWithDependenciesTypedDict]
     id: str
     r"""Format: <organization_id>:<slug>"""
@@ -65,32 +73,40 @@ class PartnerRoleSchemasTypedDict(TypedDict):
     expires_at: NotRequired[datetime]
     r"""date and time then the role will expire"""
     partner_org_id: NotRequired[str]
-    
+
 
 class PartnerRoleSchemas(BaseModel):
     r"""A role that appears in another organization's role list that can be assigned but not modified by the partner organization."""
-    
+
     grants: List[GrantWithDependencies]
+
     id: str
     r"""Format: <organization_id>:<slug>"""
+
     name: str
     r"""Human-friendly name for the role"""
+
     organization_id: str
     r"""Id of an organization"""
+
     slug: str
     r"""URL-friendly name for the role"""
+
     type: SchemasType
+
     expires_at: Optional[datetime] = None
     r"""date and time then the role will expire"""
+
     partner_org_id: Optional[str] = None
-    
+
 
 class SchemasShareRoleType(str, Enum):
     SHARE_ROLE = "share_role"
 
+
 class ShareRoleSchemasTypedDict(TypedDict):
     r"""A role that can be assigned to users in other organizations for sharing purposes."""
-    
+
     grants: List[GrantWithDependenciesTypedDict]
     id: str
     r"""Format: <organization_id>:<slug>"""
@@ -103,31 +119,38 @@ class ShareRoleSchemasTypedDict(TypedDict):
     type: SchemasShareRoleType
     expires_at: NotRequired[datetime]
     r"""date and time then the role will expire"""
-    
+
 
 class ShareRoleSchemas(BaseModel):
     r"""A role that can be assigned to users in other organizations for sharing purposes."""
-    
+
     grants: List[GrantWithDependencies]
+
     id: str
     r"""Format: <organization_id>:<slug>"""
+
     name: str
     r"""Human-friendly name for the role"""
+
     organization_id: str
     r"""Id of an organization"""
+
     slug: str
     r"""URL-friendly name for the role"""
+
     type: SchemasShareRoleType
+
     expires_at: Optional[datetime] = None
     r"""date and time then the role will expire"""
-    
+
 
 class Type(str, Enum):
     ORG_ROLE = "org_role"
 
+
 class SchemasTypedDict(TypedDict):
     r"""A role automatically applied to all users in an organization."""
-    
+
     grants: List[GrantWithDependenciesTypedDict]
     id: str
     r"""Format: <organization_id>:<slug>"""
@@ -142,33 +165,41 @@ class SchemasTypedDict(TypedDict):
     r"""date and time then the role will expire"""
     pricing_tier: NotRequired[str]
     r"""The pricing tier of the organization this root role is based on"""
-    
+
 
 class Schemas(BaseModel):
     r"""A role automatically applied to all users in an organization."""
-    
+
     grants: List[GrantWithDependencies]
+
     id: str
     r"""Format: <organization_id>:<slug>"""
+
     name: str
     r"""Human-friendly name for the role"""
+
     organization_id: str
     r"""Id of an organization"""
+
     slug: str
     r"""URL-friendly name for the role"""
+
     type: Type
+
     expires_at: Optional[datetime] = None
     r"""date and time then the role will expire"""
+
     pricing_tier: Optional[str] = None
     r"""The pricing tier of the organization this root role is based on"""
-    
+
 
 class SchemasUserRoleType(str, Enum):
     USER_ROLE = "user_role"
 
+
 class UserRoleSchemasTypedDict(TypedDict):
     r"""A standard user role. Must be explicitly assigned to users."""
-    
+
     grants: List[GrantWithDependenciesTypedDict]
     id: str
     r"""Format: <organization_id>:<slug>"""
@@ -181,27 +212,50 @@ class UserRoleSchemasTypedDict(TypedDict):
     type: SchemasUserRoleType
     expires_at: NotRequired[datetime]
     r"""date and time then the role will expire"""
-    
+
 
 class UserRoleSchemas(BaseModel):
     r"""A standard user role. Must be explicitly assigned to users."""
-    
+
     grants: List[GrantWithDependencies]
+
     id: str
     r"""Format: <organization_id>:<slug>"""
+
     name: str
     r"""Human-friendly name for the role"""
+
     organization_id: str
     r"""Id of an organization"""
+
     slug: str
     r"""URL-friendly name for the role"""
+
     type: SchemasUserRoleType
+
     expires_at: Optional[datetime] = None
     r"""date and time then the role will expire"""
-    
-
-RolePayloadTypedDict = Union[UserRoleSchemasTypedDict, ShareRoleSchemasTypedDict, PortalRoleSchemasTypedDict, SchemasTypedDict, PartnerRoleSchemasTypedDict]
 
 
-RolePayload = Union[UserRoleSchemas, ShareRoleSchemas, PortalRoleSchemas, Schemas, PartnerRoleSchemas]
+RolePayloadTypedDict = TypeAliasType(
+    "RolePayloadTypedDict",
+    Union[
+        UserRoleSchemasTypedDict,
+        ShareRoleSchemasTypedDict,
+        PortalRoleSchemasTypedDict,
+        SchemasTypedDict,
+        PartnerRoleSchemasTypedDict,
+    ],
+)
 
+
+RolePayload = TypeAliasType(
+    "RolePayload",
+    Union[
+        UserRoleSchemas,
+        ShareRoleSchemas,
+        PortalRoleSchemas,
+        Schemas,
+        PartnerRoleSchemas,
+    ],
+)
