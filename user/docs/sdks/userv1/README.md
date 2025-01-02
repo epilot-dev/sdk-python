@@ -1,0 +1,161 @@
+# UserV1
+(*user_v1*)
+
+## Overview
+
+Legacy User API
+
+### Available Operations
+
+* [get_me](#get_me) - getMe
+* [get_user](#get_user) - getUser
+* [get_user_login_parameters](#get_user_login_parameters) - getUserLoginParameters
+* [list_users](#list_users) - listUsers
+
+## get_me
+
+Get currently logged in user
+
+### Example Usage
+
+```python
+from epilot_user import Epilot
+
+with Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as epilot:
+
+    res = epilot.user_v1.get_me()
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.User](../../models/user.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.APIError | 4XX, 5XX        | \*/\*           |
+
+## get_user
+
+Get user by id
+
+### Example Usage
+
+```python
+from epilot_user import Epilot
+
+with Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as epilot:
+
+    res = epilot.user_v1.get_user(id="<id>")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `id`                                                                | *str*                                                               | :heavy_check_mark:                                                  | User id                                                             |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.User](../../models/user.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.APIError | 4XX, 5XX        | \*/\*           |
+
+## get_user_login_parameters
+
+Get user organization login parameters by username
+
+### Example Usage
+
+```python
+from epilot_user import Epilot
+
+with Epilot() as epilot:
+
+    res = epilot.user_v1.get_user_login_parameters(username="Matilda79")
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `username`                                                          | *str*                                                               | :heavy_check_mark:                                                  | Username                                                            |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.GetUserLoginParametersResponseBody](../../models/getuserloginparametersresponsebody.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.APIError | 4XX, 5XX        | \*/\*           |
+
+## list_users
+
+Lists users in organizations you have access to
+
+### Example Usage
+
+```python
+from epilot_user import Epilot
+
+with Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as epilot:
+
+    res = epilot.user_v1.list_users()
+
+    # Handle response
+    print(res)
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `limit`                                                             | *Optional[float]*                                                   | :heavy_minus_sign:                                                  | Limit the results size                                              |
+| `offset`                                                            | *Optional[float]*                                                   | :heavy_minus_sign:                                                  | Specify the offset                                                  |
+| `org_ids`                                                           | List[*str*]                                                         | :heavy_minus_sign:                                                  | Comma-separated list of organization ids to filter by               |
+| `query`                                                             | *Optional[str]*                                                     | :heavy_minus_sign:                                                  | Query text to filter by                                             |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Response
+
+**[models.ListUsersResponseBody](../../models/listusersresponsebody.md)**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.APIError | 4XX, 5XX        | \*/\*           |
