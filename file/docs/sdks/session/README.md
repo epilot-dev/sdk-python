@@ -1,0 +1,82 @@
+# Session
+(*session*)
+
+## Overview
+
+Session API for cookie authentication
+
+### Available Operations
+
+* [delete_session](#delete_session) - deleteSession
+* [get_session](#get_session) - getSession
+
+## delete_session
+
+End browser session by deleting token cookie
+
+### Example Usage
+
+```python
+import epilot_file
+from epilot_file import Epilot
+
+with Epilot(
+    security=epilot_file.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+) as epilot:
+
+    epilot.session.delete_session()
+
+    # Use the SDK ...
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.APIError | 4XX, 5XX        | \*/\*           |
+
+## get_session
+
+Start a browser session by setting passed Authorization token in a server side cookie.
+
+Allows using preview urls directly in img src for private files using cookie authentication.
+
+
+### Example Usage
+
+```python
+import epilot_file
+from epilot_file import Epilot
+
+with Epilot(
+    security=epilot_file.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+) as epilot:
+
+    epilot.session.get_session()
+
+    # Use the SDK ...
+
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| models.APIError | 4XX, 5XX        | \*/\*           |
