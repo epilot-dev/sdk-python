@@ -3,24 +3,27 @@
 from __future__ import annotations
 from enum import Enum
 from epilot_permissions.types import BaseModel
-from typing import Any, List, TypedDict
+from typing import Any, List
+from typing_extensions import TypedDict
 
 
 class Operation(str, Enum):
     EQUALS = "equals"
 
+
 class EqualsConditionTypedDict(TypedDict):
     r"""Check if attribute equals to any of the values"""
-    
+
     attribute: str
     operation: Operation
     values: List[Any]
-    
+
 
 class EqualsCondition(BaseModel):
     r"""Check if attribute equals to any of the values"""
-    
+
     attribute: str
+
     operation: Operation
+
     values: List[Any]
-    
