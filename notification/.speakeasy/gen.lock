@@ -1,0 +1,135 @@
+lockVersion: 2.0.0
+id: 56d07cc8-8a5b-40b5-9d06-55ed544968e3
+management:
+  docChecksum: 0456f594030a3f8be1c8d39a5af9b13d
+  docVersion: 1.0.0
+  speakeasyVersion: 1.463.1
+  generationVersion: 2.486.6
+  releaseVersion: 1.3.0
+  configChecksum: 17aa9205ff653ac86ac63a8b46cde1b1
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: notification
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=notification
+features:
+  python:
+    additionalDependencies: 1.0.0
+    additionalProperties: 1.0.1
+    core: 5.7.5
+    defaultEnabledRetries: 0.2.0
+    envVarSecurityUsage: 0.3.2
+    flattening: 3.1.0
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.1.0
+    methodArguments: 1.0.2
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+generatedFiles:
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - CONTRIBUTING.md
+  - USAGE.md
+  - docs/models/entityoperation.md
+  - docs/models/epilotauth.md
+  - docs/models/getnotificationrequest.md
+  - docs/models/getnotificationsrequest.md
+  - docs/models/getnotificationsresponsebody.md
+  - docs/models/getnotificationsv2request.md
+  - docs/models/getnotificationsv2responsebody.md
+  - docs/models/markasreadrequest.md
+  - docs/models/message.md
+  - docs/models/notification.md
+  - docs/models/notificationcallercontext.md
+  - docs/models/notificationitem.md
+  - docs/models/notificationitemmessage.md
+  - docs/models/notificationitemtitle.md
+  - docs/models/params.md
+  - docs/models/security.md
+  - docs/models/title.md
+  - docs/models/token.md
+  - docs/models/utils/retryconfig.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/notificationsdk/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/epilot_notification/__init__.py
+  - src/epilot_notification/_hooks/__init__.py
+  - src/epilot_notification/_hooks/sdkhooks.py
+  - src/epilot_notification/_hooks/types.py
+  - src/epilot_notification/_version.py
+  - src/epilot_notification/basesdk.py
+  - src/epilot_notification/httpclient.py
+  - src/epilot_notification/models/__init__.py
+  - src/epilot_notification/models/apierror.py
+  - src/epilot_notification/models/entityoperation.py
+  - src/epilot_notification/models/getnotificationop.py
+  - src/epilot_notification/models/getnotificationsop.py
+  - src/epilot_notification/models/getnotificationsv2op.py
+  - src/epilot_notification/models/markasreadop.py
+  - src/epilot_notification/models/notification.py
+  - src/epilot_notification/models/notificationcallercontext.py
+  - src/epilot_notification/models/notificationitem.py
+  - src/epilot_notification/models/security.py
+  - src/epilot_notification/notification_sdk.py
+  - src/epilot_notification/py.typed
+  - src/epilot_notification/sdk.py
+  - src/epilot_notification/sdkconfiguration.py
+  - src/epilot_notification/types/__init__.py
+  - src/epilot_notification/types/basemodel.py
+  - src/epilot_notification/utils/__init__.py
+  - src/epilot_notification/utils/annotations.py
+  - src/epilot_notification/utils/enums.py
+  - src/epilot_notification/utils/eventstreaming.py
+  - src/epilot_notification/utils/forms.py
+  - src/epilot_notification/utils/headers.py
+  - src/epilot_notification/utils/logger.py
+  - src/epilot_notification/utils/metadata.py
+  - src/epilot_notification/utils/queryparams.py
+  - src/epilot_notification/utils/requestbodies.py
+  - src/epilot_notification/utils/retries.py
+  - src/epilot_notification/utils/security.py
+  - src/epilot_notification/utils/serializers.py
+  - src/epilot_notification/utils/url.py
+  - src/epilot_notification/utils/values.py
+examples:
+  createNotification:
+    speakeasy-default-create-notification:
+      requestBody:
+        application/json: {"caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}}, "force_notify_users": {"12345": {"email": false, "in_app": false}}, "message": {"de": "{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.", "en": "{{caller}} did something with {{contact.entity.id}} {{branch.name}}."}, "operations": [{"entity": "f5d37d47-2ec1-43c9-9d5a-0796f80cd327", "operation": "updateEntity", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_schema": "contact", "_org": "123", "status": "Inactive"}}, {"entity": "638cc898-deab-4ed7-aa16-4479c188ee32", "operation": "updateEntity", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_schema": "contact", "_org": "123", "status": "Inactive"}}, {"entity": "63eb0bd2-4ffc-44f4-8323-dcbe87d6bb56", "operation": "updateEntity", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_schema": "contact", "_org": "123", "status": "Inactive"}}], "organization_id": "206801", "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "read_state": false, "redirect_url": "https://epilot.cloud", "title": {"de": "Meine benutzerdefinierte Aktivität", "en": "My custom notification"}, "type": "workflow", "visibility_user_ids": ["1", "2", "3", "4", "5"]}
+  getNotification:
+    speakeasy-default-get-notification:
+      parameters:
+        path:
+          id: "3493.28"
+      responses:
+        "200":
+          application/json: {"caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>", "key1": "<value>"}, "force_notify_users": {"12345": {"email": false, "in_app": false}}, "id": 123456789, "message": {"de": "{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.", "en": "{{caller}} did something with {{contact.entity.id}} {{branch.name}}."}, "operations": [], "organization_id": "206801", "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "read_state": false, "redirect_url": "https://epilot.cloud", "title": {"de": "Meine benutzerdefinierte Aktivität", "en": "My custom notification"}, "type": "workflow"}
+  getNotifications:
+    speakeasy-default-get-notifications:
+      responses:
+        "200":
+          application/json: {"results": [{"caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>"}, "force_notify_users": {"12345": {"email": false, "in_app": false}}, "id": 123456789, "message": {"de": "{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.", "en": "{{caller}} did something with {{contact.entity.id}} {{branch.name}}."}, "operations": [], "organization_id": "206801", "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "read_state": false, "redirect_url": "https://epilot.cloud", "title": {"de": "Meine benutzerdefinierte Aktivität", "en": "My custom notification"}, "type": "workflow"}], "total": 1, "total_unread": 1}
+  getNotificationsV2:
+    speakeasy-default-get-notifications-v2:
+      responses:
+        "200":
+          application/json: {"cursor": "eyJjcmVhd", "results": [{"caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>", "key1": "<value>"}, "force_notify_users": {"12345": {"email": false, "in_app": false}}, "id": 123456789, "message": {"de": "{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.", "en": "{{caller}} did something with {{contact.entity.id}} {{branch.name}}."}, "operations": [{"entity": "dbf53168-8580-49fa-9cea-b0b3c33980a2", "operation": "updateEntity", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_schema": "contact", "_org": "123", "status": "Inactive"}}], "organization_id": "206801", "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "read_state": false, "redirect_url": "https://epilot.cloud", "title": {"de": "Meine benutzerdefinierte Aktivität", "en": "My custom notification"}, "type": "workflow"}, {"caller": {"EpilotAuth": {"token": {"cognito:username": "example@epilot.cloud", "custom:ivy_user_id": "10006129", "email": "example@epilot.cloud", "sub": "476e9b48-42f4-4234-a2b0-4668b34626ce"}}, "key": "<value>"}, "force_notify_users": {"12345": {"email": false, "in_app": false}}, "id": 123456789, "message": {"de": "{{caller}} habe etwas damit gemacht {{contact.entity.id}} {{branch.name}}.", "en": "{{caller}} did something with {{contact.entity.id}} {{branch.name}}."}, "operations": [{"entity": "f5ac2429-f314-490b-9e6b-896681a722db", "operation": "updateEntity", "params": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "slug": "contact"}, "payload": {"_schema": "contact", "_org": "123", "status": "Inactive"}}], "organization_id": "206801", "payload": {"entity": {"id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", "schema": "contact"}}, "read_state": false, "redirect_url": "https://epilot.cloud", "title": {"de": "Meine benutzerdefinierte Aktivität", "en": "My custom notification"}, "type": "workflow"}], "total": 1, "total_unread": 1}
+  getTotalUnread:
+    speakeasy-default-get-total-unread:
+      responses:
+        "200":
+          text/plain: "<value>"
+  markAllAsRead: {}
+  markAsRead:
+    speakeasy-default-mark-as-read:
+      parameters:
+        path:
+          id: 883397
+generatedTests: {}
