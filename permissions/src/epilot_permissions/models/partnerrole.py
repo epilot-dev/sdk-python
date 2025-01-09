@@ -5,16 +5,17 @@ from .grant import Grant, GrantTypedDict
 from datetime import datetime
 from enum import Enum
 from epilot_permissions.types import BaseModel
-from typing import List, Optional, TypedDict
-from typing_extensions import NotRequired
+from typing import List, Optional
+from typing_extensions import NotRequired, TypedDict
 
 
 class PartnerRoleType(str, Enum):
     PARTNER_ROLE = "partner_role"
 
+
 class PartnerRoleTypedDict(TypedDict):
     r"""A role that appears in another organization's role list that can be assigned but not modified by the partner organization."""
-    
+
     grants: List[GrantTypedDict]
     r"""List of grants (permissions) applied to the role"""
     id: str
@@ -29,23 +30,29 @@ class PartnerRoleTypedDict(TypedDict):
     expires_at: NotRequired[datetime]
     r"""date and time then the role will expire"""
     partner_org_id: NotRequired[str]
-    
+
 
 class PartnerRole(BaseModel):
     r"""A role that appears in another organization's role list that can be assigned but not modified by the partner organization."""
-    
+
     grants: List[Grant]
     r"""List of grants (permissions) applied to the role"""
+
     id: str
     r"""Format: <organization_id>:<slug>"""
+
     name: str
     r"""Human-friendly name for the role"""
+
     organization_id: str
     r"""Id of an organization"""
+
     slug: str
     r"""URL-friendly name for the role"""
+
     type: PartnerRoleType
+
     expires_at: Optional[datetime] = None
     r"""date and time then the role will expire"""
+
     partner_org_id: Optional[str] = None
-    
