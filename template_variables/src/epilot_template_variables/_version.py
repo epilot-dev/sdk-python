@@ -3,7 +3,12 @@
 import importlib.metadata
 
 __title__: str = "epilot-template-variables"
-__version__: str = "1.14.4"
+__version__: str = "1.15.0"
+__openapi_doc_version__: str = "1.0.0"
+__gen_version__: str = "2.492.3"
+__user_agent__: str = (
+    "speakeasy-sdk/python 1.15.0 2.492.3 1.0.0 epilot-template-variables"
+)
 
 try:
     if __package__ is not None:
