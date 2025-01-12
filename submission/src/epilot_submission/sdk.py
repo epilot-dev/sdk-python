@@ -61,7 +61,8 @@ class Epilot(BaseSDK):
 
         security: Any = None
         if callable(epilot_auth):
-            security = lambda: models.Security(epilot_auth=epilot_auth())  # pylint: disable=unnecessary-lambda-assignment
+            # pylint: disable=unnecessary-lambda-assignment
+            security = lambda: models.Security(epilot_auth=epilot_auth())
         else:
             security = models.Security(epilot_auth=epilot_auth)
 
