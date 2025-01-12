@@ -3,12 +3,24 @@
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+> [!TIP]
+> To finish publishing your SDK to PyPI you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
+
+
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=permissions
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=permissions
 ```
@@ -24,18 +36,18 @@ poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=permiss
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
+    res = epilot.assignments.add_assignment(role_id="123:owner", user_id="1")
 
-res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
+    assert res is not None
 
-if res is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
 ```
 
 </br>
@@ -48,15 +60,18 @@ import epilot_permissions
 from epilot_permissions import Epilot
 
 async def main():
-    s = Epilot(
+    async with Epilot(
         security=epilot_permissions.Security(
             epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
         ),
-    )
-    res = await s.assignments.add_assignment_async(role_id="123:owner", user_id="1")
-    if res is not None:
-        # handle response
-        pass
+    ) as epilot:
+
+        res = await epilot.assignments.add_assignment_async(role_id="123:owner", user_id="1")
+
+        assert res is not None
+
+        # Handle response
+        print(res)
 
 asyncio.run(main())
 ```
@@ -65,6 +80,9 @@ asyncio.run(main())
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+<details open>
+<summary>Available methods</summary>
+
 ### [assignments](docs/sdks/assignments/README.md)
 
 * [add_assignment](docs/sdks/assignments/README.md#add_assignment) - addAssignment
@@ -72,6 +90,7 @@ asyncio.run(main())
 * [get_assigned_roles_for_user](docs/sdks/assignments/README.md#get_assigned_roles_for_user) - getAssignedRolesForUser
 * [list_all_assignments](docs/sdks/assignments/README.md#list_all_assignments) - listAllAssignments
 * [remove_assignment](docs/sdks/assignments/README.md#remove_assignment) - removeAssignment
+
 
 ### [roles](docs/sdks/roles/README.md)
 
@@ -82,6 +101,8 @@ asyncio.run(main())
 * [put_role](docs/sdks/roles/README.md#put_role) - putRole
 * [refresh_permissions](docs/sdks/roles/README.md#refresh_permissions) - refreshPermissions
 * [search_roles](docs/sdks/roles/README.md#search_roles) - searchRoles
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Retries [retries] -->
@@ -91,45 +112,45 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_permissions
 from epilot_permissions import Epilot
+from epilot_permissions.utils import BackoffStrategy, RetryConfig
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
+    res = epilot.assignments.add_assignment(role_id="123:owner", user_id="1",
+        RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-res = s.assignments.add_assignment(role_id="123:owner", user_id="1",
-    RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
+    assert res is not None
 
-if res is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
 
 ```
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_permissions
 from epilot_permissions import Epilot
+from epilot_permissions.utils import BackoffStrategy, RetryConfig
 
-s = Epilot(
+with Epilot(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
+    res = epilot.assignments.add_assignment(role_id="123:owner", user_id="1")
 
-res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
+    assert res is not None
 
-if res is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
 
 ```
 <!-- End Retries [retries] -->
@@ -137,11 +158,22 @@ if res is not None:
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
 
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+By default, an API error will raise a models.SDKError exception, which has the following properties:
+
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `add_assignment_async` method may raise the following exceptions:
+
+| Error Type      | Status Code | Content Type |
+| --------------- | ----------- | ------------ |
+| models.SDKError | 4XX, 5XX    | \*/\*        |
 
 ### Example
 
@@ -149,60 +181,29 @@ Handling errors in this SDK should largely match your expectations.  All operati
 import epilot_permissions
 from epilot_permissions import Epilot, models
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
+    res = None
+    try:
 
-res = None
-try:
-    res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
+        res = epilot.assignments.add_assignment(role_id="123:owner", user_id="1")
 
-except models.SDKError as e:
-    # handle exception
-    raise(e)
+        assert res is not None
 
-if res is not None:
-    # handle response
-    pass
+        # Handle response
+        print(res)
 
+    except models.SDKError as e:
+        # handle exception
+        raise(e)
 ```
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://permissions.sls.epilot.io` | None |
-
-#### Example
-
-```python
-import epilot_permissions
-from epilot_permissions import Epilot
-
-s = Epilot(
-    server_idx=0,
-    security=epilot_permissions.Security(
-        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    ),
-)
-
-
-res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
-
-if res is not None:
-    # handle response
-    pass
-
-```
-
 
 ### Override Server URL Per-Client
 
@@ -211,19 +212,19 @@ The default server can also be overridden globally by passing a URL to the `serv
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     server_url="https://permissions.sls.epilot.io",
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
+    res = epilot.assignments.add_assignment(role_id="123:owner", user_id="1")
 
-res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
+    assert res is not None
 
-if res is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
 
 ```
 <!-- End Server Selection [server] -->
@@ -316,28 +317,28 @@ s = Epilot(async_client=CustomClient(httpx.AsyncClient()))
 
 This SDK supports the following security schemes globally:
 
-| Name          | Type          | Scheme        |
-| ------------- | ------------- | ------------- |
-| `epilot_auth` | http          | HTTP Bearer   |
-| `epilot_org`  | apiKey        | API key       |
+| Name          | Type   | Scheme      |
+| ------------- | ------ | ----------- |
+| `epilot_auth` | http   | HTTP Bearer |
+| `epilot_org`  | apiKey | API key     |
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. The selected scheme will be used by default to authenticate with the API for all operations that support it. For example:
 ```python
 import epilot_permissions
 from epilot_permissions import Epilot
 
-s = Epilot(
+with Epilot(
     security=epilot_permissions.Security(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
+    res = epilot.assignments.add_assignment(role_id="123:owner", user_id="1")
 
-res = s.assignments.add_assignment(role_id="123:owner", user_id="1")
+    assert res is not None
 
-if res is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
 
 ```
 <!-- End Authentication [security] -->
@@ -345,8 +346,9 @@ if res is not None:
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from epilot_permissions import Epilot
 import logging
