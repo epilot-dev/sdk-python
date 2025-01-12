@@ -1,54 +1,126 @@
 # epilot-file
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+> [!TIP]
+> To finish publishing your SDK to PyPI you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
+
+
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=file
 ```
-<!-- End SDK Installation -->
 
-## SDK Example Usage
-<!-- Start SDK Example Usage -->
-```python
-import epilot
-from epilot.models import operations, shared
+### Poetry
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
-)
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
-
-req = shared.DeleteFilePayload(
-    s3ref=shared.S3Reference(
-        bucket="epilot-files-prod",
-        key="123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
-    ),
-)
-    
-res = s.files.delete_file(req)
-
-if res.status_code == 200:
-    # handle response
+```bash
+poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=file
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Installation [installation] -->
 
-<!-- Start SDK Available Operations -->
-## SDK Available Operations
+<!-- Start SDK Example Usage [usage] -->
+## SDK Example Usage
+
+### Example
+
+```python
+# Synchronous Example
+import epilot_file
+from epilot_file import Epilot
+
+with Epilot(
+    security=epilot_file.Security(
+        cookie_auth="<YOUR_API_KEY_HERE>",
+    ),
+) as epilot:
+
+    res = epilot.file.delete_file(id="ef7d985c-2385-44f4-9c71-ae06a52264f8", activity_id="01F130Q52Q6MWSNS8N2AVXV4JN")
+
+    # Handle response
+    print(res)
+```
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_file
+from epilot_file import Epilot
+
+async def main():
+    async with Epilot(
+        security=epilot_file.Security(
+            cookie_auth="<YOUR_API_KEY_HERE>",
+        ),
+    ) as epilot:
+
+        res = await epilot.file.delete_file_async(id="ef7d985c-2385-44f4-9c71-ae06a52264f8", activity_id="01F130Q52Q6MWSNS8N2AVXV4JN")
+
+        # Handle response
+        print(res)
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
+
+<!-- Start Available Resources and Operations [operations] -->
+## Available Resources and Operations
+
+<details open>
+<summary>Available methods</summary>
+
+### [~~deprecated~~](docs/sdks/deprecated/README.md)
+
+* [~~save_file~~](docs/sdks/deprecated/README.md#save_file) - saveFile :warning: **Deprecated**
+* [~~upload_file~~](docs/sdks/deprecated/README.md#upload_file) - uploadFile :warning: **Deprecated**
 
 
-### files
+### [file](docs/sdks/file/README.md)
 
-* `delete_file` - deleteFile
-* `download_file` - downloadFile
-* `download_s3_file` - downloadS3File
-* `preview_file` - previewFile
-* `preview_s3_file` - previewS3File
-* `save_file` - saveFile
-* `upload_file` - uploadFile
-* `upload_file_public` - uploadFilePublic
-<!-- End SDK Available Operations -->
+* [delete_file](docs/sdks/file/README.md#delete_file) - deleteFile
+* [download_file](docs/sdks/file/README.md#download_file) - downloadFile
+* [download_files](docs/sdks/file/README.md#download_files) - downloadFiles
+* [download_s3_file](docs/sdks/file/README.md#download_s3_file) - downloadS3File
+* [get_file](docs/sdks/file/README.md#get_file) - getFile
+* [save_file_v2](docs/sdks/file/README.md#save_file_v2) - saveFileV2
+* [upload_file_public](docs/sdks/file/README.md#upload_file_public) - uploadFilePublic
+* [upload_file_v2](docs/sdks/file/README.md#upload_file_v2) - uploadFileV2
+* [verify_custom_download_url](docs/sdks/file/README.md#verify_custom_download_url) - verifyCustomDownloadUrl
+
+### [preview](docs/sdks/preview/README.md)
+
+* [preview_file](docs/sdks/preview/README.md#preview_file) - previewFile
+* [preview_public_file](docs/sdks/preview/README.md#preview_public_file) - previewPublicFile
+* [preview_s3_file](docs/sdks/preview/README.md#preview_s3_file) - previewS3File
+* [preview_s3_file_get](docs/sdks/preview/README.md#preview_s3_file_get) - previewS3FileGet
+
+### [public_links](docs/sdks/publiclinks/README.md)
+
+* [access_public_link](docs/sdks/publiclinks/README.md#access_public_link) - accessPublicLink
+* [generate_public_link](docs/sdks/publiclinks/README.md#generate_public_link) - generatePublicLink
+* [list_public_links_for_file](docs/sdks/publiclinks/README.md#list_public_links_for_file) - listPublicLinksForFile
+* [revoke_public_link](docs/sdks/publiclinks/README.md#revoke_public_link) - revokePublicLink
+
+### [session](docs/sdks/session/README.md)
+
+* [delete_session](docs/sdks/session/README.md#delete_session) - deleteSession
+* [get_session](docs/sdks/session/README.md#get_session) - getSession
+
+</details>
+<!-- End Available Resources and Operations [operations] -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
