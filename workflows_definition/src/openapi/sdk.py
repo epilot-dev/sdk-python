@@ -62,7 +62,8 @@ class SDK(BaseSDK):
 
         security: Any = None
         if callable(bearer_auth):
-            security = lambda: models.Security(bearer_auth=bearer_auth())  # pylint: disable=unnecessary-lambda-assignment
+            # pylint: disable=unnecessary-lambda-assignment
+            security = lambda: models.Security(bearer_auth=bearer_auth())
         else:
             security = models.Security(bearer_auth=bearer_auth)
 
