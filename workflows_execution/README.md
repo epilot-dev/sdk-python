@@ -1,77 +1,122 @@
 # epilot-workflows-execution
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+> [!TIP]
+> To finish publishing your SDK to PyPI you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
+
+
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_execution
 ```
-<!-- End SDK Installation -->
 
-## SDK Example Usage
-<!-- Start SDK Example Usage -->
-```python
-import epilot
-from epilot.models import operations, shared
+### Poetry
 
-s = epilot.Epilot(
-    security=shared.Security(
-        bearer_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
-)
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
-
-req = shared.WorkflowExecutionCreateReq(
-    assigned_to=[
-        "deserunt",
-        "porro",
-        "nulla",
-    ],
-    contexts=[
-        shared.WorkflowContext(
-            id="vero",
-            schema="perspiciatis",
-            title="Internal Group Orchestrator",
-        ),
-        shared.WorkflowContext(
-            id="facilis",
-            schema="eum",
-            title="District Paradigm Agent",
-        ),
-        shared.WorkflowContext(
-            id="inventore",
-            schema="sapiente",
-            title="Future Markets Architect",
-        ),
-    ],
-    trigger="AUTOMATIC",
-    workflow_id="vel",
-)
-    
-res = s.workflows.create_execution(req)
-
-if res.workflow_execution is not None:
-    # handle response
+```bash
+poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_execution
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Installation [installation] -->
 
-<!-- Start SDK Available Operations -->
-## SDK Available Operations
+<!-- Start SDK Example Usage [usage] -->
+## SDK Example Usage
+
+### Example
+
+```python
+# Synchronous Example
+import epilot_workflows_execution
+from epilot_workflows_execution import Epilot
+
+with Epilot(
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as epilot:
+
+    res = epilot.workflows.create_execution(workflow_id="j3f23fh23uif98", contexts=[
+        {
+            "id": "3fa3fa86-0907-4642-a57e-0fe30a19874d",
+            "schema_": "contact",
+            "title": "<value>",
+        },
+        {
+            "id": "3a6d42fa-5070-4723-b90f-41ead4303e33",
+            "schema_": "opportunity",
+            "title": "<value>",
+        },
+    ], trigger=epilot_workflows_execution.TriggerType.AUTOMATIC)
+
+    # Handle response
+    print(res)
+```
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_workflows_execution
+from epilot_workflows_execution import Epilot
+
+async def main():
+    async with Epilot(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as epilot:
+
+        res = await epilot.workflows.create_execution_async(workflow_id="j3f23fh23uif98", contexts=[
+            {
+                "id": "3fa3fa86-0907-4642-a57e-0fe30a19874d",
+                "schema_": "contact",
+                "title": "<value>",
+            },
+            {
+                "id": "3a6d42fa-5070-4723-b90f-41ead4303e33",
+                "schema_": "opportunity",
+                "title": "<value>",
+            },
+        ], trigger=epilot_workflows_execution.TriggerType.AUTOMATIC)
+
+        # Handle response
+        print(res)
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
+
+<!-- Start Available Resources and Operations [operations] -->
+## Available Resources and Operations
+
+<details open>
+<summary>Available methods</summary>
 
 
-### workflows
+### [workflows](docs/sdks/workflows/README.md)
 
-* `create_execution` - createExecution
-* `create_step` - createStep
-* `delete_execution` - deleteExecution
-* `delete_step` - deleteStep
-* `get_closing_reason_execution` - getClosingReasonExecution
-* `get_execution` - getExecution
-* `get_executions` - getExecutions
-* `search_executions` - searchExecutions
-* `search_steps` - searchSteps
-* `update_execution` - updateExecution
-* `update_step` - updateStep
-<!-- End SDK Available Operations -->
+* [create_execution](docs/sdks/workflows/README.md#create_execution) - createExecution
+* [create_step](docs/sdks/workflows/README.md#create_step) - createStep
+* [delete_execution](docs/sdks/workflows/README.md#delete_execution) - deleteExecution
+* [delete_step](docs/sdks/workflows/README.md#delete_step) - deleteStep
+* [get_closing_reason_execution](docs/sdks/workflows/README.md#get_closing_reason_execution) - getClosingReasonExecution
+* [get_execution](docs/sdks/workflows/README.md#get_execution) - getExecution
+* [get_executions](docs/sdks/workflows/README.md#get_executions) - getExecutions
+* [search_executions](docs/sdks/workflows/README.md#search_executions) - searchExecutions
+* [~~search_steps~~](docs/sdks/workflows/README.md#search_steps) - searchSteps :warning: **Deprecated**
+* [update_execution](docs/sdks/workflows/README.md#update_execution) - updateExecution
+* [update_step](docs/sdks/workflows/README.md#update_step) - updateStep
+
+</details>
+<!-- End Available Resources and Operations [operations] -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
