@@ -1,57 +1,118 @@
 # epilot-user
 
-<!-- Start SDK Installation -->
+<!-- Start SDK Installation [installation] -->
 ## SDK Installation
+
+> [!TIP]
+> To finish publishing your SDK to PyPI you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
+
+
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
 
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=user
 ```
-<!-- End SDK Installation -->
 
-## SDK Example Usage
-<!-- Start SDK Example Usage -->
-```python
-import epilot
-from epilot.models import operations, shared
+### Poetry
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="Bearer YOUR_BEARER_TOKEN_HERE",
-    ),
-)
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
 
-    
-res = s.user_v1.get_me()
-
-if res.user is not None:
-    # handle response
+```bash
+poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=user
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Installation [installation] -->
 
-<!-- Start SDK Available Operations -->
-## SDK Available Operations
+<!-- Start SDK Example Usage [usage] -->
+## SDK Example Usage
+
+### Example
+
+```python
+# Synchronous Example
+from epilot_user import Epilot
+
+with Epilot(
+    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+) as epilot:
+
+    res = epilot.group.advance_user_assignment(id="<id>")
+
+    # Handle response
+    print(res)
+```
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+from epilot_user import Epilot
+
+async def main():
+    async with Epilot(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as epilot:
+
+        res = await epilot.group.advance_user_assignment_async(id="<id>")
+
+        # Handle response
+        print(res)
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
+
+<!-- Start Available Resources and Operations [operations] -->
+## Available Resources and Operations
+
+<details open>
+<summary>Available methods</summary>
 
 
-### user_v1
+### [group](docs/sdks/groupsdk/README.md)
 
-* `get_me` - getMe
-* `get_user` - getUser
-* `get_user_login_parameters` - getUserLoginParameters
-* `list_users` - listUsers
+* [advance_user_assignment](docs/sdks/groupsdk/README.md#advance_user_assignment) - advanceUserAssignment
+* [create_group](docs/sdks/groupsdk/README.md#create_group) - createGroup
+* [delete_group](docs/sdks/groupsdk/README.md#delete_group) - deleteGroup
+* [get_group](docs/sdks/groupsdk/README.md#get_group) - getGroup
+* [get_groups](docs/sdks/groupsdk/README.md#get_groups) - getGroups
+* [update_group](docs/sdks/groupsdk/README.md#update_group) - updateGroup
 
-### user_v2
+### [user_v1](docs/sdks/userv1/README.md)
 
-* `activate_user` - activateUser
-* `delete_user_v2` - deleteUserV2
-* `get_me_v2` - getMeV2
-* `get_user_login_parameters_v2` - getUserLoginParametersV2
-* `get_user_v2` - getUserV2
-* `invite_user` - inviteUser
-* `list_users_v2` - listUsersV2
-* `resend_user_invitation` - resendUserInvitation
-* `sign_up_user` - signUpUser
-* `update_user_v2` - updateUserV2
-* `verify_email_with_token` - verifyEmailWithToken
-<!-- End SDK Available Operations -->
+* [get_me](docs/sdks/userv1/README.md#get_me) - getMe
+* [get_user](docs/sdks/userv1/README.md#get_user) - getUser
+* [get_user_login_parameters](docs/sdks/userv1/README.md#get_user_login_parameters) - getUserLoginParameters
+* [list_users](docs/sdks/userv1/README.md#list_users) - listUsers
+
+### [user_v2](docs/sdks/userv2sdk/README.md)
+
+* [activate_user](docs/sdks/userv2sdk/README.md#activate_user) - activateUser
+* [check_invite_token](docs/sdks/userv2sdk/README.md#check_invite_token) - checkInviteToken
+* [delete_user_v2](docs/sdks/userv2sdk/README.md#delete_user_v2) - deleteUserV2
+* [get_groups_for_user](docs/sdks/userv2sdk/README.md#get_groups_for_user) - getGroupsForUser
+* [get_me_v2](docs/sdks/userv2sdk/README.md#get_me_v2) - getMeV2
+* [get_user_login_parameters_v2](docs/sdks/userv2sdk/README.md#get_user_login_parameters_v2) - getUserLoginParametersV2
+* [get_user_v2](docs/sdks/userv2sdk/README.md#get_user_v2) - getUserV2
+* [invite_user](docs/sdks/userv2sdk/README.md#invite_user) - inviteUser
+* [list_users_v2](docs/sdks/userv2sdk/README.md#list_users_v2) - listUsersV2
+* [reject_invite](docs/sdks/userv2sdk/README.md#reject_invite) - rejectInvite
+* [resend_user_invitation](docs/sdks/userv2sdk/README.md#resend_user_invitation) - resendUserInvitation
+* [sign_up_user](docs/sdks/userv2sdk/README.md#sign_up_user) - signUpUser
+* [switch_organization](docs/sdks/userv2sdk/README.md#switch_organization) - switchOrganization
+* [update_user_v2](docs/sdks/userv2sdk/README.md#update_user_v2) - updateUserV2
+* [verify_email_with_token](docs/sdks/userv2sdk/README.md#verify_email_with_token) - verifyEmailWithToken
+
+</details>
+<!-- End Available Resources and Operations [operations] -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### SDK Generated by [Speakeasy](https://docs.speakeasyapi.dev/docs/using-speakeasy/client-sdks)
