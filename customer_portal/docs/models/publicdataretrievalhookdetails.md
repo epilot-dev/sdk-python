@@ -1,0 +1,10 @@
+# PublicDataRetrievalHookDetails
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                   | *Optional[str]*                                                                                        | :heavy_minus_sign:                                                                                     | Identifier of the hook.                                                                                |
+| `intervals`                                                                                            | List[*str*]                                                                                            | :heavy_minus_sign:                                                                                     | The intervals associated with the hook.                                                                |
+| `name`                                                                                                 | [Optional[models.PublicDataRetrievalHookDetailsName]](../models/publicdataretrievalhookdetailsname.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
