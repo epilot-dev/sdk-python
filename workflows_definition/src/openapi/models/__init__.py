@@ -64,6 +64,7 @@ from .workflowdefinition import (
     WorkflowDefinitionTypedDict,
 )
 
+
 __all__ = [
     "ActionTypeCondition",
     "AutomationConfig",

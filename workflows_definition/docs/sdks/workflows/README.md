@@ -76,22 +76,14 @@ with SDK(
             "80225",
         ],
         "closing_reasons": [
-            {
-                "id": "x739cew",
-            },
+
         ],
         "creation_time": "2021-04-27T12:01:13.000Z",
         "description": "Lead Qualification description",
         "due_date": "2022-08-04T12:00:00.000Z",
         "last_update_time": "2021-04-27T12:01:13.000Z",
         "update_entity_attributes": [
-            {
-                "source": openapi.Source.CURRENT_SECTION,
-                "target": {
-                    "entity_attribute": "my_status",
-                    "entity_schema": "opportunity",
-                },
-            },
+
         ],
     })
 
@@ -326,9 +318,7 @@ with SDK(
 
     sdk.workflows.set_workflow_closing_reasons(definition_id="7889", closing_reasons_ids={
         "reasons": [
-            {
-                "id": "x739cew",
-            },
+
         ],
     })
 
@@ -417,22 +407,14 @@ with SDK(
             "80225",
         ],
         "closing_reasons": [
-            {
-                "id": "x739cew",
-            },
+
         ],
         "creation_time": "2021-08-04T21:13:50.373Z",
         "due_date": "2022-08-04T12:00:00.000Z",
         "id": "25n2k52ja",
         "last_update_time": "2021-08-04T21:13:50.373Z",
         "update_entity_attributes": [
-            {
-                "source": openapi.Source.CURRENT_SECTION,
-                "target": {
-                    "entity_attribute": "my_status",
-                    "entity_schema": "opportunity",
-                },
-            },
+
         ],
     })
 
