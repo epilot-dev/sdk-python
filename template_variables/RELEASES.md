@@ -299,3 +299,11 @@ Based on:
 - Speakeasy CLI 1.467.0 (2.492.3) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.15.0] template_variables
+
+## 2025-01-15 00:28:28
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 https://docs.api.epilot.io/template-variables.yaml
+- Speakeasy CLI 1.468.6 (2.493.13) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.15.1] template_variables

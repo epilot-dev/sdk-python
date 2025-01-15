@@ -62,6 +62,7 @@ from .variableparameters import (
 )
 from .variableresult import VariableResult, VariableResultType, VariableResultTypedDict
 
+
 __all__ = [
     "CategoryResult",
     "CategoryResultTypedDict",

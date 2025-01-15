@@ -78,10 +78,7 @@ with Epilot(
             "template_type": epilot_template_variables.TemplateType.EMAIL,
             "brand_id": 123451,
             "custom_variables": [
-                {
-                    "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                    "variable": "{{craftsmen.invitation_link}}",
-                },
+
             ],
             "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561",
             "user_id": "50001",
@@ -144,10 +141,7 @@ with Epilot(
             "template_type": epilot_template_variables.TemplateType.EMAIL,
             "brand_id": 123451,
             "custom_variables": [
-                {
-                    "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
-                    "variable": "{{craftsmen.invitation_link}}",
-                },
+
             ],
             "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561",
             "user_id": "50001",
