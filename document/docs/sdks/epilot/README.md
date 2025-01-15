@@ -1,6 +1,5 @@
 # Epilot SDK
 
-
 ## Overview
 
 Document API: A document generation API that allows you to generate documents from templates with variables.
@@ -9,4 +8,3 @@ Document API: A document generation API that allows you to generate documents fr
 
 
 ### Available Operations
-
