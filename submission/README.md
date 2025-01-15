@@ -68,10 +68,7 @@ with Epilot() as epilot:
         "source_type": "journey",
         "journey_submit_id": "123",
         "opt_ins": [
-            {
-                "identifier": "example@email.com",
-                "topic": "EMAIL_MARKETING",
-            },
+
         ],
     })
 
@@ -120,10 +117,7 @@ async def main():
             "source_type": "journey",
             "journey_submit_id": "123",
             "opt_ins": [
-                {
-                    "identifier": "example@email.com",
-                    "topic": "EMAIL_MARKETING",
-                },
+
             ],
         })
 
@@ -190,10 +184,7 @@ with Epilot() as epilot:
         "source_type": "journey",
         "journey_submit_id": "123",
         "opt_ins": [
-            {
-                "identifier": "example@email.com",
-                "topic": "EMAIL_MARKETING",
-            },
+
         ],
     },
         RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
@@ -242,10 +233,7 @@ with Epilot(
         "source_type": "journey",
         "journey_submit_id": "123",
         "opt_ins": [
-            {
-                "identifier": "example@email.com",
-                "topic": "EMAIL_MARKETING",
-            },
+
         ],
     })
 
@@ -314,10 +302,7 @@ with Epilot() as epilot:
             "source_type": "journey",
             "journey_submit_id": "123",
             "opt_ins": [
-                {
-                    "identifier": "example@email.com",
-                    "topic": "EMAIL_MARKETING",
-                },
+
             ],
         })
 
@@ -373,10 +358,7 @@ with Epilot(
         "source_type": "journey",
         "journey_submit_id": "123",
         "opt_ins": [
-            {
-                "identifier": "example@email.com",
-                "topic": "EMAIL_MARKETING",
-            },
+
         ],
     })
 
@@ -516,10 +498,7 @@ with Epilot(
         "source_type": "journey",
         "journey_submit_id": "123",
         "opt_ins": [
-            {
-                "identifier": "example@email.com",
-                "topic": "EMAIL_MARKETING",
-            },
+
         ],
     })
 

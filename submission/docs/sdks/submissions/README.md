@@ -52,10 +52,7 @@ with Epilot() as epilot:
         "source_type": "journey",
         "journey_submit_id": "123",
         "opt_ins": [
-            {
-                "identifier": "example@email.com",
-                "topic": "EMAIL_MARKETING",
-            },
+
         ],
     })
 

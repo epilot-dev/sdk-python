@@ -3,10 +3,10 @@ id: 33caae79-0482-46e7-9dea-4e7a337d182e
 management:
   docChecksum: d4af78e6c6d718d7121f5ce9edb789ef
   docVersion: 1.0.0
-  speakeasyVersion: 1.468.2
-  generationVersion: 2.493.4
-  releaseVersion: 1.13.1
-  configChecksum: bdfeaf1ab0d283a84ca1afa34b9de794
+  speakeasyVersion: 1.468.6
+  generationVersion: 2.493.13
+  releaseVersion: 1.13.2
+  configChecksum: aff952ff57ab8573aece3a44bf582d3c
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: submission
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=submission
