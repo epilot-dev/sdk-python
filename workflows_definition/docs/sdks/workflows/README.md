@@ -109,7 +109,8 @@ with SDK(
 
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 400, 401, 500    | application/json |
+| models.ErrorResp | 400, 401         | application/json |
+| models.ErrorResp | 500              | application/json |
 | models.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## delete_definition
@@ -182,8 +183,9 @@ with SDK(
 
 | Error Type                    | Status Code                   | Content Type                  |
 | ----------------------------- | ----------------------------- | ----------------------------- |
-| models.ErrorResp              | 400, 401, 500                 | application/json              |
+| models.ErrorResp              | 400, 401                      | application/json              |
 | models.DefinitionNotFoundResp | 404                           | application/json              |
+| models.ErrorResp              | 500                           | application/json              |
 | models.SDKError               | 4XX, 5XX                      | \*/\*                         |
 
 ## get_definitions
@@ -441,5 +443,6 @@ with SDK(
 
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 400, 401, 500    | application/json |
+| models.ErrorResp | 400, 401         | application/json |
+| models.ErrorResp | 500              | application/json |
 | models.SDKError  | 4XX, 5XX         | \*/\*            |

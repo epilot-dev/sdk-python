@@ -3,17 +3,17 @@ id: 8727d4ad-f9cf-4aa1-993f-c90fc6591190
 management:
   docChecksum: 8a2ff4be25db818a35891d602baa4a25
   docVersion: 1.0.0
-  speakeasyVersion: 1.468.6
-  generationVersion: 2.493.13
-  releaseVersion: 1.14.2
-  configChecksum: 30c8f5fd2ed2879053672b3df3b0bdf1
+  speakeasyVersion: 1.468.8
+  generationVersion: 2.493.19
+  releaseVersion: 1.14.3
+  configChecksum: e1126b59e6a46be68f78ea513f716f8a
   repoURL: https://github.com/epilot-dev/sdk-python.git
   repoSubDirectory: workflows_definition
   installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
 features:
   python:
     additionalDependencies: 1.0.0
-    core: 5.10.1
+    core: 5.10.2
     defaultEnabledRetries: 0.2.0
     deprecations: 3.0.2
     enumUnions: 0.1.0
@@ -145,6 +145,8 @@ examples:
           reasonId: "<value>"
       responses:
         "400":
+          application/json: {}
+        "500":
           application/json: {}
   createClosingReason:
     "":

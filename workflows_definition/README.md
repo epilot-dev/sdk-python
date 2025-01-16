@@ -148,7 +148,8 @@ When custom error responses are specified for an operation, the SDK may also rai
 
 | Error Type       | Status Code | Content Type     |
 | ---------------- | ----------- | ---------------- |
-| models.ErrorResp | 400, 500    | application/json |
+| models.ErrorResp | 400         | application/json |
+| models.ErrorResp | 500         | application/json |
 | models.SDKError  | 4XX, 5XX    | \*/\*            |
 
 ### Example
@@ -166,6 +167,9 @@ with SDK(
 
         # Use the SDK ...
 
+    except models.ErrorResp as e:
+        # handle e.data: models.ErrorRespData
+        raise(e)
     except models.ErrorResp as e:
         # handle e.data: models.ErrorRespData
         raise(e)

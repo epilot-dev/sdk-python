@@ -40,7 +40,8 @@ with SDK(
 
 | Error Type       | Status Code      | Content Type     |
 | ---------------- | ---------------- | ---------------- |
-| models.ErrorResp | 400, 500         | application/json |
+| models.ErrorResp | 400              | application/json |
+| models.ErrorResp | 500              | application/json |
 | models.SDKError  | 4XX, 5XX         | \*/\*            |
 
 ## create_closing_reason
