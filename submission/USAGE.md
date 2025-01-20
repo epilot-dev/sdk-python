@@ -18,9 +18,6 @@ with Epilot() as epilot:
                             "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
                         },
                         filename="document.pdf",
-                        **{
-
-                        },
                     ),
                 ],
                 **{
@@ -36,7 +33,10 @@ with Epilot() as epilot:
         "source_type": "journey",
         "journey_submit_id": "123",
         "opt_ins": [
-
+            {
+                "identifier": "example@email.com",
+                "topic": "EMAIL_MARKETING",
+            },
         ],
     })
 
@@ -67,9 +67,6 @@ async def main():
                                 "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf",
                             },
                             filename="document.pdf",
-                            **{
-
-                            },
                         ),
                     ],
                     **{
@@ -85,7 +82,10 @@ async def main():
             "source_type": "journey",
             "journey_submit_id": "123",
             "opt_ins": [
-
+                {
+                    "identifier": "example@email.com",
+                    "topic": "EMAIL_MARKETING",
+                },
             ],
         })
 
