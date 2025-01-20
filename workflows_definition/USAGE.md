@@ -7,7 +7,7 @@ with SDK(
     bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 ) as sdk:
 
-    sdk.closing_reason.change_reason_status(reason_id="<value>")
+    sdk.closing_reason.change_reason_status(reason_id="<id>")
 
     # Use the SDK ...
 ```
@@ -25,7 +25,7 @@ async def main():
         bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
     ) as sdk:
 
-        await sdk.closing_reason.change_reason_status_async(reason_id="<value>")
+        await sdk.closing_reason.change_reason_status_async(reason_id="<id>")
 
         # Use the SDK ...
 
