@@ -143,8 +143,8 @@ with Epilot(
             "param1",
             "param2",
         ],
+        "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250",
         "name": "My Custom table",
-        "type": epilot_template_variables.Type.CUSTOM,
     })
 
     assert res is not None
@@ -347,7 +347,9 @@ with Epilot(
 ) as epilot:
 
     res = epilot.custom_variables.search_custom_variables(request={
+        "from_": 0,
         "query": "logo",
+        "size": 25,
         "sort_by": "[\"created_at\",\"created_at:desc\",\"name\",\"name:desc\",\"key\"]",
     })
 
@@ -505,8 +507,8 @@ with Epilot(
             "param1",
             "param2",
         ],
+        "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250",
         "name": "My Custom table",
-        "type": epilot_template_variables.Type.CUSTOM,
     })
 
     assert res is not None

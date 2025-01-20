@@ -28,7 +28,7 @@ with Epilot(
     ),
 ) as epilot:
 
-    res = epilot.variables.get_categories()
+    res = epilot.variables.get_categories(lang="de")
 
     assert res is not None
 
@@ -75,11 +75,19 @@ with Epilot(
 
     res = epilot.variables.get_variable_context(request={
         "parameters": {
-            "template_type": epilot_template_variables.TemplateType.EMAIL,
+            "template_type": epilot_template_variables.TemplateType.DOCUMENT,
             "brand_id": 123451,
             "custom_variables": [
-
+                {
+                    "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
+                    "variable": "{{craftsmen.invitation_link}}",
+                },
+                {
+                    "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
+                    "variable": "{{craftsmen.invitation_link}}",
+                },
             ],
+            "language": "de",
             "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561",
             "user_id": "50001",
             "user_org_id": "729224",
@@ -141,8 +149,12 @@ with Epilot(
             "template_type": epilot_template_variables.TemplateType.EMAIL,
             "brand_id": 123451,
             "custom_variables": [
-
+                {
+                    "value": "https://partner.epilot.cloud/activate-account?user_name=htny.pct%2Btet%40gmail.com&confirmation_code=EdXPRW19",
+                    "variable": "{{craftsmen.invitation_link}}",
+                },
             ],
+            "language": "de",
             "main_entity_id": "63753437-c9e2-4e83-82bb-b1c666514561",
             "user_id": "50001",
             "user_org_id": "729224",
@@ -196,6 +208,9 @@ with Epilot(
         "entity_schemas": [
             "contact",
         ],
+        "from_": 0,
+        "lang": "de",
+        "size": 25,
     })
 
     assert res is not None

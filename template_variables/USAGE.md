@@ -124,8 +124,8 @@ with Epilot(
             "param1",
             "param2",
         ],
+        "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250",
         "name": "My Custom table",
-        "type": epilot_template_variables.Type.CUSTOM,
     })
 
     assert res is not None
@@ -264,8 +264,8 @@ async def main():
                 "param1",
                 "param2",
             ],
+            "id": "rbse777b-3cf8-4bff-bb0c-253fd1123250",
             "name": "My Custom table",
-            "type": epilot_template_variables.Type.CUSTOM,
         })
 
         assert res is not None
