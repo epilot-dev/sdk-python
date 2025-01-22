@@ -13,6 +13,7 @@ Entity Relationships
 * [get_relations](#get_relations) - getRelations
 * [get_relations_v2](#get_relations_v2) - getRelationsV2
 * [get_relations_v3](#get_relations_v3) - getRelationsV3
+* [remove_relations](#remove_relations) - removeRelations
 * [update_relation](#update_relation) - updateRelation
 
 ## add_relations
@@ -22,48 +23,63 @@ Relates one or more entities to parent entity by adding items to a relation attr
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
-req = operations.AddRelationsRequest(
-    request_body=[
-        shared.RelationItem(
-            tags=[
-                'string',
-            ],
-            attribute='string',
-            entity_id='acd6b1d8-3d92-448b-9649-9df660d593cf',
-        ),
-    ],
-    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    id='e3d006d8-7e69-4d98-8d09-bf6d30b52c36',
-    slug='contact',
-)
+    res = epilot.relations.add_relations(request={
+        "id": "adbd394b-69d6-4053-8f30-68e99c0b63b2",
+        "slug": "contact",
+        "request_body": [
+            {
+                "attribute": "contacts",
+                "entity_id": "e8878f62-2d3d-4c86-bfe7-01a4180ff048",
+                "tags": [
+                    "billing",
+                ],
+            },
+            {
+                "attribute": "contacts",
+                "entity_id": "ee8a2af9-fb36-4981-b848-4e65275851af",
+            },
+            {
+                "attribute": "opportunities",
+                "entity_id": "30990430-a53d-41a2-83db-2de072dc4dd4",
+            },
+        ],
+        "activity_id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+        "async_": False,
+    })
 
-res = s.relations.add_relations(req)
+    assert res is not None
 
-if res.relation_item is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
+
 ```
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.AddRelationsRequest](../../models/operations/addrelationsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.AddRelationsRequest](../../models/addrelationsrequest.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
-**[operations.AddRelationsResponse](../../models/operations/addrelationsresponse.md)**
+**[models.RelationItem](../../models/relationitem.md)**
 
+### Errors
+
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| models.AddRelationsResponseBody | 404                             | application/json                |
+| models.SDKError                 | 4XX, 5XX                        | \*/\*                           |
 
 ## delete_relation
 
@@ -72,41 +88,41 @@ Removes relation between two entities
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
-req = operations.DeleteRelationRequest(
-    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    attribute='string',
-    entity_id='string',
-    id='84afcd91-1519-4f5b-b7b8-55b9c58577ae',
-    slug='contact',
-)
+    epilot.relations.delete_relation(request={
+        "attribute": "<value>",
+        "entity_id": "<id>",
+        "id": "8ac911fb-7859-4557-9ed1-64e5e267dbdf",
+        "slug": "contact",
+        "activity_id": epilot_entity.ActivityIDQueryParam2.UNKNOWN,
+        "async_": False,
+    })
 
-res = s.relations.delete_relation(req)
+    # Use the SDK ...
 
-if res.status_code == 200:
-    # handle response
-    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.DeleteRelationRequest](../../models/operations/deleterelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.DeleteRelationRequest](../../models/deleterelationrequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
 
+### Errors
 
-### Response
-
-**[operations.DeleteRelationResponse](../../models/operations/deleterelationresponse.md)**
-
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| models.DeleteRelationResponseBody | 404                               | application/json                  |
+| models.SDKError                   | 4XX, 5XX                          | \*/\*                             |
 
 ## get_related_entities_count
 
@@ -116,41 +132,47 @@ Returns the amount of unique related entities for an entity - includes direct an
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
-req = operations.GetRelatedEntitiesCountRequest(
-    exclude_schemas=[
-        'contact',
-    ],
-    id='3a515de5-fe13-46e4-ad0c-a57656a6a8af',
-    slug='contact',
-)
+    res = epilot.relations.get_related_entities_count(request={
+        "id": "355ef164-dc56-4668-bfa4-e3fd7d61cdc2",
+        "slug": "contact",
+        "exclude_schemas": [
+            "file,message",
+        ],
+    })
 
-res = s.relations.get_related_entities_count(req)
+    assert res is not None
 
-if res.get_related_entities_count is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
+
 ```
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetRelatedEntitiesCountRequest](../../models/operations/getrelatedentitiescountrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [models.GetRelatedEntitiesCountRequest](../../models/getrelatedentitiescountrequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| `retries`                                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)                        | :heavy_minus_sign:                                                                      | Configuration to override the default retry behavior of the client.                     |
 
 ### Response
 
-**[operations.GetRelatedEntitiesCountResponse](../../models/operations/getrelatedentitiescountresponse.md)**
+**[models.GetRelatedEntitiesCount](../../models/getrelatedentitiescount.md)**
 
+### Errors
+
+| Error Type                                 | Status Code                                | Content Type                               |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| models.GetRelatedEntitiesCountResponseBody | 404                                        | application/json                           |
+| models.SDKError                            | 4XX, 5XX                                   | \*/\*                                      |
 
 ## get_relations
 
@@ -164,44 +186,54 @@ Reverse relations i.e. entities referring to this entity are included with the `
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
-req = operations.GetRelationsRequest(
-    exclude_schemas=[
-        'contact',
-    ],
-    id='e642d6bf-f2f7-41f9-8aa4-db0ec78f30e6',
-    include_schemas=[
-        'contact',
-    ],
-    slug='contact',
-)
+    res = epilot.relations.get_relations(request={
+        "id": "e4dbff19-a4be-47f0-968a-88f5588bb2b0",
+        "slug": "contact",
+        "exclude_schemas": [
+            "file,message",
+        ],
+        "from_": 0,
+        "hydrate": False,
+        "include_reverse": False,
+        "include_schemas": [
+            "contact,account",
+        ],
+        "size": 100,
+    })
 
-res = s.relations.get_relations(req)
+    assert res is not None
 
-if res.get_relations_resp is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
+
 ```
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.GetRelationsRequest](../../models/operations/getrelationsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [models.GetRelationsRequest](../../models/getrelationsrequest.md)   | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| `retries`                                                           | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)    | :heavy_minus_sign:                                                  | Configuration to override the default retry behavior of the client. |
 
 ### Response
 
-**[operations.GetRelationsResponse](../../models/operations/getrelationsresponse.md)**
+**[List[models.GetRelationsResp]](../../models/.md)**
 
+### Errors
+
+| Error Type                      | Status Code                     | Content Type                    |
+| ------------------------------- | ------------------------------- | ------------------------------- |
+| models.GetRelationsResponseBody | 404                             | application/json                |
+| models.SDKError                 | 4XX, 5XX                        | \*/\*                           |
 
 ## get_relations_v2
 
@@ -215,43 +247,56 @@ Reverse relations i.e. entities referring to this entity are included with the `
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
-req = operations.GetRelationsV2Request(
-    fields=[
-        '_id',
-        '_schema',
-        '_title',
-    ],
-    id='80912f3e-8dbd-4dd4-8ecc-63e001b2fb33',
-    slug='contact',
-)
+    res = epilot.relations.get_relations_v2(request={
+        "id": "89238bd4-ec30-412b-b3d2-974896904e1c",
+        "slug": "contact",
+        "fields": [
+            "_id",
+            "_title",
+            "first_name",
+            "account",
+            "!account.*._files",
+            "**._product",
+        ],
+        "from_": 0,
+        "hydrate": False,
+        "include_reverse": False,
+        "size": 50,
+    })
 
-res = s.relations.get_relations_v2(req)
+    assert res is not None
 
-if res.get_relations_resp_with_pagination is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
+
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.GetRelationsV2Request](../../models/operations/getrelationsv2request.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.GetRelationsV2Request](../../models/getrelationsv2request.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
 
 ### Response
 
-**[operations.GetRelationsV2Response](../../models/operations/getrelationsv2response.md)**
+**[models.GetRelationsRespWithPagination](../../models/getrelationsrespwithpagination.md)**
 
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| models.GetRelationsV2ResponseBody | 404                               | application/json                  |
+| models.SDKError                   | 4XX, 5XX                          | \*/\*                             |
 
 ## get_relations_v3
 
@@ -265,44 +310,112 @@ Reverse relations i.e. entities referring to this entity are included with the `
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
-req = operations.GetRelationsV3Request(
-    exclude_schemas=[
-        'contact',
-    ],
-    id='6e35e8b4-d75d-4f84-a79c-6a8b45571a04',
-    include_schemas=[
-        'contact',
-    ],
-    slug='contact',
-)
+    res = epilot.relations.get_relations_v3(request={
+        "id": "63ebd5f4-7cab-457a-a4b6-817ae5a085c2",
+        "slug": "contact",
+        "exclude_schemas": [
+            "file,message",
+        ],
+        "from_": 0,
+        "hydrate": False,
+        "include_reverse": False,
+        "include_schemas": [
+            "contact,account",
+        ],
+        "size": 100,
+    })
 
-res = s.relations.get_relations_v3(req)
+    assert res is not None
 
-if res.get_relations_resp_with_pagination is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
+
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.GetRelationsV3Request](../../models/operations/getrelationsv3request.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.GetRelationsV3Request](../../models/getrelationsv3request.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
 
 ### Response
 
-**[operations.GetRelationsV3Response](../../models/operations/getrelationsv3response.md)**
+**[models.GetRelationsRespWithPagination](../../models/getrelationsrespwithpagination.md)**
 
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| models.GetRelationsV3ResponseBody | 404                               | application/json                  |
+| models.SDKError                   | 4XX, 5XX                          | \*/\*                             |
+
+## remove_relations
+
+Disassociate one or more entities to parent entity by removing items to a relation attribute
+
+### Example Usage
+
+```python
+import epilot_entity
+from epilot_entity import Epilot
+
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ),
+) as epilot:
+
+    epilot.relations.remove_relations(request={
+        "id": "ae76d146-2553-4e09-b50a-48271be11c68",
+        "slug": "contact",
+        "request_body": [
+            {
+                "attribute": "contacts",
+                "entity_id": "e8878f62-2d3d-4c86-bfe7-01a4180ff048",
+                "tags": [
+                    "billing",
+                ],
+            },
+            {
+                "attribute": "contacts",
+                "entity_id": "ee8a2af9-fb36-4981-b848-4e65275851af",
+            },
+            {
+                "attribute": "opportunities",
+                "entity_id": "30990430-a53d-41a2-83db-2de072dc4dd4",
+            },
+        ],
+        "activity_id": epilot_entity.ActivityIDQueryParam2.UNKNOWN,
+        "async_": False,
+    })
+
+    # Use the SDK ...
+
+```
+
+### Parameters
+
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [models.RemoveRelationsRequest](../../models/removerelationsrequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| `retries`                                                               | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)        | :heavy_minus_sign:                                                      | Configuration to override the default retry behavior of the client.     |
+
+### Errors
+
+| Error Type                         | Status Code                        | Content Type                       |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| models.RemoveRelationsResponseBody | 404                                | application/json                   |
+| models.SDKError                    | 4XX, 5XX                           | \*/\*                              |
 
 ## update_relation
 
@@ -311,43 +424,51 @@ Updates an existing relation between two entities.
 ### Example Usage
 
 ```python
-import epilot
-from epilot.models import operations, shared
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
-req = operations.UpdateRelationRequest(
-    request_body=operations.UpdateRelationRequestBody(
-        tags=[
-            'string',
-        ],
-    ),
-    activity_id='01F130Q52Q6MWSNS8N2AVXV4JN',
-    attribute='string',
-    entity_id='string',
-    id='90bd69bf-f6a7-44da-bb01-c3854f8c4b22',
-    slug='contact',
-)
+    res = epilot.relations.update_relation(request={
+        "attribute": "<value>",
+        "entity_id": "<id>",
+        "id": "9b6bfa4a-b135-4fcb-b213-8032260ae470",
+        "slug": "contact",
+        "request_body": {
+            "tags": [
+                "billing",
+                "prepaid",
+            ],
+        },
+        "activity_id": epilot_entity.ActivityIDQueryParam2.UNKNOWN,
+        "async_": False,
+    })
 
-res = s.relations.update_relation(req)
+    assert res is not None
 
-if res.relation_item is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
+
 ```
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.UpdateRelationRequest](../../models/operations/updaterelationrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [models.UpdateRelationRequest](../../models/updaterelationrequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| `retries`                                                             | [Optional[utils.RetryConfig]](../../models/utils/retryconfig.md)      | :heavy_minus_sign:                                                    | Configuration to override the default retry behavior of the client.   |
 
 ### Response
 
-**[operations.UpdateRelationResponse](../../models/operations/updaterelationresponse.md)**
+**[models.RelationItem](../../models/relationitem.md)**
 
+### Errors
+
+| Error Type                        | Status Code                       | Content Type                      |
+| --------------------------------- | --------------------------------- | --------------------------------- |
+| models.UpdateRelationResponseBody | 404                               | application/json                  |
+| models.SDKError                   | 4XX, 5XX                          | \*/\*                             |
