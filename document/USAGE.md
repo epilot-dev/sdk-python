@@ -4,25 +4,25 @@
 import epilot_document
 from epilot_document import Epilot
 
-s = Epilot(
+with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as epilot:
 
-
-res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
+    res = epilot.documents.convert_document(request={
+        "input_document": {
+            "s3ref": {
+                "bucket": "document-api-prod",
+                "key": "uploads/my-template.pdf",
+            },
         },
-    },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-})
+        "output_format": epilot_document.OutputFormat.PDF,
+        "output_filename": "converted.pdf",
+    })
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 ```
 
 </br>
@@ -35,22 +35,25 @@ import epilot_document
 from epilot_document import Epilot
 
 async def main():
-    s = Epilot(
+    async with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    )
-    res = await s.documents.convert_document_async(request={
-        "input_document": {
-            "s3ref": {
-                "bucket": "document-api-prod",
-                "key": "uploads/my-template.pdf",
+    ) as epilot:
+
+        res = await epilot.documents.convert_document_async(request={
+            "input_document": {
+                "s3ref": {
+                    "bucket": "document-api-prod",
+                    "key": "uploads/my-template.pdf",
+                },
             },
-        },
-        "output_format": epilot_document.OutputFormat.PDF,
-        "output_filename": "converted.pdf",
-    })
-    if res is not None:
-        # handle response
-        pass
+            "output_format": epilot_document.OutputFormat.PDF,
+            "output_filename": "converted.pdf",
+        })
+
+        assert res is not None
+
+        # Handle response
+        print(res)
 
 asyncio.run(main())
 ```
