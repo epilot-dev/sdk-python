@@ -1,6 +1,6 @@
 [project]
 name = "epilot-template-variables"
-version = "1.15.4"
+version = "1.15.5"
 description = "Python Client SDK for Epilot"
 authors = [{ name = "Speakeasy" },]
 readme = "README-PYPI.md"
