@@ -312,6 +312,31 @@ with SDK(
 ```
 <!-- End Authentication [security] -->
 
+<!-- Start Resource Management [resource-management] -->
+## Resource Management
+
+The `SDK` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+
+[context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
+
+```python
+from openapi import SDK
+def main():
+    with SDK(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as sdk:
+        # Rest of application here...
+
+
+# Or when using async:
+async def amain():
+    async with SDK(
+        bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as sdk:
+        # Rest of application here...
+```
+<!-- End Resource Management [resource-management] -->
+
 <!-- Start Debugging [debug] -->
 ## Debugging
 
@@ -355,6 +380,7 @@ Workflows Definitions: Service for Workflow Definitions for different processes 
   * [Server Selection](#server-selection)
   * [Custom HTTP Client](#custom-http-client)
   * [Authentication](#authentication)
+  * [Resource Management](#resource-management)
   * [Debugging](#debugging)
   * [IDE Support](#ide-support)
 
