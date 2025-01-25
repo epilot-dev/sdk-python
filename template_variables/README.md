@@ -1159,6 +1159,36 @@ with Epilot(
 ```
 <!-- End Authentication [security] -->
 
+<!-- Start Resource Management [resource-management] -->
+## Resource Management
+
+The `Epilot` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+
+[context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
+
+```python
+import epilot_template_variables
+from epilot_template_variables import Epilot
+def main():
+    with Epilot(
+        security=epilot_template_variables.Security(
+            epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+        ),
+    ) as epilot:
+        # Rest of application here...
+
+
+# Or when using async:
+async def amain():
+    async with Epilot(
+        security=epilot_template_variables.Security(
+            epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+        ),
+    ) as epilot:
+        # Rest of application here...
+```
+<!-- End Resource Management [resource-management] -->
+
 <!-- Start Debugging [debug] -->
 ## Debugging
 
@@ -1202,6 +1232,7 @@ Template Variables API: API to provide variables for email and document template
   * [Server Selection](#server-selection)
   * [Custom HTTP Client](#custom-http-client)
   * [Authentication](#authentication)
+  * [Resource Management](#resource-management)
   * [Debugging](#debugging)
   * [IDE Support](#ide-support)
 
