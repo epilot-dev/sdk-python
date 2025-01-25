@@ -1,18 +1,71 @@
 # epilot-document
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Document API: A document generation API that allows you to generate documents from templates with variables.
+
+[Feature Documentation](https://docs.epilot.io/docs/files/document-generation)
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+<!-- $toc-max-depth=2 -->
+* [epilot-document](#epilot-document)
+  * [SDK Installation](#sdk-installation)
+  * [IDE Support](#ide-support)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Available Resources and Operations](#available-resources-and-operations)
+  * [Retries](#retries)
+  * [Error Handling](#error-handling)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Authentication](#authentication)
+  * [Resource Management](#resource-management)
+  * [Debugging](#debugging)
+
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-PIP
+> [!TIP]
+> To finish publishing your SDK to PyPI you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
+
+
+> [!NOTE]
+> **Python version upgrade policy**
+>
+> Once a Python version reaches its [official end of life date](https://devguide.python.org/versions/), a 3-month grace period is provided for users to upgrade. Following this grace period, the minimum python version supported in the SDK will be updated.
+
+The SDK can be installed with either *pip* or *poetry* package managers.
+
+### PIP
+
+*PIP* is the default package installer for Python, enabling easy installation and management of packages from PyPI via the command line.
+
 ```bash
 pip install git+https://github.com/epilot-dev/sdk-python.git#subdirectory=document
 ```
 
-Poetry
+### Poetry
+
+*Poetry* is a modern tool that simplifies dependency management and package publishing by using a single `pyproject.toml` file to handle project metadata and dependencies.
+
 ```bash
 poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=document
 ```
 <!-- End SDK Installation [installation] -->
+
+<!-- Start IDE Support [idesupport] -->
+## IDE Support
+
+### PyCharm
+
+Generally, the SDK will work well with most IDEs out of the box. However, when using PyCharm, you can enjoy much better integration with Pydantic by installing an additional plugin.
+
+- [PyCharm Pydantic Plugin](https://docs.pydantic.dev/latest/integrations/pycharm/)
+<!-- End IDE Support [idesupport] -->
 
 <!-- Start SDK Example Usage [usage] -->
 ## SDK Example Usage
@@ -24,25 +77,25 @@ poetry add git+https://github.com/epilot-dev/sdk-python.git#subdirectory=documen
 import epilot_document
 from epilot_document import Epilot
 
-s = Epilot(
+with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as epilot:
 
-
-res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
+    res = epilot.documents.convert_document(request={
+        "input_document": {
+            "s3ref": {
+                "bucket": "document-api-prod",
+                "key": "uploads/my-template.pdf",
+            },
         },
-    },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-})
+        "output_format": epilot_document.OutputFormat.PDF,
+        "output_filename": "converted.pdf",
+    })
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 ```
 
 </br>
@@ -55,22 +108,25 @@ import epilot_document
 from epilot_document import Epilot
 
 async def main():
-    s = Epilot(
+    async with Epilot(
         epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-    )
-    res = await s.documents.convert_document_async(request={
-        "input_document": {
-            "s3ref": {
-                "bucket": "document-api-prod",
-                "key": "uploads/my-template.pdf",
+    ) as epilot:
+
+        res = await epilot.documents.convert_document_async(request={
+            "input_document": {
+                "s3ref": {
+                    "bucket": "document-api-prod",
+                    "key": "uploads/my-template.pdf",
+                },
             },
-        },
-        "output_format": epilot_document.OutputFormat.PDF,
-        "output_filename": "converted.pdf",
-    })
-    if res is not None:
-        # handle response
-        pass
+            "output_format": epilot_document.OutputFormat.PDF,
+            "output_filename": "converted.pdf",
+        })
+
+        assert res is not None
+
+        # Handle response
+        print(res)
 
 asyncio.run(main())
 ```
@@ -79,10 +135,17 @@ asyncio.run(main())
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
 
+<details open>
+<summary>Available methods</summary>
+
 ### [documents](docs/sdks/documents/README.md)
 
 * [convert_document](docs/sdks/documents/README.md#convert_document) - convertDocument
 * [generate_document_v2](docs/sdks/documents/README.md#generate_document_v2) - generateDocumentV2
+* [get_template_meta](docs/sdks/documents/README.md#get_template_meta) - getTemplateMeta
+
+
+</details>
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Retries [retries] -->
@@ -92,59 +155,59 @@ Some of the endpoints in this SDK support retries. If you use the SDK without an
 
 To change the default retry strategy for a single API call, simply provide a `RetryConfig` object to the call:
 ```python
-from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_document
 from epilot_document import Epilot
+from epilot_document.utils import BackoffStrategy, RetryConfig
 
-s = Epilot(
+with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as epilot:
 
-
-res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
+    res = epilot.documents.convert_document(request={
+        "input_document": {
+            "s3ref": {
+                "bucket": "document-api-prod",
+                "key": "uploads/my-template.pdf",
+            },
         },
+        "output_format": epilot_document.OutputFormat.PDF,
+        "output_filename": "converted.pdf",
     },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-},
-    RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
+        RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False))
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 
 If you'd like to override the default retry strategy for all operations that support retries, you can use the `retry_config` optional parameter when initializing the SDK:
 ```python
-from epilot.utils import BackoffStrategy, RetryConfig
 import epilot_document
 from epilot_document import Epilot
+from epilot_document.utils import BackoffStrategy, RetryConfig
 
-s = Epilot(
+with Epilot(
     retry_config=RetryConfig("backoff", BackoffStrategy(1, 50, 1.1, 100), False),
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as epilot:
 
-
-res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
+    res = epilot.documents.convert_document(request={
+        "input_document": {
+            "s3ref": {
+                "bucket": "document-api-prod",
+                "key": "uploads/my-template.pdf",
+            },
         },
-    },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-})
+        "output_format": epilot_document.OutputFormat.PDF,
+        "output_filename": "converted.pdf",
+    })
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 <!-- End Retries [retries] -->
@@ -152,86 +215,60 @@ if res is not None:
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations. All operations return a response object or raise an exception.
 
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| models.SDKError | 4xx-5xx         | */*             |
+By default, an API error will raise a models.SDKError exception, which has the following properties:
+
+| Property        | Type             | Description           |
+|-----------------|------------------|-----------------------|
+| `.status_code`  | *int*            | The HTTP status code  |
+| `.message`      | *str*            | The error message     |
+| `.raw_response` | *httpx.Response* | The raw HTTP response |
+| `.body`         | *str*            | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also raise their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `get_template_meta_async` method may raise the following exceptions:
+
+| Error Type              | Status Code   | Content Type     |
+| ----------------------- | ------------- | ---------------- |
+| models.ErrorOutputError | 400, 403, 415 | application/json |
+| models.SDKError         | 4XX, 5XX      | \*/\*            |
 
 ### Example
 
 ```python
-import epilot_document
 from epilot_document import Epilot, models
 
-s = Epilot(
+with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as epilot:
+    res = None
+    try:
 
-res = None
-try:
-    res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
-        },
-    },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-})
+        res = epilot.documents.get_template_meta(request={
+            "template_document": {
+                "s3ref": {
+                    "bucket": "document-api-prod",
+                    "key": "uploads/my-template.pdf",
+                },
+            },
+        })
 
-except models.SDKError as e:
-    # handle exception
-    raise(e)
+        assert res is not None
 
-if res is not None:
-    # handle response
-    pass
+        # Handle response
+        print(res)
 
+    except models.ErrorOutputError as e:
+        # handle e.data: models.ErrorOutputErrorData
+        raise(e)
+    except models.SDKError as e:
+        # handle exception
+        raise(e)
 ```
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
 ## Server Selection
-
-### Select Server by Index
-
-You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
-
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://document.sls.epilot.io` | None |
-
-#### Example
-
-```python
-import epilot_document
-from epilot_document import Epilot
-
-s = Epilot(
-    server_idx=0,
-    epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
-
-
-res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
-        },
-    },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-})
-
-if res is not None:
-    # handle response
-    pass
-
-```
-
 
 ### Override Server URL Per-Client
 
@@ -240,26 +277,26 @@ The default server can also be overridden globally by passing a URL to the `serv
 import epilot_document
 from epilot_document import Epilot
 
-s = Epilot(
+with Epilot(
     server_url="https://document.sls.epilot.io",
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as epilot:
 
-
-res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
+    res = epilot.documents.convert_document(request={
+        "input_document": {
+            "s3ref": {
+                "bucket": "document-api-prod",
+                "key": "uploads/my-template.pdf",
+            },
         },
-    },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-})
+        "output_format": epilot_document.OutputFormat.PDF,
+        "output_filename": "converted.pdf",
+    })
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 <!-- End Server Selection [server] -->
@@ -352,43 +389,69 @@ s = Epilot(async_client=CustomClient(httpx.AsyncClient()))
 
 This SDK supports the following security scheme globally:
 
-| Name          | Type          | Scheme        |
-| ------------- | ------------- | ------------- |
-| `epilot_auth` | http          | HTTP Bearer   |
+| Name          | Type | Scheme      |
+| ------------- | ---- | ----------- |
+| `epilot_auth` | http | HTTP Bearer |
 
-To authenticate with the API the `null` parameter must be set when initializing the SDK client instance. For example:
+To authenticate with the API the `epilot_auth` parameter must be set when initializing the SDK client instance. For example:
 ```python
 import epilot_document
 from epilot_document import Epilot
 
-s = Epilot(
+with Epilot(
     epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
-)
+) as epilot:
 
-
-res = s.documents.convert_document(request={
-    "input_document": {
-        "s3ref": {
-            "bucket": "document-api-prod",
-            "key": "uploads/my-template.pdf",
+    res = epilot.documents.convert_document(request={
+        "input_document": {
+            "s3ref": {
+                "bucket": "document-api-prod",
+                "key": "uploads/my-template.pdf",
+            },
         },
-    },
-    "output_format": epilot_document.OutputFormat.PDF,
-    "output_filename": "converted.pdf",
-})
+        "output_format": epilot_document.OutputFormat.PDF,
+        "output_filename": "converted.pdf",
+    })
 
-if res is not None:
-    # handle response
-    pass
+    assert res is not None
+
+    # Handle response
+    print(res)
 
 ```
 <!-- End Authentication [security] -->
 
+<!-- Start Resource Management [resource-management] -->
+## Resource Management
+
+The `Epilot` class implements the context manager protocol and registers a finalizer function to close the underlying sync and async HTTPX clients it uses under the hood. This will close HTTP connections, release memory and free up other resources held by the SDK. In short-lived Python programs and notebooks that make a few SDK method calls, resource management may not be a concern. However, in longer-lived programs, it is beneficial to create a single SDK instance via a [context manager][context-manager] and reuse it across the application.
+
+[context-manager]: https://docs.python.org/3/reference/datamodel.html#context-managers
+
+```python
+from epilot_document import Epilot
+def main():
+    with Epilot(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as epilot:
+        # Rest of application here...
+
+
+# Or when using async:
+async def amain():
+    async with Epilot(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+    ) as epilot:
+        # Rest of application here...
+```
+<!-- End Resource Management [resource-management] -->
+
 <!-- Start Debugging [debug] -->
 ## Debugging
 
-To emit debug logs for SDK requests and responses you can pass a logger object directly into your SDK object.
+You can setup your SDK to emit debug logs for SDK requests and responses.
 
+You can pass your own logger class directly into your SDK.
 ```python
 from epilot_document import Epilot
 import logging
