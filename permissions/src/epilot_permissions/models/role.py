@@ -7,10 +7,21 @@ from .portalrole import PortalRole, PortalRoleTypedDict
 from .sharerole import ShareRole, ShareRoleTypedDict
 from .userrole import UserRole, UserRoleTypedDict
 from typing import Union
+from typing_extensions import TypeAliasType
 
 
-RoleTypedDict = Union[UserRoleTypedDict, ShareRoleTypedDict, PortalRoleTypedDict, OrgRoleTypedDict, PartnerRoleTypedDict]
+RoleTypedDict = TypeAliasType(
+    "RoleTypedDict",
+    Union[
+        UserRoleTypedDict,
+        ShareRoleTypedDict,
+        PortalRoleTypedDict,
+        OrgRoleTypedDict,
+        PartnerRoleTypedDict,
+    ],
+)
 
 
-Role = Union[UserRole, ShareRole, PortalRole, OrgRole, PartnerRole]
-
+Role = TypeAliasType(
+    "Role", Union[UserRole, ShareRole, PortalRole, OrgRole, PartnerRole]
+)
