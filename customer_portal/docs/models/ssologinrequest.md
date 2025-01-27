@@ -1,0 +1,11 @@
+# SsoLoginRequest
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `org_id`                                                                 | *str*                                                                    | :heavy_check_mark:                                                       | epilot organization id                                                   | 123                                                                      |
+| `origin`                                                                 | [models.Origin](../models/origin.md)                                     | :heavy_check_mark:                                                       | Origin of the Portal                                                     |                                                                          |
+| `request_body`                                                           | [Optional[models.SsoLoginRequestBody]](../models/ssologinrequestbody.md) | :heavy_minus_sign:                                                       | N/A                                                                      |                                                                          |
+| `contact_id`                                                             | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | contact id in the epilot system                                          | 5da0a718-c822-403d-9f5d-20d4584e0528                                     |

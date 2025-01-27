@@ -1,0 +1,9 @@
+# CertificateDetails
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        | Example                                                                            |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `failed_reason`                                                                    | *Optional[str]*                                                                    | :heavy_minus_sign:                                                                 | Reason for failed certificate                                                      | CAA_ERROR                                                                          |
+| `status`                                                                           | [Optional[models.GetOrgPortalConfigStatus]](../models/getorgportalconfigstatus.md) | :heavy_minus_sign:                                                                 | Status of the certificate                                                          |                                                                                    |
