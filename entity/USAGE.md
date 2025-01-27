@@ -1,27 +1,50 @@
-<!-- Start SDK Example Usage -->
-
-
+<!-- Start SDK Example Usage [usage] -->
 ```python
-import epilot
-from epilot.models import operations, shared
+# Synchronous Example
+import epilot_entity
+from epilot_entity import Epilot
 
-s = epilot.Epilot(
-    security=shared.Security(
-        epilot_auth="",
+with Epilot(
+    security=epilot_entity.Security(
+        epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
     ),
-)
+) as epilot:
 
-req = operations.AttachActivityRequest(
-    entities=[
-        'ee1dee63-2954-4671-8246-751c43fec091',
-    ],
-    id='01F130Q52Q6MWSNS8N2AVXV4JN',
-)
+    res = epilot.activity.attach_activity(request={
+        "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+    })
 
-res = s.activity.attach_activity(req)
+    assert res is not None
 
-if res.activity_item is not None:
-    # handle response
-    pass
+    # Handle response
+    print(res)
 ```
-<!-- End SDK Example Usage -->
+
+</br>
+
+The same SDK client can also be used to make asychronous requests by importing asyncio.
+```python
+# Asynchronous Example
+import asyncio
+import epilot_entity
+from epilot_entity import Epilot
+
+async def main():
+    async with Epilot(
+        security=epilot_entity.Security(
+            epilot_auth="<YOUR_BEARER_TOKEN_HERE>",
+        ),
+    ) as epilot:
+
+        res = await epilot.activity.attach_activity_async(request={
+            "id": "01F130Q52Q6MWSNS8N2AVXV4JN",
+        })
+
+        assert res is not None
+
+        # Handle response
+        print(res)
+
+asyncio.run(main())
+```
+<!-- End SDK Example Usage [usage] -->
