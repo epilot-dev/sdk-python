@@ -1,0 +1,10 @@
+# ProviderPublicConfig
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `display_name`                                                          | *str*                                                                   | :heavy_check_mark:                                                      | Human-readable display name for identity provider shown in login        | Office 365 Login                                                        |
+| `slug`                                                                  | *str*                                                                   | :heavy_check_mark:                                                      | URL-friendly slug to use as organization-unique identifier for Provider | office-365-login                                                        |
+| `oidc_config`                                                           | [Optional[models.OIDCProviderConfig]](../models/oidcproviderconfig.md)  | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
