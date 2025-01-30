@@ -3,11 +3,11 @@
 import importlib.metadata
 
 __title__: str = "epilot-template-variables"
-__version__: str = "1.15.6"
+__version__: str = "1.15.7"
 __openapi_doc_version__: str = "1.0.0"
-__gen_version__: str = "2.496.0"
+__gen_version__: str = "2.497.8"
 __user_agent__: str = (
-    "speakeasy-sdk/python 1.15.6 2.496.0 1.0.0 epilot-template-variables"
+    "speakeasy-sdk/python 1.15.7 2.497.8 1.0.0 epilot-template-variables"
 )
 
 try:
