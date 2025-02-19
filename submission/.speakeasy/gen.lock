@@ -1,0 +1,92 @@
+lockVersion: 2.0.0
+id: 33caae79-0482-46e7-9dea-4e7a337d182e
+management:
+  docChecksum: d4af78e6c6d718d7121f5ce9edb789ef
+  docVersion: 1.0.0
+  speakeasyVersion: 1.477.2
+  generationVersion: 2.497.8
+  releaseVersion: 1.13.8
+  configChecksum: 2af7ad3cb0b3991d2ff7d01b3d9b94cb
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: submission
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=submission
+features:
+  python:
+    additionalDependencies: 1.0.0
+    additionalProperties: 1.0.1
+    core: 5.10.6
+    defaultEnabledRetries: 0.2.0
+    deprecations: 3.0.2
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.2
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.1.0
+    methodArguments: 1.0.2
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+generatedFiles:
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - USAGE.md
+  - docs/models/files.md
+  - docs/models/optin.md
+  - docs/models/s3reference.md
+  - docs/models/schema.md
+  - docs/models/security.md
+  - docs/models/submissionentity.md
+  - docs/models/submissionpayload.md
+  - docs/models/utils/retryconfig.md
+  - docs/sdks/epilot/README.md
+  - docs/sdks/submissions/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/epilot_submission/__init__.py
+  - src/epilot_submission/_hooks/__init__.py
+  - src/epilot_submission/_hooks/sdkhooks.py
+  - src/epilot_submission/_hooks/types.py
+  - src/epilot_submission/_version.py
+  - src/epilot_submission/basesdk.py
+  - src/epilot_submission/httpclient.py
+  - src/epilot_submission/models/__init__.py
+  - src/epilot_submission/models/optin.py
+  - src/epilot_submission/models/s3reference.py
+  - src/epilot_submission/models/sdkerror.py
+  - src/epilot_submission/models/security.py
+  - src/epilot_submission/models/submissionentity.py
+  - src/epilot_submission/models/submissionpayload.py
+  - src/epilot_submission/py.typed
+  - src/epilot_submission/sdk.py
+  - src/epilot_submission/sdkconfiguration.py
+  - src/epilot_submission/submissions.py
+  - src/epilot_submission/types/__init__.py
+  - src/epilot_submission/types/basemodel.py
+  - src/epilot_submission/utils/__init__.py
+  - src/epilot_submission/utils/annotations.py
+  - src/epilot_submission/utils/enums.py
+  - src/epilot_submission/utils/eventstreaming.py
+  - src/epilot_submission/utils/forms.py
+  - src/epilot_submission/utils/headers.py
+  - src/epilot_submission/utils/logger.py
+  - src/epilot_submission/utils/metadata.py
+  - src/epilot_submission/utils/queryparams.py
+  - src/epilot_submission/utils/requestbodies.py
+  - src/epilot_submission/utils/retries.py
+  - src/epilot_submission/utils/security.py
+  - src/epilot_submission/utils/serializers.py
+  - src/epilot_submission/utils/url.py
+  - src/epilot_submission/utils/values.py
+examples:
+  createSubmission:
+    speakeasy-default-create-submission:
+      requestBody:
+        application/json: {"entities": [{"_schema": "submission", "description": "Submission created via API", "files": [{"filename": "document.pdf", "s3ref": {"bucket": "epilot-user-content", "key": "temp/123/4d689aeb-1497-4410-a9fe-b36ca9ac4389/document.pdf"}}], "contact_first_name": "First", "contact_last_name": "Last", "contact_email": "example@submission.com", "request": "I would like to know more about electric vehicles"}], "journey_submit_id": "123", "opt_ins": [{"identifier": "example@email.com", "topic": "EMAIL_MARKETING"}], "organization_id": "123", "source_id": "ce99875f-fba9-4fe2-a8f9-afaf52059051", "source_type": "journey"}
+examplesVersion: 1.0.0
+generatedTests: {}

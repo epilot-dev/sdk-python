@@ -1,16 +1,47 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 89cb5b3bf127d6ae2e1c29fa5742affa
-  docVersion: 1.0.0
-  speakeasyVersion: 1.19.2
-  generationVersion: 2.16.5
+configVersion: 2.0.0
 generation:
-  telemetryEnabled: false
   sdkClassName: epilot
+  usageSnippets:
+    optionalPropertyRendering: withExample
+  fixes:
+    nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
+    requestResponseComponentNamesFeb2024: false
+  auth:
+    oAuth2ClientCredentialsEnabled: false
+    oAuth2PasswordEnabled: false
   sdkFlattening: true
-  singleTagPerOp: false
+  telemetryEnabled: false
 python:
-  version: 1.2.2
+  version: 1.13.8
+  additionalDependencies:
+    dev: {}
+    main: {}
   author: epilot
+  authors:
+    - Speakeasy
+  clientServerStatusCodesAsErrors: true
+  defaultErrorName: SDKError
   description: Python Client SDK for Epilot
+  enableCustomCodeRegions: false
+  enumFormat: enum
+  fixFlags:
+    responseRequiredSep2024: false
+  flattenGlobalSecurity: true
+  flattenRequests: false
+  flatteningOrder: parameters-first
+  imports:
+    option: openapi
+    paths:
+      callbacks: ""
+      errors: ""
+      operations: ""
+      shared: ""
+      webhooks: ""
+  inputModelSuffix: input
+  maxMethodParams: 4
+  methodArguments: infer-optional-args
+  outputModelSuffix: output
   packageName: epilot-submission
+  responseFormat: flat
+  templateVersion: v2
