@@ -1,0 +1,222 @@
+lockVersion: 2.0.0
+id: 8727d4ad-f9cf-4aa1-993f-c90fc6591190
+management:
+  docChecksum: 8a2ff4be25db818a35891d602baa4a25
+  docVersion: 1.0.0
+  speakeasyVersion: 1.477.2
+  generationVersion: 2.497.8
+  releaseVersion: 1.14.8
+  configChecksum: 2984970bad1c61987f3ff30fb61966ed
+  repoURL: https://github.com/epilot-dev/sdk-python.git
+  repoSubDirectory: workflows_definition
+  installationURL: https://github.com/epilot-dev/sdk-python.git#subdirectory=workflows_definition
+features:
+  python:
+    additionalDependencies: 1.0.0
+    core: 5.10.6
+    defaultEnabledRetries: 0.2.0
+    deprecations: 3.0.2
+    enumUnions: 0.1.0
+    envVarSecurityUsage: 0.3.2
+    flattening: 3.1.0
+    globalSecurity: 3.0.2
+    globalSecurityCallbacks: 1.0.0
+    globalSecurityFlattening: 1.0.0
+    globalServerURLs: 3.1.0
+    methodArguments: 1.0.2
+    responseFormat: 1.0.1
+    retries: 3.0.2
+    sdkHooks: 1.0.0
+    unions: 3.0.4
+generatedFiles:
+  - .gitattributes
+  - .python-version
+  - .vscode/settings.json
+  - USAGE.md
+  - docs/models/actiontypecondition.md
+  - docs/models/automationconfig.md
+  - docs/models/changereasonstatusreq.md
+  - docs/models/changereasonstatusrequest.md
+  - docs/models/closingreason.md
+  - docs/models/closingreasonid.md
+  - docs/models/closingreasons.md
+  - docs/models/closingreasonsids.md
+  - docs/models/closingreasonsstatus.md
+  - docs/models/condition.md
+  - docs/models/definitionnotfoundresp.md
+  - docs/models/deletedefinitionrequest.md
+  - docs/models/dynamicduedate.md
+  - docs/models/ecpdetails.md
+  - docs/models/errorresp.md
+  - docs/models/flow.md
+  - docs/models/getallclosingreasonsrequest.md
+  - docs/models/getdefinitionrequest.md
+  - docs/models/getworkflowclosingreasonsrequest.md
+  - docs/models/itemtype.md
+  - docs/models/maxallowedlimit.md
+  - docs/models/section.md
+  - docs/models/security.md
+  - docs/models/setworkflowclosingreasonsrequest.md
+  - docs/models/source.md
+  - docs/models/step.md
+  - docs/models/stepdescription.md
+  - docs/models/stepjourney.md
+  - docs/models/steprequirement.md
+  - docs/models/steptype.md
+  - docs/models/target.md
+  - docs/models/timeperiod.md
+  - docs/models/updatedefinitionrequest.md
+  - docs/models/updateentityattributes.md
+  - docs/models/utils/retryconfig.md
+  - docs/models/workflowdefinition.md
+  - docs/sdks/closingreasonsdk/README.md
+  - docs/sdks/sdk/README.md
+  - docs/sdks/workflows/README.md
+  - poetry.toml
+  - py.typed
+  - pylintrc
+  - pyproject.toml
+  - scripts/prepare-readme.py
+  - scripts/publish.sh
+  - src/openapi/__init__.py
+  - src/openapi/_hooks/__init__.py
+  - src/openapi/_hooks/sdkhooks.py
+  - src/openapi/_hooks/types.py
+  - src/openapi/_version.py
+  - src/openapi/basesdk.py
+  - src/openapi/closing_reason_sdk.py
+  - src/openapi/httpclient.py
+  - src/openapi/models/__init__.py
+  - src/openapi/models/changereasonstatusop.py
+  - src/openapi/models/changereasonstatusreq.py
+  - src/openapi/models/closingreason.py
+  - src/openapi/models/closingreasonid.py
+  - src/openapi/models/closingreasons.py
+  - src/openapi/models/closingreasonsids.py
+  - src/openapi/models/closingreasonsstatus.py
+  - src/openapi/models/definitionnotfoundresp.py
+  - src/openapi/models/deletedefinitionop.py
+  - src/openapi/models/dynamicduedate.py
+  - src/openapi/models/ecpdetails.py
+  - src/openapi/models/errorresp.py
+  - src/openapi/models/getallclosingreasonsop.py
+  - src/openapi/models/getdefinitionop.py
+  - src/openapi/models/getworkflowclosingreasonsop.py
+  - src/openapi/models/itemtype.py
+  - src/openapi/models/maxallowedlimit.py
+  - src/openapi/models/sdkerror.py
+  - src/openapi/models/section.py
+  - src/openapi/models/security.py
+  - src/openapi/models/setworkflowclosingreasonsop.py
+  - src/openapi/models/step.py
+  - src/openapi/models/stepdescription.py
+  - src/openapi/models/stepjourney.py
+  - src/openapi/models/steprequirement.py
+  - src/openapi/models/steptype.py
+  - src/openapi/models/updatedefinitionop.py
+  - src/openapi/models/updateentityattributes.py
+  - src/openapi/models/workflowdefinition.py
+  - src/openapi/py.typed
+  - src/openapi/sdk.py
+  - src/openapi/sdkconfiguration.py
+  - src/openapi/types/__init__.py
+  - src/openapi/types/basemodel.py
+  - src/openapi/utils/__init__.py
+  - src/openapi/utils/annotations.py
+  - src/openapi/utils/enums.py
+  - src/openapi/utils/eventstreaming.py
+  - src/openapi/utils/forms.py
+  - src/openapi/utils/headers.py
+  - src/openapi/utils/logger.py
+  - src/openapi/utils/metadata.py
+  - src/openapi/utils/queryparams.py
+  - src/openapi/utils/requestbodies.py
+  - src/openapi/utils/retries.py
+  - src/openapi/utils/security.py
+  - src/openapi/utils/serializers.py
+  - src/openapi/utils/url.py
+  - src/openapi/utils/values.py
+  - src/openapi/workflows.py
+examples:
+  changeReasonStatus:
+    speakeasy-default-change-reason-status:
+      parameters:
+        path:
+          reasonId: "<id>"
+      responses:
+        "400":
+          application/json: {}
+        "500":
+          application/json: {}
+  createClosingReason:
+    "":
+      requestBody:
+        application/json: {"status": "ACTIVE", "title": "better offer"}
+      responses:
+        "201":
+          application/json: {"status": "INACTIVE", "title": "<value>"}
+  getAllClosingReasons:
+    "":
+      parameters:
+        query:
+          includeInactive: true
+      responses:
+        "200":
+          application/json: {"reasons": [{"status": "ACTIVE", "title": "<value>"}]}
+  createDefinition:
+    "":
+      requestBody:
+        application/json: {"assignedTo": ["952802", "80225"], "description": "Lead Qualification description", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["123482"], "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["123482"], "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["123482"], "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["123482"], "name": "Print and send catalog", "order": 2, "type": "STEP"}], "name": "Lead Qualification"}
+      responses:
+        "200":
+          application/json: {"assignedTo": ["952802", "80225"], "creationTime": "2021-08-04T21:13:50.373Z", "description": "Lead Qualification description", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["48829"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["45390"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["8230"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8239"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification"}
+  deleteDefinition:
+    "":
+      parameters:
+        path:
+          definitionId: "CustomerRequest"
+  getDefinition:
+    "":
+      parameters:
+        path:
+          definitionId: "7hj28a"
+      responses:
+        "200":
+          application/json: {"assignedTo": ["952802", "80225"], "closingReasons": [{"id": "ffoowef"}, {"id": "hebwoeu"}, {"id": "mbnoenq"}], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["923432"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["45488"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["45488"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8988"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification"}
+  getDefinitions:
+    "":
+      responses:
+        "200":
+          application/json: [{"assignedTo": ["18625", "90252"], "creationTime": "2021-08-04T21:13:50.373Z", "description": "Lead Qualification description", "dueDate": "2021-08-04T21:13:50.373Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["123482"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["123482"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["123482"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["123482"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification"}]
+  getMaxAllowedLimit:
+    "":
+      responses:
+        "200":
+          application/json: {"currentNoOfWorkflows": 5, "maxAllowed": 7}
+  getWorkflowClosingReasons:
+    "":
+      parameters:
+        path:
+          definitionId: "fxcwfw"
+      responses:
+        "200":
+          application/json: {"reasons": [{"id": "x739cew"}, {"id": "x739cew"}, {"id": "x739cew"}]}
+  setWorkflowClosingReasons:
+    "":
+      parameters:
+        path:
+          definitionId: "7889"
+      requestBody:
+        application/json: {"reasons": [{"id": "x739cew"}]}
+  updateDefinition:
+    "":
+      parameters:
+        path:
+          definitionId: "7hj28a"
+      requestBody:
+        application/json: {"assignedTo": ["952802", "80225"], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["8988"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["8988"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["8988"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["8988"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification"}
+      responses:
+        "200":
+          application/json: {"assignedTo": ["952802", "80225"], "creationTime": "2021-08-04T21:13:50.373Z", "dueDate": "2022-08-04T12:00:00.000Z", "flow": [{"id": "5892na2", "name": "Initial Information Gathering", "order": 1, "steps": [{"assignedTo": ["1"], "id": "2hja82a", "name": "Call client and confirm address and product", "order": 1, "type": "STEP"}, {"assignedTo": ["56645"], "id": "ga92ha2", "name": "Check product availability", "order": 2, "type": "STEP"}, {"assignedTo": ["949923"], "id": "jga92ha", "name": "Send email confirming contact with the client", "order": 3, "type": "STEP"}], "type": "SECTION"}, {"assignedTo": ["156645"], "id": "0a7g22a", "name": "Print and send catalog", "order": 2, "type": "STEP"}], "id": "25n2k52ja", "lastUpdateTime": "2021-08-04T21:13:50.373Z", "name": "Lead Qualification"}
+examplesVersion: 1.0.0
+generatedTests: {}
